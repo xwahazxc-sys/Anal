@@ -7,6 +7,7 @@ on:
     paths:
       - "youtube/research/collect_twins.py"
       - "youtube/research/collect_de.py"
+      - "youtube/research/collect_lang.py"
       - ".github/workflows/yt-collect-twins.yml"
 
 permissions:
@@ -22,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -U yt-dlp
-      - run: python3 youtube/research/collect_twins.py twins3.json && python3 youtube/research/collect_de.py
+      - run: python3 youtube/research/collect_twins.py twins4.json && python3 youtube/research/collect_lang.py
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
