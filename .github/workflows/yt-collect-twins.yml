@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -U yt-dlp
-      - run: python3 youtube/research/collect_twins.py
+      - run: python3 youtube/research/collect_twins.py twins2.json
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
