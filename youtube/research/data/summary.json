@@ -1,0 +1,325 @@
+{
+ "summary": [
+  {
+   "genre": "horror",
+   "lang": "en",
+   "query": "horror short film",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 181500,
+   "search_top_views": 8708393,
+   "search_median_views": 206982
+  },
+  {
+   "genre": "horror",
+   "lang": "es",
+   "query": "cortometraje de terror",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 1016,
+   "search_top_views": 11306471,
+   "search_median_views": 654669
+  },
+  {
+   "genre": "horror",
+   "lang": "pt",
+   "query": "curta de terror",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 34500,
+   "search_top_views": 27077334,
+   "search_median_views": 2850781
+  },
+  {
+   "genre": "horror",
+   "lang": "ja",
+   "query": "ホラー 短編映画",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 49700,
+   "search_top_views": 5553469,
+   "search_median_views": 108138
+  },
+  {
+   "genre": "moral_drama",
+   "lang": "en",
+   "query": "moral story short film",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 5200,
+   "search_top_views": 556377658,
+   "search_median_views": 13289402
+  },
+  {
+   "genre": "moral_drama",
+   "lang": "es",
+   "query": "historias con moraleja dramatización",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 2135,
+   "search_top_views": 5872040,
+   "search_median_views": 467978
+  },
+  {
+   "genre": "moral_drama",
+   "lang": "pt",
+   "query": "dramatização história com lição",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 170,
+   "search_top_views": 398072,
+   "search_median_views": 17007
+  },
+  {
+   "genre": "moral_drama",
+   "lang": "ja",
+   "query": "教訓 ドラマ",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 4775,
+   "search_top_views": 6844020,
+   "search_median_views": 6516
+  },
+  {
+   "genre": "micro_drama",
+   "lang": "en",
+   "query": "short drama series episode",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 13975,
+   "search_top_views": 10113245,
+   "search_median_views": 286913
+  },
+  {
+   "genre": "micro_drama",
+   "lang": "es",
+   "query": "minidrama serie corta",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 2125,
+   "search_top_views": 7869292,
+   "search_median_views": 1103322
+  },
+  {
+   "genre": "micro_drama",
+   "lang": "pt",
+   "query": "minissérie curta drama",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 27500,
+   "search_top_views": 4650057,
+   "search_median_views": 57012
+  },
+  {
+   "genre": "micro_drama",
+   "lang": "ja",
+   "query": "ショートドラマ",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 11925,
+   "search_top_views": 223922,
+   "search_median_views": 30165
+  },
+  {
+   "genre": "comedy",
+   "lang": "en",
+   "query": "comedy sketch",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 306750,
+   "search_top_views": 18788092,
+   "search_median_views": 2800168
+  },
+  {
+   "genre": "comedy",
+   "lang": "es",
+   "query": "sketch de comedia",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 97750,
+   "search_top_views": 6607855,
+   "search_median_views": 433669
+  },
+  {
+   "genre": "comedy",
+   "lang": "pt",
+   "query": "esquete de comédia",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 787,
+   "search_top_views": 5361635,
+   "search_median_views": 254252
+  },
+  {
+   "genre": "comedy",
+   "lang": "ja",
+   "query": "コント",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 36750,
+   "search_top_views": 33024298,
+   "search_median_views": 819389
+  },
+  {
+   "genre": "scifi",
+   "lang": "en",
+   "query": "sci-fi short film",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 20451,
+   "search_top_views": 9311033,
+   "search_median_views": 300160
+  },
+  {
+   "genre": "scifi",
+   "lang": "es",
+   "query": "cortometraje ciencia ficción",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 2150,
+   "search_top_views": 24448020,
+   "search_median_views": 92009
+  },
+  {
+   "genre": "scifi",
+   "lang": "pt",
+   "query": "curta ficção científica",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 1450,
+   "search_top_views": 11542853,
+   "search_median_views": 36827
+  },
+  {
+   "genre": "scifi",
+   "lang": "ja",
+   "query": "SF 短編映画",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 324,
+   "search_top_views": 24448020,
+   "search_median_views": 1255
+  },
+  {
+   "genre": "thriller",
+   "lang": "en",
+   "query": "thriller short film",
+   "search_hits": 20,
+   "channels_measured": 4,
+   "typical_channel_median": 56000,
+   "search_top_views": 1201979755,
+   "search_median_views": 286108
+  },
+  {
+   "genre": "thriller",
+   "lang": "es",
+   "query": "cortometraje de suspenso",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 1008,
+   "search_top_views": 8708479,
+   "search_median_views": 234031
+  },
+  {
+   "genre": "thriller",
+   "lang": "pt",
+   "query": "curta suspense",
+   "search_hits": 20,
+   "channels_measured": 5,
+   "typical_channel_median": 4700,
+   "search_top_views": 10722603,
+   "search_median_views": 180924
+  },
+  {
+   "genre": "thriller",
+   "lang": "ja",
+   "query": "サスペンス 短編",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 13726,
+   "search_top_views": 1252305,
+   "search_median_views": 34122
+  },
+  {
+   "genre": "animated",
+   "lang": "en",
+   "query": "animated series episode 1",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 12650,
+   "search_top_views": 34705425,
+   "search_median_views": 1604021
+  },
+  {
+   "genre": "animated",
+   "lang": "es",
+   "query": "serie animada episodio 1",
+   "search_hits": 20,
+   "channels_measured": 4,
+   "typical_channel_median": 13275,
+   "search_top_views": 101182372,
+   "search_median_views": 85417
+  },
+  {
+   "genre": "animated",
+   "lang": "pt",
+   "query": "série animada episódio 1",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 46750,
+   "search_top_views": 91426850,
+   "search_median_views": 2618629
+  },
+  {
+   "genre": "animated",
+   "lang": "ja",
+   "query": "漫画動画",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 162750,
+   "search_top_views": 4465100,
+   "search_median_views": 113774
+  },
+  {
+   "genre": "romance",
+   "lang": "en",
+   "query": "romance short film",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 9550,
+   "search_top_views": 9719929,
+   "search_median_views": 1918687
+  },
+  {
+   "genre": "romance",
+   "lang": "es",
+   "query": "cortometraje romántico",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 7400,
+   "search_top_views": 10963758,
+   "search_median_views": 572650
+  },
+  {
+   "genre": "romance",
+   "lang": "pt",
+   "query": "curta romance",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 9125,
+   "search_top_views": 2883635,
+   "search_median_views": 110614
+  },
+  {
+   "genre": "romance",
+   "lang": "ja",
+   "query": "恋愛 ショートドラマ",
+   "search_hits": 20,
+   "channels_measured": 6,
+   "typical_channel_median": 45750,
+   "search_top_views": 2288415,
+   "search_median_views": 416122
+  }
+ ],
+ "errors": []
+}

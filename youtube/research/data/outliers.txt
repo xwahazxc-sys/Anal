@@ -1,0 +1,1704 @@
+=== animated_en.json
+
+  120 videos across 6 channels, outliers at 2.0x or better
+
+    41.82x    138,000  vs     3,300 median   AtomicDoodle           Any Dragons Around Here Need Slaying? (ANIMATED)
+            Unclassified
+    36.04x  10,000,000  vs   277,500 median   Zeddyzi                RAMSHACKLE (PILOT)
+            Unclassified
+    14.90x    146,000  vs     9,800 median   Shadow Pine Studios    Parker vs Dr. Chang's Happy Therapy | Producing Park
+            The Comparison
+    13.47x    159,000  vs    11,800 median   Disney Channel Animati Kim Possible Full Episode! "Stop Team Go" 🎬🧡 | Elect
+            The Warning
+    12.25x    245,000  vs    20,000 median   Cartoon Power Up       Episode 15 - Bakugan Geogan Rising | FULL EPISODE | 
+            Unclassified
+     8.67x     85,000  vs     9,800 median   Shadow Pine Studios    Quarantine Chaos: Lippy Is the Cure | Crash Canyon |
+            Unclassified
+     6.44x     76,000  vs    11,800 median   Disney Channel Animati Broken Karaoke Seasons 1~3 Compilation! 🤩🎤 | Big Cit
+            Unclassified
+     5.41x  1,500,000  vs   277,500 median   Zeddyzi                RAMSHACKLE (OPENING THEME)
+            Unclassified
+     5.17x     61,000  vs    11,800 median   Disney Channel Animati Cricket Cages Bill After He Betrays Him! 😤🔒 | Big Ci
+            Unclassified
+     4.85x     16,000  vs     3,300 median   AtomicDoodle           Salmon & The Big Bad Wolf (ANIMATIC SHORT)
+            Unclassified
+     4.55x     15,000  vs     3,300 median   AtomicDoodle           For the last time. (OC Animation)
+            Unclassified
+     4.32x  1,200,000  vs   277,500 median   Zeddyzi                Ramshackle: The Animated Pilot (OFFICIAL TRAILER)
+            Unclassified
+     4.08x     40,000  vs     9,800 median   Shadow Pine Studios    Future Parker Crashes the Wedding | Producing Parker
+            Unclassified
+     3.81x     45,000  vs    11,800 median   Disney Channel Animati Pokémon Tales: The Misadventures of Sirfetch’d & Pic
+            Unclassified
+     3.80x     76,000  vs    20,000 median   Cartoon Power Up       Episode 14 - Bakugan Geogan Rising | FULL EPISODE | 
+            Unclassified
+     3.00x     60,000  vs    20,000 median   Cartoon Power Up       Episode 52 - Di-Gata Defenders | FULL EPISODE | CART
+            Unclassified
+     2.95x    818,000  vs   277,500 median   Zeddyzi                RAMSHACKLE PILOT | Bloopers
+            Unclassified
+     2.54x     30,000  vs    11,800 median   Disney Channel Animati Tilly Starts a Newspaper to Keep Her Family Connecte
+            Unclassified
+     2.50x     50,000  vs    20,000 median   Cartoon Power Up       Episode 13 - Bakugan Geogan Rising | FULL EPISODE | 
+            Unclassified
+     2.37x     28,000  vs    11,800 median   Disney Channel Animati Big City Greens: Road Trip Full Episodes Compilation
+            Unclassified
+     2.35x     23,000  vs     9,800 median   Shadow Pine Studios    Manderbelts' Members Only Meltdown | Crash Canyon | 
+            Unclassified
+     2.29x     27,000  vs    11,800 median   Disney Channel Animati Bobby and Romy fight a cheese monster in town! 🧀👀 | 
+            Unclassified
+     2.24x    621,000  vs   277,500 median   Zeddyzi                PINE POINT: Radio
+            Unclassified
+     2.10x     42,000  vs    20,000 median   Cartoon Power Up       Episode 12 - Bakugan Geogan Rising  | FULL EPISODE |
+            Unclassified
+
+  formulas among the outliers
+    22x  Unclassified
+     1x  The Comparison
+     1x  The Warning
+
+=== animated_es.json
+
+  65 videos across 5 channels, outliers at 2.0x or better
+
+    1380.71x    544,000  vs       394 median   erick3505              RICARDO FORT   Serie animada   Capitulo 1
+            Unclassified
+    58.38x     23,000  vs       394 median   erick3505              como desactivar mi cuenta en taringa!
+            Unclassified
+    27.92x     11,000  vs       394 median   erick3505              Dime que no (instrumental) - Hernan y La champions l
+            Unclassified
+    22.19x    345,000  vs    15,550 median   Creepy Zombie          Cuentos de Terror con Alberto Laiseca - El Gato Negr
+            Unclassified
+    10.41x      4,100  vs       394 median   erick3505              picadas en rio grande.avi
+            Unclassified
+     5.85x     91,000  vs    15,550 median   Creepy Zombie          Cuentos de la Cripta - Serie animada - Episodio 27
+            Unclassified
+     4.41x    412,000  vs    93,500 median   RETRO MANIA            RAICES (1977) - MINISERIE ONLINE - AUDIO LATINO
+            Unclassified
+     3.79x     59,000  vs    15,550 median   Creepy Zombie          Cuentos de la Cripta - Serie animada - Episodio 28
+            Unclassified
+     3.54x     55,000  vs    15,550 median   Creepy Zombie          Cuentos de la Cripta - Serie animada - Episodio 29
+            Unclassified
+     3.41x    319,000  vs    93,500 median   RETRO MANIA            S.W.A.T. (1975) - Intro Latino - SERIE ONLINE
+            Unclassified
+     3.34x     52,000  vs    15,550 median   Creepy Zombie          Cuentos de la Cripta - Serie animada - Episodio 30
+            Unclassified
+     3.10x    290,000  vs    93,500 median   RETRO MANIA            LOS INVASORES (1967)🔴Intro Latino🔴Serie Online👇👇
+            Unclassified
+     2.91x     32,000  vs    11,000 median   Spider-Media [LATAM]   El Hombre Araña: La Nueva Serie Animada [Capitulo 01
+            Unclassified
+     2.77x     43,000  vs    15,550 median   Creepy Zombie          Cuentos de la Cripta - Serie animada - Episodio 38
+            Unclassified
+     2.53x    237,000  vs    93,500 median   RETRO MANIA            NIGHT GALLERY🔴 Rod Serling 🔴FULL SERIES IN THE DESCR
+            Unclassified
+     2.46x    230,000  vs    93,500 median   RETRO MANIA            "BATTLESTAR GALACTICA" (1978) Intro - Serie Online
+            Unclassified
+     2.19x     34,000  vs    15,550 median   Creepy Zombie          Cuentos de Terror con Alberto Laiseca - Algo muy Gra
+            Unclassified
+
+  skipped 1 channel(s) with under 4 videos collected - a median off one or
+  two videos is not a median: Jhonatan Schemel (1)
+
+  formulas among the outliers
+    17x  Unclassified
+
+=== animated_ja.json
+
+  119 videos across 6 channels, outliers at 2.0x or better
+
+     7.55x  1,200,000  vs   159,000 median   漫画わいどしょー               【漫画】「バカッター」でタダ飯を自慢したZ世代大学生→店主が仕掛けた罠で、卒業前に人生詰んだ結果…ｗ【マ
+            Unclassified
+     7.27x    436,000  vs    60,000 median   花の慶次 -雲のかなたに- 公式戦国チャンネ [Manga Hana no Keiji] Odawara Arc Binge-Watching Spe
+            Unclassified
+     4.57x    274,000  vs    60,000 median   花の慶次 -雲のかなたに- 公式戦国チャンネ [Manga Hana no Keiji] Date Masamune Arc - Binge-Watc
+            Unclassified
+     3.33x    530,000  vs   159,000 median   漫画わいどしょー               【漫画】愛する妻が突然…「二億円当選したから、アンタとは離婚ね！」→俺「分かったよ…（マジで気付いていね
+            Unclassified
+     3.11x    112,000  vs    36,000 median   Cozy Sleep Tales       【異世界漫画】魔法使いたちが詠唱している横で、こいつだけ三秒で戦闘を終わらせる~1~38【マンガ動画】
+            Unclassified
+     3.08x    111,000  vs    36,000 median   Cozy Sleep Tales       【異世界漫画】学校では役立たずだった先生に、国の英雄たちだけが頭を下げる~1~23【マンガ動画】
+            Unclassified
+     2.86x    103,000  vs    36,000 median   Cozy Sleep Tales       【異世界漫画】誰もが蹴っていた少年の中には、一度世界を滅亡まで見届けた男がいた~1~60【マンガ動画】
+            Unclassified
+     2.68x    161,000  vs    60,000 median   花の慶次 -雲のかなたに- 公式戦国チャンネ [Manga Hana no Keiji] A special compilation of the m
+            Unclassified
+     2.47x     89,000  vs    36,000 median   Cozy Sleep Tales       【異世界漫画】誰もいらないと言ったものを拾い続けたら、世界で一番危ない仲間が揃っていた~1~22【マンガ
+            Unclassified
+     2.40x    381,000  vs   159,000 median   漫画わいどしょー               【漫画】一族全員が集まる忘年会で、俺を奴隷扱いする嫁「ツマミが足りない。ビールも買ってこい！」→俺「じゃ
+            Unclassified
+     2.37x  1,800,000  vs   758,000 median   トラブルバスターズ              【スカッと】隣人が俺の庭で「この塀違法だから壊せ」→塀を撤去し、翌日「塀を戻してください」「違法なので戻
+            Unclassified
+
+  formulas among the outliers
+    11x  Unclassified
+
+=== animated_pt.json
+
+  114 videos across 6 channels, outliers at 2.0x or better
+
+    121.43x  5,100,000  vs    42,000 median   Subway Surfers         Subway Surfers Run | 4K Interactive Warm Up | Full B
+            Unclassified
+    60.87x  7,700,000  vs   126,500 median   Sony Pictures Animatio GOAT | Official Teaser Trailer | Sony Animation
+            Unclassified
+    15.38x    792,000  vs    51,500 median   JoyRide                My Hero Academia the Movie: Dark Deku ABRIDGED
+            Unclassified
+    14.23x  1,800,000  vs   126,500 median   Sony Pictures Animatio GOAT | Official Trailer | Sony Animation
+            Unclassified
+    13.47x    159,000  vs    11,800 median   Disney Channel Animati Kim Possible Full Episode! "Stop Team Go" 🎬🧡 | Elect
+            The Warning
+    12.65x  1,600,000  vs   126,500 median   Sony Pictures Animatio GOAT | "Goat Tears" by Mane Attraction | Sony Animat
+            Unclassified
+    11.86x  1,500,000  vs   126,500 median   Sony Pictures Animatio GOAT | Roarball Roundup: An Exclusive Interview with
+            Unclassified
+    10.16x  127,000,000  vs 12,500,000 median   GLITCH                 THE AMAZING DIGITAL CIRCUS - Ep 8: hjsakldfhl
+            Unclassified
+     7.84x  98,000,000  vs 12,500,000 median   GLITCH                 THE AMAZING DIGITAL CIRCUS - Ep 7: Beach Episode
+            Unclassified
+     7.50x    315,000  vs    42,000 median   Subway Surfers         Subway Surfers World Tour Paris | Official Trailer
+            Unclassified
+     7.04x  88,000,000  vs 12,500,000 median   GLITCH                 THE AMAZING DIGITAL CIRCUS - Ep 9: Remember
+            Unclassified
+     6.71x    171,000  vs    25,500 median   Throwback Toons        Chi Of The Vampire | Jackie Chan Adventures | FULL E
+            Unclassified
+     6.64x    279,000  vs    42,000 median   Subway Surfers         Subway Surfers World Tour Sydney | Official Trailer
+            Unclassified
+     6.45x    271,000  vs    42,000 median   Subway Surfers         Subway Surfers World Tour Cosmic Crossroads | Offici
+            Unclassified
+     6.44x     76,000  vs    11,800 median   Disney Channel Animati Broken Karaoke Seasons 1~3 Compilation! 🤩🎤 | Big Cit
+            Unclassified
+     5.48x    230,000  vs    42,000 median   Subway Surfers         Subway Surfers World Tour Fantasy Fest | Official Tr
+            Unclassified
+     5.17x     61,000  vs    11,800 median   Disney Channel Animati Cricket Cages Bill After He Betrays Him! 😤🔒 | Big Ci
+            Unclassified
+     4.07x    171,000  vs    42,000 median   Subway Surfers         Subway Surfers World Tour Buenos Aires | Official Tr
+            Unclassified
+     3.81x     45,000  vs    11,800 median   Disney Channel Animati Pokémon Tales: The Misadventures of Sirfetch’d & Pic
+            Unclassified
+     3.76x  47,000,000  vs 12,500,000 median   GLITCH                 DIGITAL CIRCUS - “The One Who's Running the Show” [O
+            Unclassified
+     3.20x  40,000,000  vs 12,500,000 median   GLITCH                 Digital Circus Ep 9 Finale [TRAILER]
+            Unclassified
+     3.17x    163,000  vs    51,500 median   JoyRide                Kaiju No. 8 ABRIDGED - Episode 01
+            Unclassified
+     3.06x    387,000  vs   126,500 median   Sony Pictures Animatio GOAT | GOATtv: Meet the Vineland Thorns | Sony Anima
+            Unclassified
+     3.06x     78,000  vs    25,500 median   Throwback Toons        The Zero to Superhero Syndrome | Men In Black: The S
+            The Impossible Claim
+     2.68x    138,000  vs    51,500 median   JoyRide                DANDADAN ABRIDGED - Episode 01
+            Unclassified
+
+  formulas among the outliers
+    33x  Unclassified
+     1x  The Warning
+     1x  The Impossible Claim
+
+=== comedy_en.json
+
+  103 videos across 6 channels, outliers at 2.0x or better
+
+    21.65x  2,100,000  vs    97,000 median   Nick Smith             Funniest Friends Storylines - Joey's Encyclopedia
+            Unclassified
+    11.34x  1,100,000  vs    97,000 median   Nick Smith             Funniest Sketch Ever?
+            The Question
+    10.31x  1,000,000  vs    97,000 median   Nick Smith             Funniest Friends Storylines - The Library
+            Unclassified
+     9.86x     34,000  vs     3,450 median   Bruce Campbell         Breaking Bad - I Am The Senate
+            Unclassified
+     9.28x     32,000  vs     3,450 median   Bruce Campbell         Pneumonoultramicroscopicsilicovolcanoconiosis - The 
+            Unclassified
+     8.70x     30,000  vs     3,450 median   Bruce Campbell         Fuck the Bees Down in Africa
+            Unclassified
+     8.66x  58,000,000  vs 6,700,000 median   Gilly and Keeves       Shane Gillis Live In Austin | Stand Up Comedy
+            Unclassified
+     8.33x  4,300,000  vs   516,500 median   that's a bad idea      MILK & SERIAL (FOUND FOOTAGE HORROR FILM DIRECTED BY
+            Unclassified
+     6.38x     22,000  vs     3,450 median   Bruce Campbell         Count me out, Homer
+            Unclassified
+     5.51x    157,000  vs    28,500 median   BBC                    Florence Pugh has always been able to nail an accent
+            Unclassified
+     5.51x  5,100,000  vs   926,000 median   Saturday Night Live    Trump Mamdani Cold Open - SNL
+            Unclassified
+     5.40x  5,000,000  vs   926,000 median   Saturday Night Live    Dream Academy - SNL
+            Unclassified
+     3.10x  1,600,000  vs   516,500 median   that's a bad idea      Vodka Stand
+            Unclassified
+     2.90x     10,000  vs     3,450 median   Bruce Campbell         You just described a colour as pomegranate. Girl... 
+            Unclassified
+     2.70x     77,000  vs    28,500 median   BBC                    This entrepreneur is reinventing instant soup | Drag
+            Unclassified
+     2.61x      9,000  vs     3,450 median   Bruce Campbell         Mrs Bouvier!
+            Unclassified
+     2.59x  2,400,000  vs   926,000 median   Saturday Night Live    Weekend Update: Trump Picks Up China’s President fro
+            Unclassified
+     2.55x      8,800  vs     3,450 median   Bruce Campbell         Krusty Punches Sideshow Bob
+            Unclassified
+     2.27x  2,100,000  vs   926,000 median   Saturday Night Live    Weekend Update: Tucker Carlson Reviews the Summer’s 
+            Unclassified
+     2.24x  15,000,000  vs 6,700,000 median   Gilly and Keeves       ISIS Toyota - Gilly and Keeves
+            Unclassified
+     2.14x      7,400  vs     3,450 median   Bruce Campbell         Homer Plays Who Can It Be Now
+            Unclassified
+     2.13x  1,100,000  vs   516,500 median   that's a bad idea      Every Bad Idea of 2024 Marathon
+            Unclassified
+     2.04x     58,000  vs    28,500 median   BBC                    Meet the Kishans | The Split Up - BBC
+            Unclassified
+     2.00x     57,000  vs    28,500 median   BBC                    The business turning pets into wearable art | Dragon
+            Unclassified
+
+  formulas among the outliers
+    23x  Unclassified
+     1x  The Question
+
+=== comedy_es.json
+
+  110 videos across 6 channels, outliers at 2.0x or better
+
+    14.55x  32,000,000  vs 2,200,000 median   Lauris Beinerts        The Expert (Short Comedy Sketch)
+            Unclassified
+     4.65x    344,000  vs    74,000 median   El Club de la Comedia  [ElClubdelaComedia] Full
+            Unclassified
+     4.15x    307,000  vs    74,000 median   El Club de la Comedia  El Club de la Comedia - Capítulo 17 Completo
+            Unclassified
+     3.99x    295,000  vs    74,000 median   El Club de la Comedia  El Club de la Comedia - 01 de octubre, 2013.
+            Unclassified
+     2.41x    293,000  vs   121,500 median   La casa de la Comedia  Jefferson and Álvaro hold Shirley back because they 
+            Unclassified
+     2.40x    453,000  vs   189,000 median   TheX ChileHD           Club de la Comedia 2013 -  Cap. 5 Sketches (Parte 3)
+            Unclassified
+     2.03x    384,000  vs   189,000 median   TheX ChileHD           Club de la Comedia 2013 -  Cap. 6 Sketches (Parte 1)
+            Unclassified
+     2.03x    247,000  vs   121,500 median   La casa de la Comedia  Romeo Santos on La Casa de la Comedia | S-16 (Ep-41)
+            Unclassified
+
+  formulas among the outliers
+     8x  Unclassified
+
+=== comedy_ja.json
+
+  104 videos across 6 channels, outliers at 2.0x or better
+
+    62.25x     46,000  vs       739 median   Buzznny official       フル  【伝説】しずるの“セルシオ”  幻のコント　最後狂ってるww🤣　#funny 
+            Unclassified
+    18.53x    315,000  vs    17,000 median   ネルソンズチャンネル【公式】         【公式】ネルソンズ コント『JIN-仁-みたいな奴ら』
+            Unclassified
+    15.27x    863,000  vs    56,500 median   コロコロチキチキペッパーズの『よろチキチャン 【11年ぶり】コント『卓球』やってみた【コロチキ】【ムキムキ】【ナダル】
+            Unclassified
+    10.94x    186,000  vs    17,000 median   ネルソンズチャンネル【公式】         【公式】ネルソンズ コント 『本物の銃』
+            Unclassified
+    10.47x    178,000  vs    17,000 median   ネルソンズチャンネル【公式】         【公式】ネルソンズ コント 『シェアハウス』
+            Unclassified
+     8.88x    151,000  vs    17,000 median   ネルソンズチャンネル【公式】         【公式】ネルソンズ コント『バイトの後輩』
+            Unclassified
+     8.60x    692,000  vs    80,500 median   ニューヨーク Official Channe 後輩芸人のタワマンからニューヨーク屋敷の家が見下ろせました
+            Unclassified
+     8.35x    672,000  vs    80,500 median   ニューヨーク Official Channe 東京吉本の件、楽しくやってたんですけど…
+            Unclassified
+     5.16x    415,000  vs    80,500 median   ニューヨーク Official Channe 顔がタイプじゃない彼女と別れるべき？
+            Unclassified
+     4.17x    302,000  vs    72,500 median   第2ラバーガールChannel【公式】    Family Story [Rubber Girl Comedy]
+            Unclassified
+     3.79x    214,000  vs    56,500 median   コロコロチキチキペッパーズの『よろチキチャン 【ドラマ☆麺】今話題の男女コンビと60分ガッツリトーク【ナダル】【コロチキ】
+            Unclassified
+     3.72x    270,000  vs    72,500 median   第2ラバーガールChannel【公式】    [Scary Stories] People who tell scary stories [Rubbe
+            Unclassified
+     3.55x    286,000  vs    80,500 median   ニューヨーク Official Channe 豪快キャプテン、ギャンゴリがその時…
+            Unclassified
+     3.42x     41,000  vs    12,000 median   【公式】グレープカンパニーチャンネル     【第969回】fmいずみ　サンドウィッチマンのラジオやらせろ【2026年8月25日OA】
+            Unclassified
+     3.33x    268,000  vs    80,500 median   ニューヨーク Official Channe スパイク松浦の告白
+            Unclassified
+     3.33x     40,000  vs    12,000 median   【公式】グレープカンパニーチャンネル     [Episode 971] FM Izumi Sandwichman's Let Us Do Radio
+            Unclassified
+     3.17x     38,000  vs    12,000 median   【公式】グレープカンパニーチャンネル     09/01/2026 970
+            Unclassified
+     3.12x    176,000  vs    56,500 median   コロコロチキチキペッパーズの『よろチキチャン ナダルが最近話題のあの方に似てると言われます【よろチキラジオ#161】【コロチキ】
+            Unclassified
+     3.10x    175,000  vs    56,500 median   コロコロチキチキペッパーズの『よろチキチャン 【炎上】ボディビル大会に出た西野が叩かれています【よろチキラジオ#167】【ナダル】【コロチキ】
+            Unclassified
+     2.98x    216,000  vs    72,500 median   第2ラバーガールChannel【公式】    A person who says he is a student at Tokyo Universit
+            Unclassified
+     2.71x     46,000  vs    17,000 median   ネルソンズチャンネル【公式】         青山フォール勝ち、結婚しました。
+            Unclassified
+     2.65x     45,000  vs    17,000 median   ネルソンズチャンネル【公式】         【神ビュッフェ】和田と岸でおしゃれランチ行ったら想像以上だった
+            Unclassified
+     2.64x    149,000  vs    56,500 median   コロコロチキチキペッパーズの『よろチキチャン 【M-1】1回戦で事件が起きました【よろチキラジオ#163】【コロチキ】
+            Unclassified
+     2.32x    168,000  vs    72,500 median   第2ラバーガールChannel【公式】    A person who traveled back in time for just a few ho
+            Unclassified
+     2.25x     27,000  vs    12,000 median   【公式】グレープカンパニーチャンネル     【第968回】fmいずみ　サンドウィッチマンのラジオやらせろ【2026年8月18日OA】
+            Unclassified
+
+  formulas among the outliers
+    27x  Unclassified
+
+=== comedy_pt.json
+
+  118 videos across 6 channels, outliers at 2.0x or better
+
+    675.86x     49,000  vs        72 median   Marcelo Gomes          Marcelo Gomes ator @marcelogowes
+            Unclassified
+    407.19x     34,000  vs        83 median   IESB Oficial           IESB Institutional 2026
+            Unclassified
+    34.29x     18,000  vs       525 median   vinibatata             Raspando o cabelo do maestro
+            Unclassified
+    20.69x      1,500  vs        72 median   Marcelo Gomes          Marcelo Gomes (Videobook) - Martim Gaspar - Adaptaçã
+            Unclassified
+    15.81x      8,300  vs       525 median   vinibatata             Esquete de comédia cena do banheiro
+            Unclassified
+    11.43x     12,000  vs     1,050 median   CANAL SAPS             10 SKILLS that EVERY SCOUT should know! (Inside and 
+            The List
+     8.57x      4,500  vs       525 median   vinibatata             Sandrinha Atibaia
+            Unclassified
+     8.38x      8,800  vs     1,050 median   CANAL SAPS             🪢Give me 20 minutes and I'll teach you all the basic
+            Unclassified
+     7.81x        566  vs        72 median   Marcelo Gomes          Dimmy Kierr - Velas e Siglas
+            Unclassified
+     7.14x        518  vs        72 median   Marcelo Gomes          Marcelo Gomes - Ator (Propaganda para Agência FOU)
+            Unclassified
+     5.27x        382  vs        72 median   Marcelo Gomes          Marcelo Gomes- Portfólio 2026 - DRT 30622
+            Unclassified
+     4.95x      2,600  vs       525 median   vinibatata             Perseguição Datena na tela
+            Unclassified
+     4.38x      4,600  vs     1,050 median   CANAL SAPS             Want to Be a Scout? I'll Show You How! (And Why)
+            Unclassified
+     4.10x      4,300  vs     1,050 median   CANAL SAPS             3 SCOUT GAMES THAT ALWAYS WORK! + FUN MUSIC AT THE E
+            The List
+     3.62x      1,900  vs       525 median   vinibatata             Marquinhos Santa Clara Atibaia
+            Unclassified
+     3.36x     24,000  vs     7,150 median   +1! Filmes             Consulta Jurídica
+            Unclassified
+     3.24x      3,400  vs     1,050 median   CANAL SAPS             New Scout Mistakes | What No One Tells You At The Be
+            Unclassified
+     3.09x        224  vs        72 median   Marcelo Gomes          Marcelo Gomes Ator
+            Unclassified
+     3.08x        223  vs        72 median   Marcelo Gomes          Marcelo Gomes (Videobook) - Trecho Adaptado O Zoológ
+            Unclassified
+     2.94x     21,000  vs     7,150 median   +1! Filmes             Quinze Pra Mil
+            Unclassified
+     2.86x      1,500  vs       525 median   vinibatata             Livro de historias do Silvio Santos
+            Unclassified
+     2.67x      2,800  vs     1,050 median   CANAL SAPS             🔥 UNFORGETTABLE COUNCIL FIRE! Tips from an Experienc
+            Unclassified
+     2.66x     19,000  vs     7,150 median   +1! Filmes             A Morte do Desaforo
+            Unclassified
+     2.38x     17,000  vs     7,150 median   +1! Filmes             Tatuagem Com Significado
+            Unclassified
+     2.29x      1,200  vs       525 median   vinibatata             Barrigada 360 Grand Mistral Batata
+            Unclassified
+
+  formulas among the outliers
+    28x  Unclassified
+     2x  The List
+
+=== horror_en.json
+
+  58 videos across 5 channels, outliers at 2.0x or better
+
+    34.72x    139,000  vs     4,003 median   Unit 11 Pictures       The Disturbance Call | Supernatural Horror Short Fil
+            Unclassified
+    17.08x  3,100,000  vs   181,500 median   CIAK COMPANY           Siren Head - The Sound of Madness | Horror Short Fil
+            Unclassified
+     7.42x  1,800,000  vs   242,500 median   The Noctuary           MIMIC | A Short Horror Film
+            Unclassified
+     6.61x  1,200,000  vs   181,500 median   CIAK COMPANY           Happy Meal | Horror Short Film
+            Unclassified
+     4.60x    835,000  vs   181,500 median   CIAK COMPANY           Never Left | Horror Short Film
+            The Impossible Claim
+     4.46x    810,000  vs   181,500 median   CIAK COMPANY           Don’t Turn Around | Creepy Horror Short Film
+            Unclassified
+     4.04x    734,000  vs   181,500 median   CIAK COMPANY           Not My Dog | Horror Short Film
+            Unclassified
+     3.28x  1,200,000  vs   366,000 median   ACMofficial            The Pencil Game | Short Horror Film
+            Unclassified
+     3.25x     13,000  vs     4,003 median   Unit 11 Pictures       The Dark Web | Psychological Thriller Short Film
+            Unclassified
+     3.01x  1,100,000  vs   366,000 median   ACMofficial            Uncanny Valley | Short Horror Film
+            Unclassified
+     2.81x    510,000  vs   181,500 median   CIAK COMPANY           Labubu : Don't Blink | Horror Short Film
+            Unclassified
+     2.72x    995,000  vs   366,000 median   ACMofficial            Backrooms | Short Horror Film
+            Unclassified
+     2.37x    431,000  vs   181,500 median   CIAK COMPANY           SHIN SONIC: Out of Control | Live-Action Horror Shor
+            Unclassified
+     2.05x    751,000  vs   366,000 median   ACMofficial            Smiling Woman Backrooms | Short Horror Film
+            Unclassified
+
+  formulas among the outliers
+    13x  Unclassified
+     1x  The Impossible Claim
+
+=== horror_es.json
+
+  60 videos across 5 channels, outliers at 2.0x or better
+
+    868.55x    859,000  vs       989 median   Miedo Y Misterios      5 cortometrajes de terror
+            The List
+    789.97x    803,000  vs     1,016 median   Falcon Films           "La Parálisis del Sueño" -  Cortometraje de terror (
+            Unclassified
+    515.00x    515,000  vs     1,000 median   Nexo Silvestre         It Is Dangerous Outside | Horror Short Film
+            Unclassified
+    76.92x    100,000  vs     1,300 median   Mariano Cattaneo       Viajero del tiempo █ Película completa █ Ciencia fic
+            Unclassified
+    31.48x     32,000  vs     1,016 median   Falcon Films           "313" - Cortometraje de terror ( a horror short film
+            Unclassified
+    28.46x     37,000  vs     1,300 median   Mariano Cattaneo       Invocando a La Llorona █ Terror █ Hechos reales 3
+            Unclassified
+    18.20x     18,000  vs       989 median   Miedo Y Misterios      7 screamers aterradores
+            The List
+    16.15x     21,000  vs     1,300 median   Mariano Cattaneo       Deep Web: Sour Candy █ Terror █ Hechos reales 4
+            Unclassified
+    10.78x    124,000  vs    11,500 median   Davo Valkrat           3 TRUE CASES YOU WON'T BELIEVE #1 by Davo Valkrat
+            The List
+     8.46x     11,000  vs     1,300 median   Mariano Cattaneo       Voodoo Dream a Gabriel Knight story █ Horror Short F
+            Unclassified
+     7.69x     10,000  vs     1,300 median   Mariano Cattaneo       The Palm Tree House █ Horror █ True Events 1
+            Unclassified
+     3.80x      3,800  vs     1,000 median   Nexo Silvestre         NEGLIGENCE | Horror Short Film
+            Unclassified
+     3.69x      4,800  vs     1,300 median   Mariano Cattaneo       Cassette █ Short horror film █ Cortometraje de terro
+            Unclassified
+     2.70x     31,000  vs    11,500 median   Davo Valkrat           3 REAL AND SINISTER CASES #5 by Davo Valkrat
+            The List
+     2.69x      3,500  vs     1,300 median   Mariano Cattaneo       Terror Nocturno █ Terror █ Hechos reales 2
+            Unclassified
+     2.61x     30,000  vs    11,500 median   Davo Valkrat           3 Bizarre UNRESOLVED MYSTERIES #2 by Davo Valkrat
+            The List
+     2.43x     28,000  vs    11,500 median   Davo Valkrat           TERROR ON TIKTOK; THE COMPLETE CASE OF TRISTAN by Da
+            Unclassified
+     2.30x      2,300  vs     1,000 median   Nexo Silvestre         THE LOVERS | Short Film
+            Unclassified
+     2.26x     26,000  vs    11,500 median   Davo Valkrat           The 5 DARKEST and most terrifying documentaries in h
+            Unclassified
+
+  formulas among the outliers
+    14x  Unclassified
+     5x  The List
+
+=== horror_ja.json
+
+  113 videos across 6 channels, outliers at 2.0x or better
+
+    82.76x    480,000  vs     5,800 median   ひらMOVIE                【Short Horror Film】Looking
+            Unclassified
+    23.65x  4,800,000  vs   203,000 median   Jiya Kapur Films       ANNABELLE RETURNS | Short Horror Film | Created by P
+            Unclassified
+    22.73x    225,000  vs     9,900 median   ハンドシアター                [Horror Movie] "Her" - Is there something strange ab
+            The Question
+    20.11x  1,800,000  vs    89,500 median   怪奇な手ざわり                【短編映画】『霊感が強すぎて』
+            Unclassified
+    12.81x  2,600,000  vs   203,000 median   Jiya Kapur Films       MOMO - The Elevator Game | Horror Short Film
+            Unclassified
+    11.17x  1,000,000  vs    89,500 median   怪奇な手ざわり                【短編映画】『見えちゃダメなもの』
+            Unclassified
+     9.83x     57,000  vs     5,800 median   ひらMOVIE                【Short Horror Film】let's play
+            Unclassified
+     5.91x  1,200,000  vs   203,000 median   Jiya Kapur Films       DON'T STARE AT THE CATS | Horror Short Film
+            Unclassified
+     5.45x     54,000  vs     9,900 median   ハンドシアター                The Reason My Husband Is Acting So Strange...【Short 
+            The Origin
+     3.84x     38,000  vs     9,900 median   ハンドシアター                【ホラー】玄関の前に見知らぬ男がいるんだが…怖い話
+            Unclassified
+     3.59x    321,000  vs    89,500 median   怪奇な手ざわり                【短編映画】『何かがいる部屋』
+            Unclassified
+     3.23x     32,000  vs     9,900 median   ハンドシアター                Can I come over? A miraculous encounter in Nishi-Shi
+            The Question
+     3.00x    273,000  vs    91,000 median   kouichitv              ホグワーツ中退した人
+            Unclassified
+     2.93x     29,000  vs     9,900 median   ハンドシアター                [Short Horror] The Result of Complaining About My No
+            Unclassified
+     2.93x     17,000  vs     5,800 median   ひらMOVIE                【Short Horror Film】come here
+            Unclassified
+     2.76x     16,000  vs     5,800 median   ひらMOVIE                【Short Horror Film】 lock
+            Unclassified
+     2.47x    225,000  vs    91,000 median   kouichitv              部屋の中の触ったことがない場所を触ってみた
+            Unclassified
+     2.32x     23,000  vs     9,900 median   ハンドシアター                Horror movie "Room"
+            Unclassified
+     2.32x     23,000  vs     9,900 median   ハンドシアター                【ショートホラー】合意してないって言われたら…怖い話
+            Unclassified
+     2.30x    209,000  vs    91,000 median   kouichitv              小学生がやってるASMR4
+            Unclassified
+     2.26x    206,000  vs    91,000 median   kouichitv              犯罪デトックスをしてみて気づいたこと5選
+            Unclassified
+     2.24x     13,000  vs     5,800 median   ひらMOVIE                【Short Horror Film】Road Closed
+            Unclassified
+     2.12x    193,000  vs    91,000 median   kouichitv              夏のレビュー欄
+            Unclassified
+
+  formulas among the outliers
+    20x  Unclassified
+     2x  The Question
+     1x  The Origin
+
+=== horror_pt.json
+
+  87 videos across 5 channels, outliers at 2.0x or better
+
+    40.50x    891,000  vs    22,000 median   Taylor Skeens          Don't Speak | Horror Short Film
+            Unclassified
+    25.26x    442,000  vs    17,500 median   Screamfest             SLAVE 4 LOVE (爱囚杀)| Short One-Take Horror Film | Scr
+            Unclassified
+    14.61x    504,000  vs    34,500 median   DarkFun - Horror Short Bugaboo - Horror Short Film
+            Unclassified
+     8.40x    147,000  vs    17,500 median   Screamfest             Oddities Short Horror Film | Screamfest
+            Unclassified
+     5.26x     92,000  vs    17,500 median   Screamfest             Drawn | Short Horror Film | Screamfest
+            Unclassified
+     4.64x    160,000  vs    34,500 median   DarkFun - Horror Short The Mirror 3- Horror Short Film
+            Unclassified
+     4.43x    153,000  vs    34,500 median   DarkFun - Horror Short Watch You - Horror Short Film
+            Unclassified
+     4.25x    289,000  vs    68,000 median   ALTER                  Something Ancient Is Hunting in the Maine Woods | AL
+            Unclassified
+     3.94x     69,000  vs    17,500 median   Screamfest             Bookworm Short Horror Film | Screamfest
+            Unclassified
+     3.91x     86,000  vs    22,000 median   Taylor Skeens          Omegle.. but every GUY flirts with ME
+            Unclassified
+     3.52x    259,000  vs    73,500 median   Spencer Lackey         INTRUSIVE (a horror short film)
+            Unclassified
+     3.48x    120,000  vs    34,500 median   DarkFun - Horror Short The Strange Case of Emily Grey - Horror Short Film
+            Unclassified
+     3.40x    250,000  vs    73,500 median   Spencer Lackey         free shoes (Horror Short)
+            Unclassified
+     2.93x    199,000  vs    68,000 median   ALTER                  Shut Eye | Horror Short Film | ALTER
+            Unclassified
+     2.81x     97,000  vs    34,500 median   DarkFun - Horror Short The Gift 2 - Horror Short Film
+            Unclassified
+     2.73x     60,000  vs    22,000 median   Taylor Skeens          "I've Made a Home in You" Official Wedding Video
+            Unclassified
+     2.32x     51,000  vs    22,000 median   Taylor Skeens          Karen Calls Cops on Me While Filming My Wedding Vide
+            Unclassified
+     2.27x     50,000  vs    22,000 median   Taylor Skeens          Pizza Delivery | Horror Short Film
+            Unclassified
+     2.23x     77,000  vs    34,500 median   DarkFun - Horror Short The Mirror 2 - Horror Short Film
+            Unclassified
+     2.11x     37,000  vs    17,500 median   Screamfest             Red Velvet Short Horror Film | Screamfest
+            Unclassified
+     2.04x    150,000  vs    73,500 median   Spencer Lackey         Glow In The Dark (Horror Short)
+            Unclassified
+
+  formulas among the outliers
+    21x  Unclassified
+
+=== micro_drama_en.json
+
+  112 videos across 6 channels, outliers at 2.0x or better
+
+    500.00x  10,000,000  vs    20,000 median   DramaMuse              Aurora, a plus-size bride abandoned by a Mafia don, 
+            Unclassified
+    279.26x    377,000  vs     1,350 median   LorenaDrama            【Full】🐺 Reborn, I picked the coldest wolf as my mate
+            Unclassified
+    68.15x     92,000  vs     1,350 median   LorenaDrama            【Full】🐺 He healed her, left me scarred on purpose #S
+            Unclassified
+    31.64x    299,000  vs     9,450 median   BingeDrama Daily       Her Husband Cheated With the Maid—She Set a Trap, To
+            Unclassified
+    27.62x    261,000  vs     9,450 median   BingeDrama Daily       She Funded Her Husband’s Campaign—He Cheated, So She
+            Unclassified
+    20.95x    419,000  vs    20,000 median   DramaMuse              She fled her cold fiancé and married a mafia godfath
+            Unclassified
+    18.18x     30,000  vs     1,650 median   EverHeart Drama        Caught boyfriend cheating and dumped, married cold C
+            Unclassified
+    17.99x    170,000  vs     9,450 median   BingeDrama Daily       They Chose the Fake Heiress and Sent Her to Hell—She
+            Unclassified
+    16.35x    327,000  vs    20,000 median   DramaMuse              Reborn, Ethan cuts ties, builds a tech empire, and w
+            Unclassified
+    14.71x    139,000  vs     9,450 median   BingeDrama Daily       Her Husband and Daughter Ignored Her for His Mistres
+            Unclassified
+    12.06x    114,000  vs     9,450 median   BingeDrama Daily       He Betrayed Her With an Actress—Unaware His Wife Was
+            Unclassified
+    11.85x    237,000  vs    20,000 median   DramaMuse              Bullied nerd Alan is secretly racing champion, turni
+            Unclassified
+    11.00x    220,000  vs    20,000 median   DramaMuse              He mocked her crush and pushed her to his rival—she 
+            Unclassified
+     9.80x    196,000  vs    20,000 median   DramaMuse              Reborn Before Her Wedding, She Marries the War God, 
+            Unclassified
+     8.10x    162,000  vs    20,000 median   DramaMuse              Dumped by her secret boyfriend, she transforms into 
+            Unclassified
+     7.61x    620,000  vs    81,500 median   Eve DramaTV            【ENG DUB | FULL】He Didn’t Know He Had a Daughter Now
+            Unclassified
+     7.41x    604,000  vs    81,500 median   Eve DramaTV            【ENG DUB | FULL】The Cold Master Suddenly Has a Daugh
+            Unclassified
+     6.16x    114,000  vs    18,500 median   Heartthrob Dramas      She Returned as a Ghost, Only to Find Her Husband Ha
+            Unclassified
+     5.19x     49,000  vs     9,450 median   BingeDrama Daily       Her Husband Saw Her as a Useless Housewife—She Divor
+            Unclassified
+     4.92x     91,000  vs    18,500 median   Heartthrob Dramas      She Cared for a Comatose Heir for 2 Years—Then He Wo
+            Unclassified
+     4.81x     89,000  vs    18,500 median   Heartthrob Dramas      Her Incredible Shooting Skills Stunned Everyone—even
+            Unclassified
+     4.25x     85,000  vs    20,000 median   DramaMuse              Lucas kept her waiting, so Ava fell for his rival Et
+            Unclassified
+     3.78x      5,100  vs     1,350 median   LorenaDrama            【Full】🔥 She called me trash, slapped the wrong woman
+            Unclassified
+     3.63x    296,000  vs    81,500 median   Eve DramaTV            【ENG DUB | FULL】A Boy From the Future Called Her “Mo
+            Unclassified
+     3.58x      5,900  vs     1,650 median   EverHeart Drama        Cold CEO rejected 99 rich girls, chose the ugly girl
+            Unclassified
+
+  formulas among the outliers
+    37x  Unclassified
+
+=== micro_drama_es.json
+
+  120 videos across 6 channels, outliers at 2.0x or better
+
+    59.13x     56,000  vs       947 median   Diary Drama Español    Ella besa el póster del CEO—sin saber que él está de
+            Unclassified
+    55.97x     53,000  vs       947 median   Diary Drama Español    Un CEO millonario evita a las mujeres, pero se enamo
+            Unclassified
+    50.77x     66,000  vs     1,300 median   NnNn Cortometraje dram Remarried at fifty, my CEO husband stopped pretendin
+            Unclassified
+    30.77x     40,000  vs     1,300 median   NnNn Cortometraje dram A can of formula makes the in-laws sign a massive bi
+            Unclassified
+    24.62x     32,000  vs     1,300 median   NnNn Cortometraje dram Una chica rebelde de 18 despertó como abuela multimi
+            Unclassified
+    14.78x     14,000  vs       947 median   Diary Drama Español    A cleaner mistakenly enters the CEO's private bathro
+            Unclassified
+     9.82x      9,300  vs       947 median   Diary Drama Español    The CEO avoids women—but on the first day he falls f
+            Unclassified
+     7.39x     17,000  vs     2,300 median   ShortMax - Watch Drama 🔥【NEW】 Dumped My Ex, Married the Mafia Don | ShortMa
+            Unclassified
+     6.96x     16,000  vs     2,300 median   ShortMax - Watch Drama 🔥【NEW】 My Groom Chose My Best Friend | ShortMax - Wa
+            Unclassified
+     6.55x      6,200  vs       947 median   Diary Drama Español    She’s the only one who mocks the CEO's poster and us
+            The Superlative
+     5.77x      7,500  vs     1,300 median   NnNn Cortometraje dram Una abuela del noreste entró en una fría mansión… ¡Y
+            Unclassified
+     4.69x      6,100  vs     1,300 median   NnNn Cortometraje dram Entrenó 19 años en Kunlun… ¡Luego fue guardia y apla
+            Unclassified
+     4.54x      5,900  vs     1,300 median   NnNn Cortometraje dram I stumbled upon my son's secret in first class (I me
+            Unclassified
+     4.41x      8,600  vs     1,950 median   Dramas Secretos        The princess was going to marry her usurper uncle...
+            Unclassified
+     4.35x     10,000  vs     2,300 median   ShortMax - Watch Drama 🔥【NEW】 Sorry, Not a Princess | ShortMax - Watch Dram
+            Unclassified
+     4.17x     75,000  vs    18,000 median   MiniDrama Latino       The Beautiful CEO's Close-Combat Frenzy (Spanish)
+            Unclassified
+     3.83x     69,000  vs    18,000 median   MiniDrama Latino       To save a beautiful woman, he touched her backside a
+            Unclassified
+     3.23x      6,300  vs     1,950 median   Dramas Secretos        La vendieron al Príncipe Dragón… ¡pero oculta un sec
+            Unclassified
+     3.23x     31,000  vs     9,600 median   Joy MiniDrama          Her husband cheats on her. She hires an escort, not 
+            Unclassified
+     3.18x      6,200  vs     1,950 median   Dramas Secretos        Millionaire cop goes undercover at an elite school a
+            Unclassified
+     3.08x      4,000  vs     1,300 median   NnNn Cortometraje dram I got promoted after giving birth
+            Unclassified
+     3.06x     55,000  vs    18,000 median   MiniDrama Latino       The Hidden Dragon Protecting the Flower in the City 
+            The Insider
+     3.02x     29,000  vs     9,600 median   Joy MiniDrama          Le robó el novio y la humilló, pero el capo más peli
+            Unclassified
+     2.78x      6,400  vs     2,300 median   ShortMax - Watch Drama 🔥【NEW】 My Crush Lost Me to His Rival | ShortMax - Wa
+            Unclassified
+     2.60x     25,000  vs     9,600 median   Joy MiniDrama          Sale de prisión tras 4 años de traición. Se casa con
+            Unclassified
+
+  formulas among the outliers
+    32x  Unclassified
+     1x  The Superlative
+     1x  The Insider
+
+=== micro_drama_ja.json
+
+  113 videos across 6 channels, outliers at 2.0x or better
+
+    23.36x    160,000  vs     6,850 median   光の恋シグナル                🔥 閃婚半月で「離婚したい」。毒舌教授が初めて焦った顔で「離婚は認めない」。あの人機が本気だったなんて📌
+            Unclassified
+    10.44x    214,000  vs    20,500 median   Drama Muse TV          😱ゴミ捨て場で育った孤児…実は8人の大物兄を持つ最強のお嬢様だった！？✨❤️#中国ドラマ #ショートドラ
+            Unclassified
+     9.05x     19,000  vs     2,100 median   日本語スキット工房              日本語吹き替え 工事現場の作業員が事故で“透視神眼”に覚醒！ゴミ同然の骨董から国宝を次々発見し、全国鑑定
+            Unclassified
+     7.59x     52,000  vs     6,850 median   光の恋シグナル                🔥 酔って寝た相手が新上司。しかも5年前に別れた元彼。「復讐する」と言うのに目は「離さない」と叫んでた📌
+            Unclassified
+     7.47x    127,000  vs    17,000 median   つばきラブ劇院                【日本語吹き替え版】愛人がCEOの夫に自分専用のチャーター機を用意させ、私を乞食呼ばわり！だが私は正妻で
+            Unclassified
+     6.80x    136,000  vs    20,000 median   ワンちゃん劇場                5歳で民法典を丸暗記する娘、実は大財閥CEOの実の子!? 母娘を探し続けた彼がついに現れた #短編ドラマ
+            Unclassified
+     6.24x    128,000  vs    20,500 median   Drama Muse TV          【第2シーズン】おしゃべり少女が心を閉ざした兄を救う！いじめを乗り越え天才ピアニストに…兄妹で世界の頂点
+            Unclassified
+     5.40x     37,000  vs     6,850 median   光の恋シグナル                💥 安い服を着て安い飯を食う。貧乏でも幸せだった。ある日黒い車が来て秦家の使用人が頭を下げた。「奥様、お
+            Unclassified
+     4.76x     10,000  vs     2,100 median   日本語スキット工房              日本語吹き替え 娘のために“普通の父親”を演じた最強戦神！だが愛娘が虐待され瀕死になった瞬間、封印してい
+            Unclassified
+     4.35x     87,000  vs    20,000 median   ワンちゃん劇場                豪邸で馬鹿にされた孤児の私、正体は15歳博士と百件特許を持つ天才だった #短編ドラマ #逆転 #女主
+            Unclassified
+     3.57x      7,500  vs     2,100 median   日本語スキット工房              日本語吹き替え 天下一の放蕩息子が3年の偽死から帰還！無能を演じながら世子を蹴散らし、皇子を指一本で泣か
+            Unclassified
+     3.35x     57,000  vs    17,000 median   つばきラブ劇院                【日本語吹き替え版】夫に刑務所へ送られた彼女！だが誰も知らなかった――彼女は刺繍の天才だった！出所後、一
+            Unclassified
+     3.15x     63,000  vs    20,000 median   ワンちゃん劇場                契約だけの関係だったはずなのに…誠実な彼はいつしか私を誰より大切にしていた #短編ドラマ #溺愛 #恋愛
+            Unclassified
+     3.14x      6,600  vs     2,100 median   日本語スキット工房              日本語吹き替え 18歳の卑しい宮女、実は60年前に戦死した“建国皇后”だった！皇族に虐げられた瞬間ブチ切
+            Unclassified
+     3.12x     53,000  vs    17,000 median   つばきラブ劇院                【日本語吹き替え版】社長の母が清掃員に変装して人の心を試すも、店中から侮辱された！ただ一人、新人インター
+            Unclassified
+     2.89x     11,000  vs     3,800 median   すずらん劇場                 【日本語吹き替え版】本物の令嬢が貧しいふりで実親を試す！だが家族に酒100杯を飲まされ、雨に濡れた義妹に
+            Unclassified
+     2.76x      5,800  vs     2,100 median   日本語スキット工房              日本語吹き替え 養子に老人へ売られかけた清掃員の母！助けた男はまさかの財閥会長、その後宝くじで2億円当選
+            Unclassified
+     2.71x      5,700  vs     2,100 median   日本語スキット工房              日本語吹き替え 8年働いて10億の借金を背負った男、故郷の荒山で“山神の霊丹”を発見！幻の薬草で爆速暴富
+            Unclassified
+     2.63x     10,000  vs     3,800 median   すずらん劇場                 【日本語吹き替え版】兄の結婚前夜、妹が正体を隠し自転車で義姉を迎えに！だが10発も平手打ちされ「乞食」と
+            Unclassified
+     2.63x     10,000  vs     3,800 median   すずらん劇場                 【日本語吹き替え版】結婚前夜、彼氏は私を雪の中に一晩置き去りにし愛人とイチャつく！流産した私は完全に心を
+            Unclassified
+     2.53x     43,000  vs    17,000 median   つばきラブ劇院                【日本語吹き替え版】愛人に人前で髪を切られ、彼氏にも見捨てられた彼女！だが誰も知らなかった――彼女こそ大
+            Unclassified
+     2.34x     16,000  vs     6,850 median   光の恋シグナル                🔥 離婚した夫婦が二人とも18歳に戻り息子の同級生になった。逃げたのは過去の自分。今度は一緒に逃げよう📌
+            Unclassified
+     2.24x     38,000  vs    17,000 median   つばきラブ劇院                【日本語吹き替え版】愛人がわざと転んで妊娠中の妻を陥れ、夫は彼女に血で償わせた！だが生まれ変わった私はも
+            Unclassified
+     2.20x     45,000  vs    20,500 median   Drama Muse TV          😳高給ベビーシッターのはずが社長と契約結婚！？問題児3人のママに…辞めようとしたら「行かないで！」と引き
+            Unclassified
+     2.19x     15,000  vs     6,850 median   光の恋シグナル                💕 暗恋の相手と結婚した。政略結婚のふりをして。でも本当はずっと好きだった。彼も同じだった。やっと本当の
+            Unclassified
+
+  formulas among the outliers
+    30x  Unclassified
+
+=== micro_drama_pt.json
+
+  113 videos across 6 channels, outliers at 2.0x or better
+
+    279.07x     12,000  vs        43 median   Soulmate drama         🚩Mad Dog: Stepfather’s Mafia Justice【Wonderful Drama
+            Unclassified
+    179.07x      7,700  vs        43 median   Soulmate drama         🚩Reborn, I Chose the Black Dragon Instead【Wonderful 
+            Unclassified
+    67.44x      2,900  vs        43 median   Soulmate drama         🚩Cry Harder, Don. I'm Not Coming Back.【Wonderful Dra
+            Unclassified
+    31.64x    299,000  vs     9,450 median   BingeDrama Daily       Her Husband Cheated With the Maid—She Set a Trap, To
+            Unclassified
+    27.62x    261,000  vs     9,450 median   BingeDrama Daily       She Funded Her Husband’s Campaign—He Cheated, So She
+            Unclassified
+    23.26x      1,000  vs        43 median   Soulmate drama         🚩From Rejected Fiancée To Empress【Wonderful Drama】#s
+            Unclassified
+    17.99x    170,000  vs     9,450 median   BingeDrama Daily       They Chose the Fake Heiress and Sent Her to Hell—She
+            Unclassified
+    15.91x        684  vs        43 median   Soulmate drama         🚩The Plus-Size Girl the Hockey Heartthrob Fell For【W
+            Unclassified
+    14.71x    139,000  vs     9,450 median   BingeDrama Daily       Her Husband and Daughter Ignored Her for His Mistres
+            Unclassified
+    12.55x    433,000  vs    34,500 median   Amor e Drama           HE FELL IN LOVE WITH HIS BOSS'S WIFE AND TURNED HER 
+            Unclassified
+    12.06x    114,000  vs     9,450 median   BingeDrama Daily       He Betrayed Her With an Actress—Unaware His Wife Was
+            Unclassified
+     8.67x    234,000  vs    27,000 median   Detetive - Filmes EXCL ELA DESAPARECEU GRÁVIDA E TODOS ACREDITARAM QUE ESTA
+            Unclassified
+     8.43x    291,000  vs    34,500 median   Amor e Drama           She tried to find her love through the app and found
+            Unclassified
+     6.11x    223,000  vs    36,500 median   Série Maníacos         THE 15 BEST TV SERIES OF THE LAST 25 YEARS ACCORDING
+            Unclassified
+     6.05x        260  vs        43 median   Soulmate drama         🚩After My Arranged Engagement, My Ex Begged for Me【W
+            Unclassified
+     5.96x    167,000  vs    28,000 median   Invasão - Dimas        5 brilliant Netflix series to binge-watch non-stop
+            The Warning
+     5.22x    141,000  vs    27,000 median   Detetive - Filmes EXCL A NOVA FAMÍLIA PARECIA PERFEITA ATÉ UMA DAS FILHAS D
+            Unclassified
+     5.19x     49,000  vs     9,450 median   BingeDrama Daily       Her Husband Saw Her as a Useless Housewife—She Divor
+            Unclassified
+     4.75x    164,000  vs    34,500 median   Amor e Drama           Your son was kidnapped... and turned out to be a fri
+            Unclassified
+     4.51x        194  vs        43 median   Soulmate drama         🚩I Married the College Boy My Husband Gifted Me【Wond
+            Unclassified
+     4.04x    109,000  vs    27,000 median   Detetive - Filmes EXCL ELA FUGIU DO MARIDO ABUSIVO COM O BEBÊ E UM HOMEM MI
+            Unclassified
+     3.96x    107,000  vs    27,000 median   Detetive - Filmes EXCL UM EMPRESÁRIO A PEDE EM CASAMENTO MESMO COM UM FILHO
+            Unclassified
+     3.12x    114,000  vs    36,500 median   Série Maníacos         NETFLIX AND THE SEASON 2 PROBLEM!
+            Unclassified
+     2.90x    100,000  vs    34,500 median   Amor e Drama           HER BABY WAS STOLEN AT BIRTH... NOW SHE IS TRYING TO
+            Unclassified
+     2.84x        122  vs        43 median   Soulmate drama         🚩Branded a Cheater, I Uncover the Bargain for My Son
+            Unclassified
+
+  formulas among the outliers
+    29x  Unclassified
+     1x  The Warning
+     1x  The Question
+     1x  The List
+     1x  The Superlative
+     1x  The Insider
+
+=== moral_drama_en.json
+
+  65 videos across 6 channels, outliers at 2.0x or better
+
+    42647.06x  2,900,000  vs        68 median   Esy ID                 Never Give Up | Award Winning Motivational Short Fil
+            The Impossible Claim
+    334.52x  47,000,000  vs   140,500 median   Stratostorm            UMBRELLA | Oscar® Qualified and Multi-Award Winning 
+            Unclassified
+    258.33x  93,000,000  vs   360,000 median   GULU Animation         The Bread - Animated Short Film by GULU
+            Unclassified
+    171.15x    890,000  vs     5,200 median   Endless Beginnings     Naruto And Hinata Wedding English Dub | naruto weddi
+            Unclassified
+    130.96x    681,000  vs     5,200 median   Endless Beginnings     Hinomaru Sumo Episode 1-24 English Dub | Sports Anim
+            Unclassified
+    36.76x      2,500  vs        68 median   Esy ID                 International Yoga Day Status | World Yoga Day | Hap
+            Unclassified
+    30.96x    161,000  vs     5,200 median   Endless Beginnings     Black Blood Brothers English Dub | anime dub |  Funi
+            Unclassified
+    11.35x     59,000  vs     5,200 median   Endless Beginnings     Animated Short Film With Moral Lesson Award Winning
+            Unclassified
+     6.39x  2,300,000  vs   360,000 median   GULU Animation         Toast - Animated Short Film by GULU #bread #animatio
+            Unclassified
+     6.01x        409  vs        68 median   Esy ID                 International Yoga Day Status | Surya Namaskar Yoga 
+            Unclassified
+     3.75x        559  vs       149 median   Explainer Animated Vid Doks AI - 2d SAAS Animated Explainer Video
+            Unclassified
+     3.46x     18,000  vs     5,200 median   Endless Beginnings     Anime Episode 1 Eng Dub | Anime Full Episode | New A
+            Unclassified
+     2.46x        366  vs       149 median   Explainer Animated Vid PowerUp Therapy   -  2D Animated Explainer Video
+            Unclassified
+     2.35x        350  vs       149 median   Explainer Animated Vid imexwork  -  2D SAAS Product Animated Explainer Vide
+            Unclassified
+     2.34x        348  vs       149 median   Explainer Animated Vid Me Business  - 2d Animated Explainer Video
+            Unclassified
+     2.31x     12,000  vs     5,200 median   Endless Beginnings     My Journey in the Anime World | Anime Where MC is Re
+            Unclassified
+     2.13x        318  vs       149 median   Explainer Animated Vid DCom - Flat Animated Video
+            Unclassified
+
+  skipped 1 channel(s) with under 4 videos collected - a median off one or
+  two videos is not a median: Miralumo Films (1)
+
+  formulas among the outliers
+    16x  Unclassified
+     1x  The Impossible Claim
+
+=== moral_drama_es.json
+
+  109 videos across 6 channels, outliers at 2.0x or better
+
+    1951.78x  1,700,000  vs       871 median   Roberto Nuñez          Cuentos de valores y  amistad, chiquisaurio, resolve
+            Unclassified
+    1377.73x  1,200,000  vs       871 median   Roberto Nuñez          Cuentos para niños, educativos y de valores ¿los haz
+            Unclassified
+    537.24x    422,000  vs       785 median   Elías Melloni          El Puente - Una reflexión de valores
+            Unclassified
+    409.64x  1,700,000  vs     4,150 median   Psicocartoon México    The Story of a Boy Who Hits
+            Unclassified
+    219.29x    191,000  vs       871 median   Roberto Nuñez          Querubín Huellas, canciones y videos para niños cris
+            Unclassified
+    128.89x  5,800,000  vs    45,000 median   audio cuentos infantil 40 cuentos con valores
+            The List
+    66.02x    274,000  vs     4,150 median   Psicocartoon México    ¿Qué es la sexualidad?
+            The Question
+    47.07x     41,000  vs       871 median   Roberto Nuñez          Quisiera ser un arbolito, video musical de Navidad
+            Unclassified
+    32.15x     28,000  vs       871 median   Roberto Nuñez          Cuentos para niños, educativos y de valores con  mor
+            Unclassified
+    24.11x     21,000  vs       871 median   Roberto Nuñez          Achis, El Desván del Tío Iván, Videos musicales educ
+            Unclassified
+     7.65x     26,000  vs     3,400 median   Cuentos Infantiles con "Aprende a Escuchar" - Cuentos Infantiles Cortos
+            Unclassified
+     7.47x    336,000  vs    45,000 median   audio cuentos infantil 15 Cuentos del mundo | Audio cuentos infantiles
+            The List
+     7.23x     30,000  vs     4,150 median   Psicocartoon México    Game to Explain Sexual Abuse
+            Unclassified
+     7.23x     30,000  vs     4,150 median   Psicocartoon México    The Color Monster
+            Unclassified
+     7.12x      6,200  vs       871 median   Roberto Nuñez          Videos  musicales educativos para niños sobre valore
+            Unclassified
+     6.49x      5,100  vs       785 median   Elías Melloni          Un amigo de verdad - Canto 🎶 Adventista
+            Unclassified
+     5.54x     23,000  vs     4,150 median   Psicocartoon México    What is death?
+            The Question
+     4.01x      3,300  vs       823 median   Cuentoniño             The Factory's Treasure💰💰【Stories that teach VALUES】
+            Unclassified
+     3.44x      3,000  vs       871 median   Roberto Nuñez          Para Ti
+            Unclassified
+     3.18x      2,500  vs       785 median   Elías Melloni          Motivación para comenzar el día - Rincón de Reflexió
+            Unclassified
+     3.18x      2,500  vs       785 median   Elías Melloni          Se una luz - Canto juvenil Adventista
+            Unclassified
+     3.13x     13,000  vs     4,150 median   Psicocartoon México    Deja de culpar a las y los démas
+            Unclassified
+     3.10x      2,700  vs       871 median   Roberto Nuñez          La Primera Navidad
+            Unclassified
+     2.64x    119,000  vs    45,000 median   audio cuentos infantil 5 Cuentos de Navidad | Audio cuentos infantiles
+            The List
+     2.55x      2,100  vs       823 median   Cuentoniño             The Day the MOON🌜 Wanted to Cover the SUN 🌞 【Stories
+            Unclassified
+
+  formulas among the outliers
+    23x  Unclassified
+     3x  The List
+     2x  The Question
+
+=== moral_drama_ja.json
+
+  114 videos across 6 channels, outliers at 2.0x or better
+
+    38.36x    280,000  vs     7,300 median   人生逆転ドラマシアター            「契約社員の老人が偉そうにするな！」頬を叩いたパワハラ部長──翌朝、会社中が騒然となった
+            Unclassified
+    14.19x     22,000  vs     1,550 median   恋のドラマ                  女の子は CEO と一度の関係の後に逃げ出した。5 年後、運命が二人を再び引き合わせた！今度こそ彼は彼女
+            Unclassified
+    10.97x     17,000  vs     1,550 median   恋のドラマ                  契約妻に全く興味のなかった CEO。彼女の拒絶の一言をきっかけに、なんと彼は恋に落ちてしまった🔥
+            Unclassified
+     9.73x     71,000  vs     7,300 median   人生逆転ドラマシアター            「脅してるつもり？ジジババに何ができるんだ？ｗ」高級鮨屋で銀行員に嘲笑された老夫婦。「こんなことしかでき
+            Unclassified
+     6.07x      8,500  vs     1,400 median   秘密の人生の物語               道端で倒れた大富豪を救ったのは、瀕死の母を持つ６歳の少年だった…
+            Unclassified
+     6.06x      9,400  vs     1,550 median   恋のドラマ                  元彼に裏切られた彼女。その後マフィア CEO と結婚し、とことん甘やかされてしまう！
+            Unclassified
+     5.38x     70,000  vs    13,000 median   全国無料テレビ BS11           【米中首脳会談】徹底分析　変化する国際情勢に日本はどう対応する？　ゲスト：田中均（日本総研国際戦略研究所
+            Unclassified
+     5.33x     12,000  vs     2,250 median   FNNプライムオンライン           特殊詐欺「受け子」スピード逮捕の裏で 「変だなと…」タクシー運転手と配車担当者の機転 地名読めず違和感 
+            Unclassified
+     4.89x     11,000  vs     2,250 median   FNNプライムオンライン           東京都内で湧き水発生しビショビショに 37日連続の雨で気温が急降下 豪雨被害の千葉でニンジン全滅 台風2
+            Unclassified
+     4.52x     33,000  vs     7,300 median   人生逆転ドラマシアター            「年金じゃ払えませんよｗ」高級料亭で老夫婦を見下した女将→翌朝、食材の納品が全て止まり顔面蒼白…
+            Unclassified
+     4.52x      7,000  vs     1,550 median   恋のドラマ                  階段から落ちた少女を冷徹な CEO がキャッチ。その瞬間、彼は彼女に一目惚れしてしまった！
+            Unclassified
+     4.44x     10,000  vs     2,250 median   FNNプライムオンライン           NHK党首襲撃　男が起訴内容認める　「ふざけた行動ばかり許せなかった」（2026年10月02日）
+            Unclassified
+     4.07x      5,700  vs     1,400 median   秘密の人生の物語               【1時間の信じられない話】 道端で助けてくれた少年は、私が存在さえ知らなかった実の息子だった…一人の男の
+            Unclassified
+     3.42x     25,000  vs     7,300 median   人生逆転ドラマシアター            「俺の妻に何をした！」銀行員に土下座させられた妻→5分後、夫が1000億円を全額解約…銀行が騒然
+            Unclassified
+     3.08x     40,000  vs    13,000 median   全国無料テレビ BS11           【BS11】第59回 ゲスト：石原詢子【鶴瓶のええ歌やなぁ スタジオトークディレクターズカット版（10月
+            Unclassified
+     2.77x      4,300  vs     1,550 median   恋のドラマ                  生まれ変わった彼女は元彼を切り捨て、自分を愛してくれるイケメン少年を追いかけ始めた🔥
+            Unclassified
+     2.65x      4,100  vs     1,550 median   恋のドラマ                  声の出ない彼女が学校一のイケメンにキスをした！すると奇跡的に話せるようになった。彼こそが彼女の唯一の解毒
+            Unclassified
+     2.38x     31,000  vs    13,000 median   人生ドラマ                  [Compilation] The Worst Day of My Life: I Couldn't L
+            The Superlative
+     2.32x      3,600  vs     1,550 median   恋のドラマ                  借金のせいで隅で泣いている可哀そうな少女。通りかかった CEO は彼女に一目惚れし、秘書に雇うことにした
+            Unclassified
+     2.31x      5,200  vs     2,250 median   FNNプライムオンライン           タイムズカー免許証の画像も流出 悪用どう防ぐ？専門家「信用情報機関に届け出を」 国内3つの機関に本人が申
+            Unclassified
+     2.19x     16,000  vs     7,300 median   人生逆転ドラマシアター            「親呼んでみろw」歓迎会で新人を見下す部長。「父さん、あの人が呼んでる」→新人の父親を見た部長に
+            Unclassified
+     2.13x      4,800  vs     2,250 median   FNNプライムオンライン           北海道で初冠雪“真冬の景色”に 長雨で葉物野菜が異例の高騰 白菜1個“800円”も レタスは3倍で鍋シー
+            Unclassified
+     2.04x      4,600  vs     2,250 median   FNNプライムオンライン           選挙中に“予算カット”発言　簗農水大臣「コメント控えたい」連発　国民・榛葉幹事長「違う意味で“やな大臣”
+            Unclassified
+
+  formulas among the outliers
+    22x  Unclassified
+     1x  The Superlative
+
+=== moral_drama_pt.json
+
+  107 videos across 6 channels, outliers at 2.0x or better
+
+    607.59x     24,000  vs        39 median   Simone Alves           Dramatização: Era uma vez uma sementinha⚘
+            Unclassified
+    77.27x      3,400  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC História do Teatro para Crianças - Teatro Grego
+            Unclassified
+    52.37x    398,000  vs     7,600 median   Gu Costa D'Arte        GUSTAVO COSTA - The Origin of Theater
+            Unclassified
+     8.82x      2,100  vs       238 median   Teatro Cartum          Teatro Cartum - Stories do Teatro - Episódio 3:  Tea
+            Unclassified
+     7.98x        351  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC Spiritus | Curta-metragem
+            Unclassified
+     6.45x        284  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC História do Teatro Para Crianças: As Máscaras Mágica
+            Unclassified
+     5.91x        260  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC Peça Teatral - Ecos de Dionísio
+            Unclassified
+     5.22x        206  vs        39 median   Simone Alves           O caso do bolinho😋
+            Unclassified
+     4.48x        177  vs        39 median   Simone Alves           História cantada: Fogo no céu❤
+            Unclassified
+     4.41x        450  vs       102 median   Geração Vida Lafaiete  Teatro Encenação A Dracma perdida - Ministério. Inf.
+            Unclassified
+     4.41x        194  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC Espetáculo CANGAÇO - Peça Teatral (cena do ator Kaiq
+            Unclassified
+     4.22x        430  vs       102 median   Geração Vida Lafaiete  Teatro Lição 30 - João Batista prega que Jesus é o F
+            Unclassified
+     3.92x        155  vs        39 median   Simone Alves           O buraco na árvore🎈🌸Contação de história
+            Unclassified
+     3.76x        384  vs       102 median   Geração Vida Lafaiete  Teatro "Isaías cap 6"Isaías viu a glória de Deus.Ret
+            Unclassified
+     3.66x        872  vs       238 median   Teatro Cartum          Teatro Cartum - Stories do Teatro - Episódio4: Teatr
+            Unclassified
+     3.29x     25,000  vs     7,600 median   Gu Costa D'Arte        ANDRÉ LEÃO - The Lumière Brothers: The Dawn of Cinem
+            Unclassified
+     3.03x     23,000  vs     7,600 median   Gu Costa D'Arte        GUSTAVO COSTA - Primitive Theatre
+            Unclassified
+     2.70x        642  vs       238 median   Teatro Cartum          Teatro Cartum - Stories do Teatro - Episódio 7:   Te
+            Unclassified
+     2.69x        274  vs       102 median   Geração Vida Lafaiete  Teatro Lição 1 - Jesus é Deus  -Apostila  A grande a
+            Unclassified
+     2.28x      7,400  vs     3,250 median   Radicais Kids Uberlând Versículo lição 5 - O Tesouro da Oração 
+            Unclassified
+     2.24x        534  vs       238 median   Teatro Cartum          Teatro Cartum - Stories do Teatro - Episódio 1: Teat
+            Unclassified
+     2.22x        226  vs       102 median   Geração Vida Lafaiete  Coreografia Música " Acende outra vez" Culto Laranja
+            Unclassified
+     2.18x         96  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC História do Teatro Para Crianças: Como Téspis se Tor
+            Unclassified
+     2.07x         91  vs        44 median   KIQ PRODUÇÕES ARTÍSTIC 1° trailer do Curta-metragem Spiritus
+            Unclassified
+
+  formulas among the outliers
+    24x  Unclassified
+
+=== romance_en.json
+
+  109 videos across 6 channels, outliers at 2.0x or better
+
+    958.33x  2,300,000  vs     2,400 median   Matt Byrn              Married Life | Short Film
+            Unclassified
+    404.17x  9,700,000  vs    24,000 median   Wesley Wang            nothing, except everything.
+            Unclassified
+    372.55x  1,900,000  vs     5,100 median   Josiah and Sarah       Before I Met You - Short Film
+            Unclassified
+    257.14x  3,600,000  vs    14,000 median   Forrain                2 AM COFFEE - A short film | Sony FX3 | 4K
+            The List
+    254.90x  1,300,000  vs     5,100 median   Josiah and Sarah       I got pregnant at Beast Games.
+            Unclassified
+    234.48x  3,400,000  vs    14,500 median   Jay Diaz               THE 5 STAGES AFTER A BREAKUP
+            Unclassified
+    188.91x    172,000  vs       910 median   Alyxa Hellman          Why ‘The Godfather' is the GREATEST MOVIE OF ALL TIM
+            The Question
+    183.33x    440,000  vs     2,400 median   Matt Byrn              Becoming an Ironman | My Story
+            Unclassified
+    131.03x  1,900,000  vs    14,500 median   Jay Diaz               SITUATIONSHIP | Award Winning Short Film
+            Unclassified
+    101.57x    518,000  vs     5,100 median   Josiah and Sarah       Killing Time - 1 Minute Short Film | Shot on iPhone
+            Unclassified
+    71.39x     65,000  vs       910 median   Alyxa Hellman          That I Loved You | A Short Film About Love
+            Unclassified
+    56.00x    784,000  vs    14,000 median   Forrain                Summr Lovr (2025) - Short Film
+            Unclassified
+    50.07x    726,000  vs    14,500 median   Jay Diaz               BRUSH - HORROR SHORT FILM
+            Unclassified
+    30.21x    423,000  vs    14,000 median   Forrain                This is how I stay sane. (Sony FX3)
+            Unclassified
+    20.20x    103,000  vs     5,100 median   Josiah and Sarah       My very unexpected birth story.
+            Unclassified
+    16.75x    402,000  vs    24,000 median   Wesley Wang            you are seen.
+            Unclassified
+    12.71x    178,000  vs    14,000 median   Forrain                how that one summer felt.
+            The Question
+    11.67x     28,000  vs     2,400 median   Matt Byrn              Married Life | BLOOPERS
+            Unclassified
+     9.22x     47,000  vs     5,100 median   Josiah and Sarah       The Missed Connection - 1 Minute Short Film
+            Unclassified
+     8.92x    214,000  vs    24,000 median   Wesley Wang            nothing, except everything. — Indiegogo Campaign
+            Unclassified
+     8.33x     20,000  vs     2,400 median   Matt Byrn              our wedding film
+            Unclassified
+     8.02x      7,300  vs       910 median   Alyxa Hellman          MY FAVORITE FILMS! (as a film major)
+            Unclassified
+     7.10x    103,000  vs    14,500 median   Jay Diaz               THE FLIP SIDE - BEST FRIENDS
+            Unclassified
+     6.34x     92,000  vs    14,500 median   Jay Diaz               BRUSH 2 - HORROR SHORT FILM
+            Unclassified
+     5.33x    128,000  vs    24,000 median   Wesley Wang            MUTE
+            Unclassified
+
+  formulas among the outliers
+    29x  Unclassified
+     5x  The Question
+     2x  The Superlative
+     1x  The List
+
+=== romance_es.json
+
+  107 videos across 6 channels, outliers at 2.0x or better
+
+    2985.07x  20,000,000  vs     6,700 median   diegopergofilms Diego  VENTURA SHORTFILM / CORTOMETRAJE
+            Unclassified
+    1000.00x  2,300,000  vs     2,300 median   Zolen Films            CAFÉ SOLO - Cortometraje / Shortfilm | Zolen Films |
+            Unclassified
+    783.79x    977,000  vs     1,246 median   TROVIDEO COMUNICACION  CORTOMETRAJE "UNA HISTORIA DE AMOR"
+            Unclassified
+    753.09x  6,100,000  vs     8,100 median   Greisy Moroyoqui       El cortometraje que te hará llorar ♥ "Mil razones".
+            Unclassified
+    679.01x  5,500,000  vs     8,100 median   Greisy Moroyoqui       La mejor historia de amor basada en hechos reales ♥ 
+            Unclassified
+    283.58x  1,900,000  vs     6,700 median   diegopergofilms Diego  LA MUJER DE MI VIDA SHORTFILM / CORTOMETRAJE
+            Unclassified
+    183.91x    423,000  vs     2,300 median   Zolen Films            THE DARK MAN - Full movie | Zolen Films | HD | CC |
+            Unclassified
+    123.46x  1,000,000  vs     8,100 median   Greisy Moroyoqui       Cortometraje "La leche y el agua".
+            Unclassified
+    95.47x    119,000  vs     1,246 median   TROVIDEO COMUNICACION  SHORT FILM "VASECTOMY"
+            Unclassified
+    65.67x    440,000  vs     6,700 median   diegopergofilms Diego  EL AMOR DURA 27 PLANOS SHORTILM / CORTMETRAJE
+            Unclassified
+    41.98x    340,000  vs     8,100 median   Greisy Moroyoqui       Cortometraje de Reflexión
+            Unclassified
+    28.40x    230,000  vs     8,100 median   Greisy Moroyoqui       Short Film: "Welcome to Class"
+            Unclassified
+    19.47x  1,100,000  vs    56,500 median   Cine a pulmón          “When the good man stops being the fool” | Short Fil
+            Unclassified
+    11.24x  1,000,000  vs    89,000 median   Roberto Pérez Toledo ( Cortometraje EMPALAGOSO
+            Unclassified
+    10.52x    936,000  vs    89,000 median   Roberto Pérez Toledo ( Cortometraje FANTASMA #Halloween2021
+            Unclassified
+    10.39x    925,000  vs    89,000 median   Roberto Pérez Toledo ( Short film THE FEATHER THEORY #Pride2021
+            Unclassified
+     9.61x    543,000  vs    56,500 median   Cine a pulmón          Quería que luche por ella, pero el tenia amor propio
+            Unclassified
+     8.82x     11,000  vs     1,246 median   TROVIDEO COMUNICACION  SHORT FILM "THE LAKE HOUSE"
+            Unclassified
+     8.02x     10,000  vs     1,246 median   TROVIDEO COMUNICACION  CORTOMETRAJE "VECINOS"
+            Unclassified
+     7.90x     64,000  vs     8,100 median   Greisy Moroyoqui       Reflexión - Tu actitud lo es todo ♥
+            Unclassified
+     7.04x     57,000  vs     8,100 median   Greisy Moroyoqui       18 SECONDS... A short reflection film.
+            The List
+     6.79x     55,000  vs     8,100 median   Greisy Moroyoqui       Cortometraje de reflexión - Mi hermosa mujer
+            Unclassified
+     6.11x    345,000  vs    56,500 median   Cine a pulmón          It was just the tip and he didn't even enjoy it | It
+            Unclassified
+     5.22x     12,000  vs     2,300 median   Zolen Films            EN LAS REDES - Cortometraje / Shortfilm | Zolen Film
+            Unclassified
+     5.22x     12,000  vs     2,300 median   Zolen Films            IN ANOTHER LIFE - Short Film | Zolen Films | HD 4K
+            Unclassified
+
+  formulas among the outliers
+    36x  Unclassified
+     1x  The List
+
+=== romance_ja.json
+
+  118 videos across 6 channels, outliers at 2.0x or better
+
+    243.48x  2,800,000  vs    11,500 median   ごっこ倶楽部                 [Disgusting] I can't believe this happened just from
+            Unclassified
+    15.77x     56,000  vs     3,550 median   多分こんな感じドラマ             [Knowing About the Cheating and Staying Silent] #Sho
+            Unclassified
+    14.87x    171,000  vs    11,500 median   ごっこ倶楽部                 [#1~#5] A handsome actor and a new assistant directo
+            Unclassified
+     7.42x    542,000  vs    73,000 median   ポテトピクチャーズ              A roundabout confession of love: "So, that's what I 
+            Unclassified
+     5.39x     62,000  vs    11,500 median   ごっこ倶楽部                 [Touching] How long can you wait for your precious l
+            Unclassified
+     3.72x    869,000  vs   233,500 median   CUL DRAMA / カルドラマ      [Drama] "Why is my best friend of the same gender av
+            Unclassified
+     3.51x    256,000  vs    73,000 median   ポテトピクチャーズ              片想い終了「その子と付き合うの…？」
+            Unclassified
+     3.45x    255,000  vs    74,000 median   シコい社長                  Something Might Happen Between Friends in the Day
+            Unclassified
+     3.22x    235,000  vs    73,000 median   ポテトピクチャーズ              We broke up but are still living together. "Let's ge
+            The Stack
+     3.02x    706,000  vs   233,500 median   CUL DRAMA / カルドラマ      [Drama] "Go out with me": What happens when a gal ta
+            Unclassified
+     2.70x     50,000  vs    18,500 median   キュン恋ショート               【日本語吹き替え】雪崩から生還した私を待っていたのは、幼馴染を優先した夫の裏切り。離婚届を残して消えた私
+            Unclassified
+     2.57x    601,000  vs   233,500 median   CUL DRAMA / カルドラマ      [Drama] "Why is Shu-senpai in my house!?" What happe
+            Unclassified
+     2.55x    186,000  vs    73,000 median   ポテトピクチャーズ              Reunited with my first love: "I've always loved you.
+            Unclassified
+     2.54x      9,000  vs     3,550 median   多分こんな感じドラマ             【Boyfriend calls while cheating】#ShortDrama #Relatio
+            Unclassified
+     2.52x     29,000  vs    11,500 median   ごっこ倶楽部                 When I was suddenly diagnosed with cancer and in des
+            The Question
+     2.49x    184,000  vs    74,000 median   シコい社長                  The First Night for a Couple Who Both Know What's Go
+            Unclassified
+     2.21x    161,000  vs    73,000 median   ポテトピクチャーズ              Our Last Night Together: "Let's Stay Together Foreve
+            The Stack
+     2.19x    162,000  vs    74,000 median   シコい社長                  The Vibe When a Guy Loses His Self-Control With a Yo
+            Unclassified
+     2.17x     25,000  vs    11,500 median   ごっこ倶楽部                 Do you have a promise you want to keep? #PR [Short D
+            The Question
+     2.14x      7,600  vs     3,550 median   多分こんな感じドラマ             My Best Friend and Boyfriend Were Cheating on Me #Sh
+            Unclassified
+     2.11x     39,000  vs    18,500 median   キュン恋ショート               【日本語吹き替え】5年かけて脚を治した婚約者に裏切られた！私を見下すクズ男、最後の針なしで一生再不随にな
+            Unclassified
+     2.11x     39,000  vs    18,500 median   キュン恋ショート               【日本語吹き替え】女嫌いの冷酷社長と一夜の過ち！双子を身ごもると態度が一変、お腹の子ごと愛されまくる！#
+            Unclassified
+     2.07x    151,000  vs    73,000 median   ポテトピクチャーズ              A secret kiss at a house party: "Will you sleep toge
+            The Stack
+
+  formulas among the outliers
+    18x  Unclassified
+     3x  The Stack
+     2x  The Question
+
+=== romance_pt.json
+
+  94 videos across 6 channels, outliers at 2.0x or better
+
+    270.68x     36,000  vs       133 median   Anna's Romance Narrati Trust Fall | LGBTQ Romantic Short Drama
+            Unclassified
+    257.14x  3,600,000  vs    14,000 median   Forrain                2 AM COFFEE - A short film | Sony FX3 | 4K
+            The List
+    135.34x     18,000  vs       133 median   Anna's Romance Narrati Love at 30,000 Feet | LGBTQ Short Drama | Romantic P
+            The Statistic
+    56.00x    784,000  vs    14,000 median   Forrain                Summr Lovr (2025) - Short Film
+            Unclassified
+    30.21x    423,000  vs    14,000 median   Forrain                This is how I stay sane. (Sony FX3)
+            Unclassified
+    21.47x    322,000  vs    15,000 median   Jacy's Films           LIVE - Short film
+            Unclassified
+    18.05x      2,400  vs       133 median   Anna's Romance Narrati OFFICE HOURS | A Forbidden WLW Romance Short Drama |
+            Unclassified
+    14.22x     54,000  vs     3,798 median   RIGGS PRODUCTIONS      Quantum | Sci-fi Multiverse Short Film
+            Unclassified
+    13.69x     52,000  vs     3,798 median   RIGGS PRODUCTIONS      Convenium (Found Footage)
+            Unclassified
+    12.71x    178,000  vs    14,000 median   Forrain                how that one summer felt.
+            The Question
+    12.33x    185,000  vs    15,000 median   Jacy's Films           Into The Shadows | Full Film
+            Unclassified
+    12.13x    182,000  vs    15,000 median   Jacy's Films           Trapped Between Feathers - Short Film
+            Unclassified
+    11.85x     45,000  vs     3,798 median   RIGGS PRODUCTIONS      SIGMA (2025) Teaser Oficial - Curta Metragem
+            Unclassified
+    10.12x     43,000  vs     4,250 median   TrailersBR             Predador: Assassino de Assassinos • Teaser Trailer L
+            Unclassified
+     6.80x    102,000  vs    15,000 median   Jacy's Films           LIVE - short film OFFICIAL TRAILER
+            Unclassified
+     6.58x     25,000  vs     3,798 median   RIGGS PRODUCTIONS      Entrando em Campo - TRAILER OFICIAL
+            Unclassified
+     5.41x     23,000  vs     4,250 median   TrailersBR             Predador: Terras Selvagens • Teaser Trailer Legendad
+            Unclassified
+     5.38x  1,100,000  vs   204,500 median   heechan lim            "together" | a short film scored to white ferrari
+            The Stack
+     5.27x     20,000  vs     3,798 median   RIGGS PRODUCTIONS      SIGMA | Award-Winning Short Film
+            Unclassified
+     4.94x     21,000  vs     4,250 median   TrailersBR             Alien: Earth • Teaser Trailer Legendado
+            Unclassified
+     4.47x     19,000  vs     4,250 median   TrailersBR             The Handmaid's Tale • Trailer 6ª Temporada (legendad
+            Unclassified
+     4.21x     16,000  vs     3,798 median   RIGGS PRODUCTIONS      SIGMA (2025) Launch Trailer - Award Winning Short Fi
+            Unclassified
+     4.21x     16,000  vs     3,798 median   RIGGS PRODUCTIONS      What I Love About You | Romance Short Film
+            The Question
+     3.93x     55,000  vs    14,000 median   Forrain                A cold day in August
+            Unclassified
+     3.76x     16,000  vs     4,250 median   TrailersBR             Marvel's Wolverine • Subtitled Trailer
+            Unclassified
+
+  formulas among the outliers
+    28x  Unclassified
+     2x  The Question
+     1x  The List
+     1x  The Statistic
+     1x  The Stack
+
+=== scifi_en.json
+
+  62 videos across 6 channels, outliers at 2.0x or better
+
+    1466.67x  2,200,000  vs     1,500 median   Frame48                Icarus | Sci-Fi Short Film (2017)
+            Unclassified
+    141.51x    375,000  vs     2,650 median   WitnessAi              The Discarded - Fallen
+            Unclassified
+    106.04x    281,000  vs     2,650 median   WitnessAi              The Discarded - Totality
+            Unclassified
+    59.33x     89,000  vs     1,500 median   Frame48                Starting From Scratch | 30s Release Trailer
+            Unclassified
+    36.67x     55,000  vs     1,500 median   Frame48                Kawasaki Ninja 300 Custom - ¥our Move
+            Unclassified
+    30.67x     46,000  vs     1,500 median   Frame48                Porsche | Dear Father
+            Unclassified
+    21.29x    809,000  vs    38,000 median   ByMosX                 They Slept For A Thousand Years | Dystopian Sci-Fi A
+            Unclassified
+    16.98x     45,000  vs     2,650 median   WitnessAi              THE DISCARDED | Full Sci-Fi Short Film
+            Unclassified
+     8.00x     12,000  vs     1,500 median   Frame48                Starting From Scratch | Zimbabwe
+            Unclassified
+     5.81x  1,500,000  vs   258,000 median   Causality              The Last Person on Earth | Sci-Fi Short Film
+            Unclassified
+     5.53x    744,000  vs   134,500 median   Lost Archives Fiction  TRAPPIST-1e | Sci-Fi Short Film
+            Unclassified
+     5.08x    193,000  vs    38,000 median   ByMosX                 It Looked At Him And Kept Walking | Dystopian Sci-Fi
+            Unclassified
+     5.07x      7,600  vs     1,500 median   Frame48                Hum
+            Unclassified
+     4.26x  1,100,000  vs   258,000 median   Causality              The Megatsunami That Struck the Entire Planet
+            Unclassified
+     4.26x  1,100,000  vs   258,000 median   Causality              Interstellar’s Untold Story: Cooper and Dr. Brand Co
+            Unclassified
+     3.99x    537,000  vs   134,500 median   Lost Archives Fiction  PRECEDENT | Sci-Fi Short Film
+            Unclassified
+     3.06x      8,100  vs     2,650 median   WitnessAi              The Discarded - Ravaged
+            Unclassified
+     2.83x      8,200  vs     2,902 median   AI Giant Escape        The Last Human Ambush Against a Bio-Mechanical Soldi
+            Unclassified
+     2.19x      5,800  vs     2,650 median   WitnessAi              The Discarded - Purpose
+            Unclassified
+     2.15x      5,700  vs     2,650 median   WitnessAi              THE FRACTURED | Part I - Sci-Fi Horror Short Film
+            Unclassified
+
+  formulas among the outliers
+    20x  Unclassified
+
+=== scifi_es.json
+
+  83 videos across 5 channels, outliers at 2.0x or better
+
+    310.56x     50,000  vs       161 median   Fantasy Producciones   EVE (Sci-Fi Short Film)
+            Unclassified
+    66.36x    730,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Tailless" - by ESMA | TheCGBro
+            Unclassified
+    19.25x      3,100  vs       161 median   Fantasy Producciones   EVE - Trailer Oficial 4K (2020)
+            Unclassified
+    17.09x    188,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "The Catch" - by Hashir Khan | 
+            Unclassified
+    16.36x    180,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Colis Suspect" - by ESMA | The
+            Unclassified
+     8.13x    748,000  vs    92,000 median   DUST                   Planet | Sci-Fi Short Film | DUST
+            Unclassified
+     6.36x    585,000  vs    92,000 median   DUST                   The Immortal | Sci-Fi Short Film | DUST
+            Unclassified
+     5.66x    521,000  vs    92,000 median   DUST                   096 | Sci-Fi Short Film | DUST
+            Unclassified
+     4.88x        293  vs        60 median   Emmy García            N A R C O L E P S I A - AMBIENT MUSIC  (DREAMCORE MU
+            Unclassified
+     4.09x     45,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Return" - by ESMA | TheCGBros
+            Unclassified
+     4.05x        243  vs        60 median   Emmy García            EXTRAÑOS #ambientmusic (DREAMCORE MUSIC) / EMMY GARC
+            Unclassified
+     3.27x     36,000  vs    11,000 median   TheCGBros              A Live Action VFX Short Film: "REBOOT" - by The Rebo
+            Unclassified
+     2.84x      6,100  vs     2,150 median   Del fan, Para el fan   INCREDIBLE! 🔥 REACTION to the 'AVATAR 3: Fire and As
+            Unclassified
+     2.74x      5,900  vs     2,150 median   Del fan, Para el fan   I'M CRYING THE WHOLE TIME! 😭 Reaction to the FINAL A
+            Unclassified
+     2.74x      5,900  vs     2,150 median   Del fan, Para el fan   I'M SOBBING! 😭 Reaction to 'ANDOR' Season 2 ARC 3 | 
+            Unclassified
+     2.64x     29,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "The Eve" - by ESMA | TheCGBros
+            Unclassified
+     2.60x      5,600  vs     2,150 median   Del fan, Para el fan   🤔 ¿El RECAST de BAIL ORGANA es el ÚNICO ERROR de AND
+            The Question
+     2.50x        150  vs        60 median   Emmy García            M E L A N C O L Í A  - AMBIENT MUSIC  (DREAMCORE MUS
+            Unclassified
+     2.47x      5,300  vs     2,150 median   Del fan, Para el fan   ANDOR is the STAR WARS MASTERPIECE | Analysis of Epi
+            The Teardown
+     2.39x        385  vs       161 median   Fantasy Producciones   Compacto (piloto) Tuit
+            Unclassified
+     2.36x     26,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Dawn" by ESMA | TheCGBros
+            Unclassified
+     2.15x    198,000  vs    92,000 median   DUST                   Anesthesia | Sci-Fi Short Film | DUST | Starring Aar
+            Unclassified
+
+  formulas among the outliers
+    20x  Unclassified
+     1x  The Question
+     1x  The Teardown
+
+=== scifi_ja.json
+
+  88 videos across 5 channels, outliers at 2.0x or better
+
+    721.71x    118,000  vs       163 median   Satoko Miyake          短編映画『いと』
+            Unclassified
+    79.46x    147,000  vs     1,850 median   FABLE CAPTURES         【Sci-Fi Short Film】CASE: KAGUYA - 150,000 Years of L
+            The Statistic
+    29.36x      4,800  vs       163 median   Satoko Miyake          短編映画『いと』予告編
+            Unclassified
+    21.78x  1,100,000  vs    50,500 median   ミステリー劇場                Netflix Original Drama: Why you shouldn't go into th
+            Unclassified
+    19.33x        406  vs        21 median   AIの応用                  無料AIで作った架空のCM（５）ハンバーガー「ウニいくらバーガー」
+            Unclassified
+    16.36x      5,300  vs       324 median   ゴールデンエッグプロジェクト         「キンセンカ」武田悦子・荒木隆一・池田奈緒美
+            Unclassified
+    11.11x      3,600  vs       324 median   ゴールデンエッグプロジェクト         【GEP TOKYO】ひとりじゃワルツは踊れない　#立花のぞみ #細井貴斗 #藤真由美 #竹野花 #嶋
+            Unclassified
+    10.33x        217  vs        21 median   AIの応用                  無料AIで作った架空のCM（７）「ミラーヴェール シャンプー」
+            Unclassified
+     9.19x     17,000  vs     1,850 median   FABLE CAPTURES         CASE: YUKI-ONNA - The Frozen Promise | AI Sci-Fi Sho
+            Unclassified
+     9.17x      1,500  vs       163 median   Satoko Miyake          【制作事例】公益財団法人日本美術院様院展受賞者インタビュー
+            Unclassified
+     7.95x      1,300  vs       163 median   Satoko Miyake          【制作事例】プライベートエステサロンGearsx様PR動画ロングver.
+            Unclassified
+     6.97x    352,000  vs    50,500 median   ミステリー劇場                [Short film] The scarecrow who became a human
+            Unclassified
+     5.41x     10,000  vs     1,850 median   FABLE CAPTURES         For 2,000 Years, She Searched for a God Who No Longe
+            The Deadline
+     4.94x      1,600  vs       324 median   ゴールデンエッグプロジェクト         「ある女」立花のぞみ・細井貴斗・荒井孝・吉野美恵・ナオミ
+            Unclassified
+     4.00x         84  vs        21 median   AIの応用                  無料AIで作った架空のCM（１）清涼飲料水「アクアバースト」
+            Unclassified
+     3.15x    159,000  vs    50,500 median   ミステリー劇場                世界で一番かわいい怪物
+            Unclassified
+     3.08x        998  vs       324 median   ゴールデンエッグプロジェクト         「曲がった愛」森下真間・show-ko・富岡孝・すみかおり・花田雅久
+            Unclassified
+     2.77x    140,000  vs    50,500 median   ミステリー劇場                [Horror] The most dangerous angel in the world
+            Unclassified
+     2.43x         51  vs        21 median   AIの応用                  無料AIで作った架空のCM（９）女性用腕時計「ルミエール ゲイズ」
+            Unclassified
+     2.14x        350  vs       163 median   Satoko Miyake          【制作事例】大学受験予備校BLOOM様広告動画
+            Unclassified
+
+  formulas among the outliers
+    18x  Unclassified
+     1x  The Statistic
+     1x  The Deadline
+
+=== scifi_pt.json
+
+  106 videos across 6 channels, outliers at 2.0x or better
+
+    253.73x     34,000  vs       134 median   Claytom Ferreira       Curta Metragem De Ficção Cientifica: KUBO
+            Unclassified
+    103.33x    186,000  vs     1,800 median   TheGrandShowKM         Buddy Confronts Wade | PT-BR DUB🇧🇷 #dubbing #fandub 
+            Unclassified
+    87.78x    158,000  vs     1,800 median   TheGrandShowKM         Shrek 5 Trailer De Anúncio | Em Português Brasil🇧🇷
+            Unclassified
+    69.44x    125,000  vs     1,800 median   TheGrandShowKM         É o Buddy! Música Tema | DUBLADO PT-BR🇧🇷
+            Unclassified
+    66.36x    730,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Tailless" - by ESMA | TheCGBro
+            Unclassified
+    17.09x    188,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "The Catch" - by Hashir Khan | 
+            Unclassified
+    16.36x    180,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Colis Suspect" - by ESMA | The
+            Unclassified
+    16.36x     18,000  vs     1,100 median   Oxelino Filmes         Apophenia | Horror Short Film (2023)
+            Unclassified
+    14.44x     26,000  vs     1,800 median   TheGrandShowKM         How Brave Are You?🦄 | DUBBED IN ENGLISH🇺🇸
+            The Question
+     9.44x     17,000  vs     1,800 median   TheGrandShowKM         It's Buddy! | Theme Song (NOT AI) DUBBED EN-US🇺🇸
+            Unclassified
+     8.21x      1,100  vs       134 median   Claytom Ferreira       VFX Generalist Reel 2021 Clayton F.
+            Unclassified
+     8.13x    748,000  vs    92,000 median   DUST                   Planet | Sci-Fi Short Film | DUST
+            Unclassified
+     6.36x    585,000  vs    92,000 median   DUST                   The Immortal | Sci-Fi Short Film | DUST
+            Unclassified
+     5.74x      1,100  vs       191 median   Cinemakers             How Does the Wait for Reincarnation Work?
+            The Question
+     5.73x      6,300  vs     1,100 median   Oxelino Filmes         Renault Sandero RS - Night Car Edit 4K
+            Unclassified
+     5.66x    521,000  vs    92,000 median   DUST                   096 | Sci-Fi Short Film | DUST
+            Unclassified
+     4.09x     45,000  vs    11,000 median   TheCGBros              A CGI 3D Short Film: "Return" - by ESMA | TheCGBros
+            Unclassified
+     4.01x        768  vs       191 median   Cinemakers             Existe uma razão espiritual para não encontrar um am
+            The Question
+     3.72x        713  vs       191 median   Cinemakers             Why are some family members so difficult to deal wit
+            The Question
+     3.67x      6,600  vs     1,800 median   TheGrandShowKM         The Doctor Sawyer [POPPY PLAYTIME CAPÍTULO 4] | Dubl
+            Unclassified
+     3.56x      6,400  vs     1,800 median   TheGrandShowKM         BUDDY | Official Trailer (PT-BR Dub) 🇧🇷
+            Unclassified
+     3.34x        448  vs       134 median   Claytom Ferreira       The Sand - Teaser
+            Unclassified
+     3.27x     36,000  vs    11,000 median   TheCGBros              A Live Action VFX Short Film: "REBOOT" - by The Rebo
+            Unclassified
+     3.18x      3,500  vs     1,100 median   Oxelino Filmes         Clichê - O Filme | Fantasy Comedy Short Film | Curta
+            Unclassified
+     2.67x        511  vs       191 median   Cinemakers             Psychopathy has a spiritual origin?
+            The Question
+
+  formulas among the outliers
+    25x  Unclassified
+     5x  The Question
+
+=== thriller_en.json
+
+  52 videos across 4 channels, outliers at 2.0x or better
+
+    166.67x  1,700,000  vs    10,200 median   indiegocinema          "APT 17" (Short Film) THRILLER
+            Unclassified
+    15.12x     31,000  vs     2,050 median   Film by Akil Joefield  The History of The Pointe-à-Pierre Wildfowl Trust |
+            Unclassified
+    12.68x     26,000  vs     2,050 median   Film by Akil Joefield  a Cinematic Netflix-Inspired Documentary Interview
+            Unclassified
+     9.82x  1,000,000  vs   101,800 median   HARNOOR                ONBOARD -  Award Winning Thriller Short Film
+            Unclassified
+     5.97x  5,800,000  vs   971,000 median   Isaac Carlton          I Recreated The Most Expensive Movie at Home
+            Unclassified
+     5.85x     12,000  vs     2,050 median   Film by Akil Joefield  Unknown | One Minute Thriller Short Film
+            Unclassified
+     4.34x      8,900  vs     2,050 median   Film by Akil Joefield  Cinematic Aspect Ratios Demonstrated | 16:9 vs 4:3 v
+            The Comparison
+     3.80x      7,800  vs     2,050 median   Film by Akil Joefield  LUMIX S5 Review: Is It The Best Budget Camera for Fi
+            The Superlative
+     3.63x     37,000  vs    10,200 median   indiegocinema          Corona Virus | COMEDY HORROR Short Film | COVIVID
+            Unclassified
+     3.53x     36,000  vs    10,200 median   indiegocinema          "Simón" (Short Film) VENEZUELA
+            Unclassified
+     3.09x  3,000,000  vs   971,000 median   Isaac Carlton          I Recreated Spider-Man Brand New Day at Home
+            Unclassified
+     2.93x      6,000  vs     2,050 median   Film by Akil Joefield  I am. | A Psychological Horror Short Film
+            Unclassified
+     2.78x  2,700,000  vs   971,000 median   Isaac Carlton          I Recreated a Soccer Movie at Home
+            Unclassified
+     2.57x  2,500,000  vs   971,000 median   Isaac Carlton          I Recreated Stranger Things at Home
+            Unclassified
+     2.37x  2,300,000  vs   971,000 median   Isaac Carlton          Can I Make a Movie Underwater?
+            The Question
+     2.27x  2,200,000  vs   971,000 median   Isaac Carlton          Can I Make a Movie On an Airplane?
+            The Question
+
+  formulas among the outliers
+    12x  Unclassified
+     2x  The Question
+     1x  The Comparison
+     1x  The Superlative
+
+=== thriller_es.json
+
+  84 videos across 6 channels, outliers at 2.0x or better
+
+    5491.99x  1,200,000  vs       218 median   Máximo                 VIVIENDO CON MI EX - Película Completa
+            Unclassified
+    1180.78x    258,000  vs       218 median   Máximo                 Rico "Apetito Prohibido" - Cortometraje de Terror / 
+            Unclassified
+    789.97x    803,000  vs     1,016 median   Falcon Films           "La Parálisis del Sueño" -  Cortometraje de terror (
+            Unclassified
+    515.00x    515,000  vs     1,000 median   Nexo Silvestre         It Is Dangerous Outside | Horror Short Film
+            Unclassified
+    123.57x     27,000  vs       218 median   Máximo                 LIVING WITH MY EX - Official Trailer
+            Unclassified
+    38.60x      2,200  vs        57 median   Joe Gómez              SOY YO | Cortometraje de terror psicológico en menos
+            Unclassified
+    31.48x     32,000  vs     1,016 median   Falcon Films           "313" - Cortometraje de terror ( a horror short film
+            Unclassified
+    13.27x      2,900  vs       218 median   Máximo                 Interview with the director of the film Living with 
+            Unclassified
+    12.81x      2,800  vs       218 median   Máximo                 LIVING WITH ME (Part II) - Concept Trailer - AI
+            Unclassified
+    10.78x    124,000  vs    11,500 median   Davo Valkrat           3 TRUE CASES YOU WON'T BELIEVE #1 by Davo Valkrat
+            The List
+     6.33x        361  vs        57 median   Joe Gómez              Joe Gomez - Videobook Actor showReel
+            Unclassified
+     5.97x  5,800,000  vs   971,000 median   Isaac Carlton          I Recreated The Most Expensive Movie at Home
+            Unclassified
+     5.03x      1,100  vs       218 median   Máximo                 Our movie reached 100k in just 5 days
+            Unclassified
+     5.03x      1,100  vs       218 median   Máximo                 Insomnia - Short Film / Sony FX30
+            Unclassified
+     4.72x        269  vs        57 median   Joe Gómez              The Last of us escena museo. Action Museum scene
+            Unclassified
+     3.80x      3,800  vs     1,000 median   Nexo Silvestre         NEGLIGENCE | Horror Short Film
+            Unclassified
+     3.09x  3,000,000  vs   971,000 median   Isaac Carlton          I Recreated Spider-Man Brand New Day at Home
+            Unclassified
+     2.89x        165  vs        57 median   Joe Gómez              Videobook Joe Gómez (2025) | Actor Español 🎬 
+            Unclassified
+     2.78x  2,700,000  vs   971,000 median   Isaac Carlton          I Recreated a Soccer Movie at Home
+            Unclassified
+     2.70x     31,000  vs    11,500 median   Davo Valkrat           3 REAL AND SINISTER CASES #5 by Davo Valkrat
+            The List
+     2.61x     30,000  vs    11,500 median   Davo Valkrat           3 Bizarre UNRESOLVED MYSTERIES #2 by Davo Valkrat
+            The List
+     2.57x  2,500,000  vs   971,000 median   Isaac Carlton          I Recreated Stranger Things at Home
+            Unclassified
+     2.43x     28,000  vs    11,500 median   Davo Valkrat           TERROR ON TIKTOK; THE COMPLETE CASE OF TRISTAN by Da
+            Unclassified
+     2.37x  2,300,000  vs   971,000 median   Isaac Carlton          Can I Make a Movie Underwater?
+            The Question
+     2.30x      2,300  vs     1,000 median   Nexo Silvestre         THE LOVERS | Short Film
+            Unclassified
+
+  formulas among the outliers
+    23x  Unclassified
+     3x  The List
+     2x  The Question
+
+=== thriller_ja.json
+
+  90 videos across 6 channels, outliers at 2.0x or better
+
+    354.84x     11,000  vs        31 median   銀傘                     長編ホラーミステリー映画【其のもの古道に潛む】
+            Unclassified
+    119.35x      3,700  vs        31 median   銀傘                     ホラーミステリーボイスドラマ【夕闇通り怪奇事務所／第三夜「血塗られた能面」】
+            Unclassified
+    64.52x      2,000  vs        31 median   銀傘                     Feature-Length Horror Mystery Film【That Thing Lurks 
+            Unclassified
+    62.22x      5,600  vs        90 median   ワンシチュエーションドラマ創作チャンネル「3 【砂時計をひっくり返すと、知らない女と入れ替わる部屋】ホラー「砂時計」
+            Unclassified
+    51.11x      4,600  vs        90 median   ワンシチュエーションドラマ創作チャンネル「3 Horror "Roommate" — The Stranger Who Was There
+            Unclassified
+    47.78x      4,300  vs        90 median   ワンシチュエーションドラマ創作チャンネル「3 【敵か、味方か】3人の密室サスペンス「監禁交渉」Hostage Negotiation
+            Unclassified
+    12.85x    347,000  vs    27,000 median   未明シアター                 [Hachioji Nanpei Incident] "The suspect was narrowed
+            Unclassified
+    11.11x      1,000  vs        90 median   ワンシチュエーションドラマ創作チャンネル「3 緊急停止した電車で1000万円を拾った5人。思わぬ展開に…
+            Unclassified
+    10.82x      4,900  vs       453 median   不思議シネマ                 ショートドラマ『告白』／女子高生２人の三角関係の話
+            Unclassified
+     7.52x    203,000  vs    27,000 median   未明シアター                 [Sophia University Student Murder and Arson Case] Th
+            Unclassified
+     5.43x        489  vs        90 median   ワンシチュエーションドラマ創作チャンネル「3 [Compilation] "Tales of an Unusual Family"
+            Unclassified
+     5.10x        158  vs        31 median   銀傘                     2026年9月9日放送！エフエムいわぬま第150回【逢魔時の百鬼夜行】メールテーマ「どうでも良い報告」
+            Unclassified
+     5.08x      2,300  vs       453 median   不思議シネマ                 ショートドラマ『メモリーズ』- ２人の思い出の食い違いと監視カメラ
+            Unclassified
+     4.07x    110,000  vs    27,000 median   未明シアター                 10 Hair-Raising Horror Dramas in a Row | Reina Sano,
+            The List
+     3.90x        121  vs        31 median   銀傘                     2026年8月19日放送！エフエムいわぬま第147回【逢魔時の百鬼夜行】メールテーマ「ホラー」
+            Unclassified
+     3.49x    690,000  vs   197,500 median   ショートラマ                 【香港歴代No.1】力を隠して生きた少林の達人が、サッカーボール1つで伝説になった理由
+            Unclassified
+     3.36x    663,000  vs   197,500 median   ショートラマ                 引退したはずの忍者一家を本気で怒らせたカルト組織の最後、🔥大谷翔平🔥が新婚デートで観たという世界92ヵ国
+            Unclassified
+     2.88x    775,000  vs   269,500 median   もののけ                   An ordinary woman who managed to keep Satoru Gojo in
+            Unclassified
+     2.87x      1,300  vs       453 median   不思議シネマ                 ショートドラマ『親友の２人』／友人に疑心暗鬼するサスペンス。LINEの相手は誰？
+            Unclassified
+     2.76x    744,000  vs   269,500 median   もののけ                   Someone who miraculously ended up looking like IRIS 
+            Unclassified
+     2.58x    694,000  vs   269,500 median   もののけ                   A hopelessly clueless AV actress
+            Unclassified
+     2.11x    569,000  vs   269,500 median   もののけ                   People getting excited even though all we're talking
+            Unclassified
+     2.03x    547,000  vs   269,500 median   もののけ                   面白すぎる獄中からの手紙
+            Unclassified
+     2.02x    398,000  vs   197,500 median   ショートラマ                 【配信直後 世界1位】見下されていた清掃員、実はAI級の頭脳を持つIQ160の天才だった
+            Unclassified
+
+  formulas among the outliers
+    23x  Unclassified
+     1x  The List
+
+=== thriller_pt.json
+
+  82 videos across 5 channels, outliers at 2.0x or better
+
+    371.43x  2,600,000  vs     7,000 median   Bpiskorik Films        Clap Clap - Short Horror Film
+            Unclassified
+    260.87x    198,000  vs       759 median   Beach Studios          Crianças à Venda. Tratar Aqui (2015) - Curta Complet
+            Unclassified
+    167.66x    788,000  vs     4,700 median   M85 Studios            The Knowing | A Psychological Horror Short Film
+            Unclassified
+    72.13x    339,000  vs     4,700 median   M85 Studios            The Uninvited | Short Horror Film
+            Unclassified
+    68.30x    321,000  vs     4,700 median   M85 Studios            The Stranger | Short Horror Film
+            Unclassified
+    34.26x     26,000  vs       759 median   Beach Studios          SEM SAÍDA (2017) | CURTA-METRAGEM DE SUSPENSE
+            Unclassified
+    26.35x     20,000  vs       759 median   Beach Studios          CRIANÇAS À VENDA. TRATAR AQUI - TRAILER OFICIAL
+            Unclassified
+    25.26x    442,000  vs    17,500 median   Screamfest             SLAVE 4 LOVE (爱囚杀)| Short One-Take Horror Film | Scr
+            Unclassified
+    25.03x     19,000  vs       759 median   Beach Studios          ELLEN (2018) | CURTA-METRAGEM DE DRAMA
+            Unclassified
+    15.75x     12,000  vs       762 median   JB Filmes              A Coisa na Floresta (Curta-metragem de Terror)
+            Unclassified
+    12.57x     88,000  vs     7,000 median   Bpiskorik Films        Scarecrow - Short Horror Film
+            Unclassified
+    11.81x      9,000  vs       762 median   JB Filmes              O CAÇADOR - filme Pós Apocalíptico de Ficção Científ
+            Unclassified
+    10.14x      7,700  vs       759 median   Beach Studios          MAKING OF - Crianças à Venda. Tratar Aqui
+            Unclassified
+     8.40x    147,000  vs    17,500 median   Screamfest             Oddities Short Horror Film | Screamfest
+            Unclassified
+     5.53x     26,000  vs     4,700 median   M85 Studios            The Guest | Short Horror Comedy Film
+            Unclassified
+     5.26x     92,000  vs    17,500 median   Screamfest             Drawn | Short Horror Film | Screamfest
+            Unclassified
+     4.99x      3,800  vs       762 median   JB Filmes              O Beijo da Bruxa (Curta-Metragem - Folclore Brasilei
+            Unclassified
+     4.68x     22,000  vs     4,700 median   M85 Studios            We've Been Here Before | Short Film
+            Unclassified
+     4.68x     22,000  vs     4,700 median   M85 Studios            Doppelganger | One Minute Horror Film
+            Unclassified
+     4.68x     22,000  vs     4,700 median   M85 Studios            AVA | Award Winning Sci-Fi Thriller | M85 Studios
+            Unclassified
+     4.20x      3,200  vs       762 median   JB Filmes              O Amuleto de Lemúria (curta-metragem - Terror Psicol
+            Unclassified
+     3.94x     69,000  vs    17,500 median   Screamfest             Bookworm Short Horror Film | Screamfest
+            Unclassified
+     3.15x      2,400  vs       762 median   JB Filmes              O Apartamento 74 (Curta metragem - Suspense/Drama)
+            Unclassified
+     2.89x      2,200  vs       762 median   JB Filmes              O Agouro (Curta-metragem de Terror)
+            Unclassified
+     2.49x      1,900  vs       762 median   JB Filmes              A Cura (Curta-Metragem - Suspense)
+            Unclassified
+
+  formulas among the outliers
+    27x  Unclassified
+
