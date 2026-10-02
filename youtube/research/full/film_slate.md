@@ -113,4 +113,38 @@ Also available with Spanish and Portuguese audio (Settings ⚙ → Audio track).
 
 ## 6. Топ-20 фильмов, которые стоит снять
 
-См. ответ в чате (тот же список) — названия, синопсис, локации, бюджет и превью.
+Бюджет: 💲 до $5k (1–2 локации, 3–5 актёров) · 💲💲 $5–15k · 💲💲💲 $15–30k.
+Все фильмы на 85–100 минут: в данных это лучшая длительность.
+
+| # | Название (EN) | Жанр | О чём фильм | Локации | Бюджет | Превью: картинка + текст | Почему (данные) |
+|---|---|---|---|---|---|---|---|
+| 1 | She Cleaned His Mansion for 10 Years… He Never Knew She Was His DAUGHTER \| Full Movie \| Drama | Драма EN | Горничная у миллиардера узнаёт, что она его дочь. Сыновья хотят её выжить | особняк (аренда на 5 дней) | 💲💲 | Плачущая горничная на переднем плане, за ней холодный мужчина в костюме · «HE NEVER KNEW» | Драма EN №1; миллиардер 22M/14,8M |
+| 2 | Stranded With My Ex in Portugal… We Had 7 Days to Fall in Love Again \| Full Romance Movie | Романтика EN | Бывшие застряли вместе в отпуске из-за отменённого рейса | маленький городок у моря | 💲💲 | Пара спиной к спине на фоне моря · «7 DAYS» | LOST IN LOVE (Турция) 23,4M, Бали 14,8M |
+| 3 | Left at the Altar, She Came Back 5 Years Later… as His BOSS \| Full Movie \| Romantic Drama | Романтика/драма EN | Брошенная невеста возвращается директором компании, где он работает | офис, квартира, церковь | 💲💲 | Невеста в слезах ↔ та же женщина в деловом костюме · «5 YEARS LATER» | «Брошенная невеста» 10,1M |
+| 4 | The CEO Pretended to Be a Driver to Find Someone Who Loved Him for Him \| Full Movie | Романтика EN | Миллиардер под прикрытием влюбляется в официантку | машина, кафе, особняк | 💲 | Мужчина в форме водителя, за ним отражение в костюме · «SHE DIDN'T KNOW» | миллиардер + Золушка |
+| 5 | Twins Separated at Birth: One Raised Rich, One Raised Poor… Until They Met \| Full Movie | Драма EN/ES | Близнецы, разлучённые при рождении, встречаются в 25 лет | 2 дома + улица | 💲💲 | Разделённый кадр: одно лицо в роскоши и в бедности · «SAME FACE» | ES-аналог 7,6M |
+| 6 | A Father Becomes a Thief to Pay for His Daughter's Surgery \| Crime Drama \| Full Movie | Криминальная драма EN | Честный отец идёт на одно ограбление | квартира, больница, склад | 💲💲 | Отец в маске, в руке детский рисунок · «ONE JOB» | «Gangster to save his son» 8,8M |
+| 7 | The Prayer She Wrote at 7 Was Answered 20 Years Later \| Christian Movie \| Full Movie | Христианское кино EN/ES | Записка в Библии меняет жизнь двух незнакомцев | дом, церковь | 💲 | Пожелтевшая записка в руке и заплаканное лицо · «20 YEARS» | Христианское EN хит $9,8k; ES 1,3M |
+| 8 | He Lost Everything… Then a Stranger Knocked on His Door \| Faith Movie | Христианское кино EN/ES | Банкрот на грани отчаяния и таинственный гость | 1 дом | 💲 | Мужчина у двери, тёплый свет из проёма · «WHO IS HE?» | Христианское ES: 23 фильма из 40 набрали 1M+ |
+| 9 | Nobody Visited Grandpa for 3 Years… What He Left Them Changed Everything \| Family Movie | Семейное кино EN | Завещание дедушки заставляет детей провести неделю вместе | загородный дом | 💲 | Дедушка один за накрытым столом · «WHY NOW?» | Семейное EN, RPM $4,40 |
+| 10 | A Christmas Wish for Dad… She Didn't Expect to Fall in Love \| Christmas Movie | Семейная романтика EN/ES | Вдовец с дочкой и новая соседка на Рождество | дом, городок | 💲💲 | Девочка у окна со снегом и гирляндами · «ONE WISH» | ES «Navidad…» 8,8M; сезонный, возвращается каждый год |
+| 11 | The Babysitter Saw Something She SHOULDN'T Have \| Thriller \| Full Movie | Триллер EN | Няня в доме богатой семьи находит скрытую камеру | 1 дом | 💲 | Испуганная девушка, в отражении экрана силуэт · «DON'T LOOK» | Триллер EN 693k; одна локация |
+| 12 | We Rented a Cabin From a Stranger… On Day 3, We Found the Basement \| Horror Full Movie | Хоррор EN/ES | Четверо друзей, домик и чужие правила | домик в лесу | 💲 | Открытый люк в подвал, фонарик · «DAY 3» | Хоррор ES 877k при 31k у конкурентов |
+| 13 | They Laughed at Her at the Reunion… 10 Years Later She Bought the School \| Full Movie | Драма мести EN | Изгойка класса возвращается на встречу выпускников | школа, ресторан | 💲💲 | Смеющиеся люди ↔ она в центре, спокойная · «LAST LAUGH» | Месть + «… later» |
+| 14 | The Contract Wife of the Mafia Heir \| Full Movie (All Episodes) | Склейка микродрамы EN | Сначала снимается как 40 вертикальных серий по 2 минуты, потом склеивается в фильм | особняк, офис | 💲 | Пара: он холодный в костюме, она в свадебном · «CONTRACT» | DramaMuse 10,1M; двойной доход: Shorts + фильм |
+| 15 | My Mother-in-Law Moved In… For a WHOLE Year \| Full Comedy Movie | Комедия EN/ES/PT | Свекровь въезжает к молодожёнам | 1 квартира | 💲 | Свекровь с чемоданами, у пары шок на лицах · «365 DAYS» | Комедия ES 1,34M, PT 1,27M (конкуренты 5k подписчиков) |
+| 16 | I Inherited a Farm… and a CRAZY Family I Never Knew \| Comedy Movie | Комедия ES/PT | Горожанин получает ферму в наследство | ферма | 💲 | Человек в костюме в грязи среди кур · «MY FAMILY?!» | Комедия PT: 25 фильмов из 40 набрали 1M+ |
+| 17 | The Last Guest at the Wedding Knew Who Killed the Bride's Father \| Mystery Thriller | Детектив EN/ES | Убийство на свадьбе, все подозреваемые за одним столом | зал / усадьба | 💲💲 | Свадебный торт, нож, лица в тени · «ONE OF THEM» | Детектив ES 716k |
+| 18 | A Single Mom Took the Night Shift… What She Found in Room 304 Changed Her Life \| Full Movie | Драма EN | Медсестра и одинокий пациент-миллионер | больница (декорация) | 💲💲 | Медсестра в коридоре у приоткрытой двери · «ROOM 304» | драма + миллиардер + «…» |
+| 19 | The Last King's Daughter — Her Uncle Stole the Crown \| Kingdom Drama \| Full Movie | Историческая драма EN | Изгнанная принцесса возвращает трон | замок/усадьба, лес | 💲💲💲 | Девушка с мечом, за спиной горящий замок · «RETURN» | «Last King… stole the crown» 12,8M |
+| 20 | A Homeless Man Returned the Wallet… The Owner Was a Millionaire Who Needed Him More \| Full Movie | Драма EN/ES/PT | Бездомный и одинокий богач меняют жизни друг друга | улица, офис, дом | 💲 | Бездомный протягивает кошелёк, рука в дорогих часах · «HONEST» | мораль + деньги; работает на трёх языках |
+
+### Названия на ES / PT для пятёрки лучших
+
+| # | ES | PT |
+|---|---|---|
+| 1 | Limpió su mansión 10 años… Nunca supo que era su HIJA \| Película Completa | Ela limpou a mansão dele por 10 anos… Ele nunca soube que era sua FILHA \| Filme Completo |
+| 7 | La oración que escribió a los 7 años fue respondida 20 años después \| Película Cristiana Completa | A oração que ela escreveu aos 7 anos foi respondida 20 anos depois \| Filme Gospel Completo |
+| 8 | Lo perdió todo… hasta que un extraño tocó a su puerta \| Película Cristiana Completa | Ele perdeu tudo… até que um estranho bateu à sua porta \| Filme Gospel Completo |
+| 15 | Mi suegra se mudó con nosotros… ¡Por un AÑO entero! \| Película de Comedia Completa | Minha sogra se mudou pra nossa casa… por um ANO inteiro! \| Filme de Comédia Completo |
+| 20 | Un indigente devolvió la cartera… el dueño era un millonario que lo necesitaba más \| Película Completa | Um morador de rua devolveu a carteira… o dono era um milionário que precisava mais dele \| Filme Completo |
