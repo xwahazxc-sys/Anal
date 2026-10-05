@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: foodapp
+      POSTGRES_PASSWORD: foodapp
+      POSTGRES_DB: foodapp
+    volumes: [pgdata:/var/lib/postgresql/data]
+  api:
+    build: ./backend
+    environment:
+      FOODAPP_DATABASE_URL: postgresql+psycopg://foodapp:foodapp@db/foodapp
+    ports: ["8000:8000"]
+    depends_on: [db]
+volumes:
+  pgdata:

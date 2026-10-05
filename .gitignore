@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+.env
+.venv/
+# Flutter
+foodapp/mobile/.dart_tool/
+foodapp/mobile/build/
+foodapp/mobile/.flutter-plugins*

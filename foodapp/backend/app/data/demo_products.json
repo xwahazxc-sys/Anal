@@ -1,0 +1,17 @@
+[
+  {"barcode": "4600000000011", "name": "Овсянка «Классическая»", "brand": "Демо", "category": "cereal",
+   "kcal": 352, "protein": 12, "fat": 6, "saturated_fat": 1.2, "carbs": 60, "sugars": 1.1, "fiber": 10, "salt": 0.02,
+   "ingredients_text": "Хлопья овсяные", "source": "manual", "verified": true},
+  {"barcode": "4600000000028", "name": "Газировка «Лимон»", "brand": "Демо", "category": "drink",
+   "kcal": 42, "protein": 0, "fat": 0, "saturated_fat": 0, "carbs": 10.5, "sugars": 10.5, "fiber": 0, "salt": 0.01,
+   "ingredients_text": "Вода, сахар, лимонная кислота (E330), бензоат натрия (E211), краситель тартразин (E102), ароматизатор", "source": "manual", "verified": true},
+  {"barcode": "4600000000035", "name": "Вареная колбаса «Докторская»", "brand": "Демо", "category": "meat",
+   "kcal": 257, "protein": 12.8, "fat": 22.2, "saturated_fat": 8, "carbs": 1.5, "sugars": 0.5, "fiber": 0, "salt": 2.0,
+   "ingredients_text": "Говядина, свинина, молоко сухое, яйца, соль, нитрит натрия (E250), глутамат натрия (E621), аскорбиновая кислота (E300), сахар", "source": "manual", "verified": true},
+  {"barcode": "4600000000042", "name": "Йогурт натуральный 3,2%", "brand": "Демо", "category": "dairy",
+   "kcal": 68, "protein": 4.5, "fat": 3.2, "saturated_fat": 2.1, "carbs": 5.5, "sugars": 5.5, "fiber": 0, "salt": 0.15,
+   "ingredients_text": "Молоко нормализованное, закваска", "source": "manual", "verified": true},
+  {"barcode": "4600000000059", "name": "Гречка ядрица", "brand": "Демо", "category": "cereal",
+   "kcal": 313, "protein": 12.6, "fat": 3.3, "saturated_fat": 0.7, "carbs": 62.1, "sugars": 1.0, "fiber": 11.3, "salt": 0.01,
+   "ingredients_text": "Крупа гречневая", "source": "manual", "verified": true}
+]
