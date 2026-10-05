@@ -1,0 +1,356 @@
+<title>ЧестноЕшь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: одна колонка-«телефон» до 440px, нижняя панель вкладок, сверху всегда видны уровень/серия. */
+:root {
+  --bg: #f3f5f1;
+  --surface: #ffffff;
+  --surface-2: #e9eee7;
+  --fg: #1c2a22;
+  --muted: #5d6b62;
+  --line: #d9e0d6;
+  --accent: #1f7a45;
+  --accent-fg: #ffffff;
+  --g-excellent: #1f9d55;
+  --g-good: #7fb83a;
+  --g-mediocre: #e8960c;
+  --g-bad: #d9393f;
+  --warn-bg: #fdeaea;
+  --font-display: "Unbounded", "Onest", system-ui, sans-serif;
+  --font-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111a15; --surface: #1a251e; --surface-2: #243228; --fg: #e6efe8; --muted: #9fb0a5;
+    --line: #2e3d33; --accent: #4cc283; --accent-fg: #0c1a12; --warn-bg: #3a1d1f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111a15; --surface: #1a251e; --surface-2: #243228; --fg: #e6efe8; --muted: #9fb0a5;
+  --line: #2e3d33; --accent: #4cc283; --accent-fg: #0c1a12; --warn-bg: #3a1d1f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.45; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { max-width: 440px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; background: var(--bg); position: relative; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding: 12px 16px 10px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; margin-right: auto; }
+.pill { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-weight: 500; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill b { font-weight: 600; }
+main { flex: 1; padding: 16px 16px 96px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+h2 { font-family: var(--font-display); font-weight: 500; font-size: 18px; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; margin: 0; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.row { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.row > .grow { flex: 1; min-width: 0; }
+.btn { background: var(--accent); color: var(--accent-fg); border: 0; border-radius: 10px; padding: 11px 16px; font-weight: 600; }
+.btn.ghost { background: var(--surface-2); color: var(--fg); }
+.btn.small { padding: 7px 12px; font-size: 13px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); min-width: 0; }
+.field input, .field select { background: var(--bg); border: 1px solid var(--line); border-radius: 9px; padding: 9px 10px; font-size: 15px; color: var(--fg); min-width: 0; width: 100%; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+/* сканер */
+.viewfinder { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 14px; background: #0d1511; display: grid; place-items: center; overflow: hidden; }
+.viewfinder::before { content: ""; position: absolute; inset: 22% 14%; border: 2px solid rgba(255,255,255,.85); border-radius: 10px; }
+.viewfinder::after { content: ""; position: absolute; left: 18%; right: 18%; top: 50%; height: 2px; background: #ff4d4d; box-shadow: 0 0 10px #ff4d4d; animation: sweep 2.4s ease-in-out infinite alternate; }
+@keyframes sweep { from { top: 34%; } to { top: 66%; } }
+.viewfinder span { position: absolute; bottom: 10px; left: 12px; right: 12px; text-align: center; color: #c6d4ca; font-size: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 13px; }
+.chip:hover { border-color: var(--accent); }
+
+/* карточка продукта */
+.score { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 30px; flex: none; font-variant-numeric: tabular-nums; }
+.g-excellent { background: var(--g-excellent); } .g-good { background: var(--g-good); }
+.g-mediocre { background: var(--g-mediocre); } .g-bad { background: var(--g-bad); }
+.t-excellent { color: var(--g-excellent); } .t-good { color: var(--g-good); } .t-mediocre { color: var(--g-mediocre); } .t-bad { color: var(--g-bad); }
+.bars { display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: 110px 1fr 28px; gap: 8px; align-items: center; font-size: 13px; }
+.bar i { display: block; height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.bar i b { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+.bar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.factor { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.factor:first-child { border-top: 0; }
+.factor small { display: block; color: var(--muted); font-size: 12.5px; }
+.dot { width: 18px; height: 18px; border-radius: 50%; margin-top: 2px; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #fff; }
+.dot.pos { background: var(--g-excellent); } .dot.neg { background: var(--g-bad); } .dot.neu { background: var(--muted); }
+.warn { background: var(--warn-bg); border: 1px solid var(--g-bad); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.alt { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); width: 100%; background: none; border-left: 0; border-right: 0; border-bottom: 0; text-align: left; }
+.alt .score { width: 40px; height: 40px; font-size: 15px; }
+.macros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center; }
+.macros div { background: var(--bg); border-radius: 10px; padding: 8px 4px; font-variant-numeric: tabular-nums; }
+.macros b { display: block; font-size: 16px; } .macros small { color: var(--muted); font-size: 11.5px; }
+
+/* дневник */
+.ring-wrap { display: flex; align-items: center; gap: 16px; }
+.ring { --p: 0; width: 96px; height: 96px; border-radius: 50%; flex: none; display: grid; place-items: center; background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--surface-2) 0); }
+.ring div { width: 74px; height: 74px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; text-align: center; font-size: 11px; color: var(--muted); line-height: 1.15; }
+.ring b { display: block; font-size: 18px; color: var(--fg); font-variant-numeric: tabular-nums; }
+.mbar { display: grid; grid-template-columns: 22px 1fr 92px; gap: 8px; align-items: center; font-size: 13px; font-variant-numeric: tabular-nums; }
+.mbar i { height: 7px; background: var(--surface-2); border-radius: 4px; overflow: hidden; display: block; }
+.mbar i b { display: block; height: 100%; background: var(--accent); }
+.entry { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.entry:first-of-type { border-top: 0; }
+
+/* прогресс */
+.level { font-family: var(--font-display); font-size: 34px; font-weight: 700; line-height: 1; }
+.xpbar { height: 10px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
+.xpbar b { display: block; height: 100%; background: var(--accent); transition: width .4s; }
+.ach { display: grid; grid-template-columns: 36px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+.ach:first-of-type { border-top: 0; }
+.ach .ico { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2); color: var(--muted); font-weight: 700; }
+.ach.on .ico { background: var(--accent); color: var(--accent-fg); }
+.ach.off { opacity: .6; }
+
+nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 440px; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border-top: 1px solid var(--line); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); z-index: 6; }
+nav button { background: none; border: 0; padding: 8px 4px; border-radius: 10px; font-size: 12.5px; color: var(--muted); font-weight: 500; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+nav button svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+nav button[aria-selected="true"] { color: var(--accent); }
+
+.toasts { position: fixed; top: calc(64px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); width: min(408px, calc(100% - 32px)); display: grid; gap: 8px; z-index: 20; pointer-events: none; }
+.toast { background: var(--fg); color: var(--bg); border-radius: 12px; padding: 10px 14px; font-size: 14px; font-weight: 500; animation: pop .25s ease-out; }
+@keyframes pop { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .viewfinder::after { animation: none; } .toast { animation: none; } }
+@media (max-width: 380px) { .bar { grid-template-columns: 90px 1fr 28px; } }
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="brand">ЧестноЕшь</div>
+    <span class="pill" title="Серия дней подряд">🔥 <b id="hStreak">0</b></span>
+    <span class="pill" title="Уровень и опыт">Ур. <b id="hLevel">1</b> · <b id="hXp">0</b> XP</span>
+  </header>
+  <main id="view"></main>
+  <nav role="tablist" aria-label="Разделы">
+    <button role="tab" data-tab="scan" aria-selected="true"><svg viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M7 9v6M11 9v6M15 9v6"/></svg>Скан</button>
+    <button role="tab" data-tab="diary" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 3 3v7M9 3v6M12 3v8a3 3 0 0 1-3 3M17 3c-2 1.5-3 4-3 7 0 2 1 3 3 3v8"/></svg>Дневник</button>
+    <button role="tab" data-tab="progress" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M10 17h4"/></svg>Прогресс</button>
+  </nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</div>
+
+<script>
+/* ===== Данные: те же демо-продукты и добавки, что в backend/app/data ===== */
+const ADDITIVES = {
+  E100:["Куркумин",0,"Натуральный краситель."], E160A:["Каротины",0,"Натуральный краситель."],
+  E171:["Диоксид титана",3,"Запрещён в ЕС как пищевая добавка с 2022 г. из-за неопределённости по генотоксичности."],
+  E202:["Сорбат калия",1,"Консервант, в допустимых дозах малоопасен."],
+  E211:["Бензоат натрия",2,"Консервант. В сочетании с некоторыми красителями связывают с гиперактивностью у детей."],
+  E250:["Нитрит натрия",3,"Консервант мясных изделий, при нагревании может образовывать нитрозамины."],
+  E300:["Аскорбиновая кислота",0,"Витамин C, антиоксидант."], E322:["Лецитин",0,"Эмульгатор."],
+  E330:["Лимонная кислота",0,"Регулятор кислотности."],
+  E102:["Тартразин",2,"Синтетический краситель; в ЕС требуется предупреждение о влиянии на активность детей."],
+  E407:["Каррагинан",2,"Загуститель; есть споры о влиянии на кишечник."],
+  E621:["Глутамат натрия",1,"Усилитель вкуса. В обычных количествах считается безопасным."],
+  E951:["Аспартам",2,"Подсластитель; противопоказан при фенилкетонурии."]
+};
+const PRODUCTS = [
+  {barcode:"4600000000011",name:"Овсянка «Классическая»",category:"cereal",kcal:352,protein:12,fat:6,sat:1.2,carbs:60,sugars:1.1,fiber:10,salt:0.02,ing:"Хлопья овсяные"},
+  {barcode:"4600000000028",name:"Газировка «Лимон»",category:"drink",kcal:42,protein:0,fat:0,sat:0,carbs:10.5,sugars:10.5,fiber:0,salt:0.01,ing:"Вода, сахар, лимонная кислота (E330), бензоат натрия (E211), краситель тартразин (E102), ароматизатор"},
+  {barcode:"4600000000035",name:"Колбаса «Докторская»",category:"meat",kcal:257,protein:12.8,fat:22.2,sat:8,carbs:1.5,sugars:0.5,fiber:0,salt:2.0,ing:"Говядина, свинина, молоко сухое, яйца, соль, нитрит натрия (E250), глутамат натрия (E621), аскорбиновая кислота (E300), сахар"},
+  {barcode:"4600000000042",name:"Йогурт натуральный 3,2%",category:"dairy",kcal:68,protein:4.5,fat:3.2,sat:2.1,carbs:5.5,sugars:5.5,fiber:0,salt:0.15,ing:"Молоко нормализованное, закваска"},
+  {barcode:"4600000000059",name:"Гречка ядрица",category:"cereal",kcal:313,protein:12.6,fat:3.3,sat:0.7,carbs:62.1,sugars:1.0,fiber:11.3,salt:0.01,ing:"Крупа гречневая"},
+  {barcode:"4600000000066",name:"Газировка «Без сахара»",category:"drink",kcal:1,protein:0,fat:0,sat:0,carbs:0,sugars:0,fiber:0,salt:0.02,ing:"Вода, диоксид углерода, регулятор кислотности (E330), подсластитель аспартам (E951), ароматизатор"}
+];
+const ACH = {
+  first_scan:["Первый скан","Отсканируйте первый продукт",10],
+  detective_50:["Детектив состава","50 сканов",50],
+  red_flag:["Красный флаг","Найдите продукт с оценкой ниже 25",15],
+  better_choice:["Лучший выбор","Замените плохой продукт хорошим",25],
+  streak_7:["Неделя в ритме","Серия 7 дней",40],
+  streak_30:["Месяц в ритме","Серия 30 дней",150],
+  first_goal:["В норме","Выполните дневную норму калорий",20]
+};
+const GRADE = {excellent:"Отлично",good:"Хорошо",mediocre:"Посредственно",bad:"Плохо"};
+const XPV = {scan:5, diary:10, goal:30, better:20};
+
+/* ===== Оценка продукта: порт backend/app/services/scoring.py ===== */
+function parseAdditives(t){
+  const re=/(?<![\p{L}\p{N}])[EЕeе][\s-]?(\d{3,4}[a-zA-Zа-яА-Я]?)(?![\p{L}\p{N}])/gu, out=[];
+  for(const m of (t||"").matchAll(re)){
+    const c="E"+m[1].replace(/а/gi,"a").replace(/с/gi,"c").replace(/е/gi,"e").toUpperCase();
+    if(!out.includes(c)) out.push(c);
+  }
+  return out;
+}
+function countIng(t){ return t.trim()? t.replace(/\([^)]*\)/g,"").split(/[,;]/).filter(s=>s.trim()).length : 0; }
+function grade(s){ return s>=75?"excellent":s>=50?"good":s>=25?"mediocre":"bad"; }
+function scoreProduct(p){
+  const drink=p.category==="drink", fl=Math.floor, mn=Math.min;
+  const neg={energy:mn(10,fl(p.kcal/(drink?7:80))),sugars:mn(10,fl(p.sugars/(drink?1.5:4.5))),sat:mn(10,fl(p.sat/1)),salt:mn(10,fl(p.salt/0.25))};
+  const pos={fiber:mn(5,fl(p.fiber/0.9)),protein:mn(5,fl(p.protein/1.6))};
+  const n=Object.values(neg).reduce((a,b)=>a+b,0)-Object.values(pos).reduce((a,b)=>a+b,0);
+  const nut=Math.max(0,mn(100,Math.round(100*(1-(n+10)/(drink?40:50)))));
+  const f=[
+    {label:"Сахар",value:p.sugars+" г/100 г",impact:neg.sugars>=4?-1:(neg.sugars===0?1:0)},
+    {label:"Насыщенные жиры",value:p.sat+" г/100 г",impact:neg.sat>=4?-1:0},
+    {label:"Соль",value:p.salt+" г/100 г",impact:neg.salt>=4?-1:0},
+    {label:"Калорийность",value:p.kcal+" ккал/100 г",impact:neg.energy>=6?-1:0},
+    {label:"Клетчатка",value:p.fiber+" г/100 г",impact:pos.fiber>=3?1:0},
+    {label:"Белок",value:p.protein+" г/100 г",impact:pos.protein>=3?1:0}
+  ];
+  const hits=[], PEN=[0,5,20,50];
+  parseAdditives(p.ing).forEach(c=>{ const a=ADDITIVES[c]; if(a) hits.push({code:c,name:a[0],risk:a[1],note:a[2]}); });
+  const add=Math.max(0,100-hits.reduce((s,h)=>s+PEN[h.risk],0));
+  hits.filter(h=>h.risk>0).forEach(h=>f.push({label:h.code+" "+h.name,value:h.note,impact:h.risk>=2?-1:0}));
+  const nAdd=parseAdditives(p.ing).length, ni=countIng(p.ing);
+  const nova=(nAdd>=2||ni>=8)?4:(nAdd===1||ni>=3)?3:1;
+  const proc={1:100,2:85,3:55,4:15}[nova];
+  f.push({label:"Степень переработки (NOVA)",value:"группа "+nova,impact:nova===1?1:nova===4?-1:0});
+  let total=Math.round(0.55*nut+0.30*add+0.15*proc), capped=false;
+  if(hits.some(h=>h.risk===3)&&total>49){ total=49; capped=true; }
+  return {score:total,grade:grade(total),nut,add,proc,nova,hits,factors:f,capped};
+}
+
+/* ===== КБЖУ: порт backend/app/services/nutrition.py ===== */
+const ACT={sedentary:1.2,light:1.375,moderate:1.55,high:1.725}, ADJ={lose:.85,maintain:1,gain:1.1}, PPK={lose:1.8,maintain:1.4,gain:1.8}, MINK={f:1200,m:1500};
+function calcTargets(pr){
+  const age=Math.max(14,new Date().getFullYear()-pr.birth);
+  const bmr=10*pr.weight+6.25*pr.height-5*age+(pr.sex==="m"?5:-161);
+  const kcal=Math.max(bmr*ACT[pr.activity]*ADJ[pr.goal],MINK[pr.sex]);
+  const protein=PPK[pr.goal]*pr.weight, fat=0.28*kcal/9, carbs=Math.max(0,(kcal-protein*4-fat*9)/4);
+  return {kcal:Math.round(kcal),protein:Math.round(protein),fat:Math.round(fat),carbs:Math.round(carbs)};
+}
+
+/* ===== Состояние и геймификация ===== */
+const S={tab:"scan",profile:{sex:"m",birth:1995,height:180,weight:80,activity:"moderate",goal:"maintain"},targets:null,
+  xp:0,coins:0,streak:0,best:0,unlocked:new Set(),scans:[],diary:[],goalDone:false,card:null,streakCounted:false};
+S.targets=calcTargets(S.profile);
+const levelFor=xp=>{let n=1;while(xp>=50*n*n)n++;return n;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $=s=>document.querySelector(s);
+
+function toast(msg){ const el=document.createElement("div"); el.className="toast"; el.textContent=msg; $("#toasts").appendChild(el); setTimeout(()=>el.remove(),3200); }
+function touchStreak(){ if(!S.streakCounted){ S.streakCounted=true; S.streak=1; S.best=Math.max(S.best,1); } }
+function award(kind,ev){
+  touchStreak();
+  const before=levelFor(S.xp);
+  let amt=XPV[kind];
+  if(kind==="scan" && S.scans.length*XPV.scan>=50) amt=0;   // лимит XP за сканы в день
+  S.xp+=amt; ev.xp+=amt; if(levelFor(S.xp)>before) ev.level=true;
+}
+function unlock(code,ev){ if(S.unlocked.has(code)) return; S.unlocked.add(code); S.coins+=ACH[code][2]; ev.unlocked.push(code); }
+function report(ev){
+  if(ev.xp) toast("+"+ev.xp+" XP");
+  ev.unlocked.forEach(c=>toast("🏆 "+ACH[c][0]+" (+"+ACH[c][2]+" монет)"));
+  if(ev.level) toast("⬆ Новый уровень: "+levelFor(S.xp));
+  header();
+}
+function header(){ $("#hStreak").textContent=S.streak; $("#hLevel").textContent=levelFor(S.xp); $("#hXp").textContent=S.xp; }
+
+function doScan(barcode,replaced){
+  const p=PRODUCTS.find(x=>x.barcode===String(barcode).trim());
+  if(!p){ toast("Продукта нет в базе. В приложении вы сфотографируете состав, и он добавится."); return; }
+  const r=scoreProduct(p), ev={xp:0,unlocked:[],level:false};
+  award("scan",ev); S.scans.push({barcode:p.barcode,score:r.score});
+  if(replaced){ const old=PRODUCTS.find(x=>x.barcode===replaced);
+    if(old){ const o=scoreProduct(old).score; if(o<50&&r.score>=50&&r.score>o){ award("better",ev); unlock("better_choice",ev); } } }
+  unlock("first_scan",ev); if(S.scans.length>=50) unlock("detective_50",ev); if(r.score<25) unlock("red_flag",ev);
+  S.card={p,r}; report(ev); render();
+}
+function addToDiary(grams,meal){
+  const {p}=S.card, k=grams/100, ev={xp:0,unlocked:[],level:false};
+  S.diary.push({name:p.name,grams,meal,kcal:p.kcal*k,protein:p.protein*k,fat:p.fat*k,carbs:p.carbs*k});
+  award("diary",ev);
+  const total=S.diary.reduce((a,e)=>a+e.kcal,0), t=S.targets.kcal;
+  if(!S.goalDone && total>=Math.max(.85*t,MINK[S.profile.sex]) && total<=1.1*t){ S.goalDone=true; award("goal",ev); unlock("first_goal",ev); }
+  report(ev); toast("Добавлено в дневник: "+p.name+", "+grams+" г");
+}
+
+/* ===== Экраны ===== */
+function ringScore(r,size){ return `<div class="score g-${r.grade}" ${size?`style="width:${size}px;height:${size}px;font-size:${size*.36}px"`:""}>${r.score}</div>`; }
+function viewScan(){
+  const chips=PRODUCTS.map(p=>`<button class="chip" data-scan="${p.barcode}">${esc(p.name)}</button>`).join("");
+  let html=`<div class="viewfinder" role="img" aria-label="Область сканирования штрихкода"><span>В приложении здесь камера. В демо выберите продукт ниже или введите штрихкод.</span></div>
+  <form class="row" id="manual"><label class="field grow" for="bc">Штрихкод
+    <input id="bc" inputmode="numeric" placeholder="4600000000011" autocomplete="off"></label><button class="btn" style="align-self:flex-end">Найти</button></form>
+  <div><h3 style="margin-bottom:8px">Демо-продукты</h3><div class="chips">${chips}</div></div>`;
+  if(S.card) html+=viewCard();
+  return html;
+}
+function viewCard(){
+  const {p,r}=S.card;
+  const alts=PRODUCTS.filter(x=>x.category===p.category&&x.barcode!==p.barcode).map(x=>({x,s:scoreProduct(x).score})).filter(a=>a.s>r.score).sort((a,b)=>b.s-a.s);
+  const factors=r.factors.filter(f=>f.impact!==0||/NOVA/.test(f.label)).map(f=>`<div class="factor"><span class="dot ${f.impact>0?"pos":f.impact<0?"neg":"neu"}">${f.impact>0?"+":f.impact<0?"−":"·"}</span><div>${esc(f.label)}<small>${esc(f.value)}</small></div></div>`).join("");
+  return `<section class="card" id="card" aria-label="Карточка продукта">
+    <div class="row">${ringScore(r)}<div class="grow"><h2>${esc(p.name)}</h2><p class="t-${r.grade}" style="font-weight:600">${GRADE[r.grade]}</p><p class="muted" style="font-size:13px">Штрихкод ${p.barcode}</p></div></div>
+    ${r.capped?`<div class="warn">Есть добавка высокого риска: итоговая оценка не может быть выше 49.</div>`:""}
+    <div class="macros"><div><b>${p.kcal}</b><small>ккал</small></div><div><b>${p.protein}</b><small>белки</small></div><div><b>${p.fat}</b><small>жиры</small></div><div><b>${p.carbs}</b><small>углеводы</small></div></div>
+    <p class="muted" style="font-size:12.5px">Значения на 100 г</p>
+    <h3>Из чего сложилась оценка</h3>
+    <div class="bars">
+      <div class="bar"><span>Нутриенты · 55%</span><i><b style="width:${r.nut}%"></b></i><span>${r.nut}</span></div>
+      <div class="bar"><span>Добавки · 30%</span><i><b style="width:${r.add}%"></b></i><span>${r.add}</span></div>
+      <div class="bar"><span>Переработка · 15%</span><i><b style="width:${r.proc}%"></b></i><span>${r.proc}</span></div></div>
+    <div>${factors}</div>
+    <h3>Состав</h3><p style="font-size:14px">${esc(p.ing)}</p>
+    <form class="row" id="addForm">
+      <label class="field grow" for="grams">Порция, г<input id="grams" type="number" min="1" max="2000" value="100"></label>
+      <label class="field grow" for="meal">Приём пищи<select id="meal"><option value="breakfast">Завтрак</option><option value="lunch">Обед</option><option value="dinner">Ужин</option><option value="snack" selected>Перекус</option></select></label>
+    </form>
+    <button class="btn" id="addBtn">Добавить в дневник</button>
+    ${alts.length?`<h3>Лучшие альтернативы</h3><div>${alts.map(a=>`<button class="alt" data-replace="${p.barcode}" data-scan="${a.x.barcode}">${ringScore({score:a.s,grade:grade(a.s)})}<span class="grow">${esc(a.x.name)}<br><small class="muted">Нажмите, чтобы заменить</small></span></button>`).join("")}</div>`:""}
+  </section>`;
+}
+function viewDiary(){
+  const t=S.targets, tot=S.diary.reduce((a,e)=>({kcal:a.kcal+e.kcal,protein:a.protein+e.protein,fat:a.fat+e.fat,carbs:a.carbs+e.carbs}),{kcal:0,protein:0,fat:0,carbs:0});
+  const pct=Math.min(100,Math.round(tot.kcal/t.kcal*100));
+  const mb=(l,v,g)=>`<div class="mbar"><b>${l}</b><i><b style="width:${Math.min(100,v/g*100)}%"></b></i><span>${Math.round(v)} / ${g} г</span></div>`;
+  const names={breakfast:"Завтрак",lunch:"Обед",dinner:"Ужин",snack:"Перекус"};
+  const pr=S.profile, opt=(o,v)=>Object.entries(o).map(([k,l])=>`<option value="${k}" ${k===v?"selected":""}>${l}</option>`).join("");
+  return `<section class="card"><h2>Сегодня</h2><div class="ring-wrap"><div class="ring" style="--p:${pct}"><div><span><b>${Math.round(tot.kcal)}</b>из ${t.kcal}<br>ккал</span></div></div>
+    <div class="grow" style="display:grid;gap:8px">${mb("Б",tot.protein,t.protein)}${mb("Ж",tot.fat,t.fat)}${mb("У",tot.carbs,t.carbs)}</div></div></section>
+    <section class="card"><h3>Записи</h3>${S.diary.length?S.diary.map(e=>`<div class="entry"><span>${esc(e.name)}<br><small class="muted">${names[e.meal]} · ${e.grams} г</small></span><b>${Math.round(e.kcal)} ккал</b></div>`).join(""):`<p class="muted">Пока пусто. Отсканируйте продукт и добавьте его в дневник.</p>`}</section>
+    <section class="card"><h3>Моя норма</h3>
+      <form id="prof" class="grid2">
+        <label class="field" for="p_sex">Пол<select id="p_sex">${opt({m:"Мужской",f:"Женский"},pr.sex)}</select></label>
+        <label class="field" for="p_birth">Год рождения<input id="p_birth" type="number" min="1940" max="2012" value="${pr.birth}"></label>
+        <label class="field" for="p_h">Рост, см<input id="p_h" type="number" min="120" max="230" value="${pr.height}"></label>
+        <label class="field" for="p_w">Вес, кг<input id="p_w" type="number" min="35" max="250" value="${pr.weight}"></label>
+        <label class="field" for="p_a">Активность<select id="p_a">${opt({sedentary:"Сидячая",light:"Лёгкая",moderate:"Средняя",high:"Высокая"},pr.activity)}</select></label>
+        <label class="field" for="p_g">Цель<select id="p_g">${opt({lose:"Похудеть",maintain:"Держать вес",gain:"Набрать"},pr.goal)}</select></label>
+      </form>
+      <p class="muted" style="font-size:13px">Ниже ${MINK[pr.sex]} ккал приложение цель не опускает и за недоедание награды не даёт.</p></section>`;
+}
+function viewProgress(){
+  const lvl=levelFor(S.xp), base=50*(lvl-1)*(lvl-1), next=50*lvl*lvl, pct=Math.round((S.xp-base)/(next-base)*100);
+  const list=Object.entries(ACH).map(([c,[t,d,coins]])=>{const on=S.unlocked.has(c);return `<div class="ach ${on?"on":"off"}"><div class="ico">${on?"✓":"?"}</div><div><b>${t}</b><br><small class="muted">${d}</small></div><span class="muted">${coins} мон.</span></div>`;}).join("");
+  return `<section class="card"><div class="row"><div class="level">${lvl}</div><div class="grow"><b>Уровень</b><br><span class="muted">${S.xp} XP · до следующего ${next-S.xp}</span></div></div>
+    <div class="xpbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><b style="width:${pct}%"></b></div>
+    <div class="grid2"><div class="pill">🔥 Серия: <b>${S.streak}</b> дн.</div><div class="pill">🪙 Монеты: <b>${S.coins}</b></div></div></section>
+    <section class="card"><h3>Достижения · ${S.unlocked.size} из ${Object.keys(ACH).length}</h3>${list}</section>
+    <section class="card"><h3>Как начисляется опыт</h3><p style="font-size:14px">Скан продукта +5 (до 50 в день). Запись в дневник +10. Дневная норма калорий +30, один раз в день. Замена плохого продукта хорошим +20.</p></section>`;
+}
+function render(){
+  const v=$("#view");
+  v.innerHTML= S.tab==="scan"?viewScan(): S.tab==="diary"?viewDiary(): viewProgress();
+  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===S.tab));
+}
+
+/* ===== События ===== */
+document.addEventListener("click",e=>{
+  const tab=e.target.closest("[data-tab]"); if(tab){ S.tab=tab.dataset.tab; render(); window.scrollTo(0,0); return; }
+  const sc=e.target.closest("[data-scan]"); if(sc){ doScan(sc.dataset.scan, sc.dataset.replace); setTimeout(()=>{const c=$("#card"); if(c) c.scrollIntoView({behavior:"smooth",block:"start"});},30); return; }
+  if(e.target.id==="addBtn"){ const g=parseFloat($("#grams").value); if(!(g>0)){ toast("Укажите порцию больше нуля"); return; } addToDiary(g,$("#meal").value); }
+});
+document.addEventListener("submit",e=>{
+  e.preventDefault();
+  if(e.target.id==="manual"){ doScan($("#bc").value); }
+});
+document.addEventListener("change",e=>{
+  if(e.target.id && e.target.id.startsWith("p_")){
+    S.profile={sex:$("#p_sex").value,birth:+$("#p_birth").value||1995,height:+$("#p_h").value||175,weight:+$("#p_w").value||70,activity:$("#p_a").value,goal:$("#p_g").value};
+    S.targets=calcTargets(S.profile); S.goalDone=false; render();
+  }
+});
+header(); render();
+</script>
