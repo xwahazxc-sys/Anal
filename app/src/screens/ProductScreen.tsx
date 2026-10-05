@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { ScrollView, View, Text, Pressable } from 'react-native';
 import { data } from '../data';
 import { Preferences, ScoredProduct, Risk } from '../types';
+import { breakdown } from '../scoring';
 import { Body, Button, ErrorState, Heading, ScoreBadge, Skeleton, Screen, t } from '../ui/primitives';
 import { ProductCard } from '../ui/ProductCard';
 import { color, radius, space, scoreWord } from '../theme';
@@ -94,7 +95,13 @@ export function ProductScreen({ code, premium, onOpen, onAdd, onPaywall }: Props
             <Text style={[t.sm, { color: color.text, fontWeight: '600' }]}>{scoreWord[p.color]}</Text>
           </View>
         </View>
-        {p.capped ? <Body muted>Оценка ограничена: в составе есть вещество с высоким риском.</Body> : null}
+        <View accessibilityLabel="Из чего сложилась оценка" style={{ gap: space[1] }}>
+          <Heading>Из чего сложилась оценка</Heading>
+          {breakdown(p).map((b) => (
+            <Body key={b.label}>{b.label}: {b.points} из {b.max}</Body>
+          ))}
+          {p.capped ? <Body muted>Оценка ограничена до 49: в составе есть вещество с высоким риском.</Body> : null}
+        </View>
         {al.map((a) => (
           <View key={a} accessibilityRole="alert" style={{ backgroundColor: color.surface, borderColor: color.danger, borderWidth: 1, borderRadius: radius.md, padding: space[3] }}>
             <Text style={[t.sm, { color: color.danger, fontWeight: '600' }]}>{a}</Text>

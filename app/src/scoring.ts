@@ -39,6 +39,18 @@ export function colorFor(score: number): ScoreResult['color'] {
   return 'red';
 }
 
+/** What each part contributed, in points of the final 0-100 score. Shown on the product card. */
+export function breakdown(p: Product): { label: string; points: number; max: number }[] {
+  if (p.type === 'food') {
+    return [
+      { label: 'Питательность', points: Math.round(0.6 * nutritionScore(p)), max: 60 },
+      { label: 'Добавки', points: Math.round(0.3 * additivesScore(p)), max: 30 },
+      { label: 'Органический продукт', points: p.organic ? 10 : 0, max: 10 },
+    ];
+  }
+  return [{ label: 'Состав', points: additivesScore(p), max: 100 }];
+}
+
 export function scoreProduct(p: Product): ScoreResult {
   const hasHigh = p.ingredients.some((i) => i.risk === 'high');
   let score: number;

@@ -44,7 +44,7 @@ const ok = (name, cond, extra = '') => { results.push([name, !!cond, extra]); co
     await page.getByLabel('Штрихкод вручную').fill('4600000000080');
     await page.getByRole('button', { name: 'Найти продукт' }).click();
     await page.getByRole('heading', { name: 'Фруктовые снеки с красителем' }).waitFor();
-    ok(`${tag} F01 score capped at 49 for high-risk additive`, await page.getByText(/Оценка ограничена/).isVisible() && await page.getByLabel(/Оценка 49 из 100/).first().isVisible());
+    ok(`${tag} F01 score capped at 49 for high-risk additive`, await page.getByText(/Оценка ограничена до 49/).isVisible() && await page.getByLabel(/Оценка 49 из 100/).first().isVisible());
     await page.getByRole('button', { name: 'Назад' }).click();
     await page.getByLabel('Штрихкод вручную').fill('4600000000035');
     await page.getByRole('button', { name: 'Найти продукт' }).click();

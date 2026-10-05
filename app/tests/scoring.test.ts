@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreProduct, colorFor } from '../src/scoring';
+import { scoreProduct, colorFor, breakdown } from '../src/scoring';
 import { Product } from '../src/types';
 import { seedProducts } from '../src/data/seed';
 
@@ -46,4 +46,10 @@ test('cosmetics: worst ingredient drives the result, no ingredients is clean', (
 test('alternatives logic input: bad seed product scores below its alternatives', () => {
   const bad = seedProducts.find((p) => p.id === 'p3')!; const good = seedProducts.find((p) => p.id === 'p1')!;
   assert.ok(scoreProduct(bad).score < scoreProduct(good).score);
+});
+
+test('breakdown parts add up to the uncapped score for food', () => {
+  const p = seedProducts.find((x) => x.id === 'p2')!;
+  const sum = breakdown(p).reduce((a, b) => a + b.points, 0);
+  assert.ok(Math.abs(sum - scoreProduct(p).score) <= 1, `${sum} vs ${scoreProduct(p).score}`);
 });
