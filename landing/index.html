@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разбор — сканер продуктов</title>
+<meta name="description" content="Сканируйте штрихкод и узнайте, из чего сложилась оценка продукта: питательность, добавки, состав.">
+<style>
+  :root { --bg:#ffffff; --surface:#f6f7f9; --border:#e3e6ea; --text:#14171c; --muted:#5b6470; --accent:#4a38c8; --on-accent:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14171c; --surface:#1d2128; --border:#2c323b; --text:#f2f4f7; --muted:#a8b0bb; --accent:#a99bff; --on-accent:#14171c; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/24px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--text); }
+  main { max-width: 760px; margin: 0 auto; padding: 0 16px 64px; }
+  header, section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+  h1 { font-size: 40px; line-height: 44px; margin: 0 0 16px; }
+  h2 { font-size: 28px; line-height: 34px; margin: 0 0 16px; }
+  p { margin: 0 0 12px; } .muted { color: var(--muted); }
+  a.btn { display:inline-block; background:var(--accent); color:var(--on-accent); padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; min-height: 44px; }
+  a.btn:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+  ol, ul { padding-left: 20px; margin: 0; } li { margin-bottom: 8px; }
+  .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px; }
+  table { width:100%; border-collapse: collapse; } th, td { text-align:left; padding:8px; border-bottom:1px solid var(--border); }
+  @media (max-width: 480px) { h1 { font-size: 28px; line-height: 34px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Оценка продукта, в которой видно каждое слагаемое</h1>
+    <p class="muted">Сканируйте штрихкод еды и косметики и узнайте, сколько баллов дали питательность, добавки и состав.</p>
+    <p><a class="btn" href="#waitlist">Узнать о выходе</a></p>
+  </header>
+  <section>
+    <h2>Как это работает</h2>
+    <ol><li>Наведите камеру на штрихкод.</li><li>Получите оценку от 0 до 100 и разбор по слагаемым.</li><li>Если оценка низкая, выберите лучшую альтернативу.</li></ol>
+  </section>
+  <section>
+    <h2>Возможности</h2>
+    <div class="grid">
+      <div class="card"><strong>Разбор оценки</strong><p class="muted">Питательность, добавки, органика — каждое со своим числом.</p></div>
+      <div class="card"><strong>Альтернативы</strong><p class="muted">Для продуктов с низкой оценкой показываем лучшие аналоги.</p></div>
+      <div class="card"><strong>История и избранное</strong><p class="muted">Вернуться к любому продукту без повторного скана.</p></div>
+      <div class="card"><strong>Premium</strong><p class="muted">Поиск без скана и предупреждения по вашей диете и аллергенам.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Цены</h2>
+    <table><thead><tr><th scope="col">План</th><th scope="col">Что входит</th></tr></thead>
+    <tbody><tr><th scope="row">Бесплатно</th><td>Сканер, разбор, альтернативы, история, избранное</td></tr>
+    <tr><th scope="row">Premium</th><td>Поиск, предупреждения по диете и аллергенам. Отмена в один шаг через магазин приложений.</td></tr></tbody></table>
+    <p class="muted">Цены будут объявлены перед выходом.</p>
+  </section>
+  <section id="waitlist">
+    <h2>Вопросы</h2>
+    <p><strong>Это медицинская рекомендация?</strong> Нет. Оценка справочная, при заболеваниях и аллергиях проконсультируйтесь с врачом.</p>
+    <p><strong>Откуда данные?</strong> Из открытых баз с указанием источника и добавлений пользователей.</p>
+    <p><strong>Что если продукта нет?</strong> Добавьте его сами.</p>
+    <p><strong>Как отменить Premium?</strong> В настройках App Store или Google Play, одним действием.</p>
+    <p class="muted">Лист ожидания: форма подключается владельцем (адрес почты и согласие на рассылку).</p>
+  </section>
+</main>
+</body>
+</html>
