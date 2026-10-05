@@ -11,13 +11,13 @@ feature,area,priority,original,clone,notes
 История сканирований,history,must,yes,yes,вкладка History
 Избранное,history,should,yes,yes,вкладка Favorites
 Добавление продукта пользователем (фото упаковки/состава/таблицы),contribute,must,yes,partial,продукта нет в базе; ввод вручную; фото и OCR позже (backend)
-Проверка введённых данных (распознавание текста и ручная расшифровка),contribute,should,yes,no,порог ~20% нераспознанного текста
-Собственная база продуктов,data,must,yes,no,Open Food Facts как стартовый источник
+Проверка введённых данных (распознавание текста и ручная расшифровка),contribute,should,yes,no,заявки принимаются без OCR и без модерации
+Собственная база продуктов,data,must,yes,partial,"Open Food Facts как стартовый источник; схема и сид готовы, наполнение данными впереди"
 Поиск продукта без сканирования,search,should,yes,yes,Premium
 Офлайн-режим,offline,should,yes,no,Premium
 Фильтры предпочтений (вегетарианское/веган/пальмовое масло/глютен/лактоза),preferences,should,yes,yes,Premium
 Подписка Premium (около 10 EUR в год),payments,must,yes,partial,"единственный источник дохода; тестовая заглушка, реальная покупка через RevenueCat позже"
-Регистрация и аккаунт,onboarding,should,yes,no,детали неизвестны
+Регистрация и аккаунт,onboarding,should,yes,partial,"код есть, на живом Supabase не проверено"
 Каталог базы данных брендов и их данные,data,could,yes,no,партнёрские данные
 Независимость: без денег от брендов,business,could,yes,no,позиционирование
 Собственная база продуктов с миллионами позиций,data,could,yes,skip,данные принадлежат Yuka и её пользователям

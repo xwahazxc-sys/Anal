@@ -14,7 +14,12 @@ export function PaywallScreen({ premium, onChange }: { premium: boolean; onChang
         <Heading level="xl">Premium</Heading>
         <Body>Поиск без сканирования, работа без интернета, предупреждения по вашей диете и аллергенам.</Body>
         <Body muted>Цена и период берутся из магазина приложений.</Body>
-        {premium ? (
+        {!data.testPurchases ? (
+          <>
+            <Body>{premium ? 'Premium активен.' : 'Покупка оформляется в мобильном приложении через App Store или Google Play.'}</Body>
+            <Button label="Обновить статус" variant="secondary" onPress={async () => { setBusy(true); onChange(await data.isPremium()); setBusy(false); }} loading={busy} />
+          </>
+        ) : premium ? (
           <>
             <Body>Premium активен.</Body>
             <Button label="Отключить (тестовый режим)" variant="secondary" onPress={() => run(false)} loading={busy} />
@@ -22,7 +27,7 @@ export function PaywallScreen({ premium, onChange }: { premium: boolean; onChang
         ) : (
           <Button label="Оформить Premium (тест)" onPress={() => run(true)} loading={busy} size="lg" />
         )}
-        <Button label="Восстановить покупки" variant="ghost" onPress={() => run(premium)} />
+        {data.testPurchases ? <Button label="Восстановить покупки" variant="ghost" onPress={() => run(premium)} /> : null}
       </View>
     </Screen>
   );

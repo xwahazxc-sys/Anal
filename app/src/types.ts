@@ -50,6 +50,8 @@ export interface Submission {
 }
 
 export interface DataLayer {
+  /** true for the local demo layer, where Premium can be toggled without a store purchase */
+  testPurchases: boolean;
   getByBarcode(code: string): Promise<ScoredProduct | null>;
   alternatives(p: ScoredProduct): Promise<ScoredProduct[]>;
   history(): Promise<ScoredProduct[]>;

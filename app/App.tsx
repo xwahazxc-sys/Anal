@@ -12,12 +12,15 @@ import { AddProductScreen } from './src/screens/AddProductScreen';
 import { SearchScreen } from './src/screens/SearchScreen';
 import { PrefsScreen } from './src/screens/PrefsScreen';
 import { PaywallScreen } from './src/screens/PaywallScreen';
+import { AuthScreen } from './src/screens/AuthScreen';
+import { AccountScreen } from './src/screens/AccountScreen';
+import { supabase } from './src/supabase';
 
 type Tab = 'scan' | 'history' | 'favorites' | 'more';
 type Route =
   | { name: 'product'; code: string; key: number }
   | { name: 'add'; code: string }
-  | { name: 'search' } | { name: 'prefs' } | { name: 'paywall' };
+  | { name: 'search' } | { name: 'prefs' } | { name: 'paywall' } | { name: 'account' };
 
 const tabs: [Tab, string][] = [['scan', 'Сканер'], ['history', 'История'], ['favorites', 'Избранное'], ['more', 'Ещё']];
 
@@ -25,13 +28,23 @@ export default function App() {
   const [tab, setTab] = useState<Tab>('scan');
   const [stack, setStack] = useState<Route[]>([]);
   const [premium, setPremium] = useState(false);
-  useEffect(() => { data.isPremium().then(setPremium); }, []);
+  const [session, setSession] = useState<'loading' | 'out' | 'in'>(supabase ? 'loading' : 'in');
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.auth.getSession().then(({ data: d }) => setSession(d.session ? 'in' : 'out'));
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => { setStack([]); setSession(s ? 'in' : 'out'); });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+  useEffect(() => { if (session === 'in') data.isPremium().then(setPremium).catch(() => setPremium(false)); }, [session]);
 
   const push = useCallback((r: Route) => setStack((s) => [...s, r]), []);
   const pop = () => setStack((s) => s.slice(0, -1));
   const openProduct = (p: ScoredProduct) => push({ name: 'product', code: p.barcode, key: Date.now() });
   const openCode = (code: string) => push({ name: 'product', code, key: Date.now() });
   const gated = (r: Route) => (premium ? push(r) : push({ name: 'paywall' }));
+
+  if (session === 'loading') return <SafeAreaView style={{ flex: 1, backgroundColor: color.bg }}><Screen><Body muted>Загрузка…</Body></Screen></SafeAreaView>;
+  if (session === 'out') return <SafeAreaView style={{ flex: 1, backgroundColor: color.bg }}><View style={{ flex: 1, width: '100%', maxWidth: 720, alignSelf: 'center' }}><AuthScreen /></View></SafeAreaView>;
 
   const top = stack[stack.length - 1];
   let content: React.ReactNode;
@@ -49,6 +62,7 @@ export default function App() {
         break;
       case 'search': title = 'Поиск'; content = <SearchScreen onOpen={openProduct} />; break;
       case 'prefs': title = 'Предпочтения'; content = <PrefsScreen />; break;
+      case 'account': title = 'Аккаунт'; content = <AccountScreen />; break;
       case 'paywall': title = 'Premium'; content = <PaywallScreen premium={premium} onChange={setPremium} />; break;
     }
   } else if (tab === 'scan') content = <ScanScreen onCode={openCode} />;
@@ -61,6 +75,7 @@ export default function App() {
         <Button label="Поиск продукта" variant="secondary" onPress={() => gated({ name: 'search' })} />
         <Button label="Мои предпочтения" variant="secondary" onPress={() => gated({ name: 'prefs' })} />
         <Button label={premium ? 'Premium активен' : 'Premium'} onPress={() => push({ name: 'paywall' })} />
+        {supabase ? <Button label="Аккаунт" variant="secondary" onPress={() => push({ name: 'account' })} /> : null}
         <Body muted style={{ marginTop: space[3] }}>Оценка не является медицинской рекомендацией.</Body>
       </View>
     </Screen>

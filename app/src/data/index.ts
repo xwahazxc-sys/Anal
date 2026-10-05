@@ -1,5 +1,7 @@
 import { DataLayer } from '../types';
 import { localData } from './local';
+import { supabase } from '../supabase';
+import { createSupabaseData } from './supabaseData';
 
-// Swap this for the Supabase implementation without touching any screen.
-export const data: DataLayer = localData;
+// Real backend when EXPO_PUBLIC_SUPABASE_URL/ANON_KEY are set, local demo data otherwise.
+export const data: DataLayer = supabase ? createSupabaseData(supabase) : localData;

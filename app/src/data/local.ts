@@ -37,6 +37,7 @@ function parseIngredients(text: string) {
 }
 
 export const localData: DataLayer = {
+  testPurchases: true,
   async getByBarcode(code) {
     const c = code.replace(/\D/g, '');
     return (await allProducts()).find((p) => p.barcode === c) ?? null;
