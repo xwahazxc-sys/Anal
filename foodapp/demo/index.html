@@ -119,6 +119,28 @@ nav button[aria-selected="true"] { color: var(--accent); }
 .toasts { position: fixed; top: calc(64px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); width: min(408px, calc(100% - 32px)); display: grid; gap: 8px; z-index: 20; pointer-events: none; }
 .toast { background: var(--fg); color: var(--bg); border-radius: 12px; padding: 10px 14px; font-size: 14px; font-weight: 500; animation: pop .25s ease-out; }
 @keyframes pop { from { opacity: 0; transform: translateY(-6px); } }
+/* онбординг */
+.app.onb .top, .app.onb nav { display: none; }
+.app.onb main { padding-bottom: 32px; padding-top: calc(20px + env(safe-area-inset-top, 0px)); }
+.dots { display: flex; gap: 6px; }
+.dots i { flex: 1; height: 4px; border-radius: 2px; background: var(--surface-2); }
+.dots i.on { background: var(--accent); }
+.hero { font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+.points { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.points li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+.points .n { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+.opt { display: grid; grid-template-columns: 1fr; gap: 2px; text-align: left; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; width: 100%; }
+.opt small { color: var(--muted); font-size: 13px; }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--surface-2); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.err { color: var(--g-bad); font-size: 13px; min-height: 1.2em; }
+.check { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 14px; }
+.check input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.kpi { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center; }
+.kpi div { background: var(--bg); border-radius: 10px; padding: 10px 4px; font-variant-numeric: tabular-nums; }
+.kpi b { display: block; font-size: 18px; } .kpi small { color: var(--muted); font-size: 11.5px; }
+.link { background: none; border: 0; color: var(--muted); text-decoration: underline; padding: 8px; font-size: 14px; }
 @media (prefers-reduced-motion: reduce) { .viewfinder::after { animation: none; } .toast { animation: none; } }
 @media (max-width: 380px) { .bar { grid-template-columns: 90px 1fr 28px; } }
 </style>
@@ -216,15 +238,18 @@ const ACT={sedentary:1.2,light:1.375,moderate:1.55,high:1.725}, ADJ={lose:.85,ma
 function calcTargets(pr){
   const age=Math.max(14,new Date().getFullYear()-pr.birth);
   const bmr=10*pr.weight+6.25*pr.height-5*age+(pr.sex==="m"?5:-161);
-  const kcal=Math.max(bmr*ACT[pr.activity]*ADJ[pr.goal],MINK[pr.sex]);
+  const raw=bmr*ACT[pr.activity]*ADJ[pr.goal], kcal=Math.max(raw,MINK[pr.sex]), floored=raw<MINK[pr.sex];
   const protein=PPK[pr.goal]*pr.weight, fat=0.28*kcal/9, carbs=Math.max(0,(kcal-protein*4-fat*9)/4);
-  return {kcal:Math.round(kcal),protein:Math.round(protein),fat:Math.round(fat),carbs:Math.round(carbs)};
+  return {kcal:Math.round(kcal),protein:Math.round(protein),fat:Math.round(fat),carbs:Math.round(carbs),floored};
 }
 
 /* ===== Состояние и геймификация ===== */
 const S={tab:"scan",profile:{sex:"m",birth:1995,height:180,weight:80,activity:"moderate",goal:"maintain"},targets:null,
   xp:0,coins:0,streak:0,best:0,unlocked:new Set(),scans:[],diary:[],goalDone:false,card:null,streakCounted:false};
 S.targets=calcTargets(S.profile);
+S.allergens=new Set(); S.onb={step:0,done:false,consent:false,err:""};
+const AL={milk:"Молоко",gluten:"Глютен",eggs:"Яйца",nuts:"Орехи",soy:"Соя",fish:"Рыба"};
+const ALW={milk:["молок","сливк","лактоз","сыворотк","казеин"],gluten:["пшениц","рожь","ячмен","овсян","глютен","мук"],eggs:["яйц","яичн"],nuts:["орех","арахис","миндал","фундук"],soy:["соев","соя"],fish:["рыб"]};
 const levelFor=xp=>{let n=1;while(xp>=50*n*n)n++;return n;};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=s=>document.querySelector(s);
@@ -283,6 +308,7 @@ function viewCard(){
   const factors=r.factors.filter(f=>f.impact!==0||/NOVA/.test(f.label)).map(f=>`<div class="factor"><span class="dot ${f.impact>0?"pos":f.impact<0?"neg":"neu"}">${f.impact>0?"+":f.impact<0?"−":"·"}</span><div>${esc(f.label)}<small>${esc(f.value)}</small></div></div>`).join("");
   return `<section class="card" id="card" aria-label="Карточка продукта">
     <div class="row">${ringScore(r)}<div class="grow"><h2>${esc(p.name)}</h2><p class="t-${r.grade}" style="font-weight:600">${GRADE[r.grade]}</p><p class="muted" style="font-size:13px">Штрихкод ${p.barcode}</p></div></div>
+    ${(()=>{const t=p.ing.toLowerCase(),hit=[...S.allergens].filter(a=>ALW[a].some(w=>t.includes(w)));return hit.length?`<div class="warn"><b>Ваши аллергены в составе:</b> ${hit.map(a=>AL[a]).join(", ")}</div>`:"";})()}
     ${r.capped?`<div class="warn">Есть добавка высокого риска: итоговая оценка не может быть выше 49.</div>`:""}
     <div class="macros"><div><b>${p.kcal}</b><small>ккал</small></div><div><b>${p.protein}</b><small>белки</small></div><div><b>${p.fat}</b><small>жиры</small></div><div><b>${p.carbs}</b><small>углеводы</small></div></div>
     <p class="muted" style="font-size:12.5px">Значения на 100 г</p>
@@ -319,7 +345,7 @@ function viewDiary(){
         <label class="field" for="p_a">Активность<select id="p_a">${opt({sedentary:"Сидячая",light:"Лёгкая",moderate:"Средняя",high:"Высокая"},pr.activity)}</select></label>
         <label class="field" for="p_g">Цель<select id="p_g">${opt({lose:"Похудеть",maintain:"Держать вес",gain:"Набрать"},pr.goal)}</select></label>
       </form>
-      <p class="muted" style="font-size:13px">Ниже ${MINK[pr.sex]} ккал приложение цель не опускает и за недоедание награды не даёт.</p></section>`;
+      <p class="muted" style="font-size:13px">Ниже ${MINK[pr.sex]} ккал приложение цель не опускает и за недоедание награды не даёт.</p><button class="link" data-ob="restart" style="align-self:flex-start">Пройти онбординг заново</button></section>`;
 }
 function viewProgress(){
   const lvl=levelFor(S.xp), base=50*(lvl-1)*(lvl-1), next=50*lvl*lvl, pct=Math.round((S.xp-base)/(next-base)*100);
@@ -330,14 +356,77 @@ function viewProgress(){
     <section class="card"><h3>Достижения · ${S.unlocked.size} из ${Object.keys(ACH).length}</h3>${list}</section>
     <section class="card"><h3>Как начисляется опыт</h3><p style="font-size:14px">Скан продукта +5 (до 50 в день). Запись в дневник +10. Дневная норма калорий +30, один раз в день. Замена плохого продукта хорошим +20.</p></section>`;
 }
+function viewOnb(){
+  const o=S.onb, pr=S.profile, step=o.step, N=5;
+  const dots=`<div class="dots" aria-hidden="true">${Array.from({length:N},(_,i)=>`<i class="${i<=step?"on":""}"></i>`).join("")}</div>`;
+  const back=step>0?`<button class="btn ghost" data-ob="back">Назад</button>`:"";
+  const sel=(id,opts,v)=>`<select id="${id}">${Object.entries(opts).map(([k,l])=>`<option value="${k}" ${k===v?"selected":""}>${l}</option>`).join("")}</select>`;
+  let body="";
+  if(step===0) body=`<div class="brand" style="font-size:18px">ЧестноЕшь</div>
+    <h1 class="hero">Узнайте, что на самом деле в вашей еде</h1>
+    <ul class="points">
+      <li><span class="n">1</span><span><b>Наведите камеру на штрихкод.</b><br><span class="muted">Получите оценку от 0 до 100 и объяснение по каждой добавке.</span></span></li>
+      <li><span class="n">2</span><span><b>Ведите дневник КБЖУ.</b><br><span class="muted">Норма считается под ваш вес, активность и цель.</span></span></li>
+      <li><span class="n">3</span><span><b>Получайте награды за привычку.</b><br><span class="muted">Серии, уровни и достижения за осознанный выбор.</span></span></li></ul>
+    <p class="muted" style="font-size:13.5px">Мы не берём деньги у производителей. Оценка зависит только от состава, а методика открыта.</p>
+    <button class="btn" data-ob="next">Начать</button><button class="link" data-ob="skip">Пропустить, настрою позже</button>`;
+  if(step===1) body=`<h2>Какая у вас цель?</h2><p class="muted">От цели зависит суточная норма калорий и белка.</p>
+    ${[["lose","Снизить вес","Небольшой дефицит калорий, больше белка"],["maintain","Держать вес","Калории по расходу энергии"],["gain","Набрать массу","Небольшой профицит, больше белка"]].map(([k,t,d])=>`<button class="opt" data-ob="goal" data-v="${k}" aria-pressed="${pr.goal===k}"><b>${t}</b><small>${d}</small></button>`).join("")}
+    <div class="row">${back}<button class="btn grow" data-ob="next">Дальше</button></div>`;
+  if(step===2) body=`<h2>Немного о вас</h2><p class="muted">Нужно только для расчёта нормы. Данные о здоровье мы храним с вашего согласия.</p>
+    <div class="grid2">
+      <label class="field" for="ob_sex">Пол${sel("ob_sex",{m:"Мужской",f:"Женский"},pr.sex)}</label>
+      <label class="field" for="ob_birth">Год рождения<input id="ob_birth" type="number" inputmode="numeric" min="1940" max="2012" value="${pr.birth}"></label>
+      <label class="field" for="ob_h">Рост, см<input id="ob_h" type="number" inputmode="numeric" min="120" max="230" value="${pr.height}"></label>
+      <label class="field" for="ob_w">Вес, кг<input id="ob_w" type="number" inputmode="numeric" min="35" max="250" value="${pr.weight}"></label></div>
+    <label class="field" for="ob_a">Активность${sel("ob_a",{sedentary:"Сидячая работа, почти нет тренировок",light:"1–3 тренировки в неделю",moderate:"3–5 тренировок в неделю",high:"Ежедневные нагрузки"},pr.activity)}</label>
+    <div class="err" id="obErr" role="alert">${esc(o.err)}</div>
+    <div class="row">${back}<button class="btn grow" data-ob="next">Дальше</button></div>`;
+  if(step===3) body=`<h2>Есть аллергии или непереносимость?</h2><p class="muted">Если такой ингредиент попадётся в составе, мы покажем предупреждение на карточке.</p>
+    <div class="chips">${Object.entries(AL).map(([k,l])=>`<button class="chip" data-ob="allergen" data-v="${k}" aria-pressed="${S.allergens.has(k)}">${l}</button>`).join("")}</div>
+    <div class="row">${back}<button class="btn grow" data-ob="next">${S.allergens.size?"Дальше":"Нет, дальше"}</button></div>`;
+  if(step===4){ const t=calcTargets(pr);
+    body=`<h2>Ваша норма на день</h2>
+    <div class="card"><div class="kpi"><div><b>${t.kcal}</b><small>ккал</small></div><div><b>${t.protein}</b><small>белки, г</small></div><div><b>${t.fat}</b><small>жиры, г</small></div><div><b>${t.carbs}</b><small>углеводы, г</small></div></div>
+    ${t.floored?`<p style="font-size:13.5px">Расчёт вышел ниже безопасного минимума, поэтому мы подняли норму до ${MINK[pr.sex]} ккал. Ниже этого уровня приложение цель не ставит.</p>`:""}
+    <p class="muted" style="font-size:13px">Формула Миффлина — Сан Жеора. Это ориентир, а не медицинская рекомендация.</p></div>
+    <label class="check" for="ob_consent"><input id="ob_consent" type="checkbox" ${o.consent?"checked":""}><span>Согласен на обработку данных о моём здоровье (рост, вес, цель), чтобы приложение считало норму. Данные хранятся на серверах в России, согласие можно отозвать в настройках.</span></label>
+    <div class="row">${back}<button class="btn grow" id="obDone" data-ob="finish" ${o.consent?"":"disabled"}>Готово, к сканеру</button></div>`; }
+  return `<div class="card" style="gap:16px">${dots}${body}</div>`;
+}
+function onbNext(){
+  const o=S.onb, pr=S.profile;
+  if(o.step===2){
+    if(!(pr.birth>=1940&&pr.birth<=2012)) o.err="Год рождения от 1940 до 2012.";
+    else if(!(pr.height>=120&&pr.height<=230)) o.err="Рост от 120 до 230 см.";
+    else if(!(pr.weight>=35&&pr.weight<=250)) o.err="Вес от 35 до 250 кг.";
+    else o.err="";
+    if(o.err){ $("#obErr").textContent=o.err; return; }
+  }
+  o.step++; render(); window.scrollTo(0,0);
+}
 function render(){
-  const v=$("#view");
+  const v=$("#view"), onb=!S.onb.done;
+  $(".app").classList.toggle("onb",onb);
+  if(onb){ v.innerHTML=viewOnb(); return; }
   v.innerHTML= S.tab==="scan"?viewScan(): S.tab==="diary"?viewDiary(): viewProgress();
   document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===S.tab));
 }
 
 /* ===== События ===== */
 document.addEventListener("click",e=>{
+  const ob=e.target.closest("[data-ob]");
+  if(ob){
+    const a=ob.dataset.ob, o=S.onb;
+    if(a==="next") onbNext();
+    else if(a==="back"){ o.step--; render(); }
+    else if(a==="goal"){ S.profile.goal=ob.dataset.v; render(); }
+    else if(a==="allergen"){ const k=ob.dataset.v; S.allergens.has(k)?S.allergens.delete(k):S.allergens.add(k); render(); }
+    else if(a==="skip"){ S.targets=calcTargets(S.profile); o.done=true; S.tab="scan"; render(); toast("Взяли среднюю норму. Настроить её можно во вкладке «Дневник»."); }
+    else if(a==="finish"){ if(!o.consent) return; S.targets=calcTargets(S.profile); S.goalDone=false; o.done=true; S.tab="scan"; render(); toast("Готово. Ваша норма: "+S.targets.kcal+" ккал в день"); }
+    else if(a==="restart"){ S.onb={step:0,done:false,consent:false,err:""}; render(); window.scrollTo(0,0); }
+    return;
+  }
   const tab=e.target.closest("[data-tab]"); if(tab){ S.tab=tab.dataset.tab; render(); window.scrollTo(0,0); return; }
   const sc=e.target.closest("[data-scan]"); if(sc){ doScan(sc.dataset.scan, sc.dataset.replace); setTimeout(()=>{const c=$("#card"); if(c) c.scrollIntoView({behavior:"smooth",block:"start"});},30); return; }
   if(e.target.id==="addBtn"){ const g=parseFloat($("#grams").value); if(!(g>0)){ toast("Укажите порцию больше нуля"); return; } addToDiary(g,$("#meal").value); }
@@ -347,6 +436,11 @@ document.addEventListener("submit",e=>{
   if(e.target.id==="manual"){ doScan($("#bc").value); }
 });
 document.addEventListener("change",e=>{
+  if(e.target.id==="ob_consent"){ S.onb.consent=e.target.checked; $("#obDone").disabled=!e.target.checked; return; }
+  if(e.target.id && e.target.id.startsWith("ob_")){
+    S.profile={...S.profile,sex:$("#ob_sex").value,birth:+$("#ob_birth").value,height:+$("#ob_h").value,weight:+$("#ob_w").value,activity:$("#ob_a").value};
+    S.onb.err=""; return;
+  }
   if(e.target.id && e.target.id.startsWith("p_")){
     S.profile={sex:$("#p_sex").value,birth:+$("#p_birth").value||1995,height:+$("#p_h").value||175,weight:+$("#p_w").value||70,activity:$("#p_a").value,goal:$("#p_g").value};
     S.targets=calcTargets(S.profile); S.goalDone=false; render();
