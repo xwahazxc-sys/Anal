@@ -54,6 +54,13 @@ class ApiClient {
         body: jsonEncode({'barcode': barcode, 'grams': grams, 'meal': meal}),
       ));
 
+  /// Сохраняет профиль и возвращает рассчитанные цели КБЖУ (бэкенд требует consent_health_data=true).
+  Future<Map<String, dynamic>> saveProfile(Map<String, dynamic> profile) async => _json(await http.put(
+        Uri.parse('$baseUrl/api/v1/me/profile'),
+        headers: _headers,
+        body: jsonEncode(profile),
+      ));
+
   Future<Map<String, dynamic>> gamification() async =>
       _json(await http.get(Uri.parse('$baseUrl/api/v1/me/gamification'), headers: _headers));
 }

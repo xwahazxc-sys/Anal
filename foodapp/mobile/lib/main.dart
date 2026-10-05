@@ -1,24 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'api/client.dart';
 import 'screens/diary_screen.dart';
+import 'screens/onboarding_screen.dart';
 import 'screens/progress_screen.dart';
 import 'screens/scan_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(FoodApp(api: await ApiClient.create()));
+  final prefs = await SharedPreferences.getInstance();
+  runApp(FoodApp(api: await ApiClient.create(), onboarded: prefs.getBool('onboarded') ?? false));
 }
 
-class FoodApp extends StatelessWidget {
-  const FoodApp({super.key, required this.api});
+class FoodApp extends StatefulWidget {
+  const FoodApp({super.key, required this.api, required this.onboarded});
   final ApiClient api;
+  final bool onboarded;
+
+  @override
+  State<FoodApp> createState() => _FoodAppState();
+}
+
+class _FoodAppState extends State<FoodApp> {
+  late bool _onboarded = widget.onboarded;
+
+  Future<void> _finishOnboarding() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboarded', true);
+    if (mounted) setState(() => _onboarded = true);
+  }
 
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'FoodApp',
         theme: ThemeData(colorSchemeSeed: const Color(0xFF2E9E4F), useMaterial3: true),
-        home: HomeShell(api: api),
+        home: _onboarded
+            ? HomeShell(api: widget.api)
+            : OnboardingScreen(api: widget.api, onDone: _finishOnboarding),
       );
 }
 
