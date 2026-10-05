@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { data } from '../data';
 import { ProductType } from '../types';
@@ -13,16 +13,18 @@ export function AddProductScreen({ barcode, onDone }: { barcode: string; onDone:
   const [ingredients, setIngredients] = useState('');
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const sending = useRef(false);
 
   const send = async () => {
+    if (sending.current) return; // a fast double tap must not create two submissions
     if (name.trim().length < 2) return setErr('Укажите название продукта');
     if (code.replace(/\D/g, '').length < 8) return setErr('Штрихкод — от 8 цифр');
     if (!ingredients.trim()) return setErr('Перечислите состав через запятую');
-    setErr(''); setBusy(true);
+    setErr(''); setBusy(true); sending.current = true;
     try {
       await data.submit({ barcode: code, type, name, brand, ingredientsText: ingredients });
       onDone(code);
-    } catch { setErr('Не удалось отправить. Попробуйте ещё раз.'); } finally { setBusy(false); }
+    } catch { setErr('Не удалось отправить. Попробуйте ещё раз.'); } finally { setBusy(false); sending.current = false; }
   };
 
   return (
