@@ -12,7 +12,17 @@ Wrapper skill for the [yt-dlp](https://github.com/yt-dlp/yt-dlp) CLI.
 
 ## Setup
 
-If `yt-dlp --version` fails: `pip install -U yt-dlp` (ffmpeg is needed for merging/audio extraction).
+If `yt-dlp --version` fails: `pip install -U "yt-dlp[default]"` (ffmpeg is needed for merging/audio extraction).
+
+Always pass `--js-runtimes node` (deno is not installed here; without a JS runtime YouTube formats go missing).
+
+## What works in the cloud sandbox
+
+- Metadata, format lists, subtitles/auto-subs: work without login.
+- Video/audio file downloads: YouTube answers `Sign in to confirm you're not a bot` / HTTP 403
+  for datacenter IPs. Needs the user's cookies: ask them to export `cookies.txt` from a logged-in
+  browser (see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies), save it
+  outside the repo, and pass `--cookies /path/cookies.txt`. Never commit cookies.
 
 ## Common recipes
 
