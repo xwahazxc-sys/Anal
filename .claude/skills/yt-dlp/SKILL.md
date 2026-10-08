@@ -23,6 +23,10 @@ Always pass `--js-runtimes node` (deno is not installed here; without a JS runti
   for datacenter IPs. Needs the user's cookies: ask them to export `cookies.txt` from a logged-in
   browser (see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies), save it
   outside the repo, and pass `--cookies /path/cookies.txt`. Never commit cookies.
+- Preferred setup: copy the cookies to `/root/.config/yt-dlp/cookies.txt` (chmod 600) and write
+  `/root/.config/yt-dlp/config` with `--cookies /root/.config/yt-dlp/cookies.txt` and
+  `--js-runtimes node`, so plain `yt-dlp URL` works. The container is reset between sessions, so
+  this must be redone (ask the user to re-upload cookies) in each new session.
 
 ## Common recipes
 
