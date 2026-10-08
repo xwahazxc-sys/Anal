@@ -6,11 +6,11 @@ keeps hour-plus results whose title contains the film's title (and the year, for
 reviews/recaps, and records each copy's channel and views. Which copies are authorised is for the rights
 holder to confirm. Writes scan/results.json (incrementally) and scan/summary.csv.
 """
-import csv, json, os, re, time, unicodedata, urllib.parse
+import csv, json, os, re, sys, time, unicodedata, urllib.parse
 import yt_dlp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "scan")
+OUT = os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else "scan")
 BAD = re.compile(r"review|facts|explained|explication|reseña|resenha|podcast|reaction|recap|resumen|resumo|trailer|tráiler|"
                  r"behind the scenes|making of|soundtrack|ost\b|analysis|análisis|análise|breakdown|kino\+|ending", re.I)
 ydl = yt_dlp.YoutubeDL({"extract_flat": True, "quiet": True, "ignoreerrors": True, "skip_download": True})

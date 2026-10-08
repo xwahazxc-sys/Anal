@@ -6,7 +6,7 @@ on:
     branches: ["claude/**"]
     paths:
       - "youtube/research/collect_scan.py"
-      - "youtube/research/scan/films.json"
+      - "youtube/research/scan_new/films.json"
       - ".github/workflows/yt-scan.yml"
 
 permissions:
@@ -22,13 +22,13 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -U yt-dlp
-      - run: python3 youtube/research/collect_scan.py
+      - run: python3 youtube/research/collect_scan.py scan_new
         continue-on-error: true
       - name: Commit results
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add youtube/research/scan
+          git add youtube/research/scan_new
           git commit -m "Add rights-management scan results" || exit 0
           git pull --rebase origin ${GITHUB_REF_NAME} && git push origin HEAD:${GITHUB_REF_NAME}

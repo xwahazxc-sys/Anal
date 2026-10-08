@@ -5,9 +5,9 @@ A copy counts only if its title names the film AND looks like a full-film upload
 quality tag or the year), it is not a trailer/episode/concert/documentary/'from the makers of' video, and
 the channel is not an obvious official/distributor channel. Writes scan/leads.csv and scan/leads.json.
 """
-import csv, json, os, re, unicodedata
+import csv, json, os, re, sys, unicodedata
 HERE = os.path.dirname(os.path.abspath(__file__))
-S = os.path.join(HERE, "scan")
+S = os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else "scan")
 FULL = re.compile(r"full movie|full film|pel[ií]cula completa|filme completo|completo|completa|dublad|legendad|espa[nñ]ol latino|"
                   r"sub indo|t[uü]rk[cç]e dublaj|hela filmen|film complet|ganzer film|720p|1080p|\bhd\b|4k|full hd", re.I)
 NOISE = re.compile(r"producers of|creators of|makers of|from the director|trailer|tr[aá]iler|episod|epis[oó]dio|temporada|season|"

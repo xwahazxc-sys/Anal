@@ -1,0 +1,941 @@
+[
+ {
+  "title": "Talk to Me",
+  "year": 2023,
+  "country": "AU",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Late Night with the Devil",
+  "year": 2023,
+  "country": "AU",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Cobweb",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "It Lives Inside",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "There's Something Wrong with the Children",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Pope's Exorcist",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Totally Killer",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Hell House LLC Origins",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Brooklyn 45",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Suitable Flesh",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Wrath of Becky",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Winnie-the-Pooh: Blood and Honey",
+  "year": 2023,
+  "country": "UK",
+  "alts": [
+   "Winnie the Pooh Blood and Honey"
+  ],
+  "strict": false
+ },
+ {
+  "title": "Winnie-the-Pooh: Blood and Honey 2",
+  "year": 2024,
+  "country": "UK",
+  "alts": [
+   "Winnie the Pooh Blood and Honey 2"
+  ],
+  "strict": false
+ },
+ {
+  "title": "Peter Pan's Neverland Nightmare",
+  "year": 2025,
+  "country": "UK",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Bambi: The Reckoning",
+  "year": 2025,
+  "country": "UK",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Screamboat",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Terrifier 2",
+  "year": 2022,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Terrifier 3",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "In a Violent Nature",
+  "year": 2024,
+  "country": "CA",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Oddity",
+  "year": 2024,
+  "country": "IE",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Strange Darling",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Cuckoo",
+  "year": 2024,
+  "country": "DE",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Longlegs",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Late Night with the Devil",
+  "year": 2024,
+  "country": "AU",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Stopmotion",
+  "year": 2023,
+  "country": "UK",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Humane",
+  "year": 2024,
+  "country": "CA",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Immaculate",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Abigail",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Imaginary",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Night Swim",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Tarot",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Heretic",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Smile 2",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Speak No Evil",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Never Let Go",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Azrael",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The First Omen",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "MaXXXine",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Bring Her Back",
+  "year": 2025,
+  "country": "AU",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Together",
+  "year": 2025,
+  "country": "AU",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Dangerous Animals",
+  "year": 2025,
+  "country": "AU",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Monkey",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Companion",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Presence",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Heart Eyes",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Wolf Man",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Sinners",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Weapons",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Final Destination Bloodlines",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "28 Years Later",
+  "year": 2025,
+  "country": "UK",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Five Nights at Freddy's",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Thanksgiving",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Saw X",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Evil Dead Rise",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Boogeyman",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Insidious: The Red Door",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Nun II",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Scream VI",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Exorcist: Believer",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Sound of Freedom",
+  "year": 2023,
+  "country": "US",
+  "alts": [
+   "Sonido de libertad",
+   "Som da Liberdade"
+  ],
+  "strict": false
+ },
+ {
+  "title": "Jesus Revolution",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Shift",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "His Only Son",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Journey to Bethlehem",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Cabrini",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Sight",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Ordinary Angels",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Firing Squad",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Unsung Hero",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Bonhoeffer",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Best Christmas Pageant Ever",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Sound of Hope: The Story of Possum Trot",
+  "year": 2024,
+  "country": "US",
+  "alts": [
+   "Sound of Hope"
+  ],
+  "strict": false
+ },
+ {
+  "title": "The King of Kings",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Last Rodeo",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Unbreakable Boy",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Sketch",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "David",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Truth & Treason",
+  "year": 2025,
+  "country": "US",
+  "alts": [
+   "Truth and Treason"
+  ],
+  "strict": false
+ },
+ {
+  "title": "The Chosen: Last Supper",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Reagan",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Are You There God? It's Me, Margaret",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Plane",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Kandahar",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Covenant",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Boudica",
+  "year": 2023,
+  "country": "UK",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Hypnotic",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Silent Night",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Sympathy for the Devil",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Freelance",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Mercy Road",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Sisu",
+  "year": 2023,
+  "country": "FI",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Cocaine Bear",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Boy Kills World",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Monkey Man",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Beekeeper",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Road House",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Arcadian",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Damaged",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Civil War",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Kraven the Hunter",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Den of Thieves 2: Pantera",
+  "year": 2025,
+  "country": "US",
+  "alts": [
+   "Den of Thieves 2"
+  ],
+  "strict": false
+ },
+ {
+  "title": "A Working Man",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Locked",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Fight or Flight",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Novocaine",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Amateur",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Black Bag",
+  "year": 2025,
+  "country": "UK",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Warfare",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Accountant 2",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Drop",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Anyone But You",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Saltburn",
+  "year": 2023,
+  "country": "UK",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Holdovers",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Past Lives",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Air",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Theater Camp",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Bottoms",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Jules",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Dream Scenario",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Fingernails",
+  "year": 2023,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Thelma",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Lisa Frankenstein",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Babes",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Saturday Night",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "It Ends with Us",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Fall Guy",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Idea of You",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "The Substance",
+  "year": 2024,
+  "country": "UK",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "The Life of Chuck",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": false
+ },
+ {
+  "title": "Nonnas",
+  "year": 2025,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Twisters",
+  "year": 2024,
+  "country": "US",
+  "alts": [],
+  "strict": true
+ },
+ {
+  "title": "Mufasa: The Lion King",
+  "year": 2024,
+  "country": "US",
+  "alts": [
+   "Mufasa"
+  ],
+  "strict": false
+ }
+]
