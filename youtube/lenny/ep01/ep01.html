@@ -79,7 +79,7 @@ const OV={
 };
 function lerp(a,b,p){return a+(b-a)*p}
 window.render=function(t){
-  const S=T.segs; let i=S.findIndex(s=>t>=s.start&&t<s.end); if(i<0)i=S.length-1; const s=S[i], lt=t-s.start;
+  const S=T.segs; let i=S.findIndex(s=>t>=s.start&&t<s.end); if(i<0)i=t<S[0].start?0:S.length-1; const s=S[i], lt=Math.max(0,t-s.start);
   // background frame: clip played at s.speed, then hold the last frame
   const n=s.nframes, fi=Math.min(n-1,Math.floor(lt*s.speed*24));
   const src=`frames/${s.bg}/${String(fi+1).padStart(3,'0')}.jpg`;
@@ -96,5 +96,5 @@ window.render=function(t){
   if(s.text&&sp>=0&&sp<s.dur+.1){const w=s.text.split(/\s+/),k=Math.min(w.length-1,Math.floor(sp/s.dur*w.length)),c0=Math.floor(k/4)*4;
     cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ')} else cap.innerHTML='';
 };
-window.ready=()=>new Promise(r=>{const i=$('bg');if(i.complete&&i.naturalWidth)r();else{i.onload=()=>r();i.onerror=()=>r()}});
+window.ready=()=>new Promise(r=>{const i=$('bg');if(i.complete)r();else{i.onload=()=>r();i.onerror=()=>r();setTimeout(r,3000)}});
 </script></body></html>
