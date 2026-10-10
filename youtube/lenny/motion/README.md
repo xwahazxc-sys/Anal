@@ -1,0 +1,10 @@
+# Lenny motion-comic pipeline (no paid APIs)
+
+Reference art from `../refs/` → cutouts (`rembg`, model `isnet-general-use`) → animated in `motion.html` (parallax, camera moves, voice-driven bounce, UI overlays, captions) → `build_motion.py` adds Piper voice (pitched +9%) and synthesized SFX/music bed → `lenny_cold_open.mp4`.
+
+```bash
+pip install piper-tts imageio-ffmpeg playwright "rembg[cpu]"
+# voice lines: see lines.json; regenerate audio/N.wav with Piper en_US-ryan-high, length_scale 1.08, then asetrate*1.09
+python3 build_motion.py preview 3 9   # frames
+python3 build_motion.py               # full render
+```

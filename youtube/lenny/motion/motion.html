@@ -1,0 +1,87 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;src:url(../../video/fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05070a;font-family:Inter,sans-serif;color:#fff}
+.L{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform,opacity}
+.wrap{position:absolute;left:0;top:0;transform-origin:0 0}
+.wrap img{display:block;transform-origin:50% 95%}
+.t{position:absolute;font-weight:900;letter-spacing:-3px;line-height:.95;text-shadow:0 8px 0 #000,0 0 40px rgba(0,0,0,.9);opacity:0}
+.t em{font-style:normal;color:#ff3b3b}.t i{font-style:normal;color:#1ee3cf}
+.card{position:absolute;width:230px;height:130px;border-radius:24px;background:#fff;color:#111;box-shadow:0 14px 40px rgba(0,0,0,.6);display:flex;align-items:center;gap:14px;padding:0 18px;font:800 26px/1.1 Inter;opacity:0}
+.card b{font-size:54px}
+.chk{position:absolute;right:-16px;top:-16px;width:56px;height:56px;border-radius:50%;background:#2ecc71;border:5px solid #fff;display:flex;align-items:center;justify-content:center;font:900 30px Inter;color:#fff;opacity:0}
+.q{background:#ff3b3b;color:#fff}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 100%);pointer-events:none}
+.cap{position:absolute;left:80px;right:80px;top:960px;text-align:center;font:900 58px/1.1 Inter;text-transform:uppercase;-webkit-text-stroke:11px #000;paint-order:stroke fill}
+.cap span.on{color:#ffd60a}
+.bub{position:absolute;left:796px;top:270px;width:100px;background:#fff;color:#111;border-radius:14px;border-bottom-left-radius:4px;padding:8px 10px;font:700 15px/1.2 Inter;margin-top:56px;transform:rotate(4deg);opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0}
+.grain{position:absolute;inset:-50%;opacity:.07;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:3px 3px}
+</style></head><body>
+<img id="bg" class="L" src="file:///home/user/Anal/youtube/lenny/refs/06_scam_lab_empty.jpg">
+<img id="bg2" class="L" src="file:///home/user/Anal/youtube/lenny/refs/04_scam_lab.jpg" style="opacity:0">
+<div id="red" style="position:absolute;inset:0;background:radial-gradient(circle at 60% 45%,#3a0b10 0%,#05070a 70%);opacity:0"></div>
+<div id="A" class="wrap"><img src="lenny_point.png" width="1408" height="768"></div>
+<div id="B" class="wrap" style="opacity:0"><img src="lenny_phone.png" width="1376" height="768"><div class="bub" id="bub">Hi, is this Anna? 🙂</div></div>
+<div id="cards"></div>
+<div class="t" id="t0" style="left:110px;top:250px;font-size:120px">I USED TO<br>RUN <em>SCAMS.</em></div>
+<div class="t" id="t0b" style="left:116px;top:520px;font-size:56px;letter-spacing:0;color:#1ee3cf">FOR A LIVING.</div>
+<div class="t" id="t3" style="left:110px;top:300px;font-size:120px">NOBODY<br>SPOTS <em>#7.</em></div>
+<div class="t" id="t4" style="left:70px;top:660px;font-size:58px">"TRUST ME — I USED TO<br><i>RUN THIS ONE.</i>"</div>
+<div class="t" id="end" style="left:0;right:0;top:420px;text-align:center;font-size:110px">7 SCAMS THAT<br>DON'T LOOK LIKE <em>SCAMS</em></div>
+<div class="vig"></div><div class="grain" id="grain"></div>
+<div class="flash" id="flash"></div>
+<div class="cap" id="cap"></div>
+<script>
+let T,AMP,FPS=30;
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x)),e3=x=>1-Math.pow(1-x,3),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.9;x=x-1;return 1+(c+1)*x*x*x+c*x*x};
+const P=(t,a,d=.4)=>cl((t-a)/d);
+const amp=t=>AMP[Math.max(0,Math.min(AMP.length-1,Math.floor(t*FPS)))]||0;
+const icons=[['📦','Delivery'],['🏦','Bank call'],['💬','"Hi Mum"'],['💼','Easy job'],['🛒','Buyer'],['🖥️','Frozen screen'],['❓','#7']];
+$('cards').innerHTML=icons.map((c,i)=>`<div class="card ${i==6?'q':''}" id="c${i}"><b>${c[0]}</b>${c[1]}<div class="chk" id="k${i}">✓</div></div>`).join('');
+window.setup=(tl,amp)=>{T=tl;AMP=amp;T.speaking=t=>T.lines.some((l,i)=>t>=T.starts[i]&&t<T.starts[i]+l.dur)};
+function txt(id,t,a,b){const el=$(id),p=P(t,a,.35),o=b===undefined?1:1-P(t,b-.2,.2);el.style.opacity=Math.min(1,p*2)*o;el.style.transform=`translateY(${(1-e3(p))*40}px) scale(${p>=1?1:.85+.15*back(p)})`}
+function talk(img,t,on){const a=on?amp(t):0;img.style.transform=`translateY(${-a*12+Math.sin(t*2)*3}px) scaleY(${1+a*.025+Math.sin(t*2)*.006}) rotate(${Math.sin(t*1.3)*.7+a*.8}deg)`}
+window.render=function(t){
+  const S=T.starts, sp=T.speaking(t);
+  // shot boundaries: A = lines 0-2, B = line 3, C = line 4 + end
+  const shot=t<S[3]-.05?0:t<S[4]-.05?1:2;
+  $('flash').style.opacity=Math.max(0,.75-Math.min(Math.abs(t-(S[3]-.05)),Math.abs(t-(S[4]-.05)))*5);
+  $('grain').style.transform=`translate(${(t*97)%30}px,${(t*61)%30}px)`;
+  // shot 0: studio + Lenny pointing
+  const bgS=1.18+t*.006;
+  $('bg').style.opacity=shot==0?1:0;
+  $('bg').style.transform=`scale(${bgS*1920/1376}) translate(${-60-t*3}px,${-30}px)`;
+  $('bg').style.filter='blur(2px) brightness(.85)';
+  const A=$('A'); A.style.opacity=shot==0?1:0;
+  const ein=e3(P(t,.05,.7)), ax=lerp(1500,560,ein)-t*6;
+  A.style.transform=`translate(${ax}px,95px) scale(1.3)`; talk(A.firstElementChild,t,shot==0&&sp);
+  txt('t0',t,S[0]+.1,S[1]); txt('t0b',t,S[0]+.9,S[1]);
+  for(let i=0;i<7;i++){const c=$('c'+i),p=e3(P(t,S[1]+.1+i*.12,.45)),o=shot==0?1:0;
+    const gx=110+(i%3)*260,gy=230+Math.floor(i/3)*170, fx=lerp(-400,gx,p);
+    c.style.opacity=(p>0?1:0)*o; c.style.transform=`translate(${fx}px,${gy}px) rotate(${(1-p)*-25+(i==6&&t>S[2]+1?Math.sin(t*12)*4:0)}deg)`;
+    const k=$('k'+i);k.style.opacity=i<6?cl((t-(S[2]+.1+i*.18))/.15):0; }
+  // shot 1: the phone, dark red
+  $('red').style.opacity=shot==1?1:0;
+  const B=$('B');B.style.opacity=shot==1?1:0;
+  const z=1.55+(t-S[3])*.05; B.style.transform=`translate(${-330-(z-1.55)*900}px,${-110-(z-1.55)*250}px) scale(${z})`; talk(B.firstElementChild,t,shot==1&&sp);
+  $('bub').style.opacity=P(t,S[3]+.5,.25);
+  txt('t3',t,S[3]+.15,shot==1?1e9:S[4]); if(shot!=1)$('t3').style.opacity=0;
+  // shot 2: Lenny in the lab, slow push to his face, then title
+  $('bg2').style.opacity=shot==2?1:0;
+  const kb=eio(cl((t-S[4])/3)), s2=lerp(1.4,1.9,kb)*(1+amp(t)*.012);
+  $('bg2').style.transform=`translate(${lerp(-0,-640,kb)}px,${lerp(0,-150,kb)}px) scale(${s2})`;
+  $('bg2').style.filter=`brightness(${1-P(t,T.endTitle,.5)*.6}) blur(${P(t,T.endTitle,.5)*6}px)`;
+  txt('t4',t,S[4]+.1,T.endTitle); if(shot!=2)$('t4').style.opacity=0;
+  txt('end',t,T.endTitle+.15); if(t<T.endTitle)$('end').style.opacity=0;
+  // captions
+  const cap=$('cap'),li=T.lines.findIndex((l,i)=>t>=S[i]&&t<S[i]+l.dur+.15);
+  if(li<0){cap.innerHTML='';return}
+  const l=T.lines[li],w=l.text.split(/\s+/),k=Math.min(w.length-1,Math.floor((t-S[li])/l.dur*w.length)),c0=Math.floor(k/4)*4;
+  cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ');
+};
+function lerp(a,b,p){return a+(b-a)*p}
+</script></body></html>
