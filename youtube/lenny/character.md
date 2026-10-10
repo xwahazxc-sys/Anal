@@ -4,12 +4,14 @@
 **Catchphrase:** "Trust me — I used to run this one."
 **Show format:** cold open with Lenny's confession ("Here's how I'd get YOU…") → he walks through the scam from the scammer's side → the one tell → "And that's why it doesn't work on you anymore."
 
+## Approved references
+`refs/01_main_reference.jpg` + `refs/02_turnaround.jpg` are the master references — attach them to every new generation. `03_expressions.jpg` and `04_scam_lab.jpg` approved. `05_thumbnail_draft.jpg` needs a redo (no gloves / patch, placeholder text on screen).
+
 ## Look (keep identical in every image)
 - Young adult raccoon, slightly chubby, big expressive amber eyes, natural black "bandit mask" fur, grey-silver fur, ringed tail (5 dark rings)
 - Oversized charcoal-grey hoodie with a small neon-teal lightning-bolt patch on the chest, sleeves pushed up
 - Thin gold chain (one small padlock pendant — "I locked up my old life")
 - Black fingerless gloves, white-and-teal sneakers
-- Small scar notch on left ear
 - Signature pose: one eyebrow raised, half-smirk, finger pointing at camera
 - Palette: charcoal #2B2D35, silver fur #A9AEB8, neon teal #1EE3CF, gold #F5C542, amber eyes #F59E0B
 
@@ -17,7 +19,7 @@
 
 ### 1. Main reference (generate this first, pick the best one)
 ```
-Full-body character design of "Lenny", a charming young adult raccoon, reformed con artist turned scam-buster, stylized 3D animated feature film style, soft global illumination, subsurface scattering on fur, highly detailed fluffy grey-silver fur, natural black bandit mask around big expressive amber eyes, ringed bushy tail with five dark rings, small notch scar on left ear, slightly chubby friendly build, oversized charcoal-grey hoodie with small neon-teal lightning bolt patch on chest, sleeves pushed up, thin gold chain with tiny padlock pendant, black fingerless gloves, white and teal sneakers, one eyebrow raised, confident half-smirk, pointing at the viewer, standing pose, clean light grey studio background, centered, 3/4 view, cinematic rim light, 8k, character concept art
+Full-body character design of "Lenny", a charming young adult raccoon, reformed con artist turned scam-buster, stylized 3D animated feature film style, soft global illumination, subsurface scattering on fur, highly detailed fluffy grey-silver fur, natural black bandit mask around big expressive amber eyes, ringed bushy tail with five dark rings, slightly chubby friendly build, oversized charcoal-grey hoodie with small neon-teal lightning bolt patch on chest, sleeves pushed up, thin gold chain with tiny padlock pendant, black fingerless gloves, white and teal sneakers, one eyebrow raised, confident half-smirk, pointing at the viewer, standing pose, clean light grey studio background, centered, 3/4 view, cinematic rim light, 8k, character concept art
 ```
 
 ### 2. Turnaround sheet (upload image #1 as character/style reference)
