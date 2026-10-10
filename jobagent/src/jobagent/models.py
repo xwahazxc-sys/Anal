@@ -34,6 +34,7 @@ class Profile(BaseModel):
     experience: list[Experience] = Field(default_factory=list)
     education: list[Education] = Field(default_factory=list)
     languages: list[str] = Field(default_factory=list)
+    achievements: list[str] = Field(default_factory=list)
     preferences: Preferences = Field(default_factory=Preferences)
 
 

@@ -17,6 +17,8 @@ def to_markdown(p: Profile, r: TailoredResume) -> str:
         out += [f"### {e.title} — {e.company} ({e.start} – {e.end})", *[f"- {b}" for b in e.bullets], ""]
     out.append("## Education")
     out += [f"- {e.school}, {e.degree} {e.year or ''}".strip() for e in p.education]
+    if p.achievements:
+        out += ["", "## Achievements & Certificates", *[f"- {a}" for a in p.achievements]]
     if p.languages:
         out += ["", "## Languages", ", ".join(p.languages)]
     return "\n".join(out) + "\n"
@@ -40,6 +42,10 @@ def to_docx(p: Profile, r: TailoredResume, path: Path) -> None:
     d.add_heading("Education", 1)
     for e in p.education:
         d.add_paragraph(f"{e.school}, {e.degree} {e.year or ''}".strip())
+    if p.achievements:
+        d.add_heading("Achievements & Certificates", 1)
+        for a in p.achievements:
+            d.add_paragraph(a, style="List Bullet")
     if p.languages:
         d.add_heading("Languages", 1); d.add_paragraph(", ".join(p.languages))
     path.parent.mkdir(parents=True, exist_ok=True)
