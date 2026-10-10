@@ -32,17 +32,17 @@ All message screenshots: build mock-ups yourself (Canva / fake-chat generator). 
 Already clicked or paid? Call your bank on the number on your card first. Report in the US at reportfraud.ftc.gov; in the UK forward scam texts to 7726.
 
 0:00 7 scams that don't look like scams
-0:20 1. The delivery text
-1:10 2. The bank call
-2:08 3. "Hi Mum, new number"
-2:49 4. The easy job
-3:27 5. The keen buyer
-4:02 6. The frozen screen
-4:42 7. The wrong number
-6:28 The one rule that beats all 7
-6:56 Already clicked? Do this
+0:19 1. The delivery text
+1:09 2. The bank call
+2:02 3. "Hi Mum, new number"
+2:42 4. The easy job
+3:20 5. The keen buyer
+3:56 6. The frozen screen
+4:38 7. The wrong number
+6:19 The one rule that beats all 7
+6:49 Already clicked? Do this
 ```
-Chapter times are estimates at 150 wpm — regenerate with /yt-chapters from the final transcript.
+Chapter times are from the rendered video (`video/long/`, 8:06, Piper voice).
 
 ## Upload checklist
 1. Voice: record or ElevenLabs, −14 LUFS, calm pace.
