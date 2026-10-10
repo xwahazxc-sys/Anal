@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;src:url(file:///home/user/Anal/youtube/video/fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+#bg{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 45%}
+#ov{position:absolute;inset:0}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 60%,rgba(0,0,0,.55) 100%)}
+.cap{position:absolute;left:80px;right:80px;top:950px;text-align:center;font:900 60px/1.1 Inter;text-transform:uppercase;-webkit-text-stroke:12px #000;paint-order:stroke fill}
+.cap span.on{color:#ffd60a}
+.ttl{position:absolute;left:0;right:0;text-align:center;font-weight:900;letter-spacing:-3px;line-height:.95;text-shadow:0 8px 0 #000,0 0 50px rgba(0,0,0,.9)}
+em{font-style:normal;color:#ff3b3b} i{font-style:normal;color:#1ee3cf}
+.tag{display:inline-block;background:#ff3b3b;color:#fff;font-weight:900;border-radius:16px;padding:10px 26px;letter-spacing:0}
+.card{position:absolute;background:#fff;color:#111;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.notif{position:absolute;left:560px;width:800px;background:rgba(245,246,250,.97);color:#111;border-radius:36px;padding:26px 34px;box-shadow:0 20px 60px rgba(0,0,0,.55);font:500 36px/1.3 Inter}
+.notif b{display:block;font:700 26px Inter;color:#666;margin-bottom:6px}
+.link{color:#1a5fd6;text-decoration:underline}
+.lower{position:absolute;left:90px;top:760px;display:flex;align-items:stretch;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.lower .a{background:#1ee3cf;color:#071a1a;font:900 56px Inter;padding:10px 28px;letter-spacing:-1px}
+.lower .b{background:#111a1c;color:#fff;font:700 36px Inter;padding:0 28px;display:flex;align-items:center}
+.chk{position:absolute;left:110px;font:800 50px Inter;text-shadow:0 5px 0 #000,0 0 30px rgba(0,0,0,.9)}
+.chk g{color:#30d158}
+.stamp{position:absolute;left:0;right:0;top:300px;margin:auto;width:1100px;text-align:center;border:16px solid #ff3b3b;color:#ff3b3b;background:rgba(10,10,14,.75);border-radius:26px;font:900 110px/1 Inter;padding:30px 20px;letter-spacing:-3px}
+.mini{position:absolute;width:250px;height:140px;border-radius:24px;background:#fff;color:#111;display:flex;align-items:center;gap:14px;padding:0 22px;font:800 28px/1.1 Inter;box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.mini b{font-size:58px}
+.mini .ok{position:absolute;right:-16px;top:-16px;width:58px;height:58px;border-radius:50%;background:#30d158;border:5px solid #fff;color:#fff;font:900 30px Inter;display:flex;align-items:center;justify-content:center}
+.flash{position:absolute;inset:0;background:#fff}
+</style></head><body>
+<img id="bg">
+<div class="vig"></div>
+<div id="ov"></div>
+<div class="cap" id="cap"></div>
+<div class="flash" id="flash" style="opacity:0"></div>
+<script>
+let T;
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x)), e3=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.9;x=x-1;return 1+(c+1)*x*x*x+c*x*x};
+const P=(t,a,d=.35)=>cl((t-a)/d);
+const pop=(t,a,d=.4)=>{const p=P(t,a,d);return p<=0?0:p>=1?1:back(p)};
+const st=(t,a,b=1e9)=>`opacity:${Math.min(1,P(t,a,.25)*2)*(1-P(t,b-.2,.2))};transform:translateY(${(1-e3(P(t,a,.4)))*40}px) scale(${pop(t,a)||.001})`;
+window.setup=tl=>{T=tl};
+const CARDS=[['📦','Delivery'],['🏦','Bank call'],['💬','"Hi Mum"'],['💼','Easy job'],['🛒','Buyer'],['🖥️','Frozen screen'],['🔒','#7']];
+function cards(lt,a,ticks=0,glow=-1){return CARDS.map((c,i)=>{const p=e3(P(lt,a+i*.12,.45)),x=120+(i%4)*290,y=230+Math.floor(i/4)*200;
+  const w=(i==glow?`box-shadow:0 0 0 8px #ffd60a,0 14px 40px rgba(0,0,0,.6);transform:translateX(${(1-p)*-500}px) scale(${1+.05*Math.sin(lt*6)})`:`transform:translateX(${(1-p)*-500}px)`);
+  return `<div class="mini" style="left:${x}px;top:${y}px;opacity:${p>0?1:0};${i==6?'background:#2a2440;color:#fff;':''}${w}"><b>${c[0]}</b>${c[1]}${i<ticks?'<div class="ok">✓</div>':''}</div>`}).join('')}
+// overlays per segment kind: (lt = time since segment start, sp = speech start offset)
+const OV={
+ S01:(lt)=>`<div class="ttl" style="top:110px;font-size:120px;${st(lt,.4)}">7 SCAMS.</div><div class="ttl" style="top:240px;font-size:92px;${st(lt,2.6)}"><em>1</em> NOBODY SPOTS.</div>`,
+ S02:(lt)=>`<div class="lower" style="opacity:${P(lt,.6,.3)};transform:translateX(${(1-e3(P(lt,.6,.5)))*-700}px)"><div class="a">LENNY</div><div class="b">ex-scammer · now on your side</div></div>`,
+ S03:(lt)=>cards(lt,.3),
+ STING:(lt)=>`<div class="ttl" style="top:330px;font-size:130px;${st(lt,.1)}">7 SCAMS THAT<br>DON'T LOOK LIKE <em>SCAMS</em></div>`,
+ T01:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#1</span><div style="font-size:150px;margin-top:30px">THE DELIVERY TEXT</div></div>`,
+ S04:(lt)=>`<div class="notif" style="top:${lerp(-260,120,e3(P(lt,.15,.45)))}px"><b>💬 MESSAGES · now</b>Parcel Service: Your parcel could not be delivered. Update your address here: <span class="link">parcel-redelivery-update.info/xk29</span></div>`,
+ S05:(lt)=>`<div class="ttl" style="top:120px;font-size:84px;${st(lt,1.4)}">SENT TO <i>THOUSANDS</i> AT ONCE</div>`,
+ S06:(lt)=>``,
+ G01:(lt)=>`<div class="card" style="left:660px;top:90px;width:600px;height:780px;padding:40px;font:500 34px/1.35 Inter;${st(lt,.05)}">
+   <div style="background:#ffb000;font:900 44px Inter;display:inline-block;padding:10px 20px;border-radius:12px;border:4px solid #111">PARCEL SERVICE</div>
+   <p style="margin-top:30px;color:#666">Tracking: PX-4471-208</p><p style="color:#d00;font-weight:800">Delivery failed</p>
+   <p style="margin-top:24px;font:900 46px Inter">Redelivery fee: $1.99</p>
+   <div style="margin-top:24px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">Card number</div>
+   <div style="margin-top:14px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">MM / YY · CVV</div>
+   <div style="margin-top:28px;background:#ffb000;border:4px solid #111;border-radius:16px;padding:20px;text-align:center;font:900 40px Inter">PAY $1.99</div></div>
+   <div style="position:absolute;left:300px;top:${420-Math.abs(Math.sin(Math.max(0,lt-1.2)*5))*120*Math.max(0,1-(lt-1.2)/2.5)}px;width:220px;height:220px;border-radius:50%;background:#ffd60a;border:12px solid #c99a00;display:flex;align-items:center;justify-content:center;font:900 64px Inter;color:#111;opacity:${P(lt,1.2,.2)};box-shadow:0 20px 50px rgba(0,0,0,.6)">$1.99</div>`,
+ S07:(lt)=>`<div class="ttl" style="top:160px;left:-700px;font-size:84px;${st(lt,1.6)}">I WANTED <em>YOUR CARD.</em></div>`,
+ G02:(lt)=>{const gx=lerp(560,1360,(Math.sin(lt*1.1)+1)/2);return `<div class="ttl" style="top:170px;font-size:100px;${st(lt,.1)}">THE TELL: <em>THE LINK</em></div>
+   <div class="card" style="left:260px;top:430px;width:1400px;height:150px;display:flex;align-items:center;justify-content:center;font:700 64px Inter;color:#1a5fd6;text-decoration:underline;${st(lt,.3)}">parcel-redelivery-update.info/xk29</div>
+   <div style="position:absolute;left:${gx-110}px;top:395px;width:220px;height:220px;border-radius:50%;border:16px solid #ff3b3b;background:rgba(255,255,255,.12);opacity:${P(lt,.8,.3)}"></div>
+   ${['random domain','extra words','numbers'].map((w,i)=>`<div style="position:absolute;left:${380+i*420}px;top:660px;${st(lt,2.2+i*.5)}"><span class="tag" style="font-size:44px">${w}</span></div>`).join('')}`},
+ S08:(lt)=>`<div style="position:absolute;left:0;right:0;top:140px;text-align:center;${st(lt,.6)}"><span class="tag" style="font-size:56px;background:#30d158;color:#06210f">✓ OPEN THE APP YOURSELF</span></div>`,
+ T02:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#2</span><div style="font-size:150px;margin-top:30px">THE BANK CALL</div></div>`,
+ S09:(lt)=>`<div class="card" style="left:1400px;top:90px;width:430px;padding:30px;background:rgba(18,30,58,.95);color:#fff;text-align:center;${st(lt,.2)}"><div style="font:800 44px Inter">Your Bank</div><div style="font:500 28px Inter;color:#9fb3d6;margin-top:6px">mobile · calling…</div><div style="margin:24px auto 0;width:110px;height:110px;border-radius:50%;background:#30d158;display:flex;align-items:center;justify-content:center;font-size:56px;transform:scale(${1+.08*Math.sin(lt*10)})">📞</div></div>`,
+ S10:(lt)=>`<div class="chk" style="top:150px;${st(lt,.3)}"><g>✓</g> Knows your name</div><div class="chk" style="top:240px;${st(lt,1.6)}"><g>✓</g> Knows your last card digits</div><div class="chk" style="top:330px;color:#ffd60a;${st(lt,3.2)}">→ feels real</div>`,
+ G03:(lt)=>`<div class="stamp" style="${st(lt,.05)};transform:rotate(-4deg) scale(${pop(lt,.05)||.001})">CALLER ID<br>CAN BE FAKED</div>
+   <div style="position:absolute;left:0;right:0;top:720px;text-align:center;${st(lt,3.0)}"><span class="tag" style="font-size:52px;background:#ffd60a;color:#111">THEIR "PROOF" = OLD DATA LEAKS</span></div>`,
+ S11:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>💬 YOUR BANK · now</b>Your one-time code is <b style="display:inline;font:900 40px Inter;color:#111;background:rgba(255,59,59,${.25*P(lt,2.4,.3)});padding:0 8px;border-radius:8px">482 913</b>. Never share this code with anyone.</div>`,
+ S12:(lt)=>`<div class="card" style="left:110px;top:110px;width:1000px;padding:36px 44px;${st(lt,.2)}"><div style="font:700 28px Inter;color:#777">THE ONLY SENTENCE YOU NEED</div><div style="font:900 56px/1.1 Inter;margin-top:10px">"I'll call you back on the number on my card."</div></div>`,
+ G04:(lt)=>cards(lt,.1,2,2)+`<div class="ttl" style="top:90px;font-size:86px;${st(lt,.2)}">2 DOWN. <em>5 TO GO.</em></div>`,
+};
+function lerp(a,b,p){return a+(b-a)*p}
+window.render=function(t){
+  const S=T.segs; let i=S.findIndex(s=>t>=s.start&&t<s.end); if(i<0)i=S.length-1; const s=S[i], lt=t-s.start;
+  // background frame: clip played at s.speed, then hold the last frame
+  const n=s.nframes, fi=Math.min(n-1,Math.floor(lt*s.speed*24));
+  const src=`frames/${s.bg}/${String(fi+1).padStart(3,'0')}.jpg`;
+  const bg=$('bg'); if(!bg.src.endsWith(src))bg.src=src;
+  const hold=Math.max(0,lt*s.speed*24-(n-1))/24;
+  const z=(s.blur?1.08:1.0)+lt*.012+hold*.02;
+  bg.style.transform=`scale(${z})`;
+  bg.style.filter=s.blur?'blur(14px) brightness(.45)':'none';
+  $('ov').innerHTML=(OV[s.kind]||(()=>''))(lt);
+  // flash at hard cuts into titles
+  $('flash').style.opacity=s.flash?Math.max(0,.7-lt*4):0;
+  // captions
+  const cap=$('cap'); const sp=t-s.voice;
+  if(s.text&&sp>=0&&sp<s.dur+.1){const w=s.text.split(/\s+/),k=Math.min(w.length-1,Math.floor(sp/s.dur*w.length)),c0=Math.floor(k/4)*4;
+    cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ')} else cap.innerHTML='';
+};
+window.ready=()=>new Promise(r=>{const i=$('bg');if(i.complete&&i.naturalWidth)r();else{i.onload=()=>r();i.onerror=()=>r()}});
+</script></body></html>

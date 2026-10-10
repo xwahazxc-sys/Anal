@@ -1,0 +1,8 @@
+frames/
+audio/
+stub/
+*.wav
+ch_*.mp4
+ch.txt
+pv_*.png
+timeline.json

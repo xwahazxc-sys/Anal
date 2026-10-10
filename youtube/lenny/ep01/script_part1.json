@@ -1,0 +1,155 @@
+{
+ "title": "7 Scams That Don't Look Like Scams — part 1 (0:00–2:00), Lenny version",
+ "voice": "kokoro am_liam",
+ "lines": [
+  {
+   "id": "L01",
+   "shot": "S01",
+   "text": "You could lose your savings to 7 scams, but only one of them almost nobody spots. I ran it. Which?"
+  },
+  {
+   "id": "L02",
+   "shot": "S02",
+   "text": "I'm Lenny. Ex-scammer. These days I take my old tricks apart, so they stop working on you."
+  },
+  {
+   "id": "L03",
+   "shot": "S03",
+   "text": "Seven scams. The exact messages. And the one tell that gives each one away. Number seven is last, and it costs the most."
+  },
+  {
+   "id": "L04",
+   "shot": "T01",
+   "text": "Number one. The delivery text."
+  },
+  {
+   "id": "L05",
+   "shot": "S04",
+   "text": "Your parcel could not be delivered. Update your address here."
+  },
+  {
+   "id": "L06",
+   "shot": "S05",
+   "text": "Here's the trick. You send it to thousands of people at once. Somebody is always waiting for a parcel."
+  },
+  {
+   "id": "L07",
+   "shot": "S06",
+   "text": "They tap the link, and the page looks exactly like the courier. Logo, colours, tracking number."
+  },
+  {
+   "id": "L08",
+   "shot": "G01",
+   "text": "It asks for a tiny redelivery fee. A couple of dollars. Nobody thinks twice."
+  },
+  {
+   "id": "L09",
+   "shot": "S07",
+   "text": "But I never wanted the two dollars. I wanted the card number you just typed in."
+  },
+  {
+   "id": "L10",
+   "shot": "G02",
+   "text": "The tell is the link. Real couriers don't send you to a random domain with extra words and numbers in it."
+  },
+  {
+   "id": "L11",
+   "shot": "S08",
+   "text": "Waiting for a parcel? Open the courier's app yourself. Never the link."
+  },
+  {
+   "id": "L12",
+   "shot": "T02",
+   "text": "Number two. The bank call. This one was my favourite."
+  },
+  {
+   "id": "L13",
+   "shot": "S09",
+   "text": "Your phone shows your bank's name. A calm voice says there's a suspicious payment, and they need to verify you."
+  },
+  {
+   "id": "L14",
+   "shot": "S10",
+   "text": "They know your name. Sometimes the last digits of your card. Feels real, right?"
+  },
+  {
+   "id": "L15",
+   "shot": "G03",
+   "text": "Caller ID can be faked. The name on your screen proves nothing. And those details? Old data leaks. Not your bank."
+  },
+  {
+   "id": "L16",
+   "shot": "S11",
+   "text": "Then comes the ask. Read me the code we just texted you. That code is the key to your account."
+  },
+  {
+   "id": "L17",
+   "shot": "S12",
+   "text": "So say this. I'll call you back on the number on my card. A real bank says fine. I used to hang up."
+  },
+  {
+   "id": "L18",
+   "shot": "G04",
+   "text": "That's two down. Number three gets grandparents every single day. And number seven? Stay with me."
+  }
+ ],
+ "shots": {
+  "S01": {
+   "from": "img:lab",
+   "prompt": "The cartoon raccoon sitting backwards on the wooden chair leans toward the camera and talks with a sly knowing smirk, raises one eyebrow, points his gloved paw at the viewer, the camera slowly pushes in"
+  },
+  "S02": {
+   "from": "img:stand",
+   "prompt": "The cartoon raccoon in the charcoal hoodie waves hello at the camera, then puts his paw on his chest introducing himself with a confident grin, his ringed tail sways, slight camera push-in"
+  },
+  "S03": {
+   "from": "last:S01",
+   "prompt": "The cartoon raccoon counts on his gloved fingers while talking to the camera, nodding, mischievous smile, the neon sign glows"
+  },
+  "S04": {
+   "from": "text",
+   "prompt": "Close-up of a smartphone lying on a wooden kitchen table, the screen lights up with a new text message notification and the phone vibrates, cozy warm apartment in the background, shallow depth of field"
+  },
+  "S05": {
+   "from": "text",
+   "prompt": "A young woman with curly brown hair in a yellow sweater stands by the window in a cozy living room, glancing at the front door and checking the time, expecting a parcel delivery, soft afternoon light"
+  },
+  "S06": {
+   "from": "last:S05",
+   "prompt": "The young woman in the yellow sweater looks down at her phone, reads a message and taps the screen with her finger, curious expression"
+  },
+  "S07": {
+   "from": "img:phone",
+   "prompt": "The cartoon raccoon in the charcoal hoodie looks at the glowing phone in his paw and grins mischievously, rubs his chin, red light from the phone on his face, dark teal background"
+  },
+  "S08": {
+   "from": "last:S06",
+   "prompt": "The young woman in the yellow sweater smiles with relief, closes the message and opens an official delivery app on her phone, nodding"
+  },
+  "S09": {
+   "from": "text",
+   "prompt": "A middle-aged man with glasses and a grey cardigan in a bright kitchen answers his ringing smartphone, the phone screen glows, he lifts it to his ear with a slightly worried expression"
+  },
+  "S10": {
+   "from": "last:S09",
+   "prompt": "The middle-aged man with glasses listens to the phone call, nodding nervously, frowning, holding the phone to his ear"
+  },
+  "S11": {
+   "from": "text",
+   "prompt": "Close-up of a hand holding a smartphone, a text message with a six digit code appears on the screen, the thumb hovers hesitantly over the screen, kitchen background out of focus"
+  },
+  "S12": {
+   "from": "last:S01",
+   "prompt": "The cartoon raccoon leans back on the chair, shrugs with both paws up and laughs, then gives a sly wink to the camera"
+  }
+ },
+ "style": "stylized 3D animated feature film style, soft cinematic lighting, smooth natural motion, consistent characters",
+ "graphics": {
+  "T01": "title card #1 THE DELIVERY TEXT over blurred S04",
+  "T02": "title card #2 THE BANK CALL over blurred S09",
+  "G01": "fake courier page + bouncing $1.99 coin over blurred S06",
+  "G02": "the link under a magnifier + tags random domain / extra words / numbers",
+  "G03": "CALLER ID CAN BE FAKED stamp over S10 + 'old data leaks' card",
+  "G04": "the 7 cards: #1 and #2 ticked, #3 glowing, #7 locked"
+ }
+}
