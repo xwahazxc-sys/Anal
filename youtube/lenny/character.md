@@ -7,6 +7,9 @@
 ## Approved references
 `refs/01_main_reference.jpg` + `refs/02_turnaround.jpg` are the master references — attach them to every new generation. `03_expressions.jpg` and `04_scam_lab.jpg` approved. `05_thumbnail_base.jpg` (blank screen) and `06_scam_lab_empty.jpg` approved. Finished thumbnail: `../thumbnail_7_scams.png`.
 
+## Voice
+Kokoro TTS (Apache-2.0, runs locally), voice `am_liam`, speed 1.0 — fast, casual. Model files: `kokoro-v1.0.onnx` + `voices-v1.0.bin` from the kokoro-onnx releases.
+
 ## Look (keep identical in every image)
 - Young adult raccoon, slightly chubby, big expressive amber eyes, natural black "bandit mask" fur, grey-silver fur, ringed tail (5 dark rings)
 - Oversized charcoal-grey hoodie with a small neon-teal lightning-bolt patch on the chest, sleeves pushed up
