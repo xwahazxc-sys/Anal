@@ -42,6 +42,17 @@ def cmd_check(a) -> None:
     _print_ats(ats.check(p, p))
 
 
+def cmd_export(a) -> None:
+    p = load_profile(Path(a.profile))
+    t = TailoredResume(headline=p.headline, summary=p.summary, skills=p.skills, experience=p.experience, cover_letter="")
+    base = OUT / Path(a.profile).stem
+    OUT.mkdir(exist_ok=True)
+    to_docx(p, t, Path(f"{base}.docx"))
+    Path(f"{base}.md").write_text(to_markdown(p, t))
+    _print_ats(ats.check(p, p))
+    print(f"Файлы: {base}.docx / .md")
+
+
 def cmd_tailor(a) -> None:
     p = load_profile()
     vac = manual.from_file(Path(a.file))
@@ -100,6 +111,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(prog="jobagent")
     sub = ap.add_subparsers(required=True)
     sub.add_parser("check", help="ATS-проверка мастер-профиля").set_defaults(fn=cmd_check)
+    s = sub.add_parser("export", help="Выгрузить профиль как есть в DOCX/MD (напр. английская версия)")
+    s.add_argument("profile"); s.set_defaults(fn=cmd_export)
     s = sub.add_parser("tailor", help="Резюме+письмо под вакансию из файла (LinkedIn/Indeed/любая)")
     s.add_argument("file"); s.set_defaults(fn=cmd_tailor)
     s = sub.add_parser("hh-auth", help="OAuth для hh.ru"); s.add_argument("--code"); s.set_defaults(fn=cmd_hh_auth)
