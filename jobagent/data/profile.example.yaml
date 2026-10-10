@@ -1,0 +1,31 @@
+# Мастер-профиль: единственный источник правды. Агент НИЧЕГО не выдумывает —
+# только переупаковывает факты отсюда под конкретную вакансию.
+name: Иван Иванов
+headline: Backend-разработчик (Python)
+contacts:
+  email: ivan@example.com
+  phone: "+7 900 000-00-00"
+  location: Москва
+  links: ["github.com/ivan", "linkedin.com/in/ivan"]
+summary: >
+  5 лет разработкивысоконагруженных сервисов на Python, опыт ведения команды из 4 человек.
+skills: [Python, FastAPI, PostgreSQL, Docker, Kafka, AWS]
+experience:
+  - company: Acme
+    title: Senior Backend Developer
+    start: 2022-03
+    end: present
+    bullets:
+      - Сократил p95 latency API с 800 до 220 мс переработкой кэширования (Redis).
+      - Руководил миграцией на Kubernetes, экономия инфраструктуры 30%.
+education:
+  - school: МГУ
+    degree: Бакалавр, Прикладная математика
+    year: 2019
+languages: ["Русский (родной)", "English (B2)"]
+preferences:
+  roles: [Backend Developer, Python Developer]
+  min_salary_rub: 250000
+  remote_only: false
+  areas: ["1"]            # hh.ru area id, 1 = Москва
+  blacklist_companies: []

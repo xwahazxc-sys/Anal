@@ -1,0 +1,7 @@
+.env
+data/profile.yaml
+data/*.sqlite
+out/
+__pycache__/
+*.egg-info/
+.pytest_cache/
