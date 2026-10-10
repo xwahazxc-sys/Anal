@@ -5,7 +5,7 @@
 **Show format:** cold open with Lenny's confession ("Here's how I'd get YOU…") → he walks through the scam from the scammer's side → the one tell → "And that's why it doesn't work on you anymore."
 
 ## Approved references
-`refs/01_main_reference.jpg` + `refs/02_turnaround.jpg` are the master references — attach them to every new generation. `03_expressions.jpg` and `04_scam_lab.jpg` approved. `05_thumbnail_draft.jpg` needs a redo (no gloves / patch, placeholder text on screen).
+`refs/01_main_reference.jpg` + `refs/02_turnaround.jpg` are the master references — attach them to every new generation. `03_expressions.jpg` and `04_scam_lab.jpg` approved. `05_thumbnail_base.jpg` (blank screen) and `06_scam_lab_empty.jpg` approved. Finished thumbnail: `../thumbnail_7_scams.png`.
 
 ## Look (keep identical in every image)
 - Young adult raccoon, slightly chubby, big expressive amber eyes, natural black "bandit mask" fur, grey-silver fur, ringed tail (5 dark rings)
