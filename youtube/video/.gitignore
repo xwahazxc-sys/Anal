@@ -1,0 +1,6 @@
+voice/
+audio/
+frames/
+*.mp4
+*.wav
+preview_*.png

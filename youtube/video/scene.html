@@ -1,0 +1,146 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Inter;src:url(fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0b0d12;font-family:Inter,"DejaVu Sans",sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 50% 30%,#1b2030 0%,#0b0d12 70%)}
+.scene{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0;will-change:transform,opacity}
+.top{left:0;right:0;top:120px;text-align:center;font-weight:900;font-size:92px;line-height:1.02;letter-spacing:-2px}
+.top em{font-style:normal;color:#ff3b3b}
+.tag{display:inline-block;background:#ff3b3b;color:#fff;font-weight:800;font-size:40px;padding:12px 26px;border-radius:14px;letter-spacing:1px}
+.phone{left:190px;top:400px;width:700px;height:1040px;border-radius:72px;background:#05060a;border:10px solid #2a2f3d;box-shadow:0 40px 120px rgba(0,0,0,.6);overflow:hidden}
+.phone .bar{height:120px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;color:#9aa3b5;font-weight:600;font-size:30px;border-bottom:2px solid #161a24}
+.bub{position:absolute;max-width:590px;padding:28px 32px;border-radius:34px;font-size:42px;line-height:1.3;font-weight:500}
+.hl{border-radius:10px;padding:2px 4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.in{left:40px;background:#262b37;border-bottom-left-radius:10px}
+.out{right:40px;background:#1f7aff;border-bottom-right-radius:10px}
+.link{color:#6fb1ff;text-decoration:underline;word-break:break-all}
+.ring{border:10px solid #ff3b3b;border-radius:30px}
+.lock .time{position:absolute;top:150px;left:0;right:0;text-align:center;font-size:150px;font-weight:600;color:#e9ecf3}
+.notif{left:40px;right:40px;top:420px;background:rgba(40,45,58,.95);border-radius:36px;padding:28px 32px;font-size:34px;line-height:1.3}
+.notif b{display:block;color:#aab2c4;font-size:28px;margin-bottom:8px}
+.blur{filter:blur(7px)}
+.cap{position:absolute;left:60px;right:60px;top:1530px;text-align:center;font-weight:900;font-size:76px;line-height:1.1;text-transform:uppercase;text-shadow:0 6px 0 #000,0 0 30px rgba(0,0,0,.8)}
+.cap span.on{color:#ffd60a}
+.prog{position:absolute;left:0;top:0;height:12px;background:#ff3b3b}
+.call{inset:0;background:linear-gradient(#2b0f12,#05060a)}
+.call .who{position:absolute;top:220px;left:0;right:0;text-align:center;font-size:64px;font-weight:800}
+.call .sub{position:absolute;top:310px;left:0;right:0;text-align:center;font-size:34px;color:#c9a0a4}
+.avatar{left:225px;top:470px;width:250px;height:250px;border-radius:50%;background:#ff3b3b;display:flex;align-items:center;justify-content:center;font-size:120px}
+.btn{width:150px;height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:70px}
+</style></head>
+<body>
+<div class="bg"></div>
+<div class="prog" id="prog"></div>
+
+<!-- 0 hook -->
+<div class="scene" id="s0">
+  <div class="a top" data-in="0.1" data-k="up">ONE TEXT.<br><em>YOUR SAVINGS.</em></div>
+  <div class="a phone lock" data-in="0" data-k="fade">
+    <div class="time">9:41</div>
+    <div class="a notif" data-in="0.6" data-k="drop"><b>MESSAGES · now</b>Your parcel could not be delivered. Update your address here: parcel-redeliv…</div>
+  </div>
+</div>
+
+<!-- 1 turn -->
+<div class="scene" id="s1">
+  <div class="a top" data-in="0" data-k="up">3 TEXTS.<br><em>1 RULE.</em></div>
+  <div class="a phone" data-in="0" data-k="fade"><div class="bar">Messages</div>
+    <div class="a bub in blur" style="top:200px" data-in="0.3" data-k="pop">Your parcel could not be delivered…</div>
+    <div class="a bub in blur" style="top:420px" data-in="0.8" data-k="pop">Did you make this purchase? Reply NO…</div>
+    <div class="a bub in blur" style="top:640px" data-in="1.3" data-k="pop">Hi Mum, I lost my phone…</div>
+  </div>
+</div>
+
+<!-- 2 delivery -->
+<div class="scene" id="s2">
+  <div class="a top" data-in="0" data-k="up"><span class="tag">#1</span><br>THE DELIVERY TEXT</div>
+  <div class="a phone" data-in="0" data-k="fade"><div class="bar">+1 (202) 555-0142</div>
+    <div class="a bub in" style="top:200px" data-in="0.3" data-k="pop">Parcel Service: Your package couldn't be delivered. Update your address:<br><span class="link hl" data-in="3.6" data-k="hl">parcel-redelivery-update.info/xk29</span></div>
+    <div class="a" style="left:0;right:0;top:700px;text-align:center" data-in="4.0" data-k="pop"><span class="tag">NOT THE COURIER</span></div>
+  </div>
+</div>
+
+<!-- 3 bank -->
+<div class="scene" id="s3">
+  <div class="a top" data-in="0" data-k="up"><span class="tag">#2</span><br>THE "BANK" ALERT</div>
+  <div class="a phone" data-in="0" data-k="fade"><div class="bar">Bank Alert</div>
+    <div class="a bub in" style="top:200px" data-in="0.3" data-k="pop">Did you make a purchase of $849.99 at ElectroMart? Reply NO to cancel.</div>
+    <div class="a bub out" style="top:460px" data-in="2.6" data-k="pop">NO</div>
+    <div class="a call" data-in="3.6" data-k="fade">
+      <div class="who">Bank Security</div><div class="sub">incoming call…</div>
+      <div class="a avatar" data-in="3.7" data-k="pulse">☎</div>
+      <div class="a" style="left:0;right:0;top:820px;text-align:center" data-in="4.2" data-k="pop"><span class="tag">SAME SCAM. PART 2.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 hi mum -->
+<div class="scene" id="s4">
+  <div class="a top" data-in="0" data-k="up"><span class="tag">#3</span><br>"HI MUM"</div>
+  <div class="a phone" data-in="0" data-k="fade"><div class="bar">+44 7700 900461</div>
+    <div class="a bub in" style="top:180px" data-in="0.3" data-k="pop">Hi Mum, I lost my phone, this is my new number 💛</div>
+    <div class="a bub in" style="top:400px" data-in="3.3" data-k="pop">Can you help me pay a bill today? I'll pay you back tomorrow x</div>
+    <div class="a" style="left:40px;top:700px" data-in="1.2" data-k="pop"><span class="tag">NEW NUMBER</span></div>
+    <div class="a" style="left:40px;top:790px" data-in="3.6" data-k="pop"><span class="tag">URGENT</span></div>
+    <div class="a" style="left:40px;top:880px" data-in="4.0" data-k="pop"><span class="tag">MONEY</span></div>
+  </div>
+</div>
+
+<!-- 5 rule -->
+<div class="scene" id="s5">
+  <div class="a top" style="top:330px;font-size:150px" data-in="0.2" data-k="pop">DON'T<br><em>TAP.</em></div>
+  <div class="a" style="left:240px;top:780px;width:600px;height:120px;border-radius:60px;background:#262b37;display:flex;align-items:center;justify-content:center;font-size:40px;color:#6fb1ff;text-decoration:underline" data-in="1.0" data-k="pop">parcel-redelivery…</div>
+  <div class="a" style="left:200px;top:832px;width:680px;height:16px;background:#ff3b3b;border-radius:8px;transform-origin:left" data-in="1.8" data-k="wipe"></div>
+  <div class="a top" style="top:1020px;font-size:84px;color:#ffd60a" data-in="3.0" data-k="up">OPEN THE APP<br>YOURSELF.</div>
+</div>
+
+<!-- 6 close -->
+<div class="scene" id="s6">
+  <div class="a top" style="top:380px" data-in="0" data-k="up">WHO WOULD FALL<br>FOR <em>#3</em>?</div>
+  <div class="a" style="left:390px;top:760px;width:300px;height:300px;border-radius:50%;background:#1f7aff;display:flex;align-items:center;justify-content:center;font-size:150px" data-in="0.6" data-k="pulse">➦</div>
+  <div class="a top" style="top:1140px;font-size:64px;color:#9aa3b5" data-in="1.2" data-k="up">Send them this.</div>
+</div>
+
+<div class="cap" id="cap"></div>
+
+<script>
+let T=null;
+window.setup=function(timeline){T=timeline};
+const cl=(x)=>Math.max(0,Math.min(1,x));
+const ease=(x)=>1-Math.pow(1-x,3);
+const back=(x)=>{const c=1.7;x=x-1;return 1+(c+1)*x*x*x+c*x*x};
+function apply(el,lt){
+  const d=parseFloat(el.dataset.in||0),k=el.dataset.k,p=cl((lt-d)/0.4),e=ease(p);
+  let tf='';
+  if(k==='up')tf=`translateY(${(1-e)*60}px)`;
+  else if(k==='drop')tf=`translateY(${(1-e)*-120}px)`;
+  else if(k==='pop')tf=`scale(${p>=1?1:0.6+0.4*back(p)})`;
+  else if(k==='hl'){el.style.boxShadow=`0 0 0 ${8*e}px rgba(255,59,59,${e})`;el.style.background=`rgba(255,59,59,${0.18*e})`;return}
+  else if(k==='wipe'){tf=`scaleX(${e})`;el.style.opacity=p>0?1:0;el.style.transform=tf+' rotate(-3deg)';return}
+  else if(k==='pulse')tf=`scale(${(0.6+0.4*back(p))*(1+0.06*Math.sin(Math.max(0,lt-d)*7))})`;
+  el.style.opacity=k==='fade'?e:(p>0?Math.min(1,p*2):0);
+  el.style.transform=tf;
+}
+window.render=function(t){
+  let i=T.scenes.findIndex(s=>t>=s.start&&t<s.end); if(i<0)i=T.scenes.length-1;
+  T.scenes.forEach((s,j)=>{
+    const el=document.getElementById('s'+j);
+    if(j!==i){el.style.opacity=0;return}
+    const lt=t-s.start;
+    el.style.opacity=cl(lt/0.15)*cl((s.end-t)/0.15+ (j===T.scenes.length-1?1:0));
+    el.querySelectorAll('.a,.hl').forEach(a=>apply(a,lt));
+  });
+  document.getElementById('prog').style.width=(1080*cl(t/T.total))+'px';
+  // captions: words spread over the spoken part of the line
+  const s=T.scenes[i],lt=t-s.voice,w=s.text.split(/\s+/);
+  const cap=document.getElementById('cap');
+  if(lt<0||lt>s.dur+0.2){cap.innerHTML='';return}
+  const k=Math.min(w.length-1,Math.floor(lt/s.dur*w.length));
+  const c0=Math.floor(k/3)*3, chunk=w.slice(c0,c0+3);
+  cap.innerHTML=chunk.map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ');
+};
+</script>
+</body></html>
