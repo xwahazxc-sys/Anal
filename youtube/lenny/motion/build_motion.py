@@ -11,6 +11,7 @@ from playwright.sync_api import sync_playwright
 HERE = os.path.dirname(os.path.abspath(__file__)); P = lambda *a: os.path.join(HERE, *a)
 FPS, SR = 30, 44100
 FF = imageio_ffmpeg.get_ffmpeg_exe()
+WAIT = "() => new Promise(r => { const i = document.querySelector('#A img'); if (i.complete) r(); else i.onload = () => r(); })"
 lines = json.load(open(P("lines.json")))
 
 starts, t = [], 0.5
@@ -71,6 +72,22 @@ sfx += bed.astype(np.float32) * .07
 wave_out = wave.open(P("sfx.wav"), "wb"); wave_out.setnchannels(1); wave_out.setsampwidth(2); wave_out.setframerate(SR)
 wave_out.writeframes((np.clip(sfx, -1, 1) * 32767).astype(np.int16).tobytes()); wave_out.close()
 
+# ---- rigged Lenny frames for shot 0 (lines 0-2) ----
+import cv2, random
+from rig import rig
+os.makedirs(P("rig"), exist_ok=True)
+src = cv2.imread(P("lenny_point.png"), cv2.IMREAD_UNCHANGED)
+random.seed(3); blinks, bt = [], 1.2
+while bt < total: blinks.append(bt); bt += random.uniform(2.2, 3.8)
+nrig = int((starts[3] - .05) * FPS) + 1
+for f in range(nrig):
+    t = f / FPS; a = sm[min(f, len(sm) - 1)]
+    bl = max([max(0, 1 - abs(t - b - .07) / .07) for b in blinks] + [0])
+    fr = rig(src, mouth=min(1, a * 1.15), blink=bl, tilt=2.2 * math.sin(t * 1.1) + 1.5 * a * math.sin(t * 7),
+             nod=3 * a + 1.5 * math.sin(t * 1.7), breathe=math.sin(t * 2))
+    cv2.imwrite(P(f"rig/{f:05d}.png"), fr, [cv2.IMWRITE_PNG_COMPRESSION, 1])
+tl["rigFrames"] = nrig
+
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path="/opt/pw-browsers/chromium", args=["--allow-file-access-from-files"])
     pg = b.new_page(viewport={"width": 1920, "height": 1080})
@@ -78,13 +95,13 @@ with sync_playwright() as p:
     pg.evaluate("([tl, amp]) => setup(tl, amp)", [tl, sm])
     if len(sys.argv) > 2 and sys.argv[1] == "preview":
         for t in sys.argv[2:]:
-            pg.evaluate(f"render({t})"); pg.screenshot(path=P(f"mv_{float(t):05.1f}.png"))
+            pg.evaluate(f"render({t})"); pg.evaluate(WAIT); pg.screenshot(path=P(f"mv_{float(t):05.1f}.png"))
         sys.exit()
     enc = subprocess.Popen([FF, "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(FPS), "-i", "-",
                             "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", P("v.mp4")],
                            stdin=subprocess.PIPE)
     for f in range(int(total * FPS)):
-        pg.evaluate(f"render({f / FPS})"); enc.stdin.write(pg.screenshot(type="jpeg", quality=92))
+        pg.evaluate(f"render({f / FPS})"); pg.evaluate(WAIT); enc.stdin.write(pg.screenshot(type="jpeg", quality=92))
     enc.stdin.close(); enc.wait(); b.close()
 
 subprocess.run([FF, "-y", "-loglevel", "error", "-i", P("v.mp4"), "-i", P("voice.wav"), "-i", P("sfx.wav"),

@@ -8,3 +8,6 @@ pip install piper-tts imageio-ffmpeg playwright "rembg[cpu]"
 python3 build_motion.py preview 3 9   # frames
 python3 build_motion.py               # full render
 ```
+
+## Talking rig (`rig.py`)
+OpenCV puppet rig on `lenny_point.png`: head tilt/nod around the neck, breathing, eyelid blinks, and a mouth that opens with the voice envelope (jaw warp + painted interior). Landmarks are hard-coded for this image — a new pose needs its eye/mouth/neck coordinates. `build_motion.py` renders `rig/NNNNN.png` for the talking shot and `motion.html` swaps them in per frame.

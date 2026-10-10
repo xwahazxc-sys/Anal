@@ -58,7 +58,8 @@ window.render=function(t){
   $('bg').style.filter='blur(2px) brightness(.85)';
   const A=$('A'); A.style.opacity=shot==0?1:0;
   const ein=e3(P(t,.05,.7)), ax=lerp(1500,560,ein)-t*6;
-  A.style.transform=`translate(${ax}px,95px) scale(1.3)`; talk(A.firstElementChild,t,shot==0&&sp);
+  A.style.transform=`translate(${ax}px,95px) scale(1.3)`; talk(A.firstElementChild,t,false);
+  if(T.rigFrames){const f=Math.min(T.rigFrames-1,Math.round(t*FPS)),src='rig/'+String(f).padStart(5,'0')+'.png';const im=A.firstElementChild;if(shot==0&&!im.src.endsWith(src))im.src=src}
   txt('t0',t,S[0]+.1,S[1]); txt('t0b',t,S[0]+.9,S[1]);
   for(let i=0;i<7;i++){const c=$('c'+i),p=e3(P(t,S[1]+.1+i*.12,.45)),o=shot==0?1:0;
     const gx=110+(i%3)*260,gy=230+Math.floor(i/3)*170, fx=lerp(-400,gx,p);
