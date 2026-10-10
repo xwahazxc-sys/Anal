@@ -1,0 +1,354 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Inter;src:url(../fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0d12;font-family:Inter,"DejaVu Sans",sans-serif;color:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(1400px 900px at 30% 30%,#1b2030 0%,#0b0d12 70%)}
+.scene{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+em{font-style:normal;color:#ff3b3b}
+i{font-style:normal;color:#ffd60a}
+g{color:#30d158}
+.h{left:110px;width:1020px;font-weight:900;font-size:84px;line-height:1.02;letter-spacing:-2px}
+.p{left:110px;width:1000px;font-weight:600;font-size:44px;line-height:1.25;color:#c7cedb}
+.c{left:0;right:0;text-align:center}
+.big{font-weight:900;font-size:120px;line-height:1;letter-spacing:-3px}
+.tag{display:inline-block;background:#ff3b3b;color:#fff;font-weight:800;font-size:34px;padding:10px 22px;border-radius:12px;letter-spacing:1px}
+.tag.y{background:#ffd60a;color:#111}.tag.g{background:#30d158;color:#06210f}.tag.b{background:#1f7aff}
+.phone{left:1250px;top:70px;width:520px;height:840px;border-radius:60px;background:#05060a;border:9px solid #2a2f3d;box-shadow:0 30px 100px rgba(0,0,0,.6);overflow:hidden}
+.bar{height:96px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;color:#9aa3b5;font-weight:600;font-size:24px;border-bottom:2px solid #161a24}
+.bub{position:absolute;max-width:420px;padding:18px 22px;border-radius:26px;font-size:28px;line-height:1.3;font-weight:500}
+.in{left:24px;background:#262b37;border-bottom-left-radius:8px}
+.out{right:24px;background:#1f7aff;border-bottom-right-radius:8px}
+.link{color:#6fb1ff;text-decoration:underline;word-break:break-all}
+.hl{border-radius:8px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.screen{position:absolute;inset:0;background:#05060a}
+.web{position:absolute;inset:0;background:#f2f4f8;color:#111}
+.web .top{height:96px;background:#e3e7ef;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;font-size:22px;color:#555}
+.field{position:absolute;left:30px;right:30px;height:66px;border:2px solid #c5cbd6;border-radius:12px;background:#fff;font-size:24px;color:#888;display:flex;align-items:center;padding:0 18px}
+.btn{position:absolute;left:30px;right:30px;height:72px;border-radius:14px;background:#ffb000;color:#111;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center}
+.tile{position:absolute;width:300px;height:170px;border-radius:24px;background:#1a1f2b;border:3px solid #2a3142;display:flex;flex-direction:column;justify-content:center;padding:0 26px}
+.tile b{color:#ff3b3b;font-size:40px;font-weight:900}.tile span{font-size:30px;font-weight:700;color:#e6e9f0}
+.card{border-radius:30px;background:#1a1f2b;border:3px solid #2a3142;padding:40px 50px}
+.cap{position:absolute;left:80px;right:80px;top:955px;text-align:center;font-weight:900;font-size:54px;line-height:1.1;text-transform:uppercase;text-shadow:0 5px 0 #000,0 0 26px rgba(0,0,0,.9)}
+.cap span.on{color:#ffd60a}
+.prog{position:absolute;left:0;top:0;height:8px;background:#ff3b3b}
+.stamp{border:10px solid #ff3b3b;color:#ff3b3b;font-weight:900;font-size:64px;padding:16px 30px;border-radius:18px;background:rgba(11,13,18,.85);text-align:center;line-height:1.05}
+.check{font-size:46px;font-weight:700;line-height:1.2}
+.dash{position:absolute;inset:0;background:#0d1320}
+.pop{position:absolute;left:30px;right:30px;border-radius:20px;background:#fff;color:#111;padding:26px;font-size:26px;line-height:1.3;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.pop b{display:block;font-size:30px;color:#d00;margin-bottom:8px}
+</style></head>
+<body>
+<div class="bg"></div>
+<div class="prog" id="prog"></div>
+
+<!-- 0 HOOK -->
+<div class="scene" id="b0">
+  <div class="a c big" style="top:200px" data-s="0" data-k="up">7 SCAMS.</div>
+  <div class="a c big" style="top:340px" data-s="0" data-d="1.2" data-k="up"><em>1</em> NOBODY SPOTS.</div>
+  <div class="a" style="left:0;right:0;top:560px;display:flex;justify-content:center;gap:30px" data-s="0" data-d="2" data-k="up">
+    <div class="tag b" style="font-size:54px;padding:18px 34px">1</div><div class="tag b" style="font-size:54px;padding:18px 34px">2</div><div class="tag b" style="font-size:54px;padding:18px 34px">3</div><div class="tag b" style="font-size:54px;padding:18px 34px">4</div><div class="tag b" style="font-size:54px;padding:18px 34px">5</div><div class="tag b" style="font-size:54px;padding:18px 34px">6</div>
+    <div class="a" style="position:relative" data-s="1" data-k="pulse"><div class="tag" style="font-size:54px;padding:18px 34px">?</div></div>
+  </div>
+</div>
+
+<!-- 1 TURN: the list -->
+<div class="scene" id="b1">
+  <div class="a h" style="top:80px" data-s="0" data-k="up">ALL SEVEN. <i>THE MESSAGES.</i> THE TELL.</div>
+  <div class="a tile" style="left:110px;top:330px" data-s="0" data-d="0.6" data-k="pop"><b>1</b><span>The delivery text</span></div>
+  <div class="a tile" style="left:540px;top:330px" data-s="0" data-d="0.9" data-k="pop"><b>2</b><span>The bank call</span></div>
+  <div class="a tile" style="left:970px;top:330px" data-s="0" data-d="1.2" data-k="pop"><b>3</b><span>"Hi Mum"</span></div>
+  <div class="a tile" style="left:1400px;top:330px" data-s="0" data-d="1.5" data-k="pop"><b>4</b><span>The easy job</span></div>
+  <div class="a tile" style="left:325px;top:560px" data-s="0" data-d="1.8" data-k="pop"><b>5</b><span>The keen buyer</span></div>
+  <div class="a tile" style="left:755px;top:560px" data-s="0" data-d="2.1" data-k="pop"><b>6</b><span>The frozen screen</span></div>
+  <div class="a tile" style="left:1185px;top:560px;border-color:#ff3b3b" data-s="1" data-k="pulse"><b>7 🔒</b><span>Costs the most</span></div>
+</div>
+
+<!-- 2 DELIVERY -->
+<div class="scene" id="b2">
+  <div class="a c" style="top:330px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#1</div><div class="big" style="margin-top:30px">THE DELIVERY TEXT</div></div>
+  <div class="a phone" data-s="2" data-k="fade"><div class="bar">+1 (202) 555-0142</div>
+    <div class="a bub in" style="top:140px" data-s="2" data-k="pop">Parcel Service: Your parcel could not be delivered. Update your address here:<br><span class="link hl" data-s="11" data-k="hl">parcel-redelivery-update.info/xk29</span></div>
+    <div class="a web" data-s="5" data-out="11" data-k="fade"><div class="top">parcel-redelivery-update.info</div>
+      <div style="position:absolute;left:30px;top:130px;background:#ffb000;color:#111;font-weight:900;font-size:34px;padding:10px 20px;border-radius:10px">PARCEL SERVICE</div>
+      <div style="position:absolute;left:30px;top:220px;font-size:24px;color:#444">Tracking: PX-4471-208<br>Status: <b style="color:#d00">Delivery failed</b></div>
+      <div class="a" style="left:30px;top:330px;font-size:30px;font-weight:800" data-s="7" data-k="up">Redelivery fee: $1.99</div>
+      <div class="a field" style="top:400px" data-s="7" data-d="0.4" data-k="up">Name on card</div>
+      <div class="a field hl" style="top:486px" data-s="7" data-d="0.6" data-k="up"><span class="hl" data-s="10" data-k="hl" style="color:#888">Card number</span></div>
+      <div class="a field" style="top:572px" data-s="7" data-d="0.8" data-k="up">MM / YY &nbsp;&nbsp; CVV</div>
+      <div class="a btn" style="top:680px" data-s="7" data-d="1" data-k="up">Pay $1.99</div>
+    </div>
+  </div>
+  <div class="a h" style="top:200px" data-s="4" data-out="7" data-k="up">IT ARRIVES WHEN YOU'RE <i>ACTUALLY WAITING.</i></div>
+  <div class="a p" style="top:460px" data-s="5" data-out="7" data-k="up">The page copies the courier: logo, colours, tracking number.</div>
+  <div class="a h" style="top:200px" data-s="7" data-out="9" data-k="up">A <i>SMALL</i> FEE.<br>YOU DON'T THINK TWICE.</div>
+  <div class="a h" style="top:200px" data-s="9" data-out="11" data-k="up">THE FEE ISN'T THE POINT.</div>
+  <div class="a h" style="top:420px" data-s="10" data-out="11" data-k="up"><em>YOUR CARD NUMBER IS.</em></div>
+  <div class="a h" style="top:180px" data-s="11" data-k="up">THE TELL: <em>THE LINK.</em></div>
+  <div class="a p" style="top:300px" data-s="12" data-k="up">Couriers don't send you to random domains stuffed with extra words and numbers.</div>
+  <div class="a card" style="left:110px;top:520px;width:1000px" data-s="13" data-k="pop"><div class="check"><g>✓</g> Open the courier's app<br><g>✓</g> or type their site yourself</div></div>
+</div>
+
+<!-- 3 BANK CALL -->
+<div class="scene" id="b3">
+  <div class="a c" style="top:330px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#2</div><div class="big" style="margin-top:30px">THE BANK CALL</div></div>
+  <div class="a phone" data-s="2" data-k="fade">
+    <div class="screen" style="background:linear-gradient(#0f1f3a,#05060a)">
+      <div style="position:absolute;top:150px;left:0;right:0;text-align:center;font-size:48px;font-weight:800">Your Bank</div>
+      <div style="position:absolute;top:215px;left:0;right:0;text-align:center;font-size:26px;color:#9fb3d6">mobile · calling…</div>
+      <div class="a" style="left:160px;top:330px;width:200px;height:200px;border-radius:50%;background:#1f7aff;display:flex;align-items:center;justify-content:center;font-size:96px" data-s="2" data-k="pulse">☎</div>
+    </div>
+    <div class="a screen" data-s="10" data-k="fade"><div class="bar">Your Bank</div>
+      <div class="a bub in" style="top:140px" data-s="10" data-k="pop">Your one-time code is <span class="hl" data-s="11" data-k="hl"><b>482 913</b></span>. Never share this code with anyone.</div>
+    </div>
+    <div class="a" style="left:40px;top:560px" data-s="7" data-out="10" data-k="pop"><div class="stamp">CALLER ID<br>CAN BE FAKED</div></div>
+  </div>
+  <div class="a h" style="top:160px" data-s="3" data-out="7" data-k="up">"A SUSPICIOUS PAYMENT. WE NEED TO <i>VERIFY</i> YOU."</div>
+  <div class="a check" style="left:110px;top:470px" data-s="4" data-out="7" data-k="up"><g>✓</g> Knows your name</div>
+  <div class="a check" style="left:110px;top:550px" data-s="5" data-out="7" data-k="up"><g>✓</g> Knows your last card digits</div>
+  <div class="a check" style="left:110px;top:650px;color:#ffd60a" data-s="6" data-out="7" data-k="up">→ feels real</div>
+  <div class="a h" style="top:200px" data-s="8" data-out="10" data-k="up">THE NAME ON YOUR SCREEN <em>PROVES NOTHING.</em></div>
+  <div class="a p" style="top:540px" data-s="9" data-out="10" data-k="up">What they know usually comes from old data leaks, not from your bank.</div>
+  <div class="a h" style="top:200px" data-s="10" data-out="13" data-k="up">THEN: <i>"READ ME THE CODE."</i></div>
+  <div class="a p" style="top:330px" data-s="11" data-out="13" data-k="up">That code is the key to your account.</div>
+  <div class="a" style="left:110px;top:470px" data-s="12" data-out="13" data-k="pop"><div class="tag" style="font-size:40px">YOUR BANK NEVER ASKS FOR IT</div></div>
+  <div class="a card" style="left:110px;top:150px;width:1020px" data-s="13" data-k="pop"><div style="font-size:30px;color:#9aa3b5;font-weight:700;margin-bottom:14px">THE ONLY SENTENCE YOU NEED</div><div style="font-size:58px;font-weight:900;line-height:1.1">"I'll call you back on the number on my card."</div></div>
+  <div class="a check" style="left:110px;top:520px" data-s="14" data-k="up"><g>✓</g> Real bank: "Fine."</div>
+  <div class="a check" style="left:110px;top:600px" data-s="15" data-k="up"><em>✗</em> Scammer: argues, or hangs up.</div>
+  <div class="a" style="left:110px;top:720px" data-s="16" data-k="pop"><div class="tag g">CALL THE NUMBER ON YOUR CARD</div></div>
+</div>
+
+<!-- 4 HI MUM -->
+<div class="scene" id="b4">
+  <div class="a c" style="top:330px" data-s="-1" data-out="1" data-k="pop"><div class="tag" style="font-size:60px">#3</div><div class="big" style="margin-top:30px">"HI MUM"</div></div>
+  <div class="a phone" data-s="1" data-k="fade"><div class="bar">+44 7700 900461</div>
+    <div class="a bub in" style="top:130px" data-s="1" data-k="pop">Hi Mum, I dropped my phone, this is my new number 💛</div>
+    <div class="a bub out" style="top:270px" data-s="2" data-k="pop">Oh no! Are you ok?</div>
+    <div class="a bub in" style="top:370px" data-s="2" data-d="1.5" data-k="pop">I need to pay a bill today and my banking app won't work on this phone. Can you help? 🙏</div>
+    <div class="a bub in" style="top:590px" data-s="3" data-d="0.5" data-k="pop">Can't talk, the mic is broken 😩</div>
+  </div>
+  <div class="a h" style="top:200px" data-s="1" data-out="3" data-k="up">A NUMBER YOU DON'T KNOW. <i>A NAME YOU DO.</i></div>
+  <div class="a h" style="top:160px" data-s="3" data-out="5" data-k="up">ALWAYS A REASON YOU <i>CAN'T JUST CALL.</i></div>
+  <div class="a p" style="top:420px" data-s="4" data-out="5" data-k="up">Broken phone. Broken microphone. "In a meeting."</div>
+  <div class="a h" style="top:140px" data-s="5" data-k="up">THE TELL:</div>
+  <div class="a" style="left:110px;top:260px" data-s="5" data-d="0.8" data-k="pop"><div class="tag">NEW NUMBER</div></div>
+  <div class="a" style="left:420px;top:260px" data-s="5" data-d="1.3" data-k="pop"><div class="tag">URGENT</div></div>
+  <div class="a" style="left:640px;top:260px" data-s="5" data-d="1.8" data-k="pop"><div class="tag">MONEY</div></div>
+  <div class="a check" style="left:110px;top:380px" data-s="6" data-k="up"><g>✓</g> Call the <i>old</i> number</div>
+  <div class="a card" style="left:110px;top:520px;width:1000px" data-s="8" data-k="pop"><div style="font-size:30px;color:#9aa3b5;font-weight:700">AGREE ONE NOW</div><div style="font-size:72px;font-weight:900">🔑 FAMILY CODE WORD</div></div>
+</div>
+
+<!-- 5 EASY JOB -->
+<div class="scene" id="b5">
+  <div class="a c" style="top:330px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#4</div><div class="big" style="margin-top:30px">THE EASY JOB</div></div>
+  <div class="a phone" data-s="2" data-k="fade"><div class="bar">Recruiter</div>
+    <div class="a bub in" style="top:130px" data-s="2" data-k="pop">Hi! 😊 We're hiring remote staff. Earn from home just by liking videos. Flexible hours! Interested?</div>
+    <div class="a bub in" style="top:380px;background:#173d27" data-s="4" data-k="pop">✅ Payment received for Task 1–5</div>
+    <div class="a screen" data-s="6" data-k="fade"><div class="bar">"Team Earnings" · 214 members</div>
+      <div class="a bub in" style="top:130px" data-s="6" data-d="0.3" data-k="pop">Just withdrew!! 🎉🎉</div>
+      <div class="a bub in" style="top:240px" data-s="6" data-d="0.8" data-k="pop">VIP tasks are worth it 💰</div>
+      <div class="a bub in" style="top:380px;background:#4a1a1d" data-s="7" data-k="pop">⚠ Task 6 requires a top-up to unlock VIP earnings</div>
+      <div class="a bub in" style="top:560px;background:#4a1a1d" data-s="8" data-k="pop">⚠ Task 7 requires a larger top-up</div>
+    </div>
+  </div>
+  <div class="a h" style="top:200px" data-s="3" data-out="4" data-k="up">YOU NEVER APPLIED. <i>THAT'S TELL #1.</i></div>
+  <div class="a h" style="top:200px" data-s="4" data-out="6" data-k="up">THE FIRST PAYMENTS ARE <g>REAL.</g></div>
+  <div class="a p" style="top:440px" data-s="5" data-out="6" data-k="up">Small, but real. That's the bait.</div>
+  <div class="a h" style="top:200px" data-s="6" data-out="9" data-k="up">A GROUP CHAT FULL OF <i>"WORKERS."</i></div>
+  <div class="a h" style="top:200px" data-s="9" data-k="up"><em>THAT'S THE SWITCH.</em></div>
+  <div class="a card" style="left:110px;top:420px;width:1000px" data-s="10" data-k="pop"><div style="font-size:62px;font-weight:900;line-height:1.1">A job that asks you to <em>pay in</em> is not a job.</div></div>
+</div>
+
+<!-- 6 KEEN BUYER -->
+<div class="scene" id="b6">
+  <div class="a c" style="top:330px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#5</div><div class="big" style="margin-top:30px">THE KEEN BUYER</div></div>
+  <div class="a phone" data-s="2" data-k="fade"><div class="bar">Marketplace</div>
+    <div class="a" style="left:24px;right:24px;top:120px;height:150px;border-radius:20px;background:#1a1f2b;display:flex;align-items:center;gap:20px;padding:20px;font-size:28px;font-weight:700" data-s="2" data-k="pop"><div style="font-size:70px">🚲</div>Bike — for sale<br>listed just now</div>
+    <div class="a bub in" style="top:300px" data-s="3" data-k="pop">I'll take it! Full price 👍</div>
+    <div class="a bub in" style="top:400px" data-s="4" data-k="pop">My courier will collect. Receive your payment here: <span class="link">secure-pay-receive.info</span></div>
+    <div class="a web" data-s="5" data-k="fade"><div class="top">secure-pay-receive.info</div>
+      <div style="position:absolute;left:30px;top:130px;font-size:34px;font-weight:900">Receive payment</div>
+      <div class="field" style="top:210px">Card number</div>
+      <div class="field" style="top:296px">MM / YY</div>
+      <div class="field" style="top:382px"><span class="hl" data-s="5" data-d="1" data-k="hl" style="color:#888">CVV (3 digits on back)</span></div>
+      <div class="btn" style="top:490px;background:#30d158">Receive money</div>
+    </div>
+  </div>
+  <div class="a h" style="top:200px" data-s="3" data-out="5" data-k="up">NO HAGGLING. <i>NO QUESTIONS.</i></div>
+  <div class="a h" style="top:200px" data-s="6" data-k="up">TO <g>RECEIVE</g> MONEY?<br><em>NEVER NEEDED.</em></div>
+  <div class="a p" style="top:420px" data-s="7" data-k="up">Those details are only for sending it.</div>
+  <div class="a check" style="left:110px;top:540px" data-s="8" data-k="up"><em>✗</em> Won't meet, won't use the platform's payment → walk away</div>
+  <div class="a card" style="left:110px;top:700px;width:1000px;padding:24px 40px" data-s="9" data-k="pop"><div style="font-size:46px;font-weight:900">A real buyer has <g>questions.</g></div><div class="a" style="position:relative;font-size:46px;font-weight:900" data-s="10" data-k="up">A scammer has <em>a link.</em></div></div>
+</div>
+
+<!-- 7 FROZEN SCREEN -->
+<div class="scene" id="b7">
+  <div class="a c" style="top:330px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#6</div><div class="big" style="margin-top:30px">THE FROZEN SCREEN</div></div>
+  <div class="a" style="left:1000px;top:90px;width:840px;height:560px;border-radius:18px;background:#e9ecf2;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.6)" data-s="2" data-k="fade">
+    <div style="height:46px;background:#cfd5df;display:flex;align-items:center;gap:10px;padding:0 16px"><span style="width:14px;height:14px;border-radius:50%;background:#ff5f57"></span><span style="width:14px;height:14px;border-radius:50%;background:#febc2e"></span><span style="width:14px;height:14px;border-radius:50%;background:#28c840"></span></div>
+    <div class="a" style="inset:46px 0 0 0;background:#b00000;color:#fff;padding:40px;text-align:center" data-s="2" data-d="0.5" data-k="flash">
+      <div style="font-size:70px">⚠️</div>
+      <div style="font-size:44px;font-weight:900;margin-top:10px">YOUR COMPUTER IS INFECTED</div>
+      <div style="font-size:26px;margin-top:16px">Do not close this window. Call Support immediately:</div>
+      <div style="font-size:48px;font-weight:900;margin-top:16px">1-800-555-0199</div>
+    </div>
+    <div class="a pop" style="left:140px;right:140px;top:200px" data-s="4" data-k="pop"><b>Install RemoteHelper.exe?</b>The technician needs access to fix your computer.<div style="margin-top:16px;display:flex;gap:12px"><span class="tag b" style="font-size:24px">Allow</span><span class="tag" style="font-size:24px;background:#888">Cancel</span></div></div>
+  </div>
+  <div class="a p" style="left:1000px;top:690px;width:840px" data-s="3" data-out="4" data-k="up">Sometimes "from" a company you've heard of.</div>
+  <div class="a h" style="top:160px;width:820px" data-s="4" data-out="5" data-k="up">CALL, AND A <i>"TECHNICIAN"</i> WANTS ACCESS.</div>
+  <div class="a h" style="top:160px;width:820px" data-s="5" data-out="6" data-k="up">THAT PROGRAM = <em>THEIR CONTROL.</em></div>
+  <div class="a p" style="top:400px;width:820px" data-s="5" data-out="6" data-k="up">Of your computer. And from there, your bank.</div>
+  <div class="a h" style="top:160px;width:820px" data-s="6" data-k="up">REAL SOFTWARE <i>NEVER</i> GIVES YOU A NUMBER.</div>
+  <div class="a check" style="left:110px;top:520px" data-s="7" data-k="up"><g>✓</g> Close the browser</div>
+  <div class="a check" style="left:110px;top:600px" data-s="8" data-k="up"><g>✓</g> Won't close? Restart</div>
+  <div class="a check" style="left:110px;top:680px" data-s="9" data-k="up"><em>✗</em> Never call · <em>✗</em> No remote access</div>
+</div>
+
+<!-- 8 WRONG NUMBER -->
+<div class="scene" id="b8">
+  <div class="a c" style="top:300px" data-s="-1" data-out="2" data-k="pop"><div class="tag" style="font-size:60px">#7 🔓</div><div class="big" style="margin-top:30px">THE ONE NOBODY SPOTS</div></div>
+  <div class="a phone" data-s="2" data-k="fade"><div class="bar">+1 (310) 555-0187</div>
+    <div class="a bub in" style="top:130px" data-s="4" data-k="pop">Hi, is this Anna?</div>
+    <div class="a bub out" style="top:230px" data-s="5" data-k="pop">No, wrong number</div>
+    <div class="a bub in" style="top:330px" data-s="6" data-k="pop">Oh, so sorry! 😅 Have a lovely day</div>
+    <div class="a bub out" style="top:470px" data-s="8" data-k="pop">You too 🙂</div>
+    <div class="a screen" data-s="9" data-out="14" data-k="fade"><div class="bar">Daniel · week 3</div>
+      <div class="a bub in" style="top:130px;font-size:56px" data-s="10" data-k="pop">🍝 ✈️ 🚗</div>
+      <div class="a bub in" style="top:260px" data-s="11" data-k="pop">How did your interview go? You said it was Tuesday 🙂</div>
+      <div class="a bub in" style="top:440px" data-s="12" data-k="pop">Good day, closed a nice trade this morning 📈</div>
+      <div class="a bub out" style="top:600px" data-s="14" data-k="pop">How does that work?</div>
+    </div>
+    <div class="a dash" data-s="14" data-d="1.2" data-k="fade">
+      <div class="bar" style="border-color:#1c2740">GoldPeak Trade</div>
+      <div style="position:absolute;left:30px;top:130px;font-size:24px;color:#8fa3c7">Balance</div>
+      <div class="a" style="left:30px;top:165px;font-size:60px;font-weight:900" data-s="15" data-out="16" data-k="pop">$500</div>
+      <div class="a" style="left:30px;top:165px;font-size:60px;font-weight:900;color:#30d158" data-s="16" data-out="18" data-k="pop">$740 ▲</div>
+      <div class="a" style="left:30px;top:165px;font-size:60px;font-weight:900;color:#30d158" data-s="18" data-out="22" data-k="pop">$12,960 ▲</div>
+      <div class="a" style="left:30px;top:165px;font-size:60px;font-weight:900;color:#555;text-decoration:line-through" data-s="22" data-k="pop">$12,960</div>
+      <svg class="a" style="left:30px;top:270px" width="440" height="200" data-s="16" data-k="fade"><polyline points="0,190 60,170 120,175 180,140 240,120 300,90 360,70 440,20" fill="none" stroke="#30d158" stroke-width="6"/></svg>
+      <div class="a" style="left:30px;right:30px;top:500px;border-radius:14px;background:#173d27;padding:16px;font-size:24px" data-s="17" data-out="20" data-k="pop">✅ Withdrawal of $100 successful</div>
+      <div class="a pop" style="top:440px" data-s="20" data-k="pop"><b>Withdrawal on hold</b>Pay tax on your profits before withdrawing.</div>
+      <div class="a pop" style="top:620px" data-s="21" data-k="pop"><b>Verification fee required</b>One final step to release your funds.</div>
+    </div>
+  </div>
+  <div class="a h" style="top:200px" data-s="2" data-out="4" data-k="up">IT DOESN'T START WITH A SCAM.</div>
+  <div class="a p" style="top:440px" data-s="3" data-out="4" data-k="up">It starts with a wrong number.</div>
+  <div class="a h" style="top:200px" data-s="6" data-out="9" data-k="up">PLEASANT. <i>A LITTLE FUNNY.</i></div>
+  <div class="a p" style="top:330px" data-s="8" data-out="9" data-k="up">You were polite, so you keep chatting.</div>
+  <div class="a h" style="top:160px" data-s="9" data-out="14" data-k="up">OVER WEEKS, <i>EVERY DAY.</i></div>
+  <div class="a check" style="left:110px;top:330px" data-s="10" data-out="14" data-k="up">📸 Photos of a good life</div>
+  <div class="a check" style="left:110px;top:410px" data-s="11" data-out="14" data-k="up">🧠 Remembers what you told them</div>
+  <div class="a check" style="left:110px;top:490px" data-s="12" data-out="14" data-k="up">📈 Successful… and never pushes it</div>
+  <div class="a h" style="top:160px" data-s="14" data-out="18" data-k="up">THEN, A <i>PLATFORM.</i></div>
+  <div class="a p" style="top:300px" data-s="17" data-out="18" data-k="up">A small withdrawal works. That's what convinces you.</div>
+  <div class="a h" style="top:160px" data-s="18" data-out="20" data-k="up">SO YOU PUT IN <em>MORE.</em></div>
+  <div class="a p" style="top:300px" data-s="19" data-out="20" data-k="up">Maybe borrowed.</div>
+  <div class="a h" style="top:160px" data-s="20" data-out="22" data-k="up">TAKE IT OUT? <em>PAY FIRST.</em></div>
+  <div class="a p" style="top:300px" data-s="21" data-out="22" data-k="up">Then another fee. Then another.</div>
+  <div class="a h" style="top:160px" data-s="22" data-k="up">THE PLATFORM WAS <em>NEVER REAL.</em></div>
+  <div class="a p" style="top:400px" data-s="23" data-k="up">The profit was a number on a screen.</div>
+  <div class="a card" style="left:110px;top:560px;width:1000px" data-s="24" data-k="pop"><div style="font-size:48px;font-weight:900;line-height:1.15">The person you talked to every day was <em>a script.</em></div></div>
+</div>
+
+<!-- 9 WHY NOBODY SPOTS IT -->
+<div class="scene" id="b9">
+  <div class="a h c" style="top:120px;width:auto" data-s="0" data-out="3" data-k="up">NO SINGLE MOMENT <i>FEELS</i> LIKE A SCAM.</div>
+  <div class="a" style="left:560px;top:330px;width:800px;height:420px" data-s="1" data-out="3" data-k="fade">
+    <div style="position:absolute;left:0;bottom:0;width:160px;height:70px;background:#262b37;border-radius:8px"></div>
+    <div style="position:absolute;left:160px;bottom:0;width:160px;height:140px;background:#2c3242;border-radius:8px"></div>
+    <div style="position:absolute;left:320px;bottom:0;width:160px;height:210px;background:#343b4e;border-radius:8px"></div>
+    <div style="position:absolute;left:480px;bottom:0;width:160px;height:280px;background:#3d455b;border-radius:8px"></div>
+    <div style="position:absolute;left:640px;bottom:0;width:160px;height:350px;background:#ff3b3b;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:60px">💸</div>
+    <div style="position:absolute;left:0;top:0;font-size:34px;font-weight:700;color:#c7cedb">Every step small. Every step your choice.</div>
+  </div>
+  <div class="a c" style="top:150px" data-s="2" data-k="up"><div class="tag y" style="font-size:44px">THE TELL</div></div>
+  <div class="a card c" style="left:260px;right:260px;top:280px" data-s="3" data-k="pop"><div style="font-size:70px;font-weight:900;line-height:1.15">NEVER MET IN PERSON<br>+ BRINGS UP MONEY<br>= <em>THE WHOLE SCAM</em></div></div>
+  <div class="a c p" style="left:0;width:auto;top:720px" data-s="4" data-k="up">However long you've talked. However kind they've been.</div>
+  <div class="a c h" style="left:0;width:auto;top:800px;font-size:64px" data-s="6" data-k="up">THAT KINDNESS WAS <em>THE PRODUCT.</em></div>
+</div>
+
+<!-- 10 THE RULE -->
+<div class="scene" id="b10">
+  <div class="a" style="left:0;right:0;top:120px;display:flex;justify-content:center;gap:24px" data-s="0" data-out="2" data-k="up">
+    <div class="tag" style="font-size:54px;padding:18px 34px">1</div><div class="tag" style="font-size:54px;padding:18px 34px">2</div><div class="tag" style="font-size:54px;padding:18px 34px">3</div><div class="tag" style="font-size:54px;padding:18px 34px">4</div><div class="tag" style="font-size:54px;padding:18px 34px">5</div><div class="tag" style="font-size:54px;padding:18px 34px">6</div><div class="tag" style="font-size:54px;padding:18px 34px">7</div>
+  </div>
+  <div class="a c h" style="left:0;width:auto;top:320px" data-s="1" data-out="2" data-k="up">ALL BREAK <i>THE SAME RULE.</i></div>
+  <div class="a c h" style="left:0;width:auto;top:120px" data-s="2" data-out="5" data-k="up">THEY WANT YOU TO ACT <em>INSIDE THEIR MESSAGE.</em></div>
+  <div class="a" style="left:0;right:0;top:360px;display:flex;justify-content:center;gap:40px" data-s="2" data-d="1" data-out="5" data-k="up">
+    <div class="card" style="font-size:44px;font-weight:800">🔗 Their link</div><div class="card" style="font-size:44px;font-weight:800">📞 Their number</div><div class="card" style="font-size:44px;font-weight:800">📊 Their platform</div>
+  </div>
+  <div class="a c p" style="left:0;width:auto;top:620px" data-s="3" data-out="5" data-k="up">Plus pressure, so you act before you think.</div>
+  <div class="a c h" style="left:0;width:auto;top:140px" data-s="4" data-k="up">THE DEFENCE IS ALWAYS THE SAME.</div>
+  <div class="a check c" style="left:0;right:0;top:330px;font-size:60px;font-weight:900" data-s="5" data-k="up">1. Leave the message.</div>
+  <div class="a check c" style="left:0;right:0;top:420px;font-size:60px;font-weight:900" data-s="6" data-k="up">2. Slow down.</div>
+  <div class="a check c" style="left:0;right:0;top:510px;font-size:60px;font-weight:900;color:#30d158" data-s="7" data-k="up">3. Open it yourself.</div>
+  <div class="a c" style="left:0;right:0;top:680px" data-s="8" data-k="up"><div class="tag y" style="font-size:40px">⏱ A REAL PROBLEM WILL STILL BE THERE IN 10 MINUTES</div></div>
+  <div class="a c h" style="left:0;width:auto;top:780px;font-size:70px" data-s="9" data-k="pop"><em>A SCAM WON'T.</em></div>
+</div>
+
+<!-- 11 ALREADY CLICKED -->
+<div class="scene" id="b11">
+  <div class="a h" style="top:80px;width:1700px;font-size:64px" data-s="0" data-k="up">ALREADY CLICKED OR PAID? <i>IN THIS ORDER:</i></div>
+  <div class="a check" style="left:110px;top:220px" data-s="1" data-k="up"><span class="tag">1</span> Call your bank (number on your card): "It's fraud."</div>
+  <div class="a check" style="left:180px;top:300px;font-size:34px;color:#ffd60a" data-s="2" data-k="up">Speed matters. Do this first.</div>
+  <div class="a check" style="left:110px;top:370px" data-s="3" data-k="up"><span class="tag">2</span> Change passwords + turn on 2-step verification</div>
+  <div class="a check" style="left:110px;top:460px" data-s="4" data-k="up"><span class="tag">3</span> Software installed? Disconnect, get it checked</div>
+  <div class="a check" style="left:110px;top:550px" data-s="5" data-k="up"><span class="tag">4</span> Report it</div>
+  <div class="a check" style="left:180px;top:630px;font-size:36px;color:#c7cedb" data-s="6" data-k="up">🇺🇸 reportfraud.ftc.gov</div>
+  <div class="a check" style="left:780px;top:630px;font-size:36px;color:#c7cedb" data-s="7" data-k="up">🇬🇧 forward scam texts to 7726</div>
+  <div class="a check" style="left:110px;top:710px" data-s="8" data-k="up"><span class="tag">5</span> "Recovery service" for a fee? <em>Same scam, round two.</em></div>
+  <div class="a" style="left:0;top:0;width:1920px;height:1080px;background:#0b0d12" data-s="10" data-k="fade"></div>
+  <div class="a c h" style="left:0;width:auto;top:300px" data-s="10" data-k="up">DON'T BE EMBARRASSED.</div>
+  <div class="a c p" style="left:0;width:auto;top:430px" data-s="11" data-k="up">These scams are built by people who do this all day.</div>
+  <div class="a c h" style="left:0;width:auto;top:560px;font-size:64px" data-s="12" data-k="up">TALKING ABOUT IT <g>WARNS THE NEXT PERSON.</g></div>
+</div>
+
+<!-- 12 CLOSE + END CARD -->
+<div class="scene" id="b12">
+  <div class="a c h" style="left:0;width:auto;top:180px" data-s="0" data-k="up">WHO WOULD HAVE FALLEN FOR ONE OF THESE?</div>
+  <div class="a" style="left:810px;top:360px;width:300px;height:300px;border-radius:50%;background:#1f7aff;display:flex;align-items:center;justify-content:center;font-size:150px" data-s="0" data-d="0.8" data-k="pulse">➦</div>
+  <div class="a c h" style="left:0;width:auto;top:720px;font-size:64px;color:#ffd60a" data-s="1" data-k="up">SEND THEM THIS VIDEO.</div>
+</div>
+
+<div class="cap" id="cap"></div>
+
+<script>
+let T=null;
+window.setup=tl=>{T=tl};
+const cl=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.7;x=x-1;return 1+(c+1)*x*x*x+c*x*x};
+function at(b,s){return s<0?0:b.sents[Math.min(s,b.sents.length-1)].start}
+function apply(el,b,lt){
+  const d=at(b,+el.dataset.s)+parseFloat(el.dataset.d||0);
+  const out=el.dataset.out!==undefined?at(b,+el.dataset.out):1e9;
+  const k=el.dataset.k,p=cl((lt-d)/0.4),e=ease(p),o=1-cl((lt-out+0.2)/0.25);
+  if(k==='hl'){el.style.boxShadow=`0 0 0 ${7*e}px rgba(255,59,59,${e})`;el.style.background=`rgba(255,59,59,${0.2*e})`;return}
+  let tf='';
+  if(k==='up')tf=`translateY(${(1-e)*50}px)`;
+  else if(k==='pop')tf=`scale(${p>=1?1:0.6+0.4*back(p)})`;
+  else if(k==='pulse')tf=`scale(${(0.6+0.4*back(p))*(1+0.05*Math.sin(Math.max(0,lt-d)*7))})`;
+  let op=k==='fade'?e:(p>0?Math.min(1,p*2):0);
+  if(k==='flash'&&p>0)op=(Math.floor((lt-d)*2.2)%2===0)?1:0.88;
+  el.style.opacity=op*o; el.style.transform=tf;
+}
+window.render=function(t){
+  let i=T.beats.findIndex(b=>t>=b.start&&t<b.end); if(i<0)i=T.beats.length-1;
+  T.beats.forEach((b,j)=>{
+    const el=document.getElementById('b'+j);
+    if(j!==i){el.style.opacity=0;return}
+    const lt=t-b.start;
+    el.style.opacity=cl(lt/0.2)*(j===T.beats.length-1?1:cl((b.end-t)/0.2));
+    el.querySelectorAll('.a,.hl').forEach(a=>apply(a,b,lt));
+  });
+  document.getElementById('prog').style.width=(1920*cl(t/T.total))+'px';
+  const b=T.beats[i],lt=t-b.start,cap=document.getElementById('cap');
+  const s=b.sents.find(s=>lt>=s.start&&lt<s.start+s.dur+0.15);
+  if(!s){cap.innerHTML='';return}
+  const w=s.text.split(/\s+/),k=Math.min(w.length-1,Math.floor((lt-s.start)/s.dur*w.length));
+  const c0=Math.floor(k/4)*4;
+  cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ');
+};
+</script>
+</body></html>

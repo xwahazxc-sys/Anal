@@ -1,0 +1,1066 @@
+[
+ {
+  "beat": 0,
+  "i": 0,
+  "text": "You could lose your savings to 7 scams, but only one of them almost nobody spots.",
+  "say": "You could lose your savings to 7 scams, but only one of them almost nobody spots.",
+  "dur": 5.561179138321996,
+  "file": "audio/000.wav"
+ },
+ {
+  "beat": 0,
+  "i": 1,
+  "text": "Which?",
+  "say": "Which?",
+  "dur": 0.23219954648526078,
+  "file": "audio/001.wav"
+ },
+ {
+  "beat": 1,
+  "i": 0,
+  "text": "I'll show you all seven, the exact messages they use, and the tell that gives each one away.",
+  "say": "I'll show you all seven, the exact messages they use, and the tell that gives each one away.",
+  "dur": 5.5147392290249435,
+  "file": "audio/002.wav"
+ },
+ {
+  "beat": 1,
+  "i": 1,
+  "text": "The one almost nobody spots is last, and it's the one that costs the most.",
+  "say": "The one almost nobody spots is last, and it's the one that costs the most.",
+  "dur": 4.876190476190477,
+  "file": "audio/003.wav"
+ },
+ {
+  "beat": 2,
+  "i": 0,
+  "text": "Number one.",
+  "say": "Number one.",
+  "dur": 0.7430385487528345,
+  "file": "audio/004.wav"
+ },
+ {
+  "beat": 2,
+  "i": 1,
+  "text": "The delivery text.",
+  "say": "The delivery text.",
+  "dur": 1.253877551020408,
+  "file": "audio/005.wav"
+ },
+ {
+  "beat": 2,
+  "i": 2,
+  "text": "\"Your parcel could not be delivered.",
+  "say": "\"Your parcel could not be delivered.",
+  "dur": 1.7763265306122449,
+  "file": "audio/006.wav"
+ },
+ {
+  "beat": 2,
+  "i": 3,
+  "text": "Update your address here.\"",
+  "say": "Update your address here.\"",
+  "dur": 1.3583673469387756,
+  "file": "audio/007.wav"
+ },
+ {
+  "beat": 2,
+  "i": 4,
+  "text": "It arrives when you're actually waiting for something, which is why it works.",
+  "say": "It arrives when you're actually waiting for something, which is why it works.",
+  "dur": 4.214421768707483,
+  "file": "audio/008.wav"
+ },
+ {
+  "beat": 2,
+  "i": 5,
+  "text": "You tap the link, and the page looks exactly like the courier.",
+  "say": "You tap the link, and the page looks exactly like the courier.",
+  "dur": 3.93578231292517,
+  "file": "audio/009.wav"
+ },
+ {
+  "beat": 2,
+  "i": 6,
+  "text": "Logo, colours, tracking number.",
+  "say": "Logo, colours, tracking number.",
+  "dur": 2.6238548752834467,
+  "file": "audio/010.wav"
+ },
+ {
+  "beat": 2,
+  "i": 7,
+  "text": "It asks for a small redelivery fee.",
+  "say": "It asks for a small redelivery fee.",
+  "dur": 2.716734693877551,
+  "file": "audio/011.wav"
+ },
+ {
+  "beat": 2,
+  "i": 8,
+  "text": "A couple of dollars, so you don't think twice.",
+  "say": "A couple of dollars, so you don't think twice.",
+  "dur": 2.6122448979591835,
+  "file": "audio/012.wav"
+ },
+ {
+  "beat": 2,
+  "i": 9,
+  "text": "But the fee isn't the point.",
+  "say": "But the fee isn't the point.",
+  "dur": 1.5209070294784581,
+  "file": "audio/013.wav"
+ },
+ {
+  "beat": 2,
+  "i": 10,
+  "text": "The point is the card number you just typed in, and that gets used somewhere else, for a lot more than a couple of dollars.",
+  "say": "The point is the card number you just typed in, and that gets used somewhere else, for a lot more than a couple of dollars.",
+  "dur": 7.047256235827664,
+  "file": "audio/014.wav"
+ },
+ {
+  "beat": 2,
+  "i": 11,
+  "text": "The tell is the link.",
+  "say": "The tell is the link.",
+  "dur": 1.4048072562358276,
+  "file": "audio/015.wav"
+ },
+ {
+  "beat": 2,
+  "i": 12,
+  "text": "Couriers don't send you to a random domain with extra words and numbers in it.",
+  "say": "Couriers don't send you to a random domain with extra words and numbers in it.",
+  "dur": 4.725260770975057,
+  "file": "audio/016.wav"
+ },
+ {
+  "beat": 2,
+  "i": 13,
+  "text": "If you're waiting for a parcel, open the courier's app or type their site yourself.",
+  "say": "If you're waiting for a parcel, open the courier's app or type their site yourself.",
+  "dur": 4.85297052154195,
+  "file": "audio/017.wav"
+ },
+ {
+  "beat": 3,
+  "i": 0,
+  "text": "Number two.",
+  "say": "Number two.",
+  "dur": 0.8243083900226758,
+  "file": "audio/018.wav"
+ },
+ {
+  "beat": 3,
+  "i": 1,
+  "text": "The bank call.",
+  "say": "The bank call.",
+  "dur": 0.9520181405895691,
+  "file": "audio/019.wav"
+ },
+ {
+  "beat": 3,
+  "i": 2,
+  "text": "Your phone shows your bank's name.",
+  "say": "Your phone shows your bank's name.",
+  "dur": 1.799546485260771,
+  "file": "audio/020.wav"
+ },
+ {
+  "beat": 3,
+  "i": 3,
+  "text": "A calm voice says there's a suspicious payment and they need to \"verify\" you.",
+  "say": "A calm voice says there's a suspicious payment and they need to \"verify\" you.",
+  "dur": 4.527891156462585,
+  "file": "audio/021.wav"
+ },
+ {
+  "beat": 3,
+  "i": 4,
+  "text": "They know your name.",
+  "say": "They know your name.",
+  "dur": 0.9752380952380952,
+  "file": "audio/022.wav"
+ },
+ {
+  "beat": 3,
+  "i": 5,
+  "text": "Sometimes they know the last digits of your card.",
+  "say": "Sometimes they know the last digits of your card.",
+  "dur": 2.75156462585034,
+  "file": "audio/023.wav"
+ },
+ {
+  "beat": 3,
+  "i": 6,
+  "text": "That's what makes it feel real.",
+  "say": "That's what makes it feel real.",
+  "dur": 1.7298866213151927,
+  "file": "audio/024.wav"
+ },
+ {
+  "beat": 3,
+  "i": 7,
+  "text": "Here's the thing: caller ID can be faked.",
+  "say": "Here's the thing: caller ID can be faked.",
+  "dur": 2.7747845804988662,
+  "file": "audio/025.wav"
+ },
+ {
+  "beat": 3,
+  "i": 8,
+  "text": "The name on your screen proves nothing.",
+  "say": "The name on your screen proves nothing.",
+  "dur": 2.1942857142857144,
+  "file": "audio/026.wav"
+ },
+ {
+  "beat": 3,
+  "i": 9,
+  "text": "And the details they know usually come from old data leaks, not from your bank.",
+  "say": "And the details they know usually come from old data leaks, not from your bank.",
+  "dur": 4.6439909297052155,
+  "file": "audio/027.wav"
+ },
+ {
+  "beat": 3,
+  "i": 10,
+  "text": "Then they ask for the code your bank just texted you.",
+  "say": "Then they ask for the code your bank just texted you.",
+  "dur": 2.461315192743764,
+  "file": "audio/028.wav"
+ },
+ {
+  "beat": 3,
+  "i": 11,
+  "text": "That code is the key to your account.",
+  "say": "That code is the key to your account.",
+  "dur": 2.10140589569161,
+  "file": "audio/029.wav"
+ },
+ {
+  "beat": 3,
+  "i": 12,
+  "text": "Your bank will never ask you to read it back.",
+  "say": "Your bank will never ask you to read it back.",
+  "dur": 2.4961451247165534,
+  "file": "audio/030.wav"
+ },
+ {
+  "beat": 3,
+  "i": 13,
+  "text": "So here's the only sentence you need: \"I'll call you back on the number on my card.\"",
+  "say": "So here's the only sentence you need: \"I'll call you back on the number on my card.\"",
+  "dur": 4.9806802721088435,
+  "file": "audio/031.wav"
+ },
+ {
+  "beat": 3,
+  "i": 14,
+  "text": "A real bank says fine.",
+  "say": "A real bank says fine.",
+  "dur": 2.078185941043084,
+  "file": "audio/032.wav"
+ },
+ {
+  "beat": 3,
+  "i": 15,
+  "text": "A scammer argues, or hangs up.",
+  "say": "A scammer argues, or hangs up.",
+  "dur": 2.36843537414966,
+  "file": "audio/033.wav"
+ },
+ {
+  "beat": 3,
+  "i": 16,
+  "text": "Then hang up, and call the number on the back of your card.",
+  "say": "Then hang up, and call the number on the back of your card.",
+  "dur": 3.541043083900227,
+  "file": "audio/034.wav"
+ },
+ {
+  "beat": 4,
+  "i": 0,
+  "text": "Number three.",
+  "say": "Number three.",
+  "dur": 0.9404081632653061,
+  "file": "audio/035.wav"
+ },
+ {
+  "beat": 4,
+  "i": 1,
+  "text": "\"Hi Mum, I dropped my phone, this is my new number.\"",
+  "say": "\"Hi Mum, I dropped my phone, this is my new number.\"",
+  "dur": 3.4017233560090703,
+  "file": "audio/036.wav"
+ },
+ {
+  "beat": 4,
+  "i": 2,
+  "text": "A few messages of small talk, then an urgent bill that needs paying today, and a reason they can't do it from their own account.",
+  "say": "A few messages of small talk, then an urgent bill that needs paying today, and a reason they can't do it from their own account.",
+  "dur": 7.790294784580499,
+  "file": "audio/037.wav"
+ },
+ {
+  "beat": 4,
+  "i": 3,
+  "text": "It always comes with a reason you can't just call them.",
+  "say": "It always comes with a reason you can't just call them.",
+  "dur": 2.716734693877551,
+  "file": "audio/038.wav"
+ },
+ {
+  "beat": 4,
+  "i": 4,
+  "text": "The phone is broken, the microphone doesn't work, they're in a meeting.",
+  "say": "The phone is broken, the microphone doesn't work, they're in a meeting.",
+  "dur": 4.20281179138322,
+  "file": "audio/039.wav"
+ },
+ {
+  "beat": 4,
+  "i": 5,
+  "text": "The tell is urgency plus a new number plus money.",
+  "say": "The tell is urgency plus a new number plus money.",
+  "dur": 3.1230839002267574,
+  "file": "audio/040.wav"
+ },
+ {
+  "beat": 4,
+  "i": 6,
+  "text": "Call the old number.",
+  "say": "Call the old number.",
+  "dur": 1.2770975056689342,
+  "file": "audio/041.wav"
+ },
+ {
+  "beat": 4,
+  "i": 7,
+  "text": "If your kid answers, you're done.",
+  "say": "If your kid answers, you're done.",
+  "dur": 1.9853061224489796,
+  "file": "audio/042.wav"
+ },
+ {
+  "beat": 4,
+  "i": 8,
+  "text": "And agree on a family code word now, before anyone needs it, so a real emergency can be checked in five seconds.",
+  "say": "And agree on a family code word now, before anyone needs it, so a real emergency can be checked in five seconds.",
+  "dur": 7.720634920634921,
+  "file": "audio/043.wav"
+ },
+ {
+  "beat": 5,
+  "i": 0,
+  "text": "Number four.",
+  "say": "Number four.",
+  "dur": 0.7894784580498866,
+  "file": "audio/044.wav"
+ },
+ {
+  "beat": 5,
+  "i": 1,
+  "text": "The easy job.",
+  "say": "The easy job.",
+  "dur": 1.0216780045351475,
+  "file": "audio/045.wav"
+ },
+ {
+  "beat": 5,
+  "i": 2,
+  "text": "A friendly recruiter messages you out of nowhere and offers you money to like videos or rate hotels.",
+  "say": "A friendly recruiter messages you out of nowhere and offers you money to like videos or rate hotels.",
+  "dur": 6.327437641723356,
+  "file": "audio/046.wav"
+ },
+ {
+  "beat": 5,
+  "i": 3,
+  "text": "You didn't apply for anything, and that's the first tell.",
+  "say": "You didn't apply for anything, and that's the first tell.",
+  "dur": 3.111473922902494,
+  "file": "audio/047.wav"
+ },
+ {
+  "beat": 5,
+  "i": 4,
+  "text": "The first payments are real.",
+  "say": "The first payments are real.",
+  "dur": 1.7298866213151927,
+  "file": "audio/048.wav"
+ },
+ {
+  "beat": 5,
+  "i": 5,
+  "text": "Small, but real.",
+  "say": "Small, but real.",
+  "dur": 1.6021768707482993,
+  "file": "audio/049.wav"
+ },
+ {
+  "beat": 5,
+  "i": 6,
+  "text": "You're added to a group chat where other \"workers\" post screenshots of their earnings.",
+  "say": "You're added to a group chat where other \"workers\" post screenshots of their earnings.",
+  "dur": 4.5859410430839,
+  "file": "audio/050.wav"
+ },
+ {
+  "beat": 5,
+  "i": 7,
+  "text": "Then a \"task\" needs you to top up your account to unlock bigger earnings.",
+  "say": "Then a \"task\" needs you to top up your account to unlock bigger earnings.",
+  "dur": 3.982222222222222,
+  "file": "audio/051.wav"
+ },
+ {
+  "beat": 5,
+  "i": 8,
+  "text": "After that, there's always one more task and one more top-up.",
+  "say": "After that, there's always one more task and one more top-up.",
+  "dur": 3.4481632653061225,
+  "file": "audio/052.wav"
+ },
+ {
+  "beat": 5,
+  "i": 9,
+  "text": "That's the switch.",
+  "say": "That's the switch.",
+  "dur": 1.0913378684807256,
+  "file": "audio/053.wav"
+ },
+ {
+  "beat": 5,
+  "i": 10,
+  "text": "Any job that asks you to pay in is not a job.",
+  "say": "Any job that asks you to pay in is not a job.",
+  "dur": 3.2275736961451247,
+  "file": "audio/054.wav"
+ },
+ {
+  "beat": 6,
+  "i": 0,
+  "text": "Number five.",
+  "say": "Number five.",
+  "dur": 1.0100680272108844,
+  "file": "audio/055.wav"
+ },
+ {
+  "beat": 6,
+  "i": 1,
+  "text": "The keen buyer.",
+  "say": "The keen buyer.",
+  "dur": 1.0216780045351475,
+  "file": "audio/056.wav"
+ },
+ {
+  "beat": 6,
+  "i": 2,
+  "text": "You list something online.",
+  "say": "You list something online.",
+  "dur": 1.5325170068027212,
+  "file": "audio/057.wav"
+ },
+ {
+  "beat": 6,
+  "i": 3,
+  "text": "A buyer agrees instantly, no haggling, doesn't even ask a question about the item.",
+  "say": "A buyer agrees instantly, no haggling, doesn't even ask a question about the item.",
+  "dur": 5.6656689342403626,
+  "file": "audio/058.wav"
+ },
+ {
+  "beat": 6,
+  "i": 4,
+  "text": "They say they'll arrange a courier and send a link to \"receive your payment.\"",
+  "say": "They say they'll arrange a courier and send a link to \"receive your payment.\"",
+  "dur": 3.877732426303855,
+  "file": "audio/059.wav"
+ },
+ {
+  "beat": 6,
+  "i": 5,
+  "text": "The link asks for your card details, including the code on the back.",
+  "say": "The link asks for your card details, including the code on the back.",
+  "dur": 3.9706122448979593,
+  "file": "audio/060.wav"
+ },
+ {
+  "beat": 6,
+  "i": 6,
+  "text": "You never need that to receive money.",
+  "say": "You never need that to receive money.",
+  "dur": 1.799546485260771,
+  "file": "audio/061.wav"
+ },
+ {
+  "beat": 6,
+  "i": 7,
+  "text": "Only to send it.",
+  "say": "Only to send it.",
+  "dur": 0.9171882086167801,
+  "file": "audio/062.wav"
+ },
+ {
+  "beat": 6,
+  "i": 8,
+  "text": "If a buyer won't meet in person or use the platform's own payment, walk away.",
+  "say": "If a buyer won't meet in person or use the platform's own payment, walk away.",
+  "dur": 5.143219954648526,
+  "file": "audio/063.wav"
+ },
+ {
+  "beat": 6,
+  "i": 9,
+  "text": "A real buyer has questions.",
+  "say": "A real buyer has questions.",
+  "dur": 2.136235827664399,
+  "file": "audio/064.wav"
+ },
+ {
+  "beat": 6,
+  "i": 10,
+  "text": "A scammer has a link.",
+  "say": "A scammer has a link.",
+  "dur": 1.6718367346938776,
+  "file": "audio/065.wav"
+ },
+ {
+  "beat": 7,
+  "i": 0,
+  "text": "Number six.",
+  "say": "Number six.",
+  "dur": 1.0216780045351475,
+  "file": "audio/066.wav"
+ },
+ {
+  "beat": 7,
+  "i": 1,
+  "text": "The frozen screen.",
+  "say": "The frozen screen.",
+  "dur": 1.3351473922902495,
+  "file": "audio/067.wav"
+ },
+ {
+  "beat": 7,
+  "i": 2,
+  "text": "A pop-up fills your browser, sirens, a warning that your computer is infected and a number to call.",
+  "say": "A pop-up fills your browser, sirens, a warning that your computer is infected and a number to call.",
+  "dur": 6.513197278911565,
+  "file": "audio/068.wav"
+ },
+ {
+  "beat": 7,
+  "i": 3,
+  "text": "Sometimes it claims to be from a company you've heard of.",
+  "say": "Sometimes it claims to be from a company you've heard of.",
+  "dur": 3.1230839002267574,
+  "file": "audio/069.wav"
+ },
+ {
+  "beat": 7,
+  "i": 4,
+  "text": "If you call, a helpful technician asks you to install a program so they can fix it.",
+  "say": "If you call, a helpful technician asks you to install a program so they can fix it.",
+  "dur": 5.630839002267574,
+  "file": "audio/070.wav"
+ },
+ {
+  "beat": 7,
+  "i": 5,
+  "text": "That program gives them control of your computer, and from there, your bank.",
+  "say": "That program gives them control of your computer, and from there, your bank.",
+  "dur": 4.446621315192743,
+  "file": "audio/071.wav"
+ },
+ {
+  "beat": 7,
+  "i": 6,
+  "text": "The real software on your computer doesn't do that, and it never gives you a phone number.",
+  "say": "The real software on your computer doesn't do that, and it never gives you a phone number.",
+  "dur": 5.2128798185941045,
+  "file": "audio/072.wav"
+ },
+ {
+  "beat": 7,
+  "i": 7,
+  "text": "Close the browser.",
+  "say": "Close the browser.",
+  "dur": 1.0448979591836736,
+  "file": "audio/073.wav"
+ },
+ {
+  "beat": 7,
+  "i": 8,
+  "text": "If it won't close, restart the computer.",
+  "say": "If it won't close, restart the computer.",
+  "dur": 2.345215419501134,
+  "file": "audio/074.wav"
+ },
+ {
+  "beat": 7,
+  "i": 9,
+  "text": "Never call the number, and never let anyone install remote access.",
+  "say": "Never call the number, and never let anyone install remote access.",
+  "dur": 4.400181405895691,
+  "file": "audio/075.wav"
+ },
+ {
+  "beat": 8,
+  "i": 0,
+  "text": "Number seven.",
+  "say": "Number seven.",
+  "dur": 0.9404081632653061,
+  "file": "audio/076.wav"
+ },
+ {
+  "beat": 8,
+  "i": 1,
+  "text": "The one almost nobody spots.",
+  "say": "The one almost nobody spots.",
+  "dur": 2.182675736961451,
+  "file": "audio/077.wav"
+ },
+ {
+  "beat": 8,
+  "i": 2,
+  "text": "It doesn't start with a scam.",
+  "say": "It doesn't start with a scam.",
+  "dur": 1.4048072562358276,
+  "file": "audio/078.wav"
+ },
+ {
+  "beat": 8,
+  "i": 3,
+  "text": "It starts with a wrong-number message.",
+  "say": "It starts with a wrong-number message.",
+  "dur": 2.2523356009070294,
+  "file": "audio/079.wav"
+ },
+ {
+  "beat": 8,
+  "i": 4,
+  "text": "\"Hi, is this Anna?\"",
+  "say": "\"Hi, is this Anna?\"",
+  "dur": 1.2770975056689342,
+  "file": "audio/080.wav"
+ },
+ {
+  "beat": 8,
+  "i": 5,
+  "text": "You say no.",
+  "say": "You say no.",
+  "dur": 0.8359183673469388,
+  "file": "audio/081.wav"
+ },
+ {
+  "beat": 8,
+  "i": 6,
+  "text": "They apologise, and they're pleasant.",
+  "say": "They apologise, and they're pleasant.",
+  "dur": 2.0085260770975055,
+  "file": "audio/082.wav"
+ },
+ {
+  "beat": 8,
+  "i": 7,
+  "text": "Maybe a little funny.",
+  "say": "Maybe a little funny.",
+  "dur": 1.242267573696145,
+  "file": "audio/083.wav"
+ },
+ {
+  "beat": 8,
+  "i": 8,
+  "text": "And because you were polite, you keep chatting.",
+  "say": "And because you were polite, you keep chatting.",
+  "dur": 2.5774149659863945,
+  "file": "audio/084.wav"
+ },
+ {
+  "beat": 8,
+  "i": 9,
+  "text": "Over weeks you talk every day.",
+  "say": "Over weeks you talk every day.",
+  "dur": 1.799546485260771,
+  "file": "audio/085.wav"
+ },
+ {
+  "beat": 8,
+  "i": 10,
+  "text": "They share photos of their life: dinners, travel, a nice car.",
+  "say": "They share photos of their life: dinners, travel, a nice car.",
+  "dur": 4.260861678004535,
+  "file": "audio/086.wav"
+ },
+ {
+  "beat": 8,
+  "i": 11,
+  "text": "They ask about your day and they remember what you told them.",
+  "say": "They ask about your day and they remember what you told them.",
+  "dur": 2.8792743764172335,
+  "file": "audio/087.wav"
+ },
+ {
+  "beat": 8,
+  "i": 12,
+  "text": "They're successful, they trade crypto or gold, and they never push it.",
+  "say": "They're successful, they trade crypto or gold, and they never push it.",
+  "dur": 4.481451247165533,
+  "file": "audio/088.wav"
+ },
+ {
+  "beat": 8,
+  "i": 13,
+  "text": "It just comes up.",
+  "say": "It just comes up.",
+  "dur": 1.253877551020408,
+  "file": "audio/089.wav"
+ },
+ {
+  "beat": 8,
+  "i": 14,
+  "text": "Eventually, you ask them how it works, and they show you a platform.",
+  "say": "Eventually, you ask them how it works, and they show you a platform.",
+  "dur": 4.295691609977324,
+  "file": "audio/090.wav"
+ },
+ {
+  "beat": 8,
+  "i": 15,
+  "text": "You put in a little.",
+  "say": "You put in a little.",
+  "dur": 0.9752380952380952,
+  "file": "audio/091.wav"
+ },
+ {
+  "beat": 8,
+  "i": 16,
+  "text": "The dashboard shows profit.",
+  "say": "The dashboard shows profit.",
+  "dur": 1.7763265306122449,
+  "file": "audio/092.wav"
+ },
+ {
+  "beat": 8,
+  "i": 17,
+  "text": "You can even withdraw a small amount, which is what convinces you.",
+  "say": "You can even withdraw a small amount, which is what convinces you.",
+  "dur": 4.307301587301588,
+  "file": "audio/093.wav"
+ },
+ {
+  "beat": 8,
+  "i": 18,
+  "text": "Then you put in more.",
+  "say": "Then you put in more.",
+  "dur": 1.0681179138321995,
+  "file": "audio/094.wav"
+ },
+ {
+  "beat": 8,
+  "i": 19,
+  "text": "Maybe you borrow to put in more.",
+  "say": "Maybe you borrow to put in more.",
+  "dur": 1.7763265306122449,
+  "file": "audio/095.wav"
+ },
+ {
+  "beat": 8,
+  "i": 20,
+  "text": "And when you try to take it all out, there's a \"tax\" or a \"fee\" to pay first.",
+  "say": "And when you try to take it all out, there's a \"tax\" or a \"fee\" to pay first.",
+  "dur": 4.365351473922902,
+  "file": "audio/096.wav"
+ },
+ {
+  "beat": 8,
+  "i": 21,
+  "text": "You pay it, and then there's another one.",
+  "say": "You pay it, and then there's another one.",
+  "dur": 1.9620861678004535,
+  "file": "audio/097.wav"
+ },
+ {
+  "beat": 8,
+  "i": 22,
+  "text": "The platform was never real.",
+  "say": "The platform was never real.",
+  "dur": 1.9040362811791383,
+  "file": "audio/098.wav"
+ },
+ {
+  "beat": 8,
+  "i": 23,
+  "text": "The profit was a number on a screen.",
+  "say": "The profit was a number on a screen.",
+  "dur": 2.078185941043084,
+  "file": "audio/099.wav"
+ },
+ {
+  "beat": 8,
+  "i": 24,
+  "text": "And the person you talked to every day was a script, often read by someone working through a list of numbers.",
+  "say": "And the person you talked to every day was a script, often read by someone working through a list of numbers.",
+  "dur": 6.106848072562358,
+  "file": "audio/100.wav"
+ },
+ {
+  "beat": 9,
+  "i": 0,
+  "text": "Why nobody spots it: there's no single moment that feels like a scam.",
+  "say": "Why nobody spots it: there's no single moment that feels like a scam.",
+  "dur": 4.725260770975057,
+  "file": "audio/101.wav"
+ },
+ {
+  "beat": 9,
+  "i": 1,
+  "text": "Every step is small, every step is your own choice, and by the time money comes up, you trust them.",
+  "say": "Every step is small, every step is your own choice, and by the time money comes up, you trust them.",
+  "dur": 6.466757369614513,
+  "file": "audio/102.wav"
+ },
+ {
+  "beat": 9,
+  "i": 2,
+  "text": "So here's the tell.",
+  "say": "So here's the tell.",
+  "dur": 1.3583673469387756,
+  "file": "audio/103.wav"
+ },
+ {
+  "beat": 9,
+  "i": 3,
+  "text": "Someone you've never met in person, bringing up money, is the whole scam.",
+  "say": "Someone you've never met in person, bringing up money, is the whole scam.",
+  "dur": 4.35374149659864,
+  "file": "audio/104.wav"
+ },
+ {
+  "beat": 9,
+  "i": 4,
+  "text": "It doesn't matter how long you've been talking.",
+  "say": "It doesn't matter how long you've been talking.",
+  "dur": 2.3103854875283445,
+  "file": "audio/105.wav"
+ },
+ {
+  "beat": 9,
+  "i": 5,
+  "text": "It doesn't matter how kind they've been.",
+  "say": "It doesn't matter how kind they've been.",
+  "dur": 1.822766439909297,
+  "file": "audio/106.wav"
+ },
+ {
+  "beat": 9,
+  "i": 6,
+  "text": "That kindness was the product.",
+  "say": "That kindness was the product.",
+  "dur": 1.6253968253968254,
+  "file": "audio/107.wav"
+ },
+ {
+  "beat": 10,
+  "i": 0,
+  "text": "So that's all seven.",
+  "say": "So that's all seven.",
+  "dur": 1.5325170068027212,
+  "file": "audio/108.wav"
+ },
+ {
+  "beat": 10,
+  "i": 1,
+  "text": "And every single one breaks the same rule.",
+  "say": "And every single one breaks the same rule.",
+  "dur": 2.3103854875283445,
+  "file": "audio/109.wav"
+ },
+ {
+  "beat": 10,
+  "i": 2,
+  "text": "They want you to act inside their message: their link, their number, their platform.",
+  "say": "They want you to act inside their message: their link, their number, their platform.",
+  "dur": 4.818140589569161,
+  "file": "audio/110.wav"
+ },
+ {
+  "beat": 10,
+  "i": 3,
+  "text": "Each one adds pressure, too, so you act before you think.",
+  "say": "Each one adds pressure, too, so you act before you think.",
+  "dur": 3.7268027210884354,
+  "file": "audio/111.wav"
+ },
+ {
+  "beat": 10,
+  "i": 4,
+  "text": "The defence is always the same.",
+  "say": "The defence is always the same.",
+  "dur": 1.9969160997732427,
+  "file": "audio/112.wav"
+ },
+ {
+  "beat": 10,
+  "i": 5,
+  "text": "Leave the message.",
+  "say": "Leave the message.",
+  "dur": 0.9868480725623583,
+  "file": "audio/113.wav"
+ },
+ {
+  "beat": 10,
+  "i": 6,
+  "text": "Slow down.",
+  "say": "Slow down.",
+  "dur": 1.2190476190476192,
+  "file": "audio/114.wav"
+ },
+ {
+  "beat": 10,
+  "i": 7,
+  "text": "Open your bank, your courier, your family's number yourself.",
+  "say": "Open your bank, your courier, your family's number yourself.",
+  "dur": 3.866122448979592,
+  "file": "audio/115.wav"
+ },
+ {
+  "beat": 10,
+  "i": 8,
+  "text": "A real problem will still be there in ten minutes.",
+  "say": "A real problem will still be there in ten minutes.",
+  "dur": 3.1346938775510202,
+  "file": "audio/116.wav"
+ },
+ {
+  "beat": 10,
+  "i": 9,
+  "text": "A scam won't.",
+  "say": "A scam won't.",
+  "dur": 1.0100680272108844,
+  "file": "audio/117.wav"
+ },
+ {
+  "beat": 11,
+  "i": 0,
+  "text": "And if you've already clicked, or already paid, do this in order.",
+  "say": "And if you've already clicked, or already paid, do this in order.",
+  "dur": 4.20281179138322,
+  "file": "audio/118.wav"
+ },
+ {
+  "beat": 11,
+  "i": 1,
+  "text": "First, call your bank on the number on the back of your card and tell them it's fraud.",
+  "say": "First, call your bank on the number on the back of your card and tell them it's fraud.",
+  "dur": 4.713650793650793,
+  "file": "audio/119.wav"
+ },
+ {
+  "beat": 11,
+  "i": 2,
+  "text": "Speed matters here, so do it before anything else.",
+  "say": "Speed matters here, so do it before anything else.",
+  "dur": 3.4829931972789114,
+  "file": "audio/120.wav"
+ },
+ {
+  "beat": 11,
+  "i": 3,
+  "text": "Second, change the password on any account you typed in, and turn on two-step verification.",
+  "say": "Second, change the password on any account you typed in, and turn on two-step verification.",
+  "dur": 6.1184580498866215,
+  "file": "audio/121.wav"
+ },
+ {
+  "beat": 11,
+  "i": 4,
+  "text": "Third, if anyone installed software on your computer, disconnect it from the internet and get it checked.",
+  "say": "Third, if anyone installed software on your computer, disconnect it from the internet and get it checked.",
+  "dur": 6.640907029478458,
+  "file": "audio/122.wav"
+ },
+ {
+  "beat": 11,
+  "i": 5,
+  "text": "Fourth, report it.",
+  "say": "Fourth, report it.",
+  "dur": 1.3815873015873017,
+  "file": "audio/123.wav"
+ },
+ {
+  "beat": 11,
+  "i": 6,
+  "text": "In the US that's reportfraud.ftc.gov.",
+  "say": "In the US that's report fraud dot F T C dot gov.",
+  "dur": 3.239183673469388,
+  "file": "audio/124.wav"
+ },
+ {
+  "beat": 11,
+  "i": 7,
+  "text": "In the UK, forward scam texts to 7726.",
+  "say": "In the UK, forward scam texts to seven seven two six.",
+  "dur": 4.330521541950113,
+  "file": "audio/125.wav"
+ },
+ {
+  "beat": 11,
+  "i": 8,
+  "text": "And last, be ready for the follow-up: people who've been scammed often get contacted by \"recovery services\" promising to get the money back for a fee.",
+  "say": "And last, be ready for the follow-up: people who've been scammed often get contacted by \"recovery services\" promising to get the money back for a fee.",
+  "dur": 9.32281179138322,
+  "file": "audio/126.wav"
+ },
+ {
+  "beat": 11,
+  "i": 9,
+  "text": "That's the same scam, second round.",
+  "say": "That's the same scam, second round.",
+  "dur": 2.2291156462585033,
+  "file": "audio/127.wav"
+ },
+ {
+  "beat": 11,
+  "i": 10,
+  "text": "And please don't be embarrassed.",
+  "say": "And please don't be embarrassed.",
+  "dur": 1.7182766439909296,
+  "file": "audio/128.wav"
+ },
+ {
+  "beat": 11,
+  "i": 11,
+  "text": "These scams are built by people who do this all day.",
+  "say": "These scams are built by people who do this all day.",
+  "dur": 3.4713832199546486,
+  "file": "audio/129.wav"
+ },
+ {
+  "beat": 11,
+  "i": 12,
+  "text": "Talking about it is how the next person gets warned.",
+  "say": "Talking about it is how the next person gets warned.",
+  "dur": 3.076643990929705,
+  "file": "audio/130.wav"
+ },
+ {
+  "beat": 12,
+  "i": 0,
+  "text": "If one of these would have got someone you know, send them this video.",
+  "say": "If one of these would have got someone you know, send them this video.",
+  "dur": 3.9938321995464854,
+  "file": "audio/131.wav"
+ },
+ {
+  "beat": 12,
+  "i": 1,
+  "text": "That's the whole job.",
+  "say": "That's the whole job.",
+  "dur": 1.0332879818594105,
+  "file": "audio/132.wav"
+ }
+]
