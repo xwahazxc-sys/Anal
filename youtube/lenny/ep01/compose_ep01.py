@@ -4,20 +4,20 @@
     python3 compose_ep01.py timeline            # timeline.json + voice.wav + sfx.wav
     python3 compose_ep01.py preview 3 20 ...    # PNG previews
     python3 compose_ep01.py chunk K N           # render chunk K of N (video only)
-    python3 compose_ep01.py mux N               # -> lenny_ep01_part1.mp4
+    python3 compose_ep01.py mux N               # -> lenny_ep01_part1_14b.mp4
 """
 import glob, json, math, os, subprocess, sys, wave
 import numpy as np
 import imageio_ffmpeg
 HERE = os.path.dirname(os.path.abspath(__file__)); P = lambda *a: os.path.join(HERE, *a)
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, SR = 30, 44100
-CLIP = 81 / 24
-BG = {"T01": ("S04", 1), "G01": ("S06", 1), "G02": ("S07", 1), "T02": ("S09", 1), "G03": ("S10", 1), "G04": ("S12", 1), "STING": ("S03", 1)}
+CLIP = 81 / 16
+BG = {"T03": ("C301", 1), "G05": ("C302", 1), "T04": ("C401", 1), "G06": ("C402", 1), "T05": ("C501", 1), "G07": ("C502", 1), "T06": ("C601", 1), "T07": ("C701", 1), "G09": ("C703", 1), "G10": ("C705", 1), "G11": ("C801", 1), "G12": ("C802", 1), "G13": ("C901", 1), "G14": ("C901", 1), "END": ("C903", 1), "T01": ("S04", 1), "G01": ("S06", 1), "G02": ("S07", 1), "T02": ("S09", 1), "G03": ("S10", 1), "G04": ("S12", 1), "STING": ("S03", 1)}
 cmd = sys.argv[1]
 
 if cmd == "frames":
     src = sys.argv[2]
-    for f in sorted(glob.glob(os.path.join(src, "S*.mp4"))):
+    for f in sorted(glob.glob(os.path.join(src, "[SC]*.mp4"))):
         k = os.path.basename(f)[:-4]; d = P("frames", k); os.makedirs(d, exist_ok=True)
         subprocess.run([FF, "-y", "-loglevel", "error", "-i", f, "-vf",
                         "scale=1920:1108:flags=lanczos,crop=1920:1080,unsharp=5:5:0.6:5:5:0.0", "-q:v", "2", os.path.join(d, "%03d.jpg")], check=True)
@@ -30,15 +30,15 @@ if cmd == "timeline":
     def nf(shot): return len(glob.glob(P("frames", shot, "*.jpg"))) or 81
     for l in lines:
         kind = l["shot"]; bg, blur = BG.get(kind, (kind, 0))
-        lead = 0.55 if kind in ("T01", "T02") else 0.0
+        lead = 0.55 if kind[0] == "T" else 0.0
         dur = lead + l["dur"] + 0.45
         speed = 0.6 if blur else max(0.65, min(1.0, CLIP / dur))
         segs.append({"kind": kind, "bg": bg, "blur": blur, "start": t, "end": t + dur, "voice": t + lead, "dur": l["dur"],
-                     "text": l["text"], "line": l["id"], "speed": speed, "nframes": nf(bg), "flash": kind in ("T01", "T02")})
+                     "text": l["text"], "line": l["id"], "speed": speed, "nframes": nf(bg), "fps": 16, "flash": kind[0] == "T"})
         t += dur
         if l["id"] == "L03":   # show title sting after the intro
             segs.append({"kind": "STING", "bg": "S03", "blur": 1, "start": t, "end": t + 2.6, "voice": 1e9, "dur": 0, "text": "",
-                         "line": None, "speed": 0.5, "nframes": nf("S03"), "flash": True}); t += 2.6
+                         "line": None, "speed": 0.5, "nframes": nf("S03"), "fps": 16, "flash": True}); t += 2.6
     total = t + 0.6; segs[-1]["end"] = total
     json.dump({"segs": segs, "total": total}, open(P("timeline.json"), "w"), indent=1)
 
@@ -76,7 +76,7 @@ if cmd == "timeline":
     for s in segs:
         put(W, max(0, s["start"] - .25), .22)
         k, a = s["kind"], s["start"]
-        if k in ("T01", "T02", "STING"): put(boom(), a, .8)
+        if k[0] == "T" or k in ("STING", "END"): put(boom(), a, .8)
         if k == "S04": put(buzz(), a + .1, .7); put(np.concatenate([tone(1320, .18), tone(1760, .4)]), a + .2, .25)
         if k == "S11": put(np.concatenate([tone(1320, .18), tone(1760, .4)]), a + .25, .25)
         if k == "S09": put(ring(), a + .1, .5)
@@ -130,5 +130,5 @@ elif cmd == "mux":
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", P("ch.txt"), "-i", P("voice.wav"), "-i", P("sfx.wav"),
                     "-filter_complex", "[1]aresample=48000[v];[2]aresample=48000[s];[v][s]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
                     "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart",
-                    P("lenny_ep01_part1.mp4")], check=True)
+                    P("lenny_ep01_part1_14b.mp4")], check=True)
     print("muxed", round(tl["total"], 1))

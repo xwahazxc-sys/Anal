@@ -124,5 +124,264 @@
   "text": "That's two down. Number three gets grandparents every single day. And number seven? Stay with me.",
   "voice": "am_liam",
   "dur": 5.295
+ },
+ {
+  "id": "L19",
+  "shot": "T03",
+  "text": "Number three. Hi Mum, I dropped my phone, this is my new number.",
+  "voice": "am_liam",
+  "dur": 3.5
+ },
+ {
+  "id": "L20",
+  "shot": "C301",
+  "text": "A few messages of small talk. Then an urgent bill that has to be paid today, from your account, not theirs.",
+  "voice": "am_liam",
+  "dur": 6.07
+ },
+ {
+  "id": "L21",
+  "shot": "C302",
+  "text": "And there's always a reason they can't just call. Broken phone. Broken microphone. In a meeting.",
+  "voice": "am_liam",
+  "dur": 5.542
+ },
+ {
+  "id": "L22",
+  "shot": "G05",
+  "text": "The tell is urgency, plus a new number, plus money. Call the old number. If your kid picks up, you're done.",
+  "voice": "am_liam",
+  "dur": 5.839
+ },
+ {
+  "id": "L23",
+  "shot": "C303",
+  "text": "And agree on a family code word now, before anyone needs it. I hated families with code words.",
+  "voice": "am_liam",
+  "dur": 5.796
+ },
+ {
+  "id": "L24",
+  "shot": "T04",
+  "text": "Number four. The easy job.",
+  "voice": "am_liam",
+  "dur": 1.863
+ },
+ {
+  "id": "L25",
+  "shot": "C401",
+  "text": "A friendly recruiter messages you out of nowhere. Money for liking videos or rating hotels. You never applied. That's the first tell.",
+  "voice": "am_liam",
+  "dur": 7.633
+ },
+ {
+  "id": "L26",
+  "shot": "C402",
+  "text": "The first payments are real. Small, but real. That's the bait.",
+  "voice": "am_liam",
+  "dur": 3.339
+ },
+ {
+  "id": "L27",
+  "shot": "G06",
+  "text": "Then a task needs you to top up your account to unlock bigger earnings. And then one more. And one more.",
+  "voice": "am_liam",
+  "dur": 5.79
+ },
+ {
+  "id": "L28",
+  "shot": "C403",
+  "text": "That's the switch. Any job that asks you to pay in is not a job.",
+  "voice": "am_liam",
+  "dur": 3.653
+ },
+ {
+  "id": "L29",
+  "shot": "T05",
+  "text": "Number five. The keen buyer.",
+  "voice": "am_liam",
+  "dur": 1.943
+ },
+ {
+  "id": "L30",
+  "shot": "C501",
+  "text": "You list something online. A buyer agrees instantly. No haggling, no questions about the item.",
+  "voice": "am_liam",
+  "dur": 5.714
+ },
+ {
+  "id": "L31",
+  "shot": "C502",
+  "text": "They send a link to receive your payment. The link asks for your card details, including the code on the back.",
+  "voice": "am_liam",
+  "dur": 5.812
+ },
+ {
+  "id": "L32",
+  "shot": "G07",
+  "text": "You never need that to receive money. Only to send it.",
+  "voice": "am_liam",
+  "dur": 3.102
+ },
+ {
+  "id": "L33",
+  "shot": "C503",
+  "text": "A real buyer has questions. A scammer has a link.",
+  "voice": "am_liam",
+  "dur": 3.171
+ },
+ {
+  "id": "L34",
+  "shot": "T06",
+  "text": "Number six. The frozen screen.",
+  "voice": "am_liam",
+  "dur": 2.17
+ },
+ {
+  "id": "L35",
+  "shot": "C601",
+  "text": "A pop-up fills the screen. Sirens. Your computer is infected, call this number now.",
+  "voice": "am_liam",
+  "dur": 5.151
+ },
+ {
+  "id": "L36",
+  "shot": "C602",
+  "text": "If you call, a helpful technician asks you to install a program, so he can fix it. That program gives him your computer. And your bank.",
+  "voice": "am_liam",
+  "dur": 7.749
+ },
+ {
+  "id": "L37",
+  "shot": "C603",
+  "text": "Real security software never gives you a phone number. Close the browser. Restart if you have to. Never call.",
+  "voice": "am_liam",
+  "dur": 6.241
+ },
+ {
+  "id": "L38",
+  "shot": "T07",
+  "text": "And number seven. The one almost nobody spots.",
+  "voice": "am_liam",
+  "dur": 2.948
+ },
+ {
+  "id": "L39",
+  "shot": "C701",
+  "text": "It doesn't start with a scam. It starts with a wrong number. Hi, is this Anna?",
+  "voice": "am_liam",
+  "dur": 4.272
+ },
+ {
+  "id": "L40",
+  "shot": "C702",
+  "text": "You say no. They're sorry. They're nice. A little funny. So you keep chatting. For weeks.",
+  "voice": "am_liam",
+  "dur": 4.536
+ },
+ {
+  "id": "L41",
+  "shot": "C703",
+  "text": "They're successful. They trade crypto or gold. They never push it. One day, you ask how it works.",
+  "voice": "am_liam",
+  "dur": 5.353
+ },
+ {
+  "id": "L42",
+  "shot": "G09",
+  "text": "You put in a little. The dashboard shows profit. You even withdraw a small amount. So you put in more.",
+  "voice": "am_liam",
+  "dur": 5.308
+ },
+ {
+  "id": "L43",
+  "shot": "C704",
+  "text": "Then you try to take it all out. There's a tax. A fee. Then another fee. The platform was never real.",
+  "voice": "am_liam",
+  "dur": 5.673
+ },
+ {
+  "id": "L44",
+  "shot": "C705",
+  "text": "And the person you talked to every day? A script. I know. I used to write them.",
+  "voice": "am_liam",
+  "dur": 4.301
+ },
+ {
+  "id": "L45",
+  "shot": "G10",
+  "text": "Why nobody spots it? There's no single moment that feels like a scam. Every step is small.",
+  "voice": "am_liam",
+  "dur": 5.593
+ },
+ {
+  "id": "L46",
+  "shot": "C801",
+  "text": "So here's the tell. Someone you've never met in person, bringing up money, is the whole scam. That kindness was the product.",
+  "voice": "am_liam",
+  "dur": 6.799
+ },
+ {
+  "id": "L47",
+  "shot": "G11",
+  "text": "Every one of these seven breaks the same rule. They want you to act inside their message. Their link. Their number. Their platform.",
+  "voice": "am_liam",
+  "dur": 6.718
+ },
+ {
+  "id": "L48",
+  "shot": "C802",
+  "text": "The defence is always the same. Leave the message. Slow down. Open your bank, your courier, your family's number yourself.",
+  "voice": "am_liam",
+  "dur": 6.973
+ },
+ {
+  "id": "L49",
+  "shot": "G12",
+  "text": "A real problem will still be there in ten minutes. A scam won't.",
+  "voice": "am_liam",
+  "dur": 3.951
+ },
+ {
+  "id": "L50",
+  "shot": "C901",
+  "text": "Already clicked, or already paid? Call your bank on the number on the back of your card. Right now. Speed matters.",
+  "voice": "am_liam",
+  "dur": 5.817
+ },
+ {
+  "id": "L51",
+  "shot": "G13",
+  "text": "Change your passwords. Turn on two-step verification. If someone installed software, disconnect and get it checked. Then report it.",
+  "voice": "am_liam",
+  "dur": 7.454
+ },
+ {
+  "id": "L52",
+  "shot": "G14",
+  "text": "And watch for recovery services that promise your money back for a fee. Same scam, round two.",
+  "voice": "am_liam",
+  "dur": 5.526
+ },
+ {
+  "id": "L53",
+  "shot": "C902",
+  "text": "And don't be embarrassed. These scams are built by people who do this all day. People like the old me.",
+  "voice": "am_liam",
+  "dur": 5.654
+ },
+ {
+  "id": "L54",
+  "shot": "C903",
+  "text": "If one of these would have got someone you know, send them this video. That's the whole job.",
+  "voice": "am_liam",
+  "dur": 4.485
+ },
+ {
+  "id": "L55",
+  "shot": "END",
+  "text": "Trust me. I used to run all seven.",
+  "voice": "am_liam",
+  "dur": 2.193
  }
 ]
