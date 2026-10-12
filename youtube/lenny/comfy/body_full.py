@@ -32,11 +32,18 @@ try:
     for k, b in IMAGES.items(): open(f"{R}/input/{k}.jpg", "wb").write(base64.b64decode(b))
     exec(base64.b64decode(WF).decode())  # defines workflow()
     env = dict(os.environ, CUDA_VISIBLE_DEVICES="0")
-    srv = subprocess.Popen([sys.executable, "main.py", "--listen", "127.0.0.1", "--port", "8188"], cwd=R, env=env,
-                           stdout=open("/tmp/comfy.log", "w"), stderr=subprocess.STDOUT)
-    for _ in range(120):
-        try: urllib.request.urlopen("http://127.0.0.1:8188/system_stats"); break
-        except Exception: time.sleep(2)
+    srv = None
+    def restart():
+        global srv
+        if srv is not None:
+            srv.terminate(); srv.wait(60)
+        srv = subprocess.Popen([sys.executable, "main.py", "--listen", "127.0.0.1", "--port", "8188"], cwd=R, env=env,
+                               stdout=open("/tmp/comfy.log", "a"), stderr=subprocess.STDOUT)
+        for _ in range(180):
+            try: urllib.request.urlopen("http://127.0.0.1:8188/system_stats"); return
+            except Exception: time.sleep(2)
+        raise RuntimeError("comfy did not start")
+    restart()
     log("server up")
     def run(wf):
         req = urllib.request.Request("http://127.0.0.1:8188/prompt", data=json.dumps({"prompt": wf}).encode(), headers={"Content-Type": "application/json"})
@@ -47,11 +54,12 @@ try:
             if srv.poll() is not None: raise RuntimeError("comfy died")
             time.sleep(5)
     for i, (k, p) in enumerate(PLAN.get("t2i", {}).items()):
-        ts = time.time(); st = run(t2i(p + PLAN["style"], PLAN["negative"], 500 + i, prefix="T2I_" + k))
+        restart(); ts = time.time(); st = run(t2i(p + PLAN["style"], PLAN["negative"], 500 + i, prefix="T2I_" + k))
         f = sorted(glob.glob(f"{R}/output/T2I_{k}_*.png"))
         if not f: raise RuntimeError(json.dumps(st)[:2000])
         shutil.copy(f[-1], f"{R}/input/{k}.png"); shutil.copy(f[-1], f"{OUT}/start_{k}.png")
         log(f"start image {k} in {time.time()-ts:.0f}s")
+    if PLAN.get("t2i"): restart()
     for i, (k, v) in enumerate(PLAN["shots"].items()):
         name = v["from"][4:]
         img = name + ".png" if os.path.exists(f"{R}/input/{name}.png") else name + ".jpg"
