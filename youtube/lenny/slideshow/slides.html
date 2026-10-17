@@ -1,0 +1,152 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;src:url(file:///home/user/Anal/youtube/video/fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+#bg{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 45%}
+#ov{position:absolute;inset:0}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 60%,rgba(0,0,0,.55) 100%)}
+.cap{position:absolute;left:80px;right:80px;top:950px;text-align:center;font:900 60px/1.1 Inter;text-transform:uppercase;-webkit-text-stroke:12px #000;paint-order:stroke fill}
+.cap span.on{color:#ffd60a}
+.ttl{position:absolute;left:0;right:0;text-align:center;font-weight:900;letter-spacing:-3px;line-height:.95;text-shadow:0 8px 0 #000,0 0 50px rgba(0,0,0,.9)}
+em{font-style:normal;color:#ff3b3b} i{font-style:normal;color:#1ee3cf}
+.tag{display:inline-block;background:#ff3b3b;color:#fff;font-weight:900;border-radius:16px;padding:10px 26px;letter-spacing:0}
+.card{position:absolute;background:#fff;color:#111;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.notif{position:absolute;left:560px;width:800px;background:rgba(245,246,250,.97);color:#111;border-radius:36px;padding:26px 34px;box-shadow:0 20px 60px rgba(0,0,0,.55);font:500 36px/1.3 Inter}
+.notif b{display:block;font:700 26px Inter;color:#666;margin-bottom:6px}
+.link{color:#1a5fd6;text-decoration:underline}
+.lower{position:absolute;left:90px;top:760px;display:flex;align-items:stretch;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.lower .a{background:#1ee3cf;color:#071a1a;font:900 56px Inter;padding:10px 28px;letter-spacing:-1px}
+.lower .b{background:#111a1c;color:#fff;font:700 36px Inter;padding:0 28px;display:flex;align-items:center}
+.chk{position:absolute;left:110px;font:800 50px Inter;text-shadow:0 5px 0 #000,0 0 30px rgba(0,0,0,.9)}
+.chk g{color:#30d158}
+.stamp{position:absolute;left:0;right:0;top:300px;margin:auto;width:1100px;text-align:center;border:16px solid #ff3b3b;color:#ff3b3b;background:rgba(10,10,14,.75);border-radius:26px;font:900 110px/1 Inter;padding:30px 20px;letter-spacing:-3px}
+.mini{position:absolute;width:250px;height:140px;border-radius:24px;background:#fff;color:#111;display:flex;align-items:center;gap:14px;padding:0 22px;font:800 28px/1.1 Inter;box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.mini b{font-size:58px}
+.mini .ok{position:absolute;right:-16px;top:-16px;width:58px;height:58px;border-radius:50%;background:#30d158;border:5px solid #fff;color:#fff;font:900 30px Inter;display:flex;align-items:center;justify-content:center}
+.flash{position:absolute;inset:0;background:#fff}
+</style></head><body>
+<img id="bg2" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 50%"><img id="bg">
+<div class="vig"></div>
+<div id="ov"></div>
+<div class="cap" id="cap"></div>
+<div class="flash" id="flash" style="opacity:0"></div>
+<script>
+let T;
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x)), e3=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.9;x=x-1;return 1+(c+1)*x*x*x+c*x*x};
+const P=(t,a,d=.35)=>cl((t-a)/d);
+const pop=(t,a,d=.4)=>{const p=P(t,a,d);return p<=0?0:p>=1?1:back(p)};
+const st=(t,a,b=1e9)=>`opacity:${Math.min(1,P(t,a,.25)*2)*(1-P(t,b-.2,.2))};transform:translateY(${(1-e3(P(t,a,.4)))*40}px) scale(${pop(t,a)||.001})`;
+window.setup=tl=>{T=tl};
+const CARDS=[['📦','Delivery'],['🏦','Bank call'],['💬','"Hi Mum"'],['💼','Easy job'],['🛒','Buyer'],['🖥️','Frozen screen'],['🔒','#7']];
+function cards(lt,a,ticks=0,glow=-1){return CARDS.map((c,i)=>{const p=e3(P(lt,a+i*.12,.45)),x=120+(i%4)*290,y=230+Math.floor(i/4)*200;
+  const w=(i==glow?`box-shadow:0 0 0 8px #ffd60a,0 14px 40px rgba(0,0,0,.6);transform:translateX(${(1-p)*-500}px) scale(${1+.05*Math.sin(lt*6)})`:`transform:translateX(${(1-p)*-500}px)`);
+  return `<div class="mini" style="left:${x}px;top:${y}px;opacity:${p>0?1:0};${i==6?'background:#2a2440;color:#fff;':''}${w}"><b>${c[0]}</b>${c[1]}${i<ticks?'<div class="ok">✓</div>':''}</div>`}).join('')}
+// overlays per segment kind: (lt = time since segment start, sp = speech start offset)
+const OV={
+ S01:(lt)=>`<div class="ttl" style="top:110px;font-size:120px;${st(lt,.4)}">7 SCAMS.</div><div class="ttl" style="top:240px;font-size:92px;${st(lt,2.6)}"><em>1</em> NOBODY SPOTS.</div>`,
+ S02:(lt)=>`<div class="lower" style="opacity:${P(lt,.6,.3)};transform:translateX(${(1-e3(P(lt,.6,.5)))*-700}px)"><div class="a">LENNY</div><div class="b">ex-scammer · now on your side</div></div>`,
+ S03:(lt)=>cards(lt,.3),
+ STING:(lt)=>`<div class="ttl" style="top:330px;font-size:130px;${st(lt,.1)}">7 SCAMS THAT<br>DON'T LOOK LIKE <em>SCAMS</em></div>`,
+ T01:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#1</span><div style="font-size:150px;margin-top:30px">THE DELIVERY TEXT</div></div>`,
+ S04:(lt)=>`<div class="notif" style="top:${lerp(-260,120,e3(P(lt,.15,.45)))}px"><b>💬 MESSAGES · now</b>Parcel Service: Your parcel could not be delivered. Update your address here: <span class="link">parcel-redelivery-update.info/xk29</span></div>`,
+ S05:(lt)=>`<div class="ttl" style="top:120px;font-size:84px;${st(lt,1.4)}">SENT TO <i>THOUSANDS</i> AT ONCE</div>`,
+ S06:(lt)=>``,
+ G01:(lt)=>`<div class="card" style="left:660px;top:90px;width:600px;height:780px;padding:40px;font:500 34px/1.35 Inter;${st(lt,.05)}">
+   <div style="background:#ffb000;font:900 44px Inter;display:inline-block;padding:10px 20px;border-radius:12px;border:4px solid #111">PARCEL SERVICE</div>
+   <p style="margin-top:30px;color:#666">Tracking: PX-4471-208</p><p style="color:#d00;font-weight:800">Delivery failed</p>
+   <p style="margin-top:24px;font:900 46px Inter">Redelivery fee: $1.99</p>
+   <div style="margin-top:24px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">Card number</div>
+   <div style="margin-top:14px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">MM / YY · CVV</div>
+   <div style="margin-top:28px;background:#ffb000;border:4px solid #111;border-radius:16px;padding:20px;text-align:center;font:900 40px Inter">PAY $1.99</div></div>
+   <div style="position:absolute;left:300px;top:${420-Math.abs(Math.sin(Math.max(0,lt-1.2)*5))*120*Math.max(0,1-(lt-1.2)/2.5)}px;width:220px;height:220px;border-radius:50%;background:#ffd60a;border:12px solid #c99a00;display:flex;align-items:center;justify-content:center;font:900 64px Inter;color:#111;opacity:${P(lt,1.2,.2)};box-shadow:0 20px 50px rgba(0,0,0,.6)">$1.99</div>`,
+ S07:(lt)=>`<div class="ttl" style="top:160px;left:-700px;font-size:84px;${st(lt,1.6)}">I WANTED <em>YOUR CARD.</em></div>`,
+ G02:(lt)=>{const gx=lerp(560,1360,(Math.sin(lt*1.1)+1)/2);return `<div class="ttl" style="top:170px;font-size:100px;${st(lt,.1)}">THE TELL: <em>THE LINK</em></div>
+   <div class="card" style="left:260px;top:430px;width:1400px;height:150px;display:flex;align-items:center;justify-content:center;font:700 64px Inter;color:#1a5fd6;text-decoration:underline;${st(lt,.3)}">parcel-redelivery-update.info/xk29</div>
+   <div style="position:absolute;left:${gx-110}px;top:395px;width:220px;height:220px;border-radius:50%;border:16px solid #ff3b3b;background:rgba(255,255,255,.12);opacity:${P(lt,.8,.3)}"></div>
+   ${['random domain','extra words','numbers'].map((w,i)=>`<div style="position:absolute;left:${380+i*420}px;top:660px;${st(lt,2.2+i*.5)}"><span class="tag" style="font-size:44px">${w}</span></div>`).join('')}`},
+ S08:(lt)=>`<div style="position:absolute;left:0;right:0;top:140px;text-align:center;${st(lt,.6)}"><span class="tag" style="font-size:56px;background:#30d158;color:#06210f">✓ OPEN THE APP YOURSELF</span></div>`,
+ T02:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#2</span><div style="font-size:150px;margin-top:30px">THE BANK CALL</div></div>`,
+ S09:(lt)=>`<div class="card" style="left:1400px;top:90px;width:430px;padding:30px;background:rgba(18,30,58,.95);color:#fff;text-align:center;${st(lt,.2)}"><div style="font:800 44px Inter">Your Bank</div><div style="font:500 28px Inter;color:#9fb3d6;margin-top:6px">mobile · calling…</div><div style="margin:24px auto 0;width:110px;height:110px;border-radius:50%;background:#30d158;display:flex;align-items:center;justify-content:center;font-size:56px;transform:scale(${1+.08*Math.sin(lt*10)})">📞</div></div>`,
+ S10:(lt)=>`<div class="chk" style="top:150px;${st(lt,.3)}"><g>✓</g> Knows your name</div><div class="chk" style="top:240px;${st(lt,1.6)}"><g>✓</g> Knows your last card digits</div><div class="chk" style="top:330px;color:#ffd60a;${st(lt,3.2)}">→ feels real</div>`,
+ G03:(lt)=>`<div class="stamp" style="${st(lt,.05)};transform:rotate(-4deg) scale(${pop(lt,.05)||.001})">CALLER ID<br>CAN BE FAKED</div>
+   <div style="position:absolute;left:0;right:0;top:720px;text-align:center;${st(lt,3.0)}"><span class="tag" style="font-size:52px;background:#ffd60a;color:#111">THEIR "PROOF" = OLD DATA LEAKS</span></div>`,
+ S11:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>💬 YOUR BANK · now</b>Your one-time code is <b style="display:inline;font:900 40px Inter;color:#111;background:rgba(255,59,59,${.25*P(lt,2.4,.3)});padding:0 8px;border-radius:8px">482 913</b>. Never share this code with anyone.</div>`,
+ S12:(lt)=>`<div class="card" style="left:110px;top:110px;width:1000px;padding:36px 44px;${st(lt,.2)}"><div style="font:700 28px Inter;color:#777">THE ONLY SENTENCE YOU NEED</div><div style="font:900 56px/1.1 Inter;margin-top:10px">"I'll call you back on the number on my card."</div></div>`,
+
+ T03:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#3</span><div style="font-size:150px;margin-top:30px">"HI MUM"</div></div>`,
+ T04:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#4</span><div style="font-size:150px;margin-top:30px">THE EASY JOB</div></div>`,
+ T05:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#5</span><div style="font-size:150px;margin-top:30px">THE KEEN BUYER</div></div>`,
+ T06:(lt)=>`<div class="ttl" style="top:300px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#6</span><div style="font-size:150px;margin-top:30px">THE FROZEN SCREEN</div></div>`,
+ T07:(lt)=>`<div class="ttl" style="top:280px;${st(lt,.05)}"><span class="tag" style="font-size:80px">#7 🔓</span><div style="font-size:130px;margin-top:30px">THE ONE NOBODY SPOTS</div></div>`,
+ C301:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>💬 +44 7700 900461 · now</b>Hi Mum, I dropped my phone, this is my new number 💛</div>`,
+ C302:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>💬 +44 7700 900461 · now</b>Can't talk, mic is broken 😩 Can you pay a bill for me today? I'll pay you back</div>`,
+ G05:(lt)=>`<div class="ttl" style="top:200px;font-size:100px;${st(lt,.1)}">THE TELL:</div>`+['NEW NUMBER','URGENT','MONEY'].map((w,i)=>`<div style="position:absolute;left:${300+i*460}px;top:420px;${st(lt,.6+i*.7)}"><span class="tag" style="font-size:60px">${w}</span></div>`).join('')+`<div style="position:absolute;left:0;right:0;top:640px;text-align:center;${st(lt,3.2)}"><span class="tag" style="font-size:52px;background:#30d158;color:#06210f">✓ CALL THE OLD NUMBER</span></div>`,
+ C303:(lt)=>`<div class="card" style="left:110px;top:110px;width:900px;padding:36px 44px;${st(lt,.3)}"><div style="font:700 28px Inter;color:#777">DO THIS TODAY</div><div style="font:900 64px/1.1 Inter;margin-top:10px">🔑 Family code word</div></div>`,
+ C401:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>💬 Recruiter · now</b>Hi! 😊 Earn from home just by liking videos. Flexible hours! Interested?</div><div class="chk" style="top:820px;${st(lt,3.4)}"><em>✗</em> You never applied</div>`,
+ C402:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px;background:#e6f9ec"><b>✅ PAYMENT RECEIVED</b>Task 1–5 completed. Bonus added to your balance.</div>`,
+ G06:(lt)=>`<div class="card" style="left:560px;top:90px;width:800px;padding:30px;background:#11181c;color:#fff;font:600 34px/1.35 Inter;${st(lt,.05)}">
+   <div style="color:#9aa;font:700 26px Inter">"Team Earnings" · 214 members</div>
+   <div style="margin-top:18px;background:#262b37;border-radius:20px;padding:16px 22px;${st(lt,.4)}">Just withdrew!! 🎉🎉</div>
+   <div style="margin-top:14px;background:#4a1a1d;border-radius:20px;padding:16px 22px;${st(lt,1.6)}">⚠ Task 6: top up to unlock VIP earnings</div>
+   <div style="margin-top:14px;background:#4a1a1d;border-radius:20px;padding:16px 22px;${st(lt,3.4)}">⚠ Task 7: larger top-up required</div>
+   <div style="margin-top:14px;background:#4a1a1d;border-radius:20px;padding:16px 22px;${st(lt,4.6)}">⚠ Task 8: …</div></div>`,
+ C403:(lt)=>`<div class="card" style="left:110px;top:110px;width:1000px;padding:36px 44px;${st(lt,.3)}"><div style="font:900 60px/1.1 Inter">A job that asks you to <em>pay in</em> is not a job.</div></div>`,
+ C501:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,1.8,.45)))}px"><b>🛒 Marketplace · now</b>I'll take it! Full price 👍 My courier will collect.</div>`,
+ C502:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.2,.45)))}px"><b>🛒 Buyer · now</b>Receive your payment here: <span class="link">secure-pay-receive.info</span></div>`,
+ G07:(lt)=>`<div class="card" style="left:660px;top:90px;width:600px;padding:40px;font:500 34px/1.35 Inter;${st(lt,.05)}"><div style="font:900 44px Inter">Receive payment</div>
+   <div style="margin-top:24px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">Card number</div>
+   <div style="margin-top:14px;border:3px solid #ccd;border-radius:14px;padding:18px;color:#999">MM / YY</div>
+   <div style="margin-top:14px;border:4px solid #ff3b3b;background:rgba(255,59,59,.12);border-radius:14px;padding:18px;color:#d00;font-weight:800">CVV (3 digits on back)</div>
+   <div style="margin-top:28px;background:#30d158;border-radius:16px;padding:20px;text-align:center;font:900 40px Inter;color:#06210f">Receive money</div></div>
+   <div style="position:absolute;left:0;right:0;top:800px;text-align:center;${st(lt,1.6)}"><span class="tag" style="font-size:46px">TO RECEIVE MONEY? NEVER NEEDED.</span></div>`,
+ C503:(lt)=>`<div class="ttl" style="top:140px;left:-700px;font-size:72px;${st(lt,.3)}">A REAL BUYER HAS <i>QUESTIONS.</i></div><div class="ttl" style="top:240px;left:-700px;font-size:72px;${st(lt,1.8)}">A SCAMMER HAS <em>A LINK.</em></div>`,
+ C601:(lt)=>`<div class="card" style="left:1080px;top:100px;width:740px;padding:30px;background:#b00000;color:#fff;text-align:center;opacity:${P(lt,.2,.2)*((Math.floor(lt*2.4)%2)?.85:1)}"><div style="font-size:70px">⚠️</div><div style="font:900 46px Inter">YOUR COMPUTER IS INFECTED</div><div style="font:500 28px Inter;margin-top:10px">Call Support now:</div><div style="font:900 52px Inter">1-800-555-0199</div></div>`,
+ C602:(lt)=>`<div class="card" style="left:1180px;top:120px;width:640px;padding:30px;font:500 32px/1.3 Inter;${st(lt,1.4)}"><b style="display:block;font:800 36px Inter;color:#d00;margin-bottom:8px">Install RemoteHelper.exe?</b>The technician needs access to fix your computer.<div style="margin-top:16px"><span class="tag" style="font-size:28px;background:#1f7aff">Allow</span></div></div><div class="chk" style="top:820px;${st(lt,4.2)}"><em>= YOUR COMPUTER. AND YOUR BANK.</em></div>`,
+ C603:(lt)=>`<div class="chk" style="top:140px;${st(lt,.3)}"><em>✗</em> Real software never gives a phone number</div><div class="chk" style="top:230px;${st(lt,2.2)}"><g>✓</g> Close the browser</div><div class="chk" style="top:320px;${st(lt,3.4)}"><g>✓</g> Restart if you have to</div><div class="chk" style="top:410px;${st(lt,4.6)}"><em>✗</em> Never call</div>`,
+ C701:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,3.0,.45)))}px"><b>💬 +1 (310) 555-0187 · now</b>Hi, is this Anna? 🙂</div>`,
+ C702:(lt)=>`<div class="ttl" style="top:120px;font-size:90px;${st(lt,3.0)}">FOR <i>WEEKS.</i></div>`,
+ C703:(lt)=>`<div class="notif" style="left:1060px;width:760px;top:${lerp(-260,110,e3(P(lt,.6,.45)))}px"><b>💬 Daniel · week 5</b>Good day today, closed a nice gold trade 📈</div>`,
+ G09:(lt)=>{const v=lt<2.2?500:lt<4.5?740:12960;return `<div class="card" style="left:560px;top:90px;width:800px;padding:36px;background:#0d1320;color:#fff;${st(lt,.05)}"><div style="font:700 30px Inter;color:#8fa3c7">GoldPeak Trade · Balance</div><div style="font:900 110px Inter;color:${v>500?'#30d158':'#fff'}">$${v.toLocaleString()}${v>500?' ▲':''}</div>
+   <svg width="720" height="230"><polyline points="0,220 90,200 180,205 270,170 360,150 450,110 540,90 630,50 720,20" fill="none" stroke="#30d158" stroke-width="8" stroke-dasharray="1200" stroke-dashoffset="${1200*(1-P(lt,1.2,3))}"/></svg>
+   <div style="background:#173d27;border-radius:16px;padding:16px;font:600 30px Inter;margin-top:10px;opacity:${P(lt,3.2,.3)}">✅ Withdrawal of $100 successful</div></div>`},
+ C704:(lt)=>`<div class="card" style="left:1180px;top:110px;width:640px;padding:30px;font:500 32px/1.3 Inter;${st(lt,1.2)}"><b style="display:block;font:800 36px Inter;color:#d00">Withdrawal on hold</b>Pay tax on your profits first.</div><div class="card" style="left:1180px;top:330px;width:640px;padding:30px;font:500 32px/1.3 Inter;${st(lt,2.8)}"><b style="display:block;font:800 36px Inter;color:#d00">Verification fee required</b>One final step to release your funds.</div>`,
+ C705:(lt)=>`<div class="ttl" style="top:120px;font-size:96px;${st(lt,1.6)}">IT WAS <em>A SCRIPT.</em></div>`,
+ G10:(lt)=>`<div class="ttl" style="top:180px;font-size:100px;${st(lt,.1)}">NO SINGLE MOMENT<br><i>FEELS</i> LIKE A SCAM</div>`+[0,1,2,3,4].map(i=>`<div style="position:absolute;left:${560+i*170}px;top:${820-(i+1)*70}px;width:160px;height:${(i+1)*70}px;background:${i==4?'#ff3b3b':'#3d455b'};border-radius:10px;opacity:${P(lt,2+i*.4,.3)}"></div>`).join(''),
+ C801:(lt)=>`<div class="card" style="left:110px;top:110px;width:1000px;padding:36px 44px;${st(lt,.8)}"><div style="font:900 56px/1.15 Inter">NEVER MET IN PERSON<br>+ BRINGS UP MONEY<br>= <em>THE WHOLE SCAM</em></div></div>`,
+ G11:(lt)=>`<div class="ttl" style="top:150px;font-size:96px;${st(lt,.1)}">THEY WANT YOU TO ACT<br><em>INSIDE THEIR MESSAGE</em></div>`+['🔗 Their link','📞 Their number','📊 Their platform'].map((w,i)=>`<div class="card" style="left:${240+i*500}px;top:560px;padding:30px 40px;font:800 46px Inter;${st(lt,3+i*.8)}">${w}</div>`).join(''),
+ C802:(lt)=>`<div class="chk" style="top:140px;font-size:64px;${st(lt,2.0)}">1. Leave the message.</div><div class="chk" style="top:240px;font-size:64px;${st(lt,3.0)}">2. Slow down.</div><div class="chk" style="top:340px;font-size:64px;color:#30d158;${st(lt,4.0)}">3. Open it yourself.</div>`,
+ G12:(lt)=>`<div class="ttl" style="top:300px;font-size:90px;${st(lt,.1)}">⏱ A REAL PROBLEM WILL STILL<br>BE THERE IN 10 MINUTES.</div><div class="ttl" style="top:620px;font-size:120px;${st(lt,2.6)}"><em>A SCAM WON'T.</em></div>`,
+ C901:(lt)=>`<div class="ttl" style="top:110px;font-size:80px;${st(lt,.2)}">ALREADY CLICKED OR PAID?</div><div style="position:absolute;left:0;right:0;top:260px;text-align:center;${st(lt,2.4)}"><span class="tag" style="font-size:52px">📞 CALL THE NUMBER ON YOUR CARD — NOW</span></div>`,
+ G13:(lt)=>`<div class="ttl" style="top:110px;font-size:80px;${st(lt,.1)}">THEN, IN THIS ORDER:</div>`+['🔑 Change your passwords','🛡️ Turn on 2-step verification','🔌 Software installed? Disconnect, get it checked','📣 Report it: reportfraud.ftc.gov · UK texts → 7726'].map((w,i)=>`<div class="chk" style="top:${300+i*110}px;${st(lt,.6+i*1.4)}">${w}</div>`).join(''),
+ G14:(lt)=>`<div class="stamp" style="${st(lt,.05)};transform:rotate(-3deg) scale(${pop(lt,.05)||.001});font-size:84px">"RECOVERY SERVICE"<br>= SAME SCAM, ROUND TWO</div>`,
+ C902:(lt)=>`<div class="ttl" style="top:120px;left:-700px;font-size:76px;${st(lt,.4)}">DON'T BE <i>EMBARRASSED.</i></div>`,
+ C903:(lt)=>`<div class="ttl" style="top:120px;font-size:84px;${st(lt,.3)}">SEND THIS TO SOMEONE<br>WHO NEEDS IT 📲</div>`,
+ END:(lt)=>`<div class="ttl" style="top:320px;font-size:110px;${st(lt,.1)}">7 SCAMS THAT<br>DON'T LOOK LIKE <em>SCAMS</em></div><div class="lower" style="top:700px;left:640px;opacity:${P(lt,.8,.3)}"><div class="a">LENNY</div><div class="b">see you in the next one</div></div>`,
+ G04:(lt)=>cards(lt,.1,2,2)+`<div class="ttl" style="top:90px;font-size:86px;${st(lt,.2)}">2 DOWN. <em>5 TO GO.</em></div>`,
+};
+function lerp(a,b,p){return a+(b-a)*p}
+window.render=function(t){
+  const S=T.segs; let i=S.findIndex(s=>t>=s.start&&t<s.end); if(i<0)i=t<S[0].start?0:S.length-1; const s=S[i], lt=Math.max(0,t-s.start);
+  // still image with a slow Ken Burns move; crossfade from the previous slide
+  const kb=(seg,idx,tt)=>{const d=seg.end-seg.start,p=Math.min(1,Math.max(0,tt/d)),k=idx%4;
+    const s0=k%2?1.18:1.06,s1=k%2?1.06:1.18,dx=[40,-40,-30,30][k],dy=[10,-10,20,-20][k];
+    return `scale(${s0+(s1-s0)*p}) translate(${dx*(p-.5)}px,${dy*(p-.5)}px)`};
+  const bg=$('bg'); if(!bg.src.endsWith(s.img))bg.src=s.img;
+  bg.style.transform=kb(s,i,lt); bg.style.transformOrigin='50% 50%';
+  bg.style.filter=s.blur?'blur(14px) brightness(.45)':'none';
+  const pv=i>0?S[i-1]:null, b2=$('bg2'), f=Math.min(1,lt/.6);
+  if(pv&&f<1){ if(!b2.src.endsWith(pv.img))b2.src=pv.img; b2.style.opacity=1; b2.style.transform=kb(pv,i-1,pv.end-pv.start+lt);
+    b2.style.filter=pv.blur?'blur(14px) brightness(.45)':'none'; bg.style.opacity=f; } else { b2.style.opacity=0; bg.style.opacity=1; }
+  $('ov').innerHTML=(OV[s.kind]||(()=>''))(lt);
+  // flash at hard cuts into titles
+  $('flash').style.opacity=s.flash?Math.max(0,.5-lt*3):0;
+  // captions
+  const cap=$('cap'); const sp=t-s.voice;
+  if(s.text&&sp>=0&&sp<s.dur+.1){const w=s.text.split(/\s+/),k=Math.min(w.length-1,Math.floor(sp/s.dur*w.length)),c0=Math.floor(k/4)*4;
+    cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ')} else cap.innerHTML='';
+};
+window.ready=()=>Promise.all(['bg','bg2'].map(id=>new Promise(r=>{const i=$(id);if(!i.src||i.complete)r();else{i.onload=()=>r();i.onerror=()=>r();setTimeout(r,3000)}})));
+</script></body></html>
