@@ -1,0 +1,694 @@
+{
+ "slug": "lenny_ep04_ai_voice_clone",
+ "title": "AI Cloned Your Voice. This Is The Call Your Family Gets.",
+ "hook_score": "61 WORKABLE (The Question)",
+ "fallback": "E10",
+ "sting": {
+  "after": "n05",
+  "s": "THE CALL IN<br><em>YOUR VOICE</em>",
+  "img": "d02"
+ },
+ "thumb": {
+  "img": "d23",
+  "text": "IT'S NOT<br><b>YOUR</b><br><em>KID</em>",
+  "pos": "65% 40%",
+  "size": 124
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "d01",
+   "text": "Your mum gets a call in your voice, crying. You never made it. What would she do?",
+   "ov": {
+    "t": "call",
+    "from": "Josh ❤️",
+    "sub": "mobile · calling…"
+   }
+  },
+  {
+   "id": "n02",
+   "img": "d01",
+   "text": "Mum, it's me. I messed up. I was in an accident, and they're saying it's my fault. Please don't tell Dad. I need help.",
+   "voice": "am_puck",
+   "speed": 1.05
+  },
+  {
+   "id": "n03",
+   "img": "d03",
+   "text": "That's not Josh. Josh is at work, phone in his pocket. That voice was made by software, from a thirty second clip he posted last summer."
+  },
+  {
+   "id": "n03b",
+   "img": "d01",
+   "text": "His mum doesn't know that. All she hears is her son. Scared. Begging. And her hand is already reaching for her purse."
+  },
+  {
+   "id": "n04",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. Back in my day, this scam needed a bad actor and a bad phone line. Now it needs one video of your kid.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n05",
+   "img": "E10",
+   "text": "So I'll show you exactly how the cloned voice call works, step by step, and the one question that beats it. Every time."
+  },
+  {
+   "id": "n06",
+   "img": "d04",
+   "text": "Step one. Find a voice.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 1",
+    "s": "FIND A VOICE"
+   }
+  },
+  {
+   "id": "n07",
+   "img": "d05",
+   "text": "This is the easy part now. A birthday video. A podcast. A clip from a wedding toast. A voicemail greeting. Anything where you talk for a few seconds.",
+   "ov": {
+    "t": "chips",
+    "c": "yellow",
+    "items": [
+     "🎂 BIRTHDAY VIDEOS",
+     "🎙️ PODCASTS & CLIPS",
+     "📞 VOICEMAIL GREETINGS"
+    ]
+   }
+  },
+  {
+   "id": "n08",
+   "img": "E03",
+   "text": "And if there's nothing online, there's the silent call. Your phone rings, nobody talks, you say hello, hello, who is this? Thanks. That's my sample."
+  },
+  {
+   "id": "n09",
+   "img": "L44",
+   "text": "Then the family tree. Who's your mum? Who's your grandad? Who do you tag in every photo? Your profile draws me the whole map."
+  },
+  {
+   "id": "n09b",
+   "img": "d05",
+   "text": "And if your account is public, I also know where you are this weekend. Your kid's on a camping trip with no signal? Perfect. Nobody can reach him to check."
+  },
+  {
+   "id": "n10",
+   "img": "d06",
+   "text": "Step two. Clone it.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 2",
+    "s": "CLONE IT"
+   }
+  },
+  {
+   "id": "n11",
+   "img": "E10",
+   "text": "Voice cloning tools are cheap, fast, and mostly made for good things. Audiobooks. Dubbing. People who lost their voice. But they don't check who's using them.",
+   "ov": {
+    "t": "tag",
+    "s": "🎙️ A FEW SECONDS OF AUDIO",
+    "c": "red"
+   }
+  },
+  {
+   "id": "n12",
+   "img": "d07",
+   "text": "A few seconds of clean audio can be enough for a convincing copy. Not perfect. But it doesn't need to be perfect. It needs to be crying."
+  },
+  {
+   "id": "n13",
+   "img": "L33",
+   "text": "Because crying covers everything. A strange word, a bad connection, a weird pause. Panic makes your brain fill in the gaps with the person you love."
+  },
+  {
+   "id": "n13b",
+   "img": "E10",
+   "text": "I used to hire people for their voices. Now the voice is free. The only skill left is the script."
+  },
+  {
+   "id": "n14",
+   "img": "d08",
+   "text": "Step three. The script.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 3",
+    "s": "THE SCRIPT"
+   }
+  },
+  {
+   "id": "n15",
+   "img": "E01",
+   "text": "There are only a few stories, and they all work the same way. An accident. An arrest. A hospital. Or the worst one, a kidnapping.",
+   "ov": {
+    "t": "chips",
+    "c": "red",
+    "items": [
+     "🚗 ACCIDENT",
+     "🚔 ARREST",
+     "🏥 HOSPITAL",
+     "⚠️ KIDNAPPING"
+    ]
+   }
+  },
+  {
+   "id": "n16",
+   "img": "d09",
+   "text": "Every one of them has three parts. Something terrible happened. It has to be fixed right now. And don't tell anyone.",
+   "ov": {
+    "t": "list",
+    "items": [
+     "1. Something terrible happened.",
+     "2. It has to be fixed <em>right now.</em>",
+     "3. Don't tell anyone."
+    ]
+   }
+  },
+  {
+   "id": "n17",
+   "img": "L23",
+   "text": "Don't tell anyone is the most important line. Because the one thing that kills this scam is one phone call to the real person."
+  },
+  {
+   "id": "n17b",
+   "img": "d09",
+   "text": "And there's always a reason it's secret. Dad will be furious. The lawyer said no calls. They're about to take my phone away."
+  },
+  {
+   "id": "n18",
+   "img": "d10",
+   "text": "Step four. The handoff.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 4",
+    "s": "THE HANDOFF"
+   }
+  },
+  {
+   "id": "n19",
+   "img": "d11",
+   "text": "The cloned voice only talks for ten or fifteen seconds. Then someone else takes the phone. A lawyer. A police officer. A doctor. Calm, official, in control.",
+   "ov": {
+    "t": "call",
+    "from": "\"Officer Reynolds\"",
+    "sub": "on the line…"
+   }
+  },
+  {
+   "id": "n20",
+   "img": "d12",
+   "text": "Ma'am, your son is being held after a collision. If bail is paid today, we can keep this off his record. I'm going to need you to stay on the line.",
+   "voice": "am_michael",
+   "speed": 1.0
+  },
+  {
+   "id": "n21",
+   "img": "L44",
+   "text": "Short clip, then a real human. That's how we got around the problem that AI voices can't hold a long conversation. You never get time to test it."
+  },
+  {
+   "id": "n22",
+   "img": "d12",
+   "text": "And stay on the line matters. While you're on the phone with me, you can't call your son."
+  },
+  {
+   "id": "n22b",
+   "img": "d12",
+   "text": "Some crews even stay on the call while the victim drives to the bank. They coach them on what to tell the teller. If they ask, say it's for a home repair."
+  },
+  {
+   "id": "n23",
+   "img": "d13",
+   "text": "Step five. The money.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 5",
+    "s": "THE MONEY"
+   }
+  },
+  {
+   "id": "n24",
+   "img": "d14",
+   "text": "Gift cards. A wire transfer. Crypto at a machine in a petrol station. Or, more and more, a courier who comes to the door to pick up cash.",
+   "ov": {
+    "t": "chips",
+    "c": "red",
+    "items": [
+     "🎁 GIFT CARDS",
+     "🏧 CRYPTO ATM",
+     "💸 WIRE TRANSFER",
+     "🚪 COURIER AT THE DOOR"
+    ]
+   }
+  },
+  {
+   "id": "n25",
+   "img": "d15",
+   "text": "A courier at your door. Think about that. A stranger, sent by a scammer, standing on grandma's porch. That's how far this goes now."
+  },
+  {
+   "id": "n25b",
+   "img": "d15",
+   "text": "When I started, we needed people to buy gift cards and read us the numbers. Now some crews skip that and just send someone to collect."
+  },
+  {
+   "id": "n26",
+   "img": "L09",
+   "text": "And if it works once, we call back. The other driver is in hospital. The fine went up. We need a bit more. The second call is often bigger than the first."
+  },
+  {
+   "id": "n26b",
+   "img": "L33",
+   "text": "And these calls come at the worst times. Late at night, or early in the morning, when you're half asleep and your guard is down."
+  },
+  {
+   "id": "n27",
+   "img": "E12",
+   "text": "Quick one. If you've got family you'd want to protect from this, subscribe. Every week I take apart another trick I used to run.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n28",
+   "img": "d16",
+   "text": "And voices are only the start. Here are three more ways AI made my old job easier.",
+   "ov": {
+    "t": "head",
+    "s": "3 MORE <em>AI TRICKS</em>",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n29",
+   "img": "d17",
+   "text": "One. The fake boss on a video call.",
+   "ov": {
+    "t": "title",
+    "n": "AI #1",
+    "s": "THE FAKE BOSS",
+    "size": 130
+   }
+  },
+  {
+   "id": "n30",
+   "img": "d17",
+   "text": "In 2024, a worker at a company in Hong Kong sent around twenty five million dollars after a video meeting with his finance boss and colleagues. Every other face in that meeting was fake.",
+   "ov": {
+    "t": "big",
+    "s": "~$25 MILLION",
+    "sub": "ONE VIDEO CALL · HONG KONG · 2024"
+   }
+  },
+  {
+   "id": "n31",
+   "img": "L33",
+   "text": "If a video call can be faked for a company with security teams, a quick video of your grandson asking for money can be faked too."
+  },
+  {
+   "id": "n31b",
+   "img": "d17",
+   "text": "So a video call alone isn't proof anymore. Ask something only they would know, or end the call and ring them back yourself."
+  },
+  {
+   "id": "n32",
+   "img": "d18",
+   "text": "Two. The celebrity who sells you something.",
+   "ov": {
+    "t": "title",
+    "n": "AI #2",
+    "s": "THE FAKE CELEBRITY",
+    "size": 120
+   }
+  },
+  {
+   "id": "n33",
+   "img": "d18",
+   "text": "A famous TV doctor promoting a miracle pill. A billionaire giving away crypto. A news anchor saying, this investment changed my life. None of them said it. Their face and voice were copied."
+  },
+  {
+   "id": "n33b",
+   "img": "d18",
+   "text": "Those ads are cheap to make and easy to target. Older viewers see the health ones. Younger viewers see the crypto ones. Same crew."
+  },
+  {
+   "id": "n34",
+   "img": "L28",
+   "text": "The tell. Famous people don't sell you things in random social media ads with a link to a site you've never heard of. If it sounds amazing, search the claim, not the link."
+  },
+  {
+   "id": "n35",
+   "img": "d19",
+   "text": "Three. The AI trading bot.",
+   "ov": {
+    "t": "title",
+    "n": "AI #3",
+    "s": "THE AI TRADING BOT",
+    "size": 120
+   }
+  },
+  {
+   "id": "n36",
+   "img": "c11",
+   "text": "Our AI trading bot made forty percent last month. Guaranteed returns. That's just my old fake dashboard with a fancier name. Same graph. Same fees to get your money out."
+  },
+  {
+   "id": "n37",
+   "img": "E25",
+   "text": "AI is the most popular word in scams right now, because it sounds smart and nobody can check what's inside it."
+  },
+  {
+   "id": "n37b",
+   "img": "E01",
+   "text": "And AI writes better scam messages too. No more broken English. No typos. That old tell, bad spelling, doesn't work anymore."
+  },
+  {
+   "id": "n38",
+   "img": "L54",
+   "text": "So, how do you beat all of this? Five things. The first one beats almost everything.",
+   "ov": {
+    "t": "head",
+    "s": "HOW TO <i>BEAT IT</i>",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n39",
+   "img": "d20",
+   "text": "One. A family code word, or a safe question. Something only your family knows. Not your pet's name, that's online. A silly word, or a question about something that never got posted.",
+   "ov": {
+    "t": "quote",
+    "label": "#1 · DO IT TONIGHT",
+    "s": "🔑 A family code word.<br>Never posted. Never typed."
+   }
+  },
+  {
+   "id": "n40",
+   "img": "d21",
+   "text": "If the voice can't answer it, it doesn't matter how real it sounds. A clone copies your voice. It can't copy your memories."
+  },
+  {
+   "id": "n40b",
+   "img": "d20",
+   "text": "Practise it once. Seriously. Call each other and ask. It feels silly for ten seconds, and then it's there when you need it."
+  },
+  {
+   "id": "n41",
+   "img": "d22",
+   "text": "Two. Hang up and call back. On the number you already have saved, not the one that called you. Even if the voice is crying. Especially if the voice is crying.",
+   "ov": {
+    "t": "quote",
+    "label": "#2",
+    "s": "Hang up. <em>Call the number you already have.</em>"
+   }
+  },
+  {
+   "id": "n42",
+   "img": "L44",
+   "text": "Three. Anyone who says, don't tell anyone, is the person you should tell on. Call someone else in the family. Two minutes of checking ends this scam.",
+   "ov": {
+    "t": "quote",
+    "label": "#3",
+    "s": "\"Don't tell anyone\" = <em>tell someone.</em>"
+   }
+  },
+  {
+   "id": "n43",
+   "img": "d14",
+   "text": "Four. No real police, lawyer, or hospital takes bail in gift cards, crypto, or cash handed to a courier. Ever.",
+   "ov": {
+    "t": "stamp",
+    "s": "GIFT CARDS · CRYPTO · COURIER<br>= SCAM",
+    "size": 76,
+    "at": 0.4
+   }
+  },
+  {
+   "id": "n44",
+   "img": "d05",
+   "text": "And five. Say less to unknown numbers, and make your voicemail greeting the default one. Less of your voice out there means less to copy.",
+   "ov": {
+    "t": "quote",
+    "label": "#5",
+    "s": "Say less to unknown callers."
+   }
+  },
+  {
+   "id": "n44b",
+   "img": "d05",
+   "text": "And if you post videos of your kids, think about keeping the account private, or at least don't list who's related to who."
+  },
+  {
+   "id": "n45",
+   "img": "d21",
+   "text": "Let's play that first call again. But this time, mum knows the code word.",
+   "ov": {
+    "t": "head",
+    "s": "TAKE TWO",
+    "at": 0.2
+   }
+  },
+  {
+   "id": "n46",
+   "img": "d01",
+   "text": "Mum, it's me. I messed up. I need help.",
+   "voice": "am_puck",
+   "speed": 1.05,
+   "ov": {
+    "t": "call",
+    "from": "Josh ❤️",
+    "sub": "mobile · calling…"
+   }
+  },
+  {
+   "id": "n47",
+   "img": "d21",
+   "text": "Okay, sweetheart. What's the name of the dog we almost adopted?",
+   "voice": "af_bella",
+   "speed": 1.0
+  },
+  {
+   "id": "n48",
+   "img": "d13",
+   "text": "Silence. Then the line goes dead. Thirty seconds, zero dollars. That's how this ends when you're ready for it.",
+   "ov": {
+    "t": "stamp",
+    "s": "CALL ENDED",
+    "at": 1.2
+   }
+  },
+  {
+   "id": "n49",
+   "img": "d22",
+   "text": "And then she calls Josh, on his real number. He picks up, at work, bored, totally fine."
+  },
+  {
+   "id": "n49b",
+   "img": "d22",
+   "text": "That's it. One question. Thirty seconds. Every piece of tech I just showed you, beaten by something you agreed on at dinner."
+  },
+  {
+   "id": "n50",
+   "img": "L53",
+   "text": "I'll be honest. If this tech had existed when I was working, I would have used it. Every crew I knew would have. That's why I'm telling you now, before your family gets the call."
+  },
+  {
+   "id": "n50b",
+   "img": "L50",
+   "text": "And if it does happen to you, don't hide it. Call your bank, report it to the FTC and the FBI's internet crime centre, and tell your family. Shame keeps scams alive."
+  },
+  {
+   "id": "n51",
+   "img": "L02",
+   "text": "Quick recap. Find a voice. Clone it. A panic script. Hand off to a fake official. Untraceable money. And the defence. Code word, hang up, call back.",
+   "ov": {
+    "t": "cards",
+    "h": "QUICK <i>RECAP</i>",
+    "ticks": 5,
+    "items": [
+     [
+      "🎤",
+      "Find a voice"
+     ],
+     [
+      "🤖",
+      "Clone it"
+     ],
+     [
+      "😭",
+      "Panic script"
+     ],
+     [
+      "👮",
+      "Fake official"
+     ],
+     [
+      "💸",
+      "Money"
+     ],
+     [
+      "🔑",
+      "Code word",
+      1
+     ],
+     [
+      "📞",
+      "Call back",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n52",
+   "img": "L48",
+   "text": "Here's your homework. Tonight, pick a code word with your family. Then comment done, so I know someone's safer because of this video."
+  },
+  {
+   "id": "n53",
+   "img": "L33",
+   "text": "And send this to the person in your family who answers every call. You know exactly who I mean."
+  },
+  {
+   "id": "n54",
+   "img": "L54",
+   "text": "Trust me. I used to make these calls. With worse tools.",
+   "ov": {
+    "t": "end",
+    "s": "THE CALL IN<br><em>YOUR VOICE</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "d02",
+   "type": "t2i",
+   "prompt": "a smartphone ringing on a kitchen table at night, the screen glowing with a blank incoming call, a glowing sound wave rising from it, ominous mood, no text"
+  },
+  {
+   "name": "d04",
+   "type": "t2i",
+   "prompt": "a social media style collage of blank video thumbnails floating in a dark space, glowing play buttons, no faces, no text, no logos"
+  },
+  {
+   "name": "d06",
+   "type": "t2i",
+   "prompt": "a glowing teal digital sound wave being copied into a second identical red sound wave, dark background, futuristic, no text"
+  },
+  {
+   "name": "d07",
+   "type": "t2i",
+   "prompt": "a professional studio microphone in a dark room with a glowing red sound wave hologram in front of it, cinematic, no text"
+  },
+  {
+   "name": "d08",
+   "type": "t2i",
+   "prompt": "a printed phone script on a dark desk lit by a desk lamp, red pen marks, a headset beside it, no readable text"
+  },
+  {
+   "name": "d10",
+   "type": "t2i",
+   "prompt": "an old office desk phone with the handset off the hook in a dim office, dramatic light, no text"
+  },
+  {
+   "name": "d13",
+   "type": "t2i",
+   "prompt": "a stack of blank gift cards without logos, some cash and a smartphone on a table, harsh overhead light, no text, no brands"
+  },
+  {
+   "name": "d15",
+   "type": "t2i",
+   "prompt": "a mysterious man in a dark cap holding an envelope, standing on the porch of a suburban house at dusk, seen through a door peephole, ominous, no text"
+  },
+  {
+   "name": "d16",
+   "type": "t2i",
+   "prompt": "a glowing blue holographic human face made of digital particles floating in a dark room, futuristic, no text"
+  },
+  {
+   "name": "d17",
+   "type": "t2i",
+   "prompt": "a modern office meeting room with a large wall screen showing a grid of blank glowing video call tiles, one worker sitting alone at the table, night, no text, no logos"
+  },
+  {
+   "name": "d18",
+   "type": "t2i",
+   "prompt": "a TV studio set with an empty news desk under bright spotlights, cameras in the foreground, no text, no logos"
+  },
+  {
+   "name": "d19",
+   "type": "t2i",
+   "prompt": "a cute friendly robot sitting at a trading desk with several monitors showing green charts, cartoon style, no numbers, no text"
+  },
+  {
+   "name": "d01",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now pressing her phone to her ear in panic, eyes wide, hand on her chest, living room at night, no logos"
+  },
+  {
+   "name": "d03",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now at an office desk at work, relaxed and bored, his phone lying face down on the desk, daytime, no logos"
+  },
+  {
+   "name": "d05",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now recording himself talking with his phone held up at a birthday party, smiling, balloons in the background, the phone screen faces away from the camera"
+  },
+  {
+   "name": "d09",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now on the phone pacing in the kitchen, scared, tears in her eyes, night, no logos"
+  },
+  {
+   "name": "d11",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now wearing a fake police cap and talking into an old desk phone with a serious face, dim hideout room"
+  },
+  {
+   "name": "d12",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at the kitchen table with the phone to her ear, writing on a notepad with a shaking hand, frightened, night, no logos"
+  },
+  {
+   "name": "d14",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now standing at a store counter holding several blank gift cards without logos, anxious, phone to his ear, no text, no brands"
+  },
+  {
+   "name": "d20",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at a dinner table with a young man in a green t-shirt and grey beanie, both laughing together, warm family dinner, no logos"
+  },
+  {
+   "name": "d21",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now on the phone with a calm, confident and suspicious expression, one eyebrow raised, living room, no logos"
+  },
+  {
+   "name": "d22",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now smiling with relief while talking on the phone, hand on her heart, living room, no logos"
+  },
+  {
+   "name": "d23",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding a smartphone to his ear with a sly grin, a glowing red sound wave coming out of the phone, dark teal background with a red glow, empty space on the left"
+  }
+ ]
+}

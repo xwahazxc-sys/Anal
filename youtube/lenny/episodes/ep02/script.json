@@ -1,0 +1,780 @@
+{
+ "slug": "lenny_ep02_9_texts",
+ "title": "9 Scam Texts You'll Get This Year (I Wrote Them)",
+ "hook_score": "74 STRONG (The Question)",
+ "fallback": "L02",
+ "sting": {
+  "after": "n04",
+  "s": "9 SCAM TEXTS<br>YOU'LL GET <em>THIS YEAR</em>",
+  "img": "b01"
+ },
+ "thumb": {
+  "img": "b27",
+  "text": "I WROTE<br>THESE <b>9</b><br><em>TEXTS</em>",
+  "pos": "65% 40%"
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "b01",
+   "text": "You tap one text link, you lose your card. I wrote nine of them. Can you spot them before I tell you?",
+   "ov": {
+    "t": "head",
+    "s": "9 TEXTS. <em>I WROTE THEM.</em>",
+    "at": 2.5
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. I used to send these by the million. Now I take them apart, so they stop working on you.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "W_SOFA",
+   "text": "Last year Americans reported losing almost sixteen billion dollars to fraud. And the number one way scammers reached them? A text message.",
+   "ov": {
+    "t": "big",
+    "s": "$15.9 BILLION",
+    "sub": "REPORTED LOST TO FRAUD · USA · 2025"
+   }
+  },
+  {
+   "id": "n04",
+   "img": "L44",
+   "text": "Here's the game. I'll show you each text exactly as you'd get it. Try to spot the trick before I say it. Number nine looks exactly like your bank, and it costs the most."
+  },
+  {
+   "id": "n05",
+   "img": "b03",
+   "text": "Number one. The toll text.",
+   "ov": {
+    "t": "title",
+    "n": "#1",
+    "s": "THE TOLL TEXT"
+   }
+  },
+  {
+   "id": "n06",
+   "img": "b04",
+   "text": "Unpaid toll notice. You owe two dollars and ten cents. Pay today to avoid a fifty dollar late fee.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Toll Services · now",
+    "msg": "Unpaid toll notice: you owe $2.10. Pay today to avoid a $50 late fee:",
+    "link": "toll-pay-notice.com/k7"
+   }
+  },
+  {
+   "id": "n07",
+   "img": "E03",
+   "text": "Why two dollars ten? Because nobody argues with two dollars. You don't call anyone. You don't check. You just want it gone."
+  },
+  {
+   "id": "n08",
+   "img": "L09",
+   "text": "And the fifty dollar fee makes you hurry. A small number to pay, a big number to fear. That's the whole recipe."
+  },
+  {
+   "id": "n09",
+   "img": "E01",
+   "text": "My best week with this one, I sent it to every number in three states with toll roads. Some people paid twice, because they weren't sure the first one went through."
+  },
+  {
+   "id": "n10",
+   "img": "b05",
+   "text": "But the page doesn't want two dollars. It wants your card number, your address, and sometimes the code your bank texts you next.",
+   "ov": {
+    "t": "stamp",
+    "s": "$2.10 = YOUR CARD",
+    "at": 1.2
+   }
+  },
+  {
+   "id": "n10b",
+   "img": "E03",
+   "text": "And the address you type in? That's useful too. Now I know where you live, and which roads you drive. That gets sold as well."
+  },
+  {
+   "id": "n11",
+   "img": "b04",
+   "text": "The tell. Toll agencies don't text you random links. Check your toll account by typing the address yourself.",
+   "ov": {
+    "t": "chips",
+    "h": "THE TELL",
+    "c": "green",
+    "items": [
+     "✓ OPEN THE TOLL ACCOUNT YOURSELF",
+     "✓ NEVER THE LINK"
+    ]
+   }
+  },
+  {
+   "id": "n12",
+   "img": "b06",
+   "text": "Number two. The failed payment.",
+   "ov": {
+    "t": "title",
+    "n": "#2",
+    "s": "THE FAILED PAYMENT"
+   }
+  },
+  {
+   "id": "n13",
+   "img": "b07",
+   "text": "Your subscription is on hold. Your payment was declined. Update your details to keep watching.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Streaming · now",
+    "msg": "Your subscription is on hold. Payment declined. Update your details to keep watching:",
+    "link": "stream-billing-help.net"
+   }
+  },
+  {
+   "id": "n14",
+   "img": "L53",
+   "text": "I loved this one. Everybody has five subscriptions. Nobody remembers which card is on which."
+  },
+  {
+   "id": "n15",
+   "img": "b07",
+   "text": "And it lands on a Friday night, right when you sit down to watch something. Annoyed people don't read carefully."
+  },
+  {
+   "id": "n16",
+   "img": "L09",
+   "text": "And if you do update your card? I don't charge the subscription. I charge something else, somewhere else, a few days later."
+  },
+  {
+   "id": "n17",
+   "img": "L08",
+   "text": "The tell. The link isn't the company's real site. If your payment really failed, the app will tell you the moment you open it.",
+   "ov": {
+    "t": "list",
+    "h": "THE TELL",
+    "items": [
+     "✗ A link in a text",
+     "✗ A strange web address",
+     "✓ Open the app itself"
+    ]
+   }
+  },
+  {
+   "id": "n18",
+   "img": "b09",
+   "text": "Number three. The code sent by mistake.",
+   "ov": {
+    "t": "title",
+    "n": "#3",
+    "s": "THE WRONG CODE"
+   }
+  },
+  {
+   "id": "n19",
+   "img": "b09",
+   "text": "Hey, sorry, I sent my verification code to your number by mistake. Can you send it back to me?",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Unknown · now",
+    "msg": "Hey sorry, I sent my verification code to your number by mistake 🙈 can you send it back to me?"
+   }
+  },
+  {
+   "id": "n20",
+   "img": "E01",
+   "text": "Here's what actually happened. I typed your phone number into a login page. The site texted you a code. That code opens your account, not mine."
+  },
+  {
+   "id": "n21",
+   "img": "b10",
+   "text": "Send it, and I've just set up a new account in your name, or taken over one you already have. Your messages, your contacts, sometimes your money."
+  },
+  {
+   "id": "n21b",
+   "img": "b10",
+   "text": "And it's not only strangers. Sometimes the message comes from a friend's hacked account, asking the exact same thing. Same rule. Never send the code."
+  },
+  {
+   "id": "n22",
+   "img": "L23",
+   "text": "People send it because it feels polite. Someone made a mistake, you help them fix it. I built half my career on people being polite."
+  },
+  {
+   "id": "n23",
+   "img": "b09",
+   "text": "The rule is simple. Verification codes are for you only. If anyone asks for one, for any reason, that's the scam.",
+   "ov": {
+    "t": "quote",
+    "label": "THE RULE",
+    "s": "A code someone asks you for is <em>never</em> a mistake."
+   }
+  },
+  {
+   "id": "n24",
+   "img": "b12",
+   "text": "Number four. The job offer you never applied for.",
+   "ov": {
+    "t": "title",
+    "n": "#4",
+    "s": "THE JOB OFFER"
+   }
+  },
+  {
+   "id": "n25",
+   "img": "b12",
+   "text": "Hi, we reviewed your resume. Remote role, three to eight hundred dollars a day. Flexible hours. Interested?",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Recruiter · now",
+    "msg": "Hi! We reviewed your resume 😊 Remote role, $300–$800 a day, flexible hours. Interested?"
+   }
+  },
+  {
+   "id": "n26",
+   "img": "L28",
+   "text": "You never sent a resume. But somebody, somewhere, is looking for work, and they think, maybe it's the one I forgot about."
+  },
+  {
+   "id": "n27",
+   "img": "L25",
+   "text": "If you answer, it's the easy job scam from my first video. Small tasks, small payments, and then you pay in to unlock more."
+  },
+  {
+   "id": "n27b",
+   "img": "L26",
+   "text": "The first payment comes fast, so you trust it. Twenty dollars. Thirty dollars. That money is a business expense for me. Your trust is the product."
+  },
+  {
+   "id": "n28",
+   "img": "b13",
+   "text": "The tell. Real recruiters don't text strangers with a salary in the first line. And a real job never asks you to pay.",
+   "ov": {
+    "t": "stamp",
+    "s": "A JOB THAT TEXTS YOU FIRST<br>= NOT A JOB",
+    "size": 76,
+    "at": 0.4
+   }
+  },
+  {
+   "id": "n29",
+   "img": "b14",
+   "text": "Number five. The parking fine.",
+   "ov": {
+    "t": "title",
+    "n": "#5",
+    "s": "THE PARKING FINE"
+   }
+  },
+  {
+   "id": "n30",
+   "img": "b15",
+   "text": "Notice. Unpaid parking fine of forty five dollars. Pay within twenty four hours to avoid court action.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 City Parking · now",
+    "msg": "Notice: unpaid parking fine of $45. Pay within 24 hours to avoid court action:",
+    "link": "city-parking-pay.info"
+   }
+  },
+  {
+   "id": "n31",
+   "img": "E25",
+   "text": "Court. That one word does all my work. Nobody wants a letter from a court over forty five dollars."
+  },
+  {
+   "id": "n32",
+   "img": "b16",
+   "text": "There's a street version too. A fake QR code sticker glued over the real one on a parking meter. You scan it, you pay me, and you still get the ticket."
+  },
+  {
+   "id": "n32b",
+   "img": "L28",
+   "text": "I liked the sticker because it doesn't even need your phone number. I don't have to find you. You walk right up to me."
+  },
+  {
+   "id": "n33",
+   "img": "b15",
+   "text": "Real parking fines come by mail or on your windshield, with a reference number you can check on the city's own website.",
+   "ov": {
+    "t": "chips",
+    "h": "THE TELL",
+    "c": "green",
+    "items": [
+     "✓ PAY ON THE OFFICIAL SITE",
+     "✓ CHECK METERS FOR STICKERS"
+    ]
+   }
+  },
+  {
+   "id": "n34",
+   "img": "E12",
+   "text": "Quick one. If you've already spotted a couple of these, you're doing better than most. Subscribe, because every week I take apart another one.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n35",
+   "img": "b17",
+   "text": "Number six. Your account is locked.",
+   "ov": {
+    "t": "title",
+    "n": "#6",
+    "s": "THE LOCKED ACCOUNT"
+   }
+  },
+  {
+   "id": "n36",
+   "img": "b18",
+   "text": "Unusual sign in detected. Your account will be suspended in two hours unless you verify.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Account Security · now",
+    "msg": "Unusual sign-in detected. Your account will be suspended in 2 hours unless you verify:",
+    "link": "secure-account-verify.co"
+   }
+  },
+  {
+   "id": "n37",
+   "img": "L33",
+   "text": "Notice I don't say which account. I don't need to. You'll fill that in yourself, with whatever you care about most."
+  },
+  {
+   "id": "n38",
+   "img": "b19",
+   "text": "The page looks like a normal login. You type your email and password, and now I have them. And if you use that password anywhere else, I have those too."
+  },
+  {
+   "id": "n39",
+   "img": "L53",
+   "text": "Sometimes I even sent a second text. Thanks, your account is safe now. So you'd stop thinking about it."
+  },
+  {
+   "id": "n40",
+   "img": "b18",
+   "text": "The tell is the countdown. Real companies don't give you two hours. Open the app yourself. And please, use a different password for every account.",
+   "ov": {
+    "t": "list",
+    "h": "THE TELL",
+    "items": [
+     "✗ A countdown",
+     "✗ No name, no account",
+     "✓ Open the app yourself",
+     "✓ A different password everywhere"
+    ]
+   }
+  },
+  {
+   "id": "n41",
+   "img": "L40",
+   "text": "Number seven. The wrong number.",
+   "ov": {
+    "t": "title",
+    "n": "#7",
+    "s": "THE WRONG NUMBER"
+   }
+  },
+  {
+   "id": "n42",
+   "img": "L39",
+   "text": "Hi Daniel, are we still on for golf on Saturday?",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 +1 (415) 555-0142 · now",
+    "msg": "Hi Daniel, are we still on for golf on Saturday? ⛳"
+   }
+  },
+  {
+   "id": "n43",
+   "img": "E21",
+   "text": "You reply, sorry, wrong number. They say, oh, my mistake, you seem nice. And that's it. The door is open."
+  },
+  {
+   "id": "n43b",
+   "img": "L40",
+   "text": "Sometimes they even send a photo. A nice face, a dog, a sunset. All of it borrowed from somebody else's profile."
+  },
+  {
+   "id": "n44",
+   "img": "L41",
+   "text": "This is the start of the most expensive scam in America. Investment scams took almost eight billion dollars last year. About half of everything.",
+   "ov": {
+    "t": "big",
+    "s": "$7.9 BILLION",
+    "sub": "INVESTMENT SCAMS · USA · 2025"
+   }
+  },
+  {
+   "id": "n45",
+   "img": "E25",
+   "text": "Next week I'm doing a whole video on what happens after that first reply. Day one to day forty. For now, the tell. A stranger who keeps chatting after a wrong number wants something.",
+   "ov": {
+    "t": "tag",
+    "s": "NEXT VIDEO: DAY 1 → DAY 40",
+    "c": "teal"
+   }
+  },
+  {
+   "id": "n46",
+   "img": "b21",
+   "text": "Number eight. Reply stop to unsubscribe.",
+   "ov": {
+    "t": "title",
+    "n": "#8",
+    "s": "REPLY \"STOP\""
+   }
+  },
+  {
+   "id": "n47",
+   "img": "b22",
+   "text": "Congratulations, you've been selected for a five hundred dollar reward. Reply stop to opt out.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 72214 · now",
+    "msg": "Congrats! You've been selected for a $500 reward 🎁 Reply STOP to opt out."
+   }
+  },
+  {
+   "id": "n48",
+   "img": "E03",
+   "text": "This one isn't even about the reward. I send it to a million random numbers. I don't know which ones are real."
+  },
+  {
+   "id": "n49",
+   "img": "L53",
+   "text": "When you reply, even with stop, you tell me this number is alive, and someone reads their texts. Now your number is worth more, and I sell it to the next guy."
+  },
+  {
+   "id": "n50",
+   "img": "L09",
+   "text": "And the reward link? Same as the others. A form, your card, your address. Nobody has ever won anything from a text they didn't expect."
+  },
+  {
+   "id": "n51",
+   "img": "b22",
+   "text": "The tell. You never signed up. So don't reply at all. Forward it to seven seven two six, that spells spam on a keypad, then delete it.",
+   "ov": {
+    "t": "chips",
+    "h": "THE TELL",
+    "c": "green",
+    "items": [
+     "✓ DON'T REPLY",
+     "✓ FORWARD TO 7726",
+     "✓ DELETE"
+    ]
+   }
+  },
+  {
+   "id": "n52",
+   "img": "b23",
+   "text": "And number nine. The one that looks exactly like your bank.",
+   "ov": {
+    "t": "title",
+    "n": "#9",
+    "s": "THE FRAUD ALERT"
+   }
+  },
+  {
+   "id": "n53",
+   "img": "b24",
+   "text": "Did you attempt a purchase of one thousand two hundred and forty nine dollars? Reply yes or no.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 BANK ALERT · now",
+    "msg": "Did you attempt a purchase of $1,249.99 at ElectroMart? Reply YES or NO."
+   }
+  },
+  {
+   "id": "n54",
+   "img": "E07",
+   "text": "Of course you reply no. Anyone would. That's the point. It's not a link. It's a conversation."
+  },
+  {
+   "id": "n55",
+   "img": "b24",
+   "text": "A minute later, your phone rings. Fraud department. Thank you for replying. We've stopped the payment, but your account is still at risk.",
+   "ov": {
+    "t": "call",
+    "from": "Fraud Dept",
+    "sub": "calling…"
+   }
+  },
+  {
+   "id": "n56",
+   "img": "E07",
+   "text": "And now it's my bank call from video one. Read me the code. Move your money to a safe account. Install this app so we can help."
+  },
+  {
+   "id": "n57",
+   "img": "L44",
+   "text": "This one costs the most because you think you started it. You replied. You feel in control. You're not."
+  },
+  {
+   "id": "n57b",
+   "img": "L15",
+   "text": "And if you ever get a call right after a text like this, that's not a coincidence. That's a team. One person sends, another one calls."
+  },
+  {
+   "id": "n58",
+   "img": "b25",
+   "text": "The tell. A real bank won't call and ask you for codes, or to move your money. Hang up. Call the number on the back of your card.",
+   "ov": {
+    "t": "quote",
+    "label": "WHAT TO DO",
+    "s": "Hang up. Call the number on the <em>back of your card.</em>"
+   }
+  },
+  {
+   "id": "n59",
+   "img": "L54",
+   "text": "So here's the one rule that beats all nine.",
+   "ov": {
+    "t": "head",
+    "s": "ONE RULE BEATS <em>ALL 9</em>",
+    "at": 0.2
+   }
+  },
+  {
+   "id": "n60",
+   "img": "E25",
+   "text": "Don't act inside the text. Not the link, not the number, not the reply. Open the app or the website yourself. And never share a code with anyone.",
+   "ov": {
+    "t": "list",
+    "items": [
+     "1. Don't act inside the text.",
+     "2. Open the app or site yourself.",
+     "3. Never share a code."
+    ]
+   }
+  },
+  {
+   "id": "n61",
+   "img": "b26",
+   "text": "A real problem will still be there when you check it yourself. A scam needs you to act now, inside the message."
+  },
+  {
+   "id": "n62",
+   "img": "L02",
+   "text": "Quick recap. Toll. Failed payment. The code. The job. The parking fine. The locked account. The wrong number. Reply stop. And the fake fraud alert.",
+   "ov": {
+    "t": "cards",
+    "h": "QUICK <i>RECAP</i>",
+    "ticks": 9,
+    "items": [
+     [
+      "🚗",
+      "Toll"
+     ],
+     [
+      "📺",
+      "Failed payment"
+     ],
+     [
+      "🔢",
+      "Wrong code"
+     ],
+     [
+      "💼",
+      "Job offer"
+     ],
+     [
+      "🅿️",
+      "Parking fine"
+     ],
+     [
+      "🔒",
+      "Locked account"
+     ],
+     [
+      "👋",
+      "Wrong number"
+     ],
+     [
+      "🛑",
+      "Reply STOP"
+     ],
+     [
+      "🏦",
+      "Fraud alert",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n63",
+   "img": "L48",
+   "text": "Which one have you already got this year? Tell me in the comments. I bet it's the toll one."
+  },
+  {
+   "id": "n63b",
+   "img": "E12",
+   "text": "Got one I didn't cover? Paste it in the comments with the link removed, and I'll tell you exactly how it works."
+  },
+  {
+   "id": "n64",
+   "img": "L33",
+   "text": "And if someone you love taps every link they get, send them this. That's the whole job."
+  },
+  {
+   "id": "n65",
+   "img": "L54",
+   "text": "Trust me. I used to write all nine.",
+   "ov": {
+    "t": "end",
+    "s": "9 SCAM TEXTS<br><em>I WROTE THEM</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "b01",
+   "type": "t2i",
+   "prompt": "close-up of a smartphone on a dark nightstand lighting up with many blank glowing notification bubbles, dark bedroom, no text"
+  },
+  {
+   "name": "b03",
+   "type": "t2i",
+   "prompt": "a highway toll gantry at night over an empty road, car light trails, moody cinematic, no text, no signs"
+  },
+  {
+   "name": "b05",
+   "type": "t2i",
+   "prompt": "a hand holding a credit card next to a smartphone with a blank glowing screen, dark moody desk, red rim light, no text"
+  },
+  {
+   "name": "b06",
+   "type": "t2i",
+   "prompt": "a cozy living room at night, a large TV with a blank glowing screen, a remote control on the sofa, a bowl of popcorn, no text, no logos"
+  },
+  {
+   "name": "b10",
+   "type": "t2i",
+   "prompt": "a glowing golden key floating out of a smartphone screen in a dark room, magical light, cinematic, no text"
+  },
+  {
+   "name": "b13",
+   "type": "t2i",
+   "prompt": "a cracked piggy bank on a wooden table with a few coins spilling out, dark moody light, no text"
+  },
+  {
+   "name": "b14",
+   "type": "t2i",
+   "prompt": "a paper parking ticket envelope tucked under a car windshield wiper on a city street, overcast, no readable text"
+  },
+  {
+   "name": "b16",
+   "type": "t2i",
+   "prompt": "close-up of a parking meter on a city street with a suspicious square sticker slapped on its side, overcast, shallow depth of field, no readable text"
+  },
+  {
+   "name": "b17",
+   "type": "t2i",
+   "prompt": "a plain laptop without any logo in a dark room, a glowing red padlock hologram floating above the keyboard, no text"
+  },
+  {
+   "name": "b21",
+   "type": "t2i",
+   "prompt": "a thumb hovering over a smartphone with a blank glowing screen, close-up, dark background, tense mood, no text"
+  },
+  {
+   "name": "b23",
+   "type": "t2i",
+   "prompt": "a credit card lying on a dark table glowing with red warning light, dramatic lighting, no text, no logos"
+  },
+  {
+   "name": "b04",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now sitting in the driver's seat of his car at night reading his phone, puzzled, dashboard glow, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b07",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now sitting on a sofa at night with a bowl of popcorn, frowning annoyed at her phone, TV glow, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b09",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now lying on his bed looking puzzled at his phone, evening, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b12",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now sitting at a desk in daylight, smiling excitedly at his phone, a plain laptop without any logo beside him, screens face away from the camera"
+  },
+  {
+   "name": "b15",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now standing in a city parking lot next to a small car, frowning at her phone, overcast day, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b18",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at a kitchen table in the morning, worried, staring at her phone, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b19",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now typing on a plain laptop without any logo at the kitchen table with a nervous expression, the screen faces away from the camera"
+  },
+  {
+   "name": "b22",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now sitting in an armchair holding his phone at arm's length and squinting through his glasses, cozy living room, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b24",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now reading his phone in shock in the kitchen in the morning, coffee mug in his other hand, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "b25",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now calmly holding up a plain bank card and looking at the back of it, determined face, bright kitchen, no logos"
+  },
+  {
+   "name": "b26",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now dropping a smartphone into a small trash bin with a smug grin, cozy dim hideout room"
+  },
+  {
+   "name": "b27",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding a smartphone toward the viewer, the phone screen glowing red, one eyebrow raised with a shocked smirk, dark teal background with a soft red glow, empty space on the left"
+  }
+ ]
+}

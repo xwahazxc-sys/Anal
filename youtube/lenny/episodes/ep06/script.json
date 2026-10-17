@@ -1,0 +1,665 @@
+{
+ "slug": "lenny_ep06_6_mind_tricks",
+ "title": "6 Mind Tricks Scammers Use On Smart People (Ex-Scammer Explains)",
+ "hook_score": "62 WORKABLE (The Question)",
+ "fallback": "L44",
+ "sting": {
+  "after": "n05",
+  "s": "6 MIND TRICKS<br>I USED <em>ON YOU</em>",
+  "img": "g01"
+ },
+ "thumb": {
+  "img": "g22",
+  "text": "SMART<br>PEOPLE<br><em>FALL</em> <b>TOO</b>",
+  "pos": "65% 40%",
+  "size": 116
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "g02",
+   "text": "You think you'd never fall for a scam. Perfect. You're exactly who I wanted. Why?",
+   "ov": {
+    "t": "head",
+    "s": "\"I'D <em>NEVER</em> FALL FOR IT\"",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. And here's a secret from the inside. I never needed you to be stupid. I needed you to be busy, kind, or scared.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "g03",
+   "text": "People who are sure they'd never fall for it often check less. They trust their gut. And the gut is exactly what I was talking to."
+  },
+  {
+   "id": "n03b",
+   "img": "g02",
+   "text": "I once had an engineer, a man who designs bridges, read me his bank code because he was late for a meeting. Smart had nothing to do with it. Busy did."
+  },
+  {
+   "id": "n04",
+   "img": "E25",
+   "text": "Every scam I ever ran pushed the same six buttons in your brain. Once you can see the buttons, you can switch them off. I'll show you each one, with the exact line I'd use on you."
+  },
+  {
+   "id": "n05",
+   "img": "L44",
+   "text": "And at the end, a three question test that catches almost every scam in about five seconds."
+  },
+  {
+   "id": "n06",
+   "img": "g04",
+   "text": "Button one. The clock.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #1",
+    "s": "THE CLOCK"
+   }
+  },
+  {
+   "id": "n07",
+   "img": "g05",
+   "text": "Your account will be closed in thirty minutes. This offer ends at midnight. Bail has to be paid today.",
+   "ov": {
+    "t": "chips",
+    "c": "red",
+    "items": [
+     "⏱ 30 MINUTES",
+     "⏱ ENDS AT MIDNIGHT",
+     "⏱ TODAY ONLY"
+    ]
+   }
+  },
+  {
+   "id": "n08",
+   "img": "E01",
+   "text": "Your brain has a fast mode and a slow mode. The slow mode checks things. The fast mode just acts. A deadline flips you into fast mode, and fast mode does what it's told."
+  },
+  {
+   "id": "n09",
+   "img": "L09",
+   "text": "That's why I never let you hang up and think. Thinking is slow mode. Slow mode is where I lose."
+  },
+  {
+   "id": "n09b",
+   "img": "L33",
+   "text": "My favourite trick here was a fake hold. I'd say, let me put you on hold to stop the transfer, and play thirty seconds of music. People on hold don't think. They wait."
+  },
+  {
+   "id": "n09c",
+   "img": "g05",
+   "text": "Then I'd come back. It's still going through, we have about two minutes. And the clock starts all over again."
+  },
+  {
+   "id": "n10",
+   "img": "g05",
+   "text": "Switch it off. Any deadline from a stranger is a reason to slow down, not speed up. Real problems survive ten minutes of checking.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "A deadline is a reason to <em>slow down.</em>"
+   }
+  },
+  {
+   "id": "n11",
+   "img": "g06",
+   "text": "Button two. The badge.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #2",
+    "s": "THE BADGE"
+   }
+  },
+  {
+   "id": "n12",
+   "img": "f10",
+   "text": "This is Officer Reynolds from the fraud unit. Your case number is seven four four nine. I'm going to need you to stay on the line.",
+   "voice": "am_michael",
+   "speed": 1.0
+  },
+  {
+   "id": "n13",
+   "img": "L44",
+   "text": "We're taught from childhood to cooperate with police, banks, doctors, the government. A title, a case number, a calm voice, and people stop asking questions."
+  },
+  {
+   "id": "n14",
+   "img": "g07",
+   "text": "The badge doesn't have to be real. It just has to be on the screen, or in the voice. Caller ID can be faked. Logos can be copied. Letters can be printed."
+  },
+  {
+   "id": "n14b",
+   "img": "f21",
+   "text": "Once I wore a cheap tie on a video call. Just the tie. Nobody ever looked past it."
+  },
+  {
+   "id": "n14c",
+   "img": "f10",
+   "text": "And when people asked for my badge number, I gave it instantly. A fast answer sounds like a real one."
+  },
+  {
+   "id": "n15",
+   "img": "g07",
+   "text": "Switch it off. Authority is something you check, not something you're told. Hang up, find the official number yourself, and call that.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "Authority is something you <em>check</em>, not something you're <em>told.</em>"
+   }
+  },
+  {
+   "id": "n16",
+   "img": "g08",
+   "text": "Button three. Fear.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #3",
+    "s": "FEAR"
+   }
+  },
+  {
+   "id": "n17",
+   "img": "g09",
+   "text": "Your son's been arrested. Your computer is infected. Your money is being stolen right now. I always opened with the worst thing I could think of."
+  },
+  {
+   "id": "n18",
+   "img": "E10",
+   "text": "When you're scared, the thinking part of your brain goes quiet, and the part that wants to fix it right now takes over. A scared engineer is just as easy as anyone else."
+  },
+  {
+   "id": "n19",
+   "img": "L23",
+   "text": "Fear is also why we always offered a solution in the same breath. Here's the problem, and luckily, I can fix it. You'd hold onto me like a life jacket."
+  },
+  {
+   "id": "n19b",
+   "img": "g09",
+   "text": "And fear makes you hide things. People who are scared and ashamed don't call their family. That silence was exactly what I needed."
+  },
+  {
+   "id": "n20",
+   "img": "g09",
+   "text": "Switch it off. Notice the fear itself. The moment your heart is pounding over a call or a message, that's the signal to stop and call someone you trust.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "Heart pounding? That's your <em>stop sign.</em>"
+   }
+  },
+  {
+   "id": "n21",
+   "img": "E12",
+   "text": "Quick one. If you've ever felt one of these buttons get pushed, subscribe. Every week I open up another one of my old scripts.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n22",
+   "img": "g10",
+   "text": "Button four. The favour.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #4",
+    "s": "THE FAVOUR"
+   }
+  },
+  {
+   "id": "n23",
+   "img": "g11",
+   "text": "This one's quiet. I do something nice for you first. I listen. I give advice. I send you a small payment for a task. I let you withdraw a hundred dollars."
+  },
+  {
+   "id": "n24",
+   "img": "L33",
+   "text": "Humans are wired to pay back kindness. If someone helped you, saying no to them feels rude. Even when what they ask for is much bigger than what they gave."
+  },
+  {
+   "id": "n24x",
+   "img": "L09",
+   "text": "It's the oldest rule in my old business. Give a little, then take a lot. The gift always costs less than what comes back."
+  },
+  {
+   "id": "n25",
+   "img": "L26",
+   "text": "That's why the easy job scam pays you first. Why the wrong number guy never asks for anything for weeks. The gift is the hook."
+  },
+  {
+   "id": "n25b",
+   "img": "L40",
+   "text": "In the romance version, the favour is attention. A good morning text every day for a month is a gift. And people want to give something back."
+  },
+  {
+   "id": "n26",
+   "img": "g11",
+   "text": "Switch it off. You don't owe a stranger anything for being nice to you. Kindness that comes before a money request isn't kindness. It's a down payment.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "Kindness before a money ask is a <em>down payment.</em>"
+   }
+  },
+  {
+   "id": "n27",
+   "img": "g12",
+   "text": "Button five. Everyone else is doing it.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #5",
+    "s": "EVERYONE ELSE",
+    "size": 130
+   }
+  },
+  {
+   "id": "n28",
+   "img": "g13",
+   "text": "Two hundred people in the group chat posting their profits. Five star reviews. A counter on the website. Three thousand people joined today. Testimonials with photos.",
+   "ov": {
+    "t": "notif",
+    "from": "💬 \"VIP Profits\" · 214 members",
+    "msg": "Just withdrew $4,200!! 🎉🎉 Thank you coach 🙏",
+    "at": 0.6
+   }
+  },
+  {
+   "id": "n29",
+   "img": "E03",
+   "text": "When you're not sure what to do, you look at what other people are doing. So I built you a crowd. Every one of those people was me, or someone I paid, or a bot."
+  },
+  {
+   "id": "n30",
+   "img": "L28",
+   "text": "Fake reviews are cheap. Fake followers are cheap. A crowd costs me almost nothing, and it does my convincing for me."
+  },
+  {
+   "id": "n30b",
+   "img": "g13",
+   "text": "We even faked the people who doubted. Someone in the chat would say, I didn't believe it at first, and I missed out. Regret is a powerful crowd."
+  },
+  {
+   "id": "n31",
+   "img": "g13",
+   "text": "Switch it off. A crowd inside their app, their chat, or their website proves nothing. Look for what independent people say, somewhere they don't control.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "A crowd they control <em>proves nothing.</em>"
+   }
+  },
+  {
+   "id": "n32",
+   "img": "g14",
+   "text": "And button six. The small yes.",
+   "ov": {
+    "t": "title",
+    "n": "BUTTON #6",
+    "s": "THE SMALL YES"
+   }
+  },
+  {
+   "id": "n33",
+   "img": "g15",
+   "text": "I never asked for your savings first. I asked for a reply. Then a name. Then two dollars. Then two hundred. Each yes made the next one easier."
+  },
+  {
+   "id": "n34",
+   "img": "L43",
+   "text": "And once you've put money in, a second trap closes. Walking away means admitting the first payment was lost. So you pay the fee to save the money. Then another fee."
+  },
+  {
+   "id": "n35",
+   "img": "L44",
+   "text": "That's why so many people lose more after they start to suspect something. Stopping feels like losing. Paying one more time feels like hope."
+  },
+  {
+   "id": "n35b",
+   "img": "E01",
+   "text": "In my old crew, we had a name for the moment someone sent their first real amount. We said, they're in. After that, the job was just keeping them in."
+  },
+  {
+   "id": "n36",
+   "img": "g15",
+   "text": "Switch it off. Ask, if I'd known on day one where this would end, would I have started? And remember, money you've already lost is gone either way. Don't send more after it.",
+   "ov": {
+    "t": "quote",
+    "label": "SWITCH IT OFF",
+    "s": "Don't send good money <em>after lost money.</em>"
+   }
+  },
+  {
+   "id": "n37",
+   "img": "L54",
+   "text": "Now, the real trick. I never pushed just one button. I pushed three or four at once.",
+   "ov": {
+    "t": "head",
+    "s": "I PUSHED <em>3 AT ONCE</em>",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n38",
+   "img": "g16",
+   "text": "The bank call. That's the badge, the clock and fear in one sentence. This is your bank's fraud team, your money is leaving your account right now.",
+   "ov": {
+    "t": "cards",
+    "items": [
+     [
+      "⏱",
+      "The clock"
+     ],
+     [
+      "🛡️",
+      "The badge"
+     ],
+     [
+      "😨",
+      "Fear"
+     ]
+    ],
+    "ticks": 3
+   }
+  },
+  {
+   "id": "n39",
+   "img": "L41",
+   "text": "The wrong number scam. That's the favour, the crowd, and the small yes, slowly, over weeks. Different speed, same buttons.",
+   "ov": {
+    "t": "cards",
+    "items": [
+     [
+      "🎁",
+      "The favour"
+     ],
+     [
+      "👥",
+      "The crowd"
+     ],
+     [
+      "✅",
+      "Small yes"
+     ]
+    ],
+    "ticks": 3
+   }
+  },
+  {
+   "id": "n40",
+   "img": "g17",
+   "text": "So you don't need to memorise every scam out there. There will be new ones every month. You only need to recognise the buttons."
+  },
+  {
+   "id": "n40b",
+   "img": "E10",
+   "text": "There are scams I never heard of that will exist next year. New apps, new AI tricks, new excuses. Same six buttons. Every time."
+  },
+  {
+   "id": "n41",
+   "img": "L54",
+   "text": "So here's the test. Three questions. Five seconds.",
+   "ov": {
+    "t": "head",
+    "s": "THE <i>5-SECOND</i> TEST",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n42",
+   "img": "g18",
+   "text": "One. Did they contact me, or did I contact them? Scams almost always start with them reaching out.",
+   "ov": {
+    "t": "quote",
+    "label": "QUESTION 1",
+    "s": "Did <em>they</em> contact <em>me?</em>"
+   }
+  },
+  {
+   "id": "n43",
+   "img": "g18",
+   "text": "Two. Is it about money, a code, a password, or access to my device?",
+   "ov": {
+    "t": "quote",
+    "label": "QUESTION 2",
+    "s": "Is it about <em>money, codes</em> or <em>access?</em>"
+   }
+  },
+  {
+   "id": "n44",
+   "img": "g18",
+   "text": "Three. Am I being rushed, scared, or flattered right now?",
+   "ov": {
+    "t": "quote",
+    "label": "QUESTION 3",
+    "s": "Am I being <em>rushed, scared</em> or <em>flattered?</em>"
+   }
+  },
+  {
+   "id": "n44x",
+   "img": "g18",
+   "text": "You don't need all three. Most scams hit two of them in the very first message. The good ones hit all three before you've finished reading."
+  },
+  {
+   "id": "n45",
+   "img": "g19",
+   "text": "If the answer is yes to two of those, stop. Don't argue with them. Don't try to outsmart them. Just leave the conversation, and check it yourself, through a number or app you already trust.",
+   "ov": {
+    "t": "stamp",
+    "s": "2 YESES = STOP",
+    "at": 0.6
+   }
+  },
+  {
+   "id": "n46",
+   "img": "L53",
+   "text": "That's honestly the thing I feared most back then. Not police. Not smart people. People who just said, I'll call you back, and actually did it, on a real number."
+  },
+  {
+   "id": "n46b",
+   "img": "g19",
+   "text": "And if they argue, push, or get angry when you say you'll call back? That's your answer. A real bank is happy for you to check."
+  },
+  {
+   "id": "n47",
+   "img": "g20",
+   "text": "And if you ever do fall for one, you're not stupid. You're human. These scripts are written by people who do this all day, every day, and test what works on thousands of people."
+  },
+  {
+   "id": "n48",
+   "img": "g20",
+   "text": "The people who get hurt most are the ones who are too ashamed to tell anyone. So tell someone. Call your bank. Report it. The faster, the better."
+  },
+  {
+   "id": "n48b",
+   "img": "g20",
+   "text": "And if it happened to someone you love, don't say how could you. Say, thank you for telling me. That sentence is how they tell you next time too."
+  },
+  {
+   "id": "n49",
+   "img": "L02",
+   "text": "Quick recap. The clock. The badge. Fear. The favour. Everyone else. And the small yes.",
+   "ov": {
+    "t": "cards",
+    "h": "THE <em>6 BUTTONS</em>",
+    "ticks": 6,
+    "items": [
+     [
+      "⏱",
+      "The clock"
+     ],
+     [
+      "🛡️",
+      "The badge"
+     ],
+     [
+      "😨",
+      "Fear"
+     ],
+     [
+      "🎁",
+      "The favour"
+     ],
+     [
+      "👥",
+      "Everyone else"
+     ],
+     [
+      "✅",
+      "The small yes"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n50",
+   "img": "L48",
+   "text": "Which button gets you? Be honest. Tell me in the comments. Mine was always the favour. That's how I got recruited in the first place."
+  },
+  {
+   "id": "n50x",
+   "img": "L53",
+   "text": "And if you can't pick one, it's probably the clock. Busy people were always my favourite people. No offence."
+  },
+  {
+   "id": "n51",
+   "img": "L33",
+   "text": "And send this to the smartest person you know. They're the one who thinks they don't need it."
+  },
+  {
+   "id": "n52",
+   "img": "L54",
+   "text": "Trust me. I pushed all six.",
+   "ov": {
+    "t": "end",
+    "s": "6 MIND TRICKS<br>I USED <em>ON YOU</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "g01",
+   "type": "t2i",
+   "prompt": "a glowing human brain made of light with six big round red buttons on a control panel in front of it, dark background, stylized, no text"
+  },
+  {
+   "name": "g04",
+   "type": "t2i",
+   "prompt": "a large vintage stopwatch with its hand near the end, dramatic red light, dark background, cinematic, no text"
+  },
+  {
+   "name": "g06",
+   "type": "t2i",
+   "prompt": "a shiny police style badge and a stamped official letter on a dark desk under a lamp, dramatic, no readable text, no real emblems"
+  },
+  {
+   "name": "g08",
+   "type": "t2i",
+   "prompt": "a dark hallway at night with a phone glowing red on a small table at the end, horror movie mood but not gory, no text"
+  },
+  {
+   "name": "g10",
+   "type": "t2i",
+   "prompt": "a small gift box with a ribbon on a table, with a fishing hook hidden inside the bow, dramatic light, no text"
+  },
+  {
+   "name": "g12",
+   "type": "t2i",
+   "prompt": "a crowd of identical cartoon mannequin figures all clapping in a dark room under a spotlight, eerie, no faces, no text"
+  },
+  {
+   "name": "g14",
+   "type": "t2i",
+   "prompt": "a staircase of small gold coins growing into tall stacks leading into a dark open trapdoor, dramatic light, no text"
+  },
+  {
+   "name": "g17",
+   "type": "t2i",
+   "prompt": "a control panel with six big glowing buttons, each one covered by a clear safety cover that is being closed by a gloved hand, dark background, no text"
+  },
+  {
+   "name": "g02",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now sitting at a tidy office desk with arms crossed and a confident, slightly smug smile, bookshelf behind him, no logos"
+  },
+  {
+   "name": "g03",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now walking busily down a city street while scrolling her phone, distracted, coffee cup in hand, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "g05",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now staring at her phone in panic, eyes wide, standing in a kitchen, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "g07",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now holding an official looking letter and the phone, nodding obediently, serious face, kitchen, no readable text, no logos"
+  },
+  {
+   "name": "g09",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now gripping her phone with both hands, terrified, standing in a dark living room at night, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "g11",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now smiling gratefully at his phone, hand on his heart, small bedroom, warm light, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "g13",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now scrolling his phone with excited eyes, surrounded by floating glowing thumbs-up and party emoji icons, night, any phone screen faces away from the camera"
+  },
+  {
+   "name": "g15",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now at a plain laptop without any logo at night, torn and hesitant, finger hovering over the keyboard, the screen faces away from the camera"
+  },
+  {
+   "name": "g16",
+   "type": "edit",
+   "ref": "L13.jpg",
+   "prompt": "The same man from the image, same face, same hair and same clothes, now on the phone in panic with a red alarm light glow on his face, kitchen, no logos"
+  },
+  {
+   "name": "g18",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now calmly looking at her phone with a thoughtful, skeptical expression, finger on her chin, living room, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "g19",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now confidently putting her phone face down on the table and smiling, living room, no logos"
+  },
+  {
+   "name": "g20",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now sitting at a kitchen table talking openly with a kind younger woman with short blonde hair who holds his hand, supportive moment, warm light, no logos"
+  },
+  {
+   "name": "g22",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame tapping his temple with one finger and a sly knowing grin, a glowing brain hologram beside his head, dark teal background with a soft red glow, empty space on the left"
+  }
+ ]
+}

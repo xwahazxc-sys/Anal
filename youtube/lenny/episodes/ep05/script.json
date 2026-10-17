@@ -1,0 +1,700 @@
+{
+ "slug": "lenny_ep05_6_calls_parents",
+ "title": "6 Calls Scammers Make To Your Parents (I Used To Make Them)",
+ "hook_score": "62 WORKABLE (The Mistake / Contrarian)",
+ "fallback": "L35",
+ "sting": {
+  "after": "n05",
+  "s": "6 CALLS TO<br><em>YOUR PARENTS</em>",
+  "img": "f01"
+ },
+ "thumb": {
+  "img": "f24",
+  "text": "\"JUST HANG UP\"<br><b>DOESN'T</b><br><em>WORK</em>",
+  "pos": "65% 40%",
+  "size": 96
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "f02",
+   "text": "Stop telling your parents, just hang up. It doesn't work. I used to call people like them for a living.",
+   "ov": {
+    "t": "stamp",
+    "s": "\"JUST HANG UP\"",
+    "at": 1.0
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. And the calls I made to older people were the best money I ever earned. I'm not proud of it. But I know the scripts.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "f03",
+   "text": "People over sixty reported losing almost five billion dollars to online and phone fraud in 2024, according to the FBI. The highest of any age group.",
+   "ov": {
+    "t": "big",
+    "s": "~$4.9 BILLION",
+    "sub": "LOST BY PEOPLE OVER 60 · FBI · 2024"
+   }
+  },
+  {
+   "id": "n04",
+   "img": "L44",
+   "text": "Just hang up fails because our scripts were built to stop you hanging up. So here are the six calls, word for word, and what actually stops each one."
+  },
+  {
+   "id": "n05",
+   "img": "E25",
+   "text": "Number six is a three person team, and it takes people's entire life savings. Stay for that one."
+  },
+  {
+   "id": "n06",
+   "img": "f04",
+   "text": "Call number one. Grandma, it's me.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #1",
+    "s": "\"GRANDMA, IT'S ME\""
+   }
+  },
+  {
+   "id": "n07",
+   "img": "f05",
+   "text": "Grandma? It's me. I'm in trouble, please don't be mad.",
+   "voice": "am_puck",
+   "speed": 1.05,
+   "ov": {
+    "t": "call",
+    "from": "Unknown",
+    "sub": "mobile · calling…"
+   }
+  },
+  {
+   "id": "n08",
+   "img": "f05",
+   "text": "And here's the trick that worked for decades. I never said a name. I waited. And grandma said it for me. Tommy, is that you?"
+  },
+  {
+   "id": "n09",
+   "img": "L23",
+   "text": "Yes, grandma, it's Tommy. Now I'm Tommy. And she'll forgive every strange thing about my voice, because she wants it to be him."
+  },
+  {
+   "id": "n09b",
+   "img": "E01",
+   "text": "We called it the grandkid guess. Lists of older people were sold by the thousand. Name, age, landline. Some lists even said, widowed, lives alone."
+  },
+  {
+   "id": "n10",
+   "img": "f06",
+   "text": "Then the story. An accident, an arrest, bail money. Please don't tell Mum and Dad. And these days, the voice might really sound like Tommy, thanks to AI."
+  },
+  {
+   "id": "n11",
+   "img": "f07",
+   "text": "The fix. A family code word, and one rule. Any call about money, you hang up and call the grandchild back on their real number. Then you call me.",
+   "ov": {
+    "t": "chips",
+    "c": "green",
+    "items": [
+     "✓ FAMILY CODE WORD",
+     "✓ CALL THEM BACK YOURSELF"
+    ]
+   }
+  },
+  {
+   "id": "n12",
+   "img": "f08",
+   "text": "Call number two. The government.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #2",
+    "s": "THE GOVERNMENT CALL"
+   }
+  },
+  {
+   "id": "n13",
+   "img": "f09",
+   "text": "This is an urgent message regarding your Social Security number. Your number has been suspended due to suspicious activity. Press one to speak to an officer.",
+   "voice": "bm_lewis",
+   "speed": 1.0,
+   "ov": {
+    "t": "call",
+    "from": "Social Security",
+    "sub": "robocall…"
+   }
+  },
+  {
+   "id": "n14",
+   "img": "E01",
+   "text": "A robot voice, an official name on the caller ID, and one scary word. Suspended. Older people grew up trusting official letters and official calls. We used that."
+  },
+  {
+   "id": "n15",
+   "img": "f10",
+   "text": "The officer says your number was used in a crime. To protect your savings, you need to move them. Or there's a warrant, and you can pay a fine today to avoid arrest."
+  },
+  {
+   "id": "n16",
+   "img": "L53",
+   "text": "The same script works with Medicare, the tax office, a new benefits card. The badge changes. The ending doesn't. You pay, or you move your money."
+  },
+  {
+   "id": "n16b",
+   "img": "f09",
+   "text": "And we faked the caller ID, so the screen showed a real government number. People looked it up, saw it was real, and trusted us even more."
+  },
+  {
+   "id": "n17",
+   "img": "f09",
+   "text": "The fix. Social Security says it will never threaten you with arrest or demand payment over the phone. No government agency takes gift cards, crypto, or cash. Hang up. Look up the real number yourself.",
+   "ov": {
+    "t": "list",
+    "h": "THE FIX",
+    "items": [
+     "✗ They don't suspend your number",
+     "✗ They don't threaten arrest",
+     "✗ No gift cards, crypto or cash",
+     "✓ Hang up. Call the real number."
+    ]
+   }
+  },
+  {
+   "id": "n18",
+   "img": "f11",
+   "text": "Call number three. The big charge.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #3",
+    "s": "THE BIG CHARGE"
+   }
+  },
+  {
+   "id": "n19",
+   "img": "f12",
+   "text": "Hello. This is a call from your online store account. A charge of seven hundred and ninety nine dollars for a laptop is about to be processed. Press one to cancel.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "call",
+    "from": "Online Store",
+    "sub": "automated call…"
+   }
+  },
+  {
+   "id": "n20",
+   "img": "L44",
+   "text": "Your dad never bought a laptop. So of course he presses one. He wants to stop it. That's the whole hook. You want to fix it, so you call me."
+  },
+  {
+   "id": "n21",
+   "img": "f13",
+   "text": "The agent is so helpful. To cancel, I just need to connect to your computer. Download this app. Now log into your bank, so I can process your refund."
+  },
+  {
+   "id": "n22",
+   "img": "L37",
+   "text": "You saw this in my first video, the refund trick. Oops, I refunded you seven thousand instead of seven hundred. Please send back the difference, or I'll lose my job."
+  },
+  {
+   "id": "n23",
+   "img": "L53",
+   "text": "He's crying, the agent. Real tears. Your dad is kind. He sends it. And the money he sends back is his own."
+  },
+  {
+   "id": "n23b",
+   "img": "E03",
+   "text": "And once someone pays, their name goes on a list. We called it the list of people who pay. Some got calls like this every few months, for years."
+  },
+  {
+   "id": "n24",
+   "img": "f13",
+   "text": "The fix. Nobody legitimate calls you to cancel a charge and then needs your computer. If you're worried, open the store or bank app yourself.",
+   "ov": {
+    "t": "stamp",
+    "s": "REMOTE ACCESS<br>= GAME OVER",
+    "size": 90,
+    "at": 0.4
+   }
+  },
+  {
+   "id": "n25",
+   "img": "E12",
+   "text": "Quick one. If your parents or grandparents have a phone, subscribe and send them this channel. Every week I take apart another one of my old scripts.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n26",
+   "img": "f14",
+   "text": "Call number four. You've won.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #4",
+    "s": "YOU'VE WON"
+   }
+  },
+  {
+   "id": "n27",
+   "img": "f15",
+   "text": "Congratulations, sir! You've won two and a half million dollars and a brand new car in the national sweepstakes. We just need to process the taxes and the delivery fee.",
+   "voice": "am_michael",
+   "speed": 1.05,
+   "ov": {
+    "t": "big",
+    "s": "$2,500,000",
+    "sub": "+ A NEW CAR (NOT REALLY)"
+   }
+  },
+  {
+   "id": "n28",
+   "img": "L09",
+   "text": "Nobody wins a lottery they didn't enter. But when you're retired, money is tight, and someone says your problems are over, part of you wants to believe it."
+  },
+  {
+   "id": "n29",
+   "img": "E03",
+   "text": "And the fees never end. Taxes, then insurance, then customs for the car. We'd call some people every day for months. Some got lonely when we stopped calling."
+  },
+  {
+   "id": "n30",
+   "img": "f15",
+   "text": "The fix. A real prize never asks you to pay first. Ever. If you have to pay to receive it, it's not a prize.",
+   "ov": {
+    "t": "quote",
+    "label": "THE FIX",
+    "s": "If you have to <em>pay</em> to receive it, it's not a prize."
+   }
+  },
+  {
+   "id": "n31",
+   "img": "f16",
+   "text": "Call number five. The new friend.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #5",
+    "s": "THE NEW FRIEND"
+   }
+  },
+  {
+   "id": "n32",
+   "img": "f17",
+   "text": "This one starts online, not on the phone. A widowed grandpa joins a social site to look at photos of the grandkids. A kind woman sends him a friend request."
+  },
+  {
+   "id": "n33",
+   "img": "f17",
+   "text": "She's a nurse working abroad, or an engineer on an oil rig. She's lonely too. They talk every day for months. And then there's an emergency, and she needs help with money."
+  },
+  {
+   "id": "n33b",
+   "img": "f17",
+   "text": "She never video calls. The camera is always broken. And the money always goes through gift cards or a friend's account, never in her own name."
+  },
+  {
+   "id": "n34",
+   "img": "L33",
+   "text": "I made a whole video on how the long version works, day one to day forty. For older people, it's often less about investments and more about loneliness."
+  },
+  {
+   "id": "n35",
+   "img": "f18",
+   "text": "The fix isn't to make them feel stupid. It's to stay close. The less lonely someone is, the less room there is for us.",
+   "ov": {
+    "t": "quote",
+    "label": "THE FIX",
+    "s": "Stay close. <em>Loneliness</em> is our way in."
+   }
+  },
+  {
+   "id": "n36",
+   "img": "f19",
+   "text": "And call number six. The phantom hacker.",
+   "ov": {
+    "t": "title",
+    "n": "CALL #6",
+    "s": "THE PHANTOM HACKER",
+    "size": 130
+   }
+  },
+  {
+   "id": "n37",
+   "img": "f20",
+   "text": "The FBI calls this one the phantom hacker scam. It's three people, three calls, and each one passes your parent to the next.",
+   "ov": {
+    "t": "cards",
+    "items": [
+     [
+      "🖥️",
+      "Tech support"
+     ],
+     [
+      "🏦",
+      "\"Your bank\""
+     ],
+     [
+      "🏛️",
+      "\"Government\"",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n38",
+   "img": "f12",
+   "text": "First, the tech support guy. There's a hacker in your computer, and he's been in your bank account. I'll transfer you to your bank's fraud team."
+  },
+  {
+   "id": "n39",
+   "img": "f21",
+   "text": "Then the bank. Yes, we see foreign hackers. Your money isn't safe here. A government agency will contact you to protect it."
+  },
+  {
+   "id": "n40",
+   "img": "f22",
+   "text": "Then the government agent. Badge number, case number, a letter on official looking paper. Move your savings into this protected account. Or withdraw cash, or buy gold, and a courier will pick it up."
+  },
+  {
+   "id": "n41",
+   "img": "L44",
+   "text": "Three people, all confirming each other's story. Your dad isn't trusting a stranger anymore. He's trusting a whole system. That's why this one takes everything."
+  },
+  {
+   "id": "n42",
+   "img": "f22",
+   "text": "And there's always this line. Don't tell your bank teller, or your family. The hackers might be watching. They might even be working inside your bank.",
+   "ov": {
+    "t": "stamp",
+    "s": "\"DON'T TELL ANYONE\"",
+    "size": 90,
+    "at": 0.4
+   }
+  },
+  {
+   "id": "n43",
+   "img": "f23",
+   "text": "The fix. No government agency will ever ask you to move money to protect it. And no real official sends a courier to collect cash or gold. That's a robbery with paperwork.",
+   "ov": {
+    "t": "list",
+    "h": "THE FIX",
+    "items": [
+     "✗ Nobody 'protects' money by moving it",
+     "✗ No official collects cash or gold",
+     "✓ Hang up. Call the family."
+    ]
+   }
+  },
+  {
+   "id": "n44",
+   "img": "L54",
+   "text": "So why doesn't just hang up work? Three reasons.",
+   "ov": {
+    "t": "head",
+    "s": "WHY \"JUST HANG UP\" <em>FAILS</em>",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n45",
+   "img": "f02",
+   "text": "One. Hanging up on someone feels rude. Most older people were raised to be polite to callers. We counted on it."
+  },
+  {
+   "id": "n46",
+   "img": "E01",
+   "text": "Two. Our scripts had an answer for everything. If you say, I'll call you back, we say the line is being monitored. If you say, I'll ask my son, we say the investigation is confidential."
+  },
+  {
+   "id": "n47",
+   "img": "f05",
+   "text": "Three. By the time they think, should I hang up, they're already scared. And scared people don't follow rules. They follow the calm voice on the phone."
+  },
+  {
+   "id": "n47b",
+   "img": "f05",
+   "text": "And many of them live alone. There's nobody in the room to say, wait, that sounds strange. We always asked, is anyone with you right now?"
+  },
+  {
+   "id": "n48",
+   "img": "f18",
+   "text": "So here's what actually works. Five things you can set up this weekend.",
+   "ov": {
+    "t": "head",
+    "s": "WHAT <i>ACTUALLY</i> WORKS",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n49",
+   "img": "f07",
+   "text": "One. The money rule. Any call, text or email about money, they call you first. Not after. First. Make it a family rule, not a sign that you don't trust them.",
+   "ov": {
+    "t": "quote",
+    "label": "#1",
+    "s": "Any call about money? <em>Call me first.</em>"
+   }
+  },
+  {
+   "id": "n50",
+   "img": "f25",
+   "text": "Two. A note by the phone. Government never calls for money. Banks never ask you to move money. Gift cards mean scam. And your number, in big letters.",
+   "ov": {
+    "t": "list",
+    "h": "THE NOTE BY THE PHONE",
+    "items": [
+     "✗ Government never calls for money",
+     "✗ Banks never ask you to move money",
+     "✗ Gift cards = scam",
+     "📞 Call Sarah first: 555-0134"
+    ]
+   }
+  },
+  {
+   "id": "n51",
+   "img": "f03",
+   "text": "Three. Turn on call screening and spam blocking, and let unknown numbers go to voicemail. A real person leaves a message. My robots didn't."
+  },
+  {
+   "id": "n52",
+   "img": "f26",
+   "text": "Four. Ask their bank about adding a trusted contact, someone the bank can call if something looks wrong. Many banks offer it, and it takes a few minutes.",
+   "ov": {
+    "t": "quote",
+    "label": "#4",
+    "s": "Add a <em>trusted contact</em> at their bank."
+   }
+  },
+  {
+   "id": "n53",
+   "img": "f18",
+   "text": "Five. Talk about scams like you talk about the weather. Share stories. Send them videos like this. People hide what they're ashamed of. Make it something that isn't shameful."
+  },
+  {
+   "id": "n54",
+   "img": "f27",
+   "text": "And if something already happened, in the US you can call the National Elder Fraud Hotline. One eight three three, three seven two, eight three one one. Real people, and they help you report it.",
+   "ov": {
+    "t": "tag",
+    "s": "📞 1-833-FRAUD-11 · 1-833-372-8311",
+    "c": "green",
+    "y": 140
+   }
+  },
+  {
+   "id": "n55",
+   "img": "L02",
+   "text": "Quick recap. Grandma, it's me. The government. The big charge. You've won. The new friend. And the phantom hacker.",
+   "ov": {
+    "t": "cards",
+    "h": "THE <em>6 CALLS</em>",
+    "ticks": 6,
+    "items": [
+     [
+      "👵",
+      "Grandma, it's me"
+     ],
+     [
+      "🏛️",
+      "Government"
+     ],
+     [
+      "💳",
+      "Big charge"
+     ],
+     [
+      "🎉",
+      "You've won"
+     ],
+     [
+      "💌",
+      "New friend"
+     ],
+     [
+      "👻",
+      "Phantom hacker",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n56",
+   "img": "L48",
+   "text": "Which of these has your family already had? Tell me in the comments. I read every one."
+  },
+  {
+   "id": "n57",
+   "img": "L33",
+   "text": "And send this to your parents. Not with a lecture. Just say, a raccoon made this, and he's kind of funny. That's how it gets watched."
+  },
+  {
+   "id": "n58",
+   "img": "L54",
+   "text": "Trust me. I used to make all six calls.",
+   "ov": {
+    "t": "end",
+    "s": "6 CALLS TO<br><em>YOUR PARENTS</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "f01",
+   "type": "t2i",
+   "prompt": "an old corded landline phone on a lace doily on a side table in a cozy grandparents' living room, ringing, warm lamp light, no text"
+  },
+  {
+   "name": "f03",
+   "type": "t2i",
+   "prompt": "an elderly person's hands holding a simple smartphone with a blank glowing screen in a cozy living room, soft light, no text"
+  },
+  {
+   "name": "f04",
+   "type": "t2i",
+   "prompt": "a framed family photo of a grandmother hugging a smiling teenage grandson on a mantelpiece, warm light, cozy room"
+  },
+  {
+   "name": "f08",
+   "type": "t2i",
+   "prompt": "an official looking government building with columns at dusk, ominous dark sky, dramatic lighting, no text, no flags"
+  },
+  {
+   "name": "f11",
+   "type": "t2i",
+   "prompt": "a plain laptop without any logo on a wooden desk in a cozy home office at night, a mug of tea beside it, the screen glowing blank, no text"
+  },
+  {
+   "name": "f14",
+   "type": "t2i",
+   "prompt": "golden confetti falling around a shiny new red car with a big bow on top in a showroom spotlight, dreamy, no text, no logos"
+  },
+  {
+   "name": "f16",
+   "type": "t2i",
+   "prompt": "a tablet with a blank glowing screen lying on a quilt next to reading glasses and a cup of tea, soft evening light, no text"
+  },
+  {
+   "name": "f19",
+   "type": "t2i",
+   "prompt": "a dark hooded hacker silhouette made of glowing green digital code emerging from a computer monitor in a dark room, spooky, no readable text"
+  },
+  {
+   "name": "f20",
+   "type": "t2i",
+   "prompt": "three old telephones on a dark table connected by tangled red cords, dramatic spotlight, ominous, no text"
+  },
+  {
+   "name": "f22",
+   "type": "t2i",
+   "prompt": "a man in a dark suit and cap standing at the front door of a suburban house holding an empty briefcase, dusk, ominous, seen from inside, no text"
+  },
+  {
+   "name": "f23",
+   "type": "t2i",
+   "prompt": "a small stack of gold bars and bundles of cash on a kitchen table next to an open briefcase, harsh light, ominous, no text"
+  },
+  {
+   "name": "f25",
+   "type": "t2i",
+   "prompt": "a handwritten paper note stuck to a fridge next to an old landline phone in a cozy kitchen, warm light, blurry illegible handwriting"
+  },
+  {
+   "name": "f27",
+   "type": "t2i",
+   "prompt": "a friendly helpline call center worker with a headset smiling, bright modern office, warm and reassuring, no text, no logos"
+  },
+  {
+   "name": "f02",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now sitting in his armchair holding an old landline phone to his ear, polite and patient, nodding, cozy living room, no logos"
+  },
+  {
+   "name": "f05",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now holding a landline phone to his ear, deeply worried and frightened, standing in the hallway, night, no logos"
+  },
+  {
+   "name": "f06",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now taking an envelope of cash out of a drawer, anxious, phone held between shoulder and ear, dim light, no logos"
+  },
+  {
+   "name": "f07",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting next to an elderly man with white hair and glasses on a sofa, showing him something on a phone, both smiling, warm family moment, no logos"
+  },
+  {
+   "name": "f09",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now sitting at a kitchen table with a landline phone, shocked and pale, official looking papers in front of him, no readable text, no logos"
+  },
+  {
+   "name": "f10",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now wearing a fake official badge on a lanyard and talking on a headset with a stern serious face, dim hideout room"
+  },
+  {
+   "name": "f12",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now in his home office holding the phone to his ear, frowning and confused, a plain laptop without any logo in front of him, the screen faces away from the camera"
+  },
+  {
+   "name": "f13",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now typing carefully on a plain laptop without any logo while on the phone, trusting expression, the screen faces away from the camera, home office"
+  },
+  {
+   "name": "f15",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now on the phone with a huge hopeful smile, eyes wide with excitement, cozy living room, no logos"
+  },
+  {
+   "name": "f17",
+   "type": "edit",
+   "ref": "L35.jpg",
+   "prompt": "The same elderly man from the image, same face, same hair and same clothes, now sitting alone in a dim living room at night smiling softly at a tablet, a little lonely, the screen faces away from the camera, no logos"
+  },
+  {
+   "name": "f18",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now hugging an elderly man with white hair and glasses at a front door, warm afternoon light, happy family visit, no logos"
+  },
+  {
+   "name": "f21",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now wearing a shirt collar and tie over the hoodie, talking on a headset with a fake friendly bank smile, dim hideout room"
+  },
+  {
+   "name": "f24",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding an old landline phone handset toward the viewer with a sly grin, dark teal background with a soft red glow, empty space on the left"
+  },
+  {
+   "name": "f26",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at a bank desk with an elderly man with white hair and glasses, talking to a friendly bank employee, bright bank interior, no text, no logos"
+  }
+ ]
+}

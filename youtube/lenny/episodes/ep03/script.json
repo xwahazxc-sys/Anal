@@ -1,0 +1,763 @@
+{
+ "slug": "lenny_ep03_day1_to_day40",
+ "title": "I Ran The \"Wrong Number\" Scam. Here's Day 1 to Day 40.",
+ "hook_score": "70 WORKABLE (The Question)",
+ "fallback": "L39",
+ "sting": {
+  "after": "n04",
+  "s": "THE WRONG NUMBER<br><em>DAY 1 → DAY 40</em>",
+  "img": "c02"
+ },
+ "thumb": {
+  "img": "c22",
+  "text": "DAY <em>1</em><br>TO DAY<br><b>40</b>",
+  "pos": "65% 40%",
+  "size": 120
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "c01",
+   "text": "Your wrong number text could cost you your savings. I used to send them. What happens on day forty?",
+   "ov": {
+    "t": "head",
+    "s": "DAY 1 → <em>DAY 40</em>",
+    "at": 2.4
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. This is the most expensive scam I ever worked on, and I'll walk you through it day by day, from my side of the screen.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "L41",
+   "text": "Investment scams took almost eight billion dollars from Americans last year. About half of all reported fraud. And a lot of them started exactly like this.",
+   "ov": {
+    "t": "big",
+    "s": "$7.9 BILLION",
+    "sub": "INVESTMENT SCAMS · USA · 2025"
+   }
+  },
+  {
+   "id": "n04",
+   "img": "E25",
+   "text": "Stay to the end, because I'll show you the five tells, and what to do if someone you love is already in one. That part matters most."
+  },
+  {
+   "id": "n05",
+   "img": "c02",
+   "text": "Day one.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 1",
+    "s": "HELLO, STRANGER"
+   }
+  },
+  {
+   "id": "n06",
+   "img": "L39",
+   "text": "Hi Anna, it's Daniel from the conference. Still up for coffee on Thursday?",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 +1 (415) 555-0142 · 9:41 PM",
+    "msg": "Hi Anna, it's Daniel from the conference. Still up for coffee on Thursday? ☕"
+   }
+  },
+  {
+   "id": "n07",
+   "img": "E01",
+   "text": "That message went to thousands of numbers. I didn't know you. I didn't need to. I only needed one person to be polite."
+  },
+  {
+   "id": "n08",
+   "img": "L40",
+   "text": "And you are polite. Sorry, I think you have the wrong number. That's all it takes. You replied. You're real. You're kind."
+  },
+  {
+   "id": "n09",
+   "img": "c03",
+   "text": "Oh no, I'm so sorry, my mistake. You seem really nice though. Have a lovely evening.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · 9:44 PM",
+    "msg": "Oh no, I'm so sorry! My mistake 🙈 You seem really nice though. Have a lovely evening 🙂"
+   }
+  },
+  {
+   "id": "n10",
+   "img": "L23",
+   "text": "Notice what Daniel doesn't do. He doesn't ask for anything. He apologises and leaves. That makes you trust him more."
+  },
+  {
+   "id": "n11",
+   "img": "c04",
+   "text": "Day three.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 3",
+    "s": "THE COMEBACK"
+   }
+  },
+  {
+   "id": "n12",
+   "img": "c05",
+   "text": "Haha, random, but I just saw a sunset that reminded me of our funny mix up. Here's the view from my office.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · Day 3",
+    "msg": "Haha random, but I just saw a sunset that reminded me of our funny mix-up 😄 View from my office 🌅"
+   }
+  },
+  {
+   "id": "n13",
+   "img": "L33",
+   "text": "Now he's back, with a reason that sounds silly and harmless. And a photo. A nice office. A city view. A good life."
+  },
+  {
+   "id": "n14",
+   "img": "c06",
+   "text": "Those photos belong to someone else. A real person who has no idea his face is doing this. We kept a whole folder of photos for every character."
+  },
+  {
+   "id": "n14b",
+   "img": "c06",
+   "text": "We had rules. Never use the same face in the same country twice. And never send a photo that's too perfect. A little blurry looks real."
+  },
+  {
+   "id": "n15",
+   "img": "L40",
+   "text": "Anna writes back, because why not. He's funny. He asks about her day. And he actually listens."
+  },
+  {
+   "id": "n16",
+   "img": "c07",
+   "text": "Day seven.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 7",
+    "s": "THE ROUTINE"
+   }
+  },
+  {
+   "id": "n17",
+   "img": "c07",
+   "text": "By now they talk every morning and every night. Good morning, Anna. Did you sleep well? How did the meeting go, the one you were worried about?"
+  },
+  {
+   "id": "n18",
+   "img": "E01",
+   "text": "That was on page three of my script. Remember every detail she tells you, and bring it up two days later. People rarely get listened to like that.",
+   "ov": {
+    "t": "quote",
+    "label": "MY OLD SCRIPT · PAGE 3",
+    "s": "Remember every detail.<br>Bring it up <em>two days later.</em>"
+   }
+  },
+  {
+   "id": "n19",
+   "img": "L44",
+   "text": "And here's the part that stings. On the other side of that chat, it's often not one person. It's a shift. Several people reading the same notes, keeping the same character alive."
+  },
+  {
+   "id": "n20",
+   "img": "c08",
+   "text": "Day fourteen.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 14",
+    "s": "THE LIFESTYLE"
+   }
+  },
+  {
+   "id": "n21",
+   "img": "L41",
+   "text": "Sorry for the late reply. Closed a nice gold trade today. My uncle taught me. It's basically my side job.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · Day 14",
+    "msg": "Sorry for the late reply, closed a nice gold trade today 📈 my uncle taught me, it's basically my side job 😅"
+   }
+  },
+  {
+   "id": "n22",
+   "img": "L33",
+   "text": "There it is. The first mention of money. But notice, he doesn't offer anything. He just lets it sit there."
+  },
+  {
+   "id": "n23",
+   "img": "c08",
+   "text": "Over the next week it comes up again. A new watch. A trip. Another good trade. Never pushy. Just there in the background, like a rich friend."
+  },
+  {
+   "id": "n24",
+   "img": "L09",
+   "text": "Because the whole trick is this. He never asks you to invest. He waits until you ask him.",
+   "ov": {
+    "t": "stamp",
+    "s": "HE NEVER ASKS.<br>YOU DO.",
+    "size": 96,
+    "at": 1.4
+   }
+  },
+  {
+   "id": "n25",
+   "img": "E12",
+   "text": "Quick one. If you want to see the next one of these before someone you love gets the first text, subscribe. Now, day twenty one.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n26",
+   "img": "c09",
+   "text": "Day twenty one.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 21",
+    "s": "YOUR IDEA"
+   }
+  },
+  {
+   "id": "n27",
+   "img": "c09",
+   "text": "How does the gold thing work? Could someone like me even try?",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Anna · Day 21",
+    "msg": "How does the gold thing work? Could someone like me even try? 🙈"
+   }
+  },
+  {
+   "id": "n28",
+   "img": "E25",
+   "text": "And now it's her idea. That's the most important moment in the whole scam. Everything after this, she thinks she chose."
+  },
+  {
+   "id": "n29",
+   "img": "E22",
+   "text": "Of course. Start tiny, like two hundred dollars, just to learn. I'll guide you. Use this platform, my uncle's team uses it.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · Day 21",
+    "msg": "Of course! Start tiny, like $200, just to learn. I'll guide you 🙏 Use this platform, my uncle's team uses it:",
+    "link": "goldpeak-trade.com"
+   }
+  },
+  {
+   "id": "n30",
+   "img": "E22",
+   "text": "He helps her set up, step by step. Sometimes she even buys crypto on a real, well known exchange first. That part is real. Then she sends it to his platform. That part isn't."
+  },
+  {
+   "id": "n30b",
+   "img": "c09",
+   "text": "And she feels smart. She's learning something new, with someone who believes in her. That feeling was worth more to us than the money."
+  },
+  {
+   "id": "n31",
+   "img": "c11",
+   "text": "Day twenty three.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 23",
+    "s": "THE FAKE PROFIT"
+   }
+  },
+  {
+   "id": "n32",
+   "img": "c11",
+   "text": "Two days later, her two hundred dollars shows two hundred and seventy six. Thirty eight percent. On a website we controlled.",
+   "ov": {
+    "t": "big",
+    "s": "+38%",
+    "sub": "ON A WEBSITE WE CONTROLLED"
+   }
+  },
+  {
+   "id": "n33",
+   "img": "L44",
+   "text": "We could put any number on that screen. It's not a market. It's a web page with a nice graph."
+  },
+  {
+   "id": "n34",
+   "img": "c12",
+   "text": "And then the cleverest move. We let her take a hundred dollars out. It lands in her bank account. Real money.",
+   "ov": {
+    "t": "notif",
+    "from": "📈 GoldPeak Trade · Day 23",
+    "msg": "✅ Withdrawal of $100 successful",
+    "c": "#e6f9ec",
+    "at": 1.6
+   }
+  },
+  {
+   "id": "n35",
+   "img": "L23",
+   "text": "That hundred dollars was the best investment I ever made. Because now she isn't hoping it's real. She has proof."
+  },
+  {
+   "id": "n36",
+   "img": "c13",
+   "text": "Day thirty.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 30",
+    "s": "THE BIG MOVE"
+   }
+  },
+  {
+   "id": "n37",
+   "img": "c14",
+   "text": "There's a special window this week. VIP members only. If you can do twenty thousand, the returns are crazy. I'm putting in everything.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · Day 30",
+    "msg": "There's a special window this week, VIP members only 🔥 If you can do $20k the returns are crazy. I'm putting in everything 🙏"
+   }
+  },
+  {
+   "id": "n38",
+   "img": "L33",
+   "text": "A deadline. A special window. Daniel is putting in everything too, so they're in it together. Romance and money, tied in one knot."
+  },
+  {
+   "id": "n39",
+   "img": "c14",
+   "text": "So she moves her savings. Then she borrows from her retirement account. Some people take out loans, or remortgage the house. The dashboard says she's up a hundred and fifty thousand."
+  },
+  {
+   "id": "n40",
+   "img": "c11",
+   "text": "On paper, she's rich. And she tells nobody, because Daniel said the window is secret."
+  },
+  {
+   "id": "n41",
+   "img": "c15",
+   "text": "Day thirty five.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 35",
+    "s": "THE WALL"
+   }
+  },
+  {
+   "id": "n42",
+   "img": "c16",
+   "text": "She tries to take some out. Withdrawal on hold. A fifteen percent tax must be paid before your funds can be released.",
+   "ov": {
+    "t": "notif",
+    "from": "📈 GoldPeak Trade · Day 35",
+    "msg": "⚠ Withdrawal on hold. A 15% profit tax must be paid before funds can be released.",
+    "at": 0.8
+   }
+  },
+  {
+   "id": "n43",
+   "img": "L43",
+   "text": "She pays it. Then there's a verification fee. Then an anti money laundering deposit. Then an account upgrade. Each one smaller than what's stuck, so paying always feels smart.",
+   "ov": {
+    "t": "list",
+    "h": "THEN...",
+    "items": [
+     "✗ Profit tax",
+     "✗ Verification fee",
+     "✗ Anti-money-laundering deposit",
+     "✗ Account upgrade"
+    ]
+   }
+  },
+  {
+   "id": "n44",
+   "img": "c16",
+   "text": "Don't worry, this happened to me too. Just pay it, and it all unlocks. Trust me.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Daniel · Day 35",
+    "msg": "Don't worry, this happened to me too. Just pay it and it all unlocks. Trust me ❤️"
+   }
+  },
+  {
+   "id": "n45",
+   "img": "c17",
+   "text": "Day forty.",
+   "ov": {
+    "t": "title",
+    "n": "DAY 40",
+    "s": "GONE"
+   }
+  },
+  {
+   "id": "n46",
+   "img": "c17",
+   "text": "The app stops loading. Daniel's number doesn't work. His photos disappear. The website is gone, or it's back under a new name, for the next person."
+  },
+  {
+   "id": "n47",
+   "img": "E23",
+   "text": "The average reported loss in these scams is over ten thousand dollars. Many people lose far more. And many never report it at all, because they're ashamed.",
+   "ov": {
+    "t": "big",
+    "s": "$10,000+",
+    "sub": "AVERAGE REPORTED LOSS · INVESTMENT SCAMS"
+   }
+  },
+  {
+   "id": "n48",
+   "img": "E23",
+   "text": "And it's not just the money. She lost the person she talked to every single day. That's why people say this one breaks you twice."
+  },
+  {
+   "id": "n48b",
+   "img": "L53",
+   "text": "In my old crew, nobody ever said victim. We had nicer words for it. That's how you sleep at night, until one day you don't."
+  },
+  {
+   "id": "n49",
+   "img": "c19",
+   "text": "And then, round two.",
+   "ov": {
+    "t": "title",
+    "n": "ROUND 2",
+    "s": "THE RECOVERY SCAM",
+    "size": 120
+   }
+  },
+  {
+   "id": "n50",
+   "img": "c16",
+   "text": "A few weeks later, someone finds her. We recover stolen crypto. Ninety four percent success rate. Small upfront fee.",
+   "ov": {
+    "t": "notif",
+    "from": "✉️ Asset Recovery Agency",
+    "msg": "We help victims of crypto fraud recover their funds. 94% success rate. Small upfront fee."
+   }
+  },
+  {
+   "id": "n51",
+   "img": "L53",
+   "text": "Often it's the same people, or people who bought her details. Nobody can get your crypto back for an upfront fee. That's just the next scam.",
+   "ov": {
+    "t": "stamp",
+    "s": "\"RECOVERY\"<br>= ROUND TWO",
+    "at": 1.0
+   }
+  },
+  {
+   "id": "n52",
+   "img": "L44",
+   "text": "I'll be honest with you. I never saw the people I did this to. I saw a username and a number. That made it easy. It shouldn't have been."
+  },
+  {
+   "id": "n53",
+   "img": "c20",
+   "text": "And a lot of the people typing those messages aren't there by choice. The UN has estimated that hundreds of thousands of people have been trafficked into scam compounds in Southeast Asia and forced to do this work."
+  },
+  {
+   "id": "n54",
+   "img": "L33",
+   "text": "So on both ends of that chat, someone's being used. Only the bosses win."
+  },
+  {
+   "id": "n55",
+   "img": "L54",
+   "text": "So. The five tells.",
+   "ov": {
+    "t": "head",
+    "s": "THE <em>5 TELLS</em>",
+    "at": 0.2
+   }
+  },
+  {
+   "id": "n56",
+   "img": "c03",
+   "text": "One. A stranger who keeps chatting after a wrong number. Real people say sorry and go.",
+   "ov": {
+    "t": "quote",
+    "label": "TELL #1",
+    "s": "A stranger who keeps chatting after a <em>wrong number.</em>"
+   }
+  },
+  {
+   "id": "n57",
+   "img": "L40",
+   "text": "Two. They're attractive, successful, attentive, and somehow they can never do a real video call. And a quick video alone isn't proof anymore. Those can be faked too.",
+   "ov": {
+    "t": "quote",
+    "label": "TELL #2",
+    "s": "Too perfect. <em>Never a real video call.</em>"
+   }
+  },
+  {
+   "id": "n58",
+   "img": "c11",
+   "text": "Three. They bring up money. Trading, gold, crypto, a special app. Someone you've never met in person, bringing up money, is the whole scam.",
+   "ov": {
+    "t": "quote",
+    "label": "TELL #3",
+    "s": "They bring up <em>money.</em> Any money."
+   }
+  },
+  {
+   "id": "n59",
+   "img": "E22",
+   "text": "Four. They want you on their platform. Not your bank. Not a well known broker you found yourself. Their link.",
+   "ov": {
+    "t": "quote",
+    "label": "TELL #4",
+    "s": "Their platform. Their app. <em>Their link.</em>"
+   }
+  },
+  {
+   "id": "n60",
+   "img": "L43",
+   "text": "Five. You have to pay to withdraw. Tax, fee, deposit. Real platforms take fees out of your balance. They don't send you a bill.",
+   "ov": {
+    "t": "quote",
+    "label": "TELL #5",
+    "s": "You have to <em>pay</em> to get your money out."
+   }
+  },
+  {
+   "id": "n61",
+   "img": "c21",
+   "text": "Now, if it's someone you love, this is the part that matters.",
+   "ov": {
+    "t": "head",
+    "s": "IF IT'S SOMEONE <i>YOU LOVE</i>",
+    "at": 0.2
+   }
+  },
+  {
+   "id": "n62",
+   "img": "c21",
+   "text": "Don't start with, how could you be so stupid. They'll defend the person they trust, and stop telling you things. That's exactly what we wanted."
+  },
+  {
+   "id": "n63",
+   "img": "c21",
+   "text": "Ask questions instead. Have you ever video called? Have you met? Have you tried to take all of it out? Let them find the cracks themselves."
+  },
+  {
+   "id": "n64",
+   "img": "L50",
+   "text": "And in practice. Stop sending money, any amount. Call the bank right away. Report it to the FTC and to the FBI's internet crime centre. And save every message, every address, every transaction.",
+   "ov": {
+    "t": "list",
+    "h": "WHAT TO DO NOW",
+    "items": [
+     "✓ Stop sending money. Any amount.",
+     "✓ Call your bank right away",
+     "✓ Report: reportfraud.ftc.gov · ic3.gov",
+     "✓ Save every message and address"
+    ]
+   }
+  },
+  {
+   "id": "n65",
+   "img": "L53",
+   "text": "And ignore anyone who promises to recover it for a fee. You already know why."
+  },
+  {
+   "id": "n66",
+   "img": "L02",
+   "text": "So that's the whole thing. Hello. Photos. Routine. Lifestyle. Your idea. Fake profit. Savings. Fees. Gone.",
+   "ov": {
+    "t": "cards",
+    "h": "DAY 1 → <em>DAY 40</em>",
+    "ticks": 0,
+    "items": [
+     [
+      "👋",
+      "Day 1 hello"
+     ],
+     [
+      "🌅",
+      "Day 3 photos"
+     ],
+     [
+      "☕",
+      "Day 7 routine"
+     ],
+     [
+      "📈",
+      "Day 14 lifestyle"
+     ],
+     [
+      "🙋",
+      "Day 21 your idea"
+     ],
+     [
+      "💸",
+      "Day 23 fake profit"
+     ],
+     [
+      "🏦",
+      "Day 30 savings"
+     ],
+     [
+      "🧱",
+      "Day 35 fees"
+     ],
+     [
+      "🕳️",
+      "Day 40 gone",
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n67",
+   "img": "L48",
+   "text": "If someone you know has a new online friend who talks about trading, send them this. Don't tell them they're being scammed. Just send it."
+  },
+  {
+   "id": "n68",
+   "img": "L33",
+   "text": "And tell me in the comments. Have you ever had a wrong number text that kept going? I want to know how far they got."
+  },
+  {
+   "id": "n69",
+   "img": "L54",
+   "text": "Trust me. I used to be Daniel.",
+   "ov": {
+    "t": "end",
+    "s": "THE WRONG NUMBER<br><em>DAY 1 → DAY 40</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "c02",
+   "type": "t2i",
+   "prompt": "a single smartphone on a dark nightstand lighting up with one blank glowing notification bubble, late at night, bedroom, no text"
+  },
+  {
+   "name": "c04",
+   "type": "t2i",
+   "prompt": "a smartphone lying face up on a cafe table next to a cup of coffee, the screen glowing blank, warm afternoon light, no text"
+  },
+  {
+   "name": "c05",
+   "type": "t2i",
+   "prompt": "a golden sunset over a modern city skyline seen from a high-rise office window, cinematic, no text"
+  },
+  {
+   "name": "c08",
+   "type": "t2i",
+   "prompt": "a luxury wristwatch, a car key and small gold bars on a glass table, glossy, dramatic light, no text, no logos"
+  },
+  {
+   "name": "c11",
+   "type": "t2i",
+   "prompt": "a plain laptop without any logo on a desk at night showing a bright green rising chart line, glowing, no numbers, no text"
+  },
+  {
+   "name": "c13",
+   "type": "t2i",
+   "prompt": "a stack of paper documents, a pen, a calculator and a small piggy bank on a kitchen table, warm lamp light, no readable text"
+  },
+  {
+   "name": "c15",
+   "type": "t2i",
+   "prompt": "a heavy closed steel door in a brick wall in a dark alley, a single lamp above it, moody, no text"
+  },
+  {
+   "name": "c17",
+   "type": "t2i",
+   "prompt": "an empty sofa in a dark living room at night, a smartphone lying face down on the cushion, cold blue light, lonely mood, no text"
+  },
+  {
+   "name": "c19",
+   "type": "t2i",
+   "prompt": "the silhouette of a man in a suit behind a frosted glass office door, film noir lighting, dark and ominous, no text"
+  },
+  {
+   "name": "c20",
+   "type": "t2i",
+   "prompt": "rows of computer desks with glowing monitors in a dim crowded office at night, empty chairs, oppressive mood, no text, no logos"
+  },
+  {
+   "name": "c01",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now lying in bed at night, her face lit by her phone, a small curious smile, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "c03",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now on the sofa in the evening smiling softly at her phone, cozy lamp light, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "c06",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now pinning printed photos of a handsome smiling man onto a cork board with red string, sly grin, dim hideout room"
+  },
+  {
+   "name": "c07",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting up in bed in the morning sunlight, smiling happily at her phone, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "c09",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now at a kitchen table with a cup of tea, thoughtful and curious, looking at her phone, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "c12",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at a plain laptop without any logo at night, both hands up in joy, surprised and happy, the screen faces away from the camera"
+  },
+  {
+   "name": "c14",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now at a kitchen table at night with paper documents and a plain laptop without any logo, serious and determined, the screen faces away from the camera"
+  },
+  {
+   "name": "c16",
+   "type": "edit",
+   "ref": "L39.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now at a plain laptop without any logo at night, worried, hand on her forehead, the screen faces away from the camera"
+  },
+  {
+   "name": "c21",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting on the sofa talking gently on her phone, caring and patient expression, warm lamp light, no logos"
+  },
+  {
+   "name": "c22",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding a smartphone toward the viewer, the phone screen glowing pink with a heart shape, sly grin, dark teal background with a pink glow, empty space on the left"
+  }
+ ]
+}
