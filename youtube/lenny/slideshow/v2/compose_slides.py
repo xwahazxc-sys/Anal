@@ -4,7 +4,7 @@
     python3 compose_ep01.py timeline            # timeline.json + voice.wav + sfx.wav
     python3 compose_ep01.py preview 3 20 ...    # PNG previews
     python3 compose_ep01.py chunk K N           # render chunk K of N (video only)
-    python3 compose_ep01.py mux N               # -> lenny_ep01_slideshow_v2.mp4
+    python3 compose_ep01.py mux N               # -> lenny_ep01_8min.mp4
 """
 import glob, json, math, os, subprocess, sys, wave
 import numpy as np
@@ -35,7 +35,7 @@ if cmd == "timeline":
     for l in lines:
         kind = l["shot"]; bg, blur = BG.get(kind, (kind, 0))
         lead = 0.55 if kind[0] == "T" else 0.0
-        dur = lead + l["dur"] + 0.45
+        dur = lead + l["dur"] + 0.6
         speed = 0.6 if blur else max(0.65, min(1.0, CLIP / dur))
         segs.append({"kind": kind, "bg": bg, "blur": blur, "start": t, "end": t + dur, "voice": t + lead, "dur": l["dur"],
                      "text": l["text"], "line": l["id"], "img": img_for(l["id"]), "speed": speed, "nframes": nf(bg), "fps": 16, "flash": kind[0] == "T"})
@@ -134,5 +134,5 @@ elif cmd == "mux":
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", P("ch.txt"), "-i", P("voice.wav"), "-i", P("sfx.wav"),
                     "-filter_complex", "[1]aresample=48000[v];[2]aresample=48000[s];[v][s]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
                     "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart",
-                    P("lenny_ep01_slideshow_v2.mp4")], check=True)
+                    P("lenny_ep01_8min.mp4")], check=True)
     print("muxed", round(tl["total"], 1))

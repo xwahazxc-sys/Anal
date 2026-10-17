@@ -3,7 +3,7 @@ Qwen output wins (outF2, outF1, outP); otherwise fall back to the old Wan slide.
 import json, os, subprocess, imageio_ffmpeg
 HERE = os.path.dirname(os.path.abspath(__file__)); S = os.path.dirname(HERE)
 FF = imageio_ffmpeg.get_ffmpeg_exe()
-Q = [os.path.join(S, "kaggle/qwen", d) for d in ("outF2", "outF1", "outP")]
+Q = [os.path.join(S, "kaggle/qwen", d) for d in ("outEA", "outEB", "outF2", "outF1", "outP")]
 OLD = os.path.join(S, "ep01_slides/slides")
 OLDRE = json.load(open("/home/user/Anal/youtube/lenny/slideshow/slides_plan.json"))["reuse"]
 RE = json.load(open(os.path.join(HERE, "reuse.json")))["reuse"]

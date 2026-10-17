@@ -1,0 +1,59 @@
+{
+ "lines": [
+  {"id": "N01", "after": "L03", "shot": "X01", "img": "L15", "text": "In 2024, Americans alone reported losing over twelve billion dollars to fraud. And that's only the people who reported it."},
+  {"id": "N02", "after": "N01", "shot": "X00", "img": "E01", "text": "Most of that money didn't go to genius hackers. It went to people reading scripts. Scripts like the ones I used to write."},
+
+  {"id": "N03", "after": "L09", "shot": "X00", "img": "E03", "text": "I'd send these out on a Monday morning. Half the country ordered something over the weekend."},
+  {"id": "N04", "after": "N03", "shot": "X00", "img": "L09", "text": "And I never used your card right away. I'd wait a few weeks, so you'd never connect the charge to that text."},
+  {"id": "N05", "after": "L10", "shot": "X05", "img": "L10", "text": "Fake links copy the real name and add something. Dash redelivery. Dash support. Dot info. Close is not the same."},
+  {"id": "N06", "after": "L11", "shot": "X00", "img": "L11", "text": "Already typed your card in? Call your bank today and block it. Two minutes of hassle beats a month of fighting charges."},
+
+  {"id": "N07", "after": "L14", "shot": "X00", "img": "E07", "text": "Then the pressure. Every minute we wait, more money leaves your account. Panic is the point. Panic switches off the part of you that checks."},
+  {"id": "N08", "after": "L16", "shot": "X08", "img": "E08", "text": "Or the newer version. They ask you to move your money to a safe account, to protect it. There's no such thing. The safe account is mine."},
+  {"id": "N09", "after": "L17", "shot": "X00", "img": "E09", "text": "And when you call back, use a different phone, or wait a few minutes. Some of us stayed on the line, pretending to be the bank you dialled."},
+
+  {"id": "N10", "after": "L22", "shot": "X10", "img": "E10", "text": "And now there's an upgrade. A few seconds of your kid's voice from one video is enough to clone it. So it's not a text anymore. It's them, crying, on the phone."},
+  {"id": "N11", "after": "N10", "shot": "X00", "img": "E11", "text": "A cloned voice can sound exactly right. It still can't answer a question only your family knows."},
+  {"id": "N12", "after": "L23", "shot": "X12", "img": "E12", "text": "Quick one. If this is useful so far, subscribe. Every week I take apart another trick I used to run."},
+
+  {"id": "N13", "after": "L26", "shot": "X00", "img": "E13", "text": "Then they add you to a group chat. Dozens of people posting screenshots of their payouts. Every single one of them works for me."},
+  {"id": "N14", "after": "L28", "shot": "X00", "img": "L28", "text": "Real employers pay you. They never ask you to buy your way into the work, in crypto, through an app they picked."},
+
+  {"id": "N15", "after": "L31", "shot": "X15", "img": "E15", "text": "Another version. They overpay, then ask you to send back the difference. Their payment bounces. Your refund doesn't."},
+  {"id": "N16", "after": "L32", "shot": "X00", "img": "L30", "text": "Or their courier will collect, but first you pay a small insurance fee. Buyers pay you. Never the other way round."},
+  {"id": "N17", "after": "L33", "shot": "X00", "img": "L29", "text": "Keep the chat inside the marketplace, and get paid through its own checkout. If they push you outside it, walk away."},
+
+  {"id": "N18", "after": "L36", "shot": "X00", "img": "E18", "text": "Then comes the refund trick. They say they refunded you too much by mistake. They just moved your own money around. Now you send real money to me."},
+  {"id": "N19", "after": "L37", "shot": "X00", "img": "E20", "text": "Already let them in? Turn off the internet, call your bank, and have someone you trust check that computer."},
+
+  {"id": "N20", "after": "L41", "shot": "X20", "img": "E21", "text": "Scammers call this one pig butchering. Ugly name. It means you fatten the victim up with attention first."},
+  {"id": "N21", "after": "N20", "shot": "X00", "img": "E22", "text": "They'll even help you set up the app, step by step. Patient. Friendly. Like a good teacher."},
+  {"id": "N22", "after": "L44", "shot": "X00", "img": "E23", "text": "People lose their savings this way. Retirement money. Sometimes the house. Not because they're stupid. Because they were lonely, and someone was kind."},
+
+  {"id": "N23", "after": "L49", "shot": "X23", "img": "E25", "text": "Quick recap. One, the delivery link. Two, the bank call asking for a code. Three, a new number asking for money."},
+  {"id": "N24", "after": "N23", "shot": "X24", "img": "E25", "text": "Four, a job that makes you pay. Five, a buyer with a link. Six, a pop-up with a phone number. Seven, the kind stranger who talks money."},
+  {"id": "N25", "after": "L54", "shot": "X00", "img": "L02", "text": "And tell me in the comments which one almost got you, or someone you love. I read them all. Old habits."}
+ ],
+ "images": {
+  "A": [
+   {"name": "E08", "type": "t2i", "prompt": "close-up of a worried hand holding a smartphone with a blank glowing screen over a kitchen table, a few banknotes and a bank card on the table, tense mood, no text"},
+   {"name": "E01", "type": "edit", "ref": "lenny.jpg", "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now sitting at a cluttered desk holding a thick stack of paper scripts and smirking, cozy dim hideout room, warm desk lamp"},
+   {"name": "E03", "type": "edit", "ref": "lenny.jpg", "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now sitting at a desk covered with many smartphones with blank glowing screens, holding a coffee mug, sly grin, morning light through a window"},
+   {"name": "E10", "type": "edit", "ref": "lenny.jpg", "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now holding a vintage studio microphone with a glowing teal sound wave hologram floating beside it, serious face, dark teal background"},
+   {"name": "E12", "type": "edit", "ref": "lenny.jpg", "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now giving a big thumbs up to the camera with a friendly grin, dark teal background with a soft red glow"},
+   {"name": "E07", "type": "edit", "ref": "L13.jpg", "prompt": "The same man from the image, same face, same hair and same clothes, now pressing the phone to his ear in panic, sweating, eyes wide, close-up, bright kitchen, no logos"},
+   {"name": "E09", "type": "edit", "ref": "L13.jpg", "prompt": "The same man from the image, same face, same hair and same clothes, now smiling with relief and putting the phone down on the counter, bright kitchen, any phone screen faces away from the camera, no logos"},
+   {"name": "E11", "type": "edit", "ref": "L19.jpg", "prompt": "The same woman from the image, same face, same hair and same clothes, now holding the phone to her ear, shocked and scared, hand over her mouth, cozy living room, no logos"}
+  ],
+  "B": [
+   {"name": "E25", "type": "edit", "ref": "lenny.jpg", "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now counting on his gloved fingers with a confident smile, standing in a cozy dim hideout room with a cork board and red string behind him"},
+   {"name": "E13", "type": "edit", "ref": "L24.jpg", "prompt": "The same young man from the image, same face, same hair and same clothes, now sitting on his bed amazed and excited, scrolling on his phone, small bedroom at night, any phone screen faces away from the camera, no logos"},
+   {"name": "E15", "type": "edit", "ref": "L30.jpg", "prompt": "The same young woman from the image, same face, same hair and same clothes, now frowning suspiciously at her phone in the garage, any phone screen faces away from the camera, no logos"},
+   {"name": "E18", "type": "edit", "ref": "L35.jpg", "prompt": "The same elderly man from the image, same face, same hair and same clothes, now looking confused and holding his head while staring at an old computer, home office, the computer screen glows blank, no logos"},
+   {"name": "E20", "type": "edit", "ref": "L35.jpg", "prompt": "The same elderly man from the image, same face, same hair and same clothes, now unplugging a cable from a small internet router with a determined face, home office, no logos"},
+   {"name": "E21", "type": "edit", "ref": "L39.jpg", "prompt": "The same woman from the image, same face, same hair and same clothes, now smiling warmly at her phone with small glowing heart shapes floating around it, cozy apartment at night, any phone screen faces away from the camera, no logos"},
+   {"name": "E22", "type": "edit", "ref": "L39.jpg", "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting at a table with a plain laptop without any logo, carefully following instructions on her phone, cozy apartment at night, screens face away from the camera"},
+   {"name": "E23", "type": "edit", "ref": "L39.jpg", "prompt": "The same woman from the image, same face, same hair and same clothes, now sitting alone on the sofa at night, crying quietly, holding her phone in her lap, dim lamp light, no logos"}
+  ]
+ }
+}
