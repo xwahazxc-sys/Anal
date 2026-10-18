@@ -2,6 +2,7 @@
 EPS=/tmp/claude-0/-home-user-Anal/29395d32-6348-5014-9351-365c62c4f7d2/scratchpad/eps
 log(){ echo "$(date -u +%H:%M) $*" >> $EPS/render.log; }
 for ep in ep02 ep03 ep04 ep05 ep06; do
+  ls $EPS/$ep/*_send.mp4 >/dev/null 2>&1 && continue
   until [ "$(cat $EPS/state/lenny-$ep-a 2>/dev/null)" = done ] && [ "$(cat $EPS/state/lenny-$ep-b 2>/dev/null)" = done ]; do sleep 60; done
   until [ -d /tmp/claude-0/-home-user-Anal/29395d32-6348-5014-9351-365c62c4f7d2/scratchpad/kaggle/qwen/outEB ]; do sleep 60; done
   log "$ep render start"
