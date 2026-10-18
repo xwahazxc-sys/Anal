@@ -64,6 +64,10 @@ if cmd == "timeline":
             segs.append({"kind": "title", "ov": {"t": "title", "s": s["s"], "size": 120}, "dim": True, "start": t, "end": t + 2.6,
                          "voice": 1e9, "dur": 0, "text": "", "line": None, "img": f"slides/{s['img']}.jpg", "flash": True}); t += 2.6
     total = t + 0.6; segs[-1]["end"] = total
+    WJ = json.load(open(P("words.json"))) if os.path.exists(P("words.json")) else {}
+    for s in segs: s["words"] = WJ.get(s["line"]) if s["line"] else None
+    sys.path.insert(0, ENG); import motion
+    for i, s in enumerate(segs): motion.plan(s, i, calm=s["kind"] in motion.CALM)
     json.dump({"segs": segs, "total": total}, open(P("timeline.json"), "w"), indent=1)
     vr = 24000; voice = np.zeros(int(total * vr) + vr, np.float32)
     for s in segs:
@@ -89,13 +93,13 @@ if cmd == "timeline":
         return (np.sin(2 * math.pi * 440 * tt) + np.sin(2 * math.pi * 480 * tt)) * on * .3
     W = whoosh(); W2 = whoosh(.3); PING = np.concatenate([tone(1320, .18), tone(1760, .4)])
     for s in segs:
-        put(W, max(0, s["start"] - .25), .22); k, a = s["kind"], s["start"]; at = (s["ov"] or {}).get("at", .2)
-        if k in ("title", "end"): put(boom(), a, .8)
-        if k == "stamp": put(boom(.6), a + at, .9)
+        k, a = s["kind"], s["start"]; at = (s["ov"] or {}).get("at", .2)
+        if k in ("title", "end"): put(boom(), a, .45)
+        if k == "stamp": put(boom(.6), a + at, .5)
         if k == "notif": put(PING, a + at + .1, .25)
         if k == "call": put(ring(), a + .1, .5)
         if k == "cards":
-            for i in range(len(s["ov"]["items"])): put(W2, a + .1 + i * .12, .12)
+            pass
         if k in ("list", "chips"):
             n = len(s["ov"]["items"]); a0 = s["ov"].get("at", .3)
             for i in range(n): put(tone(880, .3), a + a0 + i * ((s["dur"] * .85 - a0) / max(1, n)), .12)
@@ -103,7 +107,7 @@ if cmd == "timeline":
     bed = .45 * np.sin(2 * math.pi * 55 * tt) * np.exp(-((tt * 2) % 1) * 5)
     bed += .18 * sum(np.sin(2 * math.pi * f * tt) for f in [110, 164.8, 220, 261.6]) / 2 * (0.6 + 0.4 * np.sin(2 * math.pi * .125 * tt))
     bed += rng.standard_normal(len(tt)).astype(np.float32) * np.exp(-((tt * 4) % 1) * 40) * .08
-    sfx += (bed * np.clip(tt / 1.5, 0, 1) * np.clip((total - tt) / 2, 0, 1)).astype(np.float32) * .09
+    if not os.environ.get("MUSIC"): sfx += (bed * np.clip(tt / 1.5, 0, 1) * np.clip((total - tt) / 2, 0, 1)).astype(np.float32) * .09
     w = wave.open(P("sfx.wav"), "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes((np.clip(sfx, -1, 1) * 32767).astype(np.int16).tobytes()); w.close()
     print(f"total {total:.1f}s ({int(total // 60)}:{int(total % 60):02d}), {len(segs)} segments"); sys.exit()
@@ -162,8 +166,10 @@ elif cmd == "mux":
     n = int(sys.argv[3]); slug = SC["slug"]
     open(P("ch.txt"), "w").write("".join(f"file '{P(f'ch_{k}.mp4')}'\n" for k in range(n)))
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", P("ch.txt"), "-i", P("voice.wav"), "-i", P("sfx.wav"),
-                    "-filter_complex", "[1]aresample=48000[v];[2]aresample=48000[s];[v][s]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
-                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-ar", "48000", "-movflags", "+faststart",
+                    *(["-stream_loop", "-1", "-i", os.environ["MUSIC"]] if os.environ.get("MUSIC") else []),
+                    "-filter_complex", ("[1]aresample=48000,asplit=2[v][vk];[2]aresample=48000[s];[3]aresample=48000,volume=0.22[m0];[m0][vk]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=600[m];[v][s][m]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+                                        if os.environ.get("MUSIC") else "[1]aresample=48000[v];[2]aresample=48000[s];[v][s]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]"),
+                    "-map", "0:v", "-map", "[a]", "-shortest", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-ar", "48000", "-movflags", "+faststart",
                     P(f"{slug}.mp4")], check=True)
     kb = int(28 * 8 * 1024 / tl["total"]) - 100   # fit the preview copy under ~28 MB
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", P(f"{slug}.mp4"), "-c:v", "libx264", "-preset", "medium", "-b:v", f"{kb}k",

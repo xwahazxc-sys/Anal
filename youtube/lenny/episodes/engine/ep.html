@@ -27,6 +27,7 @@ em{font-style:normal;color:#ff3b3b} i{font-style:normal;color:#1ee3cf}
 </style></head><body>
 <img id="bg2"><img id="bg">
 <div class="vig"></div><div id="ov"></div><div class="cap" id="cap"></div><div class="flash" id="flash" style="opacity:0"></div>
+<script src="file:///tmp/claude-0/-home-user-Anal/29395d32-6348-5014-9351-365c62c4f7d2/scratchpad/eps/engine/motion.js"></script>
 <script>
 let T;
 const $=id=>document.getElementById(id);
@@ -65,15 +66,15 @@ window.render=function(t){
     const s0=k%2?1.18:1.06,s1=k%2?1.06:1.18,dx=[40,-40,-30,30][k],dy=[10,-10,20,-20][k];
     return `scale(${s0+(s1-s0)*p}) translate(${dx*(p-.5)}px,${dy*(p-.5)}px)`};
   const bg=$('bg'); if(!bg.src.endsWith(s.img))bg.src=s.img;
-  bg.style.transform=kb(s,i,lt); bg.style.filter=s.dim?'brightness(.45) saturate(.9)':'none';
-  const pv=i>0?S[i-1]:null, b2=$('bg2'), f=Math.min(1,lt/.6);
-  if(pv&&f<1&&!s.flash){ if(!b2.src.endsWith(pv.img))b2.src=pv.img; b2.style.opacity=1; b2.style.transform=kb(pv,i-1,pv.end-pv.start+lt);
+  const cm=MOTION.cam(s,lt,t); bg.style.transformOrigin=cm.origin; bg.style.transform=cm.transform; bg.style.filter=s.dim?'brightness(.45) saturate(.9)':'none';
+  const pv=i>0?S[i-1]:null, b2=$('bg2'), f=Math.min(1,lt/.2);
+  if(pv&&f<1&&!s.flash){ if(!b2.src.endsWith(pv.img))b2.src=pv.img; b2.style.opacity=1; const pc=MOTION.cam(pv,pv.end-pv.start+lt,t); b2.style.transformOrigin=pc.origin; b2.style.transform=pc.transform+' scale('+(1+lt*.4)+')';
     b2.style.filter=pv.dim?'brightness(.45) saturate(.9)':'none'; bg.style.opacity=f; } else { b2.style.opacity=0; bg.style.opacity=1; }
   $('ov').innerHTML=s.ov?(OV[s.ov.t]||(()=>''))(s.ov,lt,s):'';
   $('flash').style.opacity=s.flash?Math.max(0,.5-lt*3):0;
   const cap=$('cap'), sp=t-s.voice;
-  if(s.text&&sp>=0&&sp<s.dur+.1){const w=s.text.split(/\s+/),k=Math.min(w.length-1,Math.floor(sp/s.dur*w.length)),c0=Math.floor(k/4)*4;
-    cap.innerHTML=w.slice(c0,c0+4).map((x,n)=>`<span class="${c0+n===k?'on':''}">${x}</span>`).join(' ')} else cap.innerHTML='';
+  if(s.text&&sp>=0&&sp<s.dur+.1){const w=s.text.split(/\s+/),k=s.words&&s.words.length==w.length?Math.max(0,s.words.filter(x=>x<=sp+.04).length-1):Math.min(w.length-1,Math.floor(sp/s.dur*w.length)),c0=Math.floor(k/4)*4;
+    cap.innerHTML=MOTION.caption(s,sp)} else cap.innerHTML='';
 };
 window.ready=()=>Promise.all(['bg','bg2'].map(id=>new Promise(r=>{const i=$(id);if(!i.src||i.complete)r();else{i.onload=()=>r();i.onerror=()=>r();setTimeout(r,3000)}})));
 </script></body></html>

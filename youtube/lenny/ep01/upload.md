@@ -1,6 +1,7 @@
-# 7 Scams That Don't Look Like Scams
+# Don't Fall For Scam #7 (Nobody Spots It)
 
 ## Title options
+- Don't Fall For Scam #7 (Nobody Spots It)
 - 7 Scams That Don't Look Like Scams (Ex-Scammer Explains)
 - I Ran These 7 Scams. Can You Spot #7?
 - 7 Scams That Don't Look Like Scams
@@ -27,6 +28,8 @@ You could lose your savings to 7 scams, but only one of them almost nobody spots
 🛡 If you've lost money to a scam (US): call your bank first, then report at reportfraud.ftc.gov and ic3.gov. UK: forward scam texts to 7726 and report to Action Fraud.
 
 🦝 Lenny is a fictional character — a reformed con artist who takes scams apart so they stop working on you. Messages, names, numbers and websites shown are made up for education. Not financial or legal advice.
+
+🎵 Music: "Sneaky Snitch" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/
 
 #scams #scamawareness #fraudprevention
 ```
