@@ -1,32 +1,165 @@
 {
  "ep02": {
-  "titles": ["9 Scam Texts You'll Get This Year (I Wrote Them)", "I Used To Send These Scam Texts. Can You Spot Them?", "The $2.10 Text That Steals Your Card (+8 More)"],
+  "titles": [
+   "9 Scam Texts You'll Get This Year (I Wrote Them)",
+   "I Used To Send These Scam Texts. Can You Spot Them?",
+   "The $2.10 Text That Steals Your Card (+8 More)"
+  ],
   "desc": "You tap one text link, you lose your card. Lenny, an ex-scammer raccoon, used to write these texts — the toll text, the failed payment, the \"code sent by mistake\", the fake fraud alert and five more. See each one exactly as it lands on your phone, spot the trick, and learn the one rule that beats all nine.",
   "extra": "📊 Sources: FTC Consumer Sentinel 2025 data (reported fraud losses, text as the top contact method, investment scam losses).",
-  "tags": ["scam texts", "text message scams", "toll scam text", "smishing", "how to spot scam texts", "fake fraud alert text", "verification code scam", "wrong number text scam", "scam awareness", "ex scammer", "lenny the raccoon", "fraud prevention", "phishing texts 2026", "7726"]
+  "tags": [
+   "scam texts",
+   "text message scams",
+   "toll scam text",
+   "smishing",
+   "how to spot scam texts",
+   "fake fraud alert text",
+   "verification code scam",
+   "wrong number text scam",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon",
+   "fraud prevention",
+   "phishing texts 2026",
+   "7726"
+  ]
  },
  "ep03": {
-  "titles": ["I Ran The \"Wrong Number\" Scam. Here's Day 1 to Day 40.", "The \"Wrong Number\" Text That Ends With Your Savings", "Pig Butchering Explained By An Ex-Scammer (Day By Day)"],
+  "titles": [
+   "I Ran The \"Wrong Number\" Scam. Here's Day 1 to Day 40.",
+   "The \"Wrong Number\" Text That Ends With Your Savings",
+   "Pig Butchering Explained By An Ex-Scammer (Day By Day)"
+  ],
   "desc": "\"Hi Anna, it's Daniel from the conference.\" One polite reply to a wrong-number text can turn into the most expensive scam in America. Lenny walks you through it day by day — the photos, the routine, the fake trading profit, the fees — then shows the 5 tells and what to do if someone you love is already in one.",
   "extra": "📊 Sources: FTC Consumer Sentinel 2025 (investment scam losses, average reported loss); UN OHCHR reporting on trafficking into scam compounds in Southeast Asia.",
-  "tags": ["wrong number scam", "pig butchering scam", "romance scam", "crypto investment scam", "fake trading app", "recovery scam", "how pig butchering works", "online romance scam signs", "scam awareness", "ex scammer", "lenny the raccoon", "fraud prevention"]
+  "tags": [
+   "wrong number scam",
+   "pig butchering scam",
+   "romance scam",
+   "crypto investment scam",
+   "fake trading app",
+   "recovery scam",
+   "how pig butchering works",
+   "online romance scam signs",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon",
+   "fraud prevention"
+  ]
  },
  "ep04": {
-  "titles": ["AI Cloned Your Voice. This Is The Call Your Family Gets.", "Your Kid Calls Crying. It's Not Your Kid.", "How AI Voice Clone Scams Work (And The One Question That Beats Them)"],
+  "titles": [
+   "AI Cloned Your Voice. This Is The Call Your Family Gets.",
+   "Your Kid Calls Crying. It's Not Your Kid.",
+   "How AI Voice Clone Scams Work (And The One Question That Beats Them)"
+  ],
   "desc": "Your mum gets a call in your voice, crying. You never made it. Lenny shows exactly how the cloned-voice scam works — where the voice comes from, the panic script, the fake officer handoff, the money — plus three more AI tricks (fake boss video calls, deepfake celebrity ads, \"AI trading bots\") and the family code word that beats them all.",
   "extra": "📊 Sources: widely reported 2024 Hong Kong deepfake video-call fraud (~US$25M); FTC and FBI guidance on family emergency and impostor scams.",
-  "tags": ["ai voice clone scam", "voice cloning scam", "deepfake scam", "family emergency scam", "grandparent scam ai", "family code word", "deepfake video call scam", "ai scams 2026", "scam awareness", "ex scammer", "lenny the raccoon", "fraud prevention"]
+  "tags": [
+   "ai voice clone scam",
+   "voice cloning scam",
+   "deepfake scam",
+   "family emergency scam",
+   "grandparent scam ai",
+   "family code word",
+   "deepfake video call scam",
+   "ai scams 2026",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon",
+   "fraud prevention"
+  ]
  },
  "ep05": {
-  "titles": ["6 Calls Scammers Make To Your Parents (I Used To Make Them)", "\"Just Hang Up\" Doesn't Work. Here's What Does.", "The Phantom Hacker & 5 More Scams Targeting Seniors"],
+  "titles": [
+   "6 Calls Scammers Make To Your Parents (I Used To Make Them)",
+   "\"Just Hang Up\" Doesn't Work. Here's What Does.",
+   "The Phantom Hacker & 5 More Scams Targeting Seniors"
+  ],
   "desc": "\"Just hang up\" fails because the scripts are built to stop you hanging up. Lenny, an ex-scammer, plays the 6 calls older people get most — \"Grandma, it's me\", the government call, the big charge, \"you've won\", the new friend and the three-person phantom hacker scam — and the 5 things families can set up this weekend that actually work.",
   "extra": "📊 Sources: FBI IC3 2024 Elder Fraud Report (~$4.9B reported losses by people over 60); FBI warnings on the phantom hacker scam; Social Security Administration scam guidance.",
-  "tags": ["elder fraud", "scams targeting seniors", "grandparent scam", "social security scam call", "phantom hacker scam", "tech support scam", "lottery scam", "protect parents from scams", "elder fraud hotline", "scam awareness", "ex scammer", "lenny the raccoon"]
+  "tags": [
+   "elder fraud",
+   "scams targeting seniors",
+   "grandparent scam",
+   "social security scam call",
+   "phantom hacker scam",
+   "tech support scam",
+   "lottery scam",
+   "protect parents from scams",
+   "elder fraud hotline",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon"
+  ]
  },
  "ep06": {
-  "titles": ["6 Mind Tricks Scammers Use On Smart People (Ex-Scammer Explains)", "You'd Never Fall For A Scam? That's Who I Wanted.", "The Psychology Of Scams: 6 Buttons In Your Brain"],
+  "titles": [
+   "6 Mind Tricks Scammers Use On Smart People (Ex-Scammer Explains)",
+   "You'd Never Fall For A Scam? That's Who I Wanted.",
+   "The Psychology Of Scams: 6 Buttons In Your Brain"
+  ],
   "desc": "You think you'd never fall for a scam. Perfect — you're exactly who Lenny wanted. Every scam he ran pushed the same six buttons: the clock, the badge, fear, the favour, everyone else, and the small yes. Learn to see each one, how to switch it off, and a 3-question test that catches almost any scam in five seconds.",
   "extra": "",
-  "tags": ["scam psychology", "why smart people fall for scams", "social engineering", "manipulation tactics", "urgency scam", "authority scam", "sunk cost scam", "how to spot a scam", "scam awareness", "ex scammer", "lenny the raccoon", "fraud prevention"]
+  "tags": [
+   "scam psychology",
+   "why smart people fall for scams",
+   "social engineering",
+   "manipulation tactics",
+   "urgency scam",
+   "authority scam",
+   "sunk cost scam",
+   "how to spot a scam",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon",
+   "fraud prevention"
+  ]
+ },
+ "ep07": {
+  "titles": [
+   "I Built Fake Online Stores. Spot One In 10 Seconds.",
+   "80% Off? It's Probably My Store (Ex-Scammer)",
+   "How To Spot A Fake Online Store Before Black Friday"
+  ],
+  "desc": "You found a jacket for 80% off in an ad. Lenny, an ex-scammer raccoon, used to build those stores — copied photos, fake countdowns, fake reviews, a checkout that \"fails\" so you pay another way. See how the stores are built, the 7-sign 10-second check that spots almost every one, and exactly what to do if you already paid.",
+  "extra": "📊 Source: FTC Consumer Sentinel data — online shopping is consistently one of the most reported fraud categories.",
+  "tags": [
+   "fake online store",
+   "online shopping scam",
+   "black friday scams",
+   "how to spot a fake website",
+   "social media ad scam",
+   "fake store reviews",
+   "chargeback",
+   "credit card dispute",
+   "holiday scams 2026",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon"
+  ]
+ },
+ "ep08": {
+  "titles": [
+   "7 DMs That Are Always Scams (I Sent Them All)",
+   "Don't Open This DM: 7 Social Media Scams",
+   "\"Is This You In This Video?\" + 6 More Scam DMs"
+  ],
+  "desc": "\"Is this you in this video?\" Lenny, an ex-scammer raccoon, sent every one of these: the fake video link, the brand deal, the copycat giveaway, the friend asking for a code, the fake \"support\" warning, the money mentor and the cash flip. See each DM exactly as it lands, the tell for each one, and the 3-minute lockdown that protects your account.",
+  "extra": "",
+  "tags": [
+   "instagram scams",
+   "social media scams",
+   "scam dms",
+   "is this you in this video scam",
+   "fake giveaway scam",
+   "brand ambassador scam",
+   "account hacked",
+   "cash flip scam",
+   "two factor authentication",
+   "scam awareness",
+   "ex scammer",
+   "lenny the raccoon"
+  ]
  }
 }

@@ -1,0 +1,536 @@
+{
+ "slug": "lenny_ep07_fake_stores",
+ "title": "I Built Fake Online Stores. Spot One In 10 Seconds.",
+ "hook_score": "70 WORKABLE (The Question)",
+ "fallback": "L44",
+ "sting": {
+  "after": "n05",
+  "s": "THE FAKE STORE<br><em>10-SECOND CHECK</em>",
+  "img": "h03"
+ },
+ "thumb": {
+  "img": "h14",
+  "text": "80% OFF?<br><b>IT'S</b><br><em>MY STORE</em>",
+  "pos": "65% 40%",
+  "size": 112
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "h04",
+   "text": "You found a jacket for eighty percent off in an ad. I built that store. Can you spot why it'll never arrive?",
+   "ov": {
+    "t": "big",
+    "s": "-80%",
+    "sub": "TOO GOOD TO BE TRUE?",
+    "size": 200
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. I used to build online shops that looked better than the real ones. They sold everything, and shipped nothing.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "h12",
+   "text": "And this is my favourite time of year. Black Friday, Cyber Monday, holiday shopping. Everyone is hunting for a deal, and nobody has time to check."
+  },
+  {
+   "id": "n03b",
+   "img": "E03",
+   "text": "In my old crew, we started building holiday stores in September. By November we had dozens ready. A different brand on each one, the same checkout underneath."
+  },
+  {
+   "id": "n04",
+   "img": "L44",
+   "text": "Online shopping scams are one of the most reported types of fraud every single year, according to the FTC. So I'll show you how I built these stores, step by step."
+  },
+  {
+   "id": "n05",
+   "img": "E25",
+   "text": "Then the ten second check that spots almost every one of them. And at the end, what to do if you already paid. That part can get your money back."
+  },
+  {
+   "id": "n06",
+   "img": "h02",
+   "text": "Step one. The shop.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 1",
+    "s": "THE SHOP"
+   }
+  },
+  {
+   "id": "n07",
+   "img": "h02",
+   "text": "Building a store takes me one afternoon. A website template, a domain name, and a payment page. That's it. It costs less than a pair of the shoes I'm pretending to sell."
+  },
+  {
+   "id": "n08",
+   "img": "h01",
+   "text": "The photos? I copy them from the real brand's website. Same models, same lighting, same descriptions. Sometimes I copy the whole site, colours and all."
+  },
+  {
+   "id": "n08b",
+   "img": "h01",
+   "text": "And if a product was sold out everywhere, even better. Sold out at every real shop, but somehow in stock with me. That's not luck. That's bait."
+  },
+  {
+   "id": "n09",
+   "img": "L23",
+   "text": "And the name sounds right. Something like the brand name, plus outlet, or official, or sale, or the city. Your brain sees the brand name and stops reading."
+  },
+  {
+   "id": "n10",
+   "img": "h01",
+   "text": "I'd add a countdown timer, a little badge that says only three left, and a pop up. Sarah from Ohio just bought this. None of it real. All of it code.",
+   "ov": {
+    "t": "chips",
+    "c": "red",
+    "items": [
+     "⏱ SALE ENDS IN 09:59",
+     "🔥 ONLY 3 LEFT",
+     "👀 14 PEOPLE VIEWING"
+    ]
+   }
+  },
+  {
+   "id": "n10b",
+   "img": "h02",
+   "text": "We even had a chat bubble in the corner. Hi, I'm Emma, can I help you? Emma was a script that answered the same five questions, very politely."
+  },
+  {
+   "id": "n11",
+   "img": "h13",
+   "text": "Step two. The ad.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 2",
+    "s": "THE AD"
+   }
+  },
+  {
+   "id": "n12",
+   "img": "h13",
+   "text": "Nobody finds my shop on their own. I put it in front of you. A social media ad, between your friend's holiday photos and a cat video."
+  },
+  {
+   "id": "n13",
+   "img": "L28",
+   "text": "Ads are cheap, and I can pick exactly who sees them. Women who like this brand. Men who just searched for that watch. Grandparents shopping for the grandkids."
+  },
+  {
+   "id": "n13b",
+   "img": "E01",
+   "text": "I'd test ten versions of the same ad and keep whichever one people clicked the most. It was almost always the one with the biggest red number."
+  },
+  {
+   "id": "n14",
+   "img": "E03",
+   "text": "And when an ad account got banned, I just made another one. And another store with a new name. Some weeks I had a dozen running at once."
+  },
+  {
+   "id": "n15",
+   "img": "h04",
+   "text": "Sometimes I even used a famous face. A fake video of a celebrity saying, I love this brand. I covered that trick in my video about AI scams."
+  },
+  {
+   "id": "n15b",
+   "img": "h03",
+   "text": "Or a closing down sale. Our family store is closing after forty years, everything must go. People love helping a small shop. It was never a family. It was me."
+  },
+  {
+   "id": "n16",
+   "img": "h10",
+   "text": "Step three. You pay.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 3",
+    "s": "YOU PAY"
+   }
+  },
+  {
+   "id": "n17",
+   "img": "h10",
+   "text": "The checkout looks normal. Sometimes it even takes your card. Sometimes it says, card payment failed, please use bank transfer, or a payment app, or crypto, for a ten percent discount.",
+   "ov": {
+    "t": "notif",
+    "from": "🛒 Checkout",
+    "msg": "⚠ Card payment failed. Pay by bank transfer and get an extra 10% off!",
+    "at": 2.2
+   }
+  },
+  {
+   "id": "n18",
+   "img": "L09",
+   "text": "That failed card was usually not a mistake. Bank transfers and payment apps are much harder to reverse. Crypto is almost impossible. That discount is the price of your protection."
+  },
+  {
+   "id": "n19",
+   "img": "b05",
+   "text": "And if you did pay by card, I might not care about the order at all. I have your card number, your name, your address and your email. That's worth more than a jacket."
+  },
+  {
+   "id": "n19b",
+   "img": "L09",
+   "text": "Some of my stores also signed you up for a monthly membership hidden in the small print. Ten dollars a month, every month, until you noticed."
+  },
+  {
+   "id": "n20",
+   "img": "h06",
+   "text": "Step four. What arrives.",
+   "ov": {
+    "t": "title",
+    "n": "STEP 4",
+    "s": "WHAT ARRIVES"
+   }
+  },
+  {
+   "id": "n21",
+   "img": "h06",
+   "text": "There are three endings. Ending one. Nothing. The site disappears. The email bounces. The store comes back next week under a new name."
+  },
+  {
+   "id": "n22",
+   "img": "h05",
+   "text": "Ending two. Something arrives, but it's junk. A cheap copy, the wrong size, sunglasses instead of a jacket. Because now I can say, it was delivered, look at the tracking."
+  },
+  {
+   "id": "n23",
+   "img": "h07",
+   "text": "That tracking number is real. It just shows a cheap envelope going to your city. Your bank sees delivered and may say, sorry, you got your package."
+  },
+  {
+   "id": "n24",
+   "img": "L53",
+   "text": "Ending three. Something arrives, and you want to return it. The return address is on the other side of the world. Shipping costs more than you paid. You give up. I win."
+  },
+  {
+   "id": "n24b",
+   "img": "h05",
+   "text": "Some people even left good reviews before the package arrived, because the site asked nicely. Those reviews sold the next hundred jackets."
+  },
+  {
+   "id": "n25",
+   "img": "E12",
+   "text": "Quick one. If you're about to do any holiday shopping, subscribe, and keep this one handy. Every week I take apart another trick I used to run.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n26",
+   "img": "L54",
+   "text": "So. The ten second check. Seven signs. If you see two, close the tab.",
+   "ov": {
+    "t": "head",
+    "s": "THE <i>10-SECOND</i> CHECK",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n27",
+   "img": "h03",
+   "text": "Sign one. The price. Seventy, eighty, ninety percent off a brand that never does big discounts. Real stores don't lose money on every sale. I didn't either, because I never shipped.",
+   "ov": {
+    "t": "quote",
+    "label": "SIGN #1",
+    "s": "A price that's <em>too good.</em>"
+   }
+  },
+  {
+   "id": "n28",
+   "img": "L10",
+   "text": "Sign two. The address bar. Brand name dash outlet dash sale, dot shop, or dot store, or some country you didn't expect. Search the store's name plus the word scam, or reviews, before you buy.",
+   "ov": {
+    "t": "quote",
+    "label": "SIGN #2",
+    "s": "brand<em>-outlet-sale</em>.shop"
+   }
+  },
+  {
+   "id": "n29",
+   "img": "h08",
+   "text": "Sign three. No real contact. No phone number, no street address, just a contact form or a free email account. A real shop wants you to find them. I didn't."
+  },
+  {
+   "id": "n29b",
+   "img": "L23",
+   "text": "And read the about us page. Ours always said the same thing. Founded by passionate people who love quality. It says nothing, because there's nothing behind it."
+  },
+  {
+   "id": "n30",
+   "img": "h10",
+   "text": "Sign four. The payment. Bank transfer, payment apps, crypto, gift cards, or a card form that mysteriously fails. Pay with a credit card, or a checkout service with buyer protection, or don't pay.",
+   "ov": {
+    "t": "quote",
+    "label": "SIGN #4",
+    "s": "Card \"failed\"? Pay another way? <em>Close the tab.</em>"
+   }
+  },
+  {
+   "id": "n31",
+   "img": "E01",
+   "text": "Sign five. The reviews. All five stars, all on their own website, all written the same way. Check what people say somewhere the shop doesn't control."
+  },
+  {
+   "id": "n32",
+   "img": "L44",
+   "text": "Sign six. The photos. Long press any product photo and search it. If it shows up on the real brand's site, you know where I got it."
+  },
+  {
+   "id": "n32b",
+   "img": "h08",
+   "text": "And look at the small details. Prices in a strange currency, spelling mistakes in the return policy, the same product under ten brand names. Copy and paste leaves fingerprints."
+  },
+  {
+   "id": "n33",
+   "img": "h09",
+   "text": "And sign seven. The pressure. Countdown timers, only two left, someone just bought this. Real shops use these sometimes too. But on a fake one, they never stop.",
+   "ov": {
+    "t": "quote",
+    "label": "SIGN #7",
+    "s": "A countdown that <em>never ends.</em>"
+   }
+  },
+  {
+   "id": "n34",
+   "img": "L33",
+   "text": "My stores usually failed three or four of these at once. Nobody checked, because they were in a hurry. Ten seconds would have saved them."
+  },
+  {
+   "id": "n34b",
+   "img": "L28",
+   "text": "If a deal is real, it'll still be real after a two minute search. A fake one doesn't survive the search."
+  },
+  {
+   "id": "n35",
+   "img": "h12",
+   "text": "And during the holidays there's a bonus trick.",
+   "ov": {
+    "t": "title",
+    "n": "BONUS",
+    "s": "AFTER YOU SHOP",
+    "size": 130
+   }
+  },
+  {
+   "id": "n36",
+   "img": "PHONE",
+   "text": "After you've ordered from real shops, you're expecting five parcels. That's when my delivery texts hit hardest. Your parcel could not be delivered. Sound familiar? That's scam number one from my first video.",
+   "ov": {
+    "t": "notif",
+    "from": "💬 Parcel Service · now",
+    "msg": "Your parcel could not be delivered. Update your address here:",
+    "link": "parcel-redelivery-update.info"
+   }
+  },
+  {
+   "id": "n37",
+   "img": "L11",
+   "text": "So when you're waiting for packages, track them in the store's own app, or the courier's app. Never through a link in a text."
+  },
+  {
+   "id": "n37b",
+   "img": "PHONE",
+   "text": "And if a text says your order is held at customs and you need to pay a fee, check in the store's own app. Real customs fees don't arrive with a random link."
+  },
+  {
+   "id": "n38",
+   "img": "h11",
+   "text": "Now. If you already paid. Here's what to do, in this order.",
+   "ov": {
+    "t": "head",
+    "s": "ALREADY <em>PAID?</em>",
+    "at": 0.3
+   }
+  },
+  {
+   "id": "n39",
+   "img": "h11",
+   "text": "If you paid by card, call your card company today, and ask to dispute the charge. Say you paid for goods you never received, or that weren't as described. The faster, the better.",
+   "ov": {
+    "t": "list",
+    "items": [
+     "✓ Call your card company today",
+     "✓ Dispute the charge",
+     "✓ Save screenshots of the site and emails"
+    ]
+   }
+  },
+  {
+   "id": "n40",
+   "img": "L53",
+   "text": "That's why I hated credit cards. Disputes are built into them. Debit cards and payment apps can work too, but it's often harder and slower. Bank transfers and crypto, usually the hardest of all."
+  },
+  {
+   "id": "n41",
+   "img": "h10",
+   "text": "Save everything. Screenshots of the store, the ad, the order confirmation, the emails. The shop will vanish, so grab it now."
+  },
+  {
+   "id": "n42",
+   "img": "E07",
+   "text": "Report it to the FTC, and to the platform that showed you the ad. Every report helps take down the next store. And if your card details went in, ask for a new card."
+  },
+  {
+   "id": "n43",
+   "img": "L37",
+   "text": "And watch for the follow up. Someone contacts you offering to recover your money for a fee. You know my answer by now. Same scam, round two."
+  },
+  {
+   "id": "n43b",
+   "img": "L33",
+   "text": "And don't feel stupid. My stores fooled careful people, smart people, even people who worked in retail. It looks real because it was copied from something real."
+  },
+  {
+   "id": "n44",
+   "img": "L44",
+   "text": "Here's the honest truth. I didn't win because my shops were perfect. They weren't. I won because people were busy, and the deal felt like luck."
+  },
+  {
+   "id": "n45",
+   "img": "L02",
+   "text": "Quick recap. The price. The address. No contact. The payment. The reviews. The photos. The pressure. Two of those, close the tab.",
+   "ov": {
+    "t": "cards",
+    "h": "THE <i>7 SIGNS</i>",
+    "ticks": 7,
+    "items": [
+     [
+      "💸",
+      "Too cheap"
+     ],
+     [
+      "🔗",
+      "Odd address"
+     ],
+     [
+      "📭",
+      "No contact"
+     ],
+     [
+      "💳",
+      "Odd payment"
+     ],
+     [
+      "⭐",
+      "Fake reviews"
+     ],
+     [
+      "🖼️",
+      "Copied photos"
+     ],
+     [
+      "⏱",
+      "Pressure"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n46",
+   "img": "L48",
+   "text": "Have you ever ordered from one of these? What did you get, if anything? Tell me in the comments. The weirder the better."
+  },
+  {
+   "id": "n47",
+   "img": "L33",
+   "text": "And send this to the person in your family who buys everything they see in ads. Before Black Friday, not after."
+  },
+  {
+   "id": "n48",
+   "img": "L54",
+   "text": "Trust me. I used to build these stores.",
+   "ov": {
+    "t": "end",
+    "s": "THE FAKE STORE<br><em>10-SECOND CHECK</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "h01",
+   "type": "t2i",
+   "prompt": "a plain laptop without any logo on a desk showing a glossy photo of a stylish leather jacket, sleek and tempting, soft studio light, no text, no logos"
+  },
+  {
+   "name": "h03",
+   "type": "t2i",
+   "prompt": "a shop window display with stylish sneakers, a leather jacket and a handbag under giant red sale tags with blank labels, glowing, evening, no text, no logos"
+  },
+  {
+   "name": "h06",
+   "type": "t2i",
+   "prompt": "an empty doorstep at the front door of a house on a rainy evening, no package, a porch light on, lonely mood, no text"
+  },
+  {
+   "name": "h07",
+   "type": "t2i",
+   "prompt": "a cheap flimsy pair of plastic sunglasses lying in an opened padded envelope on a kitchen table, disappointing, no text, no logos"
+  },
+  {
+   "name": "h09",
+   "type": "t2i",
+   "prompt": "an hourglass with glowing red sand standing on a laptop keyboard in a dark room, pressure and urgency, no text"
+  },
+  {
+   "name": "h12",
+   "type": "t2i",
+   "prompt": "a pile of colourful shopping bags and gift boxes under festive string lights at night, holiday shopping mood, no text, no logos"
+  },
+  {
+   "name": "h02",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now sitting at a desk with three plain laptops whose screens face away from the camera, typing with a sly grin, cozy dim hideout room, evening"
+  },
+  {
+   "name": "h04",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now lying on her bed at night scrolling her phone with an excited smile, any phone screen faces away from the camera, cozy bedroom, no logos"
+  },
+  {
+   "name": "h05",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now sitting at a kitchen table holding a small opened padded envelope, disappointed and annoyed, no logos"
+  },
+  {
+   "name": "h08",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now holding a big magnifying glass up to a smartphone like a detective, curious face, dark teal background"
+  },
+  {
+   "name": "h10",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now sitting at a plain laptop without any logo holding a credit card, hesitant, cozy living room in the evening, the screen faces away from the camera"
+  },
+  {
+   "name": "h11",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now on the phone holding up a credit card with a determined, confident expression, cozy living room, no logos"
+  },
+  {
+   "name": "h13",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now slouched on a sofa scrolling his phone, the glow on his face, curious eyebrows raised, evening, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "h14",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding up a shopping bag with a big red blank price tag, sly grin, dark teal background with a soft red glow, empty space on the left"
+  }
+ ]
+}

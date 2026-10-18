@@ -1,0 +1,618 @@
+{
+ "slug": "lenny_ep08_7_scam_dms",
+ "title": "7 DMs That Are Always Scams (I Sent Them All)",
+ "hook_score": "58 WORKABLE (The Question)",
+ "fallback": "L44",
+ "sting": {
+  "after": "n05",
+  "s": "7 DMs THAT ARE<br><em>ALWAYS SCAMS</em>",
+  "img": "i02"
+ },
+ "thumb": {
+  "img": "i14",
+  "text": "DON'T<br>OPEN<br><em>THIS</em> <b>DM</b>",
+  "pos": "65% 40%",
+  "size": 120
+ },
+ "lines": [
+  {
+   "id": "n01",
+   "img": "i01",
+   "text": "You'll get one of these seven DMs this month. I sent all of them. Which one steals your account?",
+   "ov": {
+    "t": "head",
+    "s": "7 DMs. <em>I SENT THEM ALL.</em>",
+    "at": 2.0
+   }
+  },
+  {
+   "id": "n02",
+   "img": "L02",
+   "text": "I'm Lenny. Ex-scammer. Texts and calls were my old job. But the easiest money I ever made came through direct messages on social media.",
+   "ov": {
+    "t": "lower",
+    "b": "ex-scammer · now on your side"
+   }
+  },
+  {
+   "id": "n03",
+   "img": "i02",
+   "text": "Here's why. A DM comes from a profile with a face, a name, followers, maybe even a friend you know. It doesn't feel like a stranger. It feels like the app itself."
+  },
+  {
+   "id": "n04",
+   "img": "L44",
+   "text": "And once I have one account, I have all of that person's friends. Every account I took became a key to a hundred more."
+  },
+  {
+   "id": "n04b",
+   "img": "E03",
+   "text": "In my crew, a hacked account with real friends was worth more than a stolen card. A card gets blocked in an hour. Trust lasts for weeks."
+  },
+  {
+   "id": "n05",
+   "img": "E25",
+   "text": "So here are the seven DMs, exactly as they land in your inbox, and the one rule that beats every one of them. Number seven is aimed straight at teenagers."
+  },
+  {
+   "id": "n06",
+   "img": "i01",
+   "text": "Number one. Is this you?",
+   "ov": {
+    "t": "title",
+    "n": "#1",
+    "s": "\"IS THIS YOU?\""
+   }
+  },
+  {
+   "id": "n07",
+   "img": "i01",
+   "text": "Is this you in this video? Everyone's sharing it.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Jess (friend) · now",
+    "msg": "omg is this you in this video?? 😳 everyone's sharing it",
+    "link": "vid-share.live/x8k"
+   }
+  },
+  {
+   "id": "n08",
+   "img": "L23",
+   "text": "Fear and curiosity in one line. You have to know. So you tap. And the page says, log in to watch. It looks exactly like the app you're already using."
+  },
+  {
+   "id": "n09",
+   "img": "E01",
+   "text": "You type your username and password. Now I have them. I log in, change your password and your email, and send the same message to everyone you follow, from you."
+  },
+  {
+   "id": "n10",
+   "img": "i13",
+   "text": "Your friends trust you, so they tap too. That's how one account becomes a thousand by the end of the day."
+  },
+  {
+   "id": "n10b",
+   "img": "E01",
+   "text": "Sometimes I kept the account quiet for days, reading messages, learning how you talk. So when I finally asked your friends for something, I sounded exactly like you."
+  },
+  {
+   "id": "n11",
+   "img": "i01",
+   "text": "The tell. Any link that makes you log in again, from inside a message, is a trap. If you really need to check, open the app yourself. You're already logged in.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "A link that makes you <em>log in again.</em>"
+   }
+  },
+  {
+   "id": "n12",
+   "img": "i03",
+   "text": "Number two. The brand deal.",
+   "ov": {
+    "t": "title",
+    "n": "#2",
+    "s": "THE BRAND DEAL"
+   }
+  },
+  {
+   "id": "n13",
+   "img": "i03",
+   "text": "Hi! We love your content. We'd like you to become a brand ambassador. Free products, twenty percent commission. Just cover shipping.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 @luxe.watch.official · now",
+    "msg": "Hi! 😍 We love your content! Become our ambassador: FREE products + 20% commission. Just cover shipping 📦"
+   }
+  },
+  {
+   "id": "n14",
+   "img": "L53",
+   "text": "Flattery works on everyone. You've got three hundred followers, and a brand noticed you. Of course you say yes."
+  },
+  {
+   "id": "n15",
+   "img": "i04",
+   "text": "The free watch costs nothing. The shipping costs sixty dollars. And the watch is worth five, if it comes at all. Another version sends you a brand kit file to download. That file is the scam."
+  },
+  {
+   "id": "n15b",
+   "img": "L53",
+   "text": "I ran a fake watch brand like this for months. Hundreds of ambassadors. Every one of them paid me shipping, and I never paid a single commission."
+  },
+  {
+   "id": "n16",
+   "img": "i03",
+   "text": "The tell. Real brands pay creators. They don't charge them. And they don't send contracts as files from random accounts with dot official in the name.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "Real brands <em>pay</em> you. They don't <em>charge</em> you."
+   }
+  },
+  {
+   "id": "n17",
+   "img": "i05",
+   "text": "Number three. You won the giveaway.",
+   "ov": {
+    "t": "title",
+    "n": "#3",
+    "s": "YOU WON!"
+   }
+  },
+  {
+   "id": "n18",
+   "img": "i05",
+   "text": "Congratulations! You've been selected as a winner of our giveaway. Claim your prize within twenty four hours.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 @realcreator_._official · now",
+    "msg": "🎉 Congratulations! You've been selected as a WINNER of our giveaway! Claim within 24h:",
+    "link": "claim-prize-now.site"
+   }
+  },
+  {
+   "id": "n19",
+   "img": "i07",
+   "text": "Look at the name. The real creator, plus an extra dot, or an underscore, or the word official. Same profile picture. I'd copy their last nine posts so the page looked full."
+  },
+  {
+   "id": "n20",
+   "img": "L09",
+   "text": "Then the prize needs a small delivery fee. Or your card details to verify your identity. Or a login. The prize was never real. You were the prize."
+  },
+  {
+   "id": "n20b",
+   "img": "i07",
+   "text": "I'd even comment under the real creator's posts, as the copy account. Congrats to everyone who entered, check your DMs. People went looking for me."
+  },
+  {
+   "id": "n21",
+   "img": "i05",
+   "text": "The tell. Real winners are announced in public by the real account, and real prizes never cost money. Check the username letter by letter.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "Check the username. <em>Letter by letter.</em>"
+   }
+  },
+  {
+   "id": "n22",
+   "img": "i06",
+   "text": "Number four. Your friend needs a favour.",
+   "ov": {
+    "t": "title",
+    "n": "#4",
+    "s": "THE FRIEND'S FAVOUR",
+    "size": 120
+   }
+  },
+  {
+   "id": "n23",
+   "img": "i06",
+   "text": "Hey, I'm in a contest and need votes. You'll get a code by text, can you send it to me? Takes two seconds.",
+   "voice": "af_bella",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Mike (friend) · now",
+    "msg": "hey!! I'm in a contest and need votes 🙏 you'll get a code by text, can you send it to me? takes 2 sec"
+   }
+  },
+  {
+   "id": "n24",
+   "img": "E01",
+   "text": "That's not Mike. That's me, inside Mike's hacked account. The code isn't a vote. It's the reset code for your account. You send it, you're the next Mike."
+  },
+  {
+   "id": "n25",
+   "img": "L33",
+   "text": "Other versions. I'm stuck abroad and my card got blocked, can you lend me two hundred? Or, can you buy me a gift card, I'll pay you back tonight."
+  },
+  {
+   "id": "n25b",
+   "img": "i06",
+   "text": "The code trick works on messaging apps too. Someone gets your code, they move your whole account to their phone, and message your family from it."
+  },
+  {
+   "id": "n26",
+   "img": "i06",
+   "text": "The tell. Friends rarely ask for codes or money in a DM out of nowhere. Call them, or text them on their real number. If it's really Mike, he'll laugh. If not, warn everyone.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "Call your friend. <em>Not the DM.</em>"
+   }
+  },
+  {
+   "id": "n27",
+   "img": "E12",
+   "text": "Quick one. If you've already had one of these, subscribe. Every week I take apart another trick I used to run.",
+   "ov": {
+    "t": "sub"
+   }
+  },
+  {
+   "id": "n28",
+   "img": "i08",
+   "text": "Number five. Support says your account will be deleted.",
+   "ov": {
+    "t": "title",
+    "n": "#5",
+    "s": "\"SUPPORT\" WARNING",
+    "size": 130
+   }
+  },
+  {
+   "id": "n29",
+   "img": "i13",
+   "text": "Your account has been reported for copyright violation and will be permanently deleted in twenty four hours. If you think this is a mistake, appeal here.",
+   "voice": "bm_lewis",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 Meta Support Team ✔️ · now",
+    "msg": "⚠ Your account has been reported for copyright violation and will be deleted in 24 hours. Appeal here:",
+    "link": "appeal-center-support.help"
+   }
+  },
+  {
+   "id": "n30",
+   "img": "L53",
+   "text": "I'd name my account support team, add a blue tick emoji to the name, and use the company's logo as the profile picture. It takes a minute."
+  },
+  {
+   "id": "n31",
+   "img": "i13",
+   "text": "Losing your account, all your photos, all your followers. That's real fear for a lot of people. So they appeal. With their password. And sometimes their two factor code."
+  },
+  {
+   "id": "n31b",
+   "img": "i08",
+   "text": "Some versions send you to a page that looks exactly like the help centre, with a ticket number and a countdown. The countdown was always my favourite part."
+  },
+  {
+   "id": "n32",
+   "img": "i08",
+   "text": "The tell. Real platforms don't DM you threats with a link. Warnings show up inside the app's own settings or notifications. A blue tick emoji in a name means nothing.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "Real warnings live in <em>Settings</em>, not in DMs."
+   }
+  },
+  {
+   "id": "n33",
+   "img": "i09",
+   "text": "Number six. The mentor.",
+   "ov": {
+    "t": "title",
+    "n": "#6",
+    "s": "THE MENTOR"
+   }
+  },
+  {
+   "id": "n34",
+   "img": "i09",
+   "text": "I saw your comment. I used to be stuck too. My mentor showed me how I turned five hundred into eight thousand in a month. I can show you.",
+   "voice": "am_michael",
+   "speed": 1.0,
+   "ov": {
+    "t": "notif",
+    "from": "💬 @chris.wealth.coach · now",
+    "msg": "Saw your comment 🙏 I used to be stuck too. My mentor showed me how I turned $500 into $8,000 in a month. Want me to show you?"
+   }
+  },
+  {
+   "id": "n35",
+   "img": "L41",
+   "text": "Notice the comment. You said something about money stress under some video. I search for those comments. Bills, rent, I hate my job. That's my list."
+  },
+  {
+   "id": "n35b",
+   "img": "i09",
+   "text": "And I'd post comments under my own posts too. Thank you coach Chris, I just paid off my car. All from accounts I controlled."
+  },
+  {
+   "id": "n36",
+   "img": "c11",
+   "text": "Then the trading app, the profit screenshots, the fees to withdraw. It's my investment scam from the wrong number video, just with a sharper suit."
+  },
+  {
+   "id": "n37",
+   "img": "i09",
+   "text": "The tell. Nobody who really made thousands spends their day sliding into strangers' DMs to share the secret. Real advisers don't recruit in comment sections.",
+   "ov": {
+    "t": "quote",
+    "label": "THE TELL",
+    "s": "Real experts don't <em>slide into your DMs.</em>"
+   }
+  },
+  {
+   "id": "n38",
+   "img": "i10",
+   "text": "And number seven. The money flip.",
+   "ov": {
+    "t": "title",
+    "n": "#7",
+    "s": "THE MONEY FLIP"
+   }
+  },
+  {
+   "id": "n39",
+   "img": "i10",
+   "text": "Cash flip. Send me one hundred, I'll send back a thousand in an hour. Here's proof from today.",
+   "voice": "am_puck",
+   "speed": 1.05,
+   "ov": {
+    "t": "notif",
+    "from": "💬 @flipkingz · now",
+    "msg": "💸 CASH FLIP 💸 send $100, get $1,000 back in 1 hour. Proof from today 👇 only 3 spots left"
+   }
+  },
+  {
+   "id": "n40",
+   "img": "L28",
+   "text": "This one is for teenagers and students. Big numbers, screenshots of payments, fancy cars. The screenshots are fake. The cars are rented, or borrowed from someone else's post."
+  },
+  {
+   "id": "n40b",
+   "img": "i10",
+   "text": "Flip accounts even post thank you videos with borrowed faces. Kids see other kids winning, and that's all the proof they need."
+  },
+  {
+   "id": "n41",
+   "img": "L09",
+   "text": "Send a hundred, and there's a problem. You need to pay a fifty dollar fee to release the thousand. Then another one. Some people borrow from their parents to unlock money that never existed."
+  },
+  {
+   "id": "n41b",
+   "img": "L44",
+   "text": "And when a kid gets scared and wants to stop, the threats start. Pay the fee, or we'll report you, or tell your parents. They're bluffing. Tell an adult right away."
+  },
+  {
+   "id": "n42",
+   "img": "i10",
+   "text": "The tell. Nobody can flip money. There's no trick, no glitch, no secret app. If someone could turn a hundred into a thousand, they wouldn't need yours.",
+   "ov": {
+    "t": "stamp",
+    "s": "MONEY FLIP<br>= NO MONEY",
+    "at": 0.6
+   }
+  },
+  {
+   "id": "n43",
+   "img": "L54",
+   "text": "So here's the one rule that beats all seven.",
+   "ov": {
+    "t": "head",
+    "s": "ONE RULE BEATS <em>ALL 7</em>",
+    "at": 0.2
+   }
+  },
+  {
+   "id": "n44",
+   "img": "E25",
+   "text": "If a DM asks you to leave the app, log in again, send a code, or send money, it's a scam until you check it outside that message. Every single time.",
+   "ov": {
+    "t": "list",
+    "items": [
+     "✗ Leave the app",
+     "✗ Log in again",
+     "✗ Send a code",
+     "✗ Send money",
+     "✓ Check it outside the DM"
+    ]
+   }
+  },
+  {
+   "id": "n45",
+   "img": "i11",
+   "text": "And lock your account down tonight. Three minutes. Turn on two step verification, ideally with an authenticator app, not just text messages.",
+   "ov": {
+    "t": "list",
+    "h": "3-MINUTE LOCKDOWN",
+    "items": [
+     "✓ Two-step verification ON",
+     "✓ Check logged-in devices",
+     "✓ Update your recovery email"
+    ]
+   }
+  },
+  {
+   "id": "n46",
+   "img": "i11",
+   "text": "Check which devices are logged into your account, and kick out any you don't recognise. And make sure your recovery email and phone number are actually yours."
+  },
+  {
+   "id": "n46b",
+   "img": "i11",
+   "text": "And use a different password for every account, with a password manager if you can. One stolen password shouldn't open every door you have."
+  },
+  {
+   "id": "n47",
+   "img": "i12",
+   "text": "If you do get hacked, use the app's official recovery page, not someone in the comments offering to get it back. Then warn your friends from another account, so they don't tap the next link."
+  },
+  {
+   "id": "n48",
+   "img": "L37",
+   "text": "And watch for account recovery experts. They'll message you after a hack, promising to get it back for a fee. They're my old friends. Same crew, second payday."
+  },
+  {
+   "id": "n48b",
+   "img": "L33",
+   "text": "And if you're a parent, don't take the phone away when your kid tells you something happened. That's how they learn to stop telling you."
+  },
+  {
+   "id": "n49",
+   "img": "L02",
+   "text": "Quick recap. Is this you. The brand deal. You won. The friend's favour. Support warning. The mentor. And the money flip.",
+   "ov": {
+    "t": "cards",
+    "h": "THE <em>7 DMs</em>",
+    "ticks": 7,
+    "items": [
+     [
+      "😳",
+      "Is this you?"
+     ],
+     [
+      "⌚",
+      "Brand deal"
+     ],
+     [
+      "🎉",
+      "You won"
+     ],
+     [
+      "🙏",
+      "Friend's favour"
+     ],
+     [
+      "⚠️",
+      "\"Support\""
+     ],
+     [
+      "📈",
+      "The mentor"
+     ],
+     [
+      "💸",
+      "Money flip"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "n50",
+   "img": "L48",
+   "text": "Which one landed in your inbox? Tell me in the comments. I bet half of you got the is this you one this year."
+  },
+  {
+   "id": "n50b",
+   "img": "E12",
+   "text": "Got one I didn't cover? Describe it in the comments, without the link, and I'll tell you exactly how it works."
+  },
+  {
+   "id": "n51",
+   "img": "L33",
+   "text": "And send this to a younger brother, sister, or cousin. Number seven is everywhere right now, and it hits kids hardest."
+  },
+  {
+   "id": "n52",
+   "img": "L54",
+   "text": "Trust me. I used to send all seven.",
+   "ov": {
+    "t": "end",
+    "s": "7 DMs THAT ARE<br><em>ALWAYS SCAMS</em>"
+   }
+  }
+ ],
+ "images": [
+  {
+   "name": "i02",
+   "type": "t2i",
+   "prompt": "a smartphone floating in a dark room surrounded by many glowing chat bubbles and heart icons, social media mood, blank screen, no text, no logos"
+  },
+  {
+   "name": "i04",
+   "type": "t2i",
+   "prompt": "a ring light and a smartphone on a tripod in a colourful teen bedroom, content creator setup, a cheap watch box on the desk, no text, no logos"
+  },
+  {
+   "name": "i05",
+   "type": "t2i",
+   "prompt": "a glowing wrapped gift box with confetti falling around it, but long sinister shadows behind it, dark room, no text"
+  },
+  {
+   "name": "i07",
+   "type": "t2i",
+   "prompt": "two identical round profile photo badges of the same smiling woman floating side by side, one with a subtle crack, dark background, no text"
+  },
+  {
+   "name": "i08",
+   "type": "t2i",
+   "prompt": "a smartphone on a dark desk with a glowing red warning triangle hologram and a wooden judge's gavel beside it, ominous, no text"
+  },
+  {
+   "name": "i10",
+   "type": "t2i",
+   "prompt": "banknotes flying in the air in slow motion over a smartphone in a dark room, dramatic light, flashy and suspicious, no text"
+  },
+  {
+   "name": "i01",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now sitting up in bed at night staring at his phone in shock, mouth open, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "i03",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now in her bedroom with a ring light, holding her phone and smiling, flattered and excited, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "i06",
+   "type": "edit",
+   "ref": "L19.jpg",
+   "prompt": "The same woman from the image, same face, same hair and same clothes, now standing in her kitchen reading her phone with a puzzled, slightly suspicious face, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "i09",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now wearing sunglasses and fanning a stack of fake cash, flexing with a smug grin, standing next to a shiny red sports car, night, no logos"
+  },
+  {
+   "name": "i11",
+   "type": "edit",
+   "ref": "L24.jpg",
+   "prompt": "The same young man from the image, same face, same hair and same clothes, now sitting at his desk holding his phone with a relieved, confident smile, a glowing teal shield hologram floating beside him, any phone screen faces away from the camera"
+  },
+  {
+   "name": "i12",
+   "type": "edit",
+   "ref": "W_BASE.jpg",
+   "prompt": "The same young woman from the image, same face, same curly hair and same yellow sweater, now typing a message on her phone with a serious, determined face, sitting on a sofa, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "i13",
+   "type": "edit",
+   "ref": "L30.jpg",
+   "prompt": "The same young woman from the image, same face, same hair and same clothes, now sitting on her bed holding her phone with both hands, worried and upset, evening, any phone screen faces away from the camera, no logos"
+  },
+  {
+   "name": "i14",
+   "type": "edit",
+   "ref": "lenny.jpg",
+   "prompt": "The same raccoon character from the image, same face, same charcoal hoodie with the teal lightning patch and gold padlock chain, now on the right side of the frame holding a smartphone toward the viewer, the screen glowing purple with a chat bubble icon, sly grin, dark teal background with a purple glow, empty space on the left"
+  }
+ ]
+}

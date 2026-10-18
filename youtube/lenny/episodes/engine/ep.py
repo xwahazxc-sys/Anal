@@ -163,10 +163,10 @@ elif cmd == "mux":
     open(P("ch.txt"), "w").write("".join(f"file '{P(f'ch_{k}.mp4')}'\n" for k in range(n)))
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", P("ch.txt"), "-i", P("voice.wav"), "-i", P("sfx.wav"),
                     "-filter_complex", "[1]aresample=48000[v];[2]aresample=48000[s];[v][s]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
-                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart",
+                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-ar", "48000", "-movflags", "+faststart",
                     P(f"{slug}.mp4")], check=True)
-    kb = int(28 * 8 * 1024 / tl["total"]) - 70   # fit the preview copy under ~28 MB
+    kb = int(28 * 8 * 1024 / tl["total"]) - 100   # fit the preview copy under ~28 MB
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", P(f"{slug}.mp4"), "-c:v", "libx264", "-preset", "medium", "-b:v", f"{kb}k",
-                    "-maxrate", f"{int(kb * 1.5)}k", "-bufsize", f"{kb * 3}k", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart",
+                    "-maxrate", f"{int(kb * 1.5)}k", "-bufsize", f"{kb * 3}k", "-c:a", "aac", "-b:a", "96k", "-ac", "2", "-movflags", "+faststart",
                     P(f"{slug}_send.mp4")], check=True)
     print("muxed", round(tl["total"], 1), "send kbps", kb)
