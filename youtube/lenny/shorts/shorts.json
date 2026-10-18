@@ -1,0 +1,53 @@
+{
+ "s1_ai_voice": {
+  "title": "It's Not Your Kid Calling #shorts",
+  "screen": "IT'S NOT<br><em>YOUR KID</em> 😳",
+  "items": [
+   {"ep": "ep04", "id": "n01"},
+   {"ep": "ep04", "id": "n02"},
+   {"ep": "ep04", "id": "n03"},
+   {"ep": "ep04", "id": "n39"},
+   {"ep": "ep04", "id": "n40"},
+   {"new": "x1", "img": "E10", "text": "Pick your family's code word tonight. Before your mum gets the call.", "ov": {"t": "cta"}}
+  ]
+ },
+ "s2_toll": {
+  "title": "Don't Pay This $2.10 Text #shorts",
+  "screen": "DON'T PAY<br><em>THIS $2.10</em>",
+  "items": [
+   {"new": "x1", "img": "b04", "text": "You owe two dollars and ten cents. That text is my favourite scam. Why does two dollars cost you hundreds?"},
+   {"ep": "ep02", "id": "n06"},
+   {"ep": "ep02", "id": "n07"},
+   {"ep": "ep02", "id": "n08"},
+   {"ep": "ep02", "id": "n10"},
+   {"ep": "ep02", "id": "n11"},
+   {"new": "x2", "img": "L02", "text": "I wrote eight more texts like this. They're all on my channel.", "ov": {"t": "cta"}}
+  ]
+ },
+ "s3_code": {
+  "title": "Never Send This Code Back #shorts",
+  "screen": "NEVER SEND<br><em>THIS CODE</em>",
+  "items": [
+   {"new": "x1", "img": "b09", "text": "Someone texted you their code by mistake? Send it back and you lose your account. Here's why."},
+   {"ep": "ep02", "id": "n19"},
+   {"ep": "ep02", "id": "n20"},
+   {"ep": "ep02", "id": "n21"},
+   {"ep": "ep02", "id": "n22"},
+   {"ep": "ep02", "id": "n23"},
+   {"new": "x2", "img": "E12", "text": "Follow, so the next code you get stays yours.", "ov": {"t": "cta"}}
+  ]
+ },
+ "s4_wrong_number": {
+  "title": "Don't Reply to This Text #shorts",
+  "screen": "DON'T REPLY<br><em>TO THIS</em>",
+  "items": [
+   {"new": "x1", "img": "c01", "text": "Your wrong number text could cost you your savings. I used to send them. What happens after you reply?"},
+   {"ep": "ep03", "id": "n06"},
+   {"ep": "ep03", "id": "n07"},
+   {"ep": "ep03", "id": "n08"},
+   {"ep": "ep03", "id": "n10"},
+   {"ep": "ep03", "id": "n24"},
+   {"new": "x2", "img": "L54", "text": "Day one to day forty is on my channel. Watch it before you reply to anyone.", "ov": {"t": "cta"}}
+  ]
+ }
+}
