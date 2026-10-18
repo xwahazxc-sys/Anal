@@ -9,7 +9,7 @@ P0 = json.loads(src.split("#PLAN:")[-1].split("\n")[0]); I0 = json.loads(src.spl
 body = open(K + "/qbody.py").read(); wf = base64.b64encode(open(K + "/wfq720.py", "rb").read()).decode()
 LIB = [os.path.join(K, d) for d in ("outEA", "outEB", "outF2", "outF1", "outP")]
 def jpg(p):
-    b = io.BytesIO(); Image.open(p).convert("RGB").save(b, "JPEG", quality=88); return base64.b64encode(b.getvalue()).decode()
+    b = io.BytesIO(); im = Image.open(p).convert("RGB"); im.thumbnail((1024, 1024)); im.save(b, "JPEG", quality=80); return base64.b64encode(b.getvalue()).decode()
 imgs = [i for i in SC["images"] if not os.path.exists(os.path.join(E, "img", i["name"] + ".png"))]
 t2i = [i for i in imgs if i["type"] == "t2i"]; ed = [i for i in imgs if i["type"] == "edit"]
 halves = [t2i[0::2] + ed[0::2], t2i[1::2] + ed[1::2]]
@@ -21,7 +21,7 @@ for part, steps in zip("ab", halves):
         if r and r not in refs:
             n = r.rsplit(".", 1)[0]
             p = next((os.path.join(d, n + x) for d in LIB for x in (".png", ".jpg") if os.path.exists(os.path.join(d, n + x))), None)
-            if r == "W_BASE.jpg": refs[r] = I0["W_BASE.jpg"]
+            if r == "W_BASE.jpg": refs[r] = jpg(io.BytesIO(base64.b64decode(I0["W_BASE.jpg"])))
             elif p: refs[r] = jpg(p)
             else: sys.exit(f"missing ref {r}")
     plan = {"steps": steps, "style": P0["style"], "negative": P0["negative"]}

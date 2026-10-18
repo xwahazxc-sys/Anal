@@ -9,13 +9,13 @@
     python3 ep.py EPDIR thumb               # thumbnail.png 1280x720
     python3 ep.py EPDIR all                 # prep, timeline, 4 chunks in parallel, mux, thumb
 """
-import json, math, os, subprocess, sys, wave
+import glob, json, math, os, subprocess, sys, wave
 import numpy as np
 import imageio_ffmpeg
 ENG = os.path.dirname(os.path.abspath(__file__)); SP = os.path.dirname(os.path.dirname(ENG))
 E = os.path.abspath(sys.argv[1]); P = lambda *a: os.path.join(E, *a)
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, SR = 30, 44100
-LIB = [P("img")] + [os.path.join(SP, "kaggle/qwen", d) for d in ("outEA", "outEB", "outF2", "outF1", "outP")]
+LIB = [P("img")] + sorted(glob.glob(os.path.join(SP, "eps/ep*/img"))) + [os.path.join(SP, "kaggle/qwen", d) for d in ("outEA", "outEB", "outF2", "outF1", "outP")]
 SC = json.load(open(P("script.json"))); cmd = sys.argv[2]
 DIM = {"title", "big", "stamp", "list", "chips", "cards", "end"}
 
