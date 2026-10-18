@@ -12,16 +12,16 @@ You could lose your savings to 7 scams, but only one of them almost nobody spots
 
 ⏱ CHAPTERS
 0:00 Intro
-0:39 #1 The Delivery Text
-1:47 #2 The Bank Call
-2:51 #3 "Hi Mum"
-3:44 #4 The Easy Job
-4:24 #5 The Keen Buyer
-5:08 #6 The Frozen Screen
-5:47 #7 The One Nobody Spots
-6:59 The One Rule
-7:18 Recap
-7:34 Already Clicked Or Paid?
+0:38 #1 The Delivery Text
+1:43 #2 The Bank Call
+2:48 #3 "Hi Mum"
+3:39 #4 The Easy Job
+4:19 #5 The Keen Buyer
+5:01 #6 The Frozen Screen
+5:40 #7 The One Nobody Spots
+6:53 The One Rule
+7:13 Recap
+7:28 Already Clicked Or Paid?
 
 📊 Sources: FTC — consumers reported losing $12.5B to fraud in 2024.
 
@@ -40,4 +40,4 @@ scams, scam awareness, how to spot a scam, delivery text scam, bank call scam, h
 ```
 
 ## Length
-8:16
+8:10
