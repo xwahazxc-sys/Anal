@@ -23,3 +23,10 @@ Waiting for the daily upload limit to reset (Oct 20): ep04 (Oct 20), ep02 (Oct 2
 
 ## Plan rule (/yt-plan)
 Episodes Tue & Fri 12:00 ET. Each Short goes out the day after its episode, with Related video set to it. Empty days are fine.
+
+## Status (Oct 19)
+- All 8 Shorts rescheduled and date-verified (one per day after its episode). s4 goes out today Oct 19, 3:00 PM ET.
+- "Altered or synthetic content" set to No on all 8 Shorts; uploader now always answers No.
+- Country of residence: United States (saved and re-checked).
+- Blocked on the owner: one-time channel verification (Settings → Channel → Feature eligibility → Advanced → Verify).
+  It unlocks Related video on Shorts, clickable links, and a higher daily upload limit.
