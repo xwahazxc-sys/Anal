@@ -9,7 +9,7 @@
 | s5 | https://youtu.be/29GYdbjRKOY | Oct 25, 3:00 PM |
 | s8 | https://youtu.be/pWIyj3Er9z8 | Oct 26, 3:00 PM |
 | s6 | https://youtu.be/XZduVr228JU | Oct 28, 3:00 PM |
-| s4 | https://youtu.be/jW3LIS0Q4xc | Oct 29, 3:00 PM |
+| s4 | https://youtu.be/jW3LIS0Q4xc | Oct 19, 3:00 PM (moved: supports ep01) |
 | s7 | https://youtu.be/0CWRI1vpX0c | Nov 18, 3:00 PM |
 | ep02 (test, compressed) | https://youtu.be/kGXKDih8ISY | private — delete it |
 
