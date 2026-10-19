@@ -1,0 +1,20 @@
+What if, at 2:14 a.m.... your building's group chat lit up... about you? <break time="0.6s" />
+"4B... there's a man standing at your door." <break time="0.5s" />
+You're 4B. You live alone. <break time="0.7s" />
+"I see him too. Don't open it. Don't even look through the peephole." <break time="0.5s" />
+So you open the hallway camera instead. <break time="0.4s" />
+The hallway is empty. <break time="0.7s" />
+"He just put his ear against your door." <break time="0.5s" />
+You look again. Still empty. <break time="0.6s" />
+"4B... why are you sitting so still?" <break time="0.6s" />
+You haven't moved. You haven't said a word. <break time="0.6s" />
+Then the building manager writes. <break time="0.4s" />
+"The hallway camera has been broken since Tuesday. What are you all watching?" <break time="1.0s" />
+The chat goes silent. <break time="0.6s" />
+Dev sends a screenshot. <break time="1.0s" />
+It's not the hallway. It's your living room. <break time="0.6s" />
+You're on the couch. And behind the couch, facing your door... is him. <break time="0.8s" />
+You check the member list. Twelve apartments. Thirteen members. <break time="0.6s" />
+The thirteenth is called... 4B. <break time="0.8s" />
+"Don't turn around." <break time="1.2s" />
+Would you turn around? Night two is coming.
