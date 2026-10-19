@@ -172,8 +172,8 @@ def upload_one(page, item):
     # show more → tags, altered content
     if try_click(page, "#toggle-button", 5000):
         page.wait_for_timeout(1000)
-        if item.get("altered", True):
-            try_click(page, 'tp-yt-paper-radio-button[name="VIDEO_HAS_ALTERED_CONTENT_YES"]', 3000)
+        # animated, clearly unrealistic content: no "altered or synthetic" disclosure (owner's choice)
+        try_click(page, 'tp-yt-paper-radio-button[name="VIDEO_HAS_ALTERED_CONTENT_NO"]', 3000)
         tags = item.get("tags") or []
         if tags:
             try:
@@ -366,6 +366,36 @@ def set_country(page, country="United States"):
     log("country set to", country)
 
 
+def altered_no(page, video_id, label):
+    """Open an uploaded video's details and set 'Altered content' to No."""
+    page.goto(f"https://studio.youtube.com/video/{video_id}/edit", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    try:
+        page.get_by_text(re.compile(r"^\s*show more\s*$", re.I)).first.click(timeout=6000)
+    except Exception:
+        try_click(page, "#toggle-button", 4000)
+    page.wait_for_timeout(1500)
+    no = page.locator('tp-yt-paper-radio-button[name="VIDEO_HAS_ALTERED_CONTENT_NO"]').first
+    no.scroll_into_view_if_needed(timeout=8000)
+    was = no.get_attribute("aria-checked") or no.get_attribute("checked")
+    no.click(timeout=8000)
+    page.wait_for_timeout(1000)
+    shot(page, f"{label}_altered_no")
+    saved = False
+    for sel in ("ytcp-button#save", "#save"):
+        btn = page.locator(sel).first
+        try:
+            if btn.is_enabled(timeout=3000):
+                btn.click(timeout=5000)
+                saved = True
+                break
+        except Exception:
+            continue
+    page.wait_for_timeout(3500)
+    shot(page, f"{label}_altered_saved")
+    log("altered=No", label, video_id, "was checked:" , was, "saved:", saved)
+
+
 def audit(page):
     """Read-only tour of the channel: screenshots + visible text of every setup page."""
     out = SHOTS / "audit_text"
@@ -459,7 +489,8 @@ def main():
     queue = {i["id"]: i for i in json.loads((PUB / "queue.json").read_text())}
     do_audit = "audit" in ids
     do_country = "country" in ids
-    ids = [i for i in ids if i not in ("audit", "country")]
+    fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
+    ids = [i for i in ids if i not in ("audit", "country") and not i.startswith("noai=")]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -471,7 +502,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country:
+    if not todo and not do_audit and not do_country and not fix_altered:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -498,6 +529,14 @@ def main():
                 shot(page, "country_error")
                 log("COUNTRY FAILED", type(e).__name__, str(e)[:300])
                 results["country"] = "FAILED"
+        for vid_id in fix_altered:
+            try:
+                altered_no(page, vid_id, vid_id)
+                results[f"noai {vid_id}"] = "ok"
+            except Exception as e:
+                shot(page, f"{vid_id}_altered_error")
+                log("ALTERED FIX FAILED", vid_id, type(e).__name__, str(e)[:200])
+                results[f"noai {vid_id}"] = "FAILED"
         if do_audit:
             try:
                 audit(page)
