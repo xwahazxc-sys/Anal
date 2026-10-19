@@ -1,0 +1,363 @@
+{
+ "duration": 87.9,
+ "shots": [
+  [
+   "bedroom",
+   0.0
+  ],
+  [
+   "phone",
+   7.627
+  ],
+  [
+   "sitting",
+   12.651
+  ],
+  [
+   "phone",
+   16.597
+  ],
+  [
+   "phone",
+   23.259
+  ],
+  [
+   "cctv",
+   26.683
+  ],
+  [
+   "phone",
+   29.107
+  ],
+  [
+   "cctv",
+   32.406
+  ],
+  [
+   "phone",
+   36.203
+  ],
+  [
+   "living",
+   40.363
+  ],
+  [
+   "phone",
+   43.707
+  ],
+  [
+   "reveal",
+   57.757
+  ],
+  [
+   "members",
+   67.996
+  ],
+  [
+   "phone",
+   78.637
+  ],
+  [
+   "black",
+   80.192
+  ],
+  [
+   "door",
+   80.567
+  ]
+ ],
+ "phoneOn": 0.554,
+ "lockCard": 4.015,
+ "tap": 24.804,
+ "diveCam": [
+  25.116,
+  26.683
+ ],
+ "diveShot": [
+  56.766,
+  57.757
+ ],
+ "impact": 59.96,
+ "revealPush": [
+  58.527,
+  62.803
+ ],
+ "revealPan": [
+  62.803,
+  66.968
+ ],
+ "count": 72.223,
+ "listScroll": [
+  68.618,
+  74.759
+ ],
+ "ghostRow": 76.635,
+ "listPush": [
+  76.01,
+  77.923
+ ],
+ "toBlack": [
+  79.781,
+  80.166
+ ],
+ "lightOff": [
+  85.001,
+  85.801
+ ],
+ "title": 85.801,
+ "clock": [
+  [
+   0,
+   14
+  ],
+  [
+   37.386,
+   15
+  ],
+  [
+   59.892,
+   16
+  ],
+  [
+   74.383,
+   17
+  ]
+ ],
+ "msgs": [
+  {
+   "who": "lena",
+   "text": "Package room is open again, thanks!",
+   "t": -10,
+   "time": "Yesterday"
+  },
+  {
+   "who": "mgr",
+   "text": "Reminder: elevator maintenance Thursday 9\u201311 AM.",
+   "t": -9,
+   "time": "Yesterday"
+  },
+  {
+   "who": "park",
+   "text": "4B \u2014 there's a man standing at your door.",
+   "t": 7.848,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "dev",
+   "text": "I see him on the hallway cam. Don't open it.",
+   "t": 16.776,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "dev",
+   "text": "Don't even look through the peephole.",
+   "t": 20.056,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "park",
+   "text": "He just put his ear against your door.",
+   "t": 29.176,
+   "time": "2:15 AM"
+  },
+  {
+   "who": "dev",
+   "text": "4B why are you sitting so still",
+   "t": 36.274,
+   "time": "2:15 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "Everyone stop. The hallway camera has been broken since Tuesday.",
+   "t": 47.181,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "What are you all watching?",
+   "t": 50.075,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "dev",
+   "img": true,
+   "t": 55.174,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "ghost",
+   "text": "Don't turn around.",
+   "t": 78.994,
+   "time": "2:17 AM"
+  }
+ ],
+ "typing": [
+  [
+   7.015,
+   7.848,
+   "park"
+  ],
+  [
+   16.15,
+   16.776,
+   "dev"
+  ],
+  [
+   28.557,
+   29.176,
+   "park"
+  ],
+  [
+   35.631,
+   36.274,
+   "dev"
+  ],
+  [
+   44.499,
+   47.181,
+   "mgr"
+  ],
+  [
+   53.786,
+   55.174,
+   "dev"
+  ],
+  [
+   77.923,
+   78.994,
+   "ghost"
+  ]
+ ],
+ "fast": [
+  [
+   25.116,
+   26.683
+  ],
+  [
+   56.766,
+   58.937
+  ],
+  [
+   76.01,
+   77.923
+  ]
+ ],
+ "sfx": [
+  [
+   "vibrate",
+   0.496,
+   -6,
+   ""
+  ],
+  [
+   "ping",
+   7.738,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   16.642,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   19.82,
+   -16,
+   ""
+  ],
+  [
+   "ping",
+   29.073,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   36.167,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   47.098,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   49.919,
+   -16,
+   ""
+  ],
+  [
+   "ping",
+   54.974,
+   -13,
+   ""
+  ],
+  [
+   "hum",
+   26.683,
+   -12,
+   "atrim=0:2.42,afade=t=out:st=2.12:d=0.3"
+  ],
+  [
+   "hum",
+   32.406,
+   -12,
+   "atrim=0:3.8,afade=t=out:st=3.5:d=0.3"
+  ],
+  [
+   "heartbeat",
+   37.386,
+   -10,
+   "afade=t=in:d=1.5,afade=t=out:st=6:d=2"
+  ],
+  [
+   "riser",
+   51.943,
+   -9,
+   "afade=t=out:st=5.6:d=0.4"
+  ],
+  [
+   "impact",
+   57.757,
+   -4,
+   ""
+  ],
+  [
+   "impact",
+   76.687,
+   -9,
+   ""
+  ],
+  [
+   "ping",
+   78.816,
+   -12,
+   ""
+  ],
+  [
+   "click",
+   80.242,
+   -2,
+   ""
+  ],
+  [
+   "impact",
+   85.001,
+   -14,
+   "atrim=0:3,afade=t=out:st=2:d=1"
+  ]
+ ],
+ "bedMute": [
+  80.142,
+  80.716
+ ],
+ "ghostPush": [
+  78.875,
+  80.166
+ ]
+}

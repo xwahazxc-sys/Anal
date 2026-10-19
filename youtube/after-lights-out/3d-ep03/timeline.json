@@ -1,0 +1,304 @@
+{
+ "duration": 74.0,
+ "night": "NIGHT 3",
+ "nextNight": "NEXT: FLOOR 0",
+ "memberCount": 12,
+ "ghostInList": false,
+ "youSub": "Apartment 4B \u00b7 joined Oct 2025",
+ "youRow": 32.3,
+ "shots": [
+  [
+   "recap",
+   0.0
+  ],
+  [
+   "doorOpen",
+   4.3
+  ],
+  [
+   "phone",
+   8.2
+  ],
+  [
+   "living",
+   14.8
+  ],
+  [
+   "phone",
+   17.6
+  ],
+  [
+   "members",
+   29.7
+  ],
+  [
+   "phone",
+   36.4
+  ],
+  [
+   "cctv",
+   38.5
+  ],
+  [
+   "phone",
+   45.4
+  ],
+  [
+   "living",
+   49.6
+  ],
+  [
+   "reveal",
+   55.2
+  ],
+  [
+   "door",
+   65.6
+  ]
+ ],
+ "previously": [
+  0,
+  8.2
+ ],
+ "clock": [
+  [
+   0,
+   "2:17"
+  ],
+  [
+   8.2,
+   "2:18"
+  ],
+  [
+   30,
+   "2:19"
+  ],
+  [
+   50,
+   "2:20"
+  ]
+ ],
+ "osdDays": [
+  [
+   0,
+   "2026-10-16"
+  ],
+  [
+   38.5,
+   "2026-10-13"
+  ],
+  [
+   40.2,
+   "2026-10-14"
+  ],
+  [
+   41.9,
+   "2026-10-15"
+  ],
+  [
+   43.6,
+   "2026-10-16"
+  ]
+ ],
+ "phoneOn": -1,
+ "lockCard": 999,
+ "tap": -10,
+ "diveCam": [
+  999,
+  1000
+ ],
+ "listScroll": [
+  29.9,
+  31.8
+ ],
+ "count": 999,
+ "listPush": [
+  33.0,
+  35.8
+ ],
+ "meMsgPush": [
+  12.2,
+  14.4
+ ],
+ "thumbAt": 41.0,
+ "figZoom": [
+  -2,
+  -1
+ ],
+ "armUp": [
+  999,
+  1000
+ ],
+ "knockAt": [],
+ "doorShake": [],
+ "boltTurn": [
+  -2,
+  -1
+ ],
+ "doorSwing": [
+  -2,
+  -1.5
+ ],
+ "ghostFade": [
+  52.9,
+  54.6
+ ],
+ "revealPush": [
+  55.6,
+  64.5
+ ],
+ "selfPush": [
+  46.0,
+  48.6
+ ],
+ "toBlack": [
+  999,
+  1000
+ ],
+ "lightOff": [
+  69.6,
+  70.4
+ ],
+ "title": 70.4,
+ "msgs": [
+  {
+   "who": "park",
+   "text": "4B... is that you out there?",
+   "t": -12,
+   "time": "2:15 AM"
+  },
+  {
+   "who": "dev",
+   "text": "4B, why won't you let yourself in?",
+   "t": -11,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "tenant",
+   "text": "I'm home. Who's on my couch?",
+   "t": -10,
+   "time": "2:17 AM"
+  },
+  {
+   "who": "me",
+   "text": "I am. This is my apartment.",
+   "t": 12.5,
+   "time": "2:18 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "Quick cleanup: there are two accounts called 4B. One is the new tenant.",
+   "t": 17.8,
+   "time": "2:18 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "The other is the old tenant. He died in that apartment last October. On the couch.",
+   "t": 24.0,
+   "time": "2:18 AM"
+  },
+  {
+   "who": "dev",
+   "img": true,
+   "t": 37.2,
+   "time": "2:19 AM"
+  },
+  {
+   "who": "dev",
+   "text": "Every night at 2:14 the new guy stands outside his own door. He's too scared to go in.",
+   "t": 38.7,
+   "time": "2:19 AM"
+  },
+  {
+   "who": "dev",
+   "text": "He says someone is always sitting on his couch.",
+   "t": 45.6,
+   "time": "2:19 AM"
+  }
+ ],
+ "typing": [
+  [
+   22.9,
+   24.0,
+   "mgr"
+  ],
+  [
+   36.4,
+   37.2,
+   "dev"
+  ]
+ ],
+ "fast": [],
+ "sfx": [
+  [
+   "ping",
+   12.4,
+   -16,
+   ""
+  ],
+  [
+   "ping",
+   17.65,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   23.85,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   37.05,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   45.45,
+   -14,
+   ""
+  ],
+  [
+   "hum",
+   38.5,
+   -12,
+   "atrim=0:6.9,afade=t=out:st=6.6:d=0.3"
+  ],
+  [
+   "heartbeat",
+   24.5,
+   -12,
+   "afade=t=in:d=1.5,afade=t=out:st=6:d=2"
+  ],
+  [
+   "riser",
+   47.0,
+   -9,
+   "afade=t=out:st=5.6:d=0.4"
+  ],
+  [
+   "impact",
+   52.9,
+   -4,
+   ""
+  ],
+  [
+   "floor",
+   55.3,
+   -3,
+   ""
+  ],
+  [
+   "impact",
+   69.6,
+   -14,
+   "atrim=0:3,afade=t=out:st=2:d=1"
+  ]
+ ],
+ "bedMute": [
+  52.85,
+  53.6
+ ]
+}

@@ -1,0 +1,670 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Inter;src:url(fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+canvas{display:block}
+</style></head>
+<body><canvas id="out" width="1080" height="1920"></canvas>
+<script>
+// After Lights Out — Ep.1 "The Group Chat". Every frame is a pure function of t: render(t).
+const W = 1080, H = 1920, FPS = 30;
+const out = document.getElementById('out'), O = out.getContext('2d');
+const mk = (w = W, h = H) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const sstep = k => k * k * (3 - 2 * k);
+const ease = k => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;   // in-out cubic
+const easeOut = k => 1 - Math.pow(1 - k, 3);
+const easeSine = k => -(Math.cos(Math.PI * k) - 1) / 2;
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const F = (w, s) => `${w} ${s}px Inter, sans-serif`;
+function rr(c, x, y, w, h, r) { c.beginPath(); c.roundRect(x, y, w, h, r); }
+
+// ---------- palette (graded, never pure saturated) ----------
+const C = {
+  night: '#070A14', navy: '#0E1428', steel: '#1A2238', ink: '#03040A',
+  cool: '170,195,255', warm: '255,201,74', red: '#D9484E', text: '#E9ECF4', dim: '#7C859C',
+};
+
+// ---------- timeline ----------
+let LINES = [], CHUNKS = [];
+const END = 77.5;
+const SHOTS = [
+  ['bedroom', 0.0], ['phone', 6.6], ['sitting', 10.4], ['phone', 13.4], ['phone', 18.0],
+  ['cctv', 20.45], ['phone', 23.0], ['cctv', 25.6], ['phone', 28.8], ['living', 32.4],
+  ['phone', 35.5], ['reveal', 48.4], ['members', 58.7], ['phone', 67.2], ['black', 69.15], ['door', 69.9],
+];
+function shotAt(t) { let i = 0; while (i + 1 < SHOTS.length && t >= SHOTS[i + 1][1]) i++; return { name: SHOTS[i][0], t0: SHOTS[i][1], t1: (SHOTS[i + 1] || [0, END])[1], i }; }
+
+// ---------- chat content ----------
+const PEOPLE = {
+  park: { name: 'Mrs. Park · 2A', ini: 'P', col: '#C9A27A' },
+  dev: { name: 'Dev · 3C', ini: 'D', col: '#7FA6C9' },
+  lena: { name: 'Lena · 1B', ini: 'L', col: '#9BB59A' },
+  mgr: { name: 'Building Manager', ini: 'EC', col: '#B7B0C9' },
+  ghost: { name: '4B', ini: '', col: '#8A3B3F' },
+};
+const MSGS = [
+  { who: 'lena', text: 'Package room is open again, thanks!', t: -10, time: 'Yesterday' },
+  { who: 'mgr', text: 'Reminder: elevator maintenance Thursday 9–11 AM.', t: -9, time: 'Yesterday' },
+  { who: 'park', text: '4B — there\'s a man standing at your door.', t: 6.9, time: '2:14 AM' },
+  { who: 'dev', text: 'I see him on the hallway cam. Don\'t open it.', t: 13.6, time: '2:14 AM' },
+  { who: 'dev', text: 'Don\'t even look through the peephole.', t: 15.7, time: '2:14 AM' },
+  { who: 'park', text: 'He just put his ear against your door.', t: 23.1, time: '2:15 AM' },
+  { who: 'dev', text: '4B why are you sitting so still', t: 28.9, time: '2:15 AM' },
+  { who: 'mgr', text: 'Everyone stop. The hallway camera has been broken since Tuesday.', t: 37.8, time: '2:16 AM' },
+  { who: 'mgr', text: 'What are you all watching?', t: 40.6, time: '2:16 AM' },
+  { who: 'dev', img: true, t: 46.2, time: '2:16 AM' },
+  { who: 'ghost', text: 'Don\'t turn around.', t: 67.5, time: '2:17 AM' },
+];
+const TYPING = [[5.9, 6.9, 'park'], [12.9, 13.6, 'dev'], [22.2, 23.1, 'park'], [28.0, 28.9, 'dev'], [36.0, 37.8, 'mgr'], [44.4, 46.2, 'dev'], [66.6, 67.5, 'ghost']];
+
+// ---------- assets (built once) ----------
+const A = {};
+function blurCopy(src, px) { const c = mk(src.width, src.height), x = c.getContext('2d'); x.filter = `blur(${px}px)`; x.drawImage(src, 0, 0); return c; }
+
+function hoodShape(c) {
+  // seated hooded figure, profile facing right, origin at seat; ~600px tall
+  c.beginPath();                                   // body + shoulders
+  c.moveTo(-150, 0); c.bezierCurveTo(-170, -140, -160, -300, -95, -370);
+  c.bezierCurveTo(-40, -420, 60, -415, 105, -370);
+  c.bezierCurveTo(150, -320, 170, -250, 175, -190); c.lineTo(175, 0); c.closePath(); c.fill();
+  c.beginPath();                                   // hood: rounded, slight peak at the back, opening toward phone
+  c.moveTo(-95, -390); c.bezierCurveTo(-130, -470, -110, -580, -20, -605);
+  c.bezierCurveTo(60, -625, 125, -580, 128, -500);
+  c.bezierCurveTo(130, -455, 112, -420, 80, -395); c.bezierCurveTo(40, -370, -40, -360, -95, -390); c.fill();
+  c.beginPath();                                   // forearms reaching toward the phone
+  c.moveTo(60, -300); c.bezierCurveTo(140, -270, 230, -230, 285, -215);
+  c.bezierCurveTo(310, -208, 312, -170, 288, -165); c.bezierCurveTo(220, -160, 120, -170, 40, -200); c.closePath(); c.fill();
+}
+
+function buildBedroom() {
+  const bg = mk(1400, 2200), b = bg.getContext('2d');
+  let g = b.createLinearGradient(0, 0, 0, 2200); g.addColorStop(0, '#0B1122'); g.addColorStop(.6, '#090D1A'); g.addColorStop(1, '#05070E');
+  b.fillStyle = g; b.fillRect(0, 0, 1400, 2200);
+  // window with city bokeh
+  const wx = 760, wy = 420, ww = 460, wh = 620;
+  b.fillStyle = '#0F1830'; b.fillRect(wx, wy, ww, wh);
+  const r = rng(7);
+  for (let i = 0; i < 70; i++) { const x = wx + r() * ww, y = wy + wh * .35 + r() * wh * .65, rad = 4 + r() * 14, warm = r() < .4;
+    const gg = b.createRadialGradient(x, y, 0, x, y, rad); const col = warm ? C.warm : C.cool;
+    gg.addColorStop(0, `rgba(${col},${.25 + r() * .35})`); gg.addColorStop(1, `rgba(${col},0)`); b.fillStyle = gg; b.fillRect(x - rad, y - rad, rad * 2, rad * 2); }
+  b.fillStyle = 'rgba(200,215,255,.55)'; b.beginPath(); b.arc(wx + 360, wy + 120, 26, 0, 7); b.fill();
+  // blinds
+  b.fillStyle = '#060912'; for (let y = wy; y < wy + wh; y += 34) b.fillRect(wx - 10, y, ww + 20, 13);
+  b.fillStyle = '#04060C'; b.fillRect(wx - 26, wy - 26, ww + 52, 26); b.fillRect(wx - 26, wy + wh, ww + 52, 30); b.fillRect(wx - 26, wy, 22, wh); b.fillRect(wx + ww + 4, wy, 22, wh);
+  // picture frame
+  b.strokeStyle = 'rgba(120,135,170,.18)'; b.lineWidth = 8; b.strokeRect(180, 520, 300, 220);
+  A.bedBg = bg;
+  // moonlight through blinds (volumetric), separate additive layer
+  const beam = mk(1400, 2200), m = beam.getContext('2d');
+  m.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < 14; i++) {
+    const y0 = wy + 10 + i * 42; m.beginPath(); m.moveTo(wx, y0); m.lineTo(wx, y0 + 18); m.lineTo(120, y0 + 760 + i * 30); m.lineTo(120, y0 + 700 + i * 30); m.closePath();
+    const gg = m.createLinearGradient(wx, 0, 120, 0); gg.addColorStop(0, 'rgba(150,175,255,.10)'); gg.addColorStop(1, 'rgba(150,175,255,0)'); m.fillStyle = gg; m.fill();
+  }
+  A.bedBeam = blurCopy(beam, 14);
+  // bed + nightstand (midground)
+  const mid = mk(1400, 2200), d = mid.getContext('2d');
+  d.fillStyle = '#0A0F1E'; rr(d, -60, 1240, 980, 520, 40); d.fill();                 // bed
+  g = d.createLinearGradient(0, 1240, 0, 1500); g.addColorStop(0, '#1A2340'); g.addColorStop(1, '#0C1222');
+  d.fillStyle = g; rr(d, -60, 1240, 980, 160, 50); d.fill();                         // duvet top
+  d.fillStyle = '#202B4A'; rr(d, 40, 1180, 300, 110, 50); d.fill();                  // pillow
+  d.fillStyle = '#070A14'; d.fillRect(-60, 1700, 1500, 600);                         // floor shadow
+  d.fillStyle = '#0B1020'; rr(d, 960, 1300, 300, 400, 14); d.fill();                 // nightstand
+  d.fillStyle = '#121A30'; d.fillRect(960, 1300, 300, 18);
+  // lamp (off)
+  d.fillStyle = '#0E1426'; d.beginPath(); d.moveTo(1040, 1120); d.lineTo(1180, 1120); d.lineTo(1150, 1010); d.lineTo(1070, 1010); d.fill(); d.fillRect(1104, 1120, 12, 180);
+  A.bedMid = mid;
+  // blurred, darker version for phone close-ups
+  const bl = mk(1400, 2200), q = bl.getContext('2d'); q.drawImage(bg, 0, 0); q.globalCompositeOperation = 'lighter'; q.drawImage(A.bedBeam, 0, 0); q.globalCompositeOperation = 'source-over'; q.drawImage(mid, 0, 0);
+  A.bedBlur = blurCopy(bl, 34);
+}
+
+function buildHallway() {
+  // fixed high CCTV angle, one-point perspective
+  const c = mk(1080, 1920), x = c.getContext('2d'), vx = 560, vy = 820;
+  x.fillStyle = '#1B1F22'; x.fillRect(0, 0, 1080, 1920);
+  const quad = (pts, col) => { x.beginPath(); x.moveTo(...pts[0]); pts.slice(1).forEach(p => x.lineTo(...p)); x.closePath(); x.fillStyle = col; x.fill(); };
+  const n = [vx - 150, vy - 210], m = [vx + 150, vy - 210], k = [vx + 150, vy + 230], j = [vx - 150, vy + 230];  // end wall
+  quad([[0, 0], [1080, 0], m, n], '#24292C');                    // ceiling
+  quad([[0, 1920], [1080, 1920], k, j], '#2D3230');               // floor
+  quad([[0, 0], n, j, [0, 1920]], '#33393A');                     // left wall
+  quad([[1080, 0], m, k, [1080, 1920]], '#2F3536');               // right wall
+  quad([n, m, k, j], '#3A403F');                                  // far wall
+  // floor tiles
+  x.strokeStyle = 'rgba(0,0,0,.18)'; x.lineWidth = 2;
+  for (let i = -6; i <= 6; i++) { x.beginPath(); x.moveTo(vx + i * 25, vy + 230); x.lineTo(vx + i * 260, 1920); x.stroke(); }
+  for (let i = 1; i < 10; i++) { const k2 = Math.pow(i / 10, 2.2), y = lerp(vy + 230, 1920, k2), hw = lerp(150, 1100, k2); x.beginPath(); x.moveTo(vx - hw, y); x.lineTo(vx + hw, y); x.stroke(); }
+  // doors along walls: depth param z in (0..1), 0 = near
+  const door = (side, z, label) => {
+    const wallX = side < 0 ? 0 : 1080, endX = side < 0 ? vx - 150 : vx + 150;
+    const xa = lerp(wallX, endX, z), xb = lerp(wallX, endX, z + .14);
+    const top = (xx) => lerp(0, vy - 210, Math.abs(xx - wallX) / Math.abs(endX - wallX));
+    const bot = (xx) => lerp(1920, vy + 230, Math.abs(xx - wallX) / Math.abs(endX - wallX));
+    const ta = lerp(top(xa), bot(xa), .30), tb = lerp(top(xb), bot(xb), .30);
+    quad([[xa, ta], [xb, tb], [xb, bot(xb)], [xa, bot(xa)]], '#1E2223');
+    x.strokeStyle = 'rgba(0,0,0,.45)'; x.lineWidth = 4; x.stroke();
+    // number plate
+    const px = lerp(xa, xb, .5), py = lerp(ta, bot(xa), .22), s = Math.abs(xb - xa) / 200;
+    x.fillStyle = '#C9CFC9'; x.font = F(800, 46 * s); x.textAlign = 'center'; x.fillText(label, px, py);
+    // knob
+    x.fillStyle = '#8D938E'; x.beginPath(); x.arc(lerp(xa, xb, side < 0 ? .82 : .18), lerp(ta, bot(xa), .58), 9 * s, 0, 7); x.fill();
+    return { xa, xb, ta, ba: bot(xa) };
+  };
+  door(-1, .08, '4A'); door(-1, .52, '4C');
+  A.door4B = door(1, .30, '4B'); door(1, .70, '4D');
+  // ceiling light fixtures
+  A.lamps = [];
+  for (const z of [.25, .55, .8]) { const y = lerp(0, vy - 210, z) + 40, hw = lerp(140, 30, z); x.fillStyle = '#DDE3DA'; x.fillRect(vx - hw, y, hw * 2, lerp(26, 6, z)); A.lamps.push({ y, hw, z }); }
+  A.hall = c;
+  // light pools (additive, separate so they can flicker)
+  A.pools = A.lamps.map(L => { const p = mk(1080, 1920), q = p.getContext('2d'); const fy = lerp(1920, vy + 230, L.z) - 40;
+    const g = q.createRadialGradient(vx, fy, 0, vx, fy, lerp(700, 160, L.z)); g.addColorStop(0, 'rgba(230,240,225,.22)'); g.addColorStop(1, 'rgba(230,240,225,0)');
+    q.fillStyle = g; q.fillRect(0, 0, 1080, 1920);
+    q.beginPath(); q.moveTo(vx - L.hw, L.y); q.lineTo(vx + L.hw, L.y); q.lineTo(vx + L.hw * 3.2, fy); q.lineTo(vx - L.hw * 3.2, fy); q.closePath();
+    const g2 = q.createLinearGradient(0, L.y, 0, fy); g2.addColorStop(0, 'rgba(230,240,225,.13)'); g2.addColorStop(1, 'rgba(230,240,225,0)'); q.fillStyle = g2; q.fill();
+    return blurCopy(p, 18); });
+}
+
+function standingFigure(c, x, y, s, tilt = 0) {
+  // tall, too-thin figure; origin at feet
+  c.save(); c.translate(x, y); c.scale(s, s);
+  c.beginPath();
+  c.moveTo(-34, 0); c.lineTo(-26, -420); c.bezierCurveTo(-60, -470, -78, -620, -70, -760);
+  c.bezierCurveTo(-66, -800, -40, -820, -22, -826);
+  c.save(); c.translate(0, -890); c.rotate(tilt); c.ellipse(0, 0, 44, 64, 0, Math.PI * .62, Math.PI * 2.38); c.restore();
+  c.lineTo(22, -826); c.bezierCurveTo(40, -820, 66, -800, 70, -760);
+  c.bezierCurveTo(80, -620, 66, -470, 34, -420); c.lineTo(36, 0); c.closePath();
+  c.fill();
+  // arms, slightly too long
+  c.lineCap = 'round'; c.lineWidth = 24; c.strokeStyle = c.fillStyle;
+  c.beginPath(); c.moveTo(-60, -760); c.bezierCurveTo(-90, -600, -92, -460, -84, -330); c.stroke();
+  c.beginPath(); c.moveTo(60, -760); c.bezierCurveTo(90, -600, 92, -460, 84, -330); c.stroke();
+  c.restore();
+}
+
+function buildLiving() {
+  // back view: behind the couch, looking toward window and front door
+  const c = mk(1300, 2100), x = c.getContext('2d');
+  let g = x.createLinearGradient(0, 0, 0, 2100); g.addColorStop(0, '#0A0F1E'); g.addColorStop(1, '#04060C'); x.fillStyle = g; x.fillRect(0, 0, 1300, 2100);
+  // window with blinds (left)
+  x.fillStyle = '#0E1730'; x.fillRect(110, 500, 360, 560);
+  const r = rng(3); for (let i = 0; i < 40; i++) { const px = 110 + r() * 360, py = 760 + r() * 300, rad = 3 + r() * 10; const gg = x.createRadialGradient(px, py, 0, px, py, rad); gg.addColorStop(0, `rgba(${r() < .4 ? C.warm : C.cool},.35)`); gg.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gg; x.fillRect(px - rad, py - rad, rad * 2, rad * 2); }
+  x.fillStyle = '#050810'; for (let y = 500; y < 1060; y += 30) x.fillRect(100, y, 380, 12);
+  // tv (off)
+  x.fillStyle = '#05070D'; rr(x, 560, 760, 380, 230, 8); x.fill(); x.strokeStyle = 'rgba(140,160,210,.10)'; x.lineWidth = 3; x.stroke();
+  // front door (right) with warm gap under it
+  x.fillStyle = '#0B0F1B'; x.fillRect(1010, 560, 230, 640); x.strokeStyle = 'rgba(120,140,190,.10)'; x.lineWidth = 4; x.strokeRect(1010, 560, 230, 640);
+  x.fillStyle = 'rgba(160,170,190,.25)'; x.beginPath(); x.arc(1040, 900, 7, 0, 7); x.fill();
+  A.livBg = c;
+  const w = mk(1300, 2100), y = w.getContext('2d');
+  g = y.createLinearGradient(1125, 1200, 1125, 1420); g.addColorStop(0, `rgba(${C.warm},.55)`); g.addColorStop(1, `rgba(${C.warm},0)`);
+  y.fillStyle = `rgba(${C.warm},.9)`; y.fillRect(1012, 1196, 226, 5);
+  y.beginPath(); y.moveTo(1012, 1200); y.lineTo(1238, 1200); y.lineTo(1300, 1420); y.lineTo(930, 1420); y.closePath(); y.fillStyle = g; y.fill();
+  A.livWarm = blurCopy(w, 6);
+  // couch back + hooded head (foreground)
+  const f = mk(1300, 2100), z = f.getContext('2d');
+  z.fillStyle = '#02030A';
+  z.save(); z.translate(650, 1560); z.beginPath(); z.ellipse(0, -80, 160, 200, 0, Math.PI, 0); z.lineTo(150, 40); z.lineTo(-150, 40); z.fill();   // hood from behind
+  z.beginPath(); z.moveTo(-330, 40); z.bezierCurveTo(-250, -40, 250, -40, 330, 40); z.lineTo(330, 200); z.lineTo(-330, 200); z.fill(); z.restore();      // shoulders
+  rr(z, -40, 1640, 1380, 520, 60); z.fill();                                                                                                              // couch back
+  A.livFg = f;
+}
+
+function buildReveal() {
+  // high corner angle behind the couch — what the "hallway cam" actually shows
+  const c = mk(1080, 1920), x = c.getContext('2d');
+  x.fillStyle = '#121828'; x.fillRect(0, 0, 1080, 1920);
+  x.fillStyle = '#1A2133'; x.beginPath(); x.moveTo(0, 700); x.lineTo(1080, 640); x.lineTo(1080, 1920); x.lineTo(0, 1920); x.fill();            // floor
+  x.strokeStyle = 'rgba(0,0,0,.22)'; x.lineWidth = 3; for (let i = -4; i < 16; i++) { x.beginPath(); x.moveTo(i * 90, 700 - i * 5); x.lineTo(i * 200 - 500, 1920); x.stroke(); }
+  x.fillStyle = '#161C2C'; x.beginPath(); x.moveTo(0, 0); x.lineTo(1080, 0); x.lineTo(1080, 640); x.lineTo(0, 700); x.fill();                  // far wall
+  x.fillStyle = '#0A0D16'; x.fillRect(400, 170, 260, 500); x.strokeStyle = 'rgba(140,155,200,.12)'; x.lineWidth = 4; x.strokeRect(400, 170, 260, 500);   // front door
+  x.fillStyle = 'rgba(170,180,200,.3)'; x.beginPath(); x.arc(626, 430, 8, 0, 7); x.fill();
+  x.fillStyle = '#0D1120'; x.fillRect(780, 260, 210, 300); x.fillStyle = '#05070D'; for (let y = 260; y < 560; y += 26) x.fillRect(780, y, 210, 10);  // window
+  x.fillStyle = 'rgba(46,56,84,.55)'; x.beginPath(); x.ellipse(540, 1000, 420, 150, 0, 0, 7); x.fill();                                        // rug
+  A.revBg = c;
+  const w = mk(1080, 1920), y = w.getContext('2d');
+  y.fillStyle = `rgba(${C.warm},.95)`; y.fillRect(402, 664, 256, 7);
+  const g = y.createLinearGradient(0, 668, 0, 1150); g.addColorStop(0, `rgba(${C.warm},.38)`); g.addColorStop(1, `rgba(${C.warm},0)`);
+  y.beginPath(); y.moveTo(402, 670); y.lineTo(658, 670); y.lineTo(860, 1150); y.lineTo(200, 1150); y.closePath(); y.fillStyle = g; y.fill();
+  A.revWarm = blurCopy(w, 10);
+  const f = mk(1080, 1920), z = f.getContext('2d');
+  z.fillStyle = '#20283E'; rr(z, 170, 1080, 740, 200, 46); z.fill();                         // seat (beyond the backrest)
+  z.fillStyle = '#1C2236'; rr(z, 130, 1060, 110, 330, 40); z.fill(); rr(z, 840, 1060, 110, 330, 40); z.fill();   // arms
+  // you: hood + shoulders above the backrest, phone glow on the far side
+  z.save(); z.globalCompositeOperation = 'lighter'; const pg = z.createRadialGradient(470, 1110, 0, 470, 1110, 170); pg.addColorStop(0, `rgba(${C.cool},.30)`); pg.addColorStop(1, `rgba(${C.cool},0)`); z.fillStyle = pg; z.fillRect(270, 920, 400, 380); z.restore();
+  z.fillStyle = '#03050B'; z.beginPath(); z.ellipse(470, 1175, 74, 90, 0, 0, 7); z.fill();
+  z.beginPath(); z.moveTo(330, 1300); z.bezierCurveTo(350, 1230, 590, 1230, 610, 1300); z.fill();
+  z.strokeStyle = `rgba(${C.cool},.35)`; z.lineWidth = 3; z.beginPath(); z.ellipse(470, 1175, 74, 90, 0, Math.PI * 1.15, Math.PI * 1.85); z.stroke();
+  let gb = z.createLinearGradient(0, 1270, 0, 1460); gb.addColorStop(0, '#2A334D'); gb.addColorStop(1, '#151B2C');
+  z.fillStyle = gb; rr(z, 120, 1270, 840, 190, 60); z.fill();                                 // backrest, toward camera
+  A.revFg = f;
+}
+
+function buildDoor() {
+  const c = mk(1300, 2200), x = c.getContext('2d');
+  let g = x.createLinearGradient(0, 0, 0, 2200); g.addColorStop(0, '#080C18'); g.addColorStop(1, '#030409'); x.fillStyle = g; x.fillRect(0, 0, 1300, 2200);
+  x.fillStyle = '#0D1220'; x.fillRect(360, 420, 580, 1180);                  // door
+  x.strokeStyle = 'rgba(130,150,200,.10)'; x.lineWidth = 6; x.strokeRect(360, 420, 580, 1180); x.strokeRect(410, 480, 480, 480); x.strokeRect(410, 1020, 480, 520);
+  x.fillStyle = 'rgba(170,180,200,.28)'; x.beginPath(); x.arc(860, 1060, 13, 0, 7); x.fill(); x.fillRect(840, 1052, 60, 14);
+  x.fillStyle = 'rgba(150,160,190,.25)'; x.beginPath(); x.arc(650, 760, 9, 0, 7); x.fill();      // peephole
+  x.fillStyle = '#05070D'; x.fillRect(0, 1606, 1300, 600);                   // floor
+  const sl = x.createLinearGradient(0, 0, 1300, 0); sl.addColorStop(0, `rgba(${C.cool},.07)`); sl.addColorStop(.5, `rgba(${C.cool},0)`); x.fillStyle = sl; x.fillRect(0, 0, 1300, 1600);
+  A.doorBg = c;
+  const w = mk(1300, 2200), y = w.getContext('2d');
+  y.fillStyle = `rgba(${C.warm},1)`; y.fillRect(362, 1596, 576, 9);
+  g = y.createLinearGradient(0, 1600, 0, 2050); g.addColorStop(0, `rgba(${C.warm},.45)`); g.addColorStop(1, `rgba(${C.warm},0)`);
+  y.beginPath(); y.moveTo(362, 1604); y.lineTo(938, 1604); y.lineTo(1180, 2050); y.lineTo(120, 2050); y.closePath(); y.fillStyle = g; y.fill();
+  A.doorWarm = blurCopy(w, 8);
+}
+
+function buildGrain() {
+  A.grain = [];
+  for (let k = 0; k < 6; k++) { const c = mk(540, 960), x = c.getContext('2d'), d = x.createImageData(540, 960), r = rng(100 + k);
+    for (let i = 0; i < d.data.length; i += 4) { const v = 128 + (r() + r() + r() - 1.5) * 90; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+    x.putImageData(d, 0, 0); A.grain.push(c); }
+  A.vig = mk(); const v = A.vig.getContext('2d'); const g = v.createRadialGradient(W / 2, H * .46, H * .22, W / 2, H * .5, H * .72);
+  g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.78)'); v.fillStyle = g; v.fillRect(0, 0, W, H);
+}
+
+// ---------- camera ----------
+// drift: slow handheld breathing, a few px, never shaky
+function drift(t, amp = 1) { return { x: (Math.sin(t * .53) * 5 + Math.sin(t * 1.21 + 1.3) * 2.2) * amp, y: (Math.sin(t * .41 + .7) * 4 + Math.sin(t * 1.07 + 2.1) * 1.8) * amp, r: Math.sin(t * .37 + .4) * .0016 * amp }; }
+function cam(c, cx, cy, z, t, amp = 1) { const d = drift(t, amp); c.translate(W / 2 + d.x, H / 2 + d.y); c.rotate(d.r); c.scale(z, z); c.translate(-cx, -cy); }
+// parallax: a layer at depth k moves k-times as much as the reference plane
+function layer(c, img, cx, cy, z, t, k, ox = 0, oy = 0) { c.save(); const zz = 1 + (z - 1) * k; cam(c, img.width / 2 + (cx - img.width / 2) * k + ox, img.height / 2 + (cy - img.height / 2) * k + oy, zz, t); c.drawImage(img, 0, 0); c.restore(); }
+
+// dust motes in a light volume (screen space), depth-of-field by size
+function dust(c, t, n, seed, box, col, alpha = 1) {
+  const r = rng(seed); c.save(); c.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < n; i++) { const bx = r(), by = r(), sp = .2 + r() * .8, sz = r(), ph = r() * 6.28;
+    const x = box[0] + ((bx * box[2] + Math.sin(t * .2 * sp + ph) * 30 + t * 6 * sp) % box[2]), y = box[1] + ((by * box[3] - t * 9 * sp + 9999 * box[3]) % box[3]);
+    const rad = 1.5 + sz * sz * 9, a = (.18 + .3 * (1 - sz)) * alpha * (.6 + .4 * Math.sin(t * 1.3 + ph));
+    const g = c.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, `rgba(${col},${a})`); g.addColorStop(1, `rgba(${col},0)`); c.fillStyle = g; c.fillRect(x - rad, y - rad, rad * 2, rad * 2); }
+  c.restore();
+}
+
+// ---------- phone ----------
+const PH = { w: 820, h: 1700, r: 112, sx: 34, sy: 34 };  // body and screen inset
+function wrap(c, text, maxW) { const words = text.split(' '), lines = []; let cur = ''; for (const w of words) { const t2 = cur ? cur + ' ' + w : w; if (c.measureText(t2).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t2; } if (cur) lines.push(cur); return lines; }
+
+function drawPhone(c, t, mode) {
+  // phone drawn centred at (0,0) in local space
+  const { w, h, r, sx, sy } = PH, x0 = -w / 2, y0 = -h / 2;
+  // soft screen glow onto surroundings
+  c.save(); c.globalCompositeOperation = 'lighter'; const gl = c.createRadialGradient(0, 0, 200, 0, 0, 1100); gl.addColorStop(0, `rgba(${C.cool},.10)`); gl.addColorStop(1, `rgba(${C.cool},0)`); c.fillStyle = gl; c.fillRect(-1300, -1500, 2600, 3000); c.restore();
+  // body
+  let g = c.createLinearGradient(x0, y0, x0 + w, y0 + h); g.addColorStop(0, '#2A2F3A'); g.addColorStop(.5, '#14171E'); g.addColorStop(1, '#2A2F3A');
+  c.fillStyle = g; rr(c, x0, y0, w, h, r); c.fill();
+  c.strokeStyle = 'rgba(200,210,235,.22)'; c.lineWidth = 3; rr(c, x0 + 2, y0 + 2, w - 4, h - 4, r - 2); c.stroke();
+  c.fillStyle = '#1C2029'; c.fillRect(x0 + w - 2, y0 + 360, 7, 170); c.fillRect(x0 - 5, y0 + 300, 7, 110); c.fillRect(x0 - 5, y0 + 440, 7, 110);
+  // screen
+  const X = x0 + sx, Y = y0 + sy, SW = w - 2 * sx, SH = h - 2 * sy;
+  c.save(); rr(c, X, Y, SW, SH, r - 26); c.clip();
+  c.fillStyle = '#0A0D16'; c.fillRect(X, Y, SW, SH);
+  if (mode === 'members') drawMembers(c, t, X, Y, SW, SH); else drawChat(c, t, X, Y, SW, SH);
+  // status bar
+  c.fillStyle = C.text; c.font = F(600, 30); c.textAlign = 'left'; c.fillText(clockText(t, false), X + 60, Y + 62);
+  c.fillStyle = '#000'; rr(c, X + SW / 2 - 110, Y + 24, 220, 60, 30); c.fill();                    // island
+  c.fillStyle = C.text; for (let i = 0; i < 4; i++) c.fillRect(X + SW - 170 + i * 13, Y + 58 - i * 7, 8, 8 + i * 7);
+  c.strokeStyle = C.text; c.lineWidth = 2.5; rr(c, X + SW - 100, Y + 38, 48, 24, 7); c.stroke(); c.fillRect(X + SW - 96, Y + 42, 26, 16);
+  // glass reflection
+  const gr = c.createLinearGradient(X, Y, X + SW, Y + SH * .6); gr.addColorStop(0, 'rgba(255,255,255,.045)'); gr.addColorStop(.4, 'rgba(255,255,255,0)'); c.fillStyle = gr; c.fillRect(X, Y, SW, SH);
+  c.restore();
+  return { X, Y, SW, SH };
+}
+
+function avatar(c, who, x, y, rad) {
+  const p = PEOPLE[who]; c.fillStyle = who === 'ghost' ? '#000' : p.col; c.beginPath(); c.arc(x, y, rad, 0, 7); c.fill();
+  if (who === 'ghost') { c.strokeStyle = 'rgba(140,60,64,.7)'; c.lineWidth = 2; c.stroke(); return; }
+  c.fillStyle = '#0A0D16'; c.font = F(800, rad * .8); c.textAlign = 'center'; c.fillText(p.ini, x, y + rad * .29);
+}
+
+function camIcon(c, x, y, s, col) { c.fillStyle = col; rr(c, x, y, 34 * s, 24 * s, 5 * s); c.fill(); c.beginPath(); c.moveTo(x + 36 * s, y + 12 * s); c.lineTo(x + 48 * s, y + 4 * s); c.lineTo(x + 48 * s, y + 20 * s); c.fill(); }
+
+function drawChat(c, t, X, Y, SW, SH) {
+  // header
+  c.fillStyle = '#0F131E'; c.fillRect(X, Y, SW, 250);
+  c.strokeStyle = C.text; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(X + 66, Y + 150); c.lineTo(X + 48, Y + 170); c.lineTo(X + 66, Y + 190); c.stroke();
+  c.fillStyle = '#2A3148'; c.beginPath(); c.arc(X + 130, Y + 170, 40, 0, 7); c.fill();
+  c.fillStyle = '#9AA6C8'; c.fillRect(X + 112, Y + 150, 36, 40); c.fillStyle = '#2A3148'; for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) c.fillRect(X + 117 + j * 16, Y + 156 + i * 12, 9, 7);
+  c.textAlign = 'left'; c.fillStyle = C.text; c.font = F(700, 36); c.fillText('Elm Court Residents', X + 190, Y + 162);
+  c.fillStyle = C.dim; c.font = F(500, 26); c.fillText('13 members', X + 190, Y + 200);
+  // pinned live cam bar
+  const tap = Math.max(0, 1 - Math.abs(t - 19.35) / .35);
+  c.fillStyle = `rgba(30,36,54,${.9 + tap * .1})`; c.fillRect(X, Y + 250, SW, 92);
+  if (tap > 0) { c.fillStyle = `rgba(${C.cool},${tap * .18})`; c.fillRect(X, Y + 250, SW, 92); }
+  camIcon(c, X + 44, Y + 284, 1, '#AEB8D6');
+  c.fillStyle = C.text; c.font = F(600, 30); c.fillText('Hallway Cam', X + 112, Y + 307);
+  c.fillStyle = C.red; c.beginPath(); c.arc(X + 320, Y + 297, 8, 0, 7); c.fill(); c.fillStyle = C.dim; c.font = F(600, 24); c.fillText('LIVE · pinned', X + 338, Y + 306);
+  // messages, stacked from the input bar upward; each grows in with its appear progress => natural scroll
+  const inputY = Y + SH - 150, top = Y + 342;
+  c.save(); c.beginPath(); c.rect(X, top, SW, inputY - top); c.clip();
+  let yb = inputY - 26;
+  const typ = TYPING.find(([a, b]) => t >= a && t < b);
+  if (typ) { const k = easeOut(prog(t, typ[0], typ[0] + .3)); const hgt = 96 * k; drawTyping(c, t, X, yb - hgt, typ[2], k); yb -= hgt + 10 * k; }
+  const vis = MSGS.filter(m => t >= m.t);
+  c.font = F(500, 34);
+  for (let i = vis.length - 1; i >= 0 && yb > top - 400; i--) {
+    const m = vis[i], k = easeOut(prog(t, m.t, m.t + .45));
+    const lines = m.img ? [] : wrap(c, m.text, SW - 250);
+    const bh = m.img ? 470 : 64 + lines.length * 46, full = bh + 50;
+    yb -= full * k;
+    drawMsg(c, m, X, yb, SW, lines, bh, k, t);
+    yb -= 14 * k;
+  }
+  c.restore();
+  // input bar
+  c.fillStyle = '#0F131E'; c.fillRect(X, inputY, SW, 150);
+  c.fillStyle = '#1B2133'; rr(c, X + 40, inputY + 30, SW - 160, 76, 38); c.fill();
+  c.fillStyle = C.dim; c.font = F(500, 30); c.fillText('Message', X + 80, inputY + 79);
+  c.fillStyle = '#2A3148'; c.beginPath(); c.arc(X + SW - 70, inputY + 68, 36, 0, 7); c.fill();
+}
+
+function drawMsg(c, m, X, yTop, SW, lines, bh, k, t) {
+  c.save(); c.globalAlpha = k; c.translate(0, (1 - k) * 26);
+  const ax = X + 70, bx = X + 124, by = yTop + 40;
+  avatar(c, m.who, ax, by + bh - 34, 30);
+  const p = PEOPLE[m.who];
+  c.textAlign = 'left'; c.font = F(700, 25); c.fillStyle = m.who === 'ghost' ? '#B4555B' : p.col; c.fillText(p.name, bx + 22, yTop + 28);
+  const bw = m.img ? 520 : Math.max(...lines.map(l => (c.font = F(500, 34), c.measureText(l).width))) + 56 + 110;
+  c.fillStyle = m.who === 'ghost' ? '#1A0E12' : (m.who === 'mgr' ? '#1E2236' : '#1A2030');
+  rr(c, bx, by, Math.min(bw, SW - 170), bh, 34); c.fill();
+  if (m.who === 'ghost') { c.strokeStyle = 'rgba(140,60,64,.5)'; c.lineWidth = 2; c.stroke(); }
+  if (m.img) {
+    c.save(); rr(c, bx + 14, by + 14, 492, bh - 28, 24); c.clip(); c.drawImage(A.revThumb, bx + 14, by + 14, 492, bh - 28); c.restore();
+  } else {
+    c.font = F(500, 34); c.fillStyle = C.text; lines.forEach((l, i) => c.fillText(l, bx + 28, by + 54 + i * 46));
+  }
+  c.font = F(500, 21); c.fillStyle = C.dim; c.textAlign = 'right'; c.fillText(m.time, bx + Math.min(bw, SW - 170) - 22, by + bh - 16); c.textAlign = 'left';
+  c.restore();
+}
+
+function drawTyping(c, t, X, yTop, who, k) {
+  c.save(); c.globalAlpha = k;
+  avatar(c, who, X + 70, yTop + 50, 30);
+  c.fillStyle = who === 'ghost' ? '#1A0E12' : '#1A2030'; rr(c, X + 124, yTop + 14, 150, 72, 36); c.fill();
+  for (let i = 0; i < 3; i++) { const a = .35 + .65 * Math.max(0, Math.sin(t * 7 - i * .9)); c.fillStyle = `rgba(200,208,230,${a})`; c.beginPath(); c.arc(X + 168 + i * 32, yTop + 50, 9, 0, 7); c.fill(); }
+  c.restore();
+}
+
+const MEMBERS = [['Lena Ortiz', '1A'], ['Sam Reyes', '1B'], ['The Kowalskis', '1C'], ['Mrs. Park', '2A'], ['Omar Haddad', '2B'], ['June & Theo', '2C'], ['Ruth Klein', '3A'], ['Marco B.', '3B'], ['Dev Patel', '3C'], ['Nadia S.', '4A'], ['You', '4B'], ['Ivy Chen', '4C'], ['4B', '']];
+function drawMembers(c, t, X, Y, SW, SH) {
+  c.fillStyle = '#0F131E'; c.fillRect(X, Y, SW, 420);
+  c.fillStyle = '#2A3148'; c.beginPath(); c.arc(X + SW / 2, Y + 200, 70, 0, 7); c.fill();
+  c.fillStyle = '#9AA6C8'; c.fillRect(X + SW / 2 - 32, Y + 166, 64, 70);
+  c.textAlign = 'center'; c.fillStyle = C.text; c.font = F(700, 40); c.fillText('Elm Court Residents', X + SW / 2, Y + 330);
+  const hk = easeOut(prog(t, 61.4, 62.0));
+  c.font = F(600, 30); c.fillStyle = C.dim; c.fillText('12 apartments  ·  ', X + SW / 2 - 70, Y + 380);
+  c.fillStyle = hk > 0 ? `rgb(${lerp(124, 255, hk)},${lerp(133, 201, hk)},${lerp(156, 74, hk)})` : C.dim; c.textAlign = 'left'; c.fillText('13 members', X + SW / 2 + 40, Y + 380);
+  if (hk > 0) { c.fillStyle = `rgba(${C.warm},${hk})`; c.fillRect(X + SW / 2 + 40, Y + 392, 168 * hk, 3); }
+  // list scrolls with inertia to the end
+  const rowH = 104, listTop = Y + 440, scroll = ease(prog(t, 59.2, 63.6)) * (MEMBERS.length * rowH - (SH - 480));
+  c.save(); c.beginPath(); c.rect(X, listTop, SW, SH - 440); c.clip();
+  MEMBERS.forEach(([n, apt], i) => {
+    const y = listTop + i * rowH - scroll, ghost = i === 12;
+    if (ghost) { const g = easeOut(prog(t, 65.4, 66.2)); c.fillStyle = `rgba(90,30,36,${.35 * g})`; c.fillRect(X, y, SW, rowH); }
+    avatar(c, ghost ? 'ghost' : 'lena', X + 80, y + 52, 34);
+    if (!ghost) { c.fillStyle = ['#C9A27A', '#7FA6C9', '#9BB59A', '#B7B0C9'][i % 4]; c.beginPath(); c.arc(X + 80, y + 52, 34, 0, 7); c.fill(); c.fillStyle = '#0A0D16'; c.font = F(800, 26); c.textAlign = 'center'; c.fillText(n[0], X + 80, y + 62); }
+    c.textAlign = 'left'; c.fillStyle = ghost ? '#C46A70' : C.text; c.font = F(600, 32); c.fillText(n, X + 140, y + 50);
+    c.fillStyle = C.dim; c.font = F(500, 24);
+    c.fillText(ghost ? (t > 65.6 ? 'typing' + '...'.slice(0, 1 + Math.floor(t * 3) % 3) : 'online') : (n === 'You' ? 'Apartment 4B' : 'Apartment ' + apt), X + 140, y + 84);
+    c.fillStyle = 'rgba(255,255,255,.05)'; c.fillRect(X + 140, y + rowH - 1, SW - 140, 1);
+  });
+  c.restore();
+}
+
+function clockText(t, ampm = true) { const m = t < 30 ? 14 : t < 50 ? 15 : t < 63 ? 16 : 17; return `2:${m}` + (ampm ? ' AM' : ''); }
+
+// ---------- shots ----------
+const S = {};
+S.bedroom = (c, t, lt) => {
+  // slow push from wide room toward the nightstand where the phone wakes up
+  const k = easeSine(prog(lt, 0, 6.6)), z = lerp(1.0, 1.55, k), cx = lerp(700, 1000, k), cy = lerp(1150, 1270, k);
+  layer(c, A.bedBg, cx, cy, z, t, .7);
+  c.save(); c.globalCompositeOperation = 'lighter'; layer(c, A.bedBeam, cx, cy, z, t, .8); c.restore();
+  layer(c, A.bedMid, cx, cy, z, t, 1);
+  // phone on nightstand
+  c.save(); cam(c, cx, cy, z, t);
+  const on = prog(lt, .3, .5), buzz = lt > .25 && lt < 1.1 ? Math.sin(lt * 90) * 1.2 : 0;
+  const quad = (pts, col) => { c.beginPath(); c.moveTo(...pts[0]); pts.slice(1).forEach(q => c.lineTo(...q)); c.closePath(); c.fillStyle = col; c.fill(); };
+  c.translate(buzz, 0);
+  quad([[1060, 1296], [1150, 1290], [1172, 1306], [1078, 1313]], '#05070C');
+  if (on > 0) { c.globalAlpha = on; quad([[1066, 1297], [1147, 1292], [1165, 1305], [1081, 1311]], '#B8CBFF'); }
+  c.restore();
+  if (on > 0) { // phone light on ceiling & wall (screen space through cam)
+    c.save(); cam(c, cx, cy, z, t); c.globalCompositeOperation = 'lighter';
+    const fl = on * (0.85 + 0.15 * Math.sin(lt * 9) * (lt < 1.2 ? 1 : 0));
+    let g = c.createRadialGradient(1115, 1250, 0, 1115, 1250, 650); g.addColorStop(0, `rgba(${C.cool},${.22 * fl})`); g.addColorStop(1, `rgba(${C.cool},0)`); c.fillStyle = g; c.fillRect(300, 400, 1600, 1600);
+    c.restore();
+  }
+  dust(c, t, 26, 11, [80, 500, 900, 900], C.cool, .8);
+  // notification banner: as camera arrives, overlay crisp lock-screen card
+  const nb = easeOut(prog(lt, 3.3, 4.1));
+  if (nb > 0) { c.save(); c.globalAlpha = nb; c.translate(0, (1 - nb) * 30);
+    c.fillStyle = 'rgba(22,27,40,.92)'; rr(c, 110, 560, 860, 190, 40); c.fill(); c.strokeStyle = 'rgba(255,255,255,.06)'; c.lineWidth = 2; c.stroke();
+    c.fillStyle = '#2A3148'; c.beginPath(); c.arc(190, 655, 40, 0, 7); c.fill(); c.fillStyle = '#9AA6C8'; c.fillRect(172, 635, 36, 40);
+    c.textAlign = 'left'; c.fillStyle = C.text; c.font = F(700, 32); c.fillText('Elm Court Residents', 260, 632);
+    c.fillStyle = C.dim; c.font = F(500, 24); c.fillText('now', 880, 632);
+    c.fillStyle = '#C5CBDA'; c.font = F(500, 30); c.fillText('3 new messages · mention: 4B', 260, 682);
+    c.restore(); }
+};
+
+function phoneShot(c, t, lt, shot) {
+  // phone close-up over the blurred bedroom; each shot has its own gentle move + a rack of depth
+  const id = shot.i, dur = shot.t1 - shot.t0, k = easeSine(prog(lt, 0, dur));
+  const moves = { 1: [1.02, 1.12, 0, 40], 3: [1.08, 1.0, -30, 30], 4: [1.0, 1.16, 0, -260], 6: [1.06, 1.14, 20, 120], 8: [1.1, 1.18, 0, 140], 10: [1.0, 1.22, 0, 160], 13: [1.04, 1.3, 0, 220] };
+  const [z0, z1, ox, oy] = moves[id] || [1, 1.1, 0, 0];
+  let z = lerp(z0, z1, k), py = lerp(0, oy, k);
+  // shot 4: tap the pinned cam bar and dive into the screen
+  if (id === 4) { const d = ease(prog(t, 19.6, 20.45)); z = lerp(z, 3.2, d); py = lerp(py, -1240, d); }
+  // shot 10 ends by diving into the screenshot thumbnail
+  if (id === 10) { const d = ease(prog(t, 47.4, 48.4)); z = lerp(z, 2.6, d); py = lerp(py, 230, d); }
+  // background bedroom, out of focus, moves less (parallax)
+  layer(c, A.bedBlur, 700 + ox * .3, 1150 + py * .15, 1.15 + (z - 1) * .3, t, .4);
+  c.save(); c.fillStyle = 'rgba(4,6,12,.45)'; c.fillRect(0, 0, W, H); c.restore();
+  // phone, slight perspective tilt that settles (inertia)
+  c.save(); const d = drift(t, 1.4); c.translate(W / 2 + d.x + ox * (1 - k), H / 2 + 40 + d.y); c.rotate(d.r * 2 + (id === 3 ? -.012 * (1 - k) : 0)); c.scale(z, z); c.translate(0, -py / z);
+  drawPhone(c, t, 'chat'); c.restore();
+  // foreground: out-of-focus thumb edge, darker than everything
+  c.save(); c.filter = 'blur(26px)'; c.fillStyle = '#020309'; c.beginPath(); c.ellipse(W + 30 - d.x * 2, H - 260, 180, 330, -.35, 0, 7); c.fill(); c.restore();
+  if (id === 13 && t > 68.4) { c.fillStyle = `rgba(0,0,0,${ease(prog(t, 68.4, 69.1))})`; c.fillRect(0, 0, W, H); }
+}
+S.phone = phoneShot;
+
+S.sitting = (c, t, lt) => {
+  // silhouette sits up in bed, rim-lit only by the phone in their hands
+  const k = easeSine(prog(lt, 0, 3)), z = lerp(1.25, 1.33, k);
+  layer(c, A.bedBg, 560, 1100, z, t, .6);
+  c.save(); c.globalCompositeOperation = 'lighter'; layer(c, A.bedBeam, 560, 1100, z, t, .7); c.restore();
+  layer(c, A.bedMid, 560, 1150, z, t, .9);
+  c.save(); cam(c, 560, 1150, z, t);
+  const rise = easeOut(prog(lt, 0, 1.1)), fx = 480, fy = 1330 + (1 - rise) * 60;
+  // rim light: bright copy blurred, then dark body offset away from the light (phone on the right)
+  c.save(); c.translate(fx, fy); c.filter = 'blur(5px)'; c.fillStyle = `rgba(${C.cool},.75)`; hoodShape(c); c.restore();
+  c.save(); c.translate(fx - 10, fy + 3); c.fillStyle = '#020309'; hoodShape(c); c.restore();
+  // phone glow at hands
+  c.globalCompositeOperation = 'lighter'; const g = c.createRadialGradient(fx + 300, fy - 190, 0, fx + 300, fy - 190, 380); g.addColorStop(0, `rgba(${C.cool},.30)`); g.addColorStop(1, `rgba(${C.cool},0)`); c.fillStyle = g; c.fillRect(fx - 200, fy - 600, 900, 900);
+  c.translate(fx + 300, fy - 190); c.rotate(-.35); c.fillStyle = '#0B0E16'; rr(c, -20, -36, 40, 72, 8); c.fill(); c.fillStyle = 'rgba(205,220,255,.95)'; rr(c, -16, -32, 32, 64, 6); c.fill();
+  c.restore();
+  dust(c, t, 22, 21, [0, 400, 1080, 1000], C.cool, .7);
+};
+
+S.cctv = (c, t, lt, shot) => {
+  // fixed security cam: no handheld; second time a slow digital zoom on 4B
+  const second = shot.i === 7, dz = second ? lerp(1, 1.45, easeSine(prog(lt, 0, 3.2))) : lerp(1.06, 1.0, easeOut(prog(lt, 0, .8)));
+  const d4 = A.door4B, fx = (d4.xa + d4.xb) / 2, fy = (d4.ta + d4.ba) / 2;
+  c.save(); c.translate(W / 2, H / 2); c.scale(dz, dz); c.translate(-(second ? lerp(W / 2, fx, .55) : W / 2), -(second ? lerp(H / 2, fy, .4) : H / 2));
+  c.drawImage(A.hall, 0, 0);
+  c.globalCompositeOperation = 'lighter';
+  A.pools.forEach((p, i) => { let f = 1; if (i === 1) { const s = Math.sin(t * 23) + Math.sin(t * 37.7); f = s > 1.4 ? .25 : 1; if (((t * 10) | 0) % 47 === 0) f = .1; } c.globalAlpha = f; c.drawImage(p, 0, 0); });
+  c.restore();
+  // CCTV treatment: desaturate-green, scanlines, noise, fisheye vignette, OSD
+  c.save(); c.globalCompositeOperation = 'color'; c.fillStyle = 'rgba(120,140,128,1)'; c.globalAlpha = .55; c.fillRect(0, 0, W, H); c.restore();
+  c.save(); c.globalAlpha = .07; for (let y = (t * 120) % 6; y < H; y += 6) { c.fillStyle = '#000'; c.fillRect(0, y, W, 2); } c.restore();
+  c.save(); c.globalCompositeOperation = 'overlay'; c.globalAlpha = .25; c.drawImage(A.grain[(t * FPS | 0) % 6], 0, 0, W, H); c.restore();
+  const v = c.createRadialGradient(W / 2, H / 2, H * .3, W / 2, H / 2, H * .62); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.7)'); c.fillStyle = v; c.fillRect(0, 0, W, H);
+  osd(c, t, 'CAM 04 · 4F HALLWAY');
+  // entering from the phone: brief signal acquire
+  if (shot.i === 5) { const a = 1 - prog(lt, 0, .35); if (a > 0) { c.fillStyle = `rgba(200,210,200,${a * .5})`; c.fillRect(0, 0, W, H); } }
+};
+function osd(c, t, label) {
+  c.save(); c.font = F(700, 34); c.fillStyle = 'rgba(235,240,232,.85)'; c.textAlign = 'left';
+  c.fillText(label, 70, 420);
+  const s = Math.floor(t) % 60, ts = `02:${t < 30 ? 14 : t < 50 ? 15 : 16}:${String(s).padStart(2, '0')}`;
+  c.fillText(`2026-10-16  ${ts}`, 70, 466);
+  if ((t * 1.5 | 0) % 2 === 0) { c.fillStyle = C.red; c.beginPath(); c.arc(W - 200, 408, 13, 0, 7); c.fill(); }
+  c.fillStyle = 'rgba(235,240,232,.85)'; c.textAlign = 'right'; c.fillText('REC', W - 70, 420);
+  c.strokeStyle = 'rgba(235,240,232,.35)'; c.lineWidth = 4; const m = 50, L = 70;
+  [[m, 330], [W - m, 330], [m, H - 330], [W - m, H - 330]].forEach(([x, y], i) => { const sx = i % 2 ? -1 : 1, sy = i > 1 ? -1 : 1; c.beginPath(); c.moveTo(x, y + sy * L); c.lineTo(x, y); c.lineTo(x + sx * L, y); c.stroke(); });
+  c.restore();
+}
+
+S.living = (c, t, lt) => {
+  const k = easeSine(prog(lt, 0, 3.1)), z = lerp(1.0, 1.12, k), cx = 650, cy = lerp(1080, 1120, k);
+  layer(c, A.livBg, cx, cy, z, t, .55);
+  c.save(); c.globalCompositeOperation = 'lighter'; layer(c, A.livWarm, cx, cy, z, t, .55); c.restore();
+  // phone glow around the hood, from below
+  c.save(); cam(c, cx, cy, 1 + (z - 1) * 1.0, t); c.globalCompositeOperation = 'lighter';
+  const g = c.createRadialGradient(650, 1560, 60, 650, 1500, 420); g.addColorStop(0, `rgba(${C.cool},.30)`); g.addColorStop(1, `rgba(${C.cool},0)`); c.fillStyle = g; c.fillRect(150, 1000, 1000, 900); c.restore();
+  layer(c, A.livFg, cx, cy, z, t, 1.0);
+  // rim on hood edge
+  c.save(); cam(c, cx, cy, z, t); c.strokeStyle = `rgba(${C.cool},.35)`; c.lineWidth = 3; c.filter = 'blur(2px)'; c.beginPath(); c.ellipse(650, 1480, 160, 200, 0, Math.PI * 1.1, Math.PI * 1.9); c.stroke(); c.restore();
+  dust(c, t, 18, 31, [200, 700, 800, 900], C.cool, .5);
+};
+
+// the screenshot (also used as the chat thumbnail)
+function revealImage(c, t, figureAlpha = 1) {
+  c.drawImage(A.revBg, 0, 0); c.save(); c.globalCompositeOperation = 'lighter'; c.drawImage(A.revWarm, 0, 0); c.restore();
+  // the figure, behind the couch, facing the door
+  
+  // warm edge light on the figure from the door gap
+  c.drawImage(A.revFg, 0, 0);
+  // him: between the camera and the couch, back to us, facing your door. warm rim from the door gap on head and shoulders
+  const tilt = .08 + Math.sin(t * .35) * .015;
+  c.save(); c.filter = 'blur(4px)'; c.fillStyle = `rgba(${C.warm},${.35 * figureAlpha})`; standingFigure(c, 735, 1830, 1.12, tilt); c.restore();
+  c.save(); c.fillStyle = `rgba(1,1,4,${figureAlpha})`; standingFigure(c, 735, 1838, 1.12, tilt); c.restore();
+}
+function buildRevealThumb() { const c = mk(1080, 1920), x = c.getContext('2d'); revealImage(x, 0); osdThumb(x); A.revFull = c;
+  const th = mk(492, 442), y = th.getContext('2d'); y.filter = 'blur(9px) brightness(.85)'; y.drawImage(c, 0, 500, 1080, 970, -10, -10, 512, 462); A.revThumb = th; }
+function osdThumb(c) { c.save(); c.font = F(700, 34); c.fillStyle = 'rgba(235,240,232,.8)'; c.fillText('CAM 04 · 4F HALLWAY', 70, 420); c.restore(); }
+
+S.reveal = (c, t, lt) => {
+  // 1) fill screen from the thumbnail  2) push to the couch  3) pan up to him, settle with inertia
+  const a = ease(prog(lt, 0, .8));
+  const push = easeSine(prog(t, 49.0, 53.2)), pan = ease(prog(t, 53.2, 57.3)), hold = easeSine(prog(t, 57.3, 58.7));
+  let z = lerp(1.0, 1.45, push), cx = lerp(540, 470, push), cy = lerp(960, 1170, push);
+  z = lerp(z, 1.7, pan) + hold * .05; cx = lerp(cx, 735, pan); cy = lerp(cy, 960, pan);
+  c.save(); cam(c, cx, cy, z, t, .6);
+  const sc = lerp(.55, 1, a); c.translate(540, 960); c.scale(sc, sc); c.translate(-540, -960);
+  revealImage(c, t, 1); c.restore();
+  // keep the CCTV OSD in screen space — label says "hallway"
+  c.save(); c.globalCompositeOperation = 'overlay'; c.globalAlpha = .18; c.drawImage(A.grain[(t * FPS | 0) % 6], 0, 0, W, H); c.restore();
+  osd(c, t, 'CAM 04 · 4F HALLWAY');
+  const fl = Math.max(0, 1 - Math.abs(t - 50.05) / .5); if (fl > 0) { c.fillStyle = `rgba(0,0,0,${fl * .35})`; c.fillRect(0, 0, W, H); }
+};
+
+S.members = (c, t, lt) => {
+  const k = easeSine(prog(lt, 0, 8.5)); let z = lerp(1.0, 1.12, k);
+  const fin = ease(prog(t, 64.8, 66.6)); z = lerp(z, 1.55, fin);
+  layer(c, A.bedBlur, 700, 1150, 1.15, t, .4);
+  c.fillStyle = 'rgba(4,6,12,.5)'; c.fillRect(0, 0, W, H);
+  c.save(); const d = drift(t, 1.4); c.translate(W / 2 + d.x, H / 2 + 40 + d.y); c.rotate(d.r * 2); c.scale(z, z); c.translate(0, -lerp(0, 560, fin));
+  drawPhone(c, t, 'members'); c.restore();
+};
+S.black = (c) => { c.fillStyle = '#000'; c.fillRect(0, 0, W, H); };
+S.door = (c, t, lt) => {
+  const k = easeSine(prog(lt, 0, 7.6)), z = lerp(1.0, 1.14, k), cy = lerp(1150, 1230, k);
+  const fadeIn = prog(lt, .2, 1.4), lightOff = 1 - ease(prog(t, 74.6, 75.4));
+  layer(c, A.doorBg, 650, cy, z, t, .9);
+  c.save(); c.globalCompositeOperation = 'lighter'; c.globalAlpha = lightOff; layer(c, A.doorWarm, 650, cy, z, t, .9); c.restore();
+  dust(c, t, 20, 41, [150, 1100, 780, 600], C.warm, .7 * lightOff);
+  c.fillStyle = `rgba(0,0,0,${1 - fadeIn})`; c.fillRect(0, 0, W, H);
+  // end title
+  const tt = easeOut(prog(t, 75.4, 76.6));
+  if (tt > 0) { c.save(); c.globalAlpha = tt; c.textAlign = 'center';
+    c.fillStyle = C.text; c.font = F(800, 110); c.letterSpacing = '18px'; c.fillText('NIGHT 2', W / 2 + 9, 900 + (1 - tt) * 16);
+    c.letterSpacing = '10px'; c.fillStyle = `rgb(${C.warm})`; c.font = F(600, 32); c.fillText('AFTER LIGHTS OUT', W / 2 + 5, 990);
+    c.restore(); }
+};
+
+// ---------- overlays: HUD + captions + grade ----------
+function hud(c, t) {
+  const sh = shotAt(t).name; if (!['bedroom', 'sitting', 'living'].includes(sh)) return;
+  const a = prog(t, .4, 1.2); c.save(); c.globalAlpha = a; c.textAlign = 'left';
+  c.fillStyle = C.red; c.beginPath(); c.arc(84, 196, 9, 0, 7); c.fill();
+  c.fillStyle = 'rgba(233,236,244,.75)'; c.font = F(700, 24); c.letterSpacing = '5px'; c.fillText('NIGHT 1', 104, 205);
+  c.letterSpacing = '0px'; c.fillStyle = C.text; c.font = F(800, 72); const ct = clockText(t, false), tw = c.measureText(ct).width; c.fillText(ct, 70, 288);
+  c.font = F(700, 30); c.fillStyle = 'rgba(233,236,244,.7)'; c.fillText('AM', 70 + tw + 12, 288);
+  c.fillStyle = 'rgba(233,236,244,.5)'; c.font = F(600, 24); c.letterSpacing = '4px'; c.fillText('APT 4B', 72, 330);
+  c.restore();
+}
+
+const KEY = new Set(['alone', 'empty', 'door', 'peephole', 'camera', 'still', 'word', 'tuesday', 'watching', 'silent', 'screenshot', 'living', 'room', 'couch', 'him', 'thirteen', '4b', 'turn', 'two', 'man', 'members']);
+function buildChunks() {
+  CHUNKS = [];
+  for (const L of LINES) {
+    // phrases end at punctuation; long phrases split into balanced groups of 2–3 words
+    const phrases = []; let cur = [];
+    for (const w of L.words) { cur.push(w); if (/[.,?!…]["']?$/.test(w[0])) { phrases.push(cur); cur = []; } }
+    if (cur.length) phrases.push(cur);
+    for (const ph of phrases) {
+      const n = Math.ceil(ph.length / 3), size = Math.ceil(ph.length / n);
+      for (let i = 0; i < ph.length; i += size) { const g = ph.slice(i, i + size); CHUNKS.push({ words: g.map(w => w[0]), t0: g[0][1], t1: g[g.length - 1][2] }); }
+    }
+  }
+  CHUNKS.forEach((ch, i) => { const nx = CHUNKS[i + 1]; ch.end = nx ? Math.min(nx.t0, ch.t1 + .6) : ch.t1 + .8; });
+}
+function clean(w) { if (/^a\.m/i.test(w)) return 'AM'; return w.replace(/^["“]+|["”]+$/g, '').replace(/\.\.\.$/, '').replace(/[.,]$/, '').replace(/["”]$/, '').replace(/[.,]$/, ''); }
+function captions(c, t) {
+  const ch = CHUNKS.find(k => t >= k.t0 - .04 && t < k.end); if (!ch) return;
+  const a = easeOut(prog(t, ch.t0 - .04, ch.t0 + .1)), out = 1 - prog(t, ch.end - .08, ch.end);
+  const words = ch.words.map(clean).map(s => s.toUpperCase());
+  let hi = words.findIndex(w => KEY.has(w.toLowerCase().replace(/[^a-z0-9]/g, '')));
+  c.save(); c.globalAlpha = a * out;
+  const sg = c.createRadialGradient(W / 2, 1325, 0, W / 2, 1325, 560); sg.addColorStop(0, 'rgba(2,3,8,.62)'); sg.addColorStop(1, 'rgba(2,3,8,0)');
+  c.save(); c.translate(W / 2, 1325); c.scale(1, .26); c.translate(-W / 2, -1325); c.fillStyle = sg; c.fillRect(0, 1325 - 560, W, 1120); c.restore();
+  c.font = F(900, 76); c.textAlign = 'left'; c.letterSpacing = '1px';
+  const sp = 22, widths = words.map(w => c.measureText(w).width), total = widths.reduce((x, y) => x + y, 0) + sp * (words.length - 1);
+  let x = W / 2 - total / 2; const y = 1350 + (1 - a) * 12;
+  c.shadowColor = 'rgba(0,0,0,.85)'; c.shadowBlur = 24; c.shadowOffsetY = 4;
+  words.forEach((w, i) => { c.fillStyle = i === hi ? `rgb(${C.warm})` : '#F3F4F8'; c.fillText(w, x, y); x += widths[i] + sp; });
+  c.restore();
+}
+
+function grade(c, t) {
+  // split-tone: cool shadows, slightly warm highs; then vignette and fine grain
+  c.save();
+  c.globalCompositeOperation = 'soft-light'; c.fillStyle = 'rgba(30,60,90,.35)'; c.fillRect(0, 0, W, H);
+  c.globalCompositeOperation = 'source-over'; c.drawImage(A.vig, 0, 0);
+  c.globalCompositeOperation = 'overlay'; c.globalAlpha = .085; c.drawImage(A.grain[(t * FPS | 0) % 6], 0, 0, W, H);
+  c.restore();
+}
+
+// ---------- frame assembly with motion blur (180° shutter, 3 subframes) ----------
+const SC = mk(), sc = SC.getContext('2d'), ACC = mk(), acc = ACC.getContext('2d');
+function sceneAt(ctx, t, shot) { ctx.save(); ctx.fillStyle = C.night; ctx.fillRect(0, 0, W, H); S[shot.name](ctx, t, t - shot.t0, shot); ctx.restore(); }
+const FAST = [[19.6, 20.45], [47.4, 48.4], [48.4, 49.3], [64.8, 66.6]];
+function render(t, samples) {
+  const shot = shotAt(t);
+  if (samples === undefined) samples = FAST.some(([a, b]) => t >= a && t <= b) ? 8 : 3;
+  acc.clearRect(0, 0, W, H);
+  for (let i = 0; i < samples; i++) {
+    const ts = clamp(t + (samples > 1 ? (i / (samples - 1) - .5) / (2 * FPS) : 0), shot.t0, shot.t1 - 1e-4);
+    sceneAt(sc, ts, shot); acc.globalAlpha = 1 / (i + 1); acc.drawImage(SC, 0, 0);
+  }
+  acc.globalAlpha = 1;
+  O.drawImage(ACC, 0, 0);
+  grade(O, t); hud(O, t); captions(O, t);
+}
+function frameJPEG(t) { render(t); return out.toDataURL('image/jpeg', .93); }
+
+async function setup(lines) {
+  LINES = lines; await document.fonts.load(F(900, 40)); await document.fonts.load(F(500, 40));
+  buildBedroom(); buildHallway(); buildLiving(); buildReveal(); buildDoor(); buildGrain(); buildRevealThumb(); buildChunks();
+  return true;
+}
+</script></body></html>

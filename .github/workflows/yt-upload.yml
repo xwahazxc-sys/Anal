@@ -12,6 +12,10 @@ on:
       ids:
         description: "Queue ids to upload, comma-separated (e.g. ep02)"
         required: true
+      account:
+        description: "Secret prefix: YT (Lenny), YT2 (second YouTube), TT (TikTok)"
+        required: false
+        default: "YT"
   push:
     paths:
       - youtube/lenny/publish/run.json
@@ -36,14 +40,16 @@ jobs:
           python-version: "3.12"
       - name: Install Playwright
         run: |
-          pip install playwright==1.47.0
+          pip install playwright==1.47.0 pproxy==2.7.9
           python -m playwright install --with-deps chromium
       - name: Upload
         env:
-          YT_COOKIES: ${{ secrets.YT_COOKIES }}
-          YT_PROXY: ${{ secrets.YT_PROXY }}
+          YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
+          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] }}
+          ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
           IDS: ${{ github.event.inputs.ids }}
-        run: python youtube/lenny/publish/uploader.py
+        run: |
+          if [ "$ACCOUNT" = "TT" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
       - name: Screenshots
         if: always()
         uses: actions/upload-artifact@v4

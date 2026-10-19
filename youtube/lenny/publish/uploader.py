@@ -18,7 +18,7 @@ from playwright.sync_api import TimeoutError as PWTimeout
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[3]
-PUB = ROOT / "youtube/lenny/publish"
+PUB = ROOT / os.environ.get("QUEUE_DIR", "youtube/lenny/publish")
 SHOTS = ROOT / "shots"
 SHOTS.mkdir(exist_ok=True)
 
@@ -53,19 +53,36 @@ def parse_cookies(text):
     return out
 
 
-def parse_proxy(s):
+def _bridge_socks(host, port, user, pw):
+    """Chromium can't do SOCKS5 with a password: bridge it through a local pproxy HTTP listener."""
+    import subprocess
+    remote = f"socks5://{host}:{port}" + (f"#{user}:{pw}" if user else "")
+    subprocess.Popen(["pproxy", "-l", "http://127.0.0.1:18899", "-r", remote], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(2)
+    return {"server": "http://127.0.0.1:18899"}
+
+
+def parse_proxy(s, force_socks=None):
+    """Accepts scheme://user:pass@host:port or host:port:user:pass (http by default;
+    PROXY_SCHEME=socks5 or force_socks=True treats the bare form as SOCKS5)."""
     s = s.strip()
-    m = re.match(r"^(?:(\w+)://)?([^:@/]+):([^:@/]+)@([^:/]+):(\d+)/?$", s)
+    m = re.match(r"^(?:(\w+)://)?(?:([^:@/]+):([^@/]+)@)?([^:@/]+):(\d+)/?$", s)
     if m:
         scheme, user, pw, host, port = m.groups()
-        return {"server": f"{scheme or 'http'}://{host}:{port}", "username": user, "password": pw}
-    parts = s.split(":")
-    if len(parts) == 4:
+    else:
+        parts = s.split(":")
+        if len(parts) != 4:
+            sys.exit("proxy format not recognised (want host:port:user:pass or scheme://user:pass@host:port)")
         host, port, user, pw = parts
-        return {"server": f"http://{host}:{port}", "username": user, "password": pw}
-    if len(parts) == 2:
-        return {"server": f"http://{s}"}
-    sys.exit("YT_PROXY format not recognised (want host:port:user:pass)")
+        scheme = "socks5" if (force_socks or os.environ.get("PROXY_SCHEME", "").startswith("socks")) else "http"
+    if force_socks:
+        scheme = "socks5"
+    if scheme and scheme.startswith("socks"):
+        return _bridge_socks(host, port, user, pw)
+    out = {"server": f"http://{host}:{port}"}
+    if user:
+        out.update(username=user, password=pw)
+    return out
 
 
 step_no = [0]
@@ -522,6 +539,28 @@ def main():
         ids = json.loads((PUB / "run.json").read_text())["ids"]
     queue = {i["id"]: i for i in json.loads((PUB / "queue.json").read_text())}
     do_audit = "audit" in ids
+    if "check" in ids:
+        with sync_playwright() as p:
+            px = parse_proxy(proxy)
+            b = p.chromium.launch(headless=True, proxy=px)
+            try:
+                t = b.new_page(); t.goto("https://ipinfo.io/json", timeout=20000); t.close()
+            except Exception:
+                log("http proxy failed, retrying as SOCKS5")
+                b.close(); b = p.chromium.launch(headless=True, proxy=parse_proxy(proxy, force_socks=True))
+            ctx = b.new_context(locale="en-US")
+            ctx.add_cookies(parse_cookies(cookies))
+            pg = ctx.new_page()
+            try:
+                pg.goto("https://ipinfo.io/json", timeout=30000); info = json.loads(pg.inner_text("body"))
+                log("proxy exit:", info.get("country"), info.get("region"))
+            except Exception as e:
+                log("proxy check failed:", type(e).__name__, str(e)[:120])
+            pg.goto("https://studio.youtube.com", wait_until="domcontentloaded"); pg.wait_for_timeout(6000)
+            shot(pg, "check_studio")
+            log("signed in:", "accounts.google.com" not in pg.url, pg.url[:60])
+            b.close()
+        return
     do_country = "country" in ids
     fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
