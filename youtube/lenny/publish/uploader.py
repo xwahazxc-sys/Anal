@@ -239,6 +239,88 @@ def schedule(page, when_iso):
     log("scheduled for", when.strftime("%b %-d, %Y %-I:%M %p"))
 
 
+def audit(page):
+    """Read-only tour of the channel: screenshots + visible text of every setup page."""
+    out = SHOTS / "audit_text"
+    out.mkdir(exist_ok=True)
+
+    def grab(name, url=None, wait=6000, scroll=True):
+        if url:
+            page.goto(url, wait_until="domcontentloaded")
+        page.wait_for_timeout(wait)
+        try:
+            page.screenshot(path=str(SHOTS / f"a_{name}.png"), full_page=scroll)
+        except Exception as e:
+            log("shot failed", name, type(e).__name__)
+        try:
+            (out / f"{name}.txt").write_text(page.inner_text("body"))
+        except Exception:
+            pass
+        log("audit page", name, page.url[:90])
+
+    page.goto("https://studio.youtube.com", wait_until="domcontentloaded")
+    page.wait_for_timeout(6000)
+    m = re.search(r"/channel/(UC[\w-]+)", page.url)
+    if not m:
+        raise SystemExit("could not find the channel id (not signed in?)")
+    base = f"https://studio.youtube.com/channel/{m.group(1)}"
+    log("channel", m.group(1))
+    grab("dashboard")
+    grab("profile", f"{base}/editing/profile")
+    # read form values that inner_text misses
+    try:
+        vals = page.evaluate("""() => [...document.querySelectorAll('input, textarea, #textbox')].map(e =>
+            (e.getAttribute('aria-label')||e.id||e.name||'') + ' = ' + (e.value ?? e.innerText ?? '')).filter(x => x.length > 4)""")
+        (out / "profile_values.txt").write_text("\n".join(vals))
+    except Exception:
+        pass
+    grab("branding", f"{base}/editing/images")
+    grab("layout", f"{base}/editing/sections")
+    grab("content", f"{base}/videos/upload")
+    # first video's details page
+    try:
+        page.locator("a#video-title, ytcp-video-list-cell-video a#anchor-video-title, a#thumbnail-anchor").first.click(timeout=8000)
+        page.wait_for_timeout(7000)
+        grab("video_details", wait=1000)
+        vals = page.evaluate("""() => [...document.querySelectorAll('#textbox, input')].map(e =>
+            (e.getAttribute('aria-label')||e.id||'') + ' = ' + (e.value ?? e.innerText ?? '')).filter(x => x.length > 4)""")
+        (out / "video_values.txt").write_text("\n".join(vals))
+        try:
+            page.get_by_text(re.compile(r"show more", re.I)).first.click(timeout=4000)
+            page.wait_for_timeout(1500)
+            grab("video_details_more", wait=500)
+        except Exception:
+            pass
+    except Exception as e:
+        log("video details skipped:", type(e).__name__)
+    # settings dialog: channel basic info / advanced / upload defaults
+    try:
+        page.goto(base, wait_until="domcontentloaded"); page.wait_for_timeout(5000)
+        page.get_by_text(re.compile(r"^\s*settings\s*$", re.I)).first.click(timeout=8000)
+        page.wait_for_timeout(2500)
+        grab("settings_general", wait=500, scroll=False)
+        for tab in ("Channel", "Upload defaults", "Permissions"):
+            try:
+                page.get_by_text(re.compile(rf"^\s*{tab}\s*$", re.I)).first.click(timeout=5000)
+                page.wait_for_timeout(2000)
+                grab(f"settings_{tab.lower().replace(' ', '_')}", wait=300, scroll=False)
+                if tab == "Channel":
+                    page.get_by_text(re.compile(r"^\s*advanced settings\s*$", re.I)).first.click(timeout=5000)
+                    page.wait_for_timeout(1500)
+                    grab("settings_channel_advanced", wait=300, scroll=False)
+                    page.get_by_text(re.compile(r"^\s*feature eligibility\s*$", re.I)).first.click(timeout=5000)
+                    page.wait_for_timeout(1500)
+                    grab("settings_features", wait=300, scroll=False)
+            except Exception as e:
+                log("settings tab", tab, "skipped:", type(e).__name__)
+    except Exception as e:
+        log("settings skipped:", type(e).__name__)
+    # public side
+    grab("public_home", f"https://www.youtube.com/channel/{m.group(1)}", wait=6000)
+    grab("public_videos", f"https://www.youtube.com/channel/{m.group(1)}/videos", wait=5000)
+    grab("public_about", f"https://www.youtube.com/channel/{m.group(1)}/about", wait=5000)
+
+
 def main():
     cookies = os.environ.get("YT_COOKIES", "")
     proxy = os.environ.get("YT_PROXY", "")
@@ -248,6 +330,8 @@ def main():
     if not ids and (PUB / "run.json").exists():
         ids = json.loads((PUB / "run.json").read_text())["ids"]
     queue = {i["id"]: i for i in json.loads((PUB / "queue.json").read_text())}
+    do_audit = "audit" in ids
+    ids = [i for i in ids if i != "audit"]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         i, _, mode = raw.partition(":")
@@ -256,7 +340,7 @@ def main():
             if mode == "private":
                 item["visibility"] = "private"
             todo.append(item)
-    if not todo:
+    if not todo and not do_audit:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -275,6 +359,13 @@ def main():
         except Exception as e:
             log("proxy check failed:", type(e).__name__)
         results = {}
+        if do_audit:
+            try:
+                audit(page)
+            except Exception as e:
+                shot(page, "audit_error")
+                log("AUDIT FAILED", type(e).__name__, str(e)[:300])
+                results["audit"] = "FAILED"
         for item in todo:
             try:
                 results[item["id"]] = upload_one(page, item) or "ok"
