@@ -504,8 +504,29 @@ def brand_channel(page, prof):
             page.keyboard.insert_text(value); return True
         except Exception:
             return False
-    ok_name = set_field(r"^name", prof["name"]) or set_field(r"channel name", prof["name"])
-    ok_handle = set_field(r"handle", prof["handle"])
+    # Name and Handle are plain inputs under their headings; find them by position relative to the headings
+    def input_under(heading):
+        h = page.get_by_text(re.compile(rf"^\s*{heading}\s*$")).first
+        h.scroll_into_view_if_needed(timeout=5000)
+        hb = h.bounding_box()
+        best = None
+        for el in page.locator("input:visible").all():
+            b = el.bounding_box()
+            if b and hb and b["y"] > hb["y"] and (best is None or b["y"] < best[0]):
+                best = (b["y"], el)
+        return best[1] if best else None
+
+    def set_input(heading, value):
+        try:
+            el = input_under(heading)
+            el.click(timeout=5000); page.keyboard.press("Control+A"); page.keyboard.press("Delete")
+            el.type(value, delay=20)
+            return el.input_value() == value
+        except Exception as e:
+            log("set", heading, "failed:", type(e).__name__)
+            return False
+    ok_name = set_input("Name", prof["name"])
+    ok_handle = set_input("Handle", prof["handle"])
     ok_desc = set_field(r"tell viewers about your channel", prof["description"])
     log("fields:", "name", ok_name, "handle", ok_handle, "description", ok_desc)
     page.wait_for_timeout(3000)  # handle availability check
