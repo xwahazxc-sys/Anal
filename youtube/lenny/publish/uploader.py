@@ -329,6 +329,36 @@ def reschedule(page, video_id, item):
     return f"https://youtu.be/{video_id}"
 
 
+def set_country(page, country="United States"):
+    """Settings → Channel → Basic info → Country of residence."""
+    page.goto("https://studio.youtube.com", wait_until="domcontentloaded")
+    page.wait_for_timeout(6000)
+    page.get_by_text(re.compile(r"^\s*settings\s*$", re.I)).first.click(timeout=10000)
+    page.wait_for_timeout(2500)
+    page.get_by_text(re.compile(r"^\s*channel\s*$", re.I)).first.click(timeout=8000)
+    page.wait_for_timeout(2000)
+    page.get_by_text(re.compile(r"^\s*basic info\s*$", re.I)).first.click(timeout=8000)
+    page.wait_for_timeout(1500)
+    shot(page, "country_before")
+    opened = False
+    for sel in ("ytcp-form-select#country #select-button", "#country #select-button", "ytcp-form-select#country", "text=Select"):
+        if try_click(page, sel, 5000):
+            opened = True
+            break
+    if not opened:
+        raise RuntimeError("could not open the country list")
+    page.wait_for_timeout(1500)
+    item = page.locator("tp-yt-paper-item, ytcp-text-menu tp-yt-paper-item").filter(has_text=re.compile(rf"^\s*{country}\s*$"))
+    item.first.scroll_into_view_if_needed(timeout=8000)
+    item.first.click(timeout=8000)
+    page.wait_for_timeout(1500)
+    shot(page, "country_selected")
+    page.locator("#save-button, ytcp-button#save-button").first.click(timeout=10000)
+    page.wait_for_timeout(4000)
+    shot(page, "country_saved")
+    log("country set to", country)
+
+
 def audit(page):
     """Read-only tour of the channel: screenshots + visible text of every setup page."""
     out = SHOTS / "audit_text"
@@ -421,7 +451,8 @@ def main():
         ids = json.loads((PUB / "run.json").read_text())["ids"]
     queue = {i["id"]: i for i in json.loads((PUB / "queue.json").read_text())}
     do_audit = "audit" in ids
-    ids = [i for i in ids if i != "audit"]
+    do_country = "country" in ids
+    ids = [i for i in ids if i not in ("audit", "country")]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -433,7 +464,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit:
+    if not todo and not do_audit and not do_country:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -452,6 +483,14 @@ def main():
         except Exception as e:
             log("proxy check failed:", type(e).__name__)
         results = {}
+        if do_country:
+            try:
+                set_country(page)
+                results["country"] = "ok"
+            except Exception as e:
+                shot(page, "country_error")
+                log("COUNTRY FAILED", type(e).__name__, str(e)[:300])
+                results["country"] = "FAILED"
         if do_audit:
             try:
                 audit(page)
