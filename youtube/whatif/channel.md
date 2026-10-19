@@ -37,3 +37,7 @@ what if… it's 2:14 a.m. 🕑 animated horror from Elm Court
 1. The Group Chat — Nights 1–3 ✅ ready
 2. Night Doorman Rules (best hook, 61) · 3. Two Cribs · 4. Floor 0 · 5. The Speaker · 6. Sleepwalker · 7. Order for Two · 8. Dev's Camera
 Rule: every 48 h the story with the most "part 2?" comments gets the next slot.
+
+## Status (Oct 19)
+PAUSED by the owner. Ready: rebranded Night 1–3, banner, texts, queues; uploader supports YT3 (signed in) and TT (signed in, @jojokokoko22).
+Last TikTok run was cancelled mid-way (profile edit + Night 1 "Only me" test) — check the profile/drafts before resuming.
