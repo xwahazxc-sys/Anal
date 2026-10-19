@@ -353,9 +353,16 @@ def set_country(page, country="United States"):
     item.first.click(timeout=8000)
     page.wait_for_timeout(1500)
     shot(page, "country_selected")
-    page.locator("#save-button, ytcp-button#save-button").first.click(timeout=10000)
+    page.get_by_role("button", name=re.compile(r"^\s*save\s*$", re.I)).last.click(timeout=10000)
     page.wait_for_timeout(4000)
     shot(page, "country_saved")
+    # re-open and confirm
+    page.goto("https://studio.youtube.com", wait_until="domcontentloaded"); page.wait_for_timeout(5000)
+    page.get_by_text(re.compile(r"^\s*settings\s*$", re.I)).first.click(timeout=10000); page.wait_for_timeout(2000)
+    page.get_by_text(re.compile(r"^\s*channel\s*$", re.I)).first.click(timeout=8000); page.wait_for_timeout(2000)
+    shot(page, "country_check")
+    if country not in page.inner_text("body"):
+        raise RuntimeError("country did not stick after save")
     log("country set to", country)
 
 
