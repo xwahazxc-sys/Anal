@@ -47,7 +47,7 @@ jobs:
           YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
           YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || secrets.YT2_PROXY }}
           ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
-          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'TT') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
+          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || github.event.inputs.account == 'TT') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
           IDS: ${{ github.event.inputs.ids }}
         run: |
           if [ "$ACCOUNT" = "TT" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
