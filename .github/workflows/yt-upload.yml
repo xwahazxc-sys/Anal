@@ -1,0 +1,53 @@
+name: YouTube upload
+
+# Uploads videos listed in youtube/lenny/publish/queue.json through YouTube Studio,
+# signed in with the channel's cookies and routed through the channel's proxy.
+# Secrets (Settings → Secrets and variables → Actions):
+#   YT_COOKIES  contents of cookies.txt (Netscape format) for youtube.com
+#   YT_PROXY    host:port:user:pass   (or http://user:pass@host:port)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Queue ids to upload, comma-separated (e.g. ep02)"
+        required: true
+  push:
+    paths:
+      - youtube/lenny/publish/run.json
+
+permissions:
+  contents: read
+
+concurrency:
+  group: yt-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: |
+          pip install playwright==1.47.0
+          python -m playwright install --with-deps chromium
+      - name: Upload
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+          YT_PROXY: ${{ secrets.YT_PROXY }}
+          IDS: ${{ github.event.inputs.ids }}
+        run: python youtube/lenny/publish/uploader.py
+      - name: Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yt-upload-shots
+          path: shots/
+          retention-days: 7
