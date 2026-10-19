@@ -45,7 +45,7 @@ jobs:
       - name: Upload
         env:
           YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
-          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] }}
+          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || secrets.YT2_PROXY }}
           ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
           IDS: ${{ github.event.inputs.ids }}
         run: |
