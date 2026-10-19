@@ -29,6 +29,19 @@ def signed_in(page):
     return "login" not in page.url
 
 
+def dismiss_popups(page):
+    """Close TikTok Studio's one-time dialogs/tooltips that cover the form."""
+    for rx in (r"^\s*turn on\s*$", r"^\s*got it\s*$", r"^\s*not now\s*$", r"^\s*ok\s*$"):
+        try:
+            b = page.get_by_role("button", name=re.compile(rx, re.I))
+            if b.count() and b.first.is_visible():
+                b.first.click(timeout=2000)
+                page.wait_for_timeout(700)
+                log("closed popup:", rx)
+        except Exception:
+            pass
+
+
 def set_caption(page, text):
     box = page.locator("div[contenteditable='true']").first
     box.click(timeout=15000)
@@ -54,14 +67,18 @@ def upload(page, item):
     log("file selected")
     page.wait_for_selector("div[contenteditable='true']", timeout=180000)
     page.wait_for_timeout(4000)
+    dismiss_popups(page)
     set_caption(page, item["caption"])
+    dismiss_popups(page)
     shot(page, f"{item['id']}_caption")
     if item.get("private"):
         # Who can watch → Only me
         try:
-            page.get_by_text(re.compile(r"who can watch", re.I)).first.scroll_into_view_if_needed(timeout=5000)
-            page.locator("[data-e2e='video_visibility'], .Select__root").first.click(timeout=5000)
-            page.get_by_text(re.compile(r"^\s*only me\s*$", re.I)).first.click(timeout=5000)
+            page.get_by_text(re.compile(r"^\s*everyone\s*$", re.I)).first.click(timeout=8000)
+            page.wait_for_timeout(800)
+            page.get_by_text(re.compile(r"^\s*only (me|you)\s*$", re.I)).last.click(timeout=8000)
+            page.wait_for_timeout(800)
+            shot(page, f"{item['id']}_only_me")
             log("visibility: only me")
         except Exception as e:
             raise RuntimeError(f"could not set Only me ({type(e).__name__}); not posting") from e
@@ -84,6 +101,7 @@ def upload(page, item):
         except Exception:
             pass
         time.sleep(5)
+    dismiss_popups(page)
     shot(page, f"{item['id']}_before_post")
     btn.click(timeout=10000)
     page.wait_for_timeout(8000)
@@ -109,26 +127,18 @@ def edit_profile(page, prof):
         log("avatar set")
     except Exception as e:
         log("avatar skipped:", type(e).__name__)
-    def fill(label_rx, value, multiline=False):
-        sel = "textarea" if multiline else "input[type='text'], input:not([type])"
-        box = page.locator(f"div:has(> div:text-matches('{label_rx}', 'i')) {sel}").first
-        try:
-            box.fill(value, timeout=5000)
-            return True
-        except Exception:
-            return False
-    ok_u = fill("^\\s*username\\s*$", prof["username"])
-    ok_n = fill("^\\s*name\\s*$", prof["name"])
-    ok_b = fill("^\\s*bio\\s*$", prof["bio"], multiline=True)
-    if not (ok_n and ok_b):
-        # fallback by order: the dialog has username, name inputs and one bio textarea
-        ins = page.locator("[role='dialog'] input[type='text'], [role='dialog'] input:not([type])")
-        log("fallback inputs:", ins.count())
-        if ins.count() >= 2:
-            ins.nth(0).fill(prof["username"]); ins.nth(1).fill(prof["name"]); ok_u = ok_n = True
-        ta = page.locator("[role='dialog'] textarea")
-        if ta.count():
-            ta.first.fill(prof["bio"]); ok_b = True
+    dlg = page.locator("[role='dialog']").last
+    ins = dlg.locator("input[type='text'], input:not([type]):not([type='file'])")
+    log("dialog inputs:", ins.count())
+    ok_u = ok_n = ok_b = False
+    if ins.count() >= 2:
+        for i, v in ((0, prof["username"]), (1, prof["name"])):
+            el = ins.nth(i); el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(v, delay=25)
+        ok_u = ok_n = True
+    ta = dlg.locator("textarea")
+    if ta.count():
+        ta.first.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); ta.first.type(prof["bio"], delay=15); ok_b = True
+    page.wait_for_timeout(2500)  # username availability check
     log("fields:", "username", ok_u, "name", ok_n, "bio", ok_b)
     page.wait_for_timeout(1500)
     shot(page, "tt_edit_filled")
