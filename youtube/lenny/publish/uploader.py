@@ -228,23 +228,106 @@ def upload_one(page, item):
 
 
 def schedule(page, when_iso):
-    """Visibility step: Schedule at a given local time. when_iso like 2026-10-20T12:00 (channel time zone)."""
+    """Visibility step: Schedule at a given local time (browser runs in US Eastern).
+    Verifies the date and time actually took; raises instead of silently publishing on the wrong day."""
     when = datetime.fromisoformat(when_iso)
-    try_click(page, "#second-container-expand-button", 10000)
+    want_date = when.strftime("%b %-d, %Y")
+    want_time = when.strftime("%-I:%M %p")
+    try_click(page, "#second-container-expand-button", 6000)
     page.wait_for_timeout(1000)
-    # date
-    page.locator("#datepicker-trigger").first.click(timeout=10000)
-    page.wait_for_timeout(600)
-    date_in = page.locator("ytcp-date-picker tp-yt-paper-input input, #input-1 input").first
-    date_in.fill(when.strftime("%b %-d, %Y"))
+
+    def trigger_text():
+        try:
+            return page.locator("#datepicker-trigger").first.inner_text(timeout=3000).strip()
+        except Exception:
+            return ""
+
+    ok = False
+    for attempt in range(4):
+        page.locator("#datepicker-trigger").first.click(timeout=10000)
+        page.wait_for_timeout(900)
+        try:
+            (SHOTS / "datepicker.html").write_text(page.locator("ytcp-date-picker, tp-yt-iron-dropdown").last.inner_html(timeout=3000)[:20000])
+        except Exception:
+            pass
+        cands = [
+            "ytcp-date-picker tp-yt-paper-input input",
+            "tp-yt-iron-dropdown ytcp-date-picker input",
+            "ytcp-date-picker input",
+            "tp-yt-paper-dialog input.tp-yt-paper-input",
+        ]
+        typed = False
+        for sel in cands[attempt:] + cands[:attempt]:
+            loc = page.locator(sel)
+            for i in range(min(loc.count(), 4)):
+                el = loc.nth(i)
+                try:
+                    if not el.is_visible():
+                        continue
+                    el.click(timeout=2000)
+                    page.keyboard.press("Control+A")
+                    page.keyboard.type(want_date, delay=30)
+                    page.keyboard.press("Enter")
+                    typed = True
+                    break
+                except Exception:
+                    continue
+            if typed:
+                break
+        if not typed:  # last resort: the focused element after opening the picker
+            page.keyboard.press("Control+A")
+            page.keyboard.type(want_date, delay=30)
+            page.keyboard.press("Enter")
+        page.wait_for_timeout(900)
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(500)
+        got = trigger_text()
+        log("date attempt", attempt + 1, "->", got)
+        if got == want_date:
+            ok = True
+            break
+    if not ok:
+        raise RuntimeError(f"could not set publish date to {want_date} (picker shows {trigger_text()!r})")
+
+    time_in = page.locator("#time-of-day-container input, ytcp-form-input-container#time-of-day-container input").first
+    time_in.click(timeout=5000)
+    page.keyboard.press("Control+A")
+    page.keyboard.type(want_time, delay=30)
     page.keyboard.press("Enter")
-    page.wait_for_timeout(600)
-    # time
-    time_in = page.locator("#time-of-day-container tp-yt-paper-input input, ytcp-form-input-container#time-of-day-container input").first
-    time_in.fill(when.strftime("%-I:%M %p"))
-    page.keyboard.press("Enter")
-    page.wait_for_timeout(600)
-    log("scheduled for", when.strftime("%b %-d, %Y %-I:%M %p"))
+    page.wait_for_timeout(800)
+    got_t = time_in.input_value(timeout=3000).strip()
+    if got_t.replace("\u202f", " ") != want_time:
+        raise RuntimeError(f"could not set publish time to {want_time} (field shows {got_t!r})")
+    log("scheduled for", want_date, want_time)
+
+
+def reschedule(page, video_id, item):
+    """Change an already uploaded video's visibility to Schedule at item['publishAt']."""
+    page.goto(f"https://studio.youtube.com/video/{video_id}/edit", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    shot(page, f"{item['id']}_edit")
+    opened = False
+    for sel in ("ytcp-video-metadata-visibility #select-button", "ytcp-video-metadata-visibility", "#visibility-select"):
+        if try_click(page, sel, 5000):
+            opened = True
+            break
+    if not opened:
+        raise RuntimeError("could not open the visibility editor")
+    page.wait_for_timeout(1500)
+    shot(page, f"{item['id']}_visibility_dialog")
+    schedule(page, item["publishAt"])
+    shot(page, f"{item['id']}_visibility_scheduled")
+    for sel in ("ytcp-video-visibility-select #save-button", "#save-button", "text=Done"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(1500)
+    for sel in ("ytcp-button#save", "#save", "text=Save"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(4000)
+    shot(page, f"{item['id']}_saved")
+    log("rescheduled", video_id, "->", item["publishAt"])
+    return f"https://youtu.be/{video_id}"
 
 
 def audit(page):
@@ -342,11 +425,14 @@ def main():
     ids = [i for i in ids if i != "audit"]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
+        raw, _, existing = raw.partition("@")
         i, _, mode = raw.partition(":")
         if i in queue:
             item = dict(queue[i])
             if mode == "private":
                 item["visibility"] = "private"
+            if existing:
+                item["existing"] = existing
             todo.append(item)
     if not todo and not do_audit:
         sys.exit(f"nothing to upload for ids {ids}")
@@ -376,7 +462,10 @@ def main():
                 results["audit"] = "FAILED"
         for item in todo:
             try:
-                results[item["id"]] = upload_one(page, item) or "ok"
+                if item.get("existing"):
+                    results[item["id"]] = reschedule(page, item["existing"], item)
+                else:
+                    results[item["id"]] = upload_one(page, item) or "ok"
             except (PWTimeout, Exception) as e:
                 shot(page, f"{item['id']}_error")
                 log("FAILED", item["id"], type(e).__name__, str(e)[:300])
