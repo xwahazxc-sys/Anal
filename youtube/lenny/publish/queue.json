@@ -20,7 +20,8 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep04/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-20T12:00"
+  "publishAt": "2026-10-20T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep04_cinematic.mp4.part-"
  },
  {
   "id": "s1",
@@ -30,6 +31,15 @@
   "tags": [],
   "visibility": "schedule",
   "publishAt": "2026-10-21T15:00"
+ },
+ {
+  "id": "s2",
+  "file": "youtube/lenny/shorts/s2_toll.mp4",
+  "title": "Don't Pay This $2.10 Text #shorts",
+  "description": "\"Unpaid toll notice: you owe $2.10.\" I wrote that text. Here's why two dollars costs you hundreds — and the one-second tell.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #tollscam #scamtext #smishing #shorts",
+  "tags": [],
+  "visibility": "schedule",
+  "publishAt": "2026-10-22T15:00"
  },
  {
   "id": "ep02",
@@ -54,16 +64,35 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep02/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-22T12:00"
+  "publishAt": "2026-10-23T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep02_cinematic.mp4.part-"
  },
  {
-  "id": "s2",
-  "file": "youtube/lenny/shorts/s2_toll.mp4",
-  "title": "Don't Pay This $2.10 Text #shorts",
-  "description": "\"Unpaid toll notice: you owe $2.10.\" I wrote that text. Here's why two dollars costs you hundreds — and the one-second tell.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #tollscam #scamtext #smishing #shorts",
+  "id": "s3",
+  "file": "youtube/lenny/shorts/s3_code.mp4",
+  "title": "Never Send This Code Back #shorts",
+  "description": "\"Sorry, I sent my verification code to your number by mistake.\" It wasn't a mistake. That code opens YOUR account.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #verificationcode #accounthacked #scamawareness #shorts",
   "tags": [],
   "visibility": "schedule",
-  "publishAt": "2026-10-23T15:00"
+  "publishAt": "2026-10-24T15:00"
+ },
+ {
+  "id": "s5",
+  "file": "youtube/lenny/shorts/cinematic/s5_grandma.mp4",
+  "title": "The Grandma Scam Trick #shorts",
+  "description": "\"Grandma? It's me.\" I never said a name. She said it for me. One family code word stops this call cold.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #grandparentscam #elderfraud #scamawareness #shorts",
+  "tags": [],
+  "visibility": "schedule",
+  "publishAt": "2026-10-25T15:00"
+ },
+ {
+  "id": "s8",
+  "file": "youtube/lenny/shorts/cinematic/s8_isthisyou.mp4",
+  "title": "Never Tap \"Is This You?\" #shorts",
+  "description": "A friend DMs: \"Is this you in this video?\" Don't tap. Here's exactly what happens to your account if you do.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #instagramscam #hacked #phishing #shorts",
+  "tags": [],
+  "visibility": "schedule",
+  "publishAt": "2026-10-26T15:00"
  },
  {
   "id": "ep05",
@@ -86,25 +115,26 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep05/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-24T12:00"
+  "publishAt": "2026-10-27T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep05_cinematic.mp4.part-"
  },
  {
-  "id": "s5",
-  "file": "youtube/lenny/shorts/cinematic/s5_grandma.mp4",
-  "title": "The Grandma Scam Trick #shorts",
-  "description": "\"Grandma? It's me.\" I never said a name. She said it for me. One family code word stops this call cold.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #grandparentscam #elderfraud #scamawareness #shorts",
+  "id": "s6",
+  "file": "youtube/lenny/shorts/cinematic/s6_5sec.mp4",
+  "title": "The 5-Second Scam Test #shorts",
+  "description": "Three questions. Five seconds. They catch almost every scam I ever ran. Two yeses = walk away.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #scamawareness #fraudprevention #lifehacks #shorts",
   "tags": [],
   "visibility": "schedule",
-  "publishAt": "2026-10-25T15:00"
+  "publishAt": "2026-10-28T15:00"
  },
  {
-  "id": "s3",
-  "file": "youtube/lenny/shorts/s3_code.mp4",
-  "title": "Never Send This Code Back #shorts",
-  "description": "\"Sorry, I sent my verification code to your number by mistake.\" It wasn't a mistake. That code opens YOUR account.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #verificationcode #accounthacked #scamawareness #shorts",
+  "id": "s4",
+  "file": "youtube/lenny/shorts/s4_wrong_number.mp4",
+  "title": "Don't Reply to This Text #shorts",
+  "description": "\"Hi Anna, it's Daniel from the conference.\" One polite reply is day one of the most expensive scam in America. Day 1 to Day 40 on the channel.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #wrongnumber #pigbutchering #romancescam #shorts",
   "tags": [],
   "visibility": "schedule",
-  "publishAt": "2026-10-26T15:00"
+  "publishAt": "2026-10-29T15:00"
  },
  {
   "id": "ep08",
@@ -127,16 +157,8 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep08/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-27T12:00"
- },
- {
-  "id": "s8",
-  "file": "youtube/lenny/shorts/cinematic/s8_isthisyou.mp4",
-  "title": "Never Tap \"Is This You?\" #shorts",
-  "description": "A friend DMs: \"Is this you in this video?\" Don't tap. Here's exactly what happens to your account if you do.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #instagramscam #hacked #phishing #shorts",
-  "tags": [],
-  "visibility": "schedule",
-  "publishAt": "2026-10-28T15:00"
+  "publishAt": "2026-10-30T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep08_cinematic.mp4.part-"
  },
  {
   "id": "ep06",
@@ -159,16 +181,8 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep06/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-29T12:00"
- },
- {
-  "id": "s6",
-  "file": "youtube/lenny/shorts/cinematic/s6_5sec.mp4",
-  "title": "The 5-Second Scam Test #shorts",
-  "description": "Three questions. Five seconds. They catch almost every scam I ever ran. Two yeses = walk away.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #scamawareness #fraudprevention #lifehacks #shorts",
-  "tags": [],
-  "visibility": "schedule",
-  "publishAt": "2026-10-30T15:00"
+  "publishAt": "2026-11-03T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep06_cinematic.mp4.part-"
  },
  {
   "id": "ep03",
@@ -191,16 +205,8 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep03/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-10-31T12:00"
- },
- {
-  "id": "s4",
-  "file": "youtube/lenny/shorts/s4_wrong_number.mp4",
-  "title": "Don't Reply to This Text #shorts",
-  "description": "\"Hi Anna, it's Daniel from the conference.\" One polite reply is day one of the most expensive scam in America. Day 1 to Day 40 on the channel.\n\n🎵 Music: \"Dark Fog\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/\n#scam #wrongnumber #pigbutchering #romancescam #shorts",
-  "tags": [],
-  "visibility": "schedule",
-  "publishAt": "2026-11-01T15:00"
+  "publishAt": "2026-11-06T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep03_cinematic.mp4.part-"
  },
  {
   "id": "ep07",
@@ -223,7 +229,8 @@
   ],
   "thumbnail": "youtube/lenny/episodes/ep07/thumbnail.png",
   "visibility": "schedule",
-  "publishAt": "2026-11-10T12:00"
+  "publishAt": "2026-11-10T12:00",
+  "hq_parts": "youtube/lenny/videos/cinematic/hq/lenny_ep07_cinematic.mp4.part-"
  },
  {
   "id": "s7",

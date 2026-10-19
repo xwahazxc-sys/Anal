@@ -28,13 +28,20 @@ S = {**shorts(L / "shorts/upload.md", "youtube/lenny/shorts"), **shorts(L / "sho
 def short(k, publish_at):
     s = S[k]; return {"id": k, **s, "tags": [], "visibility": "schedule", "publishAt": publish_at}
 
-# times are channel-local; plan: long 12:00, shorts 15:00 US Eastern
+# times are channel-local (US Eastern). Long episodes Tue & Fri 12:00 (matches the banner
+# "New videos every Tue & Fri"); Shorts on the other days 15:00.
 plan = [
-    episode(4, "2026-10-20T12:00"), short("s1", "2026-10-21T15:00"), episode(2, "2026-10-22T12:00"), short("s2", "2026-10-23T15:00"),
-    episode(5, "2026-10-24T12:00"), short("s5", "2026-10-25T15:00"), short("s3", "2026-10-26T15:00"), episode(8, "2026-10-27T12:00"),
-    short("s8", "2026-10-28T15:00"), episode(6, "2026-10-29T12:00"), short("s6", "2026-10-30T15:00"), episode(3, "2026-10-31T12:00"),
-    short("s4", "2026-11-01T15:00"), episode(7, "2026-11-10T12:00"), short("s7", "2026-11-18T15:00"),
+    episode(4, "2026-10-20T12:00"), short("s1", "2026-10-21T15:00"), short("s2", "2026-10-22T15:00"),
+    episode(2, "2026-10-23T12:00"), short("s3", "2026-10-24T15:00"), short("s5", "2026-10-25T15:00"), short("s8", "2026-10-26T15:00"),
+    episode(5, "2026-10-27T12:00"), short("s6", "2026-10-28T15:00"), short("s4", "2026-10-29T15:00"),
+    episode(8, "2026-10-30T12:00"), episode(6, "2026-11-03T12:00"), episode(3, "2026-11-06T12:00"),
+    episode(7, "2026-11-10T12:00"), short("s7", "2026-11-18T15:00"),
 ]
+# HQ masters are stored split into <95 MB parts (GitHub's file limit); the uploader joins them
+for p in plan:
+    hq = p["file"].replace("/cinematic/", "/cinematic/hq/")
+    if p["id"].startswith("ep"):
+        p["hq_parts"] = hq + ".part-"
 (Path(__file__).parent / "queue.json").write_text(json.dumps(plan, indent=1, ensure_ascii=False))
 for p in plan:
     print(p["id"], p["publishAt"], (ROOT / p["file"]).exists(), p["title"][:60])

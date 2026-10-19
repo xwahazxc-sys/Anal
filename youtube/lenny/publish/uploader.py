@@ -100,6 +100,14 @@ def try_click(page, selector, timeout=4000):
 
 def upload_one(page, item):
     vid = ROOT / item["file"]
+    parts = sorted(ROOT.glob(item["hq_parts"] + "*")) if item.get("hq_parts") else []
+    if parts:  # full-quality master, stored in parts: join it
+        vid = ROOT / "hq_join" / Path(item["file"]).name
+        vid.parent.mkdir(exist_ok=True)
+        with open(vid, "wb") as out:
+            for part in parts:
+                out.write(part.read_bytes())
+        log("joined HQ master from", len(parts), "parts")
     if not vid.exists():
         raise SystemExit(f"missing file {item['file']}")
     log("upload", item["id"], vid.name, f"{vid.stat().st_size // 1_000_000} MB")
