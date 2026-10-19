@@ -251,6 +251,7 @@ def schedule(page, when_iso):
         except Exception:
             pass
         cands = [
+            'tp-yt-paper-input[aria-label="Enter date"] input',
             "ytcp-date-picker tp-yt-paper-input input",
             "tp-yt-iron-dropdown ytcp-date-picker input",
             "ytcp-date-picker input",
@@ -278,9 +279,7 @@ def schedule(page, when_iso):
             page.keyboard.press("Control+A")
             page.keyboard.type(want_date, delay=30)
             page.keyboard.press("Enter")
-        page.wait_for_timeout(900)
-        page.keyboard.press("Escape")
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(1200)  # Enter submits the picker's form and closes it (no Escape: that closes the whole dialog)
         got = trigger_text()
         log("date attempt", attempt + 1, "->", got)
         if got == want_date:
