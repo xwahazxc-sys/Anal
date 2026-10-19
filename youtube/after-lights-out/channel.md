@@ -4,7 +4,7 @@
 
 **Название:** After Lights Out
 **Хэндл:** @AfterLightsOut. Запасные варианты: @AfterLightsOutStories, @AfterLightsOut_EN. Перед созданием канала проверьте, свободен ли хэндл.
-**Слоган (баннер и описание):** *Every story starts the moment you turn the lights off.*
+**Слоган (баннер и описание):** *Every story starts the moment you turn the lights off.* («Каждая история начинается в тот момент, когда ты выключаешь свет».)
 
 ## Чем отличаемся от референса
 | Референс (RU) | After Lights Out |
@@ -39,6 +39,7 @@ Short "what if" horror stories that happen the moment you turn the lights off.
 Group chats that see things you can't. Baby monitors that show one crib too many. Elevators that stop on floors your building doesn't have.
 New night every few days. Don't watch alone.
 ```
+Перевод: «Короткие хоррор-истории „что, если“, которые начинаются, как только ты выключаешь свет. Групповые чаты, которые видят то, чего не видишь ты. Радионяни, на которых на одну кроватку больше. Лифты, которые останавливаются на этажах, которых нет в твоём доме. Новая ночь каждые несколько дней. Не смотри в одиночку».
 
 ## Идеи следующих серий
 1. **The Group Chat:** соседи видят мужчину у твоей двери, а ты нет. *(Серия 1, готова → `ep01-the-group-chat.md`)*
