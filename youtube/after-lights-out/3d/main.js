@@ -392,17 +392,17 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
       const dur = sh.t1 - sh.t0, k = easeInOutCubic(p01(lt, 0, dur));
       let z = lerp(-0.272, -0.252, k), y = -0.006, x = 0;
       const dive = (a, b, tx, ty, tz) => { const d = easeInOutCubic(p01(t, a, b)); x = lerp(x, tx, d); y = lerp(y, ty, d); z = lerp(z, tz, d); };
-      if (sh.t0 === 18.0) dive(...TL.diveCam, 0, -0.0495, -0.07);
-      if (sh.t0 === 35.5) dive(...TL.diveShot, 0, 0.033, -0.062);
+      if (sh.i === 4) dive(...TL.diveCam, 0, -0.0495, -0.07);
+      if (sh.i === 10) dive(...TL.diveShot, 0, 0.033, -0.062);
       if (sh.name === 'members') dive(...TL.listPush, 0, 0.072, -0.16);
-      if (sh.t0 === 67.2) dive(67.4, 69.1, 0, 0.068, -0.155);
+      if (sh.i === 13) dive(...TL.ghostPush, 0, 0.068, -0.155);
       phone.position.set(x + Math.sin(t * 0.8) * 0.0015, y + Math.sin(t * 0.6 + 1) * 0.001, z);
       phone.rotation.set(-0.06 + Math.sin(t * 0.5) * 0.008, Math.sin(t * 0.43) * 0.01, 0);
       sc.clearRect(0, 0, SW, SH); drawScreen(sc, t, sh.name === 'members' ? 'members' : 'chat', thumb); maskScreen(sc); scrTex.needsUpdate = true;
       bokeh.uniforms.focus.value = -z; bokeh.uniforms.aperture.value = 0.012;
       const wp = new THREE.Vector3(); phone.getWorldPosition(wp); phoneLight.position.copy(wp); phoneLight.intensity = 0.35;
     } else if (sh.name === 'cctv') {
-      const second = sh.t0 > 25, z = second ? easeInOutCubic(p01(lt, 0, 3.2)) : 0;
+      const second = sh.i === 7, z = second ? easeInOutCubic(p01(lt, 0, 3.2)) : 0;
       look([7.45, 2.52, -4.62], [lerp(-2.5, 1.07, z * 0.8), lerp(0.8, 1.05, z), lerp(-4.55, -3.65, z * 0.8)], second ? lerp(64, 36, z) : lerp(68, 64, easeOutCubic(p01(lt, 0, 0.8))));
     } else if (sh.name === 'living') {
       const k = easeInOutCubic(p01(lt, 0, sh.t1 - sh.t0));
@@ -422,7 +422,7 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
 
   // screenshot thumbnail = a real frame of the reveal camera, blurred (built on first render, once the canvas has its size)
   const makeThumb = () => {
-    apply(52); composer.render();
+    apply(lerp(...TL.revealPush, 0.8)); composer.render();
     const c = document.createElement('canvas'); c.width = 492; c.height = 442; const x = c.getContext('2d');
     x.filter = 'blur(7px) brightness(.9) grayscale(.6)'; x.drawImage(canvas, 0, canvas.height * 0.18, canvas.width, canvas.width * 442 / 492 * 0.9, -12, -12, 516, 466);
     thumb = c;
@@ -443,10 +443,10 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
         oc.globalAlpha = 1;
       }
       if (sh.name === 'cctv' || sh.name === 'reveal') osd(oc, t);
-      if (sh.name === 'cctv' && sh.t0 < 21) { const a = 1 - p01(t - sh.t0, 0, 0.35); if (a > 0) { oc.fillStyle = `rgba(200,210,200,${a * 0.5})`; oc.fillRect(0, 0, W, H); } }
+      if (sh.i === 5) { const a = 1 - p01(t - sh.t0, 0, 0.35); if (a > 0) { oc.fillStyle = `rgba(200,210,200,${a * 0.5})`; oc.fillRect(0, 0, W, H); } }
       if (sh.name === 'reveal') { const f = Math.max(0, 1 - Math.abs(t - TL.impact) / 0.5); if (f > 0) { oc.fillStyle = `rgba(0,0,0,${f * 0.35})`; oc.fillRect(0, 0, W, H); } }
       if (['bedroom', 'sitting', 'living'].includes(sh.name)) hud(oc, t);
-      if (sh.t0 === 67.2) { const a = easeInOutCubic(p01(t, ...TL.toBlack)); if (a > 0) { oc.fillStyle = `rgba(0,0,0,${a})`; oc.fillRect(0, 0, W, H); } }
+      if (sh.i === 13) { const a = easeInOutCubic(p01(t, ...TL.toBlack)); if (a > 0) { oc.fillStyle = `rgba(0,0,0,${a})`; oc.fillRect(0, 0, W, H); } }
       if (sh.name === 'door') {
         const a = 1 - p01(t - sh.t0, 0.1, 1.3); if (a > 0) { oc.fillStyle = `rgba(0,0,0,${a})`; oc.fillRect(0, 0, W, H); }
         const tt = easeOutCubic(p01(t, TL.title, TL.title + 1.2));

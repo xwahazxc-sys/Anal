@@ -5,7 +5,7 @@ The same episode rebuilt as a three.js sim for [claude-motion](https://github.co
 Install into a claude-motion checkout and render:
 
 ```bash
-cp -r . <claude-motion>/sims/lightsout && cp ../video/audio/*.mp3 <claude-motion>/sims/lightsout/audio/
+cp -r . <claude-motion>/sims/lightsout && cp ../video/audio/*.mp3 <claude-motion>/sims/lightsout/audio/ && cp audio/vo_true_v3.mp3 <claude-motion>/sims/lightsout/audio/vo.mp3
 cd <claude-motion>
 node sims/build.mjs lightsout
 node sims/capture.mjs lightsout --size 1080x1920 --dpr 1 --stills 2,22,52,76 --cols 4 --out out/sims/lo-review.png
@@ -14,3 +14,5 @@ python3 sims/lightsout/mix.py out/sims/lo-video.mp4 out/sims/after_lights_out_ep
 ```
 Beats, shots, chat messages and the SFX cue sheet: `timeline.json`. Voice word timings: `lines.json`.
 On a software GPU (SwiftShader) a frame takes ~2–3 s; the 3D renders at 0.8 scale (`GL_SCALE`) and is upscaled, titles stay full-res.
+
+Voice: ElevenLabs library voice **True – Crime & Horror Narrator** (`tZssYepgGaQmegsMEXjK`), model `eleven_v3` with audio tags (`vo.txt`), stability 0.5. The timeline was retimed from the first voice by mapping every line's start/end.
