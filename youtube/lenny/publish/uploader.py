@@ -396,6 +396,40 @@ def altered_no(page, video_id, label):
     log("altered=No", label, video_id, "was checked:" , was, "saved:", saved)
 
 
+def set_related(page, short_id, episode_title):
+    """Short's details → Related video → pick the episode by title → Save."""
+    page.goto(f"https://studio.youtube.com/video/{short_id}/edit", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    card = page.get_by_text(re.compile(r"related video", re.I)).first
+    card.scroll_into_view_if_needed(timeout=8000)
+    card.click(timeout=8000)
+    page.wait_for_timeout(2500)
+    shot(page, f"{short_id}_related_dialog")
+    # search box in the picker, if present
+    try:
+        box = page.get_by_role("textbox").filter(has_not_text="").last
+        page.locator("input[type='text'], input:not([type])").last.fill(episode_title[:40], timeout=4000)
+        page.wait_for_timeout(2500)
+    except Exception:
+        pass
+    pick = page.get_by_text(episode_title[:30], exact=False)
+    n = pick.count()
+    if n == 0:
+        raise RuntimeError(f"episode {episode_title!r} not found in the related-video picker (is it public yet?)")
+    pick.last.click(timeout=8000)
+    page.wait_for_timeout(1500)
+    for sel in ("#save-button", "text=Done"):
+        if try_click(page, sel, 4000):
+            break
+    page.wait_for_timeout(1500)
+    for sel in ("ytcp-button#save", "#save"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(3500)
+    shot(page, f"{short_id}_related_saved")
+    log("related video set", short_id, "->", episode_title)
+
+
 def audit(page):
     """Read-only tour of the channel: screenshots + visible text of every setup page."""
     out = SHOTS / "audit_text"
@@ -490,7 +524,8 @@ def main():
     do_audit = "audit" in ids
     do_country = "country" in ids
     fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
-    ids = [i for i in ids if i not in ("audit", "country") and not i.startswith("noai=")]
+    related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
+    ids = [i for i in ids if i not in ("audit", "country") and not i.startswith(("noai=", "related="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -502,7 +537,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered:
+    if not todo and not do_audit and not do_country and not fix_altered and not related:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -529,6 +564,18 @@ def main():
                 shot(page, "country_error")
                 log("COUNTRY FAILED", type(e).__name__, str(e)[:300])
                 results["country"] = "FAILED"
+        for spec in related:
+            sid, _, ep = spec.partition(":")
+            ep_title = queue[ep]["title"] if ep in queue else ep
+            if ep == "ep01":
+                ep_title = "Don't Fall For Scam #7"
+            try:
+                set_related(page, sid, ep_title)
+                results[f"related {sid}"] = "ok"
+            except Exception as e:
+                shot(page, f"{sid}_related_error")
+                log("RELATED FAILED", sid, type(e).__name__, str(e)[:200])
+                results[f"related {sid}"] = "FAILED"
         for vid_id in fix_altered:
             try:
                 altered_no(page, vid_id, vid_id)
