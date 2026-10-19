@@ -354,7 +354,7 @@ def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True, proxy=parse_proxy(proxy),
                                     args=["--disable-blink-features=AutomationControlled"])
-        ctx = browser.new_context(locale="en-US", viewport={"width": 1440, "height": 1000},
+        ctx = browser.new_context(locale="en-US", timezone_id="America/New_York", viewport={"width": 1440, "height": 1000},
                                   user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
         ctx.add_cookies(parse_cookies(cookies))
         page = ctx.new_page()
