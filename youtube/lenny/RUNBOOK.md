@@ -5,7 +5,9 @@ when the stock runs out, and sends a report in Russian every Saturday (routine "
 
 ## Release rhythm
 - Long episodes: Tue & Fri 12:00 US Eastern (matches the banner "New videos every Tue & Fri").
-- Shorts: the day after their episode, 15:00 ET; Related video → that episode (needs channel verification).
+- Shorts: the day after their episode, 15:00 ET. Owner declined channel verification (Oct 19), so no Related video:
+  after a Short goes public, pin a channel comment "Full episode 👉 <episode link>" instead.
+- Daily upload limit stays low (~9): upload in small batches days ahead of release.
 - Never set "Altered or synthetic content" (owner's decision; content is clearly animated).
 - Titles: ≤7 words, one concrete object, "Don't …" warning or a consequence mystery (see publish/published.md).
 - Country of residence: United States (owner's choice).
