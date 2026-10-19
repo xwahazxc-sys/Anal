@@ -24,6 +24,6 @@ window.make=async(kind)=>{await document.fonts.load(F(900,40));await document.fo
     x.fillStyle=C.dim;x.font=F(600,30);x.letterSpacing='8px';x.fillText('NEW NIGHT  ·  TUE  ·  THU  ·  SAT',1280-428,830);vign(x,2560,1440,.75);grain(x,2560,1440,.05);}
   if(kind==='thumb'){c.width=1080;c.height=1920;const im=new Image();im.src='ep01_frame.png';await im.decode();x.drawImage(im,0,0,1080,1920);
     x.fillStyle='rgba(0,0,0,.25)';x.fillRect(0,0,1080,1920);x.textAlign='center';x.shadowColor='rgba(0,0,0,.9)';x.shadowBlur=30;
-    x.font=F(900,150);x.fillStyle=C.text;x.fillText('WHO IS',540,1430);x.fillStyle=`rgb(${C.warm})`;x.font=F(900,190);x.fillText('4B?',540,1620);}
+    x.font=F(900,150);x.fillStyle=C.text;x.fillText(window.L1||'WHO IS',540,1430);x.fillStyle=`rgb(${C.warm})`;x.font=F(900,190);x.fillText(window.L2||'4B?',540,1620);}
   return c.toDataURL('image/png');};
 </script></body></html>
