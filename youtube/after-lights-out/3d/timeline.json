@@ -1,0 +1,359 @@
+{
+ "duration": 77.5,
+ "shots": [
+  [
+   "bedroom",
+   0.0
+  ],
+  [
+   "phone",
+   6.6
+  ],
+  [
+   "sitting",
+   10.4
+  ],
+  [
+   "phone",
+   13.4
+  ],
+  [
+   "phone",
+   18.0
+  ],
+  [
+   "cctv",
+   20.45
+  ],
+  [
+   "phone",
+   23.0
+  ],
+  [
+   "cctv",
+   25.6
+  ],
+  [
+   "phone",
+   28.8
+  ],
+  [
+   "living",
+   32.4
+  ],
+  [
+   "phone",
+   35.5
+  ],
+  [
+   "reveal",
+   48.4
+  ],
+  [
+   "members",
+   58.7
+  ],
+  [
+   "phone",
+   67.2
+  ],
+  [
+   "black",
+   69.15
+  ],
+  [
+   "door",
+   69.9
+  ]
+ ],
+ "phoneOn": 0.3,
+ "lockCard": 3.3,
+ "tap": 19.35,
+ "diveCam": [
+  19.6,
+  20.45
+ ],
+ "diveShot": [
+  47.4,
+  48.4
+ ],
+ "impact": 50.05,
+ "revealPush": [
+  49.0,
+  53.2
+ ],
+ "revealPan": [
+  53.2,
+  57.3
+ ],
+ "count": 61.4,
+ "listScroll": [
+  59.2,
+  63.6
+ ],
+ "ghostRow": 65.4,
+ "listPush": [
+  64.8,
+  66.6
+ ],
+ "toBlack": [
+  68.4,
+  69.1
+ ],
+ "lightOff": [
+  74.6,
+  75.4
+ ],
+ "title": 75.4,
+ "clock": [
+  [
+   0,
+   14
+  ],
+  [
+   30,
+   15
+  ],
+  [
+   50,
+   16
+  ],
+  [
+   63,
+   17
+  ]
+ ],
+ "msgs": [
+  {
+   "who": "lena",
+   "text": "Package room is open again, thanks!",
+   "t": -10,
+   "time": "Yesterday"
+  },
+  {
+   "who": "mgr",
+   "text": "Reminder: elevator maintenance Thursday 9\u201311 AM.",
+   "t": -9,
+   "time": "Yesterday"
+  },
+  {
+   "who": "park",
+   "text": "4B \u2014 there's a man standing at your door.",
+   "t": 6.9,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "dev",
+   "text": "I see him on the hallway cam. Don't open it.",
+   "t": 13.6,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "dev",
+   "text": "Don't even look through the peephole.",
+   "t": 15.7,
+   "time": "2:14 AM"
+  },
+  {
+   "who": "park",
+   "text": "He just put his ear against your door.",
+   "t": 23.1,
+   "time": "2:15 AM"
+  },
+  {
+   "who": "dev",
+   "text": "4B why are you sitting so still",
+   "t": 28.9,
+   "time": "2:15 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "Everyone stop. The hallway camera has been broken since Tuesday.",
+   "t": 37.8,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "mgr",
+   "text": "What are you all watching?",
+   "t": 40.6,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "dev",
+   "img": true,
+   "t": 46.2,
+   "time": "2:16 AM"
+  },
+  {
+   "who": "ghost",
+   "text": "Don't turn around.",
+   "t": 67.5,
+   "time": "2:17 AM"
+  }
+ ],
+ "typing": [
+  [
+   5.9,
+   6.9,
+   "park"
+  ],
+  [
+   12.9,
+   13.6,
+   "dev"
+  ],
+  [
+   22.2,
+   23.1,
+   "park"
+  ],
+  [
+   28.0,
+   28.9,
+   "dev"
+  ],
+  [
+   36.0,
+   37.8,
+   "mgr"
+  ],
+  [
+   44.4,
+   46.2,
+   "dev"
+  ],
+  [
+   66.6,
+   67.5,
+   "ghost"
+  ]
+ ],
+ "fast": [
+  [
+   19.6,
+   20.45
+  ],
+  [
+   47.4,
+   49.3
+  ],
+  [
+   64.8,
+   66.6
+  ]
+ ],
+ "sfx": [
+  [
+   "vibrate",
+   0.25,
+   -6,
+   ""
+  ],
+  [
+   "ping",
+   6.75,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   13.45,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   15.55,
+   -16,
+   ""
+  ],
+  [
+   "ping",
+   22.95,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   28.75,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   37.65,
+   -14,
+   ""
+  ],
+  [
+   "ping",
+   40.45,
+   -16,
+   ""
+  ],
+  [
+   "ping",
+   46.05,
+   -13,
+   ""
+  ],
+  [
+   "hum",
+   20.45,
+   -12,
+   "atrim=0:2.55,afade=t=out:st=2.3:d=0.25"
+  ],
+  [
+   "hum",
+   25.6,
+   -12,
+   "atrim=0:3.2,afade=t=out:st=2.9:d=0.3"
+  ],
+  [
+   "heartbeat",
+   30.0,
+   -10,
+   "afade=t=in:d=1.5,afade=t=out:st=6:d=2"
+  ],
+  [
+   "riser",
+   42.4,
+   -9,
+   "afade=t=out:st=5.6:d=0.4"
+  ],
+  [
+   "impact",
+   48.4,
+   -4,
+   ""
+  ],
+  [
+   "impact",
+   65.45,
+   -9,
+   ""
+  ],
+  [
+   "ping",
+   67.35,
+   -12,
+   ""
+  ],
+  [
+   "click",
+   69.25,
+   -2,
+   ""
+  ],
+  [
+   "impact",
+   74.6,
+   -14,
+   "atrim=0:3,afade=t=out:st=2:d=1"
+  ]
+ ],
+ "bedMute": [
+  69.05,
+  70.2
+ ]
+}
