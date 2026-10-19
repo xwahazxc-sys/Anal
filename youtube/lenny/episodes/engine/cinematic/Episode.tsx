@@ -9,7 +9,7 @@ export const EW = 1920;
 export const EH = 1080;
 
 // Same look as the trailer: night teal, cream type, one red accent, Lenny teal.
-const P = {
+export const P = {
   black: '#05080A',
   cream: '#F2EEE4',
   creamDim: 'rgba(242,238,228,0.62)',
@@ -20,7 +20,7 @@ const P = {
   tealGlow: 'rgba(30,227,207,0.45)',
   link: '#8FC3FF',
 };
-const F = {
+export const F = {
   serif: '"Instrument Serif", Georgia, serif',
   sans: '"Inter Variable", Inter, system-ui, sans-serif',
   mono: '"JetBrains Mono", ui-monospace, monospace',
@@ -35,7 +35,7 @@ export type EpData = {duration: number; segs: Seg[]; caps: Cap[]};
 
 /* ---------- rich text: "9 TEXTS. <em>I WROTE THEM.</em><br>…" ---------- */
 type Tok = {w: string; em: boolean; br?: boolean};
-const rich = (s: string): Tok[] => {
+export const rich = (s: string): Tok[] => {
   const out: Tok[] = [];
   let em = false;
   s.replace(/<br\s*\/?>/g, ' \n ')
@@ -47,7 +47,7 @@ const rich = (s: string): Tok[] => {
     });
   return out;
 };
-const sentence = (s: string) => {
+export const sentence = (s: string) => {
   // ALL CAPS → Sentence case for the serif display face (looks expensive, reads faster)
   const plain = s.replace(/<[^>]+>/g, '');
   if (plain !== plain.toUpperCase()) return s;
@@ -55,7 +55,7 @@ const sentence = (s: string) => {
   return low.replace(/(^|[.!?]\s+)((?:<[^>]+>\s*)*)([a-z])/g, (_m, a, tag, b) => a + tag + b.toUpperCase()).replace(/\bi\b/g, 'I');
 };
 
-const RichWords: React.FC<{s: string; t: number; t0: number; out?: number; style?: React.CSSProperties; stagger?: number}> = ({s, t, t0, out = 0, style, stagger = 0.09}) => {
+export const RichWords: React.FC<{s: string; t: number; t0: number; out?: number; style?: React.CSSProperties; stagger?: number}> = ({s, t, t0, out = 0, style, stagger = 0.09}) => {
   let i = 0;
   return (
     <div style={{fontFamily: F.serif, color: P.cream, lineHeight: 1.02, letterSpacing: '-0.02em', ...style}}>
@@ -75,12 +75,12 @@ const RichWords: React.FC<{s: string; t: number; t0: number; out?: number; style
   );
 };
 
-const Label: React.FC<{children: React.ReactNode; k?: number; style?: React.CSSProperties}> = ({children, k = 1, style}) => (
+export const Label: React.FC<{children: React.ReactNode; k?: number; style?: React.CSSProperties}> = ({children, k = 1, style}) => (
   <div style={{fontFamily: F.mono, fontSize: 22, letterSpacing: '0.24em', textTransform: 'uppercase', color: P.creamDim, opacity: k, ...style}}>{children}</div>
 );
 
 /* ---------- the photographic plate ---------- */
-const MOVES: Record<string, {z0: number; z1: number; x0: number; x1: number; y0: number; y1: number}> = {
+export const MOVES: Record<string, {z0: number; z1: number; x0: number; x1: number; y0: number; y1: number}> = {
   in: {z0: 1.06, z1: 1.16, x0: 0, x1: 0, y0: 0, y1: 0},
   out: {z0: 1.17, z1: 1.06, x0: 0, x1: 0, y0: 0, y1: 0},
   pan_lr: {z0: 1.14, z1: 1.14, x0: -55, x1: 55, y0: 0, y1: 0},
@@ -153,7 +153,7 @@ const Transition: React.FC<{g: Seg; t: number; children: React.ReactNode}> = ({g
 };
 
 /* ---------- overlays ---------- */
-const Glass: React.FC<{children: React.ReactNode; style?: React.CSSProperties}> = ({children, style}) => (
+export const Glass: React.FC<{children: React.ReactNode; style?: React.CSSProperties}> = ({children, style}) => (
   <div style={{padding: '26px 32px', borderRadius: 30, background: 'rgba(16,24,27,0.72)', border: '1px solid rgba(242,238,228,0.2)',
     boxShadow: '0 30px 90px rgba(0,0,0,0.55)', fontFamily: F.sans, color: P.cream, ...style}}>{children}</div>
 );
@@ -163,7 +163,7 @@ const numParts = (s: string) => {
   return m ? {pre: m[1], n: parseFloat(m[2].replace(/,/g, '')), dec: (m[2].split('.')[1] || '').length, post: m[3]} : null;
 };
 
-const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
+const Overlay: React.FC<{g: Seg; t: number; num: number; unit: string}> = ({g, t, num, unit}) => {
   const o = g.ov;
   if (!o) return null;
   const s0 = g.s + (o.at ?? 0.25);
@@ -193,11 +193,11 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
       const p = numParts(o.s);
       const c = prog(t, s0, s0 + 2.2, easeOut);
       const k = prog(t, s0, s0 + 0.7, easeOut);
-      const txt = p ? `${p.pre}${(p.n * c).toFixed(p.dec)}${p.post}` : o.s;
+      const txt = p ? `${p.pre}${(p.n * c).toLocaleString('en-US', {minimumFractionDigits: p.dec, maximumFractionDigits: p.dec})}${p.post}` : o.s;
       return (
         <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: life, paddingBottom: 80}}>
           <AbsoluteFill style={{background: `radial-gradient(ellipse 38% 30% at 50% 46%, ${P.redGlow} 0%, rgba(0,0,0,0) 70%)`, opacity: 0.5 * k}} />
-          <div style={{fontFamily: F.serif, fontSize: 250, color: P.cream, lineHeight: 1, opacity: k, transform: `scale(${lerp(1.08, 1, k)})`,
+          <div style={{fontFamily: F.serif, fontSize: o.size ?? 250, color: P.cream, lineHeight: 1, opacity: k, transform: `scale(${lerp(1.08, 1, k)})`,
             textShadow: `0 0 60px ${P.redGlow}`, fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.02em'}}>{sentenceKeepCaps(txt)}</div>
           <Label k={prog(t, s0 + 0.6, s0 + 1.3, easeOut)} style={{marginTop: 26}}>{o.sub}</Label>
         </AbsoluteFill>
@@ -212,11 +212,14 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
           </AbsoluteFill>
         );
       }
-      const n = String(o.n).replace('#', '').padStart(2, '0');
+      const m = String(o.n).match(/^(.*?)#?\s*(\d+)$/);
+      const pre = m ? m[1].replace('#', '').trim() : '';
+      const n = m ? m[2].padStart(2, '0') : sentence(String(o.n));
+      const label = !m ? 'Extra' : pre ? `${pre} ${n}` : `${unit} ${n} / ${String(num).padStart(2, '0')}`;
       return (
         <AbsoluteFill style={{justifyContent: 'center', paddingLeft: 160, opacity: life}}>
-          <Label k={k} style={{color: P.red, marginBottom: 18}}>Text {n} / 09</Label>
-          <div style={{fontFamily: F.serif, fontSize: 300, lineHeight: 0.8, color: 'transparent', WebkitTextStroke: `2px ${P.cream}`}}>
+          <Label k={k} style={{color: P.red, marginBottom: 18}}>{label}</Label>
+          <div style={{fontFamily: F.serif, fontSize: m ? 300 : 220, fontStyle: m ? 'normal' : 'italic', lineHeight: 0.8, color: 'transparent', WebkitTextStroke: `2px ${P.cream}`, paddingRight: '0.1em'}}>
             <Mask k={k}>{n}</Mask>
           </div>
           <RichWords s={o.s} t={t} t0={g.s + 0.3} style={{fontSize: 130, marginTop: 24}} />
@@ -266,7 +269,7 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
                   color: bad ? P.red : good ? P.teal : P.cream, border: `2px solid ${bad ? P.red : good ? P.teal : P.creamDim}`,
                   boxShadow: `0 0 22px ${bad ? P.redGlow : good ? P.tealGlow : 'transparent'}`}}>{bad ? '✕' : good ? '✓' : i + 1}</div>
                 <div style={{fontFamily: F.serif, fontSize: 76, color: bad ? P.creamDim : P.cream, textDecoration: bad ? `line-through ${P.red} 3px` : 'none'}}>
-                  {sentenceKeepCaps(text.replace(/^\d\.\s*/, ''))}
+                  {sentence(text.replace(/^\d\.\s*/, ''))}
                 </div>
               </div>
             );
@@ -304,8 +307,8 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
       const k = prog(t, g.s + 0.4, g.s + 1.1, easeOut);
       return (
         <div style={{position: 'absolute', right: 130, top: BAR + 70, opacity: k * life, transform: `translateX(${(1 - k) * 40}px)`}}>
-          <Glass style={{padding: '20px 30px', border: `1px solid ${P.teal}`, boxShadow: `0 0 40px ${P.tealGlow}`}}>
-            <Label style={{color: P.teal, fontSize: 24}}>{o.s}</Label>
+          <Glass style={{padding: '20px 30px', border: `1px solid ${o.c === 'red' ? P.red : P.teal}`, boxShadow: `0 0 40px ${o.c === 'red' ? P.redGlow : P.tealGlow}`}}>
+            <Label style={{color: o.c === 'red' ? P.red : P.teal, fontSize: 24}}>{o.s}</Label>
           </Glass>
         </div>
       );
@@ -313,15 +316,16 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
     case 'call': {
       const k = sp(fr, g.s + 0.3, {damping: 15, stiffness: 150, mass: 0.9}, EFPS);
       return (
-        <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k * life}}>
+        <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k * life, left: 760, right: 0}}>
           {[0, 1, 2].map((i) => {
             const ph = ((t * 0.7 + i / 3) % 1);
             return <div key={i} style={{position: 'absolute', width: 220 + ph * 380, height: 220 + ph * 380, borderRadius: '50%', border: `2px solid ${P.red}`, opacity: (1 - ph) * 0.6}} />;
           })}
           <div style={{width: 220, height: 220, borderRadius: 110, background: 'rgba(16,24,27,0.85)', border: `2px solid ${P.red}`, display: 'flex', alignItems: 'center',
-            justifyContent: 'center', fontSize: 96, boxShadow: `0 0 60px ${P.redGlow}`}}>🏦</div>
+            justifyContent: 'center', fontSize: 120, fontFamily: F.serif, color: P.cream, boxShadow: `0 0 60px ${P.redGlow}`}}>
+            {/unknown/i.test(o.from) ? '?' : (String(o.from).replace(/[^A-Za-z]/g, '')[0] || '?')}</div>
           <div style={{position: 'absolute', top: 690, textAlign: 'center'}}>
-            <div style={{fontFamily: F.serif, fontSize: 84, color: P.cream}}>{o.from}</div>
+            <div style={{fontFamily: F.serif, fontSize: 84, color: P.cream}}>{String(o.from).replace(/"/g, '')}</div>
             <Label style={{marginTop: 4}}>{o.sub}</Label>
           </div>
         </AbsoluteFill>
@@ -331,8 +335,8 @@ const Overlay: React.FC<{g: Seg; t: number; num: number}> = ({g, t, num}) => {
       const items: any[] = o.items;
       return (
         <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: life, paddingBottom: 40}}>
-          <RichWords s={o.h} t={t} t0={g.s + 0.2} style={{fontSize: 96, marginBottom: 40}} />
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 440px)', gap: 22}}>
+          {o.h ? <RichWords s={o.h} t={t} t0={g.s + 0.2} style={{fontSize: 96, marginBottom: 40}} /> : null}
+          <div style={{display: 'grid', gridTemplateColumns: `repeat(${items.length === 4 ? 2 : 3}, 440px)`, gap: 22}}>
             {items.map(([em, name, hot], i) => {
               const k = prog(t, g.s + 0.6 + i * 0.22, g.s + 1.3 + i * 0.22, easeOut);
               return (
@@ -398,7 +402,7 @@ const Captions: React.FC<{caps: Cap[]; t: number; hide: boolean}> = ({caps, t, h
   );
 };
 
-const LightLeak: React.FC<{k: number; x: number}> = ({k, x}) =>
+export const LightLeak: React.FC<{k: number; x: number}> = ({k, x}) =>
   k <= 0.002 ? null : (
     <AbsoluteFill style={{mixBlendMode: 'screen', opacity: k, background: `radial-gradient(ellipse 45% 80% at ${x}% 45%, rgba(255,150,90,0.8) 0%, rgba(255,150,90,0.22) 35%, rgba(0,0,0,0) 70%)`}} />
   );
@@ -419,7 +423,7 @@ const findSeg = (segs: Seg[], t: number) => {
   return idx;
 };
 
-export const makeEpisode = (data: EpData, base: string, chapterCount = 9): React.FC => () => {
+export const makeEpisode = (data: EpData, base: string, chapterCount = 9, unit = 'No.'): React.FC => () => {
   useFonts();
   const frame = useCurrentFrame();
   const t = frame / EFPS;
@@ -451,8 +455,8 @@ export const makeEpisode = (data: EpData, base: string, chapterCount = 9): React
         <Transition g={cur} t={t}>
           <Shot g={cur} t={t} base={base} idx={ci} />
         </Transition>
-        {prev && prev.e > t - 0.05 ? <Overlay g={prev} t={t} num={chapterCount} /> : null}
-        {t >= cur.s - 0.02 ? <Overlay g={cur} t={t} num={chapterCount} /> : null}
+        {prev && prev.e > t - 0.05 ? <Overlay g={prev} t={t} num={chapterCount} unit={unit} /> : null}
+        {t >= cur.s - 0.02 ? <Overlay g={cur} t={t} num={chapterCount} unit={unit} /> : null}
         <LightLeak k={leak} x={25 + 50 * rand(ci)} />
         <Flare k={flare} y={560} color={P.red} />
         <Captions caps={data.caps} t={t} hide={hideCaps} />
