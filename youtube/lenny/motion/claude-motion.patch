@@ -1,0 +1,130 @@
+diff --git a/package-lock.json b/package-lock.json
+index a42bad4..b1b9fbf 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1155,9 +1155,6 @@
+       "cpu": [
+         "arm64"
+       ],
+-      "libc": [
+-        "glibc"
+-      ],
+       "optional": true,
+       "os": [
+         "linux"
+@@ -1170,9 +1167,6 @@
+       "cpu": [
+         "arm64"
+       ],
+-      "libc": [
+-        "musl"
+-      ],
+       "optional": true,
+       "os": [
+         "linux"
+@@ -1185,9 +1179,6 @@
+       "cpu": [
+         "x64"
+       ],
+-      "libc": [
+-        "glibc"
+-      ],
+       "optional": true,
+       "os": [
+         "linux"
+@@ -1200,9 +1191,6 @@
+       "cpu": [
+         "x64"
+       ],
+-      "libc": [
+-        "musl"
+-      ],
+       "optional": true,
+       "os": [
+         "linux"
+@@ -1489,9 +1477,6 @@
+       "cpu": [
+         "arm64"
+       ],
+-      "libc": [
+-        "glibc"
+-      ],
+       "license": "MIT",
+       "optional": true,
+       "os": [
+@@ -1505,9 +1490,6 @@
+       "cpu": [
+         "arm64"
+       ],
+-      "libc": [
+-        "musl"
+-      ],
+       "license": "MIT",
+       "optional": true,
+       "os": [
+@@ -1521,9 +1503,6 @@
+       "cpu": [
+         "x64"
+       ],
+-      "libc": [
+-        "glibc"
+-      ],
+       "license": "MIT",
+       "optional": true,
+       "os": [
+@@ -1537,9 +1516,6 @@
+       "cpu": [
+         "x64"
+       ],
+-      "libc": [
+-        "musl"
+-      ],
+       "license": "MIT",
+       "optional": true,
+       "os": [
+diff --git a/src/Root.tsx b/src/Root.tsx
+index 6d3f913..816e0d7 100644
+--- a/src/Root.tsx
++++ b/src/Root.tsx
+@@ -3,6 +3,27 @@ import {Composition, Still} from 'remotion';
+ import {ArticleCover} from './ArticleCover';
+ import {EffortVideo} from './EffortVideo';
+ import {FPS, H, TL, W} from './lib';
++import {TFPS, TH, TW, T as TT, Trailer} from './trailer/Trailer';
++import {EFPS, EH, EW, makeEpisode, EpData} from './episode/Episode';
++import {makeShort, SH, ShortData, SW} from './episode/Short';
++import s5 from '../public/shorts/s5_grandma/ep.json';
++import s6 from '../public/shorts/s6_5sec/ep.json';
++import s7 from '../public/shorts/s7_store/ep.json';
++import s8 from '../public/shorts/s8_isthisyou/ep.json';
++import ep02 from '../public/ep02/ep.json';
++import ep03 from '../public/ep03/ep.json';
++import ep04 from '../public/ep04/ep.json';
++import ep05 from '../public/ep05/ep.json';
++import ep06 from '../public/ep06/ep.json';
++import ep07 from '../public/ep07/ep.json';
++import ep08 from '../public/ep08/ep.json';
++
++const chapters = (d: EpData) => d.segs.filter((g) => g.ov && g.ov.t === 'title' && g.ov.n).length;
++const EPS: [string, EpData][] = ([['Ep02', ep02], ['Ep03', ep03], ['Ep04', ep04], ['Ep05', ep05], ['Ep06', ep06], ['Ep07', ep07], ['Ep08', ep08]] as [string, unknown][]).map(([id, d]) => [id, d as EpData]);
++const SHORTS = ([['S5', s5, 's5_grandma'], ['S6', s6, 's6_5sec'], ['S7', s7, 's7_store'], ['S8', s8, 's8_isthisyou']] as [string, unknown, string][]).map(
++  ([id, d, slug]) => ({id, d: d as ShortData, C: makeShort(d as ShortData, `shorts/${slug}`)}),
++);
++const EP_COMPS = EPS.map(([id, d]) => ({id, d, C: makeEpisode(d, id.toLowerCase(), chapters(d), id === 'Ep08' ? 'DM' : id === 'Ep02' ? 'Text' : 'No.')}));
+ 
+ export const Root: React.FC = () => (
+   <>
+@@ -14,6 +35,13 @@ export const Root: React.FC = () => (
+       width={W}
+       height={H}
+     />
++    <Composition id="Trailer" component={Trailer} durationInFrames={Math.round(TT.duration * TFPS)} fps={TFPS} width={TW} height={TH} />
++    {EP_COMPS.map(({id, d, C}) => (
++      <Composition key={id} id={id} component={C} durationInFrames={Math.round(d.duration * EFPS)} fps={EFPS} width={EW} height={EH} />
++    ))}
++    {SHORTS.map(({id, d, C}) => (
++      <Composition key={id} id={id} component={C} durationInFrames={Math.round(d.duration * 30)} fps={30} width={SW} height={SH} />
++    ))}
+     <Still id="ArticleCover" component={ArticleCover} width={2000} height={800} />
+   </>
+ );

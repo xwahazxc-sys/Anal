@@ -1,0 +1,9 @@
+{
+  "fps": 30,
+  "duration": 30,
+  "open": {"in": 0.0, "label": 0.5, "vo1": 1.0, "notif": 1.5, "line1": 3.35, "exit": 5.2},
+  "montage": {"start": 5.35, "cards": [5.45, 6.4, 7.35, 8.3, 9.25, 10.2], "vo2": 6.0, "riser": 9.3, "exit": 11.55},
+  "seven": {"hit": 11.9, "vo3": 12.5, "line": 13.7, "through": 15.6, "anna": 16.35, "exit": 17.6},
+  "lenny": {"in": 17.45, "vo4": 18.2, "lower": 18.7, "swap": 21.0, "line": 21.4, "exit": 24.3},
+  "title": {"in": 24.45, "vo5": 24.9, "line1": 25.0, "line2": 25.55, "sub": 26.6, "end": 30.0}
+}

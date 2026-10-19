@@ -1,13 +1,18 @@
-# Lenny motion-comic pipeline (no paid APIs)
+# Lenny cinematic render kit
 
-Reference art from `../refs/` → cutouts (`rembg`, model `isnet-general-use`) → animated in `motion.html` (parallax, camera moves, voice-driven bounce, UI overlays, captions) → `build_motion.py` adds Piper voice (pitched +9%) and synthesized SFX/music bed → `lenny_cold_open.mp4`.
+Everything needed to rebuild the cinematic episodes on a fresh machine.
 
 ```bash
-pip install piper-tts imageio-ffmpeg playwright "rembg[cpu]"
-# voice lines: see lines.json; regenerate audio/N.wav with Piper en_US-ryan-high, length_scale 1.08, then asetrate*1.09
-python3 build_motion.py preview 3 9   # frames
-python3 build_motion.py               # full render
+git clone https://github.com/whaleyxbt/claude-motion && cd claude-motion
+git apply ../Anal/youtube/lenny/motion/claude-motion.patch     # registers Ep02..Ep08 + Trailer in Root.tsx
+cp -r ../Anal/youtube/lenny/motion/{episode,trailer} src/
+cp -r ../Anal/youtube/lenny/motion/episodes ../Anal/youtube/lenny/motion/trailer.json .
+cp ../Anal/youtube/lenny/motion/sfx/*.py sfx/cues/
+cp -r ../Anal/youtube/lenny/motion/public/* public/
+npm install
+./episodes/render.sh Ep05 ep05 && EP=ep05 python3 -m sfx sfx/cues/episode.py
+./episodes/master.sh ep05 out/hq/lenny_ep05_cinematic.mp4      # needs Dark_Fog.mp3 path inside master.sh
+./episodes/finalize.sh ep05                                     # HQ parts + GitHub copy into the Anal repo
 ```
-
-## Talking rig (`rig.py`)
-OpenCV puppet rig on `lenny_point.png`: head tilt/nod around the neck, breathing, eyelid blinks, and a mouth that opens with the voice envelope (jaw warp + painted interior). Landmarks are hard-coded for this image — a new pose needs its eye/mouth/neck coordinates. `build_motion.py` renders `rig/NNNNN.png` for the talking shot and `motion.html` swaps them in per frame.
+Root.tsx imports public/ep02..ep08 and public/shorts/*: copy only what you render, or trim the imports.
+Music: Dark Fog (Kevin MacLeod, CC BY) — copy of the file is in youtube/lenny/music/.
