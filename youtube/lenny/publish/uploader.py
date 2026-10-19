@@ -471,6 +471,61 @@ def set_related(page, short_id, episode_title):
     log("related video set", short_id, "->", episode_title)
 
 
+def brand_channel(page, prof):
+    """Studio → Customization → Profile: banner, picture, name, handle, description → Publish."""
+    page.goto("https://studio.youtube.com", wait_until="domcontentloaded"); page.wait_for_timeout(6000)
+    m = re.search(r"/channel/(UC[\w-]+)", page.url)
+    if not m:
+        raise RuntimeError("no channel id (does this account have a channel yet?)")
+    page.goto(f"https://studio.youtube.com/channel/{m.group(1)}/editing/profile", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    shot(page, "brand_before")
+    files = page.locator("input[type='file']")
+    log("file inputs:", files.count())
+
+    def upload_image(idx, path, label):
+        try:
+            files.nth(idx).set_input_files(str(ROOT / path), timeout=8000)
+            page.wait_for_timeout(4000)
+            shot(page, f"brand_{label}_crop")
+            page.get_by_role("button", name=re.compile(r"^\s*done\s*$", re.I)).last.click(timeout=10000)
+            page.wait_for_timeout(2500)
+            log(label, "set")
+        except Exception as e:
+            log(label, "failed:", type(e).__name__, str(e)[:120])
+
+    upload_image(0, prof["banner"], "banner")
+    upload_image(1, prof["avatar"], "picture")
+
+    def set_field(rx, value):
+        box = page.get_by_label(re.compile(rx, re.I)).first
+        try:
+            box.click(timeout=5000); page.keyboard.press("Control+A"); page.keyboard.press("Delete")
+            page.keyboard.insert_text(value); return True
+        except Exception:
+            return False
+    ok_name = set_field(r"^name", prof["name"]) or set_field(r"channel name", prof["name"])
+    ok_handle = set_field(r"handle", prof["handle"])
+    ok_desc = set_field(r"tell viewers about your channel", prof["description"])
+    log("fields:", "name", ok_name, "handle", ok_handle, "description", ok_desc)
+    page.wait_for_timeout(3000)  # handle availability check
+    shot(page, "brand_filled")
+    page.get_by_role("button", name=re.compile(r"^\s*publish\s*$", re.I)).first.click(timeout=10000)
+    page.wait_for_timeout(5000)
+    shot(page, "brand_published")
+    # keywords: Settings → Channel → Basic info
+    try:
+        page.goto("https://studio.youtube.com", wait_until="domcontentloaded"); page.wait_for_timeout(5000)
+        page.get_by_text(re.compile(r"^\s*settings\s*$", re.I)).first.click(timeout=8000); page.wait_for_timeout(2000)
+        page.get_by_text(re.compile(r"^\s*channel\s*$", re.I)).first.click(timeout=8000); page.wait_for_timeout(2000)
+        kw = page.locator("#keywords-input input, ytcp-form-input-container input").last
+        kw.click(timeout=5000); kw.fill(prof["keywords"]); page.keyboard.press("Enter")
+        page.get_by_role("button", name=re.compile(r"^\s*save\s*$", re.I)).last.click(timeout=8000)
+        page.wait_for_timeout(3000); shot(page, "brand_keywords"); log("keywords set")
+    except Exception as e:
+        log("keywords skipped:", type(e).__name__)
+
+
 def audit(page):
     """Read-only tour of the channel: screenshots + visible text of every setup page."""
     out = SHOTS / "audit_text"
@@ -586,9 +641,10 @@ def main():
             b.close()
         return
     do_country = "country" in ids
+    do_brand = "brand" in ids
     fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
-    ids = [i for i in ids if i not in ("audit", "country") and not i.startswith(("noai=", "related="))]
+    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -600,7 +656,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered and not related:
+    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -619,6 +675,14 @@ def main():
         except Exception as e:
             log("proxy check failed:", type(e).__name__)
         results = {}
+        if do_brand:
+            try:
+                brand_channel(page, json.loads((PUB / "yt_profile.json").read_text()))
+                results["brand"] = "ok"
+            except Exception as e:
+                shot(page, "brand_error")
+                log("BRAND FAILED", type(e).__name__, str(e)[:300])
+                results["brand"] = "FAILED"
         if do_country:
             try:
                 set_country(page)
