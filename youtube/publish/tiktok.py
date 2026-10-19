@@ -91,6 +91,61 @@ def upload(page, item):
     log("posted", item["id"], page.url[:80])
 
 
+def edit_profile(page, prof):
+    """Profile page → Edit profile: avatar, username, name, bio → Save. Every field verified by screenshot."""
+    page.goto("https://www.tiktok.com/profile", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    shot(page, "tt_profile")
+    page.get_by_role("button", name=re.compile(r"edit profile", re.I)).first.click(timeout=15000)
+    page.wait_for_timeout(2500)
+    shot(page, "tt_edit_open")
+    # avatar: hidden file input inside the dialog, then the crop dialog's Apply
+    try:
+        page.locator("input[type='file']").first.set_input_files(str(ROOT / prof["avatar"]), timeout=8000)
+        page.wait_for_timeout(3000)
+        shot(page, "tt_avatar_crop")
+        page.get_by_role("button", name=re.compile(r"^\s*apply\s*$", re.I)).first.click(timeout=8000)
+        page.wait_for_timeout(2000)
+        log("avatar set")
+    except Exception as e:
+        log("avatar skipped:", type(e).__name__)
+    def fill(label_rx, value, multiline=False):
+        sel = "textarea" if multiline else "input[type='text'], input:not([type])"
+        box = page.locator(f"div:has(> div:text-matches('{label_rx}', 'i')) {sel}").first
+        try:
+            box.fill(value, timeout=5000)
+            return True
+        except Exception:
+            return False
+    ok_u = fill("^\\s*username\\s*$", prof["username"])
+    ok_n = fill("^\\s*name\\s*$", prof["name"])
+    ok_b = fill("^\\s*bio\\s*$", prof["bio"], multiline=True)
+    if not (ok_n and ok_b):
+        # fallback by order: the dialog has username, name inputs and one bio textarea
+        ins = page.locator("[role='dialog'] input[type='text'], [role='dialog'] input:not([type])")
+        log("fallback inputs:", ins.count())
+        if ins.count() >= 2:
+            ins.nth(0).fill(prof["username"]); ins.nth(1).fill(prof["name"]); ok_u = ok_n = True
+        ta = page.locator("[role='dialog'] textarea")
+        if ta.count():
+            ta.first.fill(prof["bio"]); ok_b = True
+    log("fields:", "username", ok_u, "name", ok_n, "bio", ok_b)
+    page.wait_for_timeout(1500)
+    shot(page, "tt_edit_filled")
+    page.get_by_role("button", name=re.compile(r"^\s*save\s*$", re.I)).last.click(timeout=10000)
+    page.wait_for_timeout(3000)
+    # username change asks to confirm
+    try:
+        page.get_by_role("button", name=re.compile(r"^\s*(confirm|set username)\s*$", re.I)).last.click(timeout=4000)
+        page.wait_for_timeout(3000)
+    except Exception:
+        pass
+    shot(page, "tt_profile_saved")
+    page.goto("https://www.tiktok.com/profile", wait_until="domcontentloaded"); page.wait_for_timeout(6000)
+    shot(page, "tt_profile_after")
+    log("profile page:", page.url[:80])
+
+
 def main():
     cookies, proxy = os.environ.get("YT_COOKIES", ""), os.environ.get("YT_PROXY", "")
     if not cookies or not proxy:
@@ -121,6 +176,15 @@ def main():
         queue = {i["id"]: i for i in json.loads((PUB / "tiktok.json").read_text())} if (PUB / "tiktok.json").exists() else {}
         for raw in ids:
             if raw == "check":
+                continue
+            if raw == "profile":
+                try:
+                    edit_profile(page, json.loads((PUB / "profile.json").read_text()))
+                    results["profile"] = "ok"
+                except Exception as e:
+                    shot(page, "profile_error")
+                    log("PROFILE FAILED", type(e).__name__, str(e)[:300])
+                    results["profile"] = "FAILED"
                 continue
             i, _, mode = raw.partition(":")
             item = dict(queue[i])
