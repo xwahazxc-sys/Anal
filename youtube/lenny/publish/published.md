@@ -14,3 +14,8 @@
 | ep02 (test, compressed) | https://youtu.be/kGXKDih8ISY | private — delete it |
 
 Waiting for the daily upload limit to reset (Oct 20): ep04 (Oct 20), ep02 (Oct 23), ep03 (Nov 6). Then ep05, ep08, ep06, ep07 as they finish rendering.
+
+## Title rules (from /yt-viral, 312 videos / 8 niche channels, ranked vs each channel's median)
+- Outliers in the scam niche: short (≤7 words), one concrete object, a "Don't …" warning (PleasantGreen 3.6–5.3×) or a consequence mystery ("After this Call, Everything Vanished", 3.2×).
+- No lists, no long parentheticals. Thumbnail text completes the title, never repeats it.
+- Applied: ep02 → "Don't Pay This $2.10 Toll Text (I Wrote It)", ep03 → "After This Text, Her Savings Vanished".

@@ -1,4 +1,4 @@
-# Don't Pay the $2.10 Toll Text (+8 Scam Texts I Wrote)
+# Don't Pay This $2.10 Toll Text (I Wrote It)
 
 ## Title options
 - Don't Pay the $2.10 Toll Text (+8 Scam Texts I Wrote)

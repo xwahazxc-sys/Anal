@@ -1,4 +1,4 @@
-# Never Reply to This Text. Here's What Happens on Day 40.
+# After This Text, Her Savings Vanished
 
 ## Title options
 - Never Reply to This Text. Here's What Happens on Day 40.
