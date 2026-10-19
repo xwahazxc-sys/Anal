@@ -31,12 +31,19 @@ def short(k, publish_at):
 # times are channel-local (US Eastern). Long episodes Tue & Fri 12:00 (matches the banner
 # "New videos every Tue & Fri"); Shorts on the other days 15:00.
 plan = [
-    episode(4, "2026-10-20T12:00"), short("s1", "2026-10-21T15:00"), short("s2", "2026-10-22T15:00"),
-    episode(2, "2026-10-23T12:00"), short("s3", "2026-10-24T15:00"), short("s5", "2026-10-25T15:00"), short("s8", "2026-10-26T15:00"),
-    episode(5, "2026-10-27T12:00"), short("s6", "2026-10-28T15:00"), short("s4", "2026-10-19T15:00"),
-    episode(8, "2026-10-30T12:00"), episode(6, "2026-11-03T12:00"), episode(3, "2026-11-06T12:00"),
-    episode(7, "2026-11-10T12:00"), short("s7", "2026-11-18T15:00"),
+    short("s4", "2026-10-19T15:00"), episode(4, "2026-10-20T12:00"), short("s1", "2026-10-21T15:00"),
+    episode(2, "2026-10-23T12:00"), short("s2", "2026-10-24T15:00"), short("s3", "2026-10-25T15:00"),
+    episode(5, "2026-10-27T12:00"), short("s5", "2026-10-28T15:00"),
+    episode(8, "2026-10-30T12:00"), short("s8", "2026-10-31T15:00"),
+    episode(6, "2026-11-03T12:00"), short("s6", "2026-11-04T15:00"),
+    episode(3, "2026-11-06T12:00"),
+    episode(7, "2026-11-10T12:00"), short("s7", "2026-11-11T15:00"),
 ]
+# each Short goes out the day after its episode so its "Related video" can point at it
+RELATED = {"s4": "ep01", "s1": "ep04", "s2": "ep02", "s3": "ep02", "s5": "ep05", "s8": "ep08", "s6": "ep06", "s7": "ep07"}
+for p in plan:
+    if p["id"] in RELATED:
+        p["related"] = RELATED[p["id"]]
 # HQ masters are stored split into <95 MB parts (GitHub's file limit); the uploader joins them
 for p in plan:
     hq = p["file"].replace("/cinematic/", "/cinematic/hq/")
