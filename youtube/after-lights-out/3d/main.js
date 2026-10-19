@@ -452,7 +452,7 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
         const tt = easeOutCubic(p01(t, TL.title, TL.title + 1.2));
         if (tt > 0) { oc.save(); oc.globalAlpha = tt; oc.textAlign = 'center'; oc.fillStyle = P.text; oc.font = F(800, 110); oc.letterSpacing = '18px'; oc.fillText('NIGHT 2', W / 2 + 9, 900 + (1 - tt) * 16); oc.letterSpacing = '10px'; oc.fillStyle = `rgb(${WARM})`; oc.font = F(600, 32); oc.fillText('AFTER LIGHTS OUT', W / 2 + 5, 990); oc.restore(); }
       }
-      captions(oc, t);
+      if (!cfg.noCaptions) captions(oc, t);
       return {};
     },
     resize() { st.resize(); renderer.setPixelRatio(GL_SCALE); renderer.setSize(W, H, false); composer.setPixelRatio(GL_SCALE); composer.setSize(W, H); },
