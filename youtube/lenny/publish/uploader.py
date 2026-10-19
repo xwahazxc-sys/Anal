@@ -62,22 +62,46 @@ def _bridge_socks(host, port, user, pw):
     return {"server": "http://127.0.0.1:18899"}
 
 
+def _shape(s):
+    """Redacted shape of a proxy string for logs: letters→a, digits→9, keeps separators."""
+    return re.sub(r"[A-Za-z]+", "a", re.sub(r"\d+", "9", s))
+
+
 def parse_proxy(s, force_socks=None):
-    """Accepts scheme://user:pass@host:port or host:port:user:pass (http by default;
-    PROXY_SCHEME=socks5 or force_socks=True treats the bare form as SOCKS5)."""
-    s = s.strip()
-    m = re.match(r"^(?:(\w+)://)?(?:([^:@/]+):([^@/]+)@)?([^:@/]+):(\d+)/?$", s)
+    """Accepts any common proxy notation:
+    scheme://user:pass@host:port, user:pass@host:port, host:port@user:pass,
+    host:port:user:pass, scheme://host:port:user:pass, host:port (scheme defaults to http,
+    PROXY_SCHEME=socks5 or force_socks=True switches to SOCKS5)."""
+    raw = s.strip().splitlines()[0].strip() if s.strip() else ""
+    scheme = None
+    m = re.match(r"^(\w+)://(.*)$", raw)
+    rest = raw
     if m:
-        scheme, user, pw, host, port = m.groups()
+        scheme, rest = m.group(1).lower(), m.group(2)
+    rest = rest.rstrip("/")
+    user = pw = None
+    host = port = None
+    if "@" in rest:
+        left, right = rest.rsplit("@", 1)
+        if re.match(r"^[^:]+:\d+$", right):          # user:pass@host:port
+            host, port = right.split(":"); user, _, pw = left.partition(":")
+        elif re.match(r"^[^:]+:\d+$", left):         # host:port@user:pass
+            host, port = left.split(":"); user, _, pw = right.partition(":")
     else:
-        parts = s.split(":")
-        if len(parts) != 4:
-            sys.exit("proxy format not recognised (want host:port:user:pass or scheme://user:pass@host:port)")
-        host, port, user, pw = parts
-        scheme = "socks5" if (force_socks or os.environ.get("PROXY_SCHEME", "").startswith("socks")) else "http"
-    if force_socks:
+        parts = rest.split(":")
+        if len(parts) == 4 and parts[1].isdigit():     # host:port:user:pass
+            host, port, user, pw = parts
+        elif len(parts) == 4 and parts[3].isdigit():   # user:pass:host:port
+            user, pw, host, port = parts
+        elif len(parts) == 2 and parts[1].isdigit():   # host:port
+            host, port = parts
+    if not host:
+        sys.exit(f"proxy format not recognised, shape: {_shape(raw)}")
+    if force_socks or (not scheme and os.environ.get("PROXY_SCHEME", "").startswith("socks")):
         scheme = "socks5"
-    if scheme and scheme.startswith("socks"):
+    scheme = scheme or "http"
+    log("proxy:", scheme, "auth" if user else "no-auth", "shape", _shape(raw))
+    if scheme.startswith("socks"):
         return _bridge_socks(host, port, user, pw)
     out = {"server": f"http://{host}:{port}"}
     if user:
