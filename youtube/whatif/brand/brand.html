@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;src:url(../../after-lights-out/video/fonts/inter-latin.woff2) format("woff2");font-weight:100 900}
+body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c"></canvas>
+<script>
+const C={night:'#07090f',warm:'255,201,74',text:'#F3F4F8',dim:'#7C859C'};
+const F=(w,s)=>`${w} ${s}px Inter, sans-serif`;
+function door(x,cx,cy,s,glow=1){ // door with warm gap, centred at cx,cy, height 2*s
+  const w=s*0.9,h=s*2;x.fillStyle='#0d1220';x.fillRect(cx-w/2,cy-h/2,w,h);
+  x.strokeStyle='rgba(140,160,210,.14)';x.lineWidth=s*0.02;x.strokeRect(cx-w/2,cy-h/2,w,h);
+  x.fillStyle='rgba(170,180,200,.3)';x.beginPath();x.arc(cx+w*0.32,cy+s*0.05,s*0.035,0,7);x.fill();
+  const gy=cy+h/2;x.fillStyle=`rgba(${C.warm},${glow})`;x.fillRect(cx-w/2,gy-s*0.02,w,s*0.025);
+  const g=x.createLinearGradient(0,gy,0,gy+s*0.9);g.addColorStop(0,`rgba(${C.warm},${0.42*glow})`);g.addColorStop(1,`rgba(${C.warm},0)`);
+  x.beginPath();x.moveTo(cx-w/2,gy);x.lineTo(cx+w/2,gy);x.lineTo(cx+w*0.95,gy+s*0.9);x.lineTo(cx-w*0.95,gy+s*0.9);x.closePath();x.fillStyle=g;x.fill();}
+function grain(x,W,H,a=.06){const d=x.getImageData(0,0,W,H);let s=7;for(let i=0;i<d.data.length;i+=4){s=(s*16807)%2147483647;const n=((s/2147483647)-.5)*255*a;d.data[i]+=n;d.data[i+1]+=n;d.data[i+2]+=n;}x.putImageData(d,0,0);}
+function vign(x,W,H,k=.8){const g=x.createRadialGradient(W/2,H/2,Math.min(W,H)*.2,W/2,H/2,Math.max(W,H)*.7);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${k})`);x.fillStyle=g;x.fillRect(0,0,W,H);}
+window.make=async(kind)=>{await document.fonts.load(F(900,40));await document.fonts.load(F(600,40));
+  const c=document.getElementById('c'),x=c.getContext('2d');
+  if(kind==='avatar'){c.width=c.height=800;x.fillStyle=C.night;x.fillRect(0,0,800,800);door(x,400,330,250);vign(x,800,800,.7);grain(x,800,800);}
+  if(kind==='banner'){c.width=2560;c.height=1440;x.fillStyle=C.night;x.fillRect(0,0,2560,1440);
+    // safe area 1546x423 centred
+    door(x,1280-560,700,170);x.textAlign='left';x.fillStyle=C.text;x.font=F(800,118);x.letterSpacing='14px';x.fillText('WHAT IF AT 2:14',1280-430,700);
+    x.letterSpacing='3px';x.font=F(600,40);x.fillStyle=`rgb(${C.warm})`;x.fillText('Something always happens at 2:14 a.m.',1280-428,770);
+    x.fillStyle=C.dim;x.font=F(600,30);x.letterSpacing='8px';x.fillText('NEW STORY EVERY NIGHT',1280-428,830);vign(x,2560,1440,.75);grain(x,2560,1440,.05);}
+  if(kind==='thumb'){c.width=1080;c.height=1920;const im=new Image();im.src='ep01_frame.png';await im.decode();x.drawImage(im,0,0,1080,1920);
+    x.fillStyle='rgba(0,0,0,.25)';x.fillRect(0,0,1080,1920);x.textAlign='center';x.shadowColor='rgba(0,0,0,.9)';x.shadowBlur=30;
+    x.font=F(900,150);x.fillStyle=C.text;x.fillText(window.L1||'WHO IS',540,1430);x.fillStyle=`rgb(${C.warm})`;x.font=F(900,190);x.fillText(window.L2||'4B?',540,1620);}
+  return c.toDataURL('image/png');};
+</script></body></html>
