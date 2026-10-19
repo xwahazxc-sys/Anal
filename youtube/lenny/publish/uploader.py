@@ -110,13 +110,36 @@ def upload_one(page, item):
     if "accounts.google.com" in page.url or "ServiceLogin" in page.url:
         raise SystemExit("Not signed in: the cookies were rejected or expired. Export fresh cookies.")
 
-    # open the upload dialog
-    if not try_click(page, "#create-icon", 15000):
-        try_click(page, "ytcp-button#create-icon", 5000)
-    page.wait_for_timeout(800)
-    if not try_click(page, "tp-yt-paper-item#text-item-0", 5000):
-        try_click(page, "text=Upload videos", 5000)
-    page.wait_for_selector('input[type="file"]', state="attached", timeout=30000)
+    # open the upload dialog (Studio's layout changes, so try several ways)
+    def file_input_ready(t=8000):
+        try:
+            page.wait_for_selector('input[type="file"]', state="attached", timeout=t)
+            return True
+        except Exception:
+            return False
+
+    opened = False
+    for how in ("upload-icon", "create-menu", "url"):
+        try:
+            if how == "upload-icon":
+                page.get_by_role("button", name=re.compile(r"upload", re.I)).first.click(timeout=6000)
+            elif how == "create-menu":
+                page.get_by_role("button", name=re.compile(r"^\s*create", re.I)).first.click(timeout=6000)
+                page.wait_for_timeout(800)
+                page.get_by_text(re.compile(r"upload videos?", re.I)).first.click(timeout=6000)
+            else:
+                page.goto("https://www.youtube.com/upload", wait_until="domcontentloaded")
+                page.wait_for_timeout(5000)
+        except Exception as e:
+            log("open via", how, "failed:", type(e).__name__)
+            continue
+        if file_input_ready():
+            opened = True
+            log("upload dialog opened via", how)
+            break
+    shot(page, f"{item['id']}_dialog")
+    if not opened:
+        raise SystemExit("could not open the upload dialog")
     page.locator('input[type="file"]').first.set_input_files(str(vid))
     log("file selected")
 
