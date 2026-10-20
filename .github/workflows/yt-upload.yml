@@ -12,6 +12,10 @@ on:
       ids:
         description: "Queue ids to upload, comma-separated (e.g. ep02)"
         required: true
+      text:
+        description: "Comment text for pin=VIDEOID"
+        required: false
+        default: ""
       account:
         description: "Secret prefix: YT (Lenny), YT2 (second YouTube), TT (TikTok)"
         required: false
@@ -49,6 +53,7 @@ jobs:
           ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
           QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || github.event.inputs.account == 'TT') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
           IDS: ${{ github.event.inputs.ids }}
+          PIN_TEXT: ${{ github.event.inputs.text }}
         run: |
           if [ "$ACCOUNT" = "TT" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
       - name: Screenshots

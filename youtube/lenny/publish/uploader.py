@@ -547,6 +547,39 @@ def brand_channel(page, prof):
         log("keywords skipped:", type(e).__name__)
 
 
+def pin_comment(page, video_id, text):
+    """Post a comment as the channel under a public video/Short and pin it."""
+    page.goto(f"https://www.youtube.com/watch?v={video_id}", wait_until="domcontentloaded")
+    page.wait_for_timeout(6000)
+    for _ in range(6):  # comments load lazily below the player
+        page.mouse.wheel(0, 900); page.wait_for_timeout(1200)
+        if page.locator("#simplebox-placeholder").count():
+            break
+    page.locator("#simplebox-placeholder").first.click(timeout=15000)
+    page.wait_for_timeout(1000)
+    box = page.locator("#contenteditable-root").first
+    box.click(timeout=8000)
+    page.keyboard.insert_text(text)
+    page.wait_for_timeout(800)
+    page.locator("#submit-button").first.click(timeout=8000)
+    page.wait_for_timeout(5000)
+    shot(page, f"{video_id}_commented")
+    # the new comment is the first thread; open its ⋮ menu → Pin → confirm
+    th = page.locator("ytd-comment-thread-renderer").first
+    th.hover(timeout=8000)
+    th.locator("#action-menu-button button, #action-menu-button").first.click(timeout=8000)
+    page.wait_for_timeout(1000)
+    page.get_by_text(re.compile(r"^\s*pin\s*$", re.I)).first.click(timeout=8000)
+    page.wait_for_timeout(1500)
+    page.get_by_role("button", name=re.compile(r"^\s*pin\s*$", re.I)).last.click(timeout=8000)
+    page.wait_for_timeout(3000)
+    shot(page, f"{video_id}_pinned")
+    pinned = page.locator("ytd-comment-thread-renderer").first.inner_text(timeout=5000)
+    if "Pinned" not in pinned:
+        raise RuntimeError("comment posted but pin not confirmed")
+    log("pinned under", video_id)
+
+
 def audit(page):
     """Read-only tour of the channel: screenshots + visible text of every setup page."""
     out = SHOTS / "audit_text"
@@ -665,7 +698,8 @@ def main():
     do_brand = "brand" in ids
     fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
-    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related="))]
+    pins = [i.split("=", 1)[1] for i in ids if i.startswith("pin=")]  # pin=VIDEOID (text from PIN_TEXT env)
+    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -677,7 +711,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand:
+    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -712,6 +746,14 @@ def main():
                 shot(page, "country_error")
                 log("COUNTRY FAILED", type(e).__name__, str(e)[:300])
                 results["country"] = "FAILED"
+        for vid_id in pins:
+            try:
+                pin_comment(page, vid_id, os.environ["PIN_TEXT"])
+                results[f"pin {vid_id}"] = "ok"
+            except Exception as e:
+                shot(page, f"{vid_id}_pin_error")
+                log("PIN FAILED", vid_id, type(e).__name__, str(e)[:200])
+                results[f"pin {vid_id}"] = "FAILED"
         for spec in related:
             sid, _, ep = spec.partition(":")
             ep_title = queue[ep]["title"] if ep in queue else ep
