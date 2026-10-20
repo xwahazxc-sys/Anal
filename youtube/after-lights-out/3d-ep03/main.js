@@ -524,7 +524,7 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
       if (sh.name === 'door') {
         const a = 1 - p01(t - sh.t0, 0.1, 1.3); if (a > 0) { oc.fillStyle = `rgba(0,0,0,${a})`; oc.fillRect(0, 0, W, H); }
         const tt = easeOutCubic(p01(t, TL.title, TL.title + 1.2));
-        if (tt > 0) { oc.save(); oc.globalAlpha = tt; oc.textAlign = 'center'; oc.fillStyle = P.text; oc.font = F(800, TL.nextNight.length > 8 ? 74 : 110); oc.letterSpacing = TL.nextNight.length > 8 ? '10px' : '18px'; oc.fillText(TL.nextNight, W / 2 + 9, 900 + (1 - tt) * 16); oc.letterSpacing = '10px'; oc.fillStyle = `rgb(${WARM})`; oc.font = F(600, 32); oc.fillText('AFTER LIGHTS OUT', W / 2 + 5, 990); oc.restore(); }
+        if (tt > 0) { oc.save(); oc.globalAlpha = tt; oc.textAlign = 'center'; oc.fillStyle = P.text; oc.font = F(800, TL.nextNight.length > 8 ? 74 : 110); oc.letterSpacing = TL.nextNight.length > 8 ? '10px' : '18px'; oc.fillText(TL.nextNight, W / 2 + 9, 900 + (1 - tt) * 16); oc.letterSpacing = '10px'; oc.fillStyle = `rgb(${WARM})`; oc.font = F(600, 32); oc.fillText('WHAT IF AT 2:14', W / 2 + 5, 990); oc.restore(); }
       }
       if (!cfg.noCaptions) captions(oc, t);
       if (t >= TL.previously[0] && t < TL.previously[1]) { oc.save(); oc.globalAlpha = Math.min(1, (TL.previously[1] - t) * 2); oc.textAlign = 'center'; oc.fillStyle = `rgb(${WARM})`; oc.font = F(700, 30); oc.letterSpacing = '10px'; oc.fillText('PREVIOUSLY', W / 2 + 5, 560); oc.restore(); }
