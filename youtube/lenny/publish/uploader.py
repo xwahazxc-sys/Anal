@@ -549,6 +549,18 @@ def brand_channel(page, prof):
 
 def pin_comment(page, video_id, text):
     """Post a comment as the channel under a public video/Short and pin it."""
+    m = re.search(r"\{title:([^}]+)\}", text)
+    if m:  # resolve {title:Part Of A Title} to that video's link from Studio's content list
+        page.goto("https://studio.youtube.com", wait_until="domcontentloaded"); page.wait_for_timeout(6000)
+        cid = re.search(r"/channel/(UC[\w-]+)", page.url).group(1)
+        page.goto(f"https://studio.youtube.com/channel/{cid}/videos/upload", wait_until="domcontentloaded"); page.wait_for_timeout(7000)
+        link = page.locator("ytcp-video-row").filter(has_text=m.group(1)).first.locator("a#anchor-video-title, a#video-title, a").first
+        href = link.get_attribute("href", timeout=8000) or ""
+        vid = re.search(r"/video/([\w-]{11})", href)
+        if not vid:
+            raise RuntimeError(f"could not resolve {m.group(0)}")
+        text = text.replace(m.group(0), f"https://youtu.be/{vid.group(1)}")
+        log("resolved", m.group(1), "->", vid.group(1))
     page.goto(f"https://www.youtube.com/watch?v={video_id}", wait_until="domcontentloaded")
     page.wait_for_timeout(6000)
     for _ in range(6):  # comments load lazily below the player
