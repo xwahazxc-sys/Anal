@@ -11,7 +11,10 @@
 | s6 | https://youtu.be/XZduVr228JU | Nov 4, 3:00 PM → ep06 |
 | s4 | https://youtu.be/jW3LIS0Q4xc | Oct 19, 3:00 PM → ep01 |
 | s7 | https://youtu.be/0CWRI1vpX0c | Nov 11, 3:00 PM → ep07 |
-| ep02 (test, compressed) | https://youtu.be/kGXKDih8ISY | private — delete it |
+| ep04 | https://youtu.be/6eokDpplJM4 | Oct 20, 12:00 PM |
+| ep02 | https://youtu.be/932msJ1OYiE | Oct 23, 12:00 PM |
+| ep03 | https://youtu.be/vXBpgqWf1N4 | Nov 6, 12:00 PM |
+| ep02 (old test, compressed) | https://youtu.be/kGXKDih8ISY | private — delete it |
 
 Waiting for the daily upload limit to reset (Oct 20): ep04 (Oct 20), ep02 (Oct 23), ep03 (Nov 6). Then ep05, ep08, ep06, ep07 as they finish rendering.
 
