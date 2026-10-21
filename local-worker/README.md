@@ -51,11 +51,10 @@ python -c "import torch;print(torch.__version__, torch.cuda.is_available(), torc
 PyTorch-сборкой **CUDA 12.8** (`cu128`); вторая команда ставит именно её поверх той, что притянул chatterbox.
 Если pip ругается на конфликт версий — это нормально. Если `import chatterbox` падает — пришли Claude текст ошибки.
 
-### 4. ComfyUI (картинки и видео)
-- Скачай **ComfyUI Windows Portable (NVIDIA)** со страницы релизов github.com/comfyanonymous/ComfyUI,
-  распакуй, например, в `C:\ComfyUI`, запусти `run_nvidia_gpu.bat`. Должен открыться http://127.0.0.1:8188
-- Через **Manager** (кнопка в интерфейсе) поставь узлы: `ComfyUI-GGUF`, `ComfyUI-VideoHelperSuite`.
-- Модели (Wan 2.2, Flux/Qwen-Image) Claude распишет точным списком под твои 12 ГБ — после проверки связи (шаг 7).
+### 4. ComfyUI и видео-модель Wan 2.2
+Подробно, по шагам, для новичка: **[COMFYUI_SETUP.md](COMFYUI_SETUP.md)**.
+Коротко: распаковать ComfyUI Portable в `C:\`, поставить 2 дополнения, скачать модели одной командой
+`python download_models.py "C:\ComfyUI_windows_portable"`, проверить шаблон «Wan 2.2 5B».
 
 ### 5. Токен GitHub (доступ воркера к очереди)
 GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token:
