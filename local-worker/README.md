@@ -32,7 +32,7 @@ Claude (облако)                       GitHub                         Тв�
 ### 2. Скачать воркер
 ```bat
 cd C:\
-git clone https://github.com/xwahazxc-sys/Anal.git
+git clone -b claude/ecstatic-goldberg-c57vtd https://github.com/xwahazxc-sys/Anal.git
 cd Anal\local-worker
 copy config.example.json config.json
 ```
