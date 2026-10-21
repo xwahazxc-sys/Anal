@@ -1,0 +1,8 @@
+{
+  "repo": "xwahazxc-sys/Anal",
+  "branch": "render-queue",
+  "poll_seconds": 60,
+  "comfy_url": "http://127.0.0.1:8188",
+  "whisper_model": "small",
+  "tts_threshold": 0.85
+}

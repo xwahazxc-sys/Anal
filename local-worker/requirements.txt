@@ -1,0 +1,6 @@
+# Install torch FIRST with the CUDA 12.8 build (RTX 50xx needs it), see README step 3.
+requests
+psutil
+soundfile
+faster-whisper
+# chatterbox-tts is installed with --no-deps in README step 3, so it cannot pull an old torch.
