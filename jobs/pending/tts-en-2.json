@@ -1,9 +1,0 @@
-{
- "id": "tts-en-2",
- "type": "tts",
- "lang": "en",
- "exaggeration": 0.6,
- "cfg_weight": 0.5,
- "pause_ms": 300,
- "text": "The alien doctor laughed at human pain tolerance. He had read the reports. Soft skin, fragile bones, a body that breaks if it falls from its own height. Then the human medic walked into the ward with a broken arm, set it herself, and finished her shift. The doctor stopped laughing that day."
-}
