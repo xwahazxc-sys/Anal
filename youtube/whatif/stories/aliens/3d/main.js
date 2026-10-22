@@ -71,8 +71,8 @@ const stripeTex = (a, b) => { const t = textTex((x, w, h) => { for (let i = 0; i
 function human(o = {}) {
   const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
   const H = o.h || 1;
-  const skin = mat(o.skin || '#c99b7c', 0.6), top = o.robe ? mat('#ffffff', 0.9, 0, {map: stripeTex(o.robe[0], o.robe[1])}) : mat(o.top || '#3b4252', 0.85);
-  const bottom = mat(o.bottom || '#23262d', 0.85), shoes = mat(o.shoes || '#141414', 0.6), hairM = mat(o.hairCol || '#2a2018', 0.75);
+  const skin = mat(o.skin || '#d9dce2', 0.55), top = o.robe ? mat('#ffffff', 0.9, 0, {map: stripeTex(o.robe[0], o.robe[1])}) : mat(o.top || '#3b4252', 0.85);
+  const bottom = mat(o.bottom || '#23262d', 0.85), shoes = mat(o.shoes || '#141414', 0.6);
   const W2 = o.female ? 0.92 : 1;
   // legs (trousers or bare shins under a robe) + shoes/slippers
   for (const s of [-1, 1]) {
@@ -101,29 +101,20 @@ function human(o = {}) {
     if (item === 'mug') { const mug = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.04, 0.1, 18), mat('#b8442f', 0.5)); mug.position.set(wr[0], wr[1] + 0.02, wr[2] + 0.03); body.add(mug); }
   };
   arm(1, !!o.phone, o.phone ? 'phone' : null); arm(-1, false, o.mug ? 'mug' : null);
-  limb(body, [0, 1.48, 0], [0, 1.6, 0.01], 0.05, skin);
-  // head: skull, jaw, nose, ears, brows, eyes; hair by type
-  const neck = new THREE.Group(); neck.position.set(0, 1.6 * 1, 0.01); body.add(neck);
-  const head = new THREE.Group(); head.position.y = 0.13; neck.add(head);
-  const skull = new THREE.Mesh(new THREE.SphereGeometry(0.115, 28, 20), skin); skull.scale.set(0.92, 1.08, 1.02); head.add(skull);
-  const jaw = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 14), skin); jaw.scale.set(0.95, 0.8, 0.95); jaw.position.set(0, -0.06, 0.02); head.add(jaw);
-  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.018, 0.05, 10), skin); nose.rotation.x = Math.PI / 2 + 0.25; nose.position.set(0, -0.005, 0.115); head.add(nose);
-  for (const s of [-1, 1]) {
-    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.025, 10, 8), skin); ear.scale.set(0.5, 1, 0.8); ear.position.set(s * 0.105, 0, -0.005); head.add(ear);
-    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.014, 10, 8), mat('#0b0b0c', 0.3)); eye.position.set(s * 0.04, 0.02, 0.098); head.add(eye);
-    const brow = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.008, 0.01), hairM); brow.position.set(s * 0.04, 0.05, 0.103); brow.rotation.z = -s * 0.12; head.add(brow);
-  }
-  const hair = o.hair || 'short';
-  if (hair === 'bald') { const ring = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.03, 10, 28, Math.PI * 1.2), hairM); ring.rotation.set(Math.PI / 2, 0, Math.PI * -0.1 + Math.PI); ring.position.set(0, 0.0, -0.01); head.add(ring); }
-  else if (hair === 'beanie') { const b = new THREE.Mesh(new THREE.SphereGeometry(0.122, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.55), mat(o.hairCol || '#7a2b2b', 0.9)); b.position.y = 0.02; head.add(b); }
-  else { const cap = new THREE.Mesh(new THREE.SphereGeometry(0.121, 24, 16, 0, Math.PI * 2, 0, Math.PI * (hair === 'short' ? 0.5 : 0.62)), hairM); cap.rotation.x = -0.35; cap.position.set(0, 0.01, -0.012); head.add(cap);
-    if (hair === 'bun') { const bun = new THREE.Mesh(new THREE.SphereGeometry(0.05, 14, 10), hairM); bun.position.set(0, 0.1, -0.08); head.add(bun); }
-    if (hair === 'pony') limb(head, [0, 0.03, -0.11], [0, -0.16, -0.14], 0.03, hairM); }
-  if (o.glasses) { const gm = mat('#111214', 0.3, 0.6); for (const s of [-1, 1]) { const r = new THREE.Mesh(new THREE.TorusGeometry(0.024, 0.004, 6, 20), gm); r.position.set(s * 0.04, 0.02, 0.112); head.add(r); } const br = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.004, 0.004), gm); br.position.set(0, 0.025, 0.115); head.add(br); }
+  limb(body, [0, 1.47, 0], [0, 1.55, 0.01], 0.052, skin);
+  // head: a smooth faceless mannequin head; only clothing-type headwear (beanie, cap) and glasses
+  const neck = new THREE.Group(); neck.position.set(0, 1.55, 0.01); body.add(neck);
+  const head = new THREE.Group(); head.position.y = 0.115; neck.add(head);
+  const skull = new THREE.Mesh(new THREE.SphereGeometry(0.118, 28, 20), skin); skull.scale.set(0.9, 1.15, 1.0); head.add(skull);
+  const hairM = mat(o.hatCol || '#7a2b2b', 0.9);
+  if (o.hat === 'beanie') { const b = new THREE.Mesh(new THREE.SphereGeometry(0.124, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.5), hairM); b.position.y = 0.025; head.add(b); const cuff = new THREE.Mesh(new THREE.TorusGeometry(0.112, 0.016, 8, 28), hairM); cuff.rotation.x = Math.PI / 2; cuff.position.y = 0.03; head.add(cuff); }
+  if (o.hat === 'cap') { const c = new THREE.Mesh(new THREE.SphereGeometry(0.122, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.45), hairM); c.position.y = 0.03; head.add(c); const brim = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.01, 20, 1, false, -Math.PI / 2, Math.PI), hairM); brim.position.set(0, 0.05, 0.1); brim.scale.set(1, 1, 0.9); head.add(brim); }
+  if (o.scarf) { const sc = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.035, 10, 24), mat(o.scarf, 0.95)); sc.rotation.x = Math.PI / 2; sc.position.y = 1.5; body.add(sc); }
+  if (o.glasses) { const gm = mat('#111214', 0.3, 0.6); for (const s of [-1, 1]) { const r = new THREE.Mesh(new THREE.TorusGeometry(0.026, 0.0045, 6, 20), gm); r.position.set(s * 0.042, 0.02, 0.112); head.add(r); } const br = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.004, 0.004), gm); br.position.set(0, 0.025, 0.117); head.add(br); for (const s of [-1, 1]) { const arm = new THREE.Mesh(new THREE.BoxGeometry(0.004, 0.004, 0.11), gm); arm.position.set(s * 0.1, 0.022, 0.06); head.add(arm); } }
   // eyes rolled up to the sky, glowing (only the neighbour uses them)
   const eyes = new THREE.Group(); head.add(eyes);
   const em = new THREE.MeshBasicMaterial({color: new THREE.Color(P.white).multiplyScalar(1.5), toneMapped: false});
-  for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.SphereGeometry(0.0125, 12, 10), em); e.position.set(s * 0.04, 0.026, 0.1); eyes.add(e); }
+  for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.SphereGeometry(0.0125, 12, 10), em); e.position.set(s * 0.04, 0.03, 0.106); eyes.add(e); }
   eyes.visible = false;
   body.scale.setScalar(H);
   g.traverse((x) => { if (x.isMesh) x.castShadow = true; });
@@ -219,17 +210,17 @@ function buildWorld(scene) {
 
   // the neighbour, in his yard, facing the street (+z) and us
   // the neighbour: retired, bald, glasses, striped bathrobe, slippers, a mug of tea at 2 a.m.
-  const man = human({skin: '#d9ae90', robe: ['#7a2531', '#e6dbc4'], hair: 'bald', hairCol: '#c2bdb4', glasses: true, belly: true, mug: true, shoes: '#6b5640'});
+  const man = human({skin: '#e3e5ea', robe: ['#7a2531', '#e6dbc4'], glasses: true, belly: true, mug: true, shoes: '#6b5640'});
   man.position.set(0.3, 0, -9.4); man.rotation.y = Math.PI / 2; man.userData.neck.rotation.order = 'YXZ'; world.add(man);   // faces down the street (+x)
   // people out on the street when the message lands (opening shot)
   const crowd = [];
   const add = (o, x, z, ry) => { const p = human({phone: true, ...o}); p.position.set(x, 0.18, z); p.rotation.y = ry; world.add(p); const L = new THREE.PointLight(P.phone, 0, 1.4, 2); world.add(L); crowd.push({p, L}); return p; };
-  add({female: true, hair: 'pony', hairCol: '#3a2416', top: '#6b7f5a', bottom: '#1f2430', skin: '#e0b49a'}, -12, 6.1, -2.0);
+  add({female: true, skin: '#16171b', top: '#6b7f5a', bottom: '#1f2430', scarf: '#c9a227'}, -12, 6.1, -2.0);
   const d = dog(); d.position.set(-11.3, 0.18, 6.9); d.rotation.y = 2.6; world.add(d);
   limb(world, [-11.85, 1.0, 6.3], [-11.55, 0.62, 6.8], 0.006, mat('#b33', 0.6));
-  add({hair: 'beanie', hairCol: '#c23b2f', top: '#2b3b5c', bottom: '#111317', skin: '#8d5a3c', h: 1.04}, -8.6, -5.9, Math.PI * 0.85);
-  add({hair: 'short', hairCol: '#1c1612', top: '#5a4636', bottom: '#2a2d36', skin: '#c08a68'}, -15.2, -6.2, 0.2);
-  add({female: true, hair: 'bun', hairCol: '#6b4a2e', top: '#8a3c4f', bottom: '#23262d', skin: '#f0c8ae', h: 0.95}, -14.6, -6.3, -0.3);
+  add({hat: 'beanie', hatCol: '#c23b2f', top: '#2b3b5c', bottom: '#111317', skin: '#e3e5ea', h: 1.04}, -8.6, -5.9, Math.PI * 0.85);
+  add({hat: 'cap', hatCol: '#22324a', top: '#5a4636', bottom: '#2a2d36', skin: '#16171b'}, -15.2, -6.2, 0.2);
+  add({female: true, top: '#8a3c4f', bottom: '#23262d', skin: '#e3e5ea', h: 0.95, glasses: true}, -14.6, -6.3, -0.3);
   return {M, world, glow, lamps, lampHeads, man, car, hl, porch, crowd};
 }
 
