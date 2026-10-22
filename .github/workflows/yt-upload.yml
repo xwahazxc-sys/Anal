@@ -17,7 +17,7 @@ on:
         required: false
         default: ""
       account:
-        description: "Secret prefix: YT (Lenny), YT2 (second YouTube), TT (TikTok)"
+        description: "Secret prefix: YT (Lenny), YTS (What If YouTube), TTS (TikTok)"
         required: false
         default: "YT"
   push:
@@ -49,13 +49,14 @@ jobs:
       - name: Upload
         env:
           YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
-          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || secrets.YT2_PROXY }}
+          # YTS = second channel (proxy of YT4), TTS = TikTok (proxy of TT)
+          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
           ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
-          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || github.event.inputs.account == 'TT') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
+          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || github.event.inputs.account == 'YTS' || github.event.inputs.account == 'TT' || github.event.inputs.account == 'TTS') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
           IDS: ${{ github.event.inputs.ids }}
           PIN_TEXT: ${{ github.event.inputs.text }}
         run: |
-          if [ "$ACCOUNT" = "TT" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
+          if [ "$ACCOUNT" = "TT" ] || [ "$ACCOUNT" = "TTS" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
       - name: Screenshots
         if: always()
         uses: actions/upload-artifact@v4
