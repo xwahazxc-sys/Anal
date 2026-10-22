@@ -615,7 +615,8 @@ def audit(page):
     page.wait_for_timeout(6000)
     m = re.search(r"/channel/(UC[\w-]+)", page.url)
     if not m:
-        raise SystemExit("could not find the channel id (not signed in?)")
+        shot(page, "audit_no_channel")
+        raise SystemExit(f"could not find the channel id (not signed in?) at {page.url[:70]}")
     base = f"https://studio.youtube.com/channel/{m.group(1)}"
     log("channel", m.group(1))
     grab("dashboard")
@@ -674,6 +675,30 @@ def audit(page):
     grab("public_about", f"https://www.youtube.com/channel/{m.group(1)}/about", wait=5000)
 
 
+STATE = Path(os.environ.get("STATE_COOKIES", "state/cookies.json"))
+
+
+def load_cookies(raw):
+    """Secret cookies, overridden by the renewed ones saved by the previous run (Google rotates them)."""
+    jar = {(c["name"], c["domain"], c.get("path", "/")): c for c in parse_cookies(raw)}
+    try:
+        saved = json.loads(STATE.read_text())
+        for c in saved:
+            jar[(c["name"], c["domain"], c.get("path", "/"))] = c
+        log("using renewed cookies from the previous run:", len(saved))
+    except Exception:
+        pass
+    return list(jar.values())
+
+
+def save_cookies(ctx):
+    try:
+        STATE.parent.mkdir(parents=True, exist_ok=True)
+        STATE.write_text(json.dumps(ctx.cookies()))
+    except Exception as e:
+        log("cookie save failed:", type(e).__name__)
+
+
 def main():
     cookies = os.environ.get("YT_COOKIES", "")
     proxy = os.environ.get("YT_PROXY", "")
@@ -694,7 +719,7 @@ def main():
                 log("http proxy failed, retrying as SOCKS5")
                 b.close(); b = p.chromium.launch(headless=True, proxy=parse_proxy(proxy, force_socks=True))
             ctx = b.new_context(locale="en-US")
-            ctx.add_cookies(parse_cookies(cookies))
+            ctx.add_cookies(load_cookies(cookies))
             pg = ctx.new_page()
             try:
                 pg.goto("https://ipinfo.io/json", timeout=30000); info = json.loads(pg.inner_text("body"))
@@ -703,7 +728,10 @@ def main():
                 log("proxy check failed:", type(e).__name__, str(e)[:120])
             pg.goto("https://studio.youtube.com", wait_until="domcontentloaded"); pg.wait_for_timeout(6000)
             shot(pg, "check_studio")
-            log("signed in:", "accounts.google.com" not in pg.url, pg.url[:60])
+            ok = "accounts.google.com" not in pg.url
+            log("signed in:", ok, pg.url[:60])
+            if ok:
+                save_cookies(ctx)
             b.close()
         return
     do_country = "country" in ids
@@ -731,7 +759,7 @@ def main():
                                     args=["--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(locale="en-US", timezone_id="America/New_York", viewport={"width": 1440, "height": 1000},
                                   user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
-        ctx.add_cookies(parse_cookies(cookies))
+        ctx.add_cookies(load_cookies(cookies))
         page = ctx.new_page()
         page.set_default_timeout(30000)
         # where does the proxy exit? (country only, for the log)
@@ -803,6 +831,8 @@ def main():
                 shot(page, f"{item['id']}_error")
                 log("FAILED", item["id"], type(e).__name__, str(e)[:300])
                 results[item["id"]] = "FAILED"
+        if "accounts.google.com" not in page.url:
+            save_cookies(ctx)
         browser.close()
     log("results", json.dumps(results))
     if any(v == "FAILED" for v in results.values()):

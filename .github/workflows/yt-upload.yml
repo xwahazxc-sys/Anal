@@ -46,6 +46,27 @@ jobs:
         run: |
           pip install playwright==1.47.0 pproxy==2.7.9
           python -m playwright install --with-deps chromium
+      # Google renews login cookies on every visit; replaying the stale secret gets the session revoked.
+      # So each run saves the renewed cookies (encrypted with the proxy secret) to the Actions cache for the next run.
+      # A new cookies secret changes the cache key, so fresh secrets always win.
+      - name: Cookie state key
+        id: ck
+        env:
+          C: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
+        run: echo "h=$(printf %s "$C" | sha256sum | cut -c1-16)" >> "$GITHUB_OUTPUT"
+      - name: Restore renewed cookies
+        uses: actions/cache/restore@v4
+        with:
+          path: state/cookies.enc
+          key: ck-${{ github.event.inputs.account || 'YT' }}-${{ steps.ck.outputs.h }}-${{ github.run_id }}
+          restore-keys: ck-${{ github.event.inputs.account || 'YT' }}-${{ steps.ck.outputs.h }}-
+      - name: Decrypt renewed cookies
+        env:
+          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
+        run: |
+          if [ -f state/cookies.enc ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -pass env:K -in state/cookies.enc -out state/cookies.json || rm -f state/cookies.json
+          fi
       - name: Upload
         env:
           YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
@@ -57,6 +78,21 @@ jobs:
           PIN_TEXT: ${{ github.event.inputs.text }}
         run: |
           if [ "$ACCOUNT" = "TT" ] || [ "$ACCOUNT" = "TTS" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
+      - name: Encrypt renewed cookies
+        if: always()
+        env:
+          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
+        run: |
+          if [ -s state/cookies.json ]; then
+            openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:K -in state/cookies.json -out state/cookies.enc
+          fi
+          rm -f state/cookies.json
+      - name: Save renewed cookies
+        if: always() && hashFiles('state/cookies.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: state/cookies.enc
+          key: ck-${{ github.event.inputs.account || 'YT' }}-${{ steps.ck.outputs.h }}-${{ github.run_id }}
       - name: Screenshots
         if: always()
         uses: actions/upload-artifact@v4
