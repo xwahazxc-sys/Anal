@@ -39,8 +39,10 @@ what if… it's 2:14 a.m. 🕑 animated horror from Elm Court
 Rule: every 48 h the story with the most "part 2?" comments gets the next slot.
 
 ## Status (Oct 19, evening)
-YouTube account: secret prefix **YT4** (proxy falls back to YT2_PROXY). Channel renamed to "What If At 2:14", avatar, banner,
-description, keywords set ("Changes published"). Handle still @TrustMeIRanThis — @WhatIfAt214 did not stick; retry later.
+YouTube account: secret prefix **YTSS** (Oct 22; proxy = YT4_PROXY). Name, avatar, banner, description, keywords,
+country = United States, handle **@WhatIfAt214** — all published Oct 22. Renewed login cookies carry over between runs
+(encrypted in the Actions cache), so a fresh secret is needed only if Google signs the session out.
+Oct 22 morning: Night 2 555 views / 31.8% avg viewed / 18 likes in 12 h; Night 1 278 views; 6 subscribers.
 
 | Night | Link | Publishes (ET) |
 |---|---|---|
@@ -48,5 +50,5 @@ description, keywords set ("Changes published"). Handle still @TrustMeIRanThis �
 | 2 | https://youtu.be/rD3sBxIL4U0 | Oct 22, 7:00 PM |
 | 3 | https://youtu.be/FYHjeZMQzHA | Oct 24, 7:00 PM |
 
-TikTok (TT, @jojokokoko22): paused; last run was cancelled mid profile-edit — check before resuming.
+TikTok: dropped by the owner (Oct 22). Profile edits from the robot made TikTok sign the session out.
 Cookies die on "sign out of all devices": the owner re-exports when a check says "not signed in".
