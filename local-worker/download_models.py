@@ -40,10 +40,20 @@ def comfy_root(path):
     sys.exit(f"No 'models' folder in {path} or {path}\\ComfyUI - is this the ComfyUI folder?")
 
 
-def size_of(url):
-    req = urllib.request.Request(HF + url, method="HEAD")
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return int(r.headers["Content-Length"])
+def size_of(url, tries=8):
+    """File size from the server; retries because some networks reset connections to the HF CDN."""
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(HF + url, method="HEAD")
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return int(r.headers["Content-Length"])
+        except Exception as e:
+            wait = min(5 * 2 ** i, 60)
+            print(f"  {url.rsplit('/', 1)[-1]}: connection problem ({e.__class__.__name__}), "
+                  f"retry {i + 1}/{tries} in {wait} s...", flush=True)
+            time.sleep(wait)
+    sys.exit("\nThe model server keeps dropping the connection. Turn on a VPN and run the same command again "
+             "(already downloaded parts are kept).")
 
 
 def download(url, dest):
@@ -71,7 +81,8 @@ def download(url, dest):
             if have >= total:
                 break
         except Exception as e:
-            print(f"\n  connection dropped ({e.__class__.__name__}), resuming in 10 s...")
+            print(f"\n  connection dropped ({e.__class__.__name__}), resuming in 10 s "
+                  f"(try {attempt + 1}/20)...", flush=True)
             time.sleep(10)
     print()
     if os.path.getsize(part) != total:
@@ -91,8 +102,9 @@ def main():
     for url, sub in files:
         if url not in seen:
             seen.add(url); plan.append((url, os.path.join(root, "models", sub, url.rsplit("/", 1)[-1])))
+    print(f"ComfyUI: {root}\nChecking {len(plan)} files on the server...", flush=True)
     total = sum(size_of(u) for u, _ in plan)
-    print(f"ComfyUI: {root}\n{len(plan)} files, {total / 2**30:.1f} GB in total")
+    print(f"{len(plan)} files, {total / 2**30:.1f} GB in total")
     for url, dest in plan:
         print(f"  -> models\\{os.path.relpath(dest, os.path.join(root, 'models'))}")
     if "--dry" in sys.argv:
