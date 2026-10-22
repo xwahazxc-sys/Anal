@@ -1,0 +1,13 @@
+{
+ "duration": 55.0,
+ "night": "PART 1",
+ "endTitle": "PART 2 TOMORROW",
+ "shots": [["space", 0.0], ["light", 5.75], ["city", 13.7], ["window", 21.6], ["moon", 26.15], ["clock", 34.1], ["moonOut", 36.3], ["street", 43.85], ["alert", 47.5], ["window2", 50.65], ["title", 52.6]],
+ "sunOff": 4.4,
+ "moonOff": 36.55,
+ "alertAt": 44.4,
+ "clockAt": [[0, "2:14"], [21.6, "2:20"], [34.1, "2:22"]],
+ "notifAt": 47.6,
+ "sfx": [["impact", 4.4, -10, ""], ["hum", 5.8, -16, "atrim=0:8,afade=t=in:d=1,afade=t=out:st=7:d=1"], ["heartbeat", 34.1, -12, "atrim=0:3"], ["impact", 36.55, -8, ""], ["riser", 38.4, -16, ""], ["alert", 44.4, -10, ""], ["alert", 45.4, -12, ""], ["vibrate", 44.45, -12, ""], ["impact", 52.6, -8, ""]],
+ "bedMute": [52.6, 53.3]
+}

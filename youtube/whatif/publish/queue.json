@@ -201,5 +201,43 @@
   "visibility": "schedule",
   "publishAt": "2026-10-26T12:00",
   "pin": "Rewatch Night 1 — he was facing the door the whole time 👀"
+ },
+ {
+  "id": "sw1",
+  "file": "youtube/whatif/stories/sun/final/sun_went_out_part1.mp4",
+  "title": "What If the Sun Disappeared at 2:14 AM? (Part 1)",
+  "thumbnail": null,
+  "description": "If the Sun vanished, you wouldn't know for 8 minutes and 20 seconds — that's how long its light takes to reach us. The first sign would be the Moon.\n\nWould you go outside to look? 👇\nPart 2 tomorrow.\n\nA fictional story.\n#shorts #whatif #space #horrorstory #scarystories",
+  "tags": [
+   "what if",
+   "sun disappeared",
+   "space",
+   "horror short",
+   "what if the sun",
+   "scary story",
+   "part 1"
+  ],
+  "visibility": "schedule",
+  "publishAt": "2026-10-29T19:00",
+  "pin": "Would you go outside to look? 👀"
+ },
+ {
+  "id": "sw2",
+  "file": "youtube/whatif/stories/sun/final/sun_went_out_part2.mp4",
+  "title": "The Sun Never Came Back. Something Else Rose Instead. (Part 2)",
+  "thumbnail": null,
+  "description": "The Moon went dark at 2:22. By 7 a.m. the sky should be light. Then something rises in the east, right where the Sun should be.\n\nWould you look at it? 👇\n\nA fictional story.\n#shorts #whatif #space #horrorstory #scarystories",
+  "tags": [
+   "what if",
+   "sun disappeared",
+   "space",
+   "horror short",
+   "cosmic horror",
+   "scary story",
+   "part 2"
+  ],
+  "visibility": "schedule",
+  "publishAt": "2026-10-30T19:00",
+  "pin": "Would you look at it? 👇"
  }
 ]

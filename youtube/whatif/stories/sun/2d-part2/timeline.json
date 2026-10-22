@@ -1,0 +1,11 @@
+{
+ "duration": 52.4,
+ "night": "PART 2",
+ "endTitle": "THE END...?",
+ "shots": [["hole", 0.0], ["planets", 7.55], ["dawnless", 16.65], ["crowd", 21.45], ["rise", 28.0], ["cheer", 33.4], ["cold", 37.55], ["eye", 41.95], ["look", 45.15], ["title", 49.9]],
+ "planetsOff": [11.15, 12.85, 13.55],
+ "clockAt": [[0, "2:22"], [7.55, "3:00"], [16.65, "6:30"], [21.45, "7:00"], [28.0, "7:02"]],
+ "blink": 41.1, "iris": [42.6, 44.6],
+ "sfx": [["hum", 0.0, -16, "atrim=0:7,afade=t=out:st=6:d=1"], ["impact", 11.15, -14, ""], ["impact", 12.85, -14, ""], ["impact", 13.55, -14, ""], ["riser", 22.5, -16, ""], ["heartbeat", 37.6, -12, "atrim=0:8,afade=t=out:st=7:d=1"], ["impact", 41.1, -9, ""], ["impact", 44.55, -7, ""], ["impact", 49.9, -8, ""]],
+ "bedMute": [49.9, 50.6]
+}
