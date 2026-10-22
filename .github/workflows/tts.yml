@@ -1,0 +1,37 @@
+name: Narration (ElevenLabs)
+
+# Voices a script from the repo with the ELEVENLABS_API_KEY secret and returns the audio as an artifact.
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Script path in the repo (e.g. youtube/whatif/long01/vo/n4.txt), or --quota"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tts
+  cancel-in-progress: false
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Voice
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          SCRIPT: ${{ github.event.inputs.script }}
+        run: |
+          if [ "$SCRIPT" = "--quota" ]; then python youtube/whatif/tts/tts.py --quota; else python youtube/whatif/tts/tts.py "$SCRIPT" tts_out; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tts
+          path: tts_out/
+          retention-days: 7
