@@ -1,0 +1,33 @@
+{
+ "duration": 45.0,
+ "night": "PART 2",
+ "endTitle": "THE END...?",
+ "shots": [
+  ["cross", 0.0],
+  ["inside", 9.4],
+  ["tv", 13.25],
+  ["crowd", 16.55],
+  ["phone", 23.3],
+  ["floor", 28.95],
+  ["feet", 35.9],
+  ["door", 40.7],
+  ["title", 42.8]
+ ],
+ "notifAt": 23.6,
+ "crossStart": 5.2,
+ "lock": 10.6,
+ "blinds": [11.8, 13.0],
+ "feetIn": [37.2, 38.4],
+ "sfx": [
+  ["click", 10.55, -6, ""],
+  ["key", 10.0, -10, ""],
+  ["hum", 13.3, -16, "atrim=0:9.5,afade=t=in:d=0.5,afade=t=out:st=9:d=0.5"],
+  ["vibrate", 23.45, -10, ""],
+  ["ping", 23.65, -12, ""],
+  ["impact", 26.8, -10, ""],
+  ["heartbeat", 29.0, -12, "atrim=0:8,afade=t=out:st=7:d=1"],
+  ["riser", 36.8, -13, ""],
+  ["impact", 42.8, -8, ""]
+ ],
+ "bedMute": [42.8, 43.5]
+}
