@@ -1,1 +1,14 @@
-{"username": "whatifat214", "name": "What If At 2:14", "bio": "what if… it's 2:14 a.m. 🕑 animated horror from Elm Court", "avatar": "youtube/whatif/brand/avatar_800.jpg"}
+{
+  "username": "whatifat214",
+  "name": "What If At 2:14",
+  "bio": "what if… it's 2:14 a.m. 🕑 animated horror\n▶ YouTube: What If At 2:14",
+  "avatar": "youtube/whatif/brand/avatar_800.jpg",
+  "username_fallbacks": [
+    "whatif.at.214",
+    "whatifat2.14",
+    "whatif_at_214",
+    "whatifat214am",
+    "whatif.at2.14am"
+  ],
+  "current_username": "jojokokoko22"
+}

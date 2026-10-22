@@ -132,9 +132,24 @@ def edit_profile(page, prof):
     log("dialog inputs:", ins.count())
     ok_u = ok_n = ok_b = False
     if ins.count() >= 2:
-        for i, v in ((0, prof["username"]), (1, prof["name"])):
-            el = ins.nth(i); el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(v, delay=25)
-        ok_u = ok_n = True
+        el = ins.nth(1); el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(prof["name"], delay=25)
+        ok_n = True
+        # first free username wins; TikTok shows "isn't available" under the field for taken ones
+        names = [prof["username"]] + list(prof.get("username_fallbacks", []))
+        el = ins.nth(0)
+        for u in names:
+            el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(u, delay=25)
+            page.wait_for_timeout(3500)
+            taken = dlg.get_by_text(re.compile(r"isn.t available|not available|already taken", re.I))
+            if taken.count() and taken.first.is_visible():
+                log("username taken:", u)
+                continue
+            log("username free:", u); ok_u = True
+            break
+        if not ok_u:
+            # keep the current handle rather than block Save on name/bio/avatar
+            el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(prof.get("current_username", ""), delay=25)
+            page.wait_for_timeout(3000)
     ta = dlg.locator("textarea")
     if ta.count():
         ta.first.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); ta.first.type(prof["bio"], delay=15); ok_b = True
