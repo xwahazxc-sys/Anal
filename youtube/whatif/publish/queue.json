@@ -34,7 +34,8 @@
   ],
   "visibility": "schedule",
   "publishAt": "2026-10-22T19:00",
-  "pin": "Who's on the couch? Wrong answers only 👇"
+  "pin": "Who's on the couch? Wrong answers only 👇",
+  "note": "actually went public Oct 21 7 PM ET (Studio)"
  },
  {
   "id": "n3",
@@ -52,7 +53,8 @@
   ],
   "visibility": "schedule",
   "publishAt": "2026-10-24T19:00",
-  "pin": "Rewatch Night 1. He was facing the door the whole time. 👀"
+  "pin": "Rewatch Night 1. He was facing the door the whole time. 👀",
+  "note": "FYHjeZMQzHA was scheduled Oct 22 (not 24); made private, replaced by n3b"
  },
  {
   "id": "n3b",
@@ -69,7 +71,7 @@
    "animated horror story"
   ],
   "visibility": "schedule",
-  "publishAt": "2026-10-24T19:00",
+  "publishAt": "2026-10-22T19:00",
   "pin": "Rewatch Night 1. He was facing the door the whole time. 👀",
   "note": "cold-open recut of n3 (first 19 s of recap removed); replaces FYHjeZMQzHA"
  }

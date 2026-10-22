@@ -378,8 +378,14 @@ def make_private(page, video_id):
         if try_click(page, sel, 5000):
             break
     page.wait_for_timeout(1500)
+    # a scheduled video opens on "Schedule"; the Private option is inside the collapsed "Save or publish" section
+    try:
+        page.get_by_text(re.compile(r"^\s*save or publish\s*$", re.I)).first.click(timeout=5000)
+        page.wait_for_timeout(1200)
+    except Exception:
+        pass
     if not try_click(page, "tp-yt-paper-radio-button[name='PRIVATE']", 6000):
-        page.get_by_text(re.compile(r"^\s*private\s*$", re.I)).first.click(timeout=6000)
+        page.locator("tp-yt-paper-radio-button").filter(has_text=re.compile(r"^\s*private", re.I)).first.click(timeout=6000)
     page.wait_for_timeout(1000)
     shot(page, f"{video_id}_private_dialog")
     for sel in ("ytcp-video-visibility-select #save-button", "#save-button", "text=Done"):
