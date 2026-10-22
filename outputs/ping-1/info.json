@@ -1,0 +1,12 @@
+{
+ "host": "ASKAR",
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9",
+ "gpu": "NVIDIA GeForce RTX 5070, 12227 MiB, 617.42",
+ "ram_gb": 31.6,
+ "disk_free_gb": 716.7,
+ "torch": "2.7.1+cu128",
+ "cuda": true,
+ "cuda_arch": "12.0",
+ "comfyui": "not reachable: ConnectionError"
+}

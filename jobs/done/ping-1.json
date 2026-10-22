@@ -1,0 +1,10 @@
+{
+ "id": "ping-1",
+ "type": "ping",
+ "finished": "2026-10-22 22:15:05",
+ "status": "done",
+ "outputs": [
+  "outputs/ping-1/info.json"
+ ],
+ "seconds": 4
+}
