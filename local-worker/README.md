@@ -33,23 +33,27 @@ Claude (облако)                       GitHub                         Тв�
 ```bat
 cd C:\
 git clone -b claude/ecstatic-goldberg-c57vtd https://github.com/xwahazxc-sys/Anal.git
-cd Anal\local-worker
-copy config.example.json config.json
 ```
 (Репозиторий приватный: при клонировании Git попросит войти в GitHub — войди своим аккаунтом.)
 
 ### 3. Окружение для голоса
 ```bat
+cd C:\Anal\local-worker
+copy config.example.json config.json
 python -m venv venv
 venv\Scripts\activate
 pip install chatterbox-tts
-pip install --force-reinstall torch torchaudio --index-url https://download.pytorch.org/whl/cu128
+pip install --force-reinstall torch==2.7.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 python -c "import torch;print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_capability())"
+python download_models.py voice --source modelscope
 ```
-Последняя строка должна показать `True` и `(12, 0)`. RTX 50xx (архитектура Blackwell) работает только с
-PyTorch-сборкой **CUDA 12.8** (`cu128`); вторая команда ставит именно её поверх той, что притянул chatterbox.
+Предпоследняя строка должна показать `2.7.1+cu128 True (12, 0)`. Chatterbox просит PyTorch 2.6, но тот не умеет
+RTX 50xx (Blackwell); 2.7.1 — первая версия с поддержкой этих карт и самая близкая к 2.6, поэтому ставим её поверх.
 Если pip ругается на конфликт версий — это нормально. Если `import chatterbox` падает — пришли Claude текст ошибки.
+
+Последняя команда качает модели голоса (Chatterbox + Whisper, ~3.4 ГБ) в `local-worker\models\`.
+`--source modelscope` — зеркало для мест, где Hugging Face заблокирован (Россия); файлы сверяются по SHA-256.
 
 ### 4. ComfyUI и видео-модель Wan 2.2
 Подробно, по шагам, для новичка: **[COMFYUI_SETUP.md](COMFYUI_SETUP.md)**.

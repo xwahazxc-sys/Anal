@@ -6,6 +6,7 @@
     python download_models.py D:\\ComfyUI_windows_portable cinema     # only the 14B set (~28 GB)
     python download_models.py ... --source modelscope                # skip Hugging Face entirely
     python download_models.py ... --dry                              # show what would be downloaded
+    python download_models.py voice                                  # voice models for the worker (~3.7 GB)
 
 Sources: Hugging Face first; if it drops the connection (common in Russia), the ModelScope mirror
 (modelscope.cn) is used automatically. Every finished file is checked against the SHA-256 published
@@ -48,6 +49,22 @@ SETS = {
          "2fc39d31359a4b0a64f55876d8ff7fa8d780956ae2cb13463b0223e15148976b"),
     ],
 }
+CB = "ResembleAI/chatterbox"
+WH = "Systran/faster-whisper-small"
+# voice models go to local-worker/models/<sub>; sha256 None = small text file, checked by size only
+VOICE = [
+    (CB, "ve.pt", "chatterbox", 5698626, "4b16d836bc598509860f6fa068165a8bb5e9ac84f05582dfcf278a5a372879f1"),
+    (CB, "t3_mtl23ls_v2.safetensors", "chatterbox", 2143989752,
+     "b1237586127ce98e7800a68e49938eb5092846862aabcb6e17b2fda7889a6c75"),
+    (CB, "s3gen.pt", "chatterbox", 1057165844, "9b9ff07e60b20c136e2b1b3d7563a24604e8d2c4c267888d1ee929dd0151d2a3"),
+    (CB, "grapheme_mtl_merged_expanded_v1.json", "chatterbox", 69989, None),
+    (CB, "conds.pt", "chatterbox", 107374, "6552d70568833628ba019c6b03459e77fe71ca197d5c560cef9411bee9d87f4e"),
+    (WH, "model.bin", "faster-whisper-small", 483546902,
+     "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"),
+    (WH, "config.json", "faster-whisper-small", 2370, None),
+    (WH, "tokenizer.json", "faster-whisper-small", 2203239, None),
+    (WH, "vocabulary.txt", "faster-whisper-small", 459861, None),
+]
 order = ["huggingface", "modelscope"]  # the working source moves to the front
 
 
@@ -126,7 +143,7 @@ def download(item, dest):
     if os.path.getsize(part) != total:
         sys.exit(f"  {name}: not complete yet - run the same command again to resume")
     print(f"  checking {name} ...", end="", flush=True)
-    if sha256(part) != digest:
+    if digest and sha256(part) != digest:
         os.remove(part)
         sys.exit(f"\n  {name}: checksum mismatch, the file was deleted - run the command again")
     os.replace(part, dest)
@@ -140,17 +157,21 @@ def main():
         order.remove(src); order.insert(0, src)
     if not a:
         sys.exit(__doc__)
-    # messengers turn "quotes" into «guillemets» or “curly quotes” when commands are pasted through them
-    root = comfy_root(a[0].strip("\"'«»“”„ "))
-    which = a[1] if len(a) > 1 else "all"
-    files = SETS["lite"] + SETS["cinema"] if which == "all" else SETS[which]
+    if a[0] == "voice":
+        root = os.path.dirname(os.path.abspath(__file__))
+        files = VOICE
+    else:
+        # messengers turn "quotes" into «guillemets» or “curly quotes” when commands are pasted through them
+        root = comfy_root(a[0].strip("\"'«»“”„ "))
+        which = a[1] if len(a) > 1 else "all"
+        files = SETS["lite"] + SETS["cinema"] if which == "all" else SETS[which]
     plan, seen = [], set()
     for item in files:
-        if item[1] not in seen:
-            seen.add(item[1])
+        if (item[0], item[1]) not in seen:
+            seen.add((item[0], item[1]))
             plan.append((item, os.path.join(root, "models", item[2], item[1].rsplit("/", 1)[-1])))
     total = sum(i[3] for i, _ in plan)
-    print(f"ComfyUI: {root}\n{len(plan)} files, {total / 2**30:.1f} GB in total")
+    print(f"Target: {root}\n{len(plan)} files, {total / 2**30:.1f} GB in total")
     for _, dest in plan:
         print(f"  -> models\\{os.path.relpath(dest, os.path.join(root, 'models'))}")
     if "--dry" in sys.argv:
@@ -158,7 +179,7 @@ def main():
     for item, dest in plan:
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         download(item, dest)
-    print("Done. Restart ComfyUI so it sees the new models.")
+    print("Done." if a[0] == "voice" else "Done. Restart ComfyUI so it sees the new models.")
 
 
 if __name__ == "__main__":

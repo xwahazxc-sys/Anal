@@ -39,12 +39,23 @@ def split(text, limit=240):
     return out
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def local(name):
+    """Models fetched by `python download_models.py voice` (works where Hugging Face is blocked)."""
+    d = os.path.join(HERE, "models", name)
+    return d if os.path.isdir(d) else None
+
+
 def model():
     global _tts
     if _tts is None:
         import torch
         from chatterbox.mtl_tts import ChatterboxMultilingualTTS
-        _tts = ChatterboxMultilingualTTS.from_pretrained(device="cuda" if torch.cuda.is_available() else "cpu")
+        dev = "cuda" if torch.cuda.is_available() else "cpu"
+        d = local("chatterbox")
+        _tts = ChatterboxMultilingualTTS.from_local(d, dev) if d else ChatterboxMultilingualTTS.from_pretrained(dev)
     return _tts
 
 
@@ -52,10 +63,11 @@ def asr(size):
     global _asr
     if _asr is None:
         from faster_whisper import WhisperModel
+        src = local(f"faster-whisper-{size}") or size
         try:
-            _asr = WhisperModel(size, device="cuda", compute_type="float16")
+            _asr = WhisperModel(src, device="cuda", compute_type="float16")
         except Exception:  # missing CUDA libs for CTranslate2 -> CPU is fine for checking
-            _asr = WhisperModel(size, device="cpu", compute_type="int8")
+            _asr = WhisperModel(src, device="cpu", compute_type="int8")
     return _asr
 
 
