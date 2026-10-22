@@ -57,9 +57,9 @@ def init():
         return print(f"{BRANCH} already exists")
     tmp = WT + "-init"
     shutil.rmtree(tmp, ignore_errors=True)
-    git("worktree", "add", "--detach", tmp)
+    git("worktree", "add", "--detach", "--no-checkout", tmp)  # the main branches carry GBs of video
     git("checkout", "--orphan", BRANCH, cwd=tmp)
-    git("rm", "-rf", "--quiet", ".", cwd=tmp)
+    git("rm", "-rf", "--cached", "--quiet", ".", cwd=tmp)
     for d in ("jobs/pending", "jobs/done", "jobs/failed", "outputs", "voices", "workflows", "inputs"):
         os.makedirs(os.path.join(tmp, d), exist_ok=True)
         open(os.path.join(tmp, d, ".gitkeep"), "w").close()
