@@ -135,8 +135,10 @@ def edit_profile(page, prof):
         el = ins.nth(1); el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(prof["name"], delay=25)
         ok_n = True
         # first free username wins; TikTok shows "isn't available" under the field for taken ones
-        names = [prof["username"]] + list(prof.get("username_fallbacks", []))
+        names = ([prof["username"]] + list(prof.get("username_fallbacks", []))) if prof.get("username") else []
         el = ins.nth(0)
+        if not names:
+            log("username: left as is")
         for u in names:
             el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(u, delay=25)
             page.wait_for_timeout(3500)
@@ -146,7 +148,7 @@ def edit_profile(page, prof):
                 continue
             log("username free:", u); ok_u = True
             break
-        if not ok_u:
+        if names and not ok_u:
             # keep the current handle rather than block Save on name/bio/avatar
             el.click(); page.keyboard.press("Control+A"); page.keyboard.press("Delete"); el.type(prof.get("current_username", ""), delay=25)
             page.wait_for_timeout(3000)
