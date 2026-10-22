@@ -83,7 +83,8 @@ def main():
     a = [x for x in sys.argv[1:] if x != "--dry"]
     if not a:
         sys.exit(__doc__)
-    root = comfy_root(a[0])
+    # messengers turn "quotes" into «guillemets» or “curly quotes” when commands are pasted through them
+    root = comfy_root(a[0].strip("\"'«»“”„ "))
     which = a[1] if len(a) > 1 else "all"
     files = SETS["lite"] + SETS["cinema"] if which == "all" else SETS[which]
     seen, plan = set(), []
