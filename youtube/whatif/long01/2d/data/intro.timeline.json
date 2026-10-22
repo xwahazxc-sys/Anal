@@ -1,0 +1,40 @@
+{
+ "duration": 19.6,
+ "part": "intro",
+ "shots": [
+  [
+   "building",
+   0
+  ],
+  [
+   "cctv",
+   8.5
+  ],
+  [
+   "living",
+   10.65
+  ],
+  [
+   "building2",
+   13.4
+  ],
+  [
+   "card",
+   18.4
+  ]
+ ],
+ "clock": [
+  [
+   0,
+   "2:14"
+  ]
+ ],
+ "msgs": [],
+ "typing": [],
+ "cardText": "NIGHT 1",
+ "sfx": [],
+ "bedMute": [
+  99,
+  100
+ ]
+}
