@@ -28,7 +28,12 @@ def call(path, body=None):
 
 
 def quota():
-    s = json.loads(call("/user/subscription"))
+    """Characters left; None when the key has no "User: read" permission (TTS still works)."""
+    try:
+        s = json.loads(call("/user/subscription"))
+    except urllib.error.HTTPError as e:
+        print("quota: not readable with this key (HTTP", e.code, ") — continuing")
+        return None
     used, limit = s.get("character_count", 0), s.get("character_limit", 0)
     print(f"quota: {used}/{limit} used, {limit - used} left, resets {s.get('next_character_count_reset_unix')}")
     return limit - used
@@ -45,7 +50,7 @@ def main():
     text = src.read_text().strip()
     left = quota()
     print(f"script: {src.name}, {len(text)} characters")
-    if len(text) > left:
+    if left is not None and len(text) > left:
         sys.exit("not enough characters left this month")
     body = {"text": text, "model_id": MODEL,
             "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}}
