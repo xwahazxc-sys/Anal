@@ -1,0 +1,38 @@
+{
+ "duration": 55.6,
+ "night": "PART 1",
+ "endTitle": "PART 2 TOMORROW",
+ "shots": [
+  ["city", 0.0],
+  ["phone", 6.4],
+  ["msg", 13.05],
+  ["balcony", 16.4],
+  ["neighbor", 21.1],
+  ["street", 22.8],
+  ["face", 29.95],
+  ["phone2", 35.75],
+  ["turn", 43.2],
+  ["eyes", 47.6],
+  ["sky", 51.2],
+  ["title", 53.2]
+ ],
+ "glowAt": 2.4,
+ "notifAt": 6.75,
+ "newLineAt": 42.3,
+ "lightsDie": [24.2, 28.6],
+ "beamUp": [29.6, 33.5],
+ "headTurn": [43.7, 46.6],
+ "eyesOn": 47.3,
+ "shipReveal": [51.2, 53.4],
+ "sfx": [
+  ["vibrate", 6.55, -10, ""],
+  ["ping", 6.8, -12, ""],
+  ["hum", 22.9, -14, "atrim=0:7,afade=t=in:d=1,afade=t=out:st=6:d=1"],
+  ["vibrate", 35.85, -10, ""],
+  ["impact", 42.3, -9, ""],
+  ["heartbeat", 43.3, -12, "atrim=0:8,afade=t=out:st=7:d=1"],
+  ["riser", 47.2, -13, ""],
+  ["impact", 53.2, -8, ""]
+ ],
+ "bedMute": [53.2, 53.9]
+}
