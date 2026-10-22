@@ -63,3 +63,5 @@ Cookies die on "sign out of all devices": the owner re-exports when a check says
 | Oct 25 | c3 "He's Too Scared to Go Home. Because of Me." | https://youtu.be/hg2NbS4u-Rs |
 | Oct 26 | c4 "Someone in My Hoodie Is Knocking…" (+ long video 12:00) | https://youtu.be/BItIwHqgd0A |
 | Oct 27+ | new story nights (needs the ElevenLabs key with Text to Speech permission) | |
+| Oct 27 | Do Not Look Up, Part 1 (2D silhouette style) | https://youtu.be/-EcXXHtNUlc |
+| Oct 28 | Do Not Look Up, Part 2 | https://youtu.be/XhrBG0dzUzo |
