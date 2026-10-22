@@ -9,7 +9,7 @@
 Works through a git worktree of the render-queue branch (default ~/.render-queue),
 so it needs nothing but git and push access to the repository.
 """
-import json, os, shutil, subprocess, sys, time
+import json, os, shutil, subprocess, sys, tempfile, time
 
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BRANCH = os.environ.get("QUEUE_BRANCH", "render-queue")
@@ -53,13 +53,14 @@ def push(msg):
 
 
 def init():
+    """Create the queue branch from a separate empty repo, so nothing from the main branches leaks in."""
     if git("ls-remote", "--exit-code", "--heads", "origin", BRANCH, check=False).returncode == 0:
         return print(f"{BRANCH} already exists")
-    tmp = WT + "-init"
-    shutil.rmtree(tmp, ignore_errors=True)
-    git("worktree", "add", "--detach", "--no-checkout", tmp)  # the main branches carry GBs of video
-    git("checkout", "--orphan", BRANCH, cwd=tmp)
-    git("rm", "-rf", "--cached", "--quiet", ".", cwd=tmp)
+    url = git("remote", "get-url", "origin").stdout.strip()
+    name = git("config", "user.name", check=False).stdout.strip() or "Claude"
+    mail = git("config", "user.email", check=False).stdout.strip() or "noreply@anthropic.com"
+    tmp = tempfile.mkdtemp(prefix="render-queue-")
+    git("init", "-q", "-b", BRANCH, tmp, cwd=tmp)
     for d in ("jobs/pending", "jobs/done", "jobs/failed", "outputs", "voices", "workflows", "inputs"):
         os.makedirs(os.path.join(tmp, d), exist_ok=True)
         open(os.path.join(tmp, d, ".gitkeep"), "w").close()
@@ -67,9 +68,9 @@ def init():
         "# render-queue\n\nQueue between Claude (cloud) and the local GPU worker. See local-worker/README.md "
         "on the main branches. Do not merge this branch anywhere.\n")
     git("add", "-A", cwd=tmp)
-    git("commit", "-m", "render-queue: empty queue", cwd=tmp)
-    retry("push", "-u", "origin", BRANCH, cwd=tmp)
-    git("worktree", "remove", "--force", tmp)
+    git("-c", f"user.name={name}", "-c", f"user.email={mail}", "commit", "-qm", "render-queue: empty queue", cwd=tmp)
+    retry("push", url, f"HEAD:refs/heads/{BRANCH}", cwd=tmp)
+    shutil.rmtree(tmp, ignore_errors=True)
     print("created", BRANCH)
 
 

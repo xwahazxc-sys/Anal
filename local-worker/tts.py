@@ -3,7 +3,7 @@
 Job example (jobs/pending/kif-ep01-voice.json):
 {
   "id": "kif-ep01-voice", "type": "tts", "lang": "de",
-  "voice": "voices/kindheit_narrator.wav",      # 10-20 s clean sample, path on the queue branch
+  "voice": "voices/kindheit_narrator.wav",      # 10-20 s clean sample on the queue branch; omit = built-in voice
   "text": "Erinnerst du dich an ...",           # keep one job under ~15 minutes of speech
   "exaggeration": 0.5, "cfg_weight": 0.5, "temperature": 0.8,
   "pause_ms": 300, "retries": 3
@@ -88,8 +88,10 @@ def run(job, fetch, cfg):
     threshold = job.get("threshold", cfg.get("tts_threshold", 0.85))
     size = cfg.get("whisper_model", "small")
     tmp = tempfile.mkdtemp(prefix="tts_")
-    voice = os.path.join(tmp, "voice" + os.path.splitext(job["voice"])[1])
-    open(voice, "wb").write(fetch(job["voice"]))
+    voice = None
+    if job.get("voice"):
+        voice = os.path.join(tmp, "voice" + os.path.splitext(job["voice"])[1])
+        open(voice, "wb").write(fetch(job["voice"]))
     gap = torch.zeros(1, int(m.sr * job.get("pause_ms", 300) / 1000))
     pieces, report = [], []
     for i, chunk in enumerate(split(job["text"])):
