@@ -370,6 +370,33 @@ def reschedule(page, video_id, item):
     return f"https://youtu.be/{video_id}"
 
 
+def make_private(page, video_id):
+    """Studio → video → Visibility → Private → Done → Save (used to replace a scheduled video)."""
+    page.goto(f"https://studio.youtube.com/video/{video_id}/edit", wait_until="domcontentloaded")
+    page.wait_for_timeout(7000)
+    for sel in ("ytcp-video-metadata-visibility #select-button", "ytcp-video-metadata-visibility", "#visibility-select"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(1500)
+    if not try_click(page, "tp-yt-paper-radio-button[name='PRIVATE']", 6000):
+        page.get_by_text(re.compile(r"^\s*private\s*$", re.I)).first.click(timeout=6000)
+    page.wait_for_timeout(1000)
+    shot(page, f"{video_id}_private_dialog")
+    for sel in ("ytcp-video-visibility-select #save-button", "#save-button", "text=Done"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(1500)
+    for sel in ("ytcp-button#save", "#save", "text=Save"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(4000)
+    shot(page, f"{video_id}_private_saved")
+    vis = page.locator("ytcp-video-metadata-visibility").first.inner_text(timeout=5000)
+    log("visibility now:", vis.replace("\n", " ")[:60])
+    if "private" not in vis.lower():
+        raise RuntimeError("visibility did not change to Private")
+
+
 def set_country(page, country="United States"):
     """Settings → Channel → Basic info → Country of residence."""
     page.goto("https://studio.youtube.com", wait_until="domcontentloaded")
@@ -763,7 +790,8 @@ def main():
     fix_altered = [i.split("=", 1)[1] for i in ids if i.startswith("noai=")]
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
     pins = [i.split("=", 1)[1] for i in ids if i.startswith("pin=")]  # pin=VIDEOID (text from PIN_TEXT env)
-    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin="))]
+    privs = [i.split("=", 1)[1] for i in ids if i.startswith("private=")]  # private=VIDEOID
+    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin=", "private="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -775,7 +803,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins:
+    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins and not privs:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -810,6 +838,14 @@ def main():
                 shot(page, "country_error")
                 log("COUNTRY FAILED", type(e).__name__, str(e)[:300])
                 results["country"] = "FAILED"
+        for vid_id in privs:
+            try:
+                make_private(page, vid_id)
+                results[f"private {vid_id}"] = "ok"
+            except Exception as e:
+                shot(page, f"{vid_id}_private_error")
+                log("PRIVATE FAILED", vid_id, type(e).__name__, str(e)[:200])
+                results[f"private {vid_id}"] = "FAILED"
         for vid_id in pins:
             try:
                 pin_comment(page, vid_id, os.environ["PIN_TEXT"])
