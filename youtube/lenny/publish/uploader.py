@@ -618,33 +618,49 @@ def pin_comment(page, video_id, text):
             raise RuntimeError(f"could not resolve {m.group(0)}")
         text = text.replace(m.group(0), f"https://youtu.be/{vid.group(1)}")
         log("resolved", m.group(1), "->", vid.group(1))
-    page.goto(f"https://www.youtube.com/watch?v={video_id}", wait_until="domcontentloaded")
-    page.wait_for_timeout(6000)
-    for _ in range(6):  # comments load lazily below the player
-        page.mouse.wheel(0, 900); page.wait_for_timeout(1200)
-        if page.locator("#simplebox-placeholder").count():
-            break
-    page.locator("#simplebox-placeholder").first.click(timeout=15000)
-    page.wait_for_timeout(1000)
-    box = page.locator("#contenteditable-root").first
-    box.click(timeout=8000)
-    page.keyboard.insert_text(text)
-    page.wait_for_timeout(800)
-    page.locator("#submit-button").first.click(timeout=8000)
-    page.wait_for_timeout(5000)
-    shot(page, f"{video_id}_commented")
-    # the new comment is the first thread; open its ⋮ menu → Pin → confirm
-    th = page.locator("ytd-comment-thread-renderer").first
-    th.hover(timeout=8000)
-    th.locator("#action-menu-button button, #action-menu-button").first.click(timeout=8000)
+    THREAD = "ytd-comment-thread-renderer, ytd-comment-view-model, ytd-comment-renderer"
+    key = text[:40]
+
+    def open_comments():
+        page.goto(f"https://www.youtube.com/watch?v={video_id}", wait_until="domcontentloaded")
+        page.wait_for_timeout(6000)
+        for _ in range(8):  # comments load lazily below the player
+            page.mouse.wheel(0, 900); page.wait_for_timeout(1200)
+            if page.locator("#simplebox-placeholder").count():
+                break
+        page.wait_for_timeout(2500)
+
+    def mine():
+        return page.locator(THREAD).filter(has_text=key)
+
+    open_comments()
+    if mine().count():
+        log("comment already there, only pinning")
+    else:
+        page.locator("#simplebox-placeholder").first.click(timeout=15000)
+        page.wait_for_timeout(1000)
+        page.locator("#contenteditable-root").first.click(timeout=8000)
+        page.keyboard.insert_text(text)
+        page.wait_for_timeout(800)
+        page.locator("#submit-button").first.click(timeout=8000)
+        page.wait_for_timeout(5000)
+        shot(page, f"{video_id}_commented")
+        open_comments()  # a reloaded page renders the new comment with its real ⋮ menu
+    c = mine().last  # innermost match is the comment itself
+    c.scroll_into_view_if_needed(timeout=8000)
+    c.hover(timeout=8000)
+    page.wait_for_timeout(600)
+    menu = c.locator("button[aria-label*='Action menu' i], #action-menu button, #action-menu-button button")
+    log("menu buttons", menu.count())
+    menu.first.click(timeout=8000, force=True)
     page.wait_for_timeout(1000)
     page.get_by_text(re.compile(r"^\s*pin\s*$", re.I)).first.click(timeout=8000)
     page.wait_for_timeout(1500)
     page.get_by_role("button", name=re.compile(r"^\s*pin\s*$", re.I)).last.click(timeout=8000)
     page.wait_for_timeout(3000)
     shot(page, f"{video_id}_pinned")
-    pinned = page.locator("ytd-comment-thread-renderer").first.inner_text(timeout=5000)
-    if "Pinned" not in pinned:
+    open_comments()
+    if "Pinned" not in page.locator(THREAD).first.inner_text(timeout=5000):
         raise RuntimeError("comment posted but pin not confirmed")
     log("pinned under", video_id)
 
