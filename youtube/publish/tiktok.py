@@ -161,12 +161,16 @@ def edit_profile(page, prof):
     shot(page, "tt_edit_filled")
     page.get_by_role("button", name=re.compile(r"^\s*save\s*$", re.I)).last.click(timeout=10000)
     page.wait_for_timeout(3000)
-    # username change asks to confirm
-    try:
-        page.get_by_role("button", name=re.compile(r"^\s*(confirm|set username)\s*$", re.I)).last.click(timeout=4000)
-        page.wait_for_timeout(3000)
-    except Exception:
-        pass
+    # nickname / username change asks "Set nickname?" → Confirm (the dialog can take a few seconds)
+    for _ in range(2):
+        try:
+            b = page.locator("button", has_text=re.compile(r"^\s*(confirm|set username)\s*$", re.I)).last
+            b.wait_for(state="visible", timeout=10000)
+            b.click(timeout=5000)
+            log("confirmed")
+            page.wait_for_timeout(4000)
+        except Exception:
+            break
     shot(page, "tt_profile_saved")
     page.goto("https://www.tiktok.com/profile", wait_until="domcontentloaded"); page.wait_for_timeout(6000)
     shot(page, "tt_profile_after")
