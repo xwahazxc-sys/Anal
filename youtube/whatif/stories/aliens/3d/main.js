@@ -55,28 +55,91 @@ function facadeTex(seed, cols, rows, mode) {
         const g = x.createRadialGradient(wx + ww * (0.3 + r() * 0.4), wy + wh * 0.85, 2, wx + ww / 2, wy + wh * 0.8, ww * 0.8);
         g.addColorStop(0, 'rgba(170,205,255,.95)'); g.addColorStop(1, 'rgba(60,100,200,.25)');
         x.fillStyle = g; x.fillRect(wx, wy, ww, wh);
+        // someone in the room, bent over the phone: head + shoulders against the glow
+        if (r() < 0.7) { const cx = wx + ww * (0.3 + r() * 0.4), by = wy + wh; x.fillStyle = 'rgba(6,8,14,.92)';
+          x.beginPath(); x.ellipse(cx, by - wh * 0.42, ww * 0.11, wh * 0.14, 0, 0, 7); x.fill();
+          x.beginPath(); x.ellipse(cx, by - wh * 0.05, ww * 0.26, wh * 0.26, 0, Math.PI, 0); x.fill(); }
       }
     }
   }, 512, 512);
 }
 
-// standing figure, feet at origin, facing +z; head is a group so it can look up / turn
-function person(m) {
-  const g = new THREE.Group();
-  for (const s of [-1, 1]) limb(g, [s * 0.1, 0.9, 0], [s * 0.11, 0.05, 0.02], 0.065, m);
-  const t = new THREE.Mesh(new THREE.CapsuleGeometry(0.17, 0.42, 6, 16), m); t.scale.set(1.15, 1, 0.75); t.position.y = 1.2; t.castShadow = true; g.add(t);
-  limb(g, [-0.2, 1.42, 0], [-0.24, 0.9, 0.02], 0.05, m); limb(g, [0.2, 1.42, 0], [0.24, 0.9, 0.02], 0.05, m);
-  limb(g, [0, 1.48, 0], [0, 1.58, 0], 0.05, m);
-  const neck = new THREE.Group(); neck.position.set(0, 1.56, 0); g.add(neck);
-  const head = new THREE.Mesh(new THREE.SphereGeometry(0.14, 24, 18), m); head.scale.set(1, 1.15, 1.1); head.position.y = 0.12; head.castShadow = true; neck.add(head);
-  // a dark, featureless face plane so you can tell which way the head points
-  const face = new THREE.Mesh(new THREE.CircleGeometry(0.085, 28), new THREE.MeshStandardMaterial({color: '#07080b', roughness: 0.4})); face.scale.set(0.9, 1.15, 1); face.position.set(0, 0.11, 0.152); neck.add(face);
-  // the eyes that stay on the sky: two small white lights on the top of the head, aimed up
-  const eyes = new THREE.Group(); eyes.position.y = 0.12; neck.add(eyes);
-  const em = new THREE.MeshBasicMaterial({color: new THREE.Color(P.white).multiplyScalar(1.6), toneMapped: false});
-  for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.SphereGeometry(0.011, 12, 10), em); e.scale.set(1, 0.6, 1); e.position.set(s * 0.042, 0.158, 0.05); eyes.add(e); }
-  g.traverse((o) => { if (o.isMesh) o.castShadow = true; });
-  g.userData = {neck, eyes};
+// ---------- people ----------
+// A stylised but human figure: proportions, clothes, hair, glasses, hands, a face that can catch light.
+// opts: {skin, top, bottom, shoes, hair: 'bald'|'short'|'bun'|'beanie'|'pony', hairCol, robe, glasses, belly, h (height scale), phone, mug, female}
+const stripeTex = (a, b) => { const t = textTex((x, w, h) => { for (let i = 0; i < 16; i++) { x.fillStyle = i % 2 ? a : b; x.fillRect(i * w / 16, 0, w / 16, h); } }, 256, 64); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3, 1); return t; };
+function human(o = {}) {
+  const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
+  const H = o.h || 1;
+  const skin = mat(o.skin || '#c99b7c', 0.6), top = o.robe ? mat('#ffffff', 0.9, 0, {map: stripeTex(o.robe[0], o.robe[1])}) : mat(o.top || '#3b4252', 0.85);
+  const bottom = mat(o.bottom || '#23262d', 0.85), shoes = mat(o.shoes || '#141414', 0.6), hairM = mat(o.hairCol || '#2a2018', 0.75);
+  const W2 = o.female ? 0.92 : 1;
+  // legs (trousers or bare shins under a robe) + shoes/slippers
+  for (const s of [-1, 1]) {
+    limb(body, [s * 0.09 * W2, 0.86, 0], [s * 0.1 * W2, 0.47, 0.01], o.robe ? 0.05 : 0.072, o.robe ? skin : bottom);
+    limb(body, [s * 0.1 * W2, 0.47, 0.01], [s * 0.1 * W2, 0.08, -0.01], o.robe ? 0.042 : 0.062, o.robe ? skin : bottom);
+    const f = new THREE.Mesh(new RoundedBoxGeometry(0.1, 0.07, 0.25, 3, 0.03), shoes); f.position.set(s * 0.1 * W2, 0.035, 0.05); body.add(f);
+  }
+  // torso: lathe profile (hips -> waist -> chest -> shoulders); a robe flares down to the knees
+  const prof = o.robe
+    ? [[0.001, 0.42], [0.25, 0.42], [0.22, 0.7], [0.19 + (o.belly ? 0.05 : 0), 0.98], [0.2, 1.22], [0.19, 1.4], [0.12, 1.47], [0.06, 1.5], [0.001, 1.5]]
+    : [[0.001, 0.82], [0.17 * W2, 0.82], [0.16 * W2 + (o.belly ? 0.04 : 0), 0.98], [0.15 * W2 + (o.belly ? 0.05 : 0), 1.1], [0.18 * W2, 1.3], [0.18 * W2, 1.4], [0.12, 1.47], [0.06, 1.5], [0.001, 1.5]];
+  const torso = new THREE.Mesh(new THREE.LatheGeometry(prof.map(([r, y]) => new THREE.Vector2(r, y)), 28), top); torso.scale.set(1, 1, 0.72); body.add(torso);
+  if (o.robe) { const belt = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.018, 8, 28), mat(o.robe[0], 0.9)); belt.rotation.x = Math.PI / 2; belt.scale.set(1, 0.74, 1); belt.position.y = 0.98; body.add(belt); }
+  // arms with hands; the right forearm can hold a phone in front of the chest, the left a mug
+  const arm = (s, bent, item) => {
+    const sh = [s * 0.21 * W2, 1.4, 0], el = bent ? [s * 0.23, 1.12, 0.06] : [s * 0.25 * W2, 1.1, 0.0], wr = bent ? [s * 0.08, 1.2, 0.27] : [s * 0.26 * W2, 0.84, 0.03];
+    limb(body, sh, el, 0.055, top); limb(body, el, wr, 0.045, o.robe ? top : top);
+    const hand = new THREE.Mesh(new THREE.SphereGeometry(0.045, 14, 10), skin); hand.position.set(...wr); hand.scale.set(0.9, 1.1, 0.7); body.add(hand);
+    if (item === 'phone') {
+      const ph = new THREE.Group(); ph.position.set(wr[0] - s * 0.01, wr[1] + 0.06, wr[2] + 0.01); ph.rotation.x = -0.75; body.add(ph);
+      ph.add(new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.14, 0.008), mat('#111', 0.4)));
+      const scrM = new THREE.MeshBasicMaterial({color: new THREE.Color(P.phone).multiplyScalar(0.05), toneMapped: false});
+      const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.062, 0.13), scrM); scr.position.z = 0.005; scr.rotation.y = Math.PI; ph.add(scr);
+      g.userData.screen = scrM; g.userData.phonePos = new THREE.Vector3(ph.position.x, ph.position.y + 0.12, ph.position.z - 0.05);
+    }
+    if (item === 'mug') { const mug = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.04, 0.1, 18), mat('#b8442f', 0.5)); mug.position.set(wr[0], wr[1] + 0.02, wr[2] + 0.03); body.add(mug); }
+  };
+  arm(1, !!o.phone, o.phone ? 'phone' : null); arm(-1, false, o.mug ? 'mug' : null);
+  limb(body, [0, 1.48, 0], [0, 1.6, 0.01], 0.05, skin);
+  // head: skull, jaw, nose, ears, brows, eyes; hair by type
+  const neck = new THREE.Group(); neck.position.set(0, 1.6 * 1, 0.01); body.add(neck);
+  const head = new THREE.Group(); head.position.y = 0.13; neck.add(head);
+  const skull = new THREE.Mesh(new THREE.SphereGeometry(0.115, 28, 20), skin); skull.scale.set(0.92, 1.08, 1.02); head.add(skull);
+  const jaw = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 14), skin); jaw.scale.set(0.95, 0.8, 0.95); jaw.position.set(0, -0.06, 0.02); head.add(jaw);
+  const nose = new THREE.Mesh(new THREE.ConeGeometry(0.018, 0.05, 10), skin); nose.rotation.x = Math.PI / 2 + 0.25; nose.position.set(0, -0.005, 0.115); head.add(nose);
+  for (const s of [-1, 1]) {
+    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.025, 10, 8), skin); ear.scale.set(0.5, 1, 0.8); ear.position.set(s * 0.105, 0, -0.005); head.add(ear);
+    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.014, 10, 8), mat('#0b0b0c', 0.3)); eye.position.set(s * 0.04, 0.02, 0.098); head.add(eye);
+    const brow = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.008, 0.01), hairM); brow.position.set(s * 0.04, 0.05, 0.103); brow.rotation.z = -s * 0.12; head.add(brow);
+  }
+  const hair = o.hair || 'short';
+  if (hair === 'bald') { const ring = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.03, 10, 28, Math.PI * 1.2), hairM); ring.rotation.set(Math.PI / 2, 0, Math.PI * -0.1 + Math.PI); ring.position.set(0, 0.0, -0.01); head.add(ring); }
+  else if (hair === 'beanie') { const b = new THREE.Mesh(new THREE.SphereGeometry(0.122, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.55), mat(o.hairCol || '#7a2b2b', 0.9)); b.position.y = 0.02; head.add(b); }
+  else { const cap = new THREE.Mesh(new THREE.SphereGeometry(0.121, 24, 16, 0, Math.PI * 2, 0, Math.PI * (hair === 'short' ? 0.5 : 0.62)), hairM); cap.rotation.x = -0.35; cap.position.set(0, 0.01, -0.012); head.add(cap);
+    if (hair === 'bun') { const bun = new THREE.Mesh(new THREE.SphereGeometry(0.05, 14, 10), hairM); bun.position.set(0, 0.1, -0.08); head.add(bun); }
+    if (hair === 'pony') limb(head, [0, 0.03, -0.11], [0, -0.16, -0.14], 0.03, hairM); }
+  if (o.glasses) { const gm = mat('#111214', 0.3, 0.6); for (const s of [-1, 1]) { const r = new THREE.Mesh(new THREE.TorusGeometry(0.024, 0.004, 6, 20), gm); r.position.set(s * 0.04, 0.02, 0.112); head.add(r); } const br = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.004, 0.004), gm); br.position.set(0, 0.025, 0.115); head.add(br); }
+  // eyes rolled up to the sky, glowing (only the neighbour uses them)
+  const eyes = new THREE.Group(); head.add(eyes);
+  const em = new THREE.MeshBasicMaterial({color: new THREE.Color(P.white).multiplyScalar(1.5), toneMapped: false});
+  for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.SphereGeometry(0.0125, 12, 10), em); e.position.set(s * 0.04, 0.026, 0.1); eyes.add(e); }
+  eyes.visible = false;
+  body.scale.setScalar(H);
+  g.traverse((x) => { if (x.isMesh) x.castShadow = true; });
+  Object.assign(g.userData, {neck, head, eyes, body});
+  return g;
+}
+// a dog on a leash: body, head, ears, legs, tail
+function dog(col = '#8a6a48') {
+  const g = new THREE.Group(), m = mat(col, 0.85);
+  const b = new THREE.Mesh(new THREE.CapsuleGeometry(0.13, 0.42, 6, 14), m); b.rotation.z = Math.PI / 2; b.position.y = 0.42; g.add(b);
+  for (const [x, z] of [[0.2, 0.08], [0.2, -0.08], [-0.2, 0.08], [-0.2, -0.08]]) limb(g, [x, 0.38, z], [x, 0.02, z], 0.035, m);
+  const hd = new THREE.Mesh(new THREE.SphereGeometry(0.11, 16, 12), m); hd.position.set(0.42, 0.6, 0); g.add(hd);
+  const sn = new THREE.Mesh(new THREE.CapsuleGeometry(0.05, 0.08, 4, 10), m); sn.rotation.z = Math.PI / 2; sn.position.set(0.53, 0.56, 0); g.add(sn);
+  for (const z of [-0.06, 0.06]) { const e = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.09, 8), m); e.position.set(0.4, 0.71, z); g.add(e); }
+  limb(g, [-0.32, 0.48, 0], [-0.46, 0.62, 0], 0.025, m);
+  g.traverse((x) => { if (x.isMesh) x.castShadow = true; });
   return g;
 }
 
@@ -136,7 +199,7 @@ function buildWorld(scene) {
   const lamps = [], lampHeads = [];
   for (let x = -66; x <= 66; x += 12) {
     for (const z of [-6.2, 6.2]) {
-      const tx0 = x + 5 + r() * 2; if (r() < 0.75 && Math.abs(tx0) > 8) { const tx = tx0; box(world, 0.25, 2.6, 0.25, M.trunk, tx, 1.3, z); const leaf = new THREE.Mesh(new THREE.SphereGeometry(1.5 + r() * 0.5, 14, 10), M.leaf); leaf.position.set(tx, 3.6, z); leaf.castShadow = true; world.add(leaf); }
+      const tx0 = x + 5 + r() * 2; if (r() < 0.75 && Math.abs(tx0) > 8 && !(tx0 > -22 && tx0 < -5)) { const tx = tx0; box(world, 0.25, 2.6, 0.25, M.trunk, tx, 1.3, z); const leaf = new THREE.Mesh(new THREE.SphereGeometry(1.5 + r() * 0.5, 14, 10), M.leaf); leaf.position.set(tx, 3.6, z); leaf.castShadow = true; world.add(leaf); }
     }
     const z = (x + 66) % 24 === 0 ? -7.2 : 7.2;
     box(world, 0.12, 6, 0.12, M.metal, x, 3, z); box(world, 0.12, 0.1, 1.4, M.metal, x, 6, z - Math.sign(z) * 0.7);
@@ -155,8 +218,19 @@ function buildWorld(scene) {
   for (const z of [-0.6, 0.6]) { const h = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.12, 0.28), tl); h.position.set(2.11, 0.72, z); car.add(h); }
 
   // the neighbour, in his yard, facing the street (+z) and us
-  const man = person(M.man); man.position.set(0.3, 0, -9.4); man.rotation.y = Math.PI / 2; man.userData.neck.rotation.order = 'YXZ'; world.add(man);   // faces down the street (+x)
-  return {M, world, glow, lamps, lampHeads, man, car, hl, porch};
+  // the neighbour: retired, bald, glasses, striped bathrobe, slippers, a mug of tea at 2 a.m.
+  const man = human({skin: '#d9ae90', robe: ['#7a2531', '#e6dbc4'], hair: 'bald', hairCol: '#c2bdb4', glasses: true, belly: true, mug: true, shoes: '#6b5640'});
+  man.position.set(0.3, 0, -9.4); man.rotation.y = Math.PI / 2; man.userData.neck.rotation.order = 'YXZ'; world.add(man);   // faces down the street (+x)
+  // people out on the street when the message lands (opening shot)
+  const crowd = [];
+  const add = (o, x, z, ry) => { const p = human({phone: true, ...o}); p.position.set(x, 0.18, z); p.rotation.y = ry; world.add(p); const L = new THREE.PointLight(P.phone, 0, 1.4, 2); world.add(L); crowd.push({p, L}); return p; };
+  add({female: true, hair: 'pony', hairCol: '#3a2416', top: '#6b7f5a', bottom: '#1f2430', skin: '#e0b49a'}, -12, 6.1, -2.0);
+  const d = dog(); d.position.set(-11.3, 0.18, 6.9); d.rotation.y = 2.6; world.add(d);
+  limb(world, [-11.85, 1.0, 6.3], [-11.55, 0.62, 6.8], 0.006, mat('#b33', 0.6));
+  add({hair: 'beanie', hairCol: '#c23b2f', top: '#2b3b5c', bottom: '#111317', skin: '#8d5a3c', h: 1.04}, -8.6, -5.9, Math.PI * 0.85);
+  add({hair: 'short', hairCol: '#1c1612', top: '#5a4636', bottom: '#2a2d36', skin: '#c08a68'}, -15.2, -6.2, 0.2);
+  add({female: true, hair: 'bun', hairCol: '#6b4a2e', top: '#8a3c4f', bottom: '#23262d', skin: '#f0c8ae', h: 0.95}, -14.6, -6.3, -0.3);
+  return {M, world, glow, lamps, lampHeads, man, car, hl, porch, crowd};
 }
 
 // sky: gradient dome + stars; the ship: a dark disc that blots out the stars, rim-lit
@@ -323,16 +397,16 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
     for (const g of world.glow) g.m.opacity = 0.9 * easeOutCubic(p01(t, TL.glowAt + g.d * 0.012, TL.glowAt + 0.35 + g.d * 0.012));
     // the street goes dead: lamps die one by one, the car's lights go out
     world.lamps.forEach(({L, x}, i) => { const off = p01(t, TL.lightsDie[0] + (x + 60) / 120 * (TL.lightsDie[1] - TL.lightsDie[0]) - 0.15, TL.lightsDie[0] + (x + 60) / 120 * (TL.lightsDie[1] - TL.lightsDie[0])); const f = 1 - off; L.intensity = 26 * f; world.lampHeads[i].color.set(P.sodium).multiplyScalar(2.2 * f + 0.05); });
+    world.crowd.forEach(({p, L}, i) => { const on = easeOutCubic(p01(t, TL.glowAt + 0.15 * i, TL.glowAt + 0.15 * i + 0.3)); p.userData.screen.color.set(P.phone).multiplyScalar(0.05 + 1.3 * on); const wp = p.localToWorld(p.userData.phonePos.clone()); L.position.copy(wp); L.intensity = 0.45 * on; });
     const carOff = p01(t, TL.lightsDie[1] - 0.6, TL.lightsDie[1] - 0.4); world.hl.intensity = 40 * (1 - carOff);
     world.porch.intensity = 3 * (1 - p01(t, TL.lightsDie[1] - 0.3, TL.lightsDie[1]));
     // white light from above on the neighbour
     const b = easeInOutCubic(p01(t, TL.beamUp[0], TL.beamUp[1])) * (t > TL.shipReveal[0] ? 1.3 : 1) + (t > 16 && t < TL.beamUp[0] ? 0.35 : 0);
-    cone.material.uniforms.uI.value = b; cone.material.uniforms.uT.value = t; top.intensity = 900 * b;
+    cone.material.uniforms.uI.value = b * (['face', 'eyes'].includes(sh.name) ? 0.45 : 1); cone.material.uniforms.uT.value = t; top.intensity = (['face', 'eyes'].includes(sh.name) ? 260 : 700) * b;
     // neighbour: head tipped back; at headTurn the head turns to us while the eyes stay pointed at the sky
     const turn = easeInOutCubic(p01(t, ...TL.headTurn));
     const {neck, eyes} = world.man.userData;
     neck.rotation.x = -0.75 * (1 - turn) + 0.05 * turn; neck.rotation.y = -Math.PI / 2 * turn;
-    eyes.rotation.x = -neck.rotation.x;    // counter-rotate: the eyes stay on top of the head, aimed at the sky
     eyes.visible = t > TL.eyesOn - 1.5;
     eyes.children.forEach((e) => (e.scale.setScalar(easeOutCubic(p01(t, TL.eyesOn - 1.5, TL.eyesOn)))));
     world.man.visible = t > 15;
@@ -346,7 +420,7 @@ runSim(DEFAULTS, async ({cfg, canvas, hud: hudKit, capture}) => {
     phoneLight.intensity = 0;
 
     if (sh.name === 'city') {
-      look([lerp(-55, -38, k), lerp(42, 30, k), lerp(70, 50, k)], [0, 0, -6], 48); scene.fog.density = 0.004;
+      const kc = easeInOutCubic(p01(lt, 0, dur * 0.95)); look([lerp(-36, -15.6, kc), lerp(19, 1.75, kc), lerp(-1.5, 4.3, kc)], [lerp(-10, -12.1, kc), lerp(0.5, 1.5, kc), lerp(-1, 6.0, kc)], lerp(50, 34, kc)); scene.fog.density = 0.006;
     } else if (sh.name === 'phone' || sh.name === 'msg' || sh.name === 'phone2') {
       look([EYE[0] + bx, EYE[1] + by - 0.05, EYE[2]], HEAD, 40); camera.rotateZ(br);
       let z = lerp(-0.27, -0.25, k), y = -0.004;
