@@ -114,12 +114,35 @@ def job_ping(job):
     return {"info.json": json.dumps(info, indent=1).encode()}
 
 
+def free_comfy():
+    """Ask ComfyUI to drop its models from VRAM (12 GB cards cannot hold Wan and the voice at once)."""
+    try:
+        requests.post(CFG.get("comfy_url", "http://127.0.0.1:8188") + "/free",
+                      json={"unload_models": True, "free_memory": True}, timeout=10)
+    except Exception:
+        pass  # ComfyUI not running - nothing to free
+
+
+def free_voice():
+    """Unload the voice models from this process before a video job."""
+    if "tts" in sys.modules:
+        t = sys.modules["tts"]
+        if t._tts is not None or t._asr is not None:
+            t._tts = t._asr = None
+            import gc, torch
+            gc.collect()
+            torch.cuda.empty_cache()
+            log("  voice models unloaded to make room for video")
+
+
 def job_tts(job):
+    free_comfy()
     import tts
     return tts.run(job, fetch, CFG)
 
 
 def job_comfy(job):
+    free_voice()
     import comfy
     return comfy.run(job, fetch, CFG)
 
