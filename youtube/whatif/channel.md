@@ -52,3 +52,14 @@ Oct 22 morning: Night 2 555 views / 31.8% avg viewed / 18 likes in 12 h; Night 1
 
 TikTok: dropped by the owner (Oct 22). Profile edits from the robot made TikTok sign the session out.
 Cookies die on "sign out of all devices": the owner re-exports when a check says "not signed in".
+
+## Daily Shorts schedule (owner: Shorts every day), 19:00 ET
+| Date | Short | Link |
+|---|---|---|
+| Oct 21 | Night 2 (went out a day early) | https://youtu.be/rD3sBxIL4U0 |
+| Oct 22 | Night 3 recut, cold open, 55 s (old FYHjeZMQzHA set private) | https://youtu.be/B2GH9tRlxoo |
+| Oct 23 | c1 "The Hallway Camera Was Broken…" (Night 1 cut) | uploaded, link in Studio |
+| Oct 24 | c2 "Someone Opened My Door With MY Key…" | https://youtu.be/4oH9gWnl7yw |
+| Oct 25 | c3 "He's Too Scared to Go Home. Because of Me." | https://youtu.be/hg2NbS4u-Rs |
+| Oct 26 | c4 "Someone in My Hoodie Is Knocking…" (+ long video 12:00) | https://youtu.be/BItIwHqgd0A |
+| Oct 27+ | new story nights (needs the ElevenLabs key with Text to Speech permission) | |
