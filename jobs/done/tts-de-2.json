@@ -1,0 +1,16 @@
+{
+ "id": "tts-de-2",
+ "type": "tts",
+ "lang": "de",
+ "exaggeration": 0.5,
+ "cfg_weight": 0.5,
+ "pause_ms": 350,
+ "text": "Erinnerst du dich noch an die Samstagabende im Jahr neunzehnhundertfünfundsiebzig? Die ganze Familie saß vor dem Fernseher. Auf dem Tisch standen Erdnussflips und eine Flasche Sinalco. Papa hatte die Fernbedienung, die es damals noch gar nicht gab. Wer umschalten wollte, musste aufstehen. Und genau so sind wir groß geworden.",
+ "finished": "2026-10-22 22:33:44",
+ "status": "done",
+ "outputs": [
+  "outputs/tts-de-2/narration.flac",
+  "outputs/tts-de-2/report.json"
+ ],
+ "seconds": 57
+}

@@ -1,0 +1,40 @@
+{
+ "chunks": 4,
+ "flagged": 0,
+ "seconds": 20.1,
+ "sample_rate": 24000,
+ "chunks_detail": [
+  {
+   "n": 0,
+   "text": "Erinnerst du dich noch an die Samstagabende im Jahr neunzehnhundertfünfundsiebzig?",
+   "heard": " Erinnerst du dich noch an die Samstagabende im Jahr 1975?",
+   "score": 0.9,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 1,
+   "text": "Die ganze Familie saß vor dem Fernseher. Auf dem Tisch standen Erdnussflips und eine Flasche Sinalco.",
+   "heard": " Die ganze Familie saß vor dem Fernseher.  Auf dem Tisch standen Erdnussflips und eine Flasche Sinauco.",
+   "score": 0.938,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 2,
+   "text": "Papa hatte die Fernbedienung, die es damals noch gar nicht gab. Wer umschalten wollte, musste aufstehen.",
+   "heard": " Papa hatte die Fernbedienung, die es damals noch gar nicht gab.  Wer umschalten wollte, musste aufstehen.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 3,
+   "text": "Und genau so sind wir groß geworden.",
+   "heard": " Und genau so, sind wir groß geworden?  Ähm...",
+   "score": 0.933,
+   "takes": 1,
+   "flag": false
+  }
+ ]
+}
