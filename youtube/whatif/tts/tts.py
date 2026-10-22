@@ -56,12 +56,15 @@ def main():
             "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}}
     name = src.stem
     try:
-        r = json.loads(call(f"/text-to-speech/{VOICE}/with-timestamps?output_format=mp3_44100_192", body))
+        r = json.loads(call(f"/text-to-speech/{VOICE}/with-timestamps?output_format=mp3_44100_128", body))
         (out / f"{name}.mp3").write_bytes(base64.b64decode(r["audio_base64"]))
         (out / f"{name}.alignment.json").write_text(json.dumps(r.get("alignment") or r.get("normalized_alignment")))
     except urllib.error.HTTPError as e:
         print("with-timestamps failed:", e.code, e.read()[:300].decode(errors="replace"))
-        (out / f"{name}.mp3").write_bytes(call(f"/text-to-speech/{VOICE}?output_format=mp3_44100_192", body))
+        try:
+            (out / f"{name}.mp3").write_bytes(call(f"/text-to-speech/{VOICE}?output_format=mp3_44100_128", body))
+        except urllib.error.HTTPError as e2:
+            sys.exit(f"TTS failed: HTTP {e2.code} {e2.read()[:300].decode(errors='replace')}")
     print("wrote", out / f"{name}.mp3", (out / f"{name}.mp3").stat().st_size, "bytes")
     quota()
 
