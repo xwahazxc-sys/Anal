@@ -1,0 +1,13 @@
+{
+ "id": "tts-de-1",
+ "type": "tts",
+ "lang": "de",
+ "exaggeration": 0.5,
+ "cfg_weight": 0.5,
+ "pause_ms": 350,
+ "text": "Erinnerst du dich noch an die Samstagabende im Jahr neunzehnhundertfünfundsiebzig? Die ganze Familie saß vor dem Fernseher. Auf dem Tisch standen Erdnussflips und eine Flasche Sinalco. Papa hatte die Fernbedienung, die es damals noch gar nicht gab. Wer umschalten wollte, musste aufstehen. Und genau so sind wir groß geworden.",
+ "finished": "2026-10-22 22:25:31",
+ "status": "failed",
+ "error": "Traceback (most recent call last):\n  File \"C:\\Anal\\local-worker\\worker.py\", line 141, in process\n    out = HANDLERS[kind](job)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\worker.py\", line 119, in job_tts\n    return tts.run(job, fetch, CFG)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\tts.py\", line 91, in run\n    voice = os.path.join(tmp, \"voice\" + os.path.splitext(job[\"voice\"])[1])\n                                                         ~~~^^^^^^^^^\nKeyError: 'voice'\n",
+ "seconds": 30
+}
