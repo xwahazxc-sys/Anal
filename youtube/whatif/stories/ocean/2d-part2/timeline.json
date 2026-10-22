@@ -1,0 +1,13 @@
+{
+ "duration": 42.2,
+ "night": "PART 2",
+ "endTitle": "THE END...?",
+ "shots": [["knockback", 0.0], ["silence", 6.85], ["move", 9.35], ["hatch", 15.5], ["captain", 17.3], ["wheel", 25.6], ["voice", 31.75], ["end", 37.7], ["title", 39.7]],
+ "myKnocks": [6.45, 6.75, 7.05],
+ "moveKnocks": [10.2, 11.3, 12.4, 13.5, 14.6],
+ "turn": [26.2, 37.6],
+ "white": 21.5,
+ "clockAt": [[0, "2:16"], [17.3, "2:19"]],
+ "sfx": [["knock", 6.45, -3, "atrim=0:0.35"], ["knock", 6.75, -3, "atrim=0:0.35"], ["knock", 7.05, -3, "atrim=0:0.35"], ["knock", 10.2, -8, "atrim=0:0.35"], ["knock", 11.3, -8, "atrim=0:0.35"], ["knock", 12.4, -7, "atrim=0:0.35"], ["knock", 13.5, -6, "atrim=0:0.35"], ["knock", 14.6, -5, "atrim=0:0.35"], ["heartbeat", 17.4, -12, "atrim=0:8,afade=t=out:st=7:d=1"], ["impact", 21.6, -10, ""], ["creak", 26.2, -6, ""], ["creak", 29.0, -8, ""], ["riser", 31.4, -14, ""], ["impact", 36.8, -7, ""], ["impact", 39.7, -8, ""]],
+ "bedMute": [39.7, 40.4]
+}
