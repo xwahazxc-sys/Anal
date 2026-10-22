@@ -1,0 +1,13 @@
+{
+ "id": "tts-en-1",
+ "type": "tts",
+ "lang": "en",
+ "exaggeration": 0.6,
+ "cfg_weight": 0.5,
+ "pause_ms": 300,
+ "text": "The alien doctor laughed at human pain tolerance. He had read the reports. Soft skin, fragile bones, a body that breaks if it falls from its own height. Then the human medic walked into the ward with a broken arm, set it herself, and finished her shift. The doctor stopped laughing that day.",
+ "finished": "2026-10-22 22:26:07",
+ "status": "failed",
+ "error": "Traceback (most recent call last):\n  File \"C:\\Anal\\local-worker\\worker.py\", line 141, in process\n    out = HANDLERS[kind](job)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\worker.py\", line 119, in job_tts\n    return tts.run(job, fetch, CFG)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\tts.py\", line 91, in run\n    voice = os.path.join(tmp, \"voice\" + os.path.splitext(job[\"voice\"])[1])\n                                                         ~~~^^^^^^^^^\nKeyError: 'voice'\n",
+ "seconds": 0
+}
