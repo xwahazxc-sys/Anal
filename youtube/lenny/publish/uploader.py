@@ -656,6 +656,11 @@ def pin_comment(page, video_id, text):
     page.wait_for_timeout(1000)
     page.get_by_text(re.compile(r"^\s*pin\s*$", re.I)).first.click(timeout=8000)
     page.wait_for_timeout(1500)
+    if page.get_by_text(re.compile(r"Get advanced features|one-time verification", re.I)).count():
+        shot(page, f"{video_id}_needs_verification")
+        log("PIN BLOCKED: channel needs one-time phone verification (Studio > Settings > Channel > Feature eligibility); comment is posted")
+        page.get_by_role("button", name=re.compile(r"^\s*cancel\s*$", re.I)).last.click(timeout=5000)
+        return
     page.get_by_role("button", name=re.compile(r"^\s*pin\s*$", re.I)).last.click(timeout=8000)
     page.wait_for_timeout(3000)
     shot(page, f"{video_id}_pinned")
