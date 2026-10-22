@@ -62,7 +62,7 @@ jobs:
           restore-keys: ck-${{ github.event.inputs.account || 'YT' }}-${{ steps.ck.outputs.h }}-
       - name: Decrypt renewed cookies
         env:
-          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
+          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (startsWith(github.event.inputs.account, 'YTS') && secrets.YT4_PROXY) || (startsWith(github.event.inputs.account, 'TTS') && secrets.TT_PROXY) || secrets.YT2_PROXY }}
         run: |
           if [ -f state/cookies.enc ]; then
             openssl enc -d -aes-256-cbc -pbkdf2 -pass env:K -in state/cookies.enc -out state/cookies.json || rm -f state/cookies.json
@@ -71,17 +71,17 @@ jobs:
         env:
           YT_COOKIES: ${{ secrets[format('{0}_COOKIES', github.event.inputs.account || 'YT')] }}
           # YTS = second channel (proxy of YT4), TTS = TikTok (proxy of TT)
-          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
+          YT_PROXY: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (startsWith(github.event.inputs.account, 'YTS') && secrets.YT4_PROXY) || (startsWith(github.event.inputs.account, 'TTS') && secrets.TT_PROXY) || secrets.YT2_PROXY }}
           ACCOUNT: ${{ github.event.inputs.account || 'YT' }}
-          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || github.event.inputs.account == 'YTS' || github.event.inputs.account == 'TT' || github.event.inputs.account == 'TTS') && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
+          QUEUE_DIR: ${{ (github.event.inputs.account == 'YT3' || github.event.inputs.account == 'YT4' || startsWith(github.event.inputs.account, 'YTS') || startsWith(github.event.inputs.account, 'TT')) && 'youtube/whatif/publish' || 'youtube/lenny/publish' }}
           IDS: ${{ github.event.inputs.ids }}
           PIN_TEXT: ${{ github.event.inputs.text }}
         run: |
-          if [ "$ACCOUNT" = "TT" ] || [ "$ACCOUNT" = "TTS" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
+          if [ "${ACCOUNT#TT}" != "$ACCOUNT" ]; then python youtube/publish/tiktok.py; else python youtube/lenny/publish/uploader.py; fi
       - name: Encrypt renewed cookies
         if: always()
         env:
-          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (github.event.inputs.account == 'YTS' && secrets.YT4_PROXY) || (github.event.inputs.account == 'TTS' && secrets.TT_PROXY) || secrets.YT2_PROXY }}
+          K: ${{ secrets[format('{0}_PROXY', github.event.inputs.account || 'YT')] || (startsWith(github.event.inputs.account, 'YTS') && secrets.YT4_PROXY) || (startsWith(github.event.inputs.account, 'TTS') && secrets.TT_PROXY) || secrets.YT2_PROXY }}
         run: |
           if [ -s state/cookies.json ]; then
             openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:K -in state/cookies.json -out state/cookies.enc
