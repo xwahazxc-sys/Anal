@@ -525,10 +525,34 @@ def brand_channel(page, prof):
         except Exception as e:
             log("set", heading, "failed:", type(e).__name__)
             return False
+    def form_values():
+        return page.evaluate("""() => [...document.querySelectorAll('input:not([type=file]), textarea')]
+            .map((e, i) => i + ':' + (e.getAttribute('aria-label') || e.name || e.id || '') + '=' + (e.value || '').slice(0, 40))""")
+    log("form before:", form_values())
+    # undo an earlier run that typed the handle into another field (e.g. contact email)
+    stray = page.evaluate("""(h) => [...document.querySelectorAll('input:not([type=file])')]
+        .map((e, i) => (e.value || '') === h ? i : -1).filter(i => i >= 0)""", prof["handle"])
+    for i in stray:
+        el = page.locator("input:not([type=file])").nth(i)
+        el.click(timeout=5000); page.keyboard.press("Control+A"); page.keyboard.press("Delete")
+        log("cleared stray handle text in input", i)
     ok_name = set_input("Name", prof["name"])
-    ok_handle = set_input("Handle", prof["handle"])
+    # the handle input is the one holding the current handle (headings matched the wrong field before)
+    ok_handle = False
+    old = prof.get("old_handle", "")
+    hidx = page.evaluate("""(old) => [...document.querySelectorAll('input:not([type=file])')]
+        .findIndex(e => old && (e.value || '').toLowerCase() === old.toLowerCase())""", old)
+    if hidx >= 0:
+        el = page.locator("input:not([type=file])").nth(hidx)
+        el.click(timeout=5000); page.keyboard.press("Control+A"); page.keyboard.press("Delete")
+        el.type(prof["handle"], delay=40)
+        page.wait_for_timeout(4000)
+        ok_handle = el.input_value() == prof["handle"]
+    else:
+        log("handle input not found by its current value", old)
     ok_desc = set_field(r"tell viewers about your channel", prof["description"])
     log("fields:", "name", ok_name, "handle", ok_handle, "description", ok_desc)
+    log("form after:", form_values())
     page.wait_for_timeout(3000)  # handle availability check
     shot(page, "brand_filled")
     page.get_by_role("button", name=re.compile(r"^\s*publish\s*$", re.I)).first.click(timeout=10000)
