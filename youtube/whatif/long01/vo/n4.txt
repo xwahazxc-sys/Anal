@@ -31,4 +31,3 @@ And somewhere under the building... an elevator dings.
 [pause] Dev sends one last message.
 "He isn't running away. He's going to meet the first one."
 [pause] Would you have moved out after the first night?
-Next... Floor zero.
