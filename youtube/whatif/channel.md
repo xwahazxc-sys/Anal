@@ -65,3 +65,4 @@ Cookies die on "sign out of all devices": the owner re-exports when a check says
 | Oct 27+ | new story nights (needs the ElevenLabs key with Text to Speech permission) | |
 | Oct 27 | Do Not Look Up, Part 1 (2D silhouette style) | https://youtu.be/-EcXXHtNUlc |
 | Oct 28 | Do Not Look Up, Part 2 | https://youtu.be/XhrBG0dzUzo |
+| Oct 26 12:00 | LONG: Group Chat full story (2D, 6:40, Night 4 exclusive) | https://youtu.be/euXr4MdDlLc |
