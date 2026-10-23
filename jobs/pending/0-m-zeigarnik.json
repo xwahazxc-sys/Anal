@@ -1,1 +1,0 @@
-{"id": "0-m-zeigarnik", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "ss-m-zeigarnik", "seconds": 40, "seed": 21, "bpm": 70, "key": "D minor", "tags": "dark minimal pulse, ticking clock, deep sub, sparse piano, suspense, 70 bpm, instrumental", "lyrics": "[Instrumental]"}}
