@@ -10,6 +10,7 @@ In this town you can't be born, and you can't be buried. So why do more than two
 
 [TITLE — 78°N 15°E · LONGYEARBYEN, SVALBARD]
 This is Longyearbyen, on the Norwegian archipelago of Svalbard. Thirteen hundred kilometres from the North Pole. Closer to the Pole than to Oslo. It is the northernmost town on Earth with a school, a hospital, a supermarket and an airport with scheduled flights. And almost everything about living here comes with a rule you have never heard of.
+The town began in 1906, when an American businessman, John Munro Longyear, came here to dig coal. His name stuck. Coal is the reason the town exists, and today the mining is almost over. But the old wooden towers that once carried the coal across the valley are still standing, like a skeleton of the place it used to be.
 
 [1 — THE DARK]
 Start with the light, because for a third of the year there isn't any.
@@ -36,10 +37,12 @@ Inside the line, you're in a town. Beyond it, you're in polar bear country, and 
 Even the university here, the northernmost in the world, starts every new student's year the same way: with a safety course, and a lesson on how to handle a rifle.
 Polar bears are protected, and shooting one is allowed only when your life is in danger, and every single case is investigated.
 So children here learn two things about the outdoors very early: never go past the signs alone, and always look behind you.
+And every so often, a bear doesn't stop at the signs. It walks into the settlement itself. Word goes out, people stay indoors, and the governor's team uses a helicopter to drive the animal back out toward the ice.
 
 [TEASE]
 But the strangest rule in Longyearbyen isn't about birth, or death, or bears.
 It's about who is allowed to stay.
+There's no welfare office here. Almost no one retires here. If you can't support yourself, you can be refused the right to stay at all.
 Because this is one of the only places on Earth where people from dozens of countries can move in and work without a visa — under a treaty signed in 1920. And yet almost no one stays for life. To understand why, you have to look at what it actually costs to survive a year at seventy-eight degrees north.
 
 [END OF SAMPLE — full episode continues]
@@ -51,5 +54,8 @@ Because this is one of the only places on Earth where people from dozens of coun
 - Births: no maternity care in Longyearbyen; women travel to the mainland weeks before due date.
 - Rifle: protection required beyond settlement; flare gun first; shooting only in self-defence, investigated by the Governor.
 - Svalbard Treaty 1920: nationals of treaty states have equal right to reside and work; no Svalbard visa (Schengen transit still applies).
+- Founding: Longyear City 1906, Arctic Coal Company of John Munro Longyear; Norwegian coal mining ending (Mine 7 closure set for 2025) → "almost over".
+- Bears entering town: occasional; Governor (Sysselmesteren) chases them out by helicopter.
+- Svalbard rules allow refusing residence to people who cannot support themselves; no mainland-style welfare.
 - UNIS (University Centre in Svalbard): mandatory safety course incl. rifle training for students.
 - Removed the popular "more polar bears than people" line: the 2015 count on the Norwegian side was ~1,000 bears.
