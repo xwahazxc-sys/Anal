@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s06",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s06",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1005,
+  "prompt": "Interior of a small arctic supermarket at night, shelves of groceries, snow boots by the door, warm fluorescent light, a few shoppers seen from behind. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
