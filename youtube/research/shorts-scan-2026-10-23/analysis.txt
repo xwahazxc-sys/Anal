@@ -1,0 +1,256 @@
+
+==== space_en (short)
+  active channels in month sample: 230 (videos 344); new uploads this week (8 queries): 239
+  size: <10k 210 | 10-100k 13 | 100k-1M 5 | 1M+ 2
+  top-3 channels take 42% of sampled views
+  channels <=6 months: 101  | median>=1k 18/101  >=5k 0/101  >=20k 0/101
+  channels >1 year:   111  | median>=1k 35/111  >=5k 16/111  >=20k 9/111
+  newcomers' median-of-medians: 95
+    Jam Clothing               subs=      318 age= 4579d med=       27 month-sample=    282,631
+    Valuetainment Comedy       subs=1,020,000 age= 1604d med=   48,000 month-sample=    253,731
+    DStrike                    subs=  110,000 age= 3120d med=   43,000 month-sample=    203,194
+    Liza                       subs=      272 age=   21d med=    2,200 month-sample=     74,424
+    ERADES PLANETBALLZ (oficia subs=      292 age=  121d med=       49 month-sample=     69,754
+    Dugg Abrugar               subs=    7,220 age= 1143d med=    2,400 month-sample=     48,476
+    Mr. Earth                  subs=   45,000 age=  203d med=  197,000 month-sample=     37,344
+    NO LEGACY                  subs=    1,090 age=  861d med=    5,600 month-sample=     34,477
+
+==== body_en (short)
+  active channels in month sample: 253 (videos 398); new uploads this week (8 queries): 353
+  size: <10k 230 | 10-100k 16 | 100k-1M 7 | 1M+ 0
+  top-3 channels take 79% of sampled views
+  channels <=6 months: 116  | median>=1k 16/116  >=5k 1/116  >=20k 0/116
+  channels >1 year:   111  | median>=1k 26/111  >=5k 9/111  >=20k 2/111
+  newcomers' median-of-medians: 95
+    Chittara                   subs=  349,000 age= 2729d med=    6,100 month-sample=     52,202
+    DStrike                    subs=  110,000 age= 3120d med=   43,000 month-sample=      2,189
+    The Thick Necks            subs=   46,000 age=  848d med=   10,000 month-sample=      2,068
+    Fun Facts Cartoon          subs=    1,560 age= 3615d med=       53 month-sample=        982
+    SethTV Love                subs=  119,000 age= 5860d med=    7,650 month-sample=        943
+    Models X bio               subs=   24,900 age= 1642d med=      985 month-sample=        939
+    The "W.E." Workman Experie subs=  373,000 age= 1478d med=      629 month-sample=        888
+    MS kids                    subs=   15,800 age= 1759d med=    3,300 month-sample=        830
+
+==== money_en (short)
+  active channels in month sample: 257 (videos 369); new uploads this week (8 queries): 373
+  size: <10k 230 | 10-100k 20 | 100k-1M 6 | 1M+ 1
+  top-3 channels take 71% of sampled views
+  channels <=6 months: 102  | median>=1k 17/102  >=5k 2/102  >=20k 0/102
+  channels >1 year:   134  | median>=1k 30/134  >=5k 6/134  >=20k 3/134
+  newcomers' median-of-medians: 115
+    Manoriya vlog              subs=  100,000 age= 2645d med=    1,100 month-sample=     68,791
+    Black Hill Music           subs=    1,210 age= 1107d med=       61 month-sample=     50,636
+    Chadi Lahbat               subs=   14,700 age=  738d med=  246,500 month-sample=     40,391
+    Mia Veranika               subs=   40,000 age= 4623d med=      738 month-sample=     11,603
+    Kinesis Money              subs=   65,300 age= 3172d med=    1,500 month-sample=      9,961
+    Rizwan Saifi               subs=   59,500 age= 5026d med=    7,950 month-sample=      7,164
+    Ruah TV                    subs=  132,000 age= 4440d med=    3,000 month-sample=      6,939
+    Nose Piercing              subs=    3,180 age=  158d med=    7,350 month-sample=      1,928
+
+==== psych_en (short)
+  active channels in month sample: 200 (videos 335); new uploads this week (8 queries): 252
+  size: <10k 186 | 10-100k 8 | 100k-1M 5 | 1M+ 1
+  top-3 channels take 79% of sampled views
+  channels <=6 months: 109  | median>=1k 11/109  >=5k 1/109  >=20k 0/109
+  channels >1 year:   70  | median>=1k 16/70  >=5k 6/70  >=20k 5/70
+  newcomers' median-of-medians: 32
+    Psychologyfact500          subs=  181,000 age= 1177d med=   25,000 month-sample=     34,358
+    Psychologyfact2023-q3o     subs=      191 age=  328d med=      337 month-sample=      7,562
+    Best of Raw Talks (Clips)  subs=  321,000 age= 2452d med=   57,000 month-sample=      3,734
+    Painfully Gifted TV Offici subs=   12,100 age=  146d med=    2,750 month-sample=      2,754
+    Diagnose The Room          subs=       11 age=   28d med=       59 month-sample=        693
+    STC™ Consumer Education    subs=1,330,000 age= 1725d med=    1,650 month-sample=        459
+     Panda Gang 🐼              subs=   15,100 age=  524d med=    4,350 month-sample=        361
+    Violettt Von Schwarrtz🇺🇦   subs=   58,200 age= 3870d med=      738 month-sample=        358
+
+==== history_en (short)
+  active channels in month sample: 199 (videos 312); new uploads this week (8 queries): 270
+  size: <10k 185 | 10-100k 10 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 37% of sampled views
+  channels <=6 months: 102  | median>=1k 19/102  >=5k 0/102  >=20k 0/102
+  channels >1 year:   75  | median>=1k 16/75  >=5k 2/75  >=20k 1/75
+  newcomers' median-of-medians: 173
+    AB Telugu facts            subs=   41,100 age= 1152d med=    8,200 month-sample=      4,129
+    UncoveredHistoryLGC        subs=    7,910 age=   81d med=    1,600 month-sample=      2,914
+    TrendPulse USA             subs=       18 age=   74d med=       19 month-sample=      2,086
+    GroveVex                   subs=      106 age=  486d med=    1,250 month-sample=      1,290
+    Renata Beatriz             subs=    2,100 age= 1107d med=    2,100 month-sample=      1,165
+    Just Listen Podcast With W subs=    3,510 age= 1079d med=    1,050 month-sample=        976
+    Flix Tales                 subs=       80 age=   46d med=       29 month-sample=        923
+    ViralStylepk               subs=       17 age=  449d med=        4 month-sample=        711
+
+==== ww2_en (short)
+  active channels in month sample: 114 (videos 165); new uploads this week (8 queries): 37
+  size: <10k 100 | 10-100k 10 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 87% of sampled views
+  channels <=6 months: 53  | median>=1k 7/53  >=5k 2/53  >=20k 1/53
+  channels >1 year:   54  | median>=1k 12/54  >=5k 3/54  >=20k 2/54
+  newcomers' median-of-medians: 61
+    EveryDay FN                subs=  366,000 age= 2785d med=   50,000 month-sample=    117,692
+    Wild Haven                 subs=      763 age=   31d med=      475 month-sample=      4,494
+    UncoveredHistoryLGC        subs=    7,910 age=   81d med=    1,600 month-sample=      2,914
+    K-POP ZPT                  subs=   29,900 age=  118d med=   75,500 month-sample=      2,257
+    fanjar Siel                subs=  135,000 age=  277d med=  129,000 month-sample=      1,944
+    TrendRush                  subs=       12 age=   60d med=       15 month-sample=      1,490
+    Models X bio               subs=   24,900 age= 1642d med=      985 month-sample=        962
+    NewsBuzz UK 🇬🇧             subs=    5,000 age=  275d med=      378 month-sample=        740
+
+==== myth_en (short)
+  active channels in month sample: 162 (videos 297); new uploads this week (8 queries): 106
+  size: <10k 156 | 10-100k 4 | 100k-1M 2 | 1M+ 0
+  top-3 channels take 97% of sampled views
+  channels <=6 months: 74  | median>=1k 11/74  >=5k 2/74  >=20k 1/74
+  channels >1 year:   70  | median>=1k 13/70  >=5k 2/70  >=20k 0/70
+  newcomers' median-of-medians: 33
+    VYRMA                      subs=  184,000 age=  180d med=  180,000 month-sample=    314,229
+    Babyta_Script              subs=   29,700 age= 2211d med=    3,750 month-sample=     17,262
+    Glitchy Games              subs=    3,740 age= 1800d med=    2,100 month-sample=      8,628
+    Shortpadi                  subs=      534 age=  437d med=      269 month-sample=      1,109
+    JAPAN  GUIDE               subs=       59 age=   27d med=      583 month-sample=        972
+    FamíliaXP23                subs=   19,300 age= 2025d med=    2,300 month-sample=        640
+    Heritage Cipher            subs=      702 age=  288d med=    1,050 month-sample=        495
+    TrendPulse USA             subs=       18 age=   74d med=       19 month-sample=        412
+
+==== horror_en (short)
+  active channels in month sample: 176 (videos 311); new uploads this week (8 queries): 151
+  size: <10k 165 | 10-100k 7 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 69% of sampled views
+  channels <=6 months: 73  | median>=1k 13/73  >=5k 1/73  >=20k 0/73
+  channels >1 year:   89  | median>=1k 34/89  >=5k 7/89  >=20k 4/89
+  newcomers' median-of-medians: 78
+    DARKLAB - short horror fil subs=   39,400 age= 1172d med=    3,500 month-sample=    274,007
+    Wilson Cleveland           subs=   46,700 age= 7276d med=    4,250 month-sample=    116,719
+    LARA'S HORROR SOUNDS       subs=  323,000 age= 3642d med=    7,000 month-sample=     60,921
+    Dattrax_SFM                subs=   11,800 age= 1585d med=   28,500 month-sample=      8,994
+    xtheticshinobu             subs=  104,000 age= 5348d med=    4,700 month-sample=      6,108
+    AKIN ALTAN                 subs=  265,000 age= 4085d med=    1,500 month-sample=      3,807
+    Gobrayzee                  subs=       12 age= 1514d med=    1,200 month-sample=      3,431
+    UncoveredHistoryLGC        subs=    7,910 age=   81d med=    1,600 month-sample=      2,914
+
+==== survival_en (short)
+  active channels in month sample: 225 (videos 314); new uploads this week (8 queries): 498
+  size: <10k 200 | 10-100k 21 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 84% of sampled views
+  channels <=6 months: 102  | median>=1k 24/102  >=5k 4/102  >=20k 3/102
+  channels >1 year:   104  | median>=1k 35/104  >=5k 6/104  >=20k 2/104
+  newcomers' median-of-medians: 172
+    Chizzyfooty                subs=   21,600 age= 1676d med=    3,850 month-sample=    898,516
+    Mangwar                    subs=    1,330 age= 1825d med=    1,200 month-sample=    250,694
+    DStrike                    subs=  110,000 age= 3120d med=   43,000 month-sample=    228,160
+    Know In 10                 subs=    3,430 age=  570d med=    1,350 month-sample=     10,018
+    World in 15 Seconds        subs=    2,010 age=   96d med=      876 month-sample=      6,652
+    Otoks Vtuber Clips         subs=    5,650 age=  900d med=    1,900 month-sample=      4,677
+    小小小砸墨                      subs=   56,200 age= 2091d med=    4,650 month-sample=      2,439
+    @Funnymaster the son of In subs=    5,200 age= 1044d med=    1,200 month-sample=      2,374
+
+==== animals_en (short)
+  active channels in month sample: 247 (videos 385); new uploads this week (8 queries): 244
+  size: <10k 229 | 10-100k 14 | 100k-1M 3 | 1M+ 1
+  top-3 channels take 81% of sampled views
+  channels <=6 months: 116  | median>=1k 21/116  >=5k 2/116  >=20k 1/116
+  channels >1 year:   109  | median>=1k 32/109  >=5k 7/109  >=20k 4/109
+  newcomers' median-of-medians: 40
+    Following Stars fs         subs=   13,600 age= 1772d med=   20,000 month-sample=    497,585
+    Fessi                      subs=   14,500 age=  267d med=   20,000 month-sample=    237,287
+    Map animation              subs=   32,900 age=  548d med=  334,000 month-sample=     98,476
+    Ed bot TV                  subs=2,520,000 age= 3031d med=  106,500 month-sample=     60,987
+    Dugg Abrugar               subs=    7,220 age= 1143d med=    2,400 month-sample=     48,476
+    Bar Animation              subs=    2,110 age= 1728d med=    6,400 month-sample=      3,252
+    Tickly Tales               subs=      351 age= 2055d med=       66 month-sample=      2,310
+    Bal Sanskar TV             subs=  101,000 age=  124d med=      320 month-sample=      1,632
+
+==== cars_en (short)
+  active channels in month sample: 231 (videos 364); new uploads this week (8 queries): 158
+  size: <10k 212 | 10-100k 12 | 100k-1M 5 | 1M+ 2
+  top-3 channels take 94% of sampled views
+  channels <=6 months: 92  | median>=1k 20/92  >=5k 0/92  >=20k 0/92
+  channels >1 year:   120  | median>=1k 41/120  >=5k 9/120  >=20k 4/120
+  newcomers' median-of-medians: 95
+    Jaguar                     subs=  267,000 age= 7233d med=   12,000 month-sample=    197,285
+    Valuetainment Comedy       subs=1,020,000 age= 1604d med=   48,000 month-sample=    142,970
+    sri.Tamilgarage            subs=       49 age=   76d med=      390 month-sample=      2,345
+    Engineer Explain in hindi  subs=  497,000 age= 1270d med=  106,000 month-sample=      2,322
+    VRD History                subs=      114 age= 1314d med=      301 month-sample=      2,288
+    fanjar Siel                subs=  135,000 age=  277d med=  129,000 month-sample=      1,962
+    Fun Facts Cartoon          subs=    1,560 age= 3615d med=       53 month-sample=      1,919
+    Desew Tutorial             subs=   11,400 age= 1510d med=      964 month-sample=      1,832
+
+==== engineering_en (short)
+  active channels in month sample: 265 (videos 400); new uploads this week (8 queries): 381
+  size: <10k 241 | 10-100k 20 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 41% of sampled views
+  channels <=6 months: 125  | median>=1k 20/125  >=5k 1/125  >=20k 0/125
+  channels >1 year:   123  | median>=1k 26/123  >=5k 9/123  >=20k 2/123
+  newcomers' median-of-medians: 175
+    FastTicket                 subs=    6,650 age=  604d med=      383 month-sample=     13,766
+    Media Mittai               subs=   13,400 age= 1191d med=    6,400 month-sample=      4,077
+    Shibingski                 subs=      726 age= 5942d med=    1,400 month-sample=      3,723
+    Flaw&Foundation            subs=      135 age= 3290d med=      658 month-sample=      3,253
+    Engineer Explain in hindi  subs=  497,000 age= 1270d med=  106,000 month-sample=      2,322
+    The Thick Necks            subs=   46,000 age=  848d med=   10,000 month-sample=      2,147
+    Bal Sanskar TV             subs=  101,000 age=  124d med=      320 month-sample=      1,632
+    FluidXAV                   subs=      817 age= 1936d med=      228 month-sample=      1,366
+
+==== geo_en (short)
+  active channels in month sample: 174 (videos 280); new uploads this week (8 queries): 171
+  size: <10k 158 | 10-100k 8 | 100k-1M 7 | 1M+ 1
+  top-3 channels take 70% of sampled views
+  channels <=6 months: 70  | median>=1k 20/70  >=5k 2/70  >=20k 2/70
+  channels >1 year:   86  | median>=1k 19/86  >=5k 8/86  >=20k 5/86
+  newcomers' median-of-medians: 226
+    Do you know facts          subs=  286,000 age= 1317d med=    5,850 month-sample=    590,770
+    Kellie-Jay Keen            subs=  136,000 age= 5652d med=   11,000 month-sample=    306,515
+    AFP News Agency            subs=2,680,000 age= 7591d med=    2,850 month-sample=    258,161
+    Map animation              subs=   32,900 age=  548d med=  334,000 month-sample=     61,499
+    Payments Professor         subs=    8,930 age= 2875d med=      275 month-sample=      5,023
+    Object Stories AI          subs=   13,300 age=  628d med=   51,000 month-sample=      4,983
+    Best of Raw Talks (Clips)  subs=  321,000 age= 2452d med=   57,000 month-sample=      4,064
+    NYXULOR                    subs=    9,860 age=  739d med=   15,000 month-sample=      3,970
+
+==== compare_de (short)
+  active channels in month sample: 88 (videos 164); new uploads this week (8 queries): 68
+  size: <10k 74 | 10-100k 10 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 94% of sampled views
+  channels <=6 months: 27  | median>=1k 9/27  >=5k 2/27  >=20k 0/27
+  channels >1 year:   57  | median>=1k 20/57  >=5k 4/57  >=20k 0/57
+  newcomers' median-of-medians: 174
+    Kellie-Jay Keen            subs=  136,000 age= 5652d med=   11,000 month-sample=    306,515
+    Violettt Von Schwarrtz🇺🇦   subs=   58,200 age= 3870d med=      738 month-sample=     13,557
+    Oblizz Clipz               subs=   46,100 age= 1484d med=    5,450 month-sample=      5,802
+    Naveens vlog               subs=   30,100 age= 2262d med=   14,500 month-sample=      5,263
+    Painfully Gifted TV Offici subs=   12,100 age=  146d med=    2,750 month-sample=      2,784
+     Healthy lifestyle         subs=   52,400 age= 4734d med=    6,950 month-sample=      2,681
+    Step At Home               subs=   46,200 age= 2075d med=       29 month-sample=      1,471
+    DianShorts                 subs=  226,000 age=  209d med=  194,000 month-sample=      1,003
+
+==== facts_de (short)
+  active channels in month sample: 151 (videos 233); new uploads this week (8 queries): 66
+  size: <10k 97 | 10-100k 45 | 100k-1M 9 | 1M+ 0
+  top-3 channels take 88% of sampled views
+  channels <=6 months: 24  | median>=1k 7/24  >=5k 3/24  >=20k 1/24
+  channels >1 year:   111  | median>=1k 54/111  >=5k 18/111  >=20k 12/111
+  newcomers' median-of-medians: 90
+    Models X bio               subs=   24,900 age= 1642d med=      986 month-sample=    322,439
+    Chadi Lahbat               subs=   14,800 age=  738d med=  248,000 month-sample=     11,237
+    Golden Bengal Balls        subs=    3,760 age= 1218d med=    3,850 month-sample=      7,265
+    🐾Chronabug🐞                subs=    2,670 age=  249d med=    1,300 month-sample=      5,241
+    World in 15 Seconds        subs=    2,010 age=   96d med=      876 month-sample=      4,769
+    UncoveredHistoryLGC        subs=    7,910 age=   81d med=    1,600 month-sample=      2,914
+    footiecontext              subs=   16,900 age= 2005d med=      212 month-sample=      2,403
+    NovaEditz                  subs=   40,100 age=  429d med=    3,650 month-sample=      1,918
+
+==== drama_en (short)
+  active channels in month sample: 249 (videos 399); new uploads this week (8 queries): 299
+  size: <10k 232 | 10-100k 12 | 100k-1M 5 | 1M+ 0
+  top-3 channels take 47% of sampled views
+  channels <=6 months: 104  | median>=1k 22/104  >=5k 3/104  >=20k 1/104
+  channels >1 year:   124  | median>=1k 39/124  >=5k 8/124  >=20k 2/124
+  newcomers' median-of-medians: 133
+    Kids Animation World       subs=    3,780 age=   95d med=      396 month-sample=     19,739
+    Layzi                      subs=   22,700 age=   53d med=    6,000 month-sample=     11,140
+    Green TV Dramas            subs=  925,000 age=  674d med=      234 month-sample=      9,595
+    Stick intel yt1            subs=   14,100 age=  113d med=   66,000 month-sample=      7,357
+    Meaty Yappachino           subs=    7,310 age= 2375d med=    7,400 month-sample=      4,168
+    Dattrax_SFM                subs=   11,800 age= 1585d med=   28,500 month-sample=      2,997
+    Trisha Krishnan FC         subs=   70,300 age= 1127d med=    5,850 month-sample=      2,803
+    Painfully Gifted TV Offici subs=   12,100 age=  146d med=    2,750 month-sample=      2,799
