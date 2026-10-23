@@ -1,0 +1,13 @@
+{
+ "id": "0-rf-img0-11",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "rf-img0-11",
+  "width": 1088,
+  "height": 1920,
+  "seed": 11,
+  "prompt": "Grainy night-vision security camera footage from a high ceiling corner, wide-angle fisheye, a long empty hospital corridor at night, flickering fluorescent tube lights, at the far end a tall cartoon rabbit mascot character in a pale blue hospital gown and nurse cap stands perfectly still facing the camera, its eyes faintly glowing white, long shadow on the tiled floor, green-tinted monochrome CCTV image, VHS noise, analog horror, unsettling, no text"
+ }
+}
