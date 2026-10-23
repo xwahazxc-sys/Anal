@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1001,
   "prompt": "A lone person in a red parka seen from behind walking on a snowy street at night under orange streetlights, colourful wooden houses, arctic town. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:47:50",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s02/sv-s02_00001_.png"
+ ],
+ "seconds": 36
 }
