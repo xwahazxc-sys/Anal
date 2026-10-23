@@ -9,5 +9,11 @@
   "height": 1920,
   "seed": 11,
   "prompt": "Grainy black and white CCTV still from a ceiling security camera, hospital waiting room at 3 AM, rows of empty plastic chairs, a reception desk with a bell, a lanky cartoon bunny character with a stitched smile in a hospital patient gown sits alone in the last chair staring directly up at the camera, harsh fluorescent light, motion blur, analog horror found footage, no text"
- }
+ },
+ "finished": "2026-10-23 16:43:22",
+ "status": "done",
+ "outputs": [
+  "outputs/0-rf-img1-11/rf-img1-11_00001_.png"
+ ],
+ "seconds": 61
 }
