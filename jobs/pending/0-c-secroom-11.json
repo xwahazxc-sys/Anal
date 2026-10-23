@@ -1,0 +1,13 @@
+{
+ "id": "0-c-secroom-11",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ep1-secroom-11",
+  "width": 1088,
+  "height": 1920,
+  "seed": 11,
+  "prompt": "Grainy night-vision security camera footage from a high ceiling corner of a small hospital security office at night, an empty swivel office chair facing a desk with a wall of glowing CCTV monitors, behind the chair the door is open and a tall cartoon rabbit mascot in a pale blue hospital gown and nurse cap stands inside the doorway very close to the chair, its eyes faintly glowing white, green-tinted monochrome, VHS noise, analog horror, no text"
+ }
+}
