@@ -1,0 +1,12 @@
+{
+ "duration": 32.4,
+ "night": "FLIGHT 214",
+ "shots": [["runway", 0.0], ["doors", 2.9], ["street", 10.15], ["pilot", 15.75], ["stop", 20.96], ["eyes", 24.84], ["runway", 29.77]],
+ "eyesAt": 22.8,
+ "openAt": 27.3,
+ "smileAt": 99,
+ "lightsAt": 0,
+ "clockAt": [[0, "2:14"]],
+ "sfx": [["impact", 0.1, -9, "atrim=0:1.5"], ["hum", 2.9, -15, "atrim=0:7,afade=t=in:d=1,afade=t=out:st=6:d=1"], ["ding", 5.6, -9, ""], ["heartbeat", 19.0, -13, "atrim=0:5,afade=t=out:st=4:d=1"], ["impact", 22.8, -7, ""], ["riser", 25.3, -14, "atrim=0:2"], ["impact", 27.4, -6, ""], ["impact", 29.77, -10, "atrim=0:1.2"]],
+ "bedMute": [99, 99]
+}

@@ -1,0 +1,10 @@
+{
+ "duration": 34.9,
+ "night": "FLIGHT 214",
+ "shots": [["map", 0.0], ["cabin", 6.39], ["attendant", 12.99], ["window", 18.82], ["city", 24.57], ["island", 28.42], ["map", 32.1]],
+ "lightsAt": 23.4,
+ "smileAt": 15.6,
+ "clockAt": [[0, "2:14"]],
+ "sfx": [["ding", 0.15, -8, ""], ["hum", 6.4, -15, "atrim=0:6,afade=t=in:d=1,afade=t=out:st=5:d=1"], ["heartbeat", 15.5, -13, "atrim=0:4,afade=t=out:st=3:d=1"], ["riser", 20.8, -14, "atrim=0:3"], ["impact", 23.45, -7, ""], ["impact", 28.4, -9, "atrim=0:1.5"], ["ding", 32.1, -8, ""]],
+ "bedMute": [99, 99]
+}
