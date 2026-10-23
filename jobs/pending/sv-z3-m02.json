@@ -1,0 +1,14 @@
+{
+ "id": "sv-z3-m02",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v.json",
+ "timeout": 3600,
+ "files": {
+  "start_image": "inputs/sv/m02.png"
+ },
+ "vars": {
+  "name": "sv-m02",
+  "seed": 500,
+  "prompt": "the person walks slowly away down the snowy street, snow falls, streetlights flicker softly, realistic documentary footage, smooth natural motion, cinematic"
+ }
+}
