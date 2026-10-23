@@ -874,16 +874,40 @@ def main():
                 shot(page, f"{vid_id}_private_error")
                 log("PRIVATE FAILED", vid_id, type(e).__name__, str(e)[:200])
                 results[f"private {vid_id}"] = "FAILED"
-        for vid_id in stats:
-            for tab in ("overview", "engagement", "reach", "audience"):
-                try:
-                    page.goto(f"https://studio.youtube.com/video/{vid_id}/analytics/tab-{tab}/period-default", wait_until="domcontentloaded")
-                    page.wait_for_timeout(9000)
-                    page.screenshot(path=str(SHOTS / f"stats_{vid_id}_{tab}.png"), full_page=True)
-                    (SHOTS / f"stats_{vid_id}_{tab}.txt").write_text(page.inner_text("body"))
-                    log("stats", vid_id, tab, "ok")
-                except Exception as e:
-                    log("STATS FAILED", vid_id, tab, type(e).__name__, str(e)[:150])
+        def dump(name):
+            page.screenshot(path=str(SHOTS / f"{name}.png"), full_page=True)
+            (SHOTS / f"{name}.txt").write_text(page.inner_text("body"))
+
+        def click_tab(label):
+            page.locator("tp-yt-paper-tab, [role=tab]").filter(has_text=re.compile(rf"^\s*{label}\s*$", re.I)).first.click(timeout=10000)
+            page.wait_for_timeout(8000)
+
+        for vid_id in stats:  # stats=VIDEOID, or stats=channel for the whole channel
+            try:
+                if vid_id == "channel":
+                    page.goto("https://studio.youtube.com", wait_until="domcontentloaded"); page.wait_for_timeout(6000)
+                    cid = re.search(r"/channel/(UC[\w-]+)", page.url).group(1)
+                    page.goto(f"https://studio.youtube.com/channel/{cid}/analytics/tab-overview/period-default", wait_until="domcontentloaded")
+                else:
+                    page.goto(f"https://studio.youtube.com/video/{vid_id}/analytics/tab-overview/period-default", wait_until="domcontentloaded")
+                page.wait_for_timeout(9000)
+                dump(f"stats_{vid_id}_overview")
+                for tab in ("Content", "Engagement", "Reach", "Audience"):
+                    try:
+                        click_tab(tab); dump(f"stats_{vid_id}_{tab.lower()}"); log("stats", vid_id, tab, "ok")
+                    except Exception as e:
+                        log("stats tab missing", vid_id, tab, type(e).__name__)
+                # advanced mode -> Geography table (countries)
+                page.get_by_text(re.compile(r"^\s*Advanced mode\s*$", re.I)).first.click(timeout=10000)
+                page.wait_for_timeout(9000)
+                for tab in ("Geography", "Age", "Gender"):
+                    try:
+                        click_tab(tab); dump(f"stats_{vid_id}_adv_{tab.lower()}"); log("stats", vid_id, "adv", tab, "ok")
+                    except Exception as e:
+                        log("adv tab missing", vid_id, tab, type(e).__name__)
+            except Exception as e:
+                shot(page, f"stats_{vid_id}_error")
+                log("STATS FAILED", vid_id, type(e).__name__, str(e)[:150])
         for vid_id in pins:
             try:
                 pin_comment(page, vid_id, os.environ["PIN_TEXT"])
