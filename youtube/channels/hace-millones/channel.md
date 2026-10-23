@@ -44,7 +44,7 @@ Las imágenes son recreaciones generadas con IA basadas en la investigación cie
 | Шрифты | Archivo Black (заголовки), Inter (мелкий текст) |
 | Аватар | круг-срез земных слоёв с лавовой трещиной |
 | Баннер | слои пород, «HACE MILLONES DE AÑOS», слоган, «Documentales completos · miércoles y sábados» |
-| Обложка | ИИ-сцена эпохи; огромная цифра лавовым (66 MILLONES); слово «¿SOBREVIVIRÍAS?» янтарём; шкала времени внизу |
+| Обложка | ИИ-сцена эпохи; 5 клеток-испытаний (часть перечёркнута) + янтарная плашка «5 PRUEBAS»; цифра эпохи — в заголовке, не на обложке |
 | Голос | мужской, тёплый, лёгкая драматичность (испанский нейтральный); Chatterbox `es`, exaggeration 0.55 |
 | Музыка | ACE-Step: «epic cinematic ambient, deep drums, slow strings, prehistoric» |
 
@@ -71,7 +71,7 @@ Las imágenes son recreaciones generadas con IA basadas en la investigación cie
 
 | # | Выпуск |
 |---|---|
-| 1 | **¿Sobrevivirías al Día del Asteroide? Hace 66 Millones de Años \| Documental Completo** (пилот) |
+| 1 | **¿Sobrevivirías al Asteroide? Hace 66 Millones de Años** (пилот; «Documental completo» — в описание) |
 | 2 | Así Era la Tierra Hace 252 Millones de Años: Cuando Murió Casi Todo |
 | 3 | ¿Podrías Sobrevivir con los Neandertales? Hace 50.000 Años |
 | 4 | La Tierra Bola de Nieve: Cuando Todo el Planeta se Congeló |
@@ -82,7 +82,9 @@ Las imágenes son recreaciones generadas con IA basadas en la investigación cie
 
 ## Пилот
 
-- **Обложка:** сцена удара астероида; лавовым «66 MILLONES», янтарём «¿SOBREVIVIRÍAS?».
+- **Связка** (title.py 98/100): заголовок — вопрос и эпоха («¿Sobrevivirías…? 66 millones»), обложка — формат канала
+  (5 клеток, одна перечёркнута, «5 PRUEBAS»), хук обещает именно эти 5 испытаний. Прежняя обложка повторяла заголовок.
+- **Обложка:** астероид над меловым лесом, динозавры смотрят вверх; 5 клеток (первая с ✕) + «5 PRUEBAS».
 - **Хук:** «Despiertas en lo que hoy es México. Es una mañana cualquiera, hace 66 millones de años. En unas horas, una roca de
   diez kilómetros entrará en la atmósfera a más de setenta mil kilómetros por hora. Tienes cinco pruebas para seguir vivo.»
   (Оценщик `hookscore.py` настроен на английский, для испанского его баллы не показательны — хук собран по формуле

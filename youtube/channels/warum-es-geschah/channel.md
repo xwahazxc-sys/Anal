@@ -50,7 +50,7 @@ Visualisierungen sind KI-generierte Rekonstruktionen; Quellen in jeder Beschreib
 | Шрифты | Oswald 700 (заголовки), Courier Prime (время, даты — «протокол») |
 | Аватар | жёлто-чёрная предупреждающая полоса, разорванное звено цепи |
 | Баннер | полоса-предупреждение, «WARUM ES GESCHAH», слоган, «Neue Doku jeden Donnerstag & Sonntag» |
-| Обложка | ИИ-реконструкция места (без тел и крови); жёлтым 2–3 слова («EIN RADREIFEN»); плашка-год Courier |
+| Обложка | ИИ-реконструкция места (без тел и крови); жёлтым 2–3 слова («EIN RADREIFEN»); плашка Courier с тем, чего нет в заголовке |
 | Голос | мужской, спокойный, серьёзный (немецкий); Chatterbox `de`, exaggeration 0.4 |
 | Музыка | ACE-Step: «dark ambient, low drone, sparse piano, tension» — очень тихо |
 
@@ -78,7 +78,7 @@ Visualisierungen sind KI-generierte Rekonstruktionen; Quellen in jeder Beschreib
 
 | # | Выпуск |
 |---|---|
-| 1 | **Eschede 1998: Ein Radreifen und 101 Tote – warum es geschah \| Ganze Dokumentation** (пилот) |
+| 1 | **ICE-Unglück Eschede 1998: Warum es geschah \| Ganze Doku** (пилот) |
 | 2 | Lengede 1963: Das Wunder nach 14 Tagen unter Tage |
 | 3 | Hamburger Sturmflut 1962: Die Nacht, in der die Deiche brachen |
 | 4 | Halifax 1917: Die größte Explosion vor der Atombombe |
@@ -89,10 +89,14 @@ Visualisierungen sind KI-generierte Rekonstruktionen; Quellen in jeder Beschreib
 
 ## Пилот
 
-- **Обложка:** ИИ-реконструкция моста у Эшеде (без людей), жёлтым «EIN RADREIFEN», плашка «1998».
-- **Хук:** «Am 3. Juni 1998 brach unter einem ICE ein Stück Stahl, kaum größer als ein Teller. Sechs Minuten später waren
-  101 Menschen tot. Und das Teil hätte nie in diesem Zug sein dürfen.» (Факты и формулировку «hätte nie» сверить по
-  отчёту расследования перед записью; `hookscore.py` для немецкого не показателен.)
+- **Связка** (title.py 98/100): заголовок — событие и поисковые слова («ICE-Unglück Eschede»), обложка — загадочная деталь и
+  цена («EIN RADREIFEN» / «101 TOTE»), хук за 10 секунд объясняет обе. Прежняя обложка повторяла заголовок.
+- **Обложка:** ИИ-реконструкция моста у Эшеде (без людей), жёлтым «EIN RADREIFEN», чёрная плашка «101 TOTE».
+- **Хук:** «Am 3. Juni 1998 brach unter einem ICE ein Radreifen – ein Stahlring am Rad. Sechs Kilometer später waren
+  101 Menschen tot. Und es gab einen Moment, in dem jemand den Zug noch hätte stoppen können.»
+  (Исправлено: в прежней версии были ошибки — «через шесть минут» (на деле около 6 км, это ~2 минуты на 200 км/ч) и
+  «кусок размером с тарелку» (бандаж — кольцо почти во всё колесо). «Момент, когда можно было остановить» — пассажир
+  сообщил проводнику о куске металла в полу до крушения; сверить по отчёту перед записью.)
 - **Опорные факты (сверить):** 3 июня 1998, ICE 884 «Wilhelm Conrad Röntgen», усталостная трещина колёсного бандажа
   (Radreifen) колёс с резиновыми вставками, удар о мост; 101 погибший; после — отказ от этой конструкции колёс.
 

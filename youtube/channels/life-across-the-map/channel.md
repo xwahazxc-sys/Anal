@@ -107,11 +107,14 @@ Visuals are AI-generated illustrations based on documented facts; figures are so
 
 ## Пилот: How People Live 1,300 km From the North Pole | Svalbard
 
-- **Обложка:** полярная ночь над Лонгйиром, огромное оранжевое **NO DYING ALLOWED**, плашка 78°N 15°E.
-- **Хук (оценка hookscore 51, формула The Question):**
-  «Why would anyone choose to live 1,300 kilometres from the North Pole, in a town where you can't even give birth?»
-- **Запасной (47, The Impossible Claim):** «In this town, you're not allowed to die. And if you walk past the last house
-  without a rifle, you're breaking the law.»
+- **Связка «заголовок + обложка + хук»** (title.py 98/100): заголовок даёт место и цифру, обложка — парадокс, хук в первые
+  5 секунд раскрывает обложку и задаёт вопрос, на который отвечает весь фильм.
+- **Обложка:** полярная ночь над Лонгйиром; две плашки **NO BIRTHS** (оранжевая) / **NO BURIALS** (белая); 78°N 15°E.
+  (Прежний вариант «NO DYING ALLOWED» убран: это популярный миф — закона, запрещающего умирать, нет; есть отказ от
+  погребений с 1950-х и роды на материке.)
+- **Хук (hookscore 56 WORKABLE, The Question):**
+  «In this town you can't be born and you can't be buried. So why do 2,500 people refuse to leave?»
+- **Запасной (51):** «Why would anyone choose to live 1,300 kilometres from the North Pole, in a town where you can't even give birth?»
 - **Факты для сценария (проверить по источникам перед записью):** ~2 500 жителей Лонгйира; полярная ночь ~с конца октября по
   середину февраля; погребение не практикуется с 1950-х из-за вечной мерзлоты; вне посёлка обязательна защита от белых медведей;
   роды — на материке; безвизовый режим по Шпицбергенскому трактату; кошки запрещены (охрана птиц).

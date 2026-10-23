@@ -54,8 +54,8 @@ C["life-across-the-map"] = dict(
         <div style="color:#FF6B2C;font:600 38px Oswald;letter-spacing:3px;margin-top:12px">NEW DOCUMENTARY EVERY TUE &amp; SAT</div></div></div>""",
     thumb="""<div class="abs" style="inset:0;background:linear-gradient(180deg,#0b1b2a 0%,#20465f 45%,#9fb7c6 70%,#e9f0f4 100%)"></div>
     <div class="abs" style="right:40px;top:330px;width:520px;color:rgba(242,246,248,.5);font:500 22px Inter;text-align:right">[full-frame AI image: Longyearbyen under the polar night, people on snowmobiles, colourful houses]</div>
-    <div class="abs" style="left:44px;top:30px;color:#F2F6F8;font:700 190px Oswald;line-height:1;letter-spacing:2px;text-shadow:0 8px 0 #000,0 0 50px rgba(0,0,0,.7)">SVALBARD</div>
-    <div class="abs" style="left:50px;top:250px;background:#FF6B2C;color:#fff;font:700 64px Oswald;padding:4px 22px;letter-spacing:1px">NO DYING ALLOWED</div>
+    <div class="abs" style="left:44px;top:40px;background:#FF6B2C;color:#fff;font:700 150px Oswald;line-height:1;padding:6px 30px;box-shadow:0 10px 0 #000">NO BIRTHS</div>
+    <div class="abs" style="left:44px;top:235px;background:#F2F6F8;color:#0E2A3B;font:700 150px Oswald;line-height:1;padding:6px 30px;box-shadow:0 10px 0 #000">NO BURIALS</div>
     <div class="abs" style="right:40px;bottom:40px;background:#0E2A3B;color:#F2F6F8;font:600 40px Oswald;letter-spacing:4px;padding:10px 26px;border-left:10px solid #FF6B2C">78°N 15°E</div>""",
 )
 C["backlot-whispers"] = dict(
@@ -101,9 +101,8 @@ C["hace-millones"] = dict(
     thumb="""<div class="abs" style="inset:0;background:radial-gradient(ellipse at 70% 30%,#ffb36b 0%,#c2410c 25%,#3a1d10 60%,#120c0a 100%)"></div>
     <div class="abs" style="right:40px;top:300px;width:520px;color:rgba(237,227,209,.55);font:500 22px Inter;text-align:right">[full-frame AI image: asteroid entering the sky over a Cretaceous forest, dinosaurs looking up]</div>
     <div class="abs" style="left:40px;top:30px;color:#EDE3D1;font:600 26px Oswald;letter-spacing:6px;opacity:.85">HACE MILLONES DE AÑOS</div>
-    <div class="abs" style="left:46px;top:70px;color:#FF5A1F;font-size:190px;line-height:.9;text-shadow:0 8px 0 #000">66</div>
-    <div class="abs" style="left:52px;top:245px;color:#EDE3D1;font-size:76px;line-height:1;text-shadow:0 6px 0 #000">MILLONES</div>
-    <div class="abs" style="left:40px;top:540px;background:#F2B33D;color:#1A1412;font-size:88px;line-height:1;padding:8px 26px">¿SOBREVIVIRÍAS?</div>""",
+    <div class="abs" style="left:40px;top:410px;display:flex;gap:18px"><div style="width:96px;height:96px;border:8px solid #EDE3D1;background:rgba(26,20,18,.75);display:flex;align-items:center;justify-content:center;color:#FF5A1F;font-size:78px;line-height:1">✕</div><div style="width:96px;height:96px;border:8px solid #EDE3D1;background:rgba(26,20,18,.75);display:flex;align-items:center;justify-content:center;color:#FF5A1F;font-size:78px;line-height:1"></div><div style="width:96px;height:96px;border:8px solid #EDE3D1;background:rgba(26,20,18,.75);display:flex;align-items:center;justify-content:center;color:#FF5A1F;font-size:78px;line-height:1"></div><div style="width:96px;height:96px;border:8px solid #EDE3D1;background:rgba(26,20,18,.75);display:flex;align-items:center;justify-content:center;color:#FF5A1F;font-size:78px;line-height:1"></div><div style="width:96px;height:96px;border:8px solid #EDE3D1;background:rgba(26,20,18,.75);display:flex;align-items:center;justify-content:center;color:#FF5A1F;font-size:78px;line-height:1"></div></div>
+    <div class="abs" style="left:40px;top:545px;background:#F2B33D;color:#1A1412;font-size:120px;line-height:1;padding:8px 30px;box-shadow:0 10px 0 #000">5 PRUEBAS</div>""",
 )
 HAZARD = "repeating-linear-gradient(-45deg,#FFC400 0 40px,#1E2327 40px 80px)"
 C["warum-es-geschah"] = dict(
@@ -128,7 +127,7 @@ C["warum-es-geschah"] = dict(
     <div class="abs" style="right:40px;top:40px;width:520px;color:rgba(242,242,242,.5);font:500 22px Inter;text-align:right">[full-frame AI reconstruction: concrete road bridge near Eschede, empty tracks, grey morning, no people]</div>
     <div class="abs" style="left:0;top:0;width:1280px;height:22px;background:repeating-linear-gradient(-45deg,#FFC400 0 40px,#1E2327 40px 80px)"></div>
     <div class="abs" style="left:40px;top:430px;background:#FFC400;color:#111;font:700 120px Oswald;line-height:1;padding:6px 28px">EIN RADREIFEN</div>
-    <div class="abs" style="left:40px;top:580px;background:#111;color:#F2F2F2;font:700 52px 'Courier Prime';padding:4px 22px">ESCHEDE 1998</div>""",
+    <div class="abs" style="left:40px;top:580px;background:#111;color:#F2F2F2;font:700 64px 'Courier Prime';padding:4px 22px">101 TOTE</div>""",
 )
 
 
