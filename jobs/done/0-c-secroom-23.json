@@ -9,5 +9,11 @@
   "height": 1920,
   "seed": 23,
   "prompt": "Grainy night-vision security camera footage from a high ceiling corner of a small hospital security office at night, an empty swivel office chair facing a desk with a wall of glowing CCTV monitors, behind the chair the door is open and a tall cartoon rabbit mascot in a pale blue hospital gown and nurse cap stands inside the doorway very close to the chair, its eyes faintly glowing white, green-tinted monochrome, VHS noise, analog horror, no text"
- }
+ },
+ "finished": "2026-10-23 18:22:34",
+ "status": "done",
+ "outputs": [
+  "outputs/0-c-secroom-23/ep1-secroom-23_00001_.png"
+ ],
+ "seconds": 71
 }
