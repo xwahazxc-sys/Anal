@@ -1,0 +1,14 @@
+{
+ "id": "0-rf-clip1",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/rf/start.png"
+ },
+ "vars": {
+  "name": "rf-clip1",
+  "seed": 77,
+  "prompt": "security camera footage, the rabbit mascot at the end of the corridor slowly tilts its head to the side and then takes one slow step toward the camera, the fluorescent lights flicker, static camera, no camera movement, eerie, realistic"
+ }
+}
