@@ -9,5 +9,11 @@
   "height": 1920,
   "seed": 23,
   "prompt": "Grainy night-vision security camera footage from a high ceiling corner, wide-angle fisheye, a long empty hospital corridor at night, flickering fluorescent tube lights, nobody in the corridor, a single hospital slipper lying on the tiled floor in the middle, green-tinted monochrome CCTV image, VHS noise, analog horror, unsettling, no text"
- }
+ },
+ "finished": "2026-10-23 18:20:11",
+ "status": "done",
+ "outputs": [
+  "outputs/0-c-empty-23/ep1-empty-23_00001_.png"
+ ],
+ "seconds": 66
 }
