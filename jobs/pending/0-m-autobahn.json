@@ -1,1 +1,0 @@
-{"id": "0-m-autobahn", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "ss-m-autobahn", "seconds": 40, "seed": 21, "bpm": 125, "key": "D minor", "tags": "driving electronic beat, synth bass, motorik rhythm, 125 bpm, instrumental, energetic", "lyrics": "[Instrumental]"}}
