@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s41",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s41",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1040,
+  "prompt": "A lone suitcase standing on a snowy street of colourful houses, arctic town, evening. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
