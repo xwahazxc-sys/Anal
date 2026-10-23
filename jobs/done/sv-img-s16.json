@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1015,
   "prompt": "Wide shot of an empty snowy arctic street in total darkness at midday, a clock on a building showing 12:00. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:01:22",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s16/sv-s16_00001_.png"
+ ],
+ "seconds": 36
 }
