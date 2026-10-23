@@ -1,0 +1,21 @@
+{
+ "id": "0-m-truck",
+ "type": "comfy",
+ "workflow": "workflows/ace15_song.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "ss-m-truck",
+  "seconds": 40,
+  "seed": 21,
+  "bpm": 130,
+  "key": "D minor",
+  "tags": "aggressive phonk, cowbell melody, distorted 808, drift phonk, 130 bpm, instrumental",
+  "lyrics": "[Instrumental]"
+ },
+ "finished": "2026-10-24 00:11:11",
+ "status": "done",
+ "outputs": [
+  "outputs/0-m-truck/ss-m-truck_00001.flac"
+ ],
+ "seconds": 36
+}
