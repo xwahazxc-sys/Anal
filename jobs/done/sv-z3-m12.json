@@ -1,0 +1,20 @@
+{
+ "id": "sv-z3-m12",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_fast.json",
+ "timeout": 3600,
+ "files": {
+  "start_image": "inputs/sv/m12.png"
+ },
+ "vars": {
+  "name": "sv-m12",
+  "seed": 500,
+  "prompt": "the aurora borealis slowly waves and ripples across the sky, stars twinkle, the camera slowly pushes in, realistic documentary footage, smooth natural motion, cinematic"
+ },
+ "finished": "2026-10-23 15:58:02",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-z3-m12/sv-m12_00001_.mp4"
+ ],
+ "seconds": 374
+}
