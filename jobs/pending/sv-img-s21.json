@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s21",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s21",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1020,
+  "prompt": "Map-like aerial view of the northern Norwegian coastline in winter with snowy islands and dark sea. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
