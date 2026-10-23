@@ -1,0 +1,21 @@
+{
+ "id": "0-m-roommates",
+ "type": "comfy",
+ "workflow": "workflows/ace15_song.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "ss-m-roommates",
+  "seconds": 40,
+  "seed": 21,
+  "bpm": 120,
+  "key": "D minor",
+  "tags": "bouncy ukulele and whistle meme music, playful pizzicato, light drums, 120 bpm, instrumental, funny",
+  "lyrics": "[Instrumental]"
+ },
+ "finished": "2026-10-24 00:10:27",
+ "status": "done",
+ "outputs": [
+  "outputs/0-m-roommates/ss-m-roommates_00001.flac"
+ ],
+ "seconds": 36
+}
