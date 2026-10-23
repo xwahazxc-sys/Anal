@@ -236,12 +236,36 @@ def job_stock(job):
     return files
 
 
+def job_eleven(job):
+    """ElevenLabs speech. Key on this PC: setx ELEVENLABS_API_KEY "...".
+    {"type": "eleven", "lines": [{"name": "l1", "text": "..."}], "voice_id": "...", "model": "eleven_multilingual_v2",
+     "settings": {"stability": 0.4, "similarity_boost": 0.8, "style": 0.3}}   no lines = list voices"""
+    key = os.environ.get("ELEVENLABS_API_KEY") or os.environ.get("ELEVEN_API_KEY") or os.environ.get("XI_API_KEY")
+    if not key:
+        raise RuntimeError("ELEVENLABS_API_KEY is not set on this PC (setx ELEVENLABS_API_KEY ... then reopen the worker)")
+    h = {"xi-api-key": key}
+    if not job.get("lines"):
+        r = requests.get("https://api.elevenlabs.io/v1/voices", headers=h, timeout=60); r.raise_for_status()
+        v = [{"id": x["voice_id"], "name": x["name"], "labels": x.get("labels"), "category": x.get("category")}
+             for x in r.json()["voices"]]
+        return {"voices.json": json.dumps(v, indent=1, ensure_ascii=False).encode()}
+    files = {}
+    for ln in job["lines"]:
+        r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{job['voice_id']}?output_format=mp3_44100_192",
+                          headers=h, timeout=300, json={"text": ln["text"], "model_id": job.get("model", "eleven_multilingual_v2"),
+                                                       "voice_settings": job.get("settings", {})})
+        if r.status_code != 200:
+            raise RuntimeError(f"ElevenLabs {r.status_code}: {r.text[:500]}")
+        files[ln["name"] + ".mp3"] = r.content
+    return files
+
+
 def job_restart(job):
     """Exit after this job; start_worker.bat pulls the newest code and starts the worker again."""
     return {"note.txt": b"worker restarting to load new code"}
 
 
-HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart, "qtts": job_qtts, "stock": job_stock}
+HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart, "qtts": job_qtts, "stock": job_stock, "eleven": job_eleven}
 
 
 def process(path):
