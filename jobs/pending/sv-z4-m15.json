@@ -1,0 +1,14 @@
+{
+ "id": "sv-z4-m15",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_fast.json",
+ "timeout": 3600,
+ "files": {
+  "start_image": "inputs/sv/m15.png"
+ },
+ "vars": {
+  "name": "sv-m15",
+  "seed": 500,
+  "prompt": "the crowd shifts slightly, people raise their hands to shield their eyes from the sunlight, breath steaming, realistic documentary footage, smooth natural motion, cinematic"
+ }
+}
