@@ -1,0 +1,257 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+</head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// Test Short 02 — "POV: Your Oct 31 Patient Has No Pulse". draw(t) renders the frame at time t (seconds).
+// Beats (keep in sync with audio.py):
+// 0.0 close-up on the dark pumpkin · 0.3 right eye lights, 0.45 wink · 0.7 pull out: doctor listening
+// 1.3 monitor spikes, doctor turns to it; behind him the pumpkin lights up and grins
+// 1.9 pumpkin goes dark, 2.0 doctor turns back (innocent) · 2.4 doctor leans in
+// 3.0 face blazes, monitor 180 · 3.2 blink · 3.4 doctor jumps (boom, shake, punch-in)
+// 4.6 twist: the pumpkin wears the stethoscope and listens to the DOCTOR (DOC ♥ 220), "your turn, doc"
+// 7.3 lights flicker · 7.45 black · 7.9 back on in the opening close-up -> loop.
+const D = 8.1;
+const c = document.getElementById('c'), g = c.getContext('2d');
+const W = 1080, H = 1920, TOP = 330;
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const prog = (t, a, b) => cl((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+function rr(x, y, w, h, r) { g.beginPath(); g.roundRect(x, y, w, h, r); }
+function rnd(i) { const s = Math.sin(i * 127.1) * 43758.5453; return s - Math.floor(s); }
+
+// ---------- state per time ----------
+function state(t) {
+  const s = {};
+  // pumpkin light: per eye + mouth
+  const eyeR = t < .3 ? 0 : t < .7 ? ease(prog(t, .3, .38)) * (1 - prog(t, .62, .7)) : 0;
+  const sneak = t >= 1.3 && t < 1.9 ? ease(prog(t, 1.3, 1.42)) * (1 - prog(t, 1.82, 1.9)) : 0;
+  const blaze = t >= 3.0 && t < 7.3 ? ease(prog(t, 3.0, 3.12)) : 0;
+  s.eyeL = Math.max(sneak, blaze); s.eyeR = Math.max(eyeR, sneak, blaze); s.mouth = Math.max(sneak, blaze);
+  s.winkR = t > .45 && t < .62 ? Math.sin(prog(t, .45, .62) * Math.PI) : 0;
+  s.blink = t > 3.2 && t < 3.36 ? Math.sin(prog(t, 3.2, 3.36) * Math.PI) : 0;
+  s.grin = Math.max(sneak, t >= 4.6 && t < 7.3 ? ease(prog(t, 4.6, 4.9)) : 0);
+  // doctor
+  s.look = t >= 1.35 && t < 2.0 ? ease(prog(t, 1.35, 1.5)) * (1 - ease(prog(t, 1.95, 2.05))) : 0; // 1 = looking at monitor
+  s.lean = t < 2.4 ? 0 : t < 3.4 ? ease(prog(t, 2.4, 2.9)) : 0;
+  s.jump = t < 3.4 ? 0 : t < 7.3 ? ease(prog(t, 3.4, 3.62)) : 1 - prog(t, 7.3, 7.6);
+  s.shock = t < 3.38 ? 0 : t < 7.3 ? ease(prog(t, 3.38, 3.5)) : 0;
+  s.swap = t >= 4.6 && t < 7.45 ? ease(prog(t, 4.6, 4.85)) : 0;   // stethoscope on the pumpkin
+  // monitor
+  s.mon = t < 1.3 ? 'flat' : t < 1.9 ? 'fast' : t < 3.0 ? 'flat' : t < 4.6 ? 'fast' : t < 7.45 ? 'doc' : 'flat';
+  // lights
+  let light = 1;
+  if (t >= 7.3) light = t < 7.45 ? (Math.sin(t * 90) > 0 ? 1 : .15) : (t < 7.9 ? 0 : prog(t, 7.9, 8.05));
+  if (t < .1) light = .7 + .3 * prog(t, 0, .1);
+  s.light = light;
+  // camera keys [t, zoom, fx, fy]
+  const K = [[0, 1.75, 600, 1130], [.7, 1.75, 600, 1130], [1.05, 1.03, 540, 1120], [2.4, 1.03, 540, 1120], [2.95, 1.16, 500, 1090],
+             [3.4, 1.16, 500, 1090], [3.52, 1.42, 300, 920], [4.6, 1.42, 300, 920], [4.85, 1.04, 520, 1080], [7.45, 1.06, 520, 1080],
+             [7.46, 1.75, 600, 1130], [D, 1.75, 600, 1130]];
+  let k = 0; while (k < K.length - 2 && t > K[k + 1][0]) k++;
+  const a = K[k], b = K[k + 1], e = ease(prog(t, a[0], b[0]));
+  s.zoom = lerp(a[1], b[1], e); s.fx = lerp(a[2], b[2], e); s.fy = lerp(a[3], b[3], e);
+  const sh = t >= 3.4 && t < 3.9 ? 30 * (1 - prog(t, 3.4, 3.9)) : (t >= 4.6 && t < 4.8 ? 10 * (1 - prog(t, 4.6, 4.8)) : 0);
+  s.sx = sh * (rnd(Math.floor(t * 30)) - .5) * 2; s.sy = sh * (rnd(Math.floor(t * 30) + 7) - .5) * 2;
+  return s;
+}
+
+// ---------- scene pieces ----------
+function room(t, light) {
+  let gr = g.createLinearGradient(0, TOP, 0, H);
+  gr.addColorStop(0, '#14302e'); gr.addColorStop(.62, '#1d3d3a'); gr.addColorStop(.62, '#2b3037'); gr.addColorStop(1, '#121519');
+  g.fillStyle = gr; g.fillRect(-400, TOP - 400, W + 800, H - TOP + 800);
+  g.strokeStyle = 'rgba(255,255,255,.05)'; g.lineWidth = 3;
+  const wallB = TOP + (H - TOP) * .62;
+  for (let x = -360; x <= W + 360; x += 120) { g.beginPath(); g.moveTo(x, TOP - 400); g.lineTo(x, wallB); g.stroke(); }
+  for (let y = TOP - 380; y < wallB; y += 120) { g.beginPath(); g.moveTo(-400, y); g.lineTo(W + 400, y); g.stroke(); }
+  // door with a dark window, left
+  g.fillStyle = '#25403d'; g.fillRect(-10, 560, 150, 520); g.fillStyle = '#0b1514'; g.fillRect(25, 610, 80, 120);
+  // red cross sign
+  g.fillStyle = '#e8eef0'; rr(180, 470, 110, 110, 14); g.fill(); g.fillStyle = '#d33'; g.fillRect(222, 488, 26, 74); g.fillRect(198, 512, 74, 26);
+  // IV stand right of table
+  g.strokeStyle = '#8e98a2'; g.lineWidth = 8; g.beginPath(); g.moveTo(960, 820); g.lineTo(960, 1540); g.stroke();
+  g.beginPath(); g.moveTo(920, 820); g.lineTo(1000, 820); g.stroke();
+  rr(925, 830, 50, 90, 12); g.fillStyle = 'rgba(190,230,255,.55)'; g.fill();
+  // floor shine
+  const fl = g.createRadialGradient(540, 1560, 50, 540, 1560, 520); fl.addColorStop(0, `rgba(255,250,215,${.10 * light})`); fl.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = fl; g.fillRect(0, wallB, W, H - wallB);
+  // lamp + cone + dust
+  g.fillStyle = '#9aa3ad'; g.fillRect(535, TOP - 400, 10, 550);
+  g.fillStyle = '#c9d1d9'; g.beginPath(); g.ellipse(540, TOP + 175, 150, 48, 0, Math.PI, 0); g.fill();
+  g.fillStyle = `rgba(255,252,220,${.9 * light})`; g.beginPath(); g.ellipse(540, TOP + 178, 130, 22, 0, 0, Math.PI * 2); g.fill();
+  const cone = g.createLinearGradient(0, TOP + 180, 0, 1500);
+  cone.addColorStop(0, `rgba(255,250,215,${.30 * light})`); cone.addColorStop(1, 'rgba(255,250,215,0)');
+  g.fillStyle = cone; g.beginPath(); g.moveTo(420, TOP + 185); g.lineTo(660, TOP + 185); g.lineTo(960, 1500); g.lineTo(120, 1500); g.fill();
+  for (let i = 0; i < 40; i++) {
+    const y = TOP + 200 + ((rnd(i) * 1100 + t * (14 + 10 * rnd(i + 3))) % 1100);
+    const spread = (y - TOP - 185) / (1500 - TOP - 185);
+    const x = 540 + (rnd(i + 9) - .5) * (240 + 600 * spread) + 12 * Math.sin(t + i);
+    g.fillStyle = `rgba(255,250,220,${.25 * light * rnd(i + 5)})`; g.beginPath(); g.arc(x, y, 2 + 3 * rnd(i + 2), 0, 7); g.fill();
+  }
+}
+
+function monitor(t, mode, light) {
+  const x = 740, y = 600, w = 290, h = 210;
+  g.fillStyle = '#7d8790'; g.fillRect(x + w / 2 - 8, y + h, 16, 380);
+  rr(x - 14, y - 14, w + 28, h + 28, 18); g.fillStyle = '#3a4047'; g.fill();
+  rr(x, y, w, h, 8); g.fillStyle = mode === 'doc' ? '#1a0606' : '#04110a'; g.fill();
+  const col = mode === 'doc' ? [255, 80, 70] : [60, 255, 140];
+  g.save(); g.beginPath(); g.rect(x, y, w, h); g.clip();
+  g.strokeStyle = `rgba(${col},${.4 + .6 * light})`; g.lineWidth = 6; g.lineJoin = 'round'; g.beginPath();
+  const per = mode === 'doc' ? .22 : mode === 'fast' ? .32 : 99, speed = 320;
+  for (let px = 0; px <= w; px += 3) {
+    const tt = t - (w - px) / speed; const ph = ((tt % per) + per) % per;
+    let v = 0; if (mode !== 'flat' && ph < .06) v = Math.sin(ph / .06 * Math.PI) * 80 * (ph < .03 ? 1 : -.6);
+    const yy = y + h / 2 - v; px ? g.lineTo(x + px, yy) : g.moveTo(x + px, yy);
+  }
+  g.stroke(); g.restore();
+  g.fillStyle = `rgba(${col},${.5 + .5 * light})`; g.font = '800 42px Inter, sans-serif'; g.textAlign = 'left';
+  g.fillText(mode === 'doc' ? 'DOC ♥ 220' : mode === 'fast' ? '♥ 180' : '♥ 0', x + 14, y + h - 16);
+}
+
+function table() {
+  g.fillStyle = 'rgba(0,0,0,.35)'; g.beginPath(); g.ellipse(540, 1650, 430, 40, 0, 0, 7); g.fill();
+  g.fillStyle = '#6b747d'; g.fillRect(250, 1380, 30, 260); g.fillRect(800, 1380, 30, 260);
+  rr(150, 1290, 780, 100, 22); g.fillStyle = '#b9c4cc'; g.fill();
+  rr(150, 1270, 780, 60, 22); g.fillStyle = '#e6eef3'; g.fill();
+  rr(170, 1240, 300, 50, 25); g.fillStyle = '#f7fbfd'; g.fill();
+  g.fillStyle = '#5fa8d3'; rr(430, 1235, 480, 75, 20); g.fill();
+  g.fillStyle = '#e8eef0'; rr(820, 1250, 70, 40, 8); g.fill(); // name tag
+  g.fillStyle = '#333'; g.font = '700 20px Inter'; g.fillText('BED 4', 826, 1278);
+}
+
+function pumpkin(t, s) {
+  g.save(); g.translate(600, 1130);
+  const ribs = [[-150, 120], [150, 120], [-80, 140], [80, 140], [0, 150]];
+  for (const [dx, rw] of ribs) {
+    const gr = g.createRadialGradient(dx - 20, -40, 10, dx, 0, 190);
+    gr.addColorStop(0, '#ffab3d'); gr.addColorStop(1, '#c95a0e');
+    g.fillStyle = gr; g.beginPath(); g.ellipse(dx, 0, rw, 140, 0, 0, Math.PI * 2); g.fill();
+    g.strokeStyle = 'rgba(120,45,0,.35)'; g.lineWidth = 5; g.stroke();
+  }
+  g.fillStyle = '#4c7a2a'; rr(-22, -175, 44, 60, 12); g.fill();
+  g.strokeStyle = '#3d6a1f'; g.lineWidth = 8; g.beginPath(); g.moveTo(20, -160); g.quadraticCurveTo(70, -200, 60, -140); g.stroke(); // curl
+  const hole = (path, lit) => {
+    path(); g.fillStyle = '#2a1203'; g.fill();
+    if (lit > .02) {
+      g.save(); g.shadowColor = `rgba(255,170,30,${lit})`; g.shadowBlur = 70 * lit;
+      const fg = g.createRadialGradient(0, 20, 5, 0, 20, 200);
+      fg.addColorStop(0, `rgba(255,250,200,${lit})`); fg.addColorStop(1, `rgba(255,190,20,${lit})`); g.fillStyle = fg; g.fill(); g.restore();
+    }
+    g.strokeStyle = '#5a2600'; g.lineWidth = 6; g.stroke();
+  };
+  const look = Math.max(s.eyeL, s.eyeR) > .5 ? (s.swap > .5 ? -18 : -12) : 0;
+  for (const side of [-1, 1]) {
+    const lit = side < 0 ? s.eyeL : s.eyeR;
+    const shut = Math.max(s.blink, side > 0 ? s.winkR : 0);
+    const eh = 70 * (1 - shut) + 6 * shut;
+    hole(() => { g.beginPath(); g.moveTo(side * 75 - 45, 20); g.lineTo(side * 75 + 45, 20); g.lineTo(side * 75 + look, 20 - eh); g.closePath(); }, lit);
+  }
+  const mw = 150 + 50 * s.grin, mh = 45 + 30 * s.grin;
+  hole(() => {
+    g.beginPath(); g.moveTo(-mw, 45);
+    for (let i = 1; i <= 6; i++) g.lineTo(-mw + 2 * mw * i / 6, 45 + (i % 2 ? 22 : 0));
+    g.quadraticCurveTo(0, 45 + mh * 2.2, -mw, 45); g.closePath();
+  }, s.mouth);
+  const lit = Math.max(s.eyeL, s.eyeR, s.mouth);
+  if (lit > .02) {
+    g.globalCompositeOperation = 'lighter'; const h = g.createRadialGradient(0, 20, 20, 0, 20, 340);
+    h.addColorStop(0, `rgba(255,150,20,${.5 * lit})`); h.addColorStop(1, 'rgba(255,120,0,0)'); g.fillStyle = h;
+    g.beginPath(); g.arc(0, 20, 340, 0, 7); g.fill(); g.globalCompositeOperation = 'source-over';
+  }
+  // stethoscope worn by the pumpkin (twist)
+  if (s.swap > 0) {
+    g.globalAlpha = s.swap; g.strokeStyle = '#1b1f24'; g.lineWidth = 10;
+    g.beginPath(); g.moveTo(-170, -40); g.quadraticCurveTo(-170, -190, 0, -195); g.quadraticCurveTo(170, -190, 170, -40); g.stroke();
+    g.fillStyle = '#c0c6cc'; for (const ex of [-170, 170]) { g.beginPath(); g.arc(ex, -40, 16, 0, 7); g.fill(); }
+    g.globalAlpha = 1;
+  }
+  g.restore();
+}
+
+function doctor(t, s) {
+  const j = s.jump;
+  const bx = 165 - 80 * j + 40 * s.lean, by = 830 - 140 * Math.sin(Math.PI * cl(j)) * (j < 1 ? 1 : 0);
+  const tilt = (1 - j) * (0.10 + .12 * s.lean) - j * 0.08;
+  g.save(); g.translate(bx + 120, by + 700); g.rotate(tilt); g.translate(-(bx + 120), -(by + 700));
+  g.fillStyle = 'rgba(0,0,0,.3)';
+  g.fillStyle = '#2f8f6b'; g.fillRect(bx + 40, by + 470, 75, 260); g.fillRect(bx + 125, by + 470, 75, 260);
+  g.fillStyle = '#222'; g.fillRect(bx + 40, by + 705, 75, 30); g.fillRect(bx + 125, by + 705, 75, 30);
+  g.fillStyle = '#f6c945'; g.save(); g.translate(bx + 30, by + 240); g.rotate(.15 + j * .9); g.fillRect(-70, 0, 70, 220); g.restore();
+  g.fillStyle = '#39a87e'; g.fillRect(bx + 30, by + 230, 180, 245);
+  g.fillStyle = '#2f8f6b'; g.beginPath(); g.moveTo(bx + 85, by + 230); g.lineTo(bx + 120, by + 290); g.lineTo(bx + 155, by + 230); g.fill();
+  g.fillStyle = '#fff'; g.fillRect(bx + 150, by + 300, 44, 54); g.fillStyle = '#d33'; g.fillRect(bx + 166, by + 308, 12, 38); g.fillRect(bx + 153, by + 321, 38, 12); // badge
+  // front arm: reaches with the stethoscope, raised in shock
+  g.save(); g.translate(bx + 210, by + 245); g.rotate(-1.15 - .25 * s.lean + 0.15 * Math.sin(t * 2) * (1 - j) - j * 1.5);
+  g.fillStyle = '#39a87e'; g.fillRect(0, 0, 70, 90); g.fillStyle = '#f6c945'; g.fillRect(0, 90, 70, 150);
+  g.restore();
+  // stethoscope held by the doctor (before the twist)
+  if (s.swap < 1) {
+    g.globalAlpha = 1 - s.swap; g.strokeStyle = '#1b1f24'; g.lineWidth = 9; g.beginPath(); g.moveTo(bx + 100, by + 235);
+    g.bezierCurveTo(bx + 140, by + 360, bx + 330, by + 330, 455, 1095); g.stroke();
+    g.fillStyle = '#c0c6cc'; g.beginPath(); g.arc(462, 1100, 24, 0, Math.PI * 2); g.fill(); g.globalAlpha = 1;
+  }
+  // head (turns slightly toward the monitor)
+  const hx = bx + 45 + 10 * s.look, hy = by + 60 - 8 * s.look;
+  rr(hx, hy, 150, 165, 34); g.fillStyle = '#f6c945'; g.fill();
+  rr(hx - 7, hy - 20, 164, 62, 26); g.fillStyle = '#2f8f6b'; g.fill();
+  const ew = 13 + 14 * s.shock, eh = 22 + 28 * s.shock;
+  const ox = 8 + 10 * s.look, oy = -12 * s.look + 4 * s.lean;
+  g.fillStyle = '#111';
+  for (const ex of [hx + 50, hx + 105]) { g.beginPath(); g.ellipse(ex + ox, hy + 75 + oy, ew, eh, 0, 0, Math.PI * 2); g.fill(); }
+  if (s.shock > .3) { g.fillStyle = '#fff'; for (const ex of [hx + 50, hx + 105]) { g.beginPath(); g.arc(ex + ox - 4, hy + 63 + oy, 6 * s.shock, 0, 7); g.fill(); } }
+  rr(hx + 15, hy + 105, 120, 55, 14); g.fillStyle = '#cfe8f6'; g.fill();
+  if (s.shock > .5) { g.fillStyle = '#8fd3ff'; g.beginPath(); g.ellipse(hx + 160, hy + 35, 12, 20, .3, 0, 7); g.fill(); }
+  g.restore();
+  return {chestX: bx + 120 + 30, chestY: by + 330};
+}
+
+function cord(s, chest) {
+  // twist: cord from the pumpkin's earpieces to a bell on the doctor's chest
+  if (s.swap <= 0) return;
+  g.globalAlpha = s.swap; g.strokeStyle = '#1b1f24'; g.lineWidth = 9; g.beginPath();
+  g.moveTo(600, 1130 - 195); g.bezierCurveTo(600, 760, chest.x + 160, chest.y - 120, chest.x, chest.y); g.stroke();
+  g.fillStyle = '#c0c6cc'; g.beginPath(); g.arc(chest.x, chest.y, 24, 0, 7); g.fill(); g.globalAlpha = 1;
+}
+
+function bubble(a, text, x, y) {
+  if (a <= 0) return;
+  const s = .6 + .4 * ease(cl(a * 1.4));
+  g.save(); g.globalAlpha = cl(a * 2); g.translate(x, y); g.scale(s, s);
+  rr(-330, -95, 660, 150, 40); g.fillStyle = '#fff'; g.fill();
+  g.beginPath(); g.moveTo(30, 55); g.lineTo(90, 55); g.lineTo(110, 135); g.fill();
+  g.fillStyle = '#111'; g.font = '800 64px Inter, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(text, 0, -20); g.restore();
+}
+
+function caption() {
+  g.fillStyle = '#fff'; g.fillRect(0, 0, W, TOP);
+  g.fillStyle = '#000'; g.font = '800 76px Inter, sans-serif'; g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+  g.fillText('POV: your Oct 31', 60, 135);
+  g.fillText('patient has no pulse 🎃', 60, 232);
+}
+
+function draw(t) {
+  t = ((t % D) + D) % D;
+  const s = state(t);
+  g.save(); g.beginPath(); g.rect(0, TOP, W, H - TOP); g.clip();
+  g.translate(540 + s.sx, (TOP + H) / 2 + s.sy); g.scale(s.zoom, s.zoom); g.translate(-s.fx, -s.fy);
+  room(t, s.light); monitor(t, s.mon, s.light); table();
+  const ch = doctor(t, s); pumpkin(t, s); cord(s, {x: ch.chestX, y: ch.chestY});
+  g.restore();
+  g.fillStyle = `rgba(0,0,0,${(1 - s.light) * .93 + .16})`; g.fillRect(0, TOP, W, H - TOP);
+  const v = g.createRadialGradient(540, 1150, 300, 540, 1150, 1000); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.55)');
+  g.fillStyle = v; g.fillRect(0, TOP, W, H - TOP);
+  bubble(t >= 4.8 && t < 7.3 ? prog(t, 4.8, 5.3) : 0, 'your turn, doc 🩺', 400, 800);
+  // 1.3: tiny "?" over the doctor when the monitor spikes
+  if (t >= 1.3 && t < 2.0) { g.globalAlpha = prog(t, 1.3, 1.4) * (1 - prog(t, 1.9, 2.0)); g.fillStyle = '#fff'; g.font = '900 120px Inter'; g.textAlign = 'center';
+    g.lineWidth = 12; g.strokeStyle = '#000'; g.strokeText('?', 300, 830); g.fillText('?', 300, 830); g.globalAlpha = 1; }
+  caption();
+}
+window.draw = draw; window.DUR = D;
+draw(0);
+</script>
+</body></html>

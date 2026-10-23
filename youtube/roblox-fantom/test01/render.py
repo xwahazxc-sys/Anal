@@ -28,14 +28,18 @@ def main():
         page.wait_for_timeout(500)
         if mode == "stills":
             ts = [float(x) for x in sys.argv[3:]]
+            cols = min(4, len(ts)); rows = -(-len(ts) // cols)
+            ts += [ts[-1]] * (cols * rows - len(ts))  # xstack needs a full grid
             tmp = []
             for i, jpg in enumerate(frames(page, ts)):
                 f = f"{out}.{i}.jpg"; open(f, "wb").write(jpg); tmp.append(f)
             ins = sum((["-i", f] for f in tmp), [])
             n = len(tmp)
+            if n == 1:
+                os.replace(tmp[0], out); return
             subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex",
                             "".join(f"[{i}:v]scale=270:480[s{i}];" for i in range(n)) +
-                            "".join(f"[s{i}]" for i in range(n)) + f"xstack=inputs={n}:grid=4x{(n + 3) // 4}", out], check=True)
+                            "".join(f"[s{i}]" for i in range(n)) + f"xstack=inputs={n}:grid={cols}x{rows}", out], check=True)
             for f in tmp: os.remove(f)
         else:
             dur = page.evaluate("DUR")
