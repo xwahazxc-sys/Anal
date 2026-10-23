@@ -1,0 +1,37 @@
+{
+ "id": "el-ss-zeigarnik",
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.45,
+  "similarity_boost": 0.8,
+  "style": 0.3
+ },
+ "lines": [
+  {
+   "name": "l1",
+   "text": "You'll remember this video longer if I don't finish it."
+  },
+  {
+   "name": "l2",
+   "text": "It's called the Zeigarnik effect."
+  },
+  {
+   "name": "l3",
+   "text": "In the nineteen twenties, psychologist Bluma Zeigarnik noticed that waiters remembered unpaid orders perfectly, and forgot them the moment the bill was paid."
+  },
+  {
+   "name": "l4",
+   "text": "Your brain keeps unfinished tasks open, like tabs in a browser."
+  },
+  {
+   "name": "l5",
+   "text": "That's why cliffhangers work. And why one tiny task can keep you awake at night."
+  },
+  {
+   "name": "l6",
+   "text": "And the third reason is"
+  }
+ ],
+ "status": "done"
+}

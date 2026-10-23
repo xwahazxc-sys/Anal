@@ -1,0 +1,33 @@
+{
+ "id": "el-ss-jet",
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.45,
+  "similarity_boost": 0.8,
+  "style": 0.3
+ },
+ "lines": [
+  {
+   "name": "l1",
+   "text": "This private jet costs seventy million dollars. That's not the expensive part."
+  },
+  {
+   "name": "l2",
+   "text": "Just to keep it flying, owners spend around eleven thousand dollars for every hour in the air."
+  },
+  {
+   "name": "l3",
+   "text": "Fly it four hundred and fifty hours a year, and that's about five million dollars."
+  },
+  {
+   "name": "l4",
+   "text": "Pilots, fuel, the hangar, insurance. Every single year."
+  },
+  {
+   "name": "l5",
+   "text": "So the real question isn't if you can buy one. It's if you can afford to keep it."
+  }
+ ],
+ "status": "done"
+}
