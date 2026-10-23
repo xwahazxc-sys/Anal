@@ -1,1 +1,0 @@
-{"id": "1-jet-1", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "ss-jet-1", "width": 1088, "height": 1920, "seed": 101, "prompt": "luxurious private jet cabin interior, cream leather seats, champagne, warm light, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"}}
