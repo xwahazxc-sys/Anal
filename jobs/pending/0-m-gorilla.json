@@ -1,1 +1,0 @@
-{"id": "0-m-gorilla", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "ss-m-gorilla", "seconds": 40, "seed": 21, "bpm": 110, "key": "D minor", "tags": "epic cinematic battle drums, taiko, low brass hits, tension rising, 110 bpm, instrumental", "lyrics": "[Instrumental]"}}
