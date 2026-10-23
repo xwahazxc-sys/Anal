@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1009,
   "prompt": "Pitch dark arctic road with only car headlights cutting through falling snow, reflective snow poles. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:55:10",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s10/sv-s10_00001_.png"
+ ],
+ "seconds": 36
 }
