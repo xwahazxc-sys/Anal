@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s15",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s15",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1014,
+  "prompt": "A crowd of people in winter clothes seen from behind gathered on old wooden stairs looking up at the first sunlight, arctic town, March. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
