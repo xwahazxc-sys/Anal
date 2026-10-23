@@ -1,1 +1,0 @@
-{"id": "sv-z3-m10", "type": "comfy", "workflow": "workflows/wan5b_i2v_fast.json", "timeout": 3600, "files": {"start_image": "inputs/sv/m10.png"}, "vars": {"name": "sv-m10", "seed": 500, "prompt": "snow falls through the car headlights, the car drives slowly forward along the dark road, realistic documentary footage, smooth natural motion, cinematic"}}
