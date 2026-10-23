@@ -10,5 +10,11 @@
   "name": "ep1-sec",
   "seed": 77,
   "prompt": "security camera footage, static camera, the rabbit mascot in the doorway slowly steps into the room toward the empty office chair and tilts its head, monitors flicker, eerie, realistic"
- }
+ },
+ "finished": "2026-10-23 22:33:06",
+ "status": "done",
+ "outputs": [
+  "outputs/0-d-sec/ep1-sec_00001_.mp4"
+ ],
+ "seconds": 373
 }
