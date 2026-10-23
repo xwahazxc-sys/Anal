@@ -1,0 +1,416 @@
+{
+ "chunks": 51,
+ "flagged": 2,
+ "seconds": 247.1,
+ "sample_rate": 24000,
+ "chunks_detail": [
+  {
+   "n": 0,
+   "text": "In this town you can't be born, and you can't be buried. So why do more than two thousand people refuse to leave?",
+   "heard": "In this town you can't be born and you can't be buried, so why do more than 2 ,000 people refuse to leave?",
+   "score": 0.913,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 1,
+   "text": "This is Longyearbyen, on the Norwegian archipelago of Svalbard. Thirteen hundred kilometres from the North Pole.",
+   "heard": "This is Longyear BN on the Norwegian archipelago of Svalbard, 1300 km from the North Pole.",
+   "score": 0.611,
+   "takes": 1,
+   "flag": true
+  },
+  {
+   "n": 2,
+   "text": "Closer to the Pole than to Oslo.",
+   "heard": "closer to the pole than to Oslo.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 3,
+   "text": "It is the northernmost town on Earth with a school, a hospital, a supermarket and an airport with scheduled flights.",
+   "heard": "It is the northernmost town on Earth with a school, a hospital, a supermarket, and an airport with scheduled flights.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 4,
+   "text": "And almost everything about living here comes with a rule you have never heard of.",
+   "heard": "And almost everything about living here comes with a rule you have never heard of.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 5,
+   "text": "The town began in 1906, when an American businessman, John Munro Longyear, came here to dig coal. His name stuck.",
+   "heard": "The town began in 1986 when an American businessman, John Monroe Longier, came here to dig coal. His name stuck.",
+   "score": 0.85,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 6,
+   "text": "Coal is the reason the town exists, and today the mining is almost over.",
+   "heard": "Cole is the reason the town exists, and today, the mining is almost over.",
+   "score": 0.929,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 7,
+   "text": "But the old wooden towers that once carried the coal across the valley are still standing, like a skeleton of the place it used to be.",
+   "heard": "But the old wooden towers that once carried the coal across the valley are still standing, like a skeleton of the place it used to be.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 8,
+   "text": "Start with the light, because for a third of the year there isn't any.",
+   "heard": "Start with the light, because for a third of the year there isn't any.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 9,
+   "text": "At the end of October, the sun sets here and does not come back.",
+   "heard": "At the end of October, the sun sets here and does not come back.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 10,
+   "text": "From mid-November to the end of January there isn't even twilight at noon. Just a deep blue, then black, for weeks.",
+   "heard": "From mid -November to the end of January, there isn't even twilight at noon. Just a deep blue, then black, for weeks.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 11,
+   "text": "The town runs on streetlights, headlamps and the glow of windows.",
+   "heard": "The town runs on streetlights, headlamps, and the glow of windows.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 12,
+   "text": "Locals say the first winter is the hardest. Your body stops knowing when to sleep.",
+   "heard": "Locals say the first winter is the hardest. Your body stops knowing when to sleep.",
+   "score": 1.0,
+   "takes": 3,
+   "flag": false
+  },
+  {
+   "n": 13,
+   "text": "Some people keep a strict routine, the same breakfast, the same walk, the same bedtime, just to remind themselves what time it is.",
+   "heard": "Some people keep a strict routine, the same breakfast, the same walk, the same bedtime, just to remind themselves what time it is.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 14,
+   "text": "Others leave before the second winter.",
+   "heard": "Others leave before the second winter.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 15,
+   "text": "And when the sun finally returns above the horizon in February, the mountains around the valley still hide it.",
+   "heard": "and when the sun finally returns above the horizon in February, the mountains around the valley still hide it.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 16,
+   "text": "In town the first sunlight touches the old hospital steps around the eighth of March. People gather there to see it.",
+   "heard": "In town, the first sunlight touches the old hospital steps around the 8th of March. People gather there to see it.",
+   "score": 0.952,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 17,
+   "text": "They have a whole festival week for it.",
+   "heard": "They have a whole festival week for it.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 18,
+   "text": "So that's the first price of living here. Not the cold. The dark.",
+   "heard": "So that's the first price of living here, not the cold, the dark.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 19,
+   "text": "Now the first rule.",
+   "heard": "Now the first rule.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 20,
+   "text": "Longyearbyen has a small hospital. It can set a broken arm, treat a snowmobile crash, stabilise you for a flight.",
+   "heard": "Long year BN has a small hospital. It can set a broken arm, treat a snowmobile crash, stabilize you for a flight.",
+   "score": 0.889,
+   "takes": 2,
+   "flag": false
+  },
+  {
+   "n": 21,
+   "text": "What it does not do is deliver babies.",
+   "heard": "What it does not do is deliver babies.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 22,
+   "text": "So every pregnant woman in town does the same thing.",
+   "heard": "So every pregnant woman in town does the same thing.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 23,
+   "text": "A few weeks before her due date, she packs a bag and flies to the Norwegian mainland.",
+   "heard": "A few weeks before her due date, she packs a bag and flies to the Norwegian mainland.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 24,
+   "text": "She gives birth there, waits, and only then comes home with the baby.",
+   "heard": "She gets birth there, waits, and only then comes home with the baby.",
+   "score": 0.923,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 25,
+   "text": "Almost every child who grows up here was born more than eight hundred kilometres away.",
+   "heard": "Almost every child who grows up here was born more than 800 kilometers away.",
+   "score": 0.828,
+   "takes": 1,
+   "flag": true
+  },
+  {
+   "n": 26,
+   "text": "The second rule is stranger.",
+   "heard": "The second rule is stranger.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 27,
+   "text": "There is a small cemetery on the hillside above town, white wooden crosses in the snow.",
+   "heard": "There is a small cemetery on the hillside above town. Whitewood crosses in the snow.",
+   "score": 0.903,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 28,
+   "text": "But since around 1950, it has not taken new burials.",
+   "heard": "But since around 1950, it has not taken new burials.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 29,
+   "text": "The reason is the ground itself. Under Svalbard lies permafrost, earth that stays frozen all year round.",
+   "heard": "The reason is the ground itself. Under Svalbard lies permafrost, earth that stays frozen all year round.",
+   "score": 0.914,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 30,
+   "text": "Bodies buried here do not decompose the way they would anywhere else. The town found out the hard way.",
+   "heard": "Bodies buried here do not decompose the way they would anywhere else. The town found out the hard way. How and uh, at",
+   "score": 0.905,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 31,
+   "text": "Among the graves are victims of the 1918 flu pandemic, and decades later scientists came to study them, because the cold had preserved far more than anyone expected.",
+   "heard": "Among the graves are victims of the 1918 flu pandemic, and decades later scientists came to study them because the cold had preserved far more than anyone expected.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 32,
+   "text": "So today, if you are seriously ill or very old, you are usually flown south to be cared for on the mainland.",
+   "heard": "Such day, if you are seriously ill or very old, you are usually flown south to be cared for on the mainland.",
+   "score": 0.909,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 33,
+   "text": "If someone does die here, they are flown out to be buried. People like to say dying is illegal in Longyearbyen.",
+   "heard": "If someone does die here, they are flown out to be buried. People like to say dying is illegal in long -year BN.",
+   "score": 0.936,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 34,
+   "text": "It isn't. There's simply nowhere to put you.",
+   "heard": "It isn't. There's simply nowhere to put you.",
+   "score": 1.0,
+   "takes": 2,
+   "flag": false
+  },
+  {
+   "n": 35,
+   "text": "At the edge of town there are road signs with a polar bear on them. They mark a line.",
+   "heard": "At the edge of town, there are road signs with a polar bear on them. They mark a line.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 36,
+   "text": "Inside the line, you're in a town. Beyond it, you're in polar bear country, and the rules change.",
+   "heard": "Inside the line, you're in a town. Beyond it, you're in polar bear country and the rules change.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 37,
+   "text": "Anyone heading out is expected to carry protection: a flare gun to scare a bear away, and a rifle for when that doesn't work.",
+   "heard": "Anyone heading out is expected to carry protection, a flare gun to scare a bear away, and a rifle for when that doesn't work.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 38,
+   "text": "Visitors rent them. Locals own them.",
+   "heard": "Visitors rent them. Locals own them.",
+   "score": 1.0,
+   "takes": 2,
+   "flag": false
+  },
+  {
+   "n": 39,
+   "text": "Even the university here, the northernmost in the world, starts every new student's year the same way: with a safety course, and a lesson on how to handle a rifle.",
+   "heard": "Even the university here, the northernmost in the world, starts every new student year the same way, with a safety course and a lesson on how to handle a rifle.",
+   "score": 0.967,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 40,
+   "text": "Polar bears are protected, and shooting one is allowed only when your life is in danger, and every single case is investigated.",
+   "heard": "Hologra bears are protected, and shooting one is allowed only when your life is in danger, and every single case is investigated.",
+   "score": 0.955,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 41,
+   "text": "So children here learn two things about the outdoors very early: never go past the signs alone, and always look behind you.",
+   "heard": "So children here learn two things about the outdoors very early, never go past the signs alone and always look behind you.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 42,
+   "text": "And every so often, a bear doesn't stop at the signs. It walks into the settlement itself.",
+   "heard": "And every so often, a bear doesn't stop at the signs. It walks into the settlement itself.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 43,
+   "text": "Word goes out, people stay indoors, and the governor's team uses a helicopter to drive the animal back out toward the ice.",
+   "heard": "Where it goes out, people stay indoors, and the governor's team uses a helicopter to drive the animal back out toward the ice.",
+   "score": 0.933,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 44,
+   "text": "But the strangest rule in Longyearbyen isn't about birth, or death, or bears.",
+   "heard": "But the strangest rule in Long Year BN isn't about birth or death or bears.",
+   "score": 0.903,
+   "takes": 3,
+   "flag": false
+  },
+  {
+   "n": 45,
+   "text": "It's about who is allowed to stay.",
+   "heard": "It's about who is allowed to stay.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 46,
+   "text": "There's no welfare office here. Almost no one retires here.",
+   "heard": "There's no welfare office here, almost no one retires here.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 47,
+   "text": "If you can't support yourself, you can be refused the right to stay at all.",
+   "heard": "If you can't support yourself, you can be refused the right to stay at all.",
+   "score": 1.0,
+   "takes": 2,
+   "flag": false
+  },
+  {
+   "n": 48,
+   "text": "Because this is one of the only places on Earth where people from dozens of countries can move in and work without a visa, under a treaty signed in 1920.",
+   "heard": "because this is one of the only places on Earth where people from dozens of countries can move in and work without a visa, under a treaty signed in 1920.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 49,
+   "text": "And yet almost no one stays for life.",
+   "heard": "And yet almost no one stays for life.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 50,
+   "text": "To understand why, you have to look at what it actually costs to survive a year at seventy-eight degrees north.",
+   "heard": "To understand why, you have to look at what it actually costs to survive a year at 78 degrees north.",
+   "score": 0.927,
+   "takes": 1,
+   "flag": false
+  }
+ ]
+}
