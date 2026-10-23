@@ -1,0 +1,14 @@
+{
+ "id": "sv-z4-m08",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_fast.json",
+ "timeout": 3600,
+ "files": {
+  "start_image": "inputs/sv/m08.png"
+ },
+ "vars": {
+  "name": "sv-m08",
+  "seed": 500,
+  "prompt": "people walk along the dark street with headlamps, snow falls through the streetlights, realistic documentary footage, smooth natural motion, cinematic"
+ }
+}
