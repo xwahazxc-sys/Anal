@@ -147,7 +147,12 @@ def job_comfy(job):
     return comfy.run(job, fetch, CFG)
 
 
-HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy}
+def job_restart(job):
+    """Exit after this job; start_worker.bat pulls the newest code and starts the worker again."""
+    return {"note.txt": b"worker restarting to load new code"}
+
+
+HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart}
 
 
 def process(path):
@@ -174,6 +179,9 @@ def process(path):
         log("  FAILED:", record["error"].strip().splitlines()[-1])
     files[dest] = json.dumps(record, indent=1, ensure_ascii=False).encode()
     commit(files, [path], f"worker: {jid} {record['status']}")
+    if kind == "restart":
+        log("restart requested: exiting so start_worker.bat can update and restart")
+        sys.exit(0)
 
 
 def main():

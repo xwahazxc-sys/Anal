@@ -3,7 +3,8 @@ rem Starts the render worker. Put a shortcut to this file in Task Scheduler ("At
 cd /d "%~dp0"
 call venv\Scripts\activate.bat
 :loop
+git pull --ff-only
 python worker.py
-echo Worker stopped, restarting in 30 s...
-timeout /t 30 /nobreak >nul
+echo Worker stopped, restarting in 5 s...
+timeout /t 5 /nobreak >nul
 goto loop
