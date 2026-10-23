@@ -1,0 +1,209 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+</head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// Test Short 01 — "POV: Your Patient Is a Pumpkin". draw(t) renders the frame at time t (seconds).
+// Beats (keep in sync with audio.py): 0 hook frame · 0.75/1.5/2.25 slow beeps · 3.0 fast beeps + pumpkin lights up
+// 3.6 pumpkin blinks · 4.6 doctor jumps (boom + shake) · 6.0 "trick or treat?" · 7.3 lights out · 8.0 loops to 0.
+const D = 8.0;
+const c = document.getElementById('c'), g = c.getContext('2d');
+const W = 1080, H = 1920, TOP = 330;
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const prog = (t, a, b) => cl((t - a) / (b - a));
+function rr(x, y, w, h, r) { g.beginPath(); g.roundRect(x, y, w, h, r); }
+function rnd(i) { const s = Math.sin(i * 127.1) * 43758.5453; return s - Math.floor(s); }
+
+function room(t, light) {
+  // back wall
+  let gr = g.createLinearGradient(0, TOP, 0, H);
+  gr.addColorStop(0, '#16302f'); gr.addColorStop(.62, '#1d3b39'); gr.addColorStop(.62, '#2a2f36'); gr.addColorStop(1, '#14171c');
+  g.fillStyle = gr; g.fillRect(0, TOP, W, H - TOP);
+  // wall tiles
+  g.strokeStyle = 'rgba(255,255,255,.05)'; g.lineWidth = 3;
+  for (let x = 0; x <= W; x += 120) { g.beginPath(); g.moveTo(x, TOP); g.lineTo(x, TOP + (H - TOP) * .62); g.stroke(); }
+  for (let y = TOP; y < TOP + (H - TOP) * .62; y += 120) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+  // surgical lamp + light cone
+  g.fillStyle = '#9aa3ad'; g.fillRect(535, TOP, 10, 150);
+  g.fillStyle = '#c9d1d9'; g.beginPath(); g.ellipse(540, TOP + 175, 150, 48, 0, Math.PI, 0); g.fill();
+  g.fillStyle = `rgba(255,252,220,${.9 * light})`; g.beginPath(); g.ellipse(540, TOP + 178, 130, 22, 0, 0, Math.PI * 2); g.fill();
+  const cone = g.createLinearGradient(0, TOP + 180, 0, 1500);
+  cone.addColorStop(0, `rgba(255,250,215,${.32 * light})`); cone.addColorStop(1, 'rgba(255,250,215,0)');
+  g.fillStyle = cone; g.beginPath(); g.moveTo(420, TOP + 185); g.lineTo(660, TOP + 185); g.lineTo(960, 1500); g.lineTo(120, 1500); g.fill();
+}
+
+function monitor(t, fast, light) {
+  const x = 770, y = 620, w = 260, h = 200;
+  g.fillStyle = '#7d8790'; g.fillRect(x + w / 2 - 8, y + h, 16, 380);
+  rr(x - 14, y - 14, w + 28, h + 28, 18); g.fillStyle = '#3a4047'; g.fill();
+  rr(x, y, w, h, 8); g.fillStyle = '#04110a'; g.fill();
+  g.save(); g.beginPath(); g.rect(x, y, w, h); g.clip();
+  g.strokeStyle = `rgba(60,255,140,${.4 + .6 * light})`; g.lineWidth = 6; g.lineJoin = 'round'; g.beginPath();
+  const per = fast ? .32 : .75, speed = 300;
+  for (let px = 0; px <= w; px += 3) {
+    const tt = t - (w - px) / speed; const ph = ((tt % per) + per) % per;
+    let v = 0; if (ph < .06) v = Math.sin(ph / .06 * Math.PI) * (fast ? 85 : 55) * (ph < .03 ? 1 : -.6);
+    const yy = y + h / 2 - v; px ? g.lineTo(x + px, yy) : g.moveTo(x + px, yy);
+  }
+  g.stroke(); g.restore();
+  g.fillStyle = `rgba(60,255,140,${.5 + .5 * light})`; g.font = 'bold 40px Inter, sans-serif';
+  g.fillText(fast ? '♥ 180' : '♥ 0', x + 14, y + h - 16);
+}
+
+function table() {
+  g.fillStyle = '#6b747d'; g.fillRect(250, 1380, 30, 260); g.fillRect(800, 1380, 30, 260);
+  rr(150, 1290, 780, 100, 22); g.fillStyle = '#b9c4cc'; g.fill();
+  rr(150, 1270, 780, 60, 22); g.fillStyle = '#e6eef3'; g.fill();
+  rr(170, 1240, 300, 50, 25); g.fillStyle = '#f7fbfd'; g.fill(); // pillow
+  // blanket
+  g.fillStyle = '#5fa8d3'; rr(430, 1235, 480, 75, 20); g.fill();
+}
+
+function pumpkin(t, glow, blink, grin) {
+  const cx = 600, cy = 1130;
+  g.save(); g.translate(cx, cy);
+  // body ribs
+  const ribs = [[-150, 120], [150, 120], [-80, 140], [80, 140], [0, 150]];
+  for (const [dx, rw] of ribs) {
+    const gr = g.createRadialGradient(dx - 20, -40, 10, dx, 0, 190);
+    gr.addColorStop(0, '#ffab3d'); gr.addColorStop(1, '#c95a0e');
+    g.fillStyle = gr; g.beginPath(); g.ellipse(dx, 0, rw, 140, 0, 0, Math.PI * 2); g.fill();
+    g.strokeStyle = 'rgba(120,45,0,.35)'; g.lineWidth = 5; g.stroke();
+  }
+  // stem
+  g.fillStyle = '#4c7a2a'; rr(-22, -175, 44, 60, 12); g.fill();
+  // carved face
+  const lit = glow;
+  const face = (path) => {
+    path();
+    g.fillStyle = '#2a1203'; g.fill();
+    if (lit > 0.02) { const fg = g.createRadialGradient(0, 20, 5, 0, 20, 200); fg.addColorStop(0, `rgba(255,250,200,${lit})`); fg.addColorStop(1, `rgba(255,190,20,${lit})`); g.fillStyle = fg; g.fill(); }
+    g.strokeStyle = '#5a2600'; g.lineWidth = 6; g.shadowBlur = 0; g.stroke();
+    if (lit > 0.02) g.shadowBlur = 70 * lit;
+  };
+  if (lit > 0.02) { g.shadowColor = `rgba(255,170,30,${lit})`; g.shadowBlur = 70 * lit; }
+  // eyes (triangles), blink squashes them
+  const eh = 70 * (1 - blink) + 6 * blink;
+  // eyes look toward the doctor (left) once lit
+  const look = lit > .5 ? -14 : 0;
+  for (const s of [-1, 1]) face(() => { g.beginPath(); g.moveTo(s * 75 - 45, 20); g.lineTo(s * 75 + 45, 20); g.lineTo(s * 75 + look, 20 - eh); g.closePath(); });
+  // mouth: zigzag grin, wider with grin
+  const mw = 150 + 50 * grin, mh = 45 + 25 * grin;
+  face(() => {
+    g.beginPath(); g.moveTo(-mw, 40);
+    const n = 6;
+    for (let i = 1; i <= n; i++) g.lineTo(-mw + (2 * mw) * i / n, 40 + (i % 2 ? 22 : 0));
+    g.quadraticCurveTo(0, 40 + mh * 2.2, -mw, 40); g.closePath();
+  });
+  g.shadowBlur = 0;
+  if (lit > 0.02) { g.globalCompositeOperation = 'lighter'; const h = g.createRadialGradient(0, 20, 20, 0, 20, 330);
+    h.addColorStop(0, `rgba(255,150,20,${.55 * lit})`); h.addColorStop(1, 'rgba(255,120,0,0)'); g.fillStyle = h;
+    g.beginPath(); g.arc(0, 20, 330, 0, 7); g.fill(); g.globalCompositeOperation = 'source-over'; }
+  g.restore();
+}
+
+function doctor(t, jump, shock) {
+  // blocky Roblox-style doctor; jump in [0..1] moves him back/up
+  const j = jump;
+  const bx = 165 - 70 * j, by = 830 - 120 * Math.sin(Math.PI * cl(j * 1.0)) * (j < 1 ? 1 : 0) ;
+  const lean = (1 - j) * 0.10 - j * 0.08;
+  g.save(); g.translate(bx + 120, by + 420); g.rotate(lean); g.translate(-(bx + 120), -(by + 420));
+  // legs
+  g.fillStyle = '#2f8f6b'; g.fillRect(bx + 40, by + 470, 75, 260); g.fillRect(bx + 125, by + 470, 75, 260);
+  g.fillStyle = '#222'; g.fillRect(bx + 40, by + 705, 75, 30); g.fillRect(bx + 125, by + 705, 75, 30);
+  // torso (scrubs)
+  g.fillStyle = '#39a87e'; g.fillRect(bx + 30, by + 230, 180, 245);
+  g.fillStyle = '#2f8f6b'; g.beginPath(); g.moveTo(bx + 85, by + 230); g.lineTo(bx + 120, by + 290); g.lineTo(bx + 155, by + 230); g.fill();
+  // back arm
+  g.fillStyle = '#f6c945'; g.save(); g.translate(bx + 30, by + 240); g.rotate(.15 + j * .9); g.fillRect(-70, 0, 70, 220); g.restore();
+  // front arm reaching toward pumpkin with stethoscope (raised in shock)
+  g.save(); g.translate(bx + 210, by + 245); g.rotate(-1.15 + 0.2 * Math.sin(t * 2) * (1 - j) - j * 1.5);
+  g.fillStyle = '#39a87e'; g.fillRect(0, 0, 70, 90); g.fillStyle = '#f6c945'; g.fillRect(0, 90, 70, 150);
+  g.restore();
+  // stethoscope cord
+  if (j < .5) {
+    g.strokeStyle = '#1b1f24'; g.lineWidth = 9; g.beginPath(); g.moveTo(bx + 100, by + 235);
+    g.bezierCurveTo(bx + 140, by + 360, bx + 330, by + 330, 455, 1095); g.stroke();
+    g.fillStyle = '#c0c6cc'; g.beginPath(); g.arc(462, 1100, 24, 0, Math.PI * 2); g.fill();
+  }
+  // head
+  rr(bx + 45, by + 60, 150, 165, 34); g.fillStyle = '#f6c945'; g.fill();
+  // cap
+  rr(bx + 38, by + 40, 164, 62, 26); g.fillStyle = '#2f8f6b'; g.fill();
+  // eyes: grow with shock
+  const ew = 13 + 13 * shock, eh = 22 + 26 * shock;
+  g.fillStyle = '#111';
+  for (const ex of [bx + 95, bx + 150]) { g.beginPath(); g.ellipse(ex, by + 135, ew, eh, 0, 0, Math.PI * 2); g.fill(); }
+  if (shock > .3) { g.fillStyle = '#fff'; for (const ex of [bx + 95, bx + 150]) { g.beginPath(); g.arc(ex - 4, by + 125, 6 * shock, 0, 7); g.fill(); } }
+  // mask
+  rr(bx + 60, by + 165, 120, 55, 14); g.fillStyle = '#cfe8f6'; g.fill();
+  g.strokeStyle = '#9dc1d6'; g.lineWidth = 4; g.beginPath(); g.moveTo(bx + 45, by + 175); g.lineTo(bx + 62, by + 185); g.moveTo(bx + 195, by + 175); g.lineTo(bx + 178, by + 185); g.stroke();
+  // sweat drop
+  if (shock > .5) { g.fillStyle = '#8fd3ff'; g.beginPath(); g.ellipse(bx + 205, by + 95, 12, 20, .3, 0, 7); g.fill(); }
+  g.restore();
+}
+
+function bubble(t, a) {
+  if (a <= 0) return;
+  const s = .6 + .4 * ease(cl(a * 1.4));
+  g.save(); g.globalAlpha = cl(a * 2); g.translate(700, 860); g.scale(s, s);
+  rr(-250, -95, 500, 150, 40); g.fillStyle = '#fff'; g.fill();
+  g.beginPath(); g.moveTo(-40, 55); g.lineTo(10, 55); g.lineTo(-60, 130); g.fill();
+  g.fillStyle = '#111'; g.font = '800 62px Inter, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText('trick or treat?', 0, -20);
+  g.restore();
+}
+
+function caption() {
+  g.fillStyle = '#fff'; g.fillRect(0, 0, W, TOP);
+  g.fillStyle = '#000'; g.font = '800 74px Inter, sans-serif'; g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+  g.fillText('POV: your patient on', 60, 135);
+  g.fillText('Oct 31 has no pulse 🎃', 60, 230);
+}
+
+function draw(t) {
+  t = ((t % D) + D) % D;
+  const fast = t >= 3.0 && t < 7.3;
+  const glow = t < 3.0 ? 0 : (t < 7.3 ? cl(prog(t, 3.0, 3.35) * (0.75 + 0.25 * Math.sin(t * 23) * (t < 3.6 ? 1 : .3))) : 0);
+  const blink = t > 3.6 && t < 3.85 ? Math.sin(prog(t, 3.6, 3.85) * Math.PI) : 0;
+  const grin = ease(prog(t, 5.8, 6.4));
+  const jump = t < 4.6 ? 0 : (t < 7.3 ? ease(prog(t, 4.6, 4.9)) : 1 - prog(t, 7.3, 7.6));
+  const shock = t < 4.55 ? 0 : (t < 7.3 ? ease(prog(t, 4.55, 4.75)) : 0);
+  // lights: flicker at 7.3, black 7.45-7.75, back on to match t=0
+  let light = 1;
+  if (t >= 7.3) light = t < 7.45 ? (Math.sin(t * 90) > 0 ? 1 : .15) : (t < 7.75 ? 0 : prog(t, 7.75, 7.95));
+  if (t < 0.12) light = .6 + .4 * prog(t, 0, .12);
+
+  // camera: slow push in, zoom on doctor at boom, shake
+  let zoom = 1 + 0.04 * prog(t, 0, 4.6), fx = 540, fy = 1150;
+  if (t >= 4.6 && t < 7.3) { const z = ease(prog(t, 4.6, 4.75)); zoom = 1.04 + 0.30 * z; fx = 540 - 230 * z; fy = 1150 - 230 * z; }
+  if (t >= 6.0 && t < 7.3) { const z = ease(prog(t, 6.0, 6.3)); zoom = 1.34 - 0.24 * z; fx = 310 + 280 * z; fy = 920 + 150 * z; }
+  const sh = t >= 4.6 && t < 5.1 ? 26 * (1 - prog(t, 4.6, 5.1)) : 0;
+  const sx = sh * (rnd(Math.floor(t * 30)) - .5) * 2, sy = sh * (rnd(Math.floor(t * 30) + 7) - .5) * 2;
+
+  g.save(); g.beginPath(); g.rect(0, TOP, W, H - TOP); g.clip();
+  g.translate(540 + sx, (TOP + H) / 2 + sy); g.scale(zoom, zoom); g.translate(-fx, -fy + 0);
+  room(t, light); monitor(t, fast, light); table(); doctor(t, jump, shock); pumpkin(t, glow, blink, grin);
+  g.restore();
+  // darkness overlay (lights) + pumpkin glow survives darkness
+  g.fillStyle = `rgba(0,0,0,${(1 - light) * .92})`; g.fillRect(0, TOP, W, H - TOP);
+  g.fillStyle = `rgba(0,0,0,${0.18})`; g.fillRect(0, TOP, W, H - TOP); // grade
+  // vignette
+  const v = g.createRadialGradient(540, 1150, 300, 540, 1150, 1000); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.55)');
+  g.fillStyle = v; g.fillRect(0, TOP, W, H - TOP);
+  bubble(t, t >= 6.0 && t < 7.3 ? prog(t, 6.0, 6.5) : 0);
+  // small on-screen line, beat 1
+  if (t > 0.9 && t < 2.9) {
+    g.globalAlpha = cl(prog(t, .9, 1.1)) * (1 - prog(t, 2.7, 2.9));
+    g.fillStyle = '#fff'; g.font = 'italic 700 52px Inter, sans-serif'; g.textAlign = 'center';
+    g.lineWidth = 10; g.strokeStyle = '#000'; g.strokeText('"no heartbeat… weird"', 540, 1780); g.fillText('"no heartbeat… weird"', 540, 1780);
+    g.globalAlpha = 1;
+  }
+  caption();
+}
+window.draw = draw; window.DUR = D;
+draw(0);
+</script>
+</body></html>
