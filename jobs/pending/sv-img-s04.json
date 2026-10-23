@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s04",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s04",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1003,
+  "prompt": "Satellite-style view of the Svalbard archipelago in winter, white glaciers and dark sea, high above the Arctic. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
