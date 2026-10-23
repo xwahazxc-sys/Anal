@@ -1,8 +1,7 @@
 [whispers] We landed in a city that isn't on any map.
 Flight 214. The doors open. Nobody gets up.
-Outside, every window is lit. But the streets are empty.
+Every window outside is lit. The streets are empty.
 A man in a pilot's uniform walks down the aisle, counting heads.
-He stops at your row. He checks his list.
-[pause] "You weren't supposed to wake up."
-You look around. Everyone else is still asleep. With their eyes open.
+He stops at your row. "You weren't supposed to wake up."
+Everyone else is still asleep. With their eyes open.
 [whispers] We landed in a city that isn't on any map.
