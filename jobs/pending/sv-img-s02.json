@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s02",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s02",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1001,
+  "prompt": "A lone person in a red parka seen from behind walking on a snowy street at night under orange streetlights, colourful wooden houses, arctic town. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
