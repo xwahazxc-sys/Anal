@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1003,
   "prompt": "Satellite-style view of the Svalbard archipelago in winter, white glaciers and dark sea, high above the Arctic. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:49:23",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s04/sv-s04_00001_.png"
+ ],
+ "seconds": 41
 }
