@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1024,
   "prompt": "Close-up of a weathered white wooden cross in deep snow, frost on the wood, blurred valley behind. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:08:10",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s25/sv-s25_00001_.png"
+ ],
+ "seconds": 36
 }
