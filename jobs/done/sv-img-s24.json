@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1023,
   "prompt": "Small old cemetery on a snowy hillside, simple white wooden crosses half buried in snow, arctic mountains behind, overcast light. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:07:16",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s24/sv-s24_00001_.png"
+ ],
+ "seconds": 36
 }
