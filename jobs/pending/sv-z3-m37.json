@@ -1,1 +1,0 @@
-{"id": "sv-z3-m37", "type": "comfy", "workflow": "workflows/wan5b_i2v_fast.json", "timeout": 3600, "files": {"start_image": "inputs/sv/m37.png"}, "vars": {"name": "sv-m37", "seed": 500, "prompt": "the polar bear walks slowly across the sea ice toward the camera, breath steaming, slight camera tracking, realistic documentary footage, smooth natural motion, cinematic"}}
