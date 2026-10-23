@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1040,
   "prompt": "A lone suitcase standing on a snowy street of colourful houses, arctic town, evening. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:21:40",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s41/sv-s41_00001_.png"
+ ],
+ "seconds": 36
 }
