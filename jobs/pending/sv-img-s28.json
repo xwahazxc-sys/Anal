@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s28",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s28",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1027,
+  "prompt": "Black and white archival-style photograph of a 1918 arctic mining settlement, wooden barracks in snow, a steamship at a pier. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
