@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s27",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s27",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1026,
+  "prompt": "Close-up of frozen ground with ice crystals and frozen soil, permafrost texture, macro photography. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
