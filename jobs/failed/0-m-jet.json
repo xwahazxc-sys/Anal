@@ -1,0 +1,19 @@
+{
+ "id": "0-m-jet",
+ "type": "comfy",
+ "workflow": "workflows/ace15_song.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "ss-m-jet",
+  "seconds": 40,
+  "seed": 21,
+  "bpm": 808,
+  "key": "D minor",
+  "tags": "luxury trap beat, dark piano, deep 808 bass, slow hi-hats, 85 bpm, instrumental, expensive, confident",
+  "lyrics": "[Instrumental]"
+ },
+ "finished": "2026-10-24 00:10:21",
+ "status": "failed",
+ "error": "Traceback (most recent call last):\n  File \"C:\\Anal\\local-worker\\worker.py\", line 282, in process\n    out = HANDLERS[kind](job)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\worker.py\", line 147, in job_comfy\n    return comfy.run(job, fetch, CFG)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\comfy.py\", line 48, in run\n    raise RuntimeError(f\"ComfyUI refused the workflow: {r.text[:1500]}\")\nRuntimeError: ComfyUI refused the workflow: {\"error\": {\"type\": \"prompt_outputs_failed_validation\", \"message\": \"Prompt outputs failed validation\", \"details\": \"\", \"extra_info\": {}}, \"node_errors\": {\"94\": {\"errors\": [{\"type\": \"value_bigger_than_max\", \"message\": \"Value 808 bigger than max of 300\", \"details\": \"bpm\", \"extra_info\": {\"input_name\": \"bpm\", \"input_config\": [\"INT\", {\"default\": 120, \"min\": 10, \"max\": 300}], \"received_value\": 808}}], \"dependent_outputs\": [\"106\"], \"class_type\": \"TextEncodeAceStepAudio1.5\"}}}\n",
+ "seconds": 1
+}
