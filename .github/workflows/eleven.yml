@@ -1,0 +1,22 @@
+name: eleven
+on:
+  push:
+    branches: [render-queue]
+    paths: ["jobs/eleven/*.json"]
+permissions:
+  contents: write
+concurrency: eleven
+jobs:
+  speak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: render-queue}
+      - run: python3 tools/eleven.py
+        env:
+          KEY: ${{ secrets.ELEVENLABS_API_KEY || secrets.ELEVEN_API_KEY || secrets.ELEVENLABS_KEY || secrets.ELEVENLABS || secrets.XI_API_KEY || secrets.ELEVEN_LABS_API_KEY }}
+      - run: |
+          git config user.name "eleven-bot"; git config user.email "eleven-bot@users.noreply.github.com"
+          git add -A outputs jobs
+          git commit -m "eleven: results" || exit 0
+          for i in 1 2 3; do git pull --rebase -q origin render-queue && git push -q origin HEAD:render-queue && break; sleep 3; done
