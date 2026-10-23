@@ -1,0 +1,9 @@
+{
+ "id": "tts-es-1",
+ "type": "tts",
+ "lang": "es",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.5,
+ "pause_ms": 300,
+ "text": "Despiertas en lo que hoy es México. Es una mañana cualquiera, hace sesenta y seis millones de años. El aire es cálido y húmedo, y a lo lejos se oye el llamado de un animal que nadie ha escuchado jamás. Pero en unas horas, una roca de diez kilómetros entrará en la atmósfera a más de setenta mil kilómetros por hora. Tienes cinco pruebas para seguir vivo."
+}
