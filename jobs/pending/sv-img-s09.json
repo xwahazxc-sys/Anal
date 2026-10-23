@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s09",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s09",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1008,
+  "prompt": "Deep blue polar twilight over a frozen fjord, faint pink glow on the horizon, snowy mountains, utterly still. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
