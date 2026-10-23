@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1018,
   "prompt": "A pregnant woman seen from behind carrying a small suitcase, walking into a small arctic airport terminal, snow outside. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:03:36",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s19/sv-s19_00001_.png"
+ ],
+ "seconds": 36
 }
