@@ -1,0 +1,17 @@
+{
+ "id": "img-test-1",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1800,
+ "vars": {
+  "name": "img-test-1",
+  "width": 1280,
+  "height": 720,
+  "seed": 7,
+  "prompt": "Cinematic wide photograph of Longyearbyen, Svalbard, during the blue polar night: a row of colourful wooden houses (red, yellow, teal) on stilts in deep snow, steep snow-covered mountains behind, faint green aurora in the dark blue sky, two people on snowmobiles with headlights in the foreground road, warm windows glowing, documentary photography, sharp detail, natural light"
+ },
+ "finished": "2026-10-23 11:50:37",
+ "status": "failed",
+ "error": "Traceback (most recent call last):\n  File \"C:\\Anal\\local-worker\\worker.py\", line 164, in process\n    out = HANDLERS[kind](job)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\worker.py\", line 147, in job_comfy\n    return comfy.run(job, fetch, CFG)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Anal\\local-worker\\comfy.py\", line 48, in run\n    raise RuntimeError(f\"ComfyUI refused the workflow: {r.text[:1500]}\")\nRuntimeError: ComfyUI refused the workflow: {\"error\": {\"type\": \"prompt_outputs_failed_validation\", \"message\": \"Prompt outputs failed validation\", \"details\": \"\", \"extra_info\": {}}, \"node_errors\": {\"3\": {\"errors\": [{\"type\": \"value_not_in_list\", \"message\": \"Value not in list\", \"details\": \"vae_name: 'ae.safetensors' not in ['wan2.2_vae.safetensors', 'wan_2.1_vae.safetensors', 'taef1', 'taesdxl', 'taesd', 'pixel_space']\", \"extra_info\": {\"input_name\": \"vae_name\", \"input_config\": [[\"wan2.2_vae.safetensors\", \"wan_2.1_vae.safetensors\", \"taef1\", \"taesdxl\", \"taesd\", \"pixel_space\"], {}], \"received_value\": \"ae.safetensors\"}}], \"dependent_outputs\": [\"10\"], \"class_type\": \"VAELoader\"}, \"2\": {\"errors\": [{\"type\": \"value_not_in_list\", \"message\": \"Value not in list\", \"details\": \"clip_name: 'qwen_3_4b.safetensors' not in ['umt5_xxl_fp8_e4m3fn_scaled.safetensors']\", \"extra_info\": {\"input_name\": \"clip_name\", \"input_config\": [[\"umt5_xxl_fp8_e4m3fn_scaled.safetensors\"], {}], \"received_value\": \"qwen_3_4b.safetensors\"}}], \"dependent_outputs\": [\"10\"], \"class_type\": \"CLIPLoader\"}, \"1\": {\"errors\": [{\"type\": \"value_not_in_list\", \"message\": \"Value not in list\", \"details\": \"unet_name: 'z_image_turbo_bf16.safetensors' not in ['wan2.2_ti2v_5B_fp16.safetensors']\", \"extra_info\": {\"input_name\": \"unet_name\", \"input_config\": [[\"wan2.2_ti2v_5B_fp16.safetensors\"], {}], \"received_value\": \"z_image_turbo_bf16.safetensors\"}}], \"dependent_outputs\": [\"10\"], \"class_type\": \"UNETLoader\"}}}\n",
+ "seconds": 2
+}
