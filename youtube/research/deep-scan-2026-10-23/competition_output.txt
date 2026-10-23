@@ -1,0 +1,256 @@
+
+==== hollywood (long)
+  active channels in month sample: 179 (videos 378); new uploads this week (8 queries): 513
+  size: <10k 133 | 10-100k 35 | 100k-1M 9 | 1M+ 2
+  top-3 channels take 24% of sampled views
+  channels <=6 months: 67  | median>=1k 31/67  >=5k 12/67  >=20k 1/67
+  channels >1 year:   86  | median>=1k 53/86  >=5k 35/86  >=20k 13/86
+  newcomers' median-of-medians: 824
+    Fade To Legends            subs=   12,000 age=  195d med=    5,800 month-sample=  1,686,001
+    Vintage Hollywood Untold   subs=    6,880 age= 4585d med=   10,500 month-sample=  1,112,963
+    Hollywood Revealed         subs=   12,400 age=  157d med=    9,150 month-sample=  1,008,799
+    Legacy News                subs=  114,000 age= 6022d med=   19,000 month-sample=    869,235
+    Rare Story                 subs=   13,200 age=  351d med=   47,500 month-sample=    797,230
+    Nostalgia Videos           subs=   10,000 age= 4457d med=   14,500 month-sample=    791,195
+    Hollywood Whispers         subs=    6,340 age=  104d med=   13,000 month-sample=    732,780
+    Time Rewind TV             subs=    3,330 age=   94d med=    7,100 month-sample=    672,735
+
+==== hfy (long)
+  active channels in month sample: 180 (videos 360); new uploads this week (8 queries): 447
+  size: <10k 166 | 10-100k 10 | 100k-1M 4 | 1M+ 0
+  top-3 channels take 43% of sampled views
+  channels <=6 months: 86  | median>=1k 26/86  >=5k 11/86  >=20k 4/86
+  channels >1 year:   85  | median>=1k 27/85  >=5k 8/85  >=20k 2/85
+  newcomers' median-of-medians: 200
+    Cine Drop                  subs=  127,000 age=  158d med=  873,000 month-sample=  6,822,983
+    Galactic Secrets           subs=    6,570 age=  376d med=    3,050 month-sample=    493,486
+    Terran Command HFY         subs=    3,630 age=  644d med=    2,150 month-sample=    387,030
+    HFY Vanguard               subs=    7,350 age=   47d med=    5,950 month-sample=    382,202
+    The Terran Mandate         subs=    2,100 age= 5137d med=    4,100 month-sample=    378,519
+    Atomic Terran Tales        subs=    1,590 age=   25d med=   27,000 month-sample=    359,974
+    MemeFire HFY               subs=    2,950 age= 7362d med=    1,700 month-sample=    322,412
+    Story Harbor               subs=   10,200 age=   97d med=    8,100 month-sample=    272,474
+
+==== space_shorts (short)
+  active channels in month sample: 187 (videos 288); new uploads this week (8 queries): 125
+  size: <10k 177 | 10-100k 10 | 100k-1M 0 | 1M+ 0
+  top-3 channels take 63% of sampled views
+  channels <=6 months: 88  | median>=1k 11/88  >=5k 2/88  >=20k 0/88
+  channels >1 year:   82  | median>=1k 18/82  >=5k 5/82  >=20k 2/82
+  newcomers' median-of-medians: 76
+    Fessi                      subs=   14,300 age=  267d med=   20,000 month-sample=    220,643
+    Liza                       subs=      269 age=   21d med=    2,200 month-sample=     74,321
+    ERADES PLANETBALLZ (oficia subs=      288 age=  121d med=       48 month-sample=     68,061
+    Mr. Earth                  subs=   44,600 age=  203d med=  197,000 month-sample=     36,821
+    Mister Cartoonitos         subs=   13,300 age= 2968d med=    3,050 month-sample=     25,173
+    Dimensiv                   subs=       52 age=  220d med=      888 month-sample=     16,975
+    indian gravity             subs=   52,600 age= 1209d med=  167,500 month-sample=     16,662
+    Crazy Adventures with Mati subs=    2,880 age=  408d med=    1,350 month-sample=     11,198
+
+==== animal_rank (short)
+  active channels in month sample: 150 (videos 234); new uploads this week (8 queries): 155
+  size: <10k 123 | 10-100k 17 | 100k-1M 8 | 1M+ 2
+  top-3 channels take 82% of sampled views
+  channels <=6 months: 61  | median>=1k 12/61  >=5k 4/61  >=20k 2/61
+  channels >1 year:   75  | median>=1k 36/75  >=5k 13/75  >=20k 5/75
+  newcomers' median-of-medians: 67
+    Lienar                     subs=      156 age=   76d med=       24 month-sample=    366,257
+    Fessi                      subs=   14,300 age=  267d med=   20,000 month-sample=    220,643
+    MA348                      subs=  155,000 age= 2190d med=  117,500 month-sample=     90,787
+    Bhabhi ki funny            subs=    8,130 age=  409d med=   28,500 month-sample=     36,558
+    EvilLufy9                  subs=   12,000 age=  876d med=   31,500 month-sample=      8,130
+    Yuri                       subs=  130,000 age=  348d med=  129,000 month-sample=      2,915
+    PixCrate                   subs=   99,000 age=  782d med=    5,900 month-sample=      2,618
+    ChillMokka                 subs=      151 age=   47d med=    1,400 month-sample=      2,453
+
+==== travel_en (long)
+  active channels in month sample: 277 (videos 477); new uploads this week (8 queries): 651
+  size: <10k 185 | 10-100k 56 | 100k-1M 23 | 1M+ 13
+  top-3 channels take 45% of sampled views
+  channels <=6 months: 138  | median>=1k 65/138  >=5k 32/138  >=20k 11/138
+  channels >1 year:   119  | median>=1k 98/119  >=5k 76/119  >=20k 48/119
+  newcomers' median-of-medians: 926
+    Ruhi Cenet Documentaries   subs=19,900,000 age= 5147d med=59,000,000 month-sample= 32,250,300
+    Salahuddin Sumon           subs=3,430,000 age= 5482d med=1,050,000 month-sample=  4,107,361
+    Joe Bartolozzi             subs=6,110,000 age= 2335d med=2,100,000 month-sample=  3,460,637
+    Travel Dimension           subs=   18,100 age=   66d med=   82,000 month-sample=  2,728,399
+    Through the Ages           subs=    2,780 age=  117d med=    3,650 month-sample=  2,497,608
+    Can-B                      subs=1,480,000 age= 3234d med=   18,500 month-sample=  2,320,495
+    Global Life Lens           subs=   40,300 age=   98d med=  104,000 month-sample=  1,995,118
+    Lyrical Lemonade TV        subs=  701,000 age= 2715d med=   34,500 month-sample=  1,678,714
+
+==== earth_es (long)
+  active channels in month sample: 219 (videos 338); new uploads this week (8 queries): 295
+  size: <10k 152 | 10-100k 45 | 100k-1M 16 | 1M+ 6
+  top-3 channels take 51% of sampled views
+  channels <=6 months: 82  | median>=1k 27/82  >=5k 18/82  >=20k 6/82
+  channels >1 year:   110  | median>=1k 57/110  >=5k 41/110  >=20k 20/110
+  newcomers' median-of-medians: 332
+    Nick Kratka                subs=6,860,000 age= 1831d med=5,250,000 month-sample=  8,107,832
+    WUFO Español               subs=    5,770 age=   57d med=   28,000 month-sample=  4,118,241
+    Nat Geo en Español         subs=1,690,000 age=  900d med=  399,500 month-sample=  2,994,978
+    Sin Coordenadas            subs=   42,200 age=   96d med=  207,000 month-sample=  1,614,104
+    ORIGENES                   subs=    5,380 age=  105d med=    1,850 month-sample=  1,186,649
+    Today I Learned Science    subs=  971,000 age= 1509d med=  549,000 month-sample=  1,112,196
+    Fosil Metal                subs=   28,800 age= 1923d med=   34,500 month-sample=    993,917
+    Pelicomic                  subs=2,140,000 age= 4161d med=  760,500 month-sample=    969,658
+
+==== disasters_de (long)
+  active channels in month sample: 202 (videos 266); new uploads this week (8 queries): 178
+  size: <10k 138 | 10-100k 30 | 100k-1M 21 | 1M+ 13
+  top-3 channels take 44% of sampled views
+  channels <=6 months: 68  | median>=1k 20/68  >=5k 11/68  >=20k 2/68
+  channels >1 year:   117  | median>=1k 70/117  >=5k 50/117  >=20k 33/117
+  newcomers' median-of-medians: 213
+    Simplicissimus             subs=2,590,000 age= 4212d med=1,850,000 month-sample=  3,327,014
+    tomatolix                  subs=2,530,000 age= 5883d med=1,600,000 month-sample=  3,049,887
+    {ungeskriptet} by Ben      subs=1,320,000 age= 1641d med=  782,000 month-sample=  1,322,590
+    Letzte Stunden             subs=    3,100 age=   88d med=   28,000 month-sample=    944,133
+    Rainer Bergmann            subs=    5,710 age=  253d med=    1,550 month-sample=    914,134
+    Крупнокалиберный Переполох subs=2,010,000 age= 2407d med=  584,000 month-sample=    786,160
+    Lifeder                    subs=  704,000 age= 2218d med=3,250,000 month-sample=    712,612
+    The Present Past           subs=  465,000 age= 1665d med=  358,500 month-sample=    604,187
+
+==== hfy_de (long)
+  active channels in month sample: 72 (videos 307); new uploads this week (8 queries): 81
+  size: <10k 65 | 10-100k 6 | 100k-1M 1 | 1M+ 0
+  top-3 channels take 32% of sampled views
+  channels <=6 months: 42  | median>=1k 9/42  >=5k 3/42  >=20k 0/42
+  channels >1 year:   29  | median>=1k 14/29  >=5k 6/29  >=20k 2/29
+  newcomers' median-of-medians: 264
+    HFY Übermacht              subs=    3,310 age= 2274d med=    3,050 month-sample=    209,634
+    Galaktische Menschheit HFY subs=    1,010 age=   42d med=    5,100 month-sample=    134,328
+    CineMan - Lore & Mythen    subs=   43,400 age= 2085d med=    6,250 month-sample=    119,446
+    Kosmo Stories              subs=    1,230 age=  376d med=    2,400 month-sample=    117,914
+    National Geographic Deutsc subs=  262,000 age= 7071d med=   67,000 month-sample=    112,391
+    Menschheit im All          subs=      615 age=   38d med=      273 month-sample=     92,258
+    Alexander Wohnhaas         subs=   14,900 age= 5409d med=    7,850 month-sample=     68,019
+    HFY TerraZorn              subs=    1,700 age=   78d med=    9,950 month-sample=     63,828
+
+==== nostalgia_en (long)
+  active channels in month sample: 228 (videos 366); new uploads this week (8 queries): 643
+  size: <10k 183 | 10-100k 27 | 100k-1M 15 | 1M+ 3
+  top-3 channels take 63% of sampled views
+  channels <=6 months: 114  | median>=1k 27/114  >=5k 14/114  >=20k 2/114
+  channels >1 year:   90  | median>=1k 43/90  >=5k 27/90  >=20k 12/90
+  newcomers' median-of-medians: 163
+    Yes Theory                 subs=10,200,000 age= 4666d med=3,300,000 month-sample=  5,320,344
+    Peter Santenello           subs=4,310,000 age= 6486d med=1,500,000 month-sample=    822,052
+    TiboPov                    subs=  203,000 age= 3554d med=  223,500 month-sample=    324,363
+    Joe & Nic's Road Trip      subs=  784,000 age= 6879d med=  325,000 month-sample=    285,436
+    Lost American Childhood &  subs=    3,390 age=   51d med=   11,250 month-sample=    276,378
+    ABC News                   subs=19,900,000 age= 7382d med=   12,500 month-sample=    243,315
+    Forgotten American Shelter subs=    1,320 age=   20d med=   12,000 month-sample=    152,633
+    NKC Channel                subs=    1,990 age= 3520d med=      324 month-sample=    141,160
+
+==== royals_en (long)
+  active channels in month sample: 307 (videos 431); new uploads this week (8 queries): 527
+  size: <10k 223 | 10-100k 50 | 100k-1M 28 | 1M+ 6
+  top-3 channels take 19% of sampled views
+  channels <=6 months: 140  | median>=1k 36/140  >=5k 8/140  >=20k 1/140
+  channels >1 year:   132  | median>=1k 85/132  >=5k 62/132  >=20k 24/132
+  newcomers' median-of-medians: 209
+    Palace Confidential        subs=  574,000 age= 2551d med=  324,000 month-sample=    916,790
+    Royal Daily                subs=   11,600 age=  190d med=    4,650 month-sample=    780,833
+    TalkTV                     subs=1,470,000 age= 3871d med=    7,450 month-sample=    723,111
+    Dan Wootton Outspoken      subs=  789,000 age= 2474d med=  151,500 month-sample=    513,810
+    British Secrets            subs=    8,730 age=  142d med=   14,500 month-sample=    443,448
+    Banijay History            subs=1,050,000 age= 3067d med=    6,950 month-sample=    416,759
+    Kinsey Schofield Unfiltere subs=  199,000 age=  931d med=   90,000 month-sample=    381,433
+    Dastawez                   subs=    1,550 age=   37d med=   13,850 month-sample=    380,273
+
+==== history_ja (long)
+  active channels in month sample: 175 (videos 389); new uploads this week (8 queries): 398
+  size: <10k 141 | 10-100k 23 | 100k-1M 11 | 1M+ 0
+  top-3 channels take 39% of sampled views
+  channels <=6 months: 81  | median>=1k 21/81  >=5k 13/81  >=20k 4/81
+  channels >1 year:   70  | median>=1k 38/70  >=5k 29/70  >=20k 18/70
+  newcomers' median-of-medians: 211
+    チーム日本史                     subs=   10,400 age=   25d med=   49,000 month-sample=  1,846,577
+    好井まさおの怪談を浴びる会              subs=  802,000 age= 1415d med=  496,500 month-sample=  1,833,141
+    BSよしもと公式チャンネル              subs=  290,000 age= 1417d med=   30,000 month-sample=  1,095,395
+    その後の日本史                    subs=    1,400 age=   20d med=   15,000 month-sample=    791,721
+    偉人の末路                      subs=    5,700 age=   44d med=   10,700 month-sample=    715,615
+    名家のゆくえ                     subs=    2,400 age= 1659d med=   20,000 month-sample=    492,930
+    地上波NGの日本史                  subs=    4,710 age= 4031d med=    9,300 month-sample=    435,048
+    真実のヒストリー                   subs=    3,460 age=  590d med=      743 month-sample=    317,628
+
+==== porque_es (short)
+  active channels in month sample: 175 (videos 288); new uploads this week (8 queries): 206
+  size: <10k 137 | 10-100k 31 | 100k-1M 6 | 1M+ 1
+  top-3 channels take 86% of sampled views
+  channels <=6 months: 59  | median>=1k 13/59  >=5k 4/59  >=20k 2/59
+  channels >1 year:   100  | median>=1k 39/100  >=5k 11/100  >=20k 6/100
+  newcomers' median-of-medians: 154
+    Crónica TV                 subs=2,570,000 age= 4036d med=    9,050 month-sample=    213,352
+    Mensajes de amor           subs=   40,100 age=  325d med=   76,000 month-sample=      9,307
+    Do you know facts          subs=  286,000 age= 1317d med=    5,850 month-sample=      5,531
+    Nadie te lo Contó TV       subs=      989 age= 2330d med=    3,700 month-sample=      4,306
+    LAS 3 LOCAS                subs=  915,000 age=   83d med=  554,500 month-sample=      3,118
+    STARTING LATE PROJECT      subs=    5,690 age=   63d med=      287 month-sample=      2,936
+    Violett Von Schwarrtz🇺🇦    subs=   58,200 age= 3870d med=      824 month-sample=      2,030
+    Painfully Gifted TV Offici subs=   12,000 age=  146d med=    2,850 month-sample=      1,568
+
+==== compare_de (short)
+  active channels in month sample: 99 (videos 164); new uploads this week (8 queries): 65
+  size: <10k 77 | 10-100k 15 | 100k-1M 7 | 1M+ 0
+  top-3 channels take 58% of sampled views
+  channels <=6 months: 24  | median>=1k 8/24  >=5k 3/24  >=20k 2/24
+  channels >1 year:   69  | median>=1k 32/69  >=5k 9/69  >=20k 1/69
+  newcomers' median-of-medians: 248
+    Violett Von Schwarrtz🇺🇦    subs=   58,200 age= 3870d med=      824 month-sample=      9,391
+    YTLukeyy                   subs=  282,000 age= 3855d med=    7,400 month-sample=      9,323
+    Oblizz Clipz               subs=   46,100 age= 1484d med=    5,450 month-sample=      5,800
+     Healthy lifestyle         subs=   52,400 age= 4734d med=    6,950 month-sample=      2,679
+    Painfully Gifted TV Offici subs=   12,000 age=  146d med=    2,850 month-sample=      1,587
+    Step At Home               subs=   46,200 age= 2075d med=       57 month-sample=      1,467
+    yummy food Time 🤤          subs=      275 age=  973d med=      615 month-sample=      1,326
+    Paul Prudhvi Ministries    subs=  262,000 age= 4052d med=    2,300 month-sample=        672
+
+==== myth_shorts (short)
+  active channels in month sample: 176 (videos 311); new uploads this week (8 queries): 113
+  size: <10k 170 | 10-100k 5 | 100k-1M 1 | 1M+ 0
+  top-3 channels take 94% of sampled views
+  channels <=6 months: 87  | median>=1k 15/87  >=5k 1/87  >=20k 1/87
+  channels >1 year:   70  | median>=1k 13/70  >=5k 2/70  >=20k 0/70
+  newcomers' median-of-medians: 38
+    VYRMA                      subs=  182,000 age=  180d med=  189,500 month-sample=    304,906
+    Babyta_Script              subs=   29,600 age= 2211d med=    3,650 month-sample=     16,962
+    Glitchy Games              subs=    3,740 age= 1800d med=    2,100 month-sample=      9,431
+    KS Chintu tv               subs=       10 age=   22d med=        0 month-sample=      2,330
+    JAPAN  GUIDE               subs=       58 age=   27d med=      583 month-sample=        970
+    Shortpadi                  subs=      503 age=  437d med=      269 month-sample=        869
+    StoryStaysHere             subs=       69 age= 1952d med=       78 month-sample=        654
+    FamíliaXP23                subs=   19,300 age= 2025d med=    2,300 month-sample=        640
+
+==== bible_shorts (short)
+  active channels in month sample: 163 (videos 307); new uploads this week (8 queries): 170
+  size: <10k 160 | 10-100k 3 | 100k-1M 0 | 1M+ 0
+  top-3 channels take 75% of sampled views
+  channels <=6 months: 82  | median>=1k 10/82  >=5k 0/82  >=20k 0/82
+  channels >1 year:   62  | median>=1k 6/62  >=5k 1/62  >=20k 1/62
+  newcomers' median-of-medians: 134
+    TBST for Kids              subs=    3,480 age=   64d med=       17 month-sample=     35,190
+    Bible Short Inspirational  subs=    4,040 age=   98d med=      751 month-sample=      1,069
+    Bible Story Kids           subs=    1,220 age=   17d med=    3,700 month-sample=      1,060
+    StoryTime Kids Bible       subs=       43 age= 2699d med=       18 month-sample=        981
+    Child Bible School         subs=    1,240 age= 2565d med=      766 month-sample=        890
+    Supremoboy24               subs=       72 age= 3088d med=      681 month-sample=        855
+    Talewise Bible             subs=      662 age=   30d med=      626 month-sample=        705
+    ThinkThinkground           subs=    1,660 age=  299d med=      400 month-sample=        596
+
+==== ww2_shorts (short)
+  active channels in month sample: 118 (videos 171); new uploads this week (8 queries): 50
+  size: <10k 103 | 10-100k 13 | 100k-1M 2 | 1M+ 0
+  top-3 channels take 79% of sampled views
+  channels <=6 months: 57  | median>=1k 11/57  >=5k 3/57  >=20k 1/57
+  channels >1 year:   52  | median>=1k 11/52  >=5k 3/52  >=20k 2/52
+  newcomers' median-of-medians: 90
+    EveryDay FN                subs=  366,000 age= 2785d med=   52,500 month-sample=     61,365
+    Wild Haven                 subs=      724 age=   31d med=      415 month-sample=      3,668
+    UncoveredHistoryLGC        subs=    7,880 age=   81d med=    1,600 month-sample=      2,914
+    K-POP ZPT                  subs=   29,900 age=  118d med=   84,500 month-sample=      2,239
+    TrendRush                  subs=       12 age=   60d med=       14 month-sample=      1,490
+    Wow and Why                subs=       18 age=  103d med=        1 month-sample=      1,181
+    PVBvlogs                   subs=    1,600 age=  215d med=    1,200 month-sample=        723
+    DB Mini shots              subs=    1,030 age=   77d med=      715 month-sample=        722
