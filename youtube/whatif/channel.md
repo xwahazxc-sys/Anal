@@ -66,3 +66,9 @@ Cookies die on "sign out of all devices": the owner re-exports when a check says
 | Oct 27 | Do Not Look Up, Part 1 (2D silhouette style) | https://youtu.be/-EcXXHtNUlc |
 | Oct 28 | Do Not Look Up, Part 2 | https://youtu.be/XhrBG0dzUzo |
 | Oct 26 12:00 | LONG: Group Chat full story (2D, 6:40, Night 4 exclusive) | https://youtu.be/euXr4MdDlLc |
+
+## Checkpoint: Nov 20, 2026 (agreed with owner on Oct 23)
+- From Nov 2 every Short uses the new format: 30-40 s, the scariest line/image in the first 1-2 s, ending loops back into the start.
+- Pass if by Nov 20 at least one Short has 5-10k views, or new-format Shorts reach 65-70%+ "stayed to watch" (Oct baseline: 56%).
+- If not: one big format change (voice / true-facts angle / visual style) for 2 more weeks; if that also fails, stop the channel.
+- Oct 23 baseline: Night 1 1:28, 281 views, 55.8% stayed, avg 0:50. Night 2 1:34, 575 views, 56.2% stayed, avg 0:29. 83 monthly viewers, 7 subs, top country US 14%.
