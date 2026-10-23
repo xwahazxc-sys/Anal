@@ -818,7 +818,8 @@ def main():
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
     pins = [i.split("=", 1)[1] for i in ids if i.startswith("pin=")]  # pin=VIDEOID (text from PIN_TEXT env)
     privs = [i.split("=", 1)[1] for i in ids if i.startswith("private=")]  # private=VIDEOID
-    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin=", "private="))]
+    stats = [i.split("=", 1)[1] for i in ids if i.startswith("stats=")]  # stats=VIDEOID: analytics tabs -> shots + text
+    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin=", "private=", "stats="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -830,7 +831,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins and not privs:
+    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins and not privs and not stats:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -873,6 +874,16 @@ def main():
                 shot(page, f"{vid_id}_private_error")
                 log("PRIVATE FAILED", vid_id, type(e).__name__, str(e)[:200])
                 results[f"private {vid_id}"] = "FAILED"
+        for vid_id in stats:
+            for tab in ("overview", "engagement", "reach", "audience"):
+                try:
+                    page.goto(f"https://studio.youtube.com/video/{vid_id}/analytics/tab-{tab}/period-default", wait_until="domcontentloaded")
+                    page.wait_for_timeout(9000)
+                    page.screenshot(path=str(SHOTS / f"stats_{vid_id}_{tab}.png"), full_page=True)
+                    (SHOTS / f"stats_{vid_id}_{tab}.txt").write_text(page.inner_text("body"))
+                    log("stats", vid_id, tab, "ok")
+                except Exception as e:
+                    log("STATS FAILED", vid_id, tab, type(e).__name__, str(e)[:150])
         for vid_id in pins:
             try:
                 pin_comment(page, vid_id, os.environ["PIN_TEXT"])
