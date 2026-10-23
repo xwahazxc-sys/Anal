@@ -1,0 +1,20 @@
+{
+ "id": "sv-z3-m24",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_fast.json",
+ "timeout": 3600,
+ "files": {
+  "start_image": "inputs/sv/m24.png"
+ },
+ "vars": {
+  "name": "sv-m24",
+  "seed": 500,
+  "prompt": "light snow drifts across the cemetery, wind blows fine snow over the crosses, camera slowly moves sideways, realistic documentary footage, smooth natural motion, cinematic"
+ },
+ "finished": "2026-10-23 16:04:45",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-z3-m24/sv-m24_00001_.mp4"
+ ],
+ "seconds": 293
+}
