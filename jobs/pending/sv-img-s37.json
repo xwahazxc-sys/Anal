@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s37",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s37",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1036,
+  "prompt": "A polar bear walking across sea ice in the blue arctic twilight, breath visible, wide shot. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
