@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1000,
   "prompt": "Aerial view at blue hour of a tiny arctic town of colourful wooden houses in a snowy valley between dark mountains, streetlights glowing orange, frozen fjord beyond. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:46:59",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s01/sv-s01_00002_.png"
+ ],
+ "seconds": 42
 }
