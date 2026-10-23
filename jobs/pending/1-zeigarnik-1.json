@@ -1,1 +1,0 @@
-{"id": "1-zeigarnik-1", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "ss-zeigarnik-1", "width": 1088, "height": 1920, "seed": 101, "prompt": "a 1920s Viennese coffee house, a waiter in a white apron carrying a tray, vintage photograph style, sepia, cinematic, vertical composition, no text, no watermark"}}
