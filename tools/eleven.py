@@ -20,7 +20,7 @@ for path in sorted(glob.glob("jobs/eleven/*.json")):
             body = json.dumps({"text": ln["text"], "model_id": job.get("model", "eleven_multilingual_v2"),
                                "voice_settings": job.get("settings", {})}).encode()
             r = urllib.request.urlopen(urllib.request.Request(
-                f"https://api.elevenlabs.io/v1/text-to-speech/{job['voice_id']}?output_format=mp3_44100_192",
+                f"https://api.elevenlabs.io/v1/text-to-speech/{job['voice_id']}?output_format=mp3_44100_128",
                 data=body, headers=h))
             open(f"{out}/{ln['name']}.mp3", "wb").write(r.read())
         job["status"] = "done"; dest = f"jobs/done/{jid}.json"
