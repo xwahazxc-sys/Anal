@@ -182,37 +182,56 @@ def job_qtts(job):
 
 
 def job_stock(job):
-    """Free stock footage from Pexels (free for commercial use; key in PEXELS_API_KEY, set with setx).
+    """Free stock footage, free for commercial use. Keys are set on this PC with setx:
+    PIXABAY_API_KEY (pixabay.com/api/docs) and/or PEXELS_API_KEY. Pixabay is tried first.
     {"type": "stock", "queries": [{"q": "svalbard snow", "n": 3}], "min_seconds": 5, "max_width": 1920}"""
-    key = os.environ.get("PEXELS_API_KEY")
-    if not key:
-        raise RuntimeError("PEXELS_API_KEY is not set: setx PEXELS_API_KEY \"...\" and restart the worker")
+    pix, pex = os.environ.get("PIXABAY_API_KEY"), os.environ.get("PEXELS_API_KEY")
+    if not (pix or pex):
+        raise RuntimeError("no stock key: setx PIXABAY_API_KEY \"...\" and restart the worker")
+    maxw, mins = job.get("max_width", 1920), job.get("min_seconds", 5)
+
+    def search(q):
+        out = []  # (source, id, page_url, author, seconds, width, height, link)
+        if pix:
+            r = requests.get("https://pixabay.com/api/videos/", timeout=30,
+                             params={"key": pix, "q": q[:100], "per_page": 50, "safesearch": "true"})
+            r.raise_for_status()
+            for h in r.json().get("hits", []):
+                vs = [v for v in h["videos"].values() if v.get("url") and v.get("width") and v["width"] <= maxw]
+                if vs:
+                    v = max(vs, key=lambda v: v["width"])
+                    out.append(("pixabay", h["id"], h["pageURL"], h.get("user"), h["duration"], v["width"],
+                                v["height"], v["url"]))
+        if pex:
+            r = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": pex}, timeout=30,
+                             params={"query": q, "per_page": 30, "orientation": "landscape"})
+            r.raise_for_status()
+            for v in r.json().get("videos", []):
+                fs = [f for f in v["video_files"] if f.get("width") and f["width"] <= maxw
+                      and f.get("file_type") == "video/mp4"]
+                if fs:
+                    f = max(fs, key=lambda f: f["width"])
+                    out.append(("pexels", v["id"], v["url"], v.get("user", {}).get("name"), v["duration"],
+                                f["width"], f["height"], f["link"]))
+        return out
+
     files, manifest, seen = {}, [], set()
     for item in job["queries"]:
-        r = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key}, timeout=30,
-                         params={"query": item["q"], "per_page": 30, "orientation": "landscape"})
-        r.raise_for_status()
         got = 0
-        for v in r.json().get("videos", []):
+        for src, vid, page, author, secs, w, h, link in search(item["q"]):
             if got >= item.get("n", 3):
                 break
-            if v["id"] in seen or v.get("duration", 0) < job.get("min_seconds", 5):
+            if (src, vid) in seen or secs < mins or w < h:
                 continue
-            cands = [f for f in v["video_files"] if f.get("width") and f["width"] <= job.get("max_width", 1920)
-                     and f.get("file_type") == "video/mp4"]
-            if not cands:
-                continue
-            f = max(cands, key=lambda f: f["width"])
-            data = requests.get(f["link"], timeout=300).content
+            data = requests.get(link, timeout=300).content
             if len(data) > MAX_FILE * 0.9:
                 continue
-            name = f"{re.sub(r'[^a-z0-9]+', '-', item['q'].lower())[:30]}_{v['id']}.mp4"
+            name = f"{re.sub(r'[^a-z0-9]+', '-', item['q'].lower())[:30]}_{src}{vid}.mp4"
             files[name] = data
-            seen.add(v["id"]); got += 1
-            manifest.append({"file": name, "query": item["q"], "pexels_id": v["id"], "url": v["url"],
-                             "author": v.get("user", {}).get("name"), "seconds": v["duration"],
-                             "width": f["width"], "height": f["height"]})
-            log(f"  {name} {f['width']}x{f['height']} {v['duration']} s")
+            seen.add((src, vid)); got += 1
+            manifest.append({"file": name, "query": item["q"], "source": src, "id": vid, "url": page,
+                             "author": author, "seconds": secs, "width": w, "height": h})
+            log(f"  {name} {w}x{h} {secs} s")
     files["manifest.json"] = json.dumps(manifest, indent=1, ensure_ascii=False).encode()
     return files
 
