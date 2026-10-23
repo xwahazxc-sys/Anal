@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1013,
   "prompt": "First golden sunlight touching the snowy peaks above an arctic valley at the end of polar night, the valley floor still in blue shadow. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:59:54",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s14/sv-s14_00001_.png"
+ ],
+ "seconds": 36
 }
