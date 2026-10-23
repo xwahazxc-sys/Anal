@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1026,
   "prompt": "Close-up of frozen ground with ice crystals and frozen soil, permafrost texture, macro photography. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:09:39",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s27/sv-s27_00001_.png"
+ ],
+ "seconds": 36
 }
