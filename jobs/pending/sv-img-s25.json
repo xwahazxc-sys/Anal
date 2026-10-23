@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s25",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s25",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1024,
+  "prompt": "Close-up of a weathered white wooden cross in deep snow, frost on the wood, blurred valley behind. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
