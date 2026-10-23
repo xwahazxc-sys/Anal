@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s34",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s34",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1033,
+  "prompt": "A person in arctic gear seen from behind with a rifle slung over their shoulder, standing on a snowy ridge looking out over a frozen fjord. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
