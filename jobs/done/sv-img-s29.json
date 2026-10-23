@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1028,
   "prompt": "Scientists in protective suits working in a snowy excavation tent with lamps, 1990s research expedition, arctic. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:11:08",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s29/sv-s29_00001_.png"
+ ],
+ "seconds": 36
 }
