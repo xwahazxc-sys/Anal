@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1006,
   "prompt": "A row of old wooden coal-mining cable car towers crossing a snowy valley, arctic town below, winter dusk. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:51:41",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s07/sv-s07_00001_.png"
+ ],
+ "seconds": 36
 }
