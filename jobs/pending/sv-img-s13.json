@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s13",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s13",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1012,
+  "prompt": "Children's sled leaning against a wooden house in the dark, lit by a single porch lamp, arctic winter. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
