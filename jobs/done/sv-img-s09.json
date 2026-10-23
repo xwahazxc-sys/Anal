@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1008,
   "prompt": "Deep blue polar twilight over a frozen fjord, faint pink glow on the horizon, snowy mountains, utterly still. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 13:54:26",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s09/sv-s09_00001_.png"
+ ],
+ "seconds": 36
 }
