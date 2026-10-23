@@ -4,3 +4,4 @@ __pycache__/
 *.log
 models/
 test_*.wav
+venv-qwen/

@@ -147,12 +147,46 @@ def job_comfy(job):
     return comfy.run(job, fetch, CFG)
 
 
+def job_qtts(job):
+    """Qwen3-TTS runs in its own venv (venv-qwen, see setup_qwen.bat) because it needs another transformers."""
+    free_comfy()
+    free_voice()
+    import tempfile, glob
+    py = os.path.join(HERE, "venv-qwen", "Scripts", "python.exe")
+    if not os.path.exists(py):
+        py = os.path.join(HERE, "venv-qwen", "bin", "python")
+    if not os.path.exists(py):
+        raise RuntimeError("venv-qwen is missing: run setup_qwen.bat once")
+    tmp = tempfile.mkdtemp(prefix="qtts_")
+    job = dict(job)
+    if job.get("clone", {}).get("ref"):
+        ref = os.path.join(tmp, "ref" + os.path.splitext(job["clone"]["ref"])[1])
+        open(ref, "wb").write(fetch(job["clone"]["ref"]))
+        job["clone"] = dict(job["clone"], ref_path=ref)
+    jp = os.path.join(tmp, "job.json")
+    json.dump(job, open(jp, "w", encoding="utf-8"), ensure_ascii=False)
+    out = os.path.join(tmp, "out")
+    r = subprocess.run([py, os.path.join(HERE, "qtts.py"), jp, out], capture_output=True, text=True,
+                       timeout=job.get("timeout", 7200))
+    log(r.stdout.strip()[-1500:])
+    if r.returncode:
+        raise RuntimeError("qtts failed: " + r.stderr[-2500:])
+    import soundfile as sf
+    files = {}
+    for f in sorted(glob.glob(os.path.join(out, "*.wav"))):
+        data, sr = sf.read(f)
+        name = os.path.splitext(os.path.basename(f))[0] + ".flac"
+        sf.write(os.path.join(out, name), data, sr, format="FLAC")
+        files[name] = open(os.path.join(out, name), "rb").read()
+    return files
+
+
 def job_restart(job):
     """Exit after this job; start_worker.bat pulls the newest code and starts the worker again."""
     return {"note.txt": b"worker restarting to load new code"}
 
 
-HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart}
+HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart, "qtts": job_qtts}
 
 
 def process(path):
