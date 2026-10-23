@@ -10,5 +10,11 @@
   "name": "sv-m02",
   "seed": 500,
   "prompt": "the person walks slowly away down the snowy street, snow falls, streetlights flicker softly, realistic documentary footage, smooth natural motion, cinematic"
- }
+ },
+ "finished": "2026-10-23 15:11:17",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-z3-m02/sv-m02_00001_.mp4"
+ ],
+ "seconds": 2459
 }
