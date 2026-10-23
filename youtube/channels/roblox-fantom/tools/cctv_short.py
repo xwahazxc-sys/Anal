@@ -60,6 +60,11 @@ def main():
     g, d = a.glitch, a.dur
     hh, mm, ss = map(int, a.clock.split(":"))
     still = a.src.lower().endswith((".png", ".jpg"))
+    stretch = 1.0
+    if not still:  # slow the clip down to fill the segment (slow motion reads as eerie on CCTV)
+        n = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                  a.src], capture_output=True, text=True).stdout)
+        stretch = max(1.0, a.dur / n)
     src = ["-loop", "1", "-t", f"{d}", "-i", a.src] if still else ["-i", a.src]
     move = (f"zoompan=z='1+0.05*on/{int(d*FPS)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS},"
             if still else "")
@@ -71,7 +76,7 @@ def main():
            f"drawtext=fontfile={MONO}:text='REC':x=w-125:y=h-108:fontsize=46:fontcolor=white@0.9")
     fc = [
         f"[0:v]fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},{move}"
-        f"setpts=PTS*1.0,trim=duration={d},format=gbrp,"
+        f"setpts=PTS*{stretch:.4f},tpad=stop_mode=clone:stop_duration={d},trim=duration={d},format=gbrp,"
         "colorchannelmixer=.25:.55:.1:0:.3:.65:.15:0:.2:.45:.1:0,"            # green monochrome
         "eq=brightness='0.035*sin(t*31)+0.02*sin(t*7)':contrast=1.25:eval=frame,"  # flicker
         "noise=alls=28:allf=t,gblur=sigma=0.8,"
