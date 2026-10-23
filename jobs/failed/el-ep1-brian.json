@@ -1,0 +1,30 @@
+{
+ "id": "el-ep1-brian",
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.45,
+  "similarity_boost": 0.8,
+  "style": 0.25
+ },
+ "lines": [
+  {
+   "name": "l1",
+   "text": "Shift twenty. Patient thirteen passed every check."
+  },
+  {
+   "name": "l2",
+   "text": "Temperature, normal. Pulse, normal. He just... never blinked."
+  },
+  {
+   "name": "l3",
+   "text": "At three nineteen, camera three lost him."
+  },
+  {
+   "name": "l4",
+   "text": "Camera eight is the security room. I'm the only one in it."
+  }
+ ],
+ "status": "failed",
+ "error": "HTTP Error 403: Forbidden {\"detail\":{\"type\":\"authorization_error\",\"code\":\"subscription_required\",\"message\":\"Output format 'mp3_44100_192' is only available on the Creator tier and above.\",\"status\":\"output_format_not_allowed\",\"request_id\":\"5105682acc4b06d58e9ae83aadc49e2c\"}}"
+}
