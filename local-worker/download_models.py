@@ -6,7 +6,8 @@
     python download_models.py D:\\ComfyUI_windows_portable cinema     # only the 14B set (~28 GB)
     python download_models.py ... --source modelscope                # skip Hugging Face entirely
     python download_models.py ... --dry                              # show what would be downloaded
-    python download_models.py voice                                  # voice models for the worker (~3.7 GB)
+    python download_models.py voice                                  # voice models for the worker (~3.4 GB)
+    python download_models.py D:\\ComfyUI_windows_portable studio     # images + music for the channels (~28.6 GB)
 
 Sources: Hugging Face first; if it drops the connection (common in Russia), the ModelScope mirror
 (modelscope.cn) is used automatically. Every finished file is checked against the SHA-256 published
@@ -14,6 +15,9 @@ on Hugging Face, so a mirror cannot hand over a different file.
 
 lite   = Wan 2.2 TI2V 5B: fast, fits 12 GB easily, good for simple Shorts motion.
 cinema = Wan 2.2 I2V 14B (GGUF Q4_K_M) + 4-step LightX2V LoRAs: much better motion, needs 32+ GB RAM.
+images = Z-Image Turbo (~20.7 GB): still images for long videos and thumbnails.
+music  = ACE-Step 1.5 turbo (~10 GB): background music.
+studio = images + music.
 Uses only the Python standard library, so it runs with any Python 3.
 """
 import hashlib, os, sys, time, urllib.request
@@ -47,6 +51,18 @@ SETS = {
         TE,
         (REPACK, "split_files/vae/wan_2.1_vae.safetensors", "vae", 253815318,
          "2fc39d31359a4b0a64f55876d8ff7fa8d780956ae2cb13463b0223e15148976b"),
+    ],
+    "images": [  # Z-Image Turbo (Apache 2.0) - exactly the files ComfyUI's Z-Image Turbo template expects
+        ("Comfy-Org/z_image_turbo", "split_files/diffusion_models/z_image_turbo_bf16.safetensors", "diffusion_models",
+         12309866400, "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6"),
+        ("Comfy-Org/z_image_turbo", "split_files/text_encoders/qwen_3_4b.safetensors", "text_encoders",
+         8044982048, "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a"),
+        ("Comfy-Org/z_image_turbo", "split_files/vae/ae.safetensors", "vae",
+         335304388, "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38"),
+    ],
+    "music": [  # ACE-Step 1.5 turbo, all-in-one checkpoint used by ComfyUI's ACE-Step 1.5 template
+        ("Comfy-Org/ace_step_1.5_ComfyUI_files", "checkpoints/ace_step_1.5_turbo_aio.safetensors", "checkpoints",
+         10025478736, "67b0f43aa5c51c840bd0228e6a935d8ff416ec87e5df2fc0637da17a561252bc"),
     ],
 }
 CB = "ResembleAI/chatterbox"
@@ -164,7 +180,8 @@ def main():
         # messengers turn "quotes" into «guillemets» or “curly quotes” when commands are pasted through them
         root = comfy_root(a[0].strip("\"'«»“”„ "))
         which = a[1] if len(a) > 1 else "all"
-        files = SETS["lite"] + SETS["cinema"] if which == "all" else SETS[which]
+        files = (SETS["lite"] + SETS["cinema"] if which == "all"
+                 else SETS["images"] + SETS["music"] if which == "studio" else SETS[which])
     plan, seen = [], set()
     for item in files:
         if (item[0], item[1]) not in seen:
