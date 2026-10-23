@@ -1,0 +1,1 @@
+{"id": "0-m-gummy", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "ss-m-gummy", "seconds": 40, "seed": 21, "bpm": 90, "key": "D minor", "tags": "satisfying lofi beat, soft plucks, warm keys, gentle percussion, 90 bpm, instrumental", "lyrics": "[Instrumental]"}}
