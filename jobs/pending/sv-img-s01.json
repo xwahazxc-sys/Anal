@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s01",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s01",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1000,
+  "prompt": "Aerial view at blue hour of a tiny arctic town of colourful wooden houses in a snowy valley between dark mountains, streetlights glowing orange, frozen fjord beyond. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
