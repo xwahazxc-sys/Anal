@@ -24,7 +24,15 @@ def card(num, text):
 </div>"""
 
 
+TITLE_CENTER = """<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(5,15,24,.55),rgba(5,15,24,0) 60%)"></div>
+<div style="position:absolute;left:0;right:0;top:250px;text-align:center">
+  <div style="display:inline-block;background:#FF6B2C;color:#fff;font:600 40px Oswald;letter-spacing:10px;padding:6px 22px">78°N 15°E</div>
+  <div style="color:#F2F6F8;font:700 190px Oswald;line-height:1.05;letter-spacing:6px;text-shadow:0 6px 40px rgba(0,0,0,.7)">LONGYEARBYEN</div>
+  <div style="color:#F2F6F8;font:500 44px Oswald;letter-spacing:12px;text-shadow:0 2px 16px rgba(0,0,0,.8)">THE NORTHERNMOST TOWN ON EARTH</div>
+</div>"""
+
 ITEMS = {
+    "title_center": TITLE_CENTER,
     "title": TITLE,
     "card1": card("01", "THE DARK"),
     "card2": card("02", "YOU CAN'T BE BORN HERE"),
