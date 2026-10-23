@@ -77,6 +77,56 @@ C["backlot-whispers"] = dict(
     <div class="abs" style="left:930px;top:520px;color:#F3E9D2;font:700 40px Inter;letter-spacing:8px">1921–1957</div>""",
 )
 
+STRATA = ("linear-gradient(180deg,#EDE3D1 0 14%,#cdb48f 14% 27%,#9a6b43 27% 41%,#5b3a26 41% 56%,#3a2519 56% 72%,"
+          "#241813 72% 86%,#1A1412 86%)")
+C["hace-millones"] = dict(
+    css=f"""body{{background:#1A1412;font-family:'Archivo Black'}}
+    .strata{{position:absolute;background:{STRATA}}}
+    .crack{{position:absolute;background:linear-gradient(90deg,transparent,#FF5A1F,#F2B33D,#FF5A1F,transparent);filter:drop-shadow(0 0 18px #FF5A1F)}}""",
+    avatar="""<div class="abs" style="inset:0;background:#1A1412"></div>
+    <div class="strata" style="left:90px;top:90px;width:620px;height:620px;border-radius:50%;border:14px solid #F2B33D"></div>
+    <div class="crack" style="left:120px;top:395px;width:560px;height:16px;transform:rotate(-18deg)"></div>
+    <div class="crack" style="left:330px;top:300px;width:220px;height:10px;transform:rotate(38deg)"></div>""",
+    banner=f"""<div class="strata" style="inset:0;opacity:.55"></div>
+    <div class="crack" style="left:0;top:1060px;width:2560px;height:14px;transform:rotate(-2deg)"></div>
+    <div class="abs" style="{SAFE};display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(26,20,18,.88);border-top:8px solid #FF5A1F;border-bottom:8px solid #FF5A1F">
+      <div style="color:#EDE3D1;font-size:112px;letter-spacing:2px;line-height:1.02;text-align:center">HACE MILLONES<br>DE AÑOS</div>
+      <div style="color:#F2B33D;font:700 50px Inter;margin-top:18px">¿Sobrevivirías en la Tierra de antes?</div>
+      <div style="color:#FF5A1F;font:600 36px Oswald;letter-spacing:4px;margin-top:10px">DOCUMENTALES COMPLETOS · MIÉRCOLES Y SÁBADOS</div></div>""",
+    thumb="""<div class="abs" style="inset:0;background:radial-gradient(ellipse at 70% 30%,#ffb36b 0%,#c2410c 25%,#3a1d10 60%,#120c0a 100%)"></div>
+    <div class="abs" style="right:40px;top:300px;width:520px;color:rgba(237,227,209,.55);font:500 24px Inter;text-align:right">[AI image: asteroid entering the sky over a Cretaceous forest, dinosaurs looking up]</div>
+    <div class="abs" style="left:46px;top:40px;color:#FF5A1F;font-size:190px;line-height:.9;text-shadow:0 8px 0 #000">66</div>
+    <div class="abs" style="left:52px;top:215px;color:#EDE3D1;font-size:76px;line-height:1;text-shadow:0 6px 0 #000">MILLONES</div>
+    <div class="abs" style="left:46px;top:470px;color:#F2B33D;font-size:96px;line-height:1;text-shadow:0 6px 0 #000">¿SOBREVIVIRÍAS?</div>
+    <div class="abs" style="left:0;bottom:0;width:1280px;height:26px;background:linear-gradient(90deg,#EDE3D1,#cdb48f,#9a6b43,#5b3a26,#FF5A1F)"></div>""",
+)
+HAZARD = "repeating-linear-gradient(-45deg,#FFC400 0 40px,#1E2327 40px 80px)"
+C["warum-es-geschah"] = dict(
+    css="""body{background:#1E2327;font-family:Oswald}
+    .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.04) 2px,transparent 2px);background-size:80px 80px}
+    .link{position:absolute;border:22px solid #FFC400;border-radius:90px}""",
+    avatar=f"""<div class="abs" style="inset:0;background:{HAZARD}"></div>
+    <div class="abs" style="left:110px;top:110px;width:580px;height:580px;border-radius:50%;background:#1E2327"></div>
+    <div class="link" style="left:170px;top:300px;width:260px;height:180px;transform:rotate(-20deg)"></div>
+    <div class="link" style="left:380px;top:320px;width:260px;height:180px;transform:rotate(-20deg);border-color:#F2F2F2"></div>
+    <div class="abs" style="left:375px;top:310px;width:40px;height:200px;background:#1E2327;transform:rotate(25deg)"></div>
+    <div class="abs" style="left:380px;top:318px;width:12px;height:180px;background:#D7263D;transform:rotate(25deg)"></div>""",
+    banner=f"""<div class="grid"></div>
+    <div class="abs" style="left:0;top:470px;width:2560px;height:30px;background:{HAZARD}"></div>
+    <div class="abs" style="left:0;top:940px;width:2560px;height:30px;background:{HAZARD}"></div>
+    <div class="abs" style="{SAFE};display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="color:#FFC400;font:700 34px 'Courier Prime';letter-spacing:10px">UNTERSUCHUNGSBERICHT</div>
+      <div style="color:#F2F2F2;font:700 150px Oswald;letter-spacing:6px;line-height:1">WARUM ES GESCHAH</div>
+      <div style="color:#F2F2F2;font:500 42px Inter;margin-top:10px">Katastrophen haben eine Ursache. Meistens mehrere.</div>
+      <div style="color:#FFC400;font:600 34px Oswald;letter-spacing:4px;margin-top:8px">NEUE DOKU JEDEN DONNERSTAG &amp; SONNTAG</div></div>""",
+    thumb=f"""<div class="abs" style="inset:0;background:linear-gradient(160deg,#4b5563 0%,#1E2327 60%,#0d1013 100%)"></div>
+    <div class="abs" style="right:40px;bottom:40px;width:520px;color:rgba(242,242,242,.5);font:500 22px Inter;text-align:right">[AI reconstruction: concrete road bridge near Eschede, empty tracks, grey morning, no people]</div>
+    <div class="abs" style="left:0;top:0;width:1280px;height:22px;background:{HAZARD}"></div>
+    <div class="abs" style="left:48px;top:70px;color:#FFC400;font:700 150px Oswald;line-height:.95;text-shadow:0 6px 0 #000">EIN<br>RADREIFEN</div>
+    <div class="abs" style="left:52px;top:440px;background:#F2F2F2;color:#1E2327;font:700 64px 'Courier Prime';padding:6px 26px">1998</div>
+    <div class="abs" style="left:52px;top:560px;height:12px;width:620px;background:linear-gradient(90deg,#FFC400 0 80%,#D7263D 80%)"></div>""",
+)
+
 
 def main():
     only = sys.argv[1:] or list(C)
