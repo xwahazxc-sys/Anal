@@ -15,7 +15,7 @@ never arbitrary commands from the queue.
 Token: a fine-grained GitHub token for this one repository with "Contents: Read and write",
 in the environment variable GITHUB_TOKEN. Never put it in config.json or in the repo.
 """
-import base64, json, os, platform, subprocess, sys, time, traceback
+import base64, json, os, platform, re, subprocess, sys, time, traceback
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -181,12 +181,48 @@ def job_qtts(job):
     return files
 
 
+def job_stock(job):
+    """Free stock footage from Pexels (free for commercial use; key in PEXELS_API_KEY, set with setx).
+    {"type": "stock", "queries": [{"q": "svalbard snow", "n": 3}], "min_seconds": 5, "max_width": 1920}"""
+    key = os.environ.get("PEXELS_API_KEY")
+    if not key:
+        raise RuntimeError("PEXELS_API_KEY is not set: setx PEXELS_API_KEY \"...\" and restart the worker")
+    files, manifest, seen = {}, [], set()
+    for item in job["queries"]:
+        r = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key}, timeout=30,
+                         params={"query": item["q"], "per_page": 30, "orientation": "landscape"})
+        r.raise_for_status()
+        got = 0
+        for v in r.json().get("videos", []):
+            if got >= item.get("n", 3):
+                break
+            if v["id"] in seen or v.get("duration", 0) < job.get("min_seconds", 5):
+                continue
+            cands = [f for f in v["video_files"] if f.get("width") and f["width"] <= job.get("max_width", 1920)
+                     and f.get("file_type") == "video/mp4"]
+            if not cands:
+                continue
+            f = max(cands, key=lambda f: f["width"])
+            data = requests.get(f["link"], timeout=300).content
+            if len(data) > MAX_FILE * 0.9:
+                continue
+            name = f"{re.sub(r'[^a-z0-9]+', '-', item['q'].lower())[:30]}_{v['id']}.mp4"
+            files[name] = data
+            seen.add(v["id"]); got += 1
+            manifest.append({"file": name, "query": item["q"], "pexels_id": v["id"], "url": v["url"],
+                             "author": v.get("user", {}).get("name"), "seconds": v["duration"],
+                             "width": f["width"], "height": f["height"]})
+            log(f"  {name} {f['width']}x{f['height']} {v['duration']} s")
+    files["manifest.json"] = json.dumps(manifest, indent=1, ensure_ascii=False).encode()
+    return files
+
+
 def job_restart(job):
     """Exit after this job; start_worker.bat pulls the newest code and starts the worker again."""
     return {"note.txt": b"worker restarting to load new code"}
 
 
-HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart, "qtts": job_qtts}
+HANDLERS = {"ping": job_ping, "tts": job_tts, "comfy": job_comfy, "restart": job_restart, "qtts": job_qtts, "stock": job_stock}
 
 
 def process(path):
