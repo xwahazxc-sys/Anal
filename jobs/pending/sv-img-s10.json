@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s10",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s10",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1009,
+  "prompt": "Pitch dark arctic road with only car headlights cutting through falling snow, reflective snow poles. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
