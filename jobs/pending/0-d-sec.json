@@ -1,0 +1,14 @@
+{
+ "id": "0-d-sec",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/rf/sec.png"
+ },
+ "vars": {
+  "name": "ep1-sec",
+  "seed": 77,
+  "prompt": "security camera footage, static camera, the rabbit mascot in the doorway slowly steps into the room toward the empty office chair and tilts its head, monitors flicker, eerie, realistic"
+ }
+}
