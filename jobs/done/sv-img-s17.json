@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1016,
   "prompt": "Exterior of a small modern hospital building in an arctic town at night, snow, warm lights, a parked ambulance. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:02:07",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s17/sv-s17_00001_.png"
+ ],
+ "seconds": 36
 }
