@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s16",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s16",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1015,
+  "prompt": "Wide shot of an empty snowy arctic street in total darkness at midday, a clock on a building showing 12:00. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
