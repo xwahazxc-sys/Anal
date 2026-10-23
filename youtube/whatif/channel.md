@@ -72,3 +72,7 @@ Cookies die on "sign out of all devices": the owner re-exports when a check says
 - Pass if by Nov 20 at least one Short has 5-10k views, or new-format Shorts reach 65-70%+ "stayed to watch" (Oct baseline: 56%).
 - If not: one big format change (voice / true-facts angle / visual style) for 2 more weeks; if that also fails, stop the channel.
 - Oct 23 baseline: Night 1 1:28, 281 views, 55.8% stayed, avg 0:50. Night 2 1:34, 575 views, 56.2% stayed, avg 0:29. 83 monthly viewers, 7 subs, top country US 14%.
+
+## Oct 23 re-upload in the new format
+dl1, dl2, sw1, sw2, kn1, kn2 recut with cuts/recut.py (scariest moment first, story runs back into it, 31-36 s); fl1/fl2 re-rendered to open on the smile / the open eyes.
+Old uploads made private: -EcXXHtNUlc, XhrBG0dzUzo, MOS4zuZyE-k, e1t-IW7LY3Q, N4XJrQOFMjc, _zz9VxlVSwA, LCYy5UugQNc, lMBlQNknd80.

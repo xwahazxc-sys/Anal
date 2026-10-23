@@ -86,12 +86,12 @@ function cabin(c, t, k) {
 }
 
 // ---------- attendant ----------
-function attendant(c, t, lt, k) {
+function attendant(c, t, lt, k, force = 0) {
   c.fillStyle = '#04050a'; c.fillRect(0, 0, W, H);
   const gx = W / 2, gy = 700;
   glowDot(c, gx, gy, 900, '200,215,240', 0.35);
   c.fillStyle = '#0a0c12'; c.fillRect(0, 0, 220, H); c.fillRect(W - 220, 0, 220, H);
-  const z = lerp(1, 1.18, k), s = 230 * z, x = W / 2, y = 1880;
+  const z = force ? force : lerp(1, 1.18, k), s = 230 * z, x = W / 2, y = force ? 760 + 4.55 * s : 1880;
   c.save();
   const body = () => {
     c.beginPath();
@@ -105,7 +105,7 @@ function attendant(c, t, lt, k) {
   // scarf: the one warm colour
   c.fillStyle = 'rgba(201,60,60,.9)'; c.beginPath(); c.moveTo(x - 0.3 * s, y - 3.95 * s); c.lineTo(x + 0.3 * s, y - 3.95 * s); c.lineTo(x + 0.05 * s, y - 3.5 * s); c.lineTo(x + 0.2 * s, y - 3.1 * s); c.lineTo(x, y - 3.2 * s); c.lineTo(x - 0.1 * s, y - 3.55 * s); c.closePath(); c.fill();
   // the smile: too wide, too white
-  const sm = easeOutCubic(p01(t, TL.smileAt, TL.smileAt + 0.6));
+  const sm = force ? 1 : easeOutCubic(p01(t, TL.smileAt, TL.smileAt + 0.6));
   if (sm > 0) {
     const fx = x, fy = y - 4.35 * s, wv = 0.3 * s * (0.5 + 0.5 * sm);
     glowDot(c, fx, fy, 0.6 * s, '255,255,255', 0.25 * sm);
@@ -227,7 +227,8 @@ runSim(DEFAULTS, async ({cfg, canvas}) => {
     const lt = t - sh.t0, dur = sh.t1 - sh.t0, k = ease(p01(lt, 0, dur));
     x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
     // the first and the last shot are the same map; the last one ends exactly on the first frame
-    if (sh.name === 'map') seatMap(x, t, sh.i === 0 ? lerp(1.0, 1.1, k) : lerp(0.94, 1.0, p01(lt, 0, dur)));
+    if (sh.name === 'smile') attendant(x, t, lt, k, sh.i === 0 ? lerp(1.5, 1.6, p01(lt, 0, dur)) : lerp(1.4, 1.5, p01(lt, 0, dur)));
+    else if (sh.name === 'map') seatMap(x, t, lerp(1.0, 1.1, k));
     else if (sh.name === 'cabin') cabin(x, t, k);
     else if (sh.name === 'attendant') attendant(x, t, lt, k);
     else if (sh.name === 'window') windowView(x, t, lt, k);
@@ -241,7 +242,7 @@ runSim(DEFAULTS, async ({cfg, canvas}) => {
       scene(c, t, sh);
       const since = t - sh.t0; if (sh.i > 0 && since < 0.1) { c.fillStyle = `rgba(0,0,0,${1 - since / 0.1})`; c.fillRect(0, 0, W, H); }
       finish(c, t);
-      if (['cabin', 'attendant'].includes(sh.name)) hud(c, t);
+      if (['cabin', 'attendant', 'smile'].includes(sh.name)) hud(c, t);
       if (!cfg.noCaptions) captions(c, t);
       return {};
     },

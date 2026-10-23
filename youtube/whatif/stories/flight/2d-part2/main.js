@@ -278,11 +278,11 @@ function pilotWalk(c, t, k, close) {
     c.strokeStyle = '#a01c1c'; c.lineWidth = 5; c.beginPath(); c.ellipse(80, 256, 70, 30, 0, 0, 7); c.stroke(); c.restore();
   }
 }
-function eyesRows(c, t, k) {
+function eyesRows(c, t, k, force = 0) {
   c.fillStyle = '#04060a'; c.fillRect(0, 0, W, H);
   glowDot(c, W / 2, 800, 800, '120,140,190', 0.15);
-  const open = easeOutCubic(p01(t, TL.openAt, TL.openAt + 0.35));
-  const z = lerp(1, 1.1, k);
+  const open = force ? 1 : easeOutCubic(p01(t, TL.openAt, TL.openAt + 0.35));
+  const z = force ? force : lerp(1, 1.1, k);
   c.save(); c.translate(W / 2, H * 0.45); c.scale(z, z); c.translate(-W / 2, -H * 0.45);
   for (let row = 4; row >= 0; row--) {
     const f = row / 5, s = lerp(140, 50, f), y = lerp(1180, 520, f), n = row < 2 ? 3 : 5;
@@ -347,7 +347,8 @@ runSim(DEFAULTS, async ({cfg, canvas}) => {
     const lt = t - sh.t0, dur = sh.t1 - sh.t0, k = ease(p01(lt, 0, dur));
     x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
     // the first and the last shot are the same runway; the last one ends exactly on the first frame
-    if (sh.name === 'runway') runway(x, t, sh.i === 0 ? lerp(1.0, 1.08, k) : lerp(0.95, 1.0, p01(lt, 0, dur)));
+    if (sh.name === 'stare') eyesRows(x, t, k, sh.i === 0 ? lerp(1.25, 1.35, p01(lt, 0, dur)) : lerp(1.15, 1.25, p01(lt, 0, dur)));
+    else if (sh.name === 'runway') runway(x, t, lerp(1.0, 1.08, k));
     else if (sh.name === 'doors') doors(x, t, k);
     else if (sh.name === 'street') streetView(x, t, k);
     else if (sh.name === 'pilot') pilotWalk(x, t, k, false);
