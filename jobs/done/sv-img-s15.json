@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1014,
   "prompt": "A crowd of people in winter clothes seen from behind gathered on old wooden stairs looking up at the first sunlight, arctic town, March. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:00:38",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s15/sv-s15_00001_.png"
+ ],
+ "seconds": 36
 }
