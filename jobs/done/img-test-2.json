@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 7,
   "prompt": "Cinematic wide photograph of Longyearbyen, Svalbard, during the blue polar night: a row of colourful wooden houses (red, yellow, teal) on stilts in deep snow, steep snow-covered mountains behind, faint green aurora in the dark blue sky, two people on snowmobiles with headlights in the foreground road, warm windows glowing, documentary photography, sharp detail, natural light"
- }
+ },
+ "finished": "2026-10-23 13:34:15",
+ "status": "done",
+ "outputs": [
+  "outputs/img-test-2/img-test-2_00001_.png"
+ ],
+ "seconds": 61
 }
