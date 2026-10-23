@@ -10,5 +10,11 @@
   "name": "ep1-wait",
   "seed": 77,
   "prompt": "security camera footage, static camera, the rabbit mascot sitting in the waiting room chair slowly raises its head and stares straight up into the camera, completely still otherwise, fluorescent light flickers, eerie, realistic"
- }
+ },
+ "finished": "2026-10-23 22:39:26",
+ "status": "done",
+ "outputs": [
+  "outputs/0-d-wait/ep1-wait_00001_.mp4"
+ ],
+ "seconds": 317
 }
