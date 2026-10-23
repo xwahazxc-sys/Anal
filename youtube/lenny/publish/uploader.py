@@ -194,6 +194,10 @@ def upload_one(page, item):
 
     page.wait_for_selector("#title-textarea #textbox", timeout=120000)
     page.wait_for_timeout(2500)
+    if page.get_by_text(re.compile(r"Daily upload limit reached", re.I)).count():
+        shot(page, f"{item['id']}_limit")
+        page.keyboard.press("Escape")
+        raise RuntimeError("DAILY_LIMIT")
     set_text(page, "#title-textarea #textbox", item["title"])
     set_text(page, "#description-textarea #textbox", item["description"])
     shot(page, f"{item['id']}_details")
@@ -950,6 +954,11 @@ def main():
                 else:
                     results[item["id"]] = upload_one(page, item) or "ok"
             except (PWTimeout, Exception) as e:
+                if "DAILY_LIMIT" in str(e):
+                    log("DAILY UPLOAD LIMIT reached at", item["id"], "- stopping; retry in 24 h")
+                    for rest in todo[todo.index(item):]:
+                        results[rest["id"]] = "FAILED"
+                    break
                 shot(page, f"{item['id']}_error")
                 log("FAILED", item["id"], type(e).__name__, str(e)[:300])
                 results[item["id"]] = "FAILED"

@@ -76,3 +76,5 @@ Cookies die on "sign out of all devices": the owner re-exports when a check says
 ## Oct 23 re-upload in the new format
 dl1, dl2, sw1, sw2, kn1, kn2 recut with cuts/recut.py (scariest moment first, story runs back into it, 31-36 s); fl1/fl2 re-rendered to open on the smile / the open eyes.
 Old uploads made private: -EcXXHtNUlc, XhrBG0dzUzo, MOS4zuZyE-k, e1t-IW7LY3Q, N4XJrQOFMjc, _zz9VxlVSwA, LCYy5UugQNc, lMBlQNknd80.
+- dl1 re-uploaded: https://youtu.be/AVWo1dY0NQY (Oct 27). dl2, sw1, sw2, kn1, kn2, fl1, fl2 hit YouTube's daily upload limit; retry Oct 24 ~05:00 UTC.
+- Unverified channels have a small daily upload cap: upload at most a few videos per day from now on.
