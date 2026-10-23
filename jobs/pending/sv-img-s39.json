@@ -1,0 +1,13 @@
+{
+ "id": "sv-img-s39",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "sv-s39",
+  "width": 1920,
+  "height": 1088,
+  "seed": 1038,
+  "prompt": "International flags in front of a small arctic town building in snow, wind blowing them. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
+ }
+}
