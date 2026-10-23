@@ -1,0 +1,40 @@
+{
+ "chunks": 4,
+ "flagged": 0,
+ "seconds": 20.6,
+ "sample_rate": 24000,
+ "chunks_detail": [
+  {
+   "n": 0,
+   "text": "Despiertas en lo que hoy es México. Es una mañana cualquiera, hace sesenta y seis millones de años.",
+   "heard": " despiertas en lo que hoy es México. Es una mañana cualquiera, hace 66 millones de años.",
+   "score": 0.882,
+   "takes": 3,
+   "flag": false
+  },
+  {
+   "n": 1,
+   "text": "El aire es cálido y húmedo, y a lo lejos se oye el llamado de un animal que nadie ha escuchado jamás.",
+   "heard": " El aire es cálido y húmedo, y a lo lejos se oye el llamado de un animal que nadie ha escuchado jamás.",
+   "score": 1.0,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 2,
+   "text": "Pero en unas horas, una roca de diez kilómetros entrará en la atmósfera a más de setenta mil kilómetros por hora.",
+   "heard": " pero en unas horas una roca de 10 kilómetros entrará en la atmósfera a más de 70.000  kilómetros por hora.",
+   "score": 0.878,
+   "takes": 1,
+   "flag": false
+  },
+  {
+   "n": 3,
+   "text": "Tienes cinco pruebas para seguir vivo.",
+   "heard": " Tienes cinco pruebas para seguir vivo.",
+   "score": 1.0,
+   "takes": 2,
+   "flag": false
+  }
+ ]
+}
