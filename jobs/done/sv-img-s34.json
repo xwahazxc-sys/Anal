@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1033,
   "prompt": "A person in arctic gear seen from behind with a rifle slung over their shoulder, standing on a snowy ridge looking out over a frozen fjord. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:14:49",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s34/sv-s34_00001_.png"
+ ],
+ "seconds": 36
 }
