@@ -9,5 +9,11 @@
   "height": 1088,
   "seed": 1034,
   "prompt": "A flare pistol and a rifle laid on a wooden table with gloves and a map, arctic cabin interior. documentary photograph, natural light, realistic, sharp detail, 35mm film look, no text, no watermark"
- }
+ },
+ "finished": "2026-10-23 14:15:33",
+ "status": "done",
+ "outputs": [
+  "outputs/sv-img-s35/sv-s35_00001_.png"
+ ],
+ "seconds": 36
 }
