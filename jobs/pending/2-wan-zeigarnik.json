@@ -1,1 +1,0 @@
-{"id": "2-wan-zeigarnik", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss/zeigarnik-3.png"}, "vars": {"name": "ss-wan-zeigarnik-3", "seed": 77, "prompt": "the person in bed turns over restlessly, phone light flickers on their face, night, realistic motion, no text"}}
