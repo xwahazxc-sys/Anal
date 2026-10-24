@@ -1,0 +1,1 @@
+{"id": "1-jet-6", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "ss-jet-6", "width": 1088, "height": 1920, "seed": 106, "prompt": "a white business jet taking off into a dramatic sunset sky, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"}}

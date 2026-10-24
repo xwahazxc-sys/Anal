@@ -1,0 +1,1 @@
+{"id": "1-truck-2", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "ss-truck-2", "width": 1088, "height": 1920, "seed": 102, "prompt": "a pickup truck body being sprayed matte black in a paint booth, mist, dramatic lights, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"}}
