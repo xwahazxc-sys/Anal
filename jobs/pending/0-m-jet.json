@@ -1,1 +1,0 @@
-{"id": "0-m-jet", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "ss-m-jet", "seconds": 40, "seed": 21, "bpm": 85, "key": "D minor", "tags": "luxury trap beat, dark piano, deep 808 bass, slow hi-hats, 85 bpm, instrumental, expensive, confident", "lyrics": "[Instrumental]"}}
