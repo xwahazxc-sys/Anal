@@ -1,1 +1,0 @@
-{"id": "3-wan-truck-4", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/truck-4.png"}, "vars": {"name": "ss2-truck-4", "seed": 91, "prompt": "the lifted black truck's headlights switch on and the neon underglow pulses, cinematic, realistic motion, no text"}}
