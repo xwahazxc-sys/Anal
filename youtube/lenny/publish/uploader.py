@@ -374,6 +374,20 @@ def reschedule(page, video_id, item):
     return f"https://youtu.be/{video_id}"
 
 
+def retitle(page, video_id, title):
+    """Studio → video → set a new title → Save."""
+    page.goto(f"https://studio.youtube.com/video/{video_id}/edit", wait_until="domcontentloaded")
+    page.wait_for_timeout(8000)
+    set_text(page, "#title-textarea #textbox", title)
+    page.wait_for_timeout(800)
+    for sel in ("ytcp-button#save", "#save", "text=Save"):
+        if try_click(page, sel, 5000):
+            break
+    page.wait_for_timeout(4000)
+    shot(page, f"{video_id}_retitled")
+    log("retitled", video_id, "->", title)
+
+
 def make_private(page, video_id):
     """Studio → video → Visibility → Private → Done → Save (used to replace a scheduled video)."""
     page.goto(f"https://studio.youtube.com/video/{video_id}/edit", wait_until="domcontentloaded")
@@ -822,8 +836,9 @@ def main():
     related = [i.split("=", 1)[1] for i in ids if i.startswith("related=")]  # related=SHORTVIDEOID:epNN
     pins = [i.split("=", 1)[1] for i in ids if i.startswith("pin=")]  # pin=VIDEOID (text from PIN_TEXT env)
     privs = [i.split("=", 1)[1] for i in ids if i.startswith("private=")]  # private=VIDEOID
-    stats = [i.split("=", 1)[1] for i in ids if i.startswith("stats=")]  # stats=VIDEOID: analytics tabs -> shots + text
-    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin=", "private=", "stats="))]
+    stats = [i.split("=", 1)[1] for i in ids if i.startswith("stats=")]
+    retitles = [i.split("=", 1)[1] for i in ids if i.startswith("retitle=")]  # retitle=QUEUEID:VIDEOID (title from queue)  # stats=VIDEOID: analytics tabs -> shots + text
+    ids = [i for i in ids if i not in ("audit", "country", "brand") and not i.startswith(("noai=", "related=", "pin=", "private=", "stats=", "retitle="))]
     todo = []
     for raw in ids:  # "ep02:private" uploads ep02 but keeps it private (for tests)
         raw, _, existing = raw.partition("@")
@@ -835,7 +850,7 @@ def main():
             if existing:
                 item["existing"] = existing
             todo.append(item)
-    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins and not privs and not stats:
+    if not todo and not do_audit and not do_country and not fix_altered and not related and not do_brand and not pins and not privs and not stats and not retitles:
         sys.exit(f"nothing to upload for ids {ids}")
 
     with sync_playwright() as p:
@@ -878,6 +893,15 @@ def main():
                 shot(page, f"{vid_id}_private_error")
                 log("PRIVATE FAILED", vid_id, type(e).__name__, str(e)[:200])
                 results[f"private {vid_id}"] = "FAILED"
+        for spec in retitles:
+            qid, _, vid = spec.partition(":")
+            try:
+                retitle(page, vid, queue[qid]["title"])
+                results[f"retitle {qid}"] = "ok"
+            except Exception as e:
+                shot(page, f"{qid}_retitle_error")
+                log("RETITLE FAILED", qid, type(e).__name__, str(e)[:200])
+                results[f"retitle {qid}"] = "FAILED"
         def dump(name):
             page.screenshot(path=str(SHOTS / f"{name}.png"), full_page=True)
             (SHOTS / f"{name}.txt").write_text(page.inner_text("body"))
