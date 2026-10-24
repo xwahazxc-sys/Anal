@@ -1,1 +1,0 @@
-{"id": "7-wd-0", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/hw/7-wd-0.png"}, "vars": {"name": "7-wd-0", "seed": 71, "prompt": "the confused man looks around the kitchen and scratches his head, cinematic, no text"}}
