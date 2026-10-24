@@ -1,0 +1,19 @@
+{
+ "id": "4-rm-figure-5",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "rm-figure-5",
+  "width": 1088,
+  "height": 1920,
+  "seed": 5,
+  "prompt": "phone camera photo in a dark home library at night, a towering eyeless fleshy red humanoid monster with a huge gaping mouth full of teeth and a ribcage chest, bending between bookshelves, flashlight beam, realistic found footage photo, real home, night, grainy, slight motion blur, horror, no text, no watermark, vertical"
+ },
+ "finished": "2026-10-24 17:22:15",
+ "status": "done",
+ "outputs": [
+  "outputs/4-rm-figure-5/rm-figure-5_00001_.png"
+ ],
+ "seconds": 51
+}
