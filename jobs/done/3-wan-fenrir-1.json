@@ -1,0 +1,20 @@
+{
+ "id": "3-wan-fenrir-1",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss2/fenrir-1.png"
+ },
+ "vars": {
+  "name": "ss2-fenrir-1",
+  "seed": 91,
+  "prompt": "the chained black wolf pulls against the glowing golden chains, growling, sparks, epic, realistic motion, no text"
+ },
+ "finished": "2026-10-24 14:59:32",
+ "status": "done",
+ "outputs": [
+  "outputs/3-wan-fenrir-1/ss2-fenrir-1_00001_.mp4"
+ ],
+ "seconds": 278
+}
