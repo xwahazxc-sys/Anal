@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-autobahn",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/autobahn-1.png"
+ },
+ "vars": {
+  "name": "ss-wan-autobahn-1",
+  "seed": 77,
+  "prompt": "the silver sports car speeds along the autobahn, camera tracking alongside, motion blur, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:25:48",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-autobahn/ss-wan-autobahn-1_00001_.mp4"
+ ],
+ "seconds": 282
+}
