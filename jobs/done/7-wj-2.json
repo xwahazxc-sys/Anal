@@ -1,0 +1,20 @@
+{
+ "id": "7-wj-2",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/hw/7-wj-2.png"
+ },
+ "vars": {
+  "name": "7-wj-2",
+  "seed": 71,
+  "prompt": "the mechanical paddle stirs the bubbling red jam, steam rises, macro, no text"
+ },
+ "finished": "2026-10-24 19:02:07",
+ "status": "done",
+ "outputs": [
+  "outputs/7-wj-2/7-wj-2_00001_.mp4"
+ ],
+ "seconds": 278
+}
