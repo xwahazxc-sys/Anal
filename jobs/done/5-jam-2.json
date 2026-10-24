@@ -1,0 +1,19 @@
+{
+ "id": "5-jam-2",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "5-jam-2",
+  "width": 1088,
+  "height": 1920,
+  "seed": 31,
+  "prompt": "huge stainless steel vat of bubbling red strawberry jam being stirred by a mechanical paddle, steam, factory, photorealistic, macro, sharp, no text, no logos, vertical"
+ },
+ "finished": "2026-10-24 17:46:08",
+ "status": "done",
+ "outputs": [
+  "outputs/5-jam-2/5-jam-2_00001_.png"
+ ],
+ "seconds": 56
+}
