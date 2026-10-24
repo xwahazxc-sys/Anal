@@ -1,1 +1,0 @@
-{"id": "5-tn-0a", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "5-tn-0a", "width": 1088, "height": 1920, "seed": 31, "prompt": "Times Square New York in 1905, horse carriages, early streetcars, people in hats, black and white old photograph, no text, vertical composition"}}
