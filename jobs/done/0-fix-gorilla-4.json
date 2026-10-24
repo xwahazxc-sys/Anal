@@ -1,0 +1,19 @@
+{
+ "id": "0-fix-gorilla-4",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-fix-gorilla-4",
+  "width": 1088,
+  "height": 1920,
+  "seed": 7,
+  "prompt": "split composition: on the left a single huge silverback gorilla, on the right a single huge grizzly bear, facing each other in a misty forest clearing, dramatic cinematic wildlife photography, no text, no watermark, vertical composition"
+ },
+ "finished": "2026-10-24 13:22:42",
+ "status": "done",
+ "outputs": [
+  "outputs/0-fix-gorilla-4/ss-fix-gorilla-4_00001_.png"
+ ],
+ "seconds": 56
+}
