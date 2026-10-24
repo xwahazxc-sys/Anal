@@ -26,10 +26,11 @@ Style: Header,Archivo Black,104,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC8000000,0,0,
 Style: Sub,Archivo Black,96,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,8,4,8,50,50,300,1
 Style: Year,Archivo Black,230,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,12,6,2,50,50,330,1
 Style: Place,Archivo Black,100,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,9,4,8,50,50,330,1
-Style: Story,Archivo Black,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,0,0,0,0,100,100,0,0,3,16,0,2,70,70,560,1
+Style: Story,Archivo Black,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,0,0,0,0,100,100,0,0,3,16,0,2,70,70,560,1
 Style: Q,Archivo Black,88,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,0,0,3,14,0,2,50,50,250,1
 Style: OSD,DejaVu Sans Mono,46,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,3,0,7,46,46,60,1
-Style: Mon,Archivo Black,120,&H002626FF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,10,5,2,50,50,330,1
+Style: Mon,Archivo Black,120,&H002626FF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,10,5,2,50,50,420,1
+Style: Game,Archivo Black,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,0,0,3,12,0,2,50,50,330,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -184,14 +185,14 @@ def build_monsters(work, track):
         _, name, game, cam = MON[k]
         e.append(ev(1, a, b, "OSD", f"{cam}   {{\\c&H0000FF&}}● REC", ""))
         e.append(ev(2, a + 0.6, b - 0.2, "Mon", name, POP))
-        e.append(ev(2, a + 0.6, b - 0.2, "Sub", game, "\\fad(100,100)"))
+        e.append(ev(2, a + 0.6, b - 0.2, "Game", game, "\\fad(100,100)"))
     endcard = os.path.join(tmp, "end.mp4")
     B.sh(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=black:s={W}x{H_}:d={total-HITS[6]}:r={FPS}", "-c:v", "libx264",
           "-pix_fmt", "yuv420p", endcard])
     clips.append(endcard)
     e.append(ev(3, 0, HITS[6], "Header", "IF ROBLOX MONSTERS WERE REAL", ""))
     e.append(ev(3, HITS[6] + 0.2, total, "Mon", "WHICH ONE\\NWOULD YOU RUN FROM?", POP))
-    e.append(ev(3, HITS[6] + 0.8, total, "Sub", "▼ COMMENT ▼", "\\fad(200,0)"))
+    e.append(ev(3, HITS[6] + 0.8, total, "Game", "▼ COMMENT ▼", "\\fad(200,0)"))
     ass = os.path.join(tmp, "c.ass"); open(ass, "w").write(HEAD + "\n".join(e) + "\n")
     glitch = "".join(f"rgbashift=rh=-28:bv=14:enable='between(t,{h-0.05:.2f},{h+0.25:.2f})'," for h in HITS[1:])
     inputs, g = music_mix(concat(clips, tmp), ass, track, total, [], tmp, mg=0.95, extra_v=glitch)
