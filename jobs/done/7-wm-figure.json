@@ -1,0 +1,20 @@
+{
+ "id": "7-wm-figure",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/hw/7-wm-figure.png"
+ },
+ "vars": {
+  "name": "7-wm-figure",
+  "seed": 71,
+  "prompt": "the eyeless monster slowly turns its head toward the flashlight and opens its huge mouth, shaky handheld phone footage, no text"
+ },
+ "finished": "2026-10-24 19:06:54",
+ "status": "done",
+ "outputs": [
+  "outputs/7-wm-figure/7-wm-figure_00001_.mp4"
+ ],
+ "seconds": 278
+}
