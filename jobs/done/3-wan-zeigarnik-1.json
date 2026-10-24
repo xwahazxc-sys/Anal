@@ -1,0 +1,20 @@
+{
+ "id": "3-wan-zeigarnik-1",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss2/zeigarnik-1.png"
+ },
+ "vars": {
+  "name": "ss2-zeigarnik-1",
+  "seed": 91,
+  "prompt": "the floating browser windows around the glowing brain multiply and flicker, surreal, realistic motion, no text"
+ },
+ "finished": "2026-10-24 16:06:06",
+ "status": "done",
+ "outputs": [
+  "outputs/3-wan-zeigarnik-1/ss2-zeigarnik-1_00001_.mp4"
+ ],
+ "seconds": 277
+}
