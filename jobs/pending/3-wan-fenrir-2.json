@@ -1,1 +1,0 @@
-{"id": "3-wan-fenrir-2", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/fenrir-2.png"}, "vars": {"name": "ss2-fenrir-2", "seed": 91, "prompt": "the wolf's amber eye opens slowly and the pupil narrows, embers float, epic, realistic motion, no text"}}
