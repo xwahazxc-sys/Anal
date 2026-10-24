@@ -1,0 +1,19 @@
+{
+ "id": "1-roommates-1",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-roommates-1",
+  "width": 1088,
+  "height": 1920,
+  "seed": 101,
+  "prompt": "a cute 3D cartoon character in a black red and gold hoodie proudly holding a laminated cleaning schedule on a fridge, pixar style, cinematic, vertical composition, no text, no watermark"
+ },
+ "finished": "2026-10-24 13:04:54",
+ "status": "done",
+ "outputs": [
+  "outputs/1-roommates-1/ss-roommates-1_00001_.png"
+ ],
+ "seconds": 56
+}
