@@ -1,0 +1,1 @@
+{"id": "3-wan-roommates-5", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/roommates-5.png"}, "vars": {"name": "ss2-roommates-5", "seed": 91, "prompt": "the four cartoon characters on the sofa turn their heads and look at the camera, pixar animation, realistic motion, no text"}}

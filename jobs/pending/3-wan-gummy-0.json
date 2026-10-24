@@ -1,0 +1,1 @@
+{"id": "3-wan-gummy-0", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/gummy-0.png"}, "vars": {"name": "ss2-gummy-0", "seed": 91, "prompt": "factory nozzles deposit bright red liquid candy into bear shaped cavities, macro, smooth, realistic motion, no text"}}

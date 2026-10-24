@@ -1,0 +1,1 @@
+{"id": "3-wan-jet-2", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/jet-2.png"}, "vars": {"name": "ss2-jet-2", "seed": 91, "prompt": "the pilots flip switches and adjust the throttle, instrument lights flicker, cinematic, realistic motion, no text"}}

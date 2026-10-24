@@ -1,0 +1,1 @@
+{"id": "3-wan-autobahn-1", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/autobahn-1.png"}, "vars": {"name": "ss2-autobahn-1", "seed": 91, "prompt": "traffic flows on the curving autobahn seen from above, slow aerial drift, golden hour, realistic motion, no text"}}

@@ -1,0 +1,1 @@
+{"id": "3-wan-gummy-1", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/gummy-1.png"}, "vars": {"name": "ss2-gummy-1", "seed": 91, "prompt": "golden syrup bubbles and swirls in the steel kettle, steam rises, macro, realistic motion, no text"}}
