@@ -1,0 +1,4 @@
+{"duration": 37.1, "night": "2:14 AM", "blinkAt": 33.0,
+ "shots": [["over", 0.0], ["news", 3.89], ["flood", 12.56], ["sky", 18.57], ["close", 26.53], ["over", 33.91]],
+ "sfx": [["impact", 0.0, -6, ""], ["heartbeat", 0.0, -12, "atrim=0:3.8,afade=t=out:st=3.3:d=0.5"], ["hum", 3.9, -15, "atrim=0:8,afade=t=in:d=1,afade=t=out:st=7:d=1"], ["riser", 17.8, -14, "atrim=0:2"], ["impact", 19.8, -7, ""], ["heartbeat", 26.6, -12, "atrim=0:6,afade=t=out:st=5:d=1"], ["impact", 33.1, -6, ""], ["impact", 33.91, -10, "atrim=0:1.2"]],
+ "bedMute": [99, 99]}

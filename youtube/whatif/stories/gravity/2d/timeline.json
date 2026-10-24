@@ -1,0 +1,4 @@
+{"duration": 35.7, "night": "2:14 AM", "liftAt": [10.2, 16.6], "fallAt": 20.5, "waveAt": 29.9,
+ "shots": [["up", 0.0], ["street", 4.37], ["lift", 10.13], ["fall", 17.19], ["almost", 21.69], ["look", 23.57], ["up", 31.95]],
+ "sfx": [["impact", 0.0, -7, ""], ["heartbeat", 0.0, -12, "atrim=0:4.2,afade=t=out:st=3.7:d=0.5"], ["hum", 4.4, -15, "atrim=0:6,afade=t=in:d=1,afade=t=out:st=5:d=1"], ["riser", 10.2, -12, ""], ["impact", 20.5, -3, ""], ["impact", 20.6, -6, "atrim=0:1"], ["heartbeat", 23.6, -12, "atrim=0:6,afade=t=out:st=5:d=1"], ["riser", 28.4, -14, "atrim=0:1.5"], ["impact", 29.9, -7, ""], ["impact", 31.95, -10, "atrim=0:1.2"]],
+ "bedMute": [99, 99]}
