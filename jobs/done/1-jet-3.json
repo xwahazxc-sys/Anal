@@ -1,0 +1,19 @@
+{
+ "id": "1-jet-3",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-jet-3",
+  "width": 1088,
+  "height": 1920,
+  "seed": 103,
+  "prompt": "a fuel truck refueling a white business jet on the tarmac at dusk, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"
+ },
+ "finished": "2026-10-24 12:59:36",
+ "status": "done",
+ "outputs": [
+  "outputs/1-jet-3/ss-jet-3_00001_.png"
+ ],
+ "seconds": 56
+}
