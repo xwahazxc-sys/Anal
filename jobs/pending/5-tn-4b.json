@@ -1,1 +1,0 @@
-{"id": "5-tn-4b", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "5-tn-4b", "width": 1088, "height": 1920, "seed": 31, "prompt": "Singapore Marina Bay in 2026 at night with Marina Bay Sands and Gardens by the Bay, cinematic photo, no text, vertical composition"}}
