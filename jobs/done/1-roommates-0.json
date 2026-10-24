@@ -1,0 +1,19 @@
+{
+ "id": "1-roommates-0",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-roommates-0",
+  "width": 1088,
+  "height": 1920,
+  "seed": 100,
+  "prompt": "four cute 3D cartoon characters in a cozy apartment living room, each wearing a hoodie in national flag colors of Germany, Italy, Japan and Brazil, pixar style, bright, cinematic, vertical composition, no text, no watermark"
+ },
+ "finished": "2026-10-24 13:03:50",
+ "status": "done",
+ "outputs": [
+  "outputs/1-roommates-0/ss-roommates-0_00001_.png"
+ ],
+ "seconds": 56
+}
