@@ -1,0 +1,19 @@
+{
+ "id": "1-autobahn-2",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-autobahn-2",
+  "width": 1088,
+  "height": 1920,
+  "seed": 102,
+  "prompt": "a blue rectangular German road sign at the side of an autobahn, cars passing, overcast, cinematic, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"
+ },
+ "finished": "2026-10-24 12:30:43",
+ "status": "done",
+ "outputs": [
+  "outputs/1-autobahn-2/ss-autobahn-2_00001_.png"
+ ],
+ "seconds": 31
+}
