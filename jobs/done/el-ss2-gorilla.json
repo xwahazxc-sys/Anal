@@ -1,0 +1,33 @@
+{
+ "id": "el-ss2-gorilla",
+ "voice_id": "nPczCjzI2devNBz1zQrb",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.4,
+  "similarity_boost": 0.8,
+  "style": 0.35
+ },
+ "lines": [
+  {
+   "name": "l1",
+   "text": "A grizzly is almost twice the weight of a gorilla. So why do people still bet on the gorilla?"
+  },
+  {
+   "name": "l2",
+   "text": "The silverback: around two hundred kilos, insanely strong, and explosive in short bursts."
+  },
+  {
+   "name": "l3",
+   "text": "The grizzly: up to three hundred and sixty kilos, claws up to ten centimeters long, and thick fur and fat like armor."
+  },
+  {
+   "name": "l4",
+   "text": "Pound for pound, the gorilla is stronger. But weight and claws decide real fights."
+  },
+  {
+   "name": "l5",
+   "text": "On paper, the grizzly wins. Team gorilla or team bear?"
+  }
+ ],
+ "status": "done"
+}

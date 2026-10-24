@@ -1,0 +1,33 @@
+{
+ "id": "el-ss2-gummy",
+ "voice_id": "XrExE9yKIg1WjnnlVkGX",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.4,
+  "similarity_boost": 0.8,
+  "style": 0.35
+ },
+ "lines": [
+  {
+   "name": "l1",
+   "text": "Every gummy bear you've ever eaten spent a whole night buried in cornstarch."
+  },
+  {
+   "name": "l2",
+   "text": "Sugar, glucose syrup and water get cooked. Then gelatin, color and flavor go in."
+  },
+  {
+   "name": "l3",
+   "text": "A machine called a starch mogul stamps thousands of tiny bear shapes into trays of cornstarch."
+  },
+  {
+   "name": "l4",
+   "text": "The hot mix is poured in, and the bears rest overnight while the starch pulls out the moisture."
+  },
+  {
+   "name": "l5",
+   "text": "Then they're shaken out, brushed, and lightly coated so they don't stick together."
+  }
+ ],
+ "status": "done"
+}
