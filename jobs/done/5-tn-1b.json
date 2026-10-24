@@ -1,0 +1,19 @@
+{
+ "id": "5-tn-1b",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "5-tn-1b",
+  "width": 1088,
+  "height": 1920,
+  "seed": 31,
+  "prompt": "Dubai skyline in 2026 with Burj Khalifa and skyscrapers at sunset, cinematic photo, no text, vertical composition"
+ },
+ "finished": "2026-10-24 17:53:29",
+ "status": "done",
+ "outputs": [
+  "outputs/5-tn-1b/5-tn-1b_00001_.png"
+ ],
+ "seconds": 51
+}
