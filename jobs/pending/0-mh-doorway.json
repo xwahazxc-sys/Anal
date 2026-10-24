@@ -1,1 +1,0 @@
-{"id": "0-mh-doorway", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "mh-doorway", "seconds": 50, "seed": 33, "bpm": 70, "key": "D minor", "tags": "dark minimal pulse, ticking clock, deep sub, sparse piano, suspense, 70 bpm, instrumental", "lyrics": "[Instrumental]"}}
