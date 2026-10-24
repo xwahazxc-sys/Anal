@@ -1,1 +1,0 @@
-{"id": "5-tn-2a", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "5-tn-2a", "width": 1088, "height": 1920, "seed": 31, "prompt": "Shanghai Pudong riverside in 1987, farmland and warehouses, old ships, faded color photograph, no text, vertical composition"}}
