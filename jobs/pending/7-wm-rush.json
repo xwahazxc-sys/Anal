@@ -1,0 +1,1 @@
+{"id": "7-wm-rush", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/hw/7-wm-rush.png"}, "vars": {"name": "7-wm-rush", "seed": 71, "prompt": "the black smoke cloud with the screaming face rushes toward the camera, lights flicker and burst, the phone shakes, no text"}}

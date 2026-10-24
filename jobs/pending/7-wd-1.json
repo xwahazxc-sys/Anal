@@ -1,0 +1,1 @@
+{"id": "7-wd-1", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/hw/7-wd-1.png"}, "vars": {"name": "7-wd-1", "seed": 71, "prompt": "light pours through the open doorway and flickers, slow push in, cinematic, no text"}}

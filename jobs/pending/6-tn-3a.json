@@ -1,0 +1,1 @@
+{"id": "6-tn-3a", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "6-tn-3a", "width": 1088, "height": 1920, "seed": 9, "prompt": "a desert highway in Nevada in 1950 with two small motels and a few classic 1950s cars, empty desert and mountains, absolutely no signs with text, vintage color photograph, vertical composition"}}
