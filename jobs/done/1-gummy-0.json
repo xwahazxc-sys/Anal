@@ -1,0 +1,19 @@
+{
+ "id": "1-gummy-0",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-gummy-0",
+  "width": 1088,
+  "height": 1920,
+  "seed": 100,
+  "prompt": "a large steel candy kettle with bubbling golden syrup in a clean candy factory, steam, macro, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"
+ },
+ "finished": "2026-10-24 12:44:57",
+ "status": "done",
+ "outputs": [
+  "outputs/1-gummy-0/ss-gummy-0_00001_.png"
+ ],
+ "seconds": 56
+}
