@@ -79,3 +79,7 @@ Old uploads made private: -EcXXHtNUlc, XhrBG0dzUzo, MOS4zuZyE-k, e1t-IW7LY3Q, N4
 - New-format uploads (Oct 23-24): dl1 https://youtu.be/AVWo1dY0NQY (Oct 27), dl2 https://youtu.be/eRlcEF_lzUY (Oct 28), sw1 https://youtu.be/wafZz2YcgCY (Oct 29), sw2 https://youtu.be/jCmioFyFT5I (Oct 30), kn1 https://youtu.be/XAqhxggU5vo (Oct 31), kn2 https://youtu.be/9EeTq9t4POM (Nov 1), fl1 https://youtu.be/g9hj3Ox1y1Q (Nov 2), fl2 https://youtu.be/pYFA8aV903M (Nov 3).
 - Oct 24: cookies expired once (owner re-exported); daily upload limit hit once on Oct 23.
 - Unverified channels have a small daily upload cap: upload at most a few videos per day from now on.
+- Oct 24: c3 (hg2NbS4u-Rs) and c4 (BItIwHqgd0A) made private - recuts of old footage get no reach (c1: 2 views in 15 h).
+  Replaced by new Shorts: mo1 "the moon stopped above my house" https://youtu.be/jalA3Pg3DOk (Oct 25), gr1 "gravity turned off for 5 seconds" https://youtu.be/5oWNj8jXlFU (Oct 26).
+- Oct 24: all scheduled Shorts retitled to short lowercase hooks (see research-oct24.md); old titles kept as old_title in queue.json.
+- Saturday routine trig_01ToK6W9VmxFzSw7AVSZt7gi now runs the What If weekly report (Lenny retired).
