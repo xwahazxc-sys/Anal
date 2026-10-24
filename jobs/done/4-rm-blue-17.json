@@ -1,0 +1,19 @@
+{
+ "id": "4-rm-blue-17",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "rm-blue-17",
+  "width": 1088,
+  "height": 1920,
+  "seed": 17,
+  "prompt": "supermarket security camera at night, an enormous blue furry monster wearing a small crown, with drooling mouth and big eyes, crawling between empty grocery aisles, fluorescent lights, realistic found footage photo, real home, night, grainy, slight motion blur, horror, no text, no watermark, vertical"
+ },
+ "finished": "2026-10-24 17:17:07",
+ "status": "done",
+ "outputs": [
+  "outputs/4-rm-blue-17/rm-blue-17_00001_.png"
+ ],
+ "seconds": 56
+}
