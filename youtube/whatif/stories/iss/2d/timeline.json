@@ -1,0 +1,4 @@
+{"duration": 27.95, "night": "ISS · 408 km",
+ "shots": [["letters", 0.0], ["station", 1.52], ["ocean", 6.81], ["line1", 10.61], ["lines", 16.09], ["reveal", 19.28], ["control", 21.05], ["letters", 26.74]],
+ "sfx": [["impact", 0.0, -7, ""], ["hum", 1.6, -15, "atrim=0:9,afade=t=in:d=1,afade=t=out:st=8:d=1"], ["riser", 10.6, -15, "atrim=0:2"], ["impact", 12.5, -9, "atrim=0:1.2"], ["impact", 15.6, -10, "atrim=0:1"], ["impact", 17.2, -10, "atrim=0:1"], ["impact", 18.7, -9, "atrim=0:1"], ["heartbeat", 19.3, -12, "atrim=0:6,afade=t=out:st=5:d=1"], ["ding", 21.1, -10, ""], ["impact", 25.9, -6, ""], ["impact", 26.74, -9, "atrim=0:1.2"]],
+ "bedMute": [99, 99]}

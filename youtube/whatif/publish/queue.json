@@ -357,5 +357,22 @@
   ],
   "visibility": "schedule",
   "publishAt": "2026-10-26T19:00"
+ },
+ {
+  "id": "is1",
+  "file": "youtube/whatif/stories/iss/final/pacific_lights.mp4",
+  "title": "don't read it out loud",
+  "thumbnail": null,
+  "description": "2:14 a.m. An astronaut on the space station sees lights in the middle of the Pacific. They're letters. Mission control sends one message.\n\nWould you read it? 👇\n\nA fictional story.\n#shorts #space #whatif #horrorstory #scarystories",
+  "tags": [
+   "space station",
+   "astronaut",
+   "what if",
+   "horror short",
+   "scary story",
+   "cosmic horror"
+  ],
+  "visibility": "schedule",
+  "publishAt": "2026-10-24T19:00"
  }
 ]
