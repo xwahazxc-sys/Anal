@@ -1,0 +1,19 @@
+{
+ "id": "1-janitor-3",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-janitor-3",
+  "width": 1088,
+  "height": 1920,
+  "seed": 103,
+  "prompt": "an old man with a grey beard in blue janitor overalls tightening a single bolt on a jet engine with a wrench, close-up, cinematic film still, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"
+ },
+ "finished": "2026-10-24 12:53:21",
+ "status": "done",
+ "outputs": [
+  "outputs/1-janitor-3/ss-janitor-3_00001_.png"
+ ],
+ "seconds": 56
+}
