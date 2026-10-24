@@ -1,0 +1,19 @@
+{
+ "id": "1-fenrir-0",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-fenrir-0",
+  "width": 1088,
+  "height": 1920,
+  "seed": 100,
+  "prompt": "a colossal black wolf bound with glowing golden chains in a dark cave, viking mythology, epic fantasy painting style, cinematic, cinematic, vertical composition, no text, no watermark"
+ },
+ "finished": "2026-10-24 12:33:24",
+ "status": "done",
+ "outputs": [
+  "outputs/1-fenrir-0/ss-fenrir-0_00001_.png"
+ ],
+ "seconds": 56
+}
