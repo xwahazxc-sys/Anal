@@ -42,7 +42,7 @@ WrapStyle: 1
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,Archivo Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,10,5,2,70,70,640,1
-Style: Hook,Archivo Black,112,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,11,5,8,60,60,260,1
+Style: Hook,Archivo Black,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,11,5,8,60,60,260,1
 Style: Big,Archivo Black,104,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,10,5,8,60,60,300,1
 
 [Events]
@@ -93,6 +93,8 @@ def karaoke(words):
                 parts = []
                 for k in grp:
                     t = words[k][0].upper().rstrip(",.")
+                    if len(t) > 11:  # long words (German compounds) shrink to fit the width
+                        t = f"{{\\fs{int(128 * 11 / len(t))}}}{t}{{\\fs128}}"
                     parts.append(f"{{\\c{YEL}\\fscx106\\fscy106}}{t}{{\\c&HFFFFFF&\\fscx100\\fscy100}}" if k == j else t)
                 pop = "\\t(0,70,\\fscx108\\fscy108)\\t(70,140,\\fscx100\\fscy100)" if j == grp[0] else ""
                 ev.append(f"Dialogue: 0,{ta(s)},{ta(e)},Cap,,0,0,0,,{{{pop}}}{' '.join(parts)}")

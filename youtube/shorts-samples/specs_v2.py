@@ -42,7 +42,7 @@ V2 = {
          "Japan cleaned the whole bathroom. Nobody saw it happen.",
          "And Brazil invited 40 people. On a Tuesday.",
          "Which roommate are you? Comment your country."],
-   order=[4, 1, 2, 3, 0, 5], motion=[0, 2, 5], hook="COUNTRIES AS ROOMMATES", texts=[],
+   order=[4, 1, 2, 3, 0], motion=[0, 2], hook="COUNTRIES AS ROOMMATES", texts=[],
    mprompts=["the cartoon character dances happily at the party, confetti falls, pixar animation",
              "the cartoon character stirs the pasta pot angrily and waves the wooden spoon, steam rises, pixar animation",
              "the four cartoon characters on the sofa turn their heads and look at the camera, pixar animation"]),
