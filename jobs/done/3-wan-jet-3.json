@@ -1,0 +1,20 @@
+{
+ "id": "3-wan-jet-3",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss2/jet-3.png"
+ },
+ "vars": {
+  "name": "ss2-jet-3",
+  "seed": 91,
+  "prompt": "fuel hose shakes as fuel flows, the truck engine vibrates, dusk light, cinematic, realistic motion, no text"
+ },
+ "finished": "2026-10-24 15:42:21",
+ "status": "done",
+ "outputs": [
+  "outputs/3-wan-jet-3/ss2-jet-3_00001_.mp4"
+ ],
+ "seconds": 278
+}
