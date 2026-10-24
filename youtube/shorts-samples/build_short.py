@@ -38,8 +38,8 @@ PlayResY: {H}
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Oswald,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,1,0,1,7,2,2,70,70,560,1
-Style: Big,Bebas Neue,150,&H0000E5FF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,2,0,1,8,3,8,60,60,250,1
+Style: Cap,Oswald,165,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,1,0,1,9,3,2,60,60,520,1
+Style: Big,Bebas Neue,240,&H0000E5FF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,2,0,1,10,4,8,50,50,230,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
