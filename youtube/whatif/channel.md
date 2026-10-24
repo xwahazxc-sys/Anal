@@ -83,3 +83,4 @@ Old uploads made private: -EcXXHtNUlc, XhrBG0dzUzo, MOS4zuZyE-k, e1t-IW7LY3Q, N4
   Replaced by new Shorts: mo1 "the moon stopped above my house" https://youtu.be/jalA3Pg3DOk (Oct 25), gr1 "gravity turned off for 5 seconds" https://youtu.be/5oWNj8jXlFU (Oct 26).
 - Oct 24: all scheduled Shorts retitled to short lowercase hooks (see research-oct24.md); old titles kept as old_title in queue.json.
 - Saturday routine trig_01ToK6W9VmxFzSw7AVSZt7gi now runs the What If weekly report (Lenny retired).
+- Oct 24: c2 (4oH9gWnl7yw) made private; replaced by is1 "don't read it out loud" https://youtu.be/D61a5RUm42E (Oct 24 19:00). No recuts left in the schedule.
