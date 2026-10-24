@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-truck",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/truck-1.png"
+ },
+ "vars": {
+  "name": "ss-wan-truck-1",
+  "seed": 77,
+  "prompt": "sparks fly from the angle grinder across the rusty truck, mechanics move in the background, cinematic, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:58:42",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-truck/ss-wan-truck-1_00001_.mp4"
+ ],
+ "seconds": 272
+}
