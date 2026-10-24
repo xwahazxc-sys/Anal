@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-roommates",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/roommates-2.png"
+ },
+ "vars": {
+  "name": "ss-wan-roommates-2",
+  "seed": 77,
+  "prompt": "the cartoon character stirs the pasta pot angrily and waves the wooden spoon, steam rises, pixar animation, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:54:02",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-roommates/ss-wan-roommates-2_00001_.mp4"
+ ],
+ "seconds": 272
+}
