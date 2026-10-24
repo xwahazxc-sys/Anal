@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-gorilla",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/gorilla-0.png"
+ },
+ "vars": {
+  "name": "ss-wan-gorilla-0",
+  "seed": 77,
+  "prompt": "the silverback gorilla roars and beats its chest, mist drifts, wildlife footage, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:35:22",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-gorilla/ss-wan-gorilla-0_00001_.mp4"
+ ],
+ "seconds": 272
+}
