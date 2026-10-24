@@ -1,0 +1,19 @@
+{
+ "id": "5-tn-2b",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "5-tn-2b",
+  "width": 1088,
+  "height": 1920,
+  "seed": 31,
+  "prompt": "Shanghai Pudong skyline in 2026 at night with Oriental Pearl Tower and supertall skyscrapers, cinematic photo, no text, vertical composition"
+ },
+ "finished": "2026-10-24 17:55:32",
+ "status": "done",
+ "outputs": [
+  "outputs/5-tn-2b/5-tn-2b_00001_.png"
+ ],
+ "seconds": 56
+}
