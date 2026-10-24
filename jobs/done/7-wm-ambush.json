@@ -1,0 +1,20 @@
+{
+ "id": "7-wm-ambush",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/hw/7-wm-ambush.png"
+ },
+ "vars": {
+  "name": "7-wm-ambush",
+  "seed": 71,
+  "prompt": "the glowing green ghostly face rushes toward the camera screaming, the black cloud swirls, lights flicker, security camera footage, no text"
+ },
+ "finished": "2026-10-24 19:28:00",
+ "status": "done",
+ "outputs": [
+  "outputs/7-wm-ambush/7-wm-ambush_00001_.mp4"
+ ],
+ "seconds": 282
+}
