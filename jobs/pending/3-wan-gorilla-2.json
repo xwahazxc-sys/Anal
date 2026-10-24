@@ -1,1 +1,0 @@
-{"id": "3-wan-gorilla-2", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/gorilla-2.png"}, "vars": {"name": "ss2-gorilla-2", "seed": 91, "prompt": "the grizzly bear roars and swipes the air with its claws, wildlife footage, realistic motion, no text"}}
