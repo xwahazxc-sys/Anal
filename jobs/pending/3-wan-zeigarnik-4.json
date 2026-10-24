@@ -1,1 +1,0 @@
-{"id": "3-wan-zeigarnik-4", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/zeigarnik-4.png"}, "vars": {"name": "ss2-zeigarnik-4", "seed": 91, "prompt": "the person hanging from the cliff edge slips and grabs tighter, dust falls, sunset, realistic motion, no text"}}
