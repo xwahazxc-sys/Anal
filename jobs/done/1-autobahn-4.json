@@ -1,0 +1,19 @@
+{
+ "id": "1-autobahn-4",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-autobahn-4",
+  "width": 1088,
+  "height": 1920,
+  "seed": 104,
+  "prompt": "a long autobahn at night with light trails, aerial, cinematic, photorealistic, cinematic lighting, sharp detail, vertical composition, no text, no watermark, no logos"
+ },
+ "finished": "2026-10-24 12:32:20",
+ "status": "done",
+ "outputs": [
+  "outputs/1-autobahn-4/ss-autobahn-4_00001_.png"
+ ],
+ "seconds": 56
+}
