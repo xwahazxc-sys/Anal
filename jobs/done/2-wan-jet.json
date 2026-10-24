@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-jet",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/jet-6.png"
+ },
+ "vars": {
+  "name": "ss-wan-jet-6",
+  "seed": 77,
+  "prompt": "the business jet climbs into the sunset sky, slow camera follow, cinematic, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:49:22",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-jet/ss-wan-jet-6_00001_.mp4"
+ ],
+ "seconds": 272
+}
