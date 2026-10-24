@@ -1,0 +1,1 @@
+{"id": "5-door-2", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "5-door-2", "width": 1088, "height": 1920, "seed": 31, "prompt": "a university psychology lab in 2011, a student carrying a cardboard box through a doorway, cinematic, no text, vertical composition"}}

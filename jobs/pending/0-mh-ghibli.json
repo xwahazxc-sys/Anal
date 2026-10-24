@@ -1,0 +1,1 @@
+{"id": "0-mh-ghibli", "type": "comfy", "workflow": "workflows/ace15_song.json", "timeout": 1200, "vars": {"name": "mh-ghibli", "seconds": 50, "seed": 33, "bpm": 72, "key": "C major", "tags": "gentle nostalgic piano, soft strings, warm summer night ambience, crickets, 72 bpm, instrumental", "lyrics": "[Instrumental]"}}
