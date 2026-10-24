@@ -1,0 +1,19 @@
+{
+ "id": "5-jam-1",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "5-jam-1",
+  "width": 1088,
+  "height": 1920,
+  "seed": 31,
+  "prompt": "macro of strawberries being crushed into thick red pulp between steel rollers in a food factory, photorealistic, macro, sharp, no text, no logos, vertical"
+ },
+ "finished": "2026-10-24 17:45:05",
+ "status": "done",
+ "outputs": [
+  "outputs/5-jam-1/5-jam-1_00001_.png"
+ ],
+ "seconds": 56
+}
