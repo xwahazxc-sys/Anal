@@ -22,12 +22,12 @@ WrapStyle: 1
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,Archivo Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,10,5,2,70,70,640,1
-Style: Header,Archivo Black,92,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC8000000,0,0,0,0,100,100,0,0,3,18,0,8,40,40,150,1
-Style: Sub,Archivo Black,84,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,8,4,8,50,50,300,1
+Style: Header,Archivo Black,104,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC8000000,0,0,0,0,100,100,0,0,3,18,0,8,40,40,150,1
+Style: Sub,Archivo Black,96,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,8,4,8,50,50,300,1
 Style: Year,Archivo Black,230,{YEL[:-1]},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,12,6,2,50,50,330,1
 Style: Place,Archivo Black,100,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,9,4,8,50,50,330,1
-Style: Story,Inter,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H78000000,1,0,0,0,100,100,0,0,1,4,3,2,90,90,420,1
-Style: Q,Archivo Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,0,0,3,14,0,2,50,50,250,1
+Style: Story,Archivo Black,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,0,0,0,0,100,100,0,0,3,16,0,2,70,70,560,1
+Style: Q,Archivo Black,88,&H00FFFFFF,&H00FFFFFF,&H00000000,&HB4000000,0,0,0,0,100,100,0,0,3,14,0,2,50,50,250,1
 Style: OSD,DejaVu Sans Mono,46,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,3,0,7,46,46,60,1
 Style: Mon,Archivo Black,120,&H002626FF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,10,5,2,50,50,330,1
 
@@ -128,7 +128,8 @@ def build_doorway(work):
     imgs = [os.path.join(d, "img", f"{k}.png") for k in range(n)]
     clips, cuts, _ = slots(d, n, total, tmp, imgs)
     e = B.karaoke(B.caption_words(s["caps"], spans, heard))
-    e.append(ev(3, 0, total, "Header", s["header"], ""))
+    e.append(ev(3, 0, total, "Header", "DID YOU KNOW?", ""))
+    e.append(ev(3, 0, total, "Sub", "PSYCHOLOGY", ""))
     e.append(ev(3, 0, spans[1][0], "Q", s["question"], "\\fad(0,200)"))
     ass = os.path.join(tmp, "c.ass"); open(ass, "w").write(HEAD + "\n".join(e) + "\n")
     inputs, g = music_mix(concat(clips, tmp), ass, os.path.join(d, "music.flac"), total, cuts, tmp, voice=voice, mg=0.24)
@@ -159,14 +160,14 @@ def build_thennow(work):
 
 MON = [("seek", "SEEK", "DOORS", "CAM 02 · HALLWAY"), ("figure", "THE FIGURE", "DOORS", "PHONE · 02:41"),
        ("screech", "SCREECH", "DOORS", "PHONE · 03:07"), ("deer", "THE DEER", "99 NIGHTS IN THE FOREST", "DOORBELL · 03:12"),
-       ("rush", "RUSH", "DOORS", "PHONE · 03:19"), ("blue", "BLUE", "RAINBOW FRIENDS", "STORE CAM 07 · 03:33")]
+       ("rush", "RUSH", "DOORS", "PHONE · 03:19"), ("ambush", "AMBUSH", "DOORS", "CAM 04 · 03:33")]
 HITS = [0.0, 7.36, 13.61, 20.78, 29.0, 35.55, 43.17]
 
 
 def build_monsters(work, track):
     d = os.path.join(work, "monsters")
     tmp = tempfile.mkdtemp(prefix="h_mon_")
-    order = ["seek", "figure", "screech", "deer", "rush", "blue"]
+    order = ["seek", "figure", "screech", "deer", "rush", "ambush"]
     clips, e = [], []
     total = 47.0
     looks = ["colorchannelmixer=.25:.55:.1:0:.3:.65:.15:0:.2:.45:.1:0,", "", "", "hue=s=0.15,", "", "hue=s=0.6,"]

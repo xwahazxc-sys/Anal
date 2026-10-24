@@ -12,7 +12,7 @@ H["ghibli"] = dict(music="gentle nostalgic piano, soft strings, warm summer nigh
          "the same rural house years later, empty and overgrown at sunset, a paper fan left on the porch, melancholic"],
   motion=[0, 3, 4, 5])
 H["jam"] = dict(music="satisfying lofi beat, soft plucks, warm keys, gentle percussion, 88 bpm, instrumental",
-  header="HOW IT'S MADE", sub=["Strawberry Jam 🍓", "1 · crushing", "2 · cooking", "3 · filling", "4 · sealing", "5 · labeling"],
+  header="HOW IT'S MADE", sub=["STRAWBERRY JAM", "1 · CRUSHING", "2 · COOKING", "3 · FILLING", "4 · SEALING", "5 · LABELING"],
   shots=["macro shot of thousands of fresh red strawberries pouring into a stainless steel industrial crusher in a factory, juice splashing",
          "macro of strawberries being crushed into thick red pulp between steel rollers in a food factory",
          "huge stainless steel vat of bubbling red strawberry jam being stirred by a mechanical paddle, steam, factory",
