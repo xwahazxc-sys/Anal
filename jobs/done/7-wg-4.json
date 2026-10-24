@@ -1,0 +1,20 @@
+{
+ "id": "7-wg-4",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/hw/7-wg-4.png"
+ },
+ "vars": {
+  "name": "7-wg-4",
+  "seed": 71,
+  "prompt": "the grandmother slowly fans the sleeping children, the paper fan moves, stars twinkle, anime animation, no text"
+ },
+ "finished": "2026-10-24 18:47:51",
+ "status": "done",
+ "outputs": [
+  "outputs/7-wg-4/7-wg-4_00001_.mp4"
+ ],
+ "seconds": 277
+}
