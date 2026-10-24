@@ -1,1 +1,0 @@
-{"id": "3-wan-truck-0", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss2/truck-0.png"}, "vars": {"name": "ss2-truck-0", "seed": 91, "prompt": "the black lifted truck drives toward the camera through the rainy neon street, headlights flare, cinematic, realistic motion, no text"}}
