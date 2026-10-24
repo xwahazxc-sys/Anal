@@ -1,0 +1,21 @@
+{
+ "id": "0-mh-thennow",
+ "type": "comfy",
+ "workflow": "workflows/ace15_song.json",
+ "timeout": 1200,
+ "vars": {
+  "name": "mh-thennow",
+  "seconds": 50,
+  "seed": 33,
+  "bpm": 80,
+  "key": "C major",
+  "tags": "nostalgic cinematic piano, soft strings, ticking clock, emotional, 80 bpm, instrumental",
+  "lyrics": "[Instrumental]"
+ },
+ "finished": "2026-10-24 17:31:53",
+ "status": "done",
+ "outputs": [
+  "outputs/0-mh-thennow/mh-thennow_00001.flac"
+ ],
+ "seconds": 21
+}
