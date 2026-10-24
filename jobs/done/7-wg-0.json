@@ -1,0 +1,20 @@
+{
+ "id": "7-wg-0",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/hw/7-wg-0.png"
+ },
+ "vars": {
+  "name": "7-wg-0",
+  "seed": 71,
+  "prompt": "the family walks toward the house, lanterns sway gently, leaves move in the breeze, anime animation, no text"
+ },
+ "finished": "2026-10-24 18:38:20",
+ "status": "done",
+ "outputs": [
+  "outputs/7-wg-0/7-wg-0_00001_.mp4"
+ ],
+ "seconds": 277
+}
