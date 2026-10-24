@@ -1,1 +1,0 @@
-{"id": "5-jam-5", "type": "comfy", "workflow": "workflows/zimage_t2i.json", "timeout": 900, "vars": {"name": "5-jam-5", "width": 1088, "height": 1920, "seed": 31, "prompt": "thousands of finished jars of strawberry jam with blank labels moving on a conveyor belt in a bright factory, photorealistic, macro, sharp, no text, no logos, vertical"}}
