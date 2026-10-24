@@ -66,6 +66,8 @@ def cap_events(ws, offset):
         gap = ws[i + 1][1] - b if i + 1 < len(ws) else 9
         if len(cur) == 3 or w.endswith((".", ",", "?", "!", ":")) or gap > 0.3:
             s, e = ws[cur[0]][1] + offset, ws[cur[-1]][2] + offset + 0.08
+            if i + 1 < len(ws):
+                e = min(e, ws[i + 1][1] + offset - 0.02)  # never overlap the next group
             txt = " ".join(ws[j][0].upper() for j in cur)
             ev.append(f"Dialogue: 0,{t_ass(s)},{t_ass(e)},Cap,,0,0,0,,{{\\fad(40,40)\\t(0,80,\\fscx110\\fscy110)"
                       f"\\t(80,160,\\fscx100\\fscy100)}}{txt}")
@@ -144,7 +146,7 @@ def main(name, work):
                   f"\\t(120,240,\\fscx100\\fscy100)}}{txt}")
     ass = os.path.join(tmp, "c.ass"); open(ass, "w").write(ASS_HEAD + "\n".join(ev) + "\n")
     inputs = ["-i", cat, "-i", os.path.join(d, "music.flac")]
-    fc = [f"[0:v]ass={ass}:fontsdir={FONTS},fade=in:st=0:d=0.2,fade=out:st={total-0.6:.2f}:d=0.6,format=yuv420p[vout]"]
+    fc = [f"[0:v]setpts=N/({FPS}*TB),ass={ass}:fontsdir={FONTS},fade=in:st=0:d=0.2,fade=out:st={total-0.6:.2f}:d=0.6,format=yuv420p[vout]"]
     whoosh = []
     for k, c in enumerate(cuts[1:-1]):
         fc.append(f"anoisesrc=color=pink:amplitude=0.35:d=0.35:r=48000,bandpass=f=1800:w=1600,"

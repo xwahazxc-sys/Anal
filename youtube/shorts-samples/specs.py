@@ -52,8 +52,8 @@ S["gorilla"] = dict(niche="animal-battle", voice="nPczCjzI2devNBz1zQrb", model="
          "On paper, the grizzly wins. Do you agree?"],
   texts=[("GORILLA vs GRIZZLY", 0), ("~200 KG", 1), ("~360 KG", 2)],
   shots=[["a massive silverback gorilla roaring in a misty jungle, showing teeth, wildlife photography", "m"],
-         ["a huge grizzly bear standing on its hind legs roaring in a forest clearing, wildlife photography", "m"],
          ["close-up of a muscular silverback gorilla arm and hand gripping a thick branch, wildlife photography"],
+         ["a huge grizzly bear standing on its hind legs roaring in a forest clearing, wildlife photography", "m"],
          ["extreme close-up of grizzly bear claws on a rock, wildlife photography"],
          ["a silverback gorilla and a grizzly bear facing each other in a misty forest clearing, dramatic, cinematic"]])
 S["truck"] = dict(niche="car-transformation", song=False,
