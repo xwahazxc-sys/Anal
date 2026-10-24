@@ -1,1 +1,0 @@
-{"id": "7-wm-deer", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/hw/7-wm-deer.png"}, "vars": {"name": "7-wm-deer", "seed": 71, "prompt": "the deer-skull monster slowly turns its head toward the camera, red eyes glow brighter, trees sway, infrared doorbell footage, no text"}}
