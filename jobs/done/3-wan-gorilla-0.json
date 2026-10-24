@@ -1,0 +1,20 @@
+{
+ "id": "3-wan-gorilla-0",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss2/gorilla-0.png"
+ },
+ "vars": {
+  "name": "ss2-gorilla-0",
+  "seed": 91,
+  "prompt": "the gorilla and the grizzly bear lunge toward each other, mist swirls, dramatic wildlife footage, realistic motion, no text"
+ },
+ "finished": "2026-10-24 15:09:03",
+ "status": "done",
+ "outputs": [
+  "outputs/3-wan-gorilla-0/ss2-gorilla-0_00001_.mp4"
+ ],
+ "seconds": 277
+}
