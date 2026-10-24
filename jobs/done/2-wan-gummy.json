@@ -1,0 +1,20 @@
+{
+ "id": "2-wan-gummy",
+ "type": "comfy",
+ "workflow": "workflows/wan5b_i2v_vert.json",
+ "timeout": 1800,
+ "files": {
+  "start_image": "inputs/ss/gummy-3.png"
+ },
+ "vars": {
+  "name": "ss-wan-gummy-3",
+  "seed": 77,
+  "prompt": "colorful gummy bears tumble and roll inside the rotating steel drum, macro, smooth, realistic motion, no text"
+ },
+ "finished": "2026-10-24 13:40:03",
+ "status": "done",
+ "outputs": [
+  "outputs/2-wan-gummy/ss-wan-gummy-3_00001_.mp4"
+ ],
+ "seconds": 272
+}
