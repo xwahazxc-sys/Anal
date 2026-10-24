@@ -1,0 +1,1 @@
+{"id": "2-wan-janitor", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss/janitor-4.png"}, "vars": {"name": "ss-wan-janitor-4", "seed": 77, "prompt": "the jet engine spins up with heat haze and a burst of flame, engineers step back covering their ears, realistic motion, no text"}}

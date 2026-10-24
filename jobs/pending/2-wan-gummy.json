@@ -1,0 +1,1 @@
+{"id": "2-wan-gummy", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/ss/gummy-3.png"}, "vars": {"name": "ss-wan-gummy-3", "seed": 77, "prompt": "colorful gummy bears tumble and roll inside the rotating steel drum, macro, smooth, realistic motion, no text"}}
