@@ -1,1 +1,0 @@
-{"id": "7-wg-3", "type": "comfy", "workflow": "workflows/wan5b_i2v_vert.json", "timeout": 1800, "files": {"start_image": "inputs/hw/7-wg-3.png"}, "vars": {"name": "7-wg-3", "seed": 71, "prompt": "shooting stars streak across the starry sky, the mosquito net sways, the children sleep, anime animation, no text"}}
