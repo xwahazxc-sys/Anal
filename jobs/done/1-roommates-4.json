@@ -1,0 +1,19 @@
+{
+ "id": "1-roommates-4",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "ss-roommates-4",
+  "width": 1088,
+  "height": 1920,
+  "seed": 104,
+  "prompt": "a cute 3D cartoon character in a green and yellow hoodie dancing at a crowded house party with confetti, pixar style, cinematic, vertical composition, no text, no watermark"
+ },
+ "finished": "2026-10-24 13:08:03",
+ "status": "done",
+ "outputs": [
+  "outputs/1-roommates-4/ss-roommates-4_00001_.png"
+ ],
+ "seconds": 56
+}
