@@ -1,0 +1,19 @@
+{
+ "id": "5-door-0",
+ "type": "comfy",
+ "workflow": "workflows/zimage_t2i.json",
+ "timeout": 900,
+ "vars": {
+  "name": "5-door-0",
+  "width": 1088,
+  "height": 1920,
+  "seed": 31,
+  "prompt": "a confused young man standing in the middle of a modern kitchen scratching his head, cinematic, moody light, no text, vertical composition"
+ },
+ "finished": "2026-10-24 17:32:21",
+ "status": "done",
+ "outputs": [
+  "outputs/5-door-0/5-door-0_00001_.png"
+ ],
+ "seconds": 56
+}
